@@ -1,4 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# pensjon-selvbetjening-opptjening-frontend
+
+Frontend-applikasjon for selvbetjening relatert til pensjonsopptjening.
+
+# Bruk
+
+Appen kan nås på følgende adresse: [https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io](https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io)
+
+# Henvendelser
+
+NAV-interne henvendelser kan sendes via Slack i kanalen [#po-pensjon-teamselvbetjening](https://nav-it.slack.com/archives/C014M7U1GBY).
+
+# Utviklerinformasjon
+
+Appen er implementert med [React](https://reactjs.org/).<br/>
+Prosjektet ble initialisert med [Create React App](https://github.com/facebook/create-react-app).
+
+## Utvikling lokalt
+
+Bruk `npm start` for å kjøre appen i utviklingsmodus.<br/>
+Åpne [http://localhost:3000](http://localhost:3000) for å se den i nettleser.
 
 ## Available Scripts
 
@@ -40,8 +60,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
