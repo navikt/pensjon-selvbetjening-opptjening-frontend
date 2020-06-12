@@ -2,8 +2,6 @@ FROM node:carbon
 
 WORKDIR /app
 
-EXPOSE 8080
-
 RUN apt-get update && apt-get -y install nginx
 
 # NGINX
@@ -18,6 +16,8 @@ COPY startup.sh .
 RUN PATH="./node_modules/json-server/bin:$PATH"
 RUN export PATH
 RUN chmod 744 ./startup.sh
+
+EXPOSE 8080
 
 CMD ./startup.sh
 
