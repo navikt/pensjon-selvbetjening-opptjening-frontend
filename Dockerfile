@@ -2,7 +2,7 @@ FROM node:carbon
 
 WORKDIR /app
 
-EXPOSE 443
+EXPOSE 8080
 
 RUN apt-get update && apt-get -y install nginx
 
