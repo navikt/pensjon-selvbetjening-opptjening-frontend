@@ -5,4 +5,6 @@ COPY /build /usr/share/nginx/html
 
 EXPOSE 8080
 
-CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
+COPY startup.sh .
+RUN chmod 744 ./startup.sh
+CMD ./startup.sh
