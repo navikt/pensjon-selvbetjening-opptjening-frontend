@@ -16,7 +16,8 @@ spec:
     initialDelay: 3
     timeout: 1
   ingresses:
-    - https://pensjon-selvbetjening-opptjening-frontend.nais.preprod.local
+    - "https://pensjon-selvbetjening-opptjening-frontend.nais.preprod.local/"
+    - "https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io/"
   readiness:
     path: "/api/internal/isReady"
     initialDelay: 3
