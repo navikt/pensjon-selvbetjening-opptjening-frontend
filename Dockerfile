@@ -8,8 +8,6 @@ RUN apt-get update && apt-get -y install nginx
 
 # NGINX
 COPY default.conf /etc/nginx/conf.d/default.conf
-COPY dist/ /usr/share/nginx/html/public/
-COPY dist/ /usr/share/nginx/html/
 RUN rm /etc/nginx/sites-enabled/default
 
 # NODE
