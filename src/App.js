@@ -11,7 +11,7 @@ function App() {
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
-    
+
   useEffect(() => {
     fetch("/api/opptjening/123456", {
       method: "GET"
@@ -20,7 +20,7 @@ function App() {
         .then(
             (result) => {
               setIsLoaded(true);
-              setOpptjening(result.results[0]);
+              setOpptjening(result);
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
