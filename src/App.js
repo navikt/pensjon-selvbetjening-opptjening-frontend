@@ -1,8 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [opptjening, setOpptjening] = useState({});
+
+  // Note: the empty deps array [] means
+  // this useEffect will run once
+  // similar to componentDidMount()
+  useEffect(() => {
+    fetch("/api/opptjening/123456", {
+      method: "GET"
+    })
+        .then(res => res.json())
+        .then(
+            (result) => {
+              setIsLoaded(true);
+              setOpptjening(result.results[0]);
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+              setIsLoaded(true);
+              setError(error);
+            }
+        )
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +46,7 @@ function App() {
         >
           Learn React
         </a>
+        {opptjening.fnr}: {opptjening.inntekt}
       </header>
     </div>
   );
