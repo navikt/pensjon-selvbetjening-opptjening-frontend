@@ -25,8 +25,8 @@ spec:
   vault:
     enabled: true
     paths:
-      - kvPath: /apikey/apigw/dev/pensjon-selvbetjening-opptjening-backend/pensjon-selvbetjening-opptjening-frontend_q1
-        mountPath: /secret/apigw
+      - kvPath: "/apikey/apigw/dev/pensjon-selvbetjening-opptjening-backend/pensjon-selvbetjening-opptjening-frontend_q1"
+        mountPath: "/secret/apigw"
   env:
-    - name: API_GATEWAY
-      value: https://api-gw-q1.oera.no/pensjon-selvbetjening-opptjening-backend
+    - name: "API_GATEWAY"
+      value: "https://api-gw-q1.oera.no/pensjon-selvbetjening-opptjening-backend"
