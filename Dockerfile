@@ -8,7 +8,7 @@ WORKDIR /app
 COPY default.conf /etc/nginx/conf.d/app.conf.template
 # COPY default.conf /etc/nginx/conf.d/default.conf
 COPY /build /usr/share/nginx/html
-RUN rm /etc/nginx/sites-enabled/default
+# RUN rm /etc/nginx/sites-enabled/default
 
 # NODE
 COPY node_modules/ ./node_modules/
