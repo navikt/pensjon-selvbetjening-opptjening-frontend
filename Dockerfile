@@ -1,8 +1,8 @@
-FROM navikt/node-express:12.2.0-alpine
+FROM openresty/openresty:alpine-fat
 
 WORKDIR /app
 
-RUN apt-get update && apt-get -y install nginx
+# RUN apt-get update && apt-get -y install nginx
 
 # NGINX
 COPY default.conf /etc/nginx/conf.d/app.conf.template
