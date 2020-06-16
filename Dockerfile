@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM navikt/node-express:12.2.0-alpine
 
 WORKDIR /app
 
