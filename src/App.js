@@ -48,7 +48,7 @@ function App() {
                     >
                         Learn React
                     </a>
-                    {opptjening.pensjonspoeng[0]}
+                    {opptjening.pensjonspoeng[0].fnr}
                 </header>
             </div>
         );
