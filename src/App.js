@@ -13,7 +13,7 @@ function App() {
   // similar to componentDidMount()
 
   useEffect(() => {
-    fetch("/api/opptjening/123456", {
+    fetch("/api/opptjening/pensjonspoeng/23115225588", {
       method: "GET"
     })
         .then(res => res.json())
@@ -48,7 +48,7 @@ function App() {
                     >
                         Learn React
                     </a>
-                    {opptjening.fnr}: {opptjening.inntekt}
+                    {opptjening.pensjonspoeng[0]}
                 </header>
             </div>
         );
