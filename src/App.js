@@ -32,7 +32,7 @@ function App() {
         )
   }, []);
 
-    if (isLoaded && opptjening.pensjonspoeng[0]) {
+    if (isLoaded && opptjening && opptjening.pensjonspoeng && opptjening.pensjonspoeng[0]) {
         return (
             <div className="App">
                 <header className="App-header">
