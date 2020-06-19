@@ -4,39 +4,40 @@ import './App.css';
 
 function App() {
 
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [opptjening, setOpptjening] = useState({});
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [opptjening, setOpptjening] = useState({});
 
-  // Note: the empty deps array [] means
-  // this useEffect will run once
-  // similar to componentDidMount()
+    // Note: the empty deps array [] means
+    // this useEffect will run once
+    // similar to componentDidMount()
 
-  useEffect(() => {
-    fetch("/api/opptjening/pensjonspoeng/23115225588", {
-      method: "GET"
-    })
-        .then(res => res.json())
-        .then(
-            (response) => {
-                if (response.status === 401) {
-                    setIsLoaded(false)
-                    setError("UNAUTHORIZED");
-                    //window.location.href = process.env.REACT_APP_LOGIN_SERVICE_URL ?? '';
-                } else if (response.status === 200) {
+    useEffect(() => {
+        fetch("/api/opptjening/pensjonspoeng/23115225588", {
+            method: "GET",
+            credentials: true,
+        })
+            .then(res => res.json())
+            .then(
+                (response) => {
+                    if (response.status === 401) {
+                        setIsLoaded(false)
+                        setError("UNAUTHORIZED");
+                        window.location.href = "https://loginservice-q.nav.no/login?redirect=https://https://pensjon-opptjening-q.nav.no/"
+                    } else if (response.status === 200) {
+                        setIsLoaded(true);
+                        setOpptjening(response);
+                    }
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
                     setIsLoaded(true);
-                    setOpptjening(response);
+                    setError(error);
                 }
-            },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
-            (error) => {
-              setIsLoaded(true);
-              setError(error);
-            }
-        )
-  }, []);
+            )
+    }, []);
 
     if (isLoaded && opptjening && opptjening.pensjonspoeng && opptjening.pensjonspoeng[0]) {
         return (
@@ -58,10 +59,10 @@ function App() {
                 </header>
             </div>
         );
-    } else if (error){
-        return(<div>{error}</div>);
+    } else if (error) {
+        return (<div>{error}</div>);
     } else {
-        return(<div>LOADING</div>);
+        return (<div>LOADING</div>);
     }
 }
 
