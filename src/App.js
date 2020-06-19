@@ -15,7 +15,7 @@ function App() {
     useEffect(() => {
         fetch("/api/opptjening/pensjonspoeng/23115225588", {
             method: "GET",
-            credentials: true,
+            credentials: "include"
         })
             .then(res => res.json())
             .then(
