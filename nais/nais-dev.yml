@@ -18,7 +18,7 @@ spec:
   ingresses:
     - "https://pensjon-selvbetjening-opptjening-frontend.nais.preprod.local"
     - "https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io"
-    - "https://www-q2.nav.no/pensjon/opptjening"
+    - "https://www-q1.nav.no/pensjon/opptjening"
   readiness:
     path: "/api/internal/isReady"
     initialDelay: 3
