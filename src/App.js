@@ -23,7 +23,7 @@ function App() {
                     if (response.status === 401) {
                         setIsLoaded(false)
                         setError("UNAUTHORIZED");
-                        window.location.href = "https://loginservice-q.nav.no/login?redirect=https://https://pensjon-opptjening-q.nav.no/"
+                        window.location.href = "https://loginservice-q.nav.no/login?redirect=https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io/"
                     } else if (response.status === 200) {
                         setIsLoaded(true);
                         setOpptjening(response);
