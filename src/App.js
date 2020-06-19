@@ -18,9 +18,15 @@ function App() {
     })
         .then(res => res.json())
         .then(
-            (result) => {
-              setIsLoaded(true);
-              setOpptjening(result);
+            (response) => {
+                if (response.status === 401) {
+                    setIsLoaded(false)
+                    setError("UNAUTHORIZED");
+                    //window.location.href = process.env.REACT_APP_LOGIN_SERVICE_URL ?? '';
+                } else if (response.status === 200) {
+                    setIsLoaded(true);
+                    setOpptjening(response);
+                }
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
