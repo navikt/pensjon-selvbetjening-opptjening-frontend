@@ -14,8 +14,6 @@ COPY /build /usr/share/nginx/html
 COPY node_modules/ ./node_modules/
 COPY startup.sh .
 
-RUN PATH="./node_modules/json-server/bin:$PATH"
-RUN export PATH
 RUN chmod 744 ./startup.sh
 
 EXPOSE 8080
