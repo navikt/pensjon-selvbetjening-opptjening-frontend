@@ -23,7 +23,7 @@ function App() {
                     if (response.status === 401) {
                         setIsLoaded(false)
                         setError("UNAUTHORIZED");
-                        window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
+                        //window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
                     } else if (response.status === 200) {
                         setIsLoaded(true);
                         setOpptjening(response);
@@ -60,7 +60,25 @@ function App() {
             </div>
         );
     } else if (error) {
-        return (<div>{error}</div>);
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo"/>
+                    <p>
+                        Edit <code>src/App.js</code> and save to reload.
+                    </p>
+                    <a
+                        className="App-link"
+                        href="https://reactjs.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Learn React
+                    </a>
+                    {error}
+                </header>
+            </div>
+        );
     } else {
         return (<div>LOADING</div>);
     }
