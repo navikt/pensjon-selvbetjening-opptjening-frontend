@@ -13,7 +13,7 @@ function App() {
     // similar to componentDidMount()
 
     useEffect(() => {
-        fetch("/api/opptjening/pensjonspoeng/23115225588", {
+        fetch("/pensjon/opptjening/api/opptjening/pensjonspoeng/23115225588", {
             method: "GET",
             credentials: "include"
         })
@@ -23,7 +23,7 @@ function App() {
                     if (response.status === 401) {
                         setIsLoaded(false)
                         setError("UNAUTHORIZED");
-                        window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q1.nav.no/pensjon/opptjening/"
+                        window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
                     } else if (response.status === 200) {
                         setIsLoaded(true);
                         setOpptjening(response);
