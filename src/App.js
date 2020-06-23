@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
 
 function App() {
@@ -13,9 +14,8 @@ function App() {
     // similar to componentDidMount()
 
     useEffect(() => {
-        fetch("/pensjon/opptjening/api/opptjening/pensjonspoeng/23115225588", {
-            method: "GET",
-            credentials: "include"
+        axios.get("/pensjon/opptjening/api/opptjening/pensjonspoeng/23115225588", {
+            withCredentials: true
         })
             .then(res => res.json())
             .then(
