@@ -27,6 +27,9 @@ function App() {
                     } else if (response.status === 200) {
                         setIsLoaded(true);
                         setOpptjening(response.pensjonspoeng);
+                    } else {
+                        setIsLoaded(true);
+                        setOpptjening(response.pensjonspoeng);
                     }
                 },
                 // Note: it's important to handle errors here
@@ -43,8 +46,6 @@ function App() {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
         return <div>Loading...</div>;
-    } else if (isLoaded){
-        return <div>Loaded</div>;
     } else {
         return (
             <div className="App">
