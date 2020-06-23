@@ -65,7 +65,7 @@ function App() {
                     <ul>
                         {opptjening.map(pensjonspoeng => (
                             <li>
-                                {pensjonspoeng.fnr}
+                                {pensjonspoeng.inntekt.inntektAr}: {pensjonspoeng.inntekt.belop}
                             </li>
                         ))}
                     </ul>
