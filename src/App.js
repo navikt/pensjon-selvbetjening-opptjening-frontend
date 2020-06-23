@@ -23,13 +23,10 @@ function App() {
                     if (response.status === 401) {
                         setIsLoaded(false);
                         setError("UNAUTHORIZED");
-                        console.log("401: " + response);
                         window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
                     } else if (response.status === 200) {
                         setIsLoaded(true);
                         setOpptjening(response.pensjonspoeng);
-                        console.log("200:" + response);
-                        debugger;
                     }
                 },
                 // Note: it's important to handle errors here
@@ -38,7 +35,6 @@ function App() {
                 (error) => {
                     setIsLoaded(true);
                     setError(error);
-                    console.log("Error:" + error)
                 }
             )
     }, []);
@@ -47,6 +43,8 @@ function App() {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
         return <div>Loading...</div>;
+    } else if (isLoaded){
+        return <div>Loaded</div>;
     } else {
         return (
             <div className="App">
