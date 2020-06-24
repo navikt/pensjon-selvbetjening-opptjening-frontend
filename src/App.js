@@ -26,10 +26,10 @@ function App() {
                         window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
                     } else if (response.status === 200) {
                         setIsLoaded(true);
-                        setOpptjening(response.pensjonspoeng);
+                        setOpptjening(response);
                     } else {
                         setIsLoaded(true);
-                        setOpptjening(response.pensjonspoeng);
+                        setOpptjening(response);
                     }
                 },
                 // Note: it's important to handle errors here
