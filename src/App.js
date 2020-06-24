@@ -13,7 +13,7 @@ function App() {
     // similar to componentDidMount()
 
     useEffect(() => {
-        fetch("/pensjon/opptjening/api/opptjening/pensjonspoeng/23115225588", {
+        fetch("/pensjon/opptjening/api/opptjening/pensjonspoeng", {
             method: "GET",
             credentials: "include"
         })
