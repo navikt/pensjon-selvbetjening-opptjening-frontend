@@ -61,7 +61,7 @@ function App() {
                         <li>showRestpensjon: {opptjening.showRestpensjon}</li>
                     </ul>
                     Opptjeningsdata:
-                    {Object.keys(oData).forEach((year) => {
+                    {oData && Object.keys(oData).forEach((year) => {
                         return (
                             <ul>
                                 <li>{oData[year].ar}</li>
