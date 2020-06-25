@@ -6,7 +6,7 @@ function App() {
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [opptjening, setOpptjening] = useState([]);
+    const [opptjening, setOpptjening] = useState({});
 
     // Note: the empty deps array [] means
     // this useEffect will run once
@@ -51,54 +51,35 @@ function App() {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                    <ul>
-                        {opptjening.map(pensjonspoeng => (
-                            <li>
-                                {pensjonspoeng.inntekt.inntektAr}: {pensjonspoeng.inntekt.belop}
-                            </li>
-                        ))}
-                    </ul>
+                    Pensjon Opptjening
                 </header>
+                <b>First year with opptjening: {opptjening.firstYearWithOpptjening}</b>
+                <b>Last year with opptjening: {opptjening.lastYearWithOpptjening}</b>
+                <b>Number of years with pensjonspoeng: {opptjening.numberOfYearsWithPensjonspoeng}</b>
+                <b>overforOmsorgPossible: {opptjening.overforOmsorgspoengPossible}</b>
+                <b>showRestpensjon: {opptjening.showRestpensjon}</b>
+
+                {Object.keys(opptjening.opptjeningData).forEach((year) => {
+                    return (
+                        <ul>
+                            <li>{year.ar}</li>
+                            <li>{year.gjennomsnittligG}</li>
+                            <li>{year.hjelpMerknad}</li>
+                            <li>{year.maksUforegrad}</li>
+                            <li>{year.omsorgspoeng}</li>
+                            <li>{year.omsorgspoengType}</li>
+                            <li>{year.pensjonsbeholdning}</li>
+                            <li>{year.pensjonsgivendeInntekt}</li>
+                            <li>{year.pensjonspoeng}</li>
+                            <li>{year.registrertePensjonspoeng}</li>
+                            <li>{year.restpensjon}</li>
+                        </ul>
+                    )
+                })}
             </div>
         );
     }
 
-    // if (isLoaded && opptjening && opptjening.pensjonspoeng && opptjening.pensjonspoeng[0]) {
-    //     return (
-    //         <div className="App">
-    //             <header className="App-header">
-    //                 <img src={logo} className="App-logo" alt="logo"/>
-    //                 <p>
-    //                     Edit <code>src/App.js</code> and save to reload.
-    //                 </p>
-    //                 <a
-    //                     className="App-link"
-    //                     href="https://reactjs.org"
-    //                     target="_blank"
-    //                     rel="noopener noreferrer"
-    //                 >
-    //                     Learn React
-    //                 </a>
-    //                 {opptjening.pensjonspoeng[0].fnr}
-    //             </header>
-    //         </div>
-    //     );
-    // } else if (error) {
-    //     return (<div>{error}</div>);
-    // } else {
-    //     return (<div>LOADING</div>);
-    // }
 }
 
 export default App;
