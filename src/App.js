@@ -59,23 +59,23 @@ function App() {
                 <b>overforOmsorgPossible: {opptjening.overforOmsorgspoengPossible}</b>
                 <b>showRestpensjon: {opptjening.showRestpensjon}</b>
 
-                {Object.keys(opptjening.opptjeningData).forEach((year) => {
-                    return (
-                        <ul>
-                            <li>{year.ar}</li>
-                            <li>{year.gjennomsnittligG}</li>
-                            <li>{year.hjelpMerknad}</li>
-                            <li>{year.maksUforegrad}</li>
-                            <li>{year.omsorgspoeng}</li>
-                            <li>{year.omsorgspoengType}</li>
-                            <li>{year.pensjonsbeholdning}</li>
-                            <li>{year.pensjonsgivendeInntekt}</li>
-                            <li>{year.pensjonspoeng}</li>
-                            <li>{year.registrertePensjonspoeng}</li>
-                            <li>{year.restpensjon}</li>
-                        </ul>
-                    )
-                })}
+                {/*{Object.keys(opptjening.opptjeningData).forEach((year) => {*/}
+                {/*    return (*/}
+                {/*        <ul>*/}
+                {/*            <li>{year.ar}</li>*/}
+                {/*            <li>{year.gjennomsnittligG}</li>*/}
+                {/*            <li>{year.hjelpMerknad}</li>*/}
+                {/*            <li>{year.maksUforegrad}</li>*/}
+                {/*            <li>{year.omsorgspoeng}</li>*/}
+                {/*            <li>{year.omsorgspoengType}</li>*/}
+                {/*            <li>{year.pensjonsbeholdning}</li>*/}
+                {/*            <li>{year.pensjonsgivendeInntekt}</li>*/}
+                {/*            <li>{year.pensjonspoeng}</li>*/}
+                {/*            <li>{year.registrertePensjonspoeng}</li>*/}
+                {/*            <li>{year.restpensjon}</li>*/}
+                {/*        </ul>*/}
+                {/*    )*/}
+                {/*})}*/}
             </div>
         );
     }
