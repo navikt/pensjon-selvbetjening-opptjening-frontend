@@ -53,32 +53,33 @@ function App() {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     Pensjon opptjening:
-                    <ul>
-                        <li>First year with opptjening: {opptjening.firstYearWithOpptjening}</li>
-                        <li>Last year with opptjening: {opptjening.lastYearWithOpptjening}</li>
-                        <li>Number of years with pensjonspoeng: {opptjening.numberOfYearsWithPensjonspoeng}</li>
-                        <li>overforOmsorgPossible: {opptjening.overforOmsorgspoengPossible}</li>
-                        <li>showRestpensjon: {opptjening.showRestpensjon}</li>
-                    </ul>
-                    Opptjeningsdata:
+                </header>
+                <div className="App-body">
+                    First year with opptjening: {opptjening.firstYearWithOpptjening}<br/>
+                    Last year with opptjening: {opptjening.lastYearWithOpptjening}<br/>
+                    Number of years with pensjonspoeng: {opptjening.numberOfYearsWithPensjonspoeng}<br/>
+                    overforOmsorgPossible: {opptjening.overforOmsorgspoengPossible}<br/>
+                    showRestpensjon: {opptjening.showRestpensjon}<br/>
+
+                    <p>Opptjeningsdata:</p>
                     {oData && Object.keys(oData).map((year) => {
                         return (
-                            <ul>
-                                <li>{oData[year].ar}</li>
-                                <li>{oData[year].gjennomsnittligG}</li>
-                                <li>{oData[year].hjelpMerknad}</li>
-                                <li>{oData[year].maksUforegrad}</li>
-                                <li>{oData[year].omsorgspoeng}</li>
-                                <li>{oData[year].omsorgspoengType}</li>
-                                <li>{oData[year].pensjonsbeholdning}</li>
-                                <li>{oData[year].pensjonsgivendeInntekt}</li>
-                                <li>{oData[year].pensjonspoeng}</li>
-                                <li>{oData[year].registrertePensjonspoeng}</li>
-                                <li>{oData[year].restpensjon}</li>
-                            </ul>
+                            <p>
+                                År: {oData[year].ar}<br/>
+                                Gjennomsnittlig G: {oData[year].gjennomsnittligG}<br/>
+                                Hjelpmerknad: {oData[year].hjelpMerknad}<br/>
+                                Maks uføregrad: {oData[year].maksUforegrad}<br/>
+                                Omsorgspoeng: {oData[year].omsorgspoeng}<br/>
+                                Omsorgspoengtype: {oData[year].omsorgspoengType}<br/>
+                                Pensjonsbeholdning: {oData[year].pensjonsbeholdning}<br/>
+                                Pensjonsgivende inntekt: {oData[year].pensjonsgivendeInntekt}<br/>
+                                Pensjonspoeng: {oData[year].pensjonspoeng}<br/>
+                                Regoistrerte pensjonspoeng: {oData[year].registrertePensjonspoeng}<br/>
+                                Restpensjon: {oData[year].restpensjon}
+                            </p>
                         )
                     })}
-                </header>
+                </div>
             </div>
         );
     }
