@@ -47,35 +47,38 @@ function App() {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
+        let o = opptjening;
         return (
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     Pensjon Opptjening
                 </header>
-                <b>First year with opptjening: {opptjening.firstYearWithOpptjening}</b>
-                <b>Last year with opptjening: {opptjening.lastYearWithOpptjening}</b>
-                <b>Number of years with pensjonspoeng: {opptjening.numberOfYearsWithPensjonspoeng}</b>
-                <b>overforOmsorgPossible: {opptjening.overforOmsorgspoengPossible}</b>
-                <b>showRestpensjon: {opptjening.showRestpensjon}</b>
+                <div className="App-header">
+                    <b>First year with opptjening: {o.firstYearWithOpptjening}</b><br/>
+                    <b>Last year with opptjening: {o.lastYearWithOpptjening}</b><br/>
+                    <b>Number of years with pensjonspoeng: {o.numberOfYearsWithPensjonspoeng}</b><br/>
+                    <b>overforOmsorgPossible: {o.overforOmsorgspoengPossible}</b><br/>
+                    <b>showRestpensjon: {o.showRestpensjon}</b><br/>
 
-                {/*{Object.keys(opptjening.opptjeningData).forEach((year) => {*/}
-                {/*    return (*/}
-                {/*        <ul>*/}
-                {/*            <li>{year.ar}</li>*/}
-                {/*            <li>{year.gjennomsnittligG}</li>*/}
-                {/*            <li>{year.hjelpMerknad}</li>*/}
-                {/*            <li>{year.maksUforegrad}</li>*/}
-                {/*            <li>{year.omsorgspoeng}</li>*/}
-                {/*            <li>{year.omsorgspoengType}</li>*/}
-                {/*            <li>{year.pensjonsbeholdning}</li>*/}
-                {/*            <li>{year.pensjonsgivendeInntekt}</li>*/}
-                {/*            <li>{year.pensjonspoeng}</li>*/}
-                {/*            <li>{year.registrertePensjonspoeng}</li>*/}
-                {/*            <li>{year.restpensjon}</li>*/}
-                {/*        </ul>*/}
-                {/*    )*/}
-                {/*})}*/}
+                    {/*{Object.keys(opptjening.opptjeningData).forEach((year) => {*/}
+                    {/*    return (*/}
+                    {/*        <ul>*/}
+                    {/*            <li>{year.ar}</li>*/}
+                    {/*            <li>{year.gjennomsnittligG}</li>*/}
+                    {/*            <li>{year.hjelpMerknad}</li>*/}
+                    {/*            <li>{year.maksUforegrad}</li>*/}
+                    {/*            <li>{year.omsorgspoeng}</li>*/}
+                    {/*            <li>{year.omsorgspoengType}</li>*/}
+                    {/*            <li>{year.pensjonsbeholdning}</li>*/}
+                    {/*            <li>{year.pensjonsgivendeInntekt}</li>*/}
+                    {/*            <li>{year.pensjonspoeng}</li>*/}
+                    {/*            <li>{year.registrertePensjonspoeng}</li>*/}
+                    {/*            <li>{year.restpensjon}</li>*/}
+                    {/*        </ul>*/}
+                    {/*    )*/}
+                    {/*})}*/}
+                </div>
             </div>
         );
     }
