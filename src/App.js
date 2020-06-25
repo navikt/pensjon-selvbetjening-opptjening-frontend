@@ -47,6 +47,7 @@ function App() {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
+        let oData = opptjening.opptjeningData;
         return (
             <div className="App">
                 <header className="App-header">
@@ -60,20 +61,20 @@ function App() {
                         <li>showRestpensjon: {opptjening.showRestpensjon}</li>
                     </ul>
                     Opptjeningsdata:
-                    {opptjening && opptjening.opptjeningData && Object.keys(opptjening.opptjeningData).forEach((year) => {
+                    {Object.keys(oData).forEach((year) => {
                         return (
                             <ul>
-                                <li>{year.ar}</li>
-                                <li>{year.gjennomsnittligG}</li>
-                                <li>{year.hjelpMerknad}</li>
-                                <li>{year.maksUforegrad}</li>
-                                <li>{year.omsorgspoeng}</li>
-                                <li>{year.omsorgspoengType}</li>
-                                <li>{year.pensjonsbeholdning}</li>
-                                <li>{year.pensjonsgivendeInntekt}</li>
-                                <li>{year.pensjonspoeng}</li>
-                                <li>{year.registrertePensjonspoeng}</li>
-                                <li>{year.restpensjon}</li>
+                                <li>{oData[year].ar}</li>
+                                <li>{oData[year].gjennomsnittligG}</li>
+                                <li>{oData[year].hjelpMerknad}</li>
+                                <li>{oData[year].maksUforegrad}</li>
+                                <li>{oData[year].omsorgspoeng}</li>
+                                <li>{oData[year].omsorgspoengType}</li>
+                                <li>{oData[year].pensjonsbeholdning}</li>
+                                <li>{oData[year].pensjonsgivendeInntekt}</li>
+                                <li>{oData[year].pensjonspoeng}</li>
+                                <li>{oData[year].registrertePensjonspoeng}</li>
+                                <li>{oData[year].restpensjon}</li>
                             </ul>
                         )
                     })}
