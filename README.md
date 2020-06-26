@@ -4,9 +4,9 @@ Frontend-applikasjon for selvbetjening relatert til pensjonsopptjening.
 
 # Bruk
 
-Appen kan nås på følgende adresse: 
-[https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io](https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io)
-[https://www-q0.nav.no/pensjon/opptjening/] (https://www-q0.nav.no/pensjon/opptjening/)
+Appen kan nås på følgende adresser: 
+- [https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io](https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io)
+- [https://www-q0.nav.no/pensjon/opptjening/](https://www-q0.nav.no/pensjon/opptjening/)
 
 # Henvendelser
 
@@ -19,8 +19,8 @@ Prosjektet ble initialisert med [Create React App](https://github.com/facebook/c
 
 ## Utvikling lokalt
 
-Bruk `npm start` for å kjøre appen i utviklingsmodus.<br/>
-Åpne [http://localhost:3000](http://localhost:3000) for å se den i nettleser.
+Bruk `npm run dev` for å kjøre appen i utviklingsmodus.<br/>
+Åpne [http://localhost:3000/pensjon/opptjening](http://localhost:3000/pensjon/opptjening) for å se den i nettleser.
 
 ## Available Scripts
 
