@@ -13,7 +13,7 @@ function App() {
     // similar to componentDidMount()
 
     useEffect(() => {
-        fetch("/api/opptjening", {
+        fetch("/pensjon/opptjening/api/opptjening", {
             method: "GET",
             credentials: "include"
         })
