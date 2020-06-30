@@ -6,10 +6,10 @@ import {fetchOpptjeningStarted} from "../redux/opptjening/opptjeningActions";
 const LoadContainer = (props) => {
     const {children, opptjeningLoading, opptjeningError} = props;
     console.log(opptjeningLoading);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchOpptjeningStarted());
-    }, []);
+    }, [dispatch]);
 
     if(opptjeningLoading){
         return (
