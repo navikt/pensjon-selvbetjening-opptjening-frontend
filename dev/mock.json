@@ -832,8 +832,6 @@
     },
     "numberOfYearsWithPensjonspoeng": 45,
     "showRestpensjon": false,
-    "firstYearWithOpptjening": 1970,
-    "lastYearWithOpptjening": 2015,
     "overforOmsorgspoengPossible": true
   }
 }
