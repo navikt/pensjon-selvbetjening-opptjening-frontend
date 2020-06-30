@@ -33,6 +33,7 @@ function verifyStatusSuccessOrRedirect(response) {
         window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/";
         throw new Error("unauthorized");
     } else {
+        console.log(response.status)
         return response.status;
     }
     // if (response.status >= 200 && response.status < 305) {
