@@ -11,10 +11,9 @@ export const serverRequest = (method,urlPath) => {
 
     return new Promise((resolve, reject) => {
         fetch(urlPath, OPTIONS)
-            .then(res => res.json())
             .then((response) => {
                 verifyStatusSuccessOrRedirect(response);
-                resolve(response);
+                resolve(response.json());
             })
             .catch((reason) => reject(reason));
     });
@@ -32,20 +31,16 @@ function verifyStatusSuccessOrRedirect(response) {
     if (response.status === 401) {
         window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/";
         throw new Error("unauthorized");
-    } else {
-        console.log(response.status)
+    }
+    if (response.status >= 200 && response.status < 300) {
         return response.status;
     }
-    // if (response.status >= 200 && response.status < 305) {
-    //     return response.status;
-    // }
-    // throw new Error(response.statusText);
+    throw new Error(response.statusText);
 }
 
 function* fetchOpptjening() {
     try {
-        const response = yield call(fetchToJson, "/pensjon/opptjening/api/opptjening", true);
-        const opptjening = response;
+        const opptjening = yield call(fetchToJson, "/pensjon/opptjening/api/opptjening", true);
         yield put({ "type": FETCH_OPPTJENING_SUCCESS, opptjening });
     } catch (error) {
         yield put({ "type": FETCH_OPPTJENING_FAILURE, error });
