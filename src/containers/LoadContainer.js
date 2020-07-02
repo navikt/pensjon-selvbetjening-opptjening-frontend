@@ -1,11 +1,12 @@
 import React, {useEffect} from "react";
-import { useDispatch } from 'react-redux'
-import {connect} from "react-redux";
+import { useDispatch, useSelector, shallowEqual} from 'react-redux';
 import {fetchOpptjeningStarted} from "../redux/opptjening/opptjeningActions";
+import {getOpptjeningLoading, getOpptjeningError} from "../redux/opptjening/opptjeningSelectors"
 
-const LoadContainer = (props) => {
-    const {children, opptjeningLoading, opptjeningError} = props;
-    console.log(opptjeningLoading);
+export const LoadContainer = (props) => {
+    const {children} = props;
+    const opptjeningLoading = useSelector(getOpptjeningLoading, shallowEqual);
+    const opptjeningError = useSelector(getOpptjeningError, shallowEqual);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchOpptjeningStarted());
@@ -26,13 +27,3 @@ const LoadContainer = (props) => {
 
     return <>{children}</>
 };
-
-const mapStateToProps = (state) => {
-    return {
-        opptjeningLoading: state.opptjening.opptjeningLoading,
-        opptjeningError: state.opptjening.opptjeningError
-
-    };
-};
-
-export default connect(mapStateToProps)(LoadContainer);

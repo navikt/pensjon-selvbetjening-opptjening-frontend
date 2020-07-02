@@ -1,10 +1,11 @@
 import React from 'react';
-import {connect} from "react-redux";
+import {useSelector, shallowEqual} from "react-redux";
 import logo from './logo.svg';
 import './App.css';
+import {getOpptjening} from "./redux/opptjening/opptjeningSelectors"
 
-function App(props) {
-    const {opptjening} = props;
+export const App = () => {
+    const opptjening = useSelector(getOpptjening, shallowEqual);
     let oData = opptjening.opptjeningData;
     return (
         <div className="App">
@@ -40,12 +41,4 @@ function App(props) {
             </div>
         </div>
     );
-}
-
-const mapStateToProps = (state) => {
-    return {
-        opptjening: state.opptjening.opptjening
-    };
 };
-
-export default connect(mapStateToProps)(App);

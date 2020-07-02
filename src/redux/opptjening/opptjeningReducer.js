@@ -1,10 +1,5 @@
+import {initialState} from './opptjeningSelectors'
 import {FETCH_OPPTJENING_STARTED, FETCH_OPPTJENING_SUCCESS, FETCH_OPPTJENING_FAILURE} from './opptjeningActions'
-
-export const initialState = {
-    opptjening: null,
-    opptjeningLoading: true,
-    opptjeningError: undefined
-};
 
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -12,8 +7,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 opptjeningLoading: true,
-                opptjeningErrorType: undefined,
-                opptjeningErrorMessage: undefined,
+                opptjeningError: undefined
             };
 
         case FETCH_OPPTJENING_SUCCESS:
