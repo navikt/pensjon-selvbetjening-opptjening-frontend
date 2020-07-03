@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^5.6.4",
+    "@navikt/craco-plugins": "^1.0.1",
+    "craco-less": "^1.17.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -47,9 +50,6 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^5.6.4",
-    "@navikt/craco-plugins": "^1.0.1",
-    "craco-less": "^1.17.0",
     "http-proxy-middleware": "^1.0.4",
     "json-server": "^0.16.1",
     "redux-devtools": "^3.5.0",
