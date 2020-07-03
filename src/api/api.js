@@ -12,7 +12,7 @@ const RequestMethod = {
 const serverRequest = (method, urlPath) => {
     const OPTIONS = {
         method: method,
-        credentials: getCredentialsParam()  //Check isDev or not
+        credentials: getCredentialsParam()
     };
 
     return new Promise((resolve, reject) => {

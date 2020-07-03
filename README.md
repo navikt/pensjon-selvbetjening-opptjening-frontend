@@ -19,8 +19,9 @@ Prosjektet ble initialisert med [Create React App](https://github.com/facebook/c
 
 ## Utvikling lokalt
 
-Bruk `npm run dev` for å kjøre appen i utviklingsmodus.<br/>
+Bruk `npm run dev` for å kjøre appen i utviklingsmodus.<br/> 
 Åpne [http://localhost:3000/pensjon/opptjening](http://localhost:3000/pensjon/opptjening) for å se den i nettleser.
+App'en kjører da opp en lokal JSON-server som mocker data.
 
 ## Available Scripts
 
