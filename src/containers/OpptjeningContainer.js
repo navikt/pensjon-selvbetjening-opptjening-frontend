@@ -2,8 +2,10 @@ import React, {useEffect} from "react";
 import { useDispatch, useSelector, shallowEqual} from 'react-redux';
 import {fetchOpptjeningStarted} from "../redux/opptjening/opptjeningActions";
 import {getOpptjeningLoading, getOpptjeningError} from "../redux/opptjening/opptjeningSelectors"
+import NavFrontendSpinner from "nav-frontend-spinner";
+import "./OpptjeningContainer.less"
 
-export const LoadContainer = (props) => {
+export const OpptjeningContainer = (props) => {
     const {children} = props;
     const opptjeningLoading = useSelector(getOpptjeningLoading, shallowEqual);
     const opptjeningError = useSelector(getOpptjeningError, shallowEqual);
@@ -14,14 +16,14 @@ export const LoadContainer = (props) => {
 
     if(opptjeningLoading){
         return (
-            <div>LASTER</div>
+            <div className="loading-spinner"><NavFrontendSpinner/></div>
         )
     }
 
     if(opptjeningError){
         console.log("Error: " + opptjeningError.message);
         return (
-            <div>FEIL</div>
+            <div></div>
         )
     }
 

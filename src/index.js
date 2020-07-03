@@ -4,17 +4,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {Provider} from "react-redux";
 import './index.less';
 import {App} from './App';
-import {LoadContainer} from "./containers/LoadContainer";
 import * as serviceWorker from './serviceWorker';
 import store from './redux/index';
 
 ReactDOM.render(
     <Provider store={store}>
-        <LoadContainer>
-            <Router>
-                <App />
-            </Router>
-        </LoadContainer>
+        <Router>
+            <App />
+        </Router>
     </Provider>,
     document.getElementById('root')
 );
