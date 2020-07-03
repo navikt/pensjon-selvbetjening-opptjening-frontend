@@ -3,8 +3,6 @@ import {useSelector, shallowEqual} from "react-redux";
 import {getOpptjening} from "../../redux/opptjening/opptjeningSelectors"
 import Veileder from 'nav-frontend-veileder';
 
-import logo from '../../logo.svg';
-
 export const HomePage = () => {
     const opptjening = useSelector(getOpptjening, shallowEqual);
     let oData = opptjening.opptjeningData;
