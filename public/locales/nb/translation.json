@@ -4,5 +4,13 @@
         "intro_text": "Her finner du en samlet oversikt over pensjonsopptjeningen din. Du kan tjene opp pensjonsrettigheter til og med det året du fyller 75 år. Hvis du fylte 13 år i 2010 eller senere kan du få opptjening fra det året du fylte 13 år. Var du 17 år eller eldre i 2010 kan du få opptjening fra det året du fylte 17 år.",
         "year": "År",
         "average_G": "Gjennomsnittlig G "
+    },
+
+    "languageSelector": {
+        "choose_language": "Velg språk:",
+        "bokmaal": "Bokmål",
+        "nynorsk": "Nynorsk",
+        "english": "Engelsk"
     }
+
 }

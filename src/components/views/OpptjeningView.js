@@ -3,23 +3,17 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 import {shallowEqual, useSelector} from "react-redux";
 import {getOpptjening} from "../../redux/opptjening/opptjeningSelectors";
+import {LanguageSelector} from "../elements/LanguageSelector/LanguageSelector";
 
 export const OpptjeningView = () => {
     const opptjening = useSelector(getOpptjening, shallowEqual);
-    const { t, i18n } = useTranslation();
-
-    const changeLanguage = lng => {
-        i18n.changeLanguage(lng);
-    };
+    const { t } = useTranslation();
 
     let oData = opptjening.opptjeningData;
     return(
         <div>
             <h1>{t('opptjening.title')}</h1>
-            <button onClick={() => changeLanguage('nb')}>Bokmål</button>
-            <button onClick={() => changeLanguage('nn')}>Nynorsk</button>
-            <button onClick={() => changeLanguage('en')}>Engelsk</button>
-            <p/>
+            <LanguageSelector/>
             <Veilederpanel fargetema="suksess" svg=
                 {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 93">
