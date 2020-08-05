@@ -6,12 +6,17 @@ import './index.less';
 import {App} from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './redux/index';
+import { Suspense} from 'react' ;
+import NavFrontendSpinner from "nav-frontend-spinner";
+import './i18n';
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router>
-            <App />
-        </Router>
+        <Suspense fallback={NavFrontendSpinner}>
+            <Router>
+                <App />
+            </Router>
+        </Suspense>
     </Provider>,
     document.getElementById('root')
 );

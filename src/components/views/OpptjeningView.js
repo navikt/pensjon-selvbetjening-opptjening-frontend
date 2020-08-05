@@ -1,15 +1,25 @@
 import Veilederpanel from "nav-frontend-veilederpanel";
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import {shallowEqual, useSelector} from "react-redux";
 import {getOpptjening} from "../../redux/opptjening/opptjeningSelectors";
 
 export const OpptjeningView = () => {
     const opptjening = useSelector(getOpptjening, shallowEqual);
-    let oData = opptjening.opptjeningData;
+    const { t, i18n } = useTranslation();
 
+    const changeLanguage = lng => {
+        i18n.changeLanguage(lng);
+    };
+
+    let oData = opptjening.opptjeningData;
     return(
         <div>
-            <h1>Din pensjonsopptjening</h1>
+            <h1>{t('opptjening.title')}</h1>
+            <button onClick={() => changeLanguage('nb')}>Bokmål</button>
+            <button onClick={() => changeLanguage('nn')}>Nynorsk</button>
+            <button onClick={() => changeLanguage('en')}>Engelsk</button>
+            <p/>
             <Veilederpanel fargetema="suksess" svg=
                 {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 93">
@@ -31,20 +41,16 @@ export const OpptjeningView = () => {
                         <path fill="#f6b873" d="M25.9 43.4c-4.4 0-8-1.4-8-3.2s3.6-3.2 8-3.2 8 1.4 8 3.2c0 1.8-3.6 3.2-8 3.2m.8-9.4c-2.9 0-4.7.7-8.8 2.1-12.7 4.6-11.6-14-11.6-14C3.4 46 18.6 52 26.5 52c8.1 0 24.1-8.1 21-30 0 0 .4 17.1-12.9 13.8-3.7-.9-5-1.8-7.9-1.8z"/>
                     </svg>}
             >
-                Her finner du en samlet oversikt over pensjonsopptjeningen din. Du kan tjene opp pensjonsrettigheter til og med det året du fyller 75 år.
-                Hvis du fylte 13 år i 2010 eller senere kan du få opptjening fra det året du fylte 13 år.
-                Var du 17 år eller eldre i 2010 kan du få opptjening fra det året du fylte 17 år.
+                {t('opptjening.intro_text')}
             </Veilederpanel>
             <div className="App-body">
-                <p>
-                    <h3>Antall år med pensjonspoeng: {opptjening.numberOfYearsWithPensjonspoeng}</h3>
-                </p>
+                <h3>Antall år med pensjonspoeng: {opptjening.numberOfYearsWithPensjonspoeng}</h3>
                 <h3>Opptjeningsdata:</h3>
-                {oData && Object.keys(oData).map((year) => {
+                {oData && Object.keys(oData).map((year, idx) => {
                     return (
-                        <p>
-                            År: {oData[year].ar}<br/>
-                            Gjennomsnittlig G: {oData[year].gjennomsnittligG}<br/>
+                        <p key={idx}>
+                            {t('opptjening.year')}: {oData[year].ar}<br/>
+                            {t('opptjening.average_G')}: {oData[year].gjennomsnittligG}<br/>
                             Hjelpmerknad: {oData[year].hjelpMerknad}<br/>
                             Maks uføregrad: {oData[year].maksUforegrad}<br/>
                             Omsorgspoeng: {oData[year].omsorgspoeng}<br/>
