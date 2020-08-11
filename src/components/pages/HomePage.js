@@ -1,21 +1,25 @@
 import React from 'react';
-import { Container, Row, Column } from 'nav-frontend-grid';
+import {useTranslation} from "react-i18next";
 import {OpptjeningContainer} from "../../containers/OpptjeningContainer";
 import {OpptjeningView} from "../views/OpptjeningView";
+import {TopBanner} from "../elements/TopBanner/TopBanner";
+import {LanguageSelector} from "../elements/LanguageSelector/LanguageSelector";
+import './HomePage.less';
 
 export const HomePage = () => {
+    const { t } = useTranslation();
     return (
         // Move GRID to separate re-usable template
-        <Container fluid>
-            <Row>
-                <Column md="2" xs="12" />
-                <Column md="8" xs="12">
-                    <OpptjeningContainer>
+        <div>
+            <TopBanner title="opptjening-title" text="opptjening-intro-text"/>
+            <div className="mainBody">
+                <OpptjeningContainer>
+                    <div className="contentWrapper">
+                        <LanguageSelector/>
                         <OpptjeningView/>
-                    </OpptjeningContainer>
-                </Column>
-                <Column md="2" xs="12" />
-            </Row>
-        </Container>
+                    </div>
+                </OpptjeningContainer>
+            </div>
+        </div>
     )
 };

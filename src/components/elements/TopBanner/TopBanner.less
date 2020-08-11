@@ -1,0 +1,59 @@
+.topBanner{
+  align-self: stretch;
+  background-color: #ffd49b;
+  border-bottom: 4px solid #ffbd66;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.topBannerWrapper{
+  width: 100%;
+}
+
+.topBannerContent {
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+  position: relative;
+}
+
+.topBannerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 1rem 1rem 1.4rem;
+  z-index: 1;
+  width: 100%;
+}
+
+@media (min-width: 576px){
+  .topBannerContent {
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+  .topBannerText {
+    margin-right: 350px;
+  }
+  .topBannerImgContainer {
+    align-self: flex-end;
+    margin: 0 1rem;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+}
+
+.topBannerImgContainer {
+  align-self: flex-start;
+  margin: 0 1rem 0 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

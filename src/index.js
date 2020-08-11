@@ -8,13 +8,16 @@ import * as serviceWorker from './serviceWorker';
 import store from './redux/index';
 import { Suspense} from 'react' ;
 import NavFrontendSpinner from "nav-frontend-spinner";
+import { Normaltekst } from 'nav-frontend-typografi';
 import './i18n';
 
 ReactDOM.render(
     <Provider store={store}>
         <Suspense fallback={NavFrontendSpinner}>
             <Router>
-                <App />
+                <Normaltekst tag="div">
+                    <App />
+                </Normaltekst>
             </Router>
         </Suspense>
     </Provider>,
