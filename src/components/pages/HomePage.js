@@ -1,5 +1,4 @@
 import React from 'react';
-import {useTranslation} from "react-i18next";
 import {OpptjeningContainer} from "../../containers/OpptjeningContainer";
 import {OpptjeningView} from "../views/OpptjeningView";
 import {TopBanner} from "../elements/TopBanner/TopBanner";
