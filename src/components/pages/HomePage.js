@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Column } from 'nav-frontend-grid';
 import {OpptjeningContainer} from "../../containers/OpptjeningContainer";
-import {OpptjeningView} from "../../components/views/OpptjeningView";
+import {OpptjeningView} from "../views/OpptjeningView";
 
 export const HomePage = () => {
     return (

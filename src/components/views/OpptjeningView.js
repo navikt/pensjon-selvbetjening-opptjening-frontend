@@ -12,7 +12,7 @@ export const OpptjeningView = () => {
     let oData = opptjening.opptjeningData;
     return(
         <div>
-            <h1>{t('opptjening.title')}</h1>
+            <h1>{t('opptjening-title')}</h1>
             <LanguageSelector/>
             <Veilederpanel fargetema="suksess" svg=
                 {
@@ -35,7 +35,7 @@ export const OpptjeningView = () => {
                         <path fill="#f6b873" d="M25.9 43.4c-4.4 0-8-1.4-8-3.2s3.6-3.2 8-3.2 8 1.4 8 3.2c0 1.8-3.6 3.2-8 3.2m.8-9.4c-2.9 0-4.7.7-8.8 2.1-12.7 4.6-11.6-14-11.6-14C3.4 46 18.6 52 26.5 52c8.1 0 24.1-8.1 21-30 0 0 .4 17.1-12.9 13.8-3.7-.9-5-1.8-7.9-1.8z"/>
                     </svg>}
             >
-                {t('opptjening.intro_text')}
+                {t('opptjening-intro-text')}
             </Veilederpanel>
             <div className="App-body">
                 <h3>Antall år med pensjonspoeng: {opptjening.numberOfYearsWithPensjonspoeng}</h3>
@@ -43,8 +43,8 @@ export const OpptjeningView = () => {
                 {oData && Object.keys(oData).map((year, idx) => {
                     return (
                         <p key={idx}>
-                            {t('opptjening.year')}: {oData[year].ar}<br/>
-                            {t('opptjening.average_G')}: {oData[year].gjennomsnittligG}<br/>
+                            {t('opptjening-year')}: {oData[year].ar}<br/>
+                            {t('opptjening-average-g')}: {oData[year].gjennomsnittligG}<br/>
                             Hjelpmerknad: {oData[year].hjelpMerknad}<br/>
                             Maks uføregrad: {oData[year].maksUforegrad}<br/>
                             Omsorgspoeng: {oData[year].omsorgspoeng}<br/>

@@ -13,15 +13,15 @@ export const LanguageSelector = () => {
     return(
         <div className="languageSelectorWrapper">
             <Select
-                label={t('languageSelector.choose_language')}
+                label={t('language-selector-choose-language')}
                 onChange={(event) => changeLanguage(event.target.value)}
                 value={i18n.language}
                 bredde="m"
             >
-                <option value="">{t('languageSelector.choose_language')}</option>
-                <option value="nb">{t('languageSelector.bokmaal')}</option>
-                <option value="nn">{t('languageSelector.nynorsk')}</option>
-                <option value="en">{t('languageSelector.english')}</option>
+                <option value="">{t('language-selector-choose-language')}</option>
+                <option value="nb-NO">{t('language-selector-bokmaal')}</option>
+                <option value="nn-NO">{t('language-selector-nynorsk')}</option>
+                <option value="en-GB">{t('language-selector-english')}</option>
             </Select>
         </div>
     );

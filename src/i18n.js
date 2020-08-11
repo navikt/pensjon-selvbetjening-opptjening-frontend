@@ -19,7 +19,7 @@ i18n
     // init i18next
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
-        fallbackLng: 'nb',
+        fallbackLng: 'nb-NO',
         debug: true,
         backend:{
             loadPath: '/pensjon/opptjening/locales/{{lng}}/{{ns}}.json'
@@ -27,6 +27,13 @@ i18n
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         }
+    }, (err) => {
+            if (err) return console.log('Loading i18n error', err);
+            i18n.changeLanguage('nb-NO')
     });
+
+i18n.loadLanguages(['nb-NO'], () => {});
+i18n.language = 'nb-NO';
+document.documentElement.lang = 'nb-NO';
 
 export default i18n;
