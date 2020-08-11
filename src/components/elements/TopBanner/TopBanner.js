@@ -15,7 +15,7 @@ export const TopBanner = (props) => {
                         <p className="typo-normal">{t(text)}</p>
                     </div>
                     <div role="presentation" className="topBannerImgContainer">
-                        <img src="/pensjon/opptjening/pensjon_illustrasjon_1.png" height="160" alt""/>
+                        <img src="/pensjon/opptjening/pensjon_illustrasjon_1.png" height="160" alt=""/>
                     </div>
                 </div>
             </div>
