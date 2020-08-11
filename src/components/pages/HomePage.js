@@ -7,7 +7,6 @@ import {LanguageSelector} from "../elements/LanguageSelector/LanguageSelector";
 import './HomePage.less';
 
 export const HomePage = () => {
-    const { t } = useTranslation();
     return (
         // Move GRID to separate re-usable template
         <div>
