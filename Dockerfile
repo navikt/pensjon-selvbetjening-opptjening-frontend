@@ -1,14 +1,12 @@
-FROM openresty/openresty:alpine-fat
+FROM node:carbon
 
 WORKDIR /app
 
-# RUN apt-get update && apt-get -y install nginx
+RUN apt-get update && apt-get -y install nginx && apt-get -y install gettext-base
 
 # NGINX
 COPY default.conf /etc/nginx/conf.d/app.conf.template
-# COPY default.conf /etc/nginx/conf.d/default.conf
 COPY /build /usr/share/nginx/html
-# RUN rm /etc/nginx/sites-enabled/default
 
 # NODE
 COPY node_modules/ ./node_modules/
