@@ -1,837 +1,1028 @@
 {
   "opptjening": {
     "opptjeningData": {
-      "1984": {
-        "ar": 1984,
-        "pensjonsgivendeInntekt": 28272,
-        "pensjonsbeholdning": 643496,
-        "gjennomsnittligG": 15356.613555146381,
-        "omsorgspoeng": 0.716092302173734,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.17051506417406426,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 26,
-        "registrertePensjonspoeng": 0.8832936084647164,
-        "restpensjon": 143640.0
-      },
-      "1985": {
-        "ar": 1985,
-        "pensjonsgivendeInntekt": 11026,
-        "pensjonsbeholdning": 668805,
-        "gjennomsnittligG": 38520.53444980814,
-        "omsorgspoeng": 0.36993397551141427,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.14615810647287875,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 92,
-        "registrertePensjonspoeng": 0.30629993007336886,
-        "restpensjon": 420595.0
-      },
-      "1986": {
-        "ar": 1986,
-        "pensjonsgivendeInntekt": 104043,
-        "pensjonsbeholdning": 710797,
-        "gjennomsnittligG": 74182.7865845871,
-        "omsorgspoeng": 0.9612921816959773,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.6361925619586333,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 38,
-        "registrertePensjonspoeng": 0.9899009257463192,
-        "restpensjon": 181908.0
-      },
-      "1987": {
-        "ar": 1987,
-        "pensjonsgivendeInntekt": 175150,
-        "pensjonsbeholdning": 794846,
-        "gjennomsnittligG": 10145.187620786966,
-        "omsorgspoeng": 0.2819255447525667,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.9449603686869773,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 72,
-        "registrertePensjonspoeng": 0.3653005141895491,
-        "restpensjon": 325481.0
-      },
-      "1988": {
-        "ar": 1988,
-        "pensjonsgivendeInntekt": 463573,
-        "pensjonsbeholdning": 812336,
-        "gjennomsnittligG": 57825.69730029577,
-        "omsorgspoeng": 0.3401970079021045,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.7571493464548026,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 79,
-        "registrertePensjonspoeng": 0.298010570289464,
-        "restpensjon": 169692.0
-      },
-      "1989": {
-        "ar": 1989,
-        "pensjonsgivendeInntekt": 362470,
-        "pensjonsbeholdning": 892318,
-        "gjennomsnittligG": 39902.6827097121,
-        "omsorgspoeng": 0.3870671912199861,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.13859648298698413,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 7,
-        "registrertePensjonspoeng": 0.7225232894044306,
-        "restpensjon": 86046.0
-      },
-      "1990": {
-        "ar": 1990,
-        "pensjonsgivendeInntekt": 36568,
-        "pensjonsbeholdning": 935053,
-        "gjennomsnittligG": 17824.65136753305,
-        "omsorgspoeng": 0.43279171162002794,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.23172314432248342,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 19,
-        "registrertePensjonspoeng": 0.19003700264698908,
-        "restpensjon": 90553.0
-      },
-      "1991": {
-        "ar": 1991,
-        "pensjonsgivendeInntekt": 856603,
-        "pensjonsbeholdning": 977775,
-        "gjennomsnittligG": 58548.426469130376,
-        "omsorgspoeng": 0.9575843478259535,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.33907386484089674,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 92,
-        "registrertePensjonspoeng": 0.9312357056949906,
-        "restpensjon": 444702.0
-      },
-      "1992": {
-        "ar": 1992,
-        "pensjonsgivendeInntekt": 760414,
-        "pensjonsbeholdning": 986856,
-        "gjennomsnittligG": 53727.23120676447,
-        "omsorgspoeng": 0.7008934310714858,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.4795630922817725,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 43,
-        "registrertePensjonspoeng": 0.4038491690850673,
-        "restpensjon": 177743.0
-      },
-      "1993": {
-        "ar": 1993,
-        "pensjonsgivendeInntekt": 191827,
-        "pensjonsbeholdning": 1045484,
-        "gjennomsnittligG": 16444.87968190721,
-        "omsorgspoeng": 0.69243036856159,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.6831437737740897,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 92,
-        "registrertePensjonspoeng": 0.9538880063578781,
-        "restpensjon": 55667.0
-      },
-      "1994": {
-        "ar": 1994,
-        "pensjonsgivendeInntekt": 284758,
-        "pensjonsbeholdning": 1067520,
-        "gjennomsnittligG": 70268.51669808105,
-        "omsorgspoeng": 0.4748213516409232,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.9296463288336269,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 39,
-        "registrertePensjonspoeng": 0.9093171476419709,
-        "restpensjon": 318812.0
-      },
-      "1995": {
-        "ar": 1995,
-        "pensjonsgivendeInntekt": 391571,
-        "pensjonsbeholdning": 1139830,
-        "gjennomsnittligG": 22342.93203691524,
-        "omsorgspoeng": 0.9082320640790961,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.5148133590630332,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 53,
-        "registrertePensjonspoeng": 0.36913361255598254,
-        "restpensjon": 155167.0
-      },
-      "1996": {
-        "ar": 1996,
-        "pensjonsgivendeInntekt": 193294,
-        "pensjonsbeholdning": 1147237,
-        "gjennomsnittligG": 40634.076738572025,
-        "omsorgspoeng": 0.17142537714264183,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.8787718875543121,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 9,
-        "registrertePensjonspoeng": 0.10735845175435499,
-        "restpensjon": 111159.0
-      },
-      "1997": {
-        "ar": 1997,
-        "pensjonsgivendeInntekt": 406180,
-        "pensjonsbeholdning": 1167717,
-        "gjennomsnittligG": 79096.34325932869,
-        "omsorgspoeng": 0.9457094904721848,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.30641068936418836,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 83,
-        "registrertePensjonspoeng": 0.3227200186338448,
-        "restpensjon": 409342.0
-      },
-      "1998": {
-        "ar": 1998,
-        "pensjonsgivendeInntekt": 787895,
-        "pensjonsbeholdning": 1253605,
-        "gjennomsnittligG": 62021.95575509255,
-        "omsorgspoeng": 0.13675306875203264,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.011810346661284443,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 11,
-        "registrertePensjonspoeng": 0.6075562666438248,
-        "restpensjon": 394290.0
-      },
-      "1999": {
-        "ar": 1999,
-        "pensjonsgivendeInntekt": 211184,
-        "pensjonsbeholdning": 1329567,
-        "gjennomsnittligG": 28354.5540712015,
-        "omsorgspoeng": 0.43729118036262826,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.6658286416666145,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 82,
-        "registrertePensjonspoeng": 0.14482742867041865,
-        "restpensjon": 214535.0
-      },
-      "2000": {
-        "ar": 2000,
-        "pensjonsgivendeInntekt": 177637,
-        "pensjonsbeholdning": 1426922,
-        "gjennomsnittligG": 81222.74713837268,
-        "omsorgspoeng": 0.1287056926062189,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.4923698105557023,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 25,
-        "registrertePensjonspoeng": 0.16561850175721915,
-        "restpensjon": 447799.0
-      },
-      "2001": {
-        "ar": 2001,
-        "pensjonsgivendeInntekt": 242146,
-        "pensjonsbeholdning": 1435339,
-        "gjennomsnittligG": 99970.5540444465,
-        "omsorgspoeng": 0.5630917646009747,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.3293309968401348,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 94,
-        "registrertePensjonspoeng": 0.4910023101947265,
-        "restpensjon": 431851.0
-      },
-      "2002": {
-        "ar": 2002,
-        "pensjonsgivendeInntekt": 450444,
-        "pensjonsbeholdning": 1467685,
-        "gjennomsnittligG": 68815.80912131091,
-        "omsorgspoeng": 0.04585370851672721,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.06867214707180014,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 68,
-        "registrertePensjonspoeng": 0.15589088707519305,
-        "restpensjon": 337196.0
-      },
-      "2003": {
-        "ar": 2003,
-        "pensjonsgivendeInntekt": 899433,
-        "pensjonsbeholdning": 1522532,
-        "gjennomsnittligG": 4926.925649508685,
-        "omsorgspoeng": 0.3726139335273986,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.3098123632686314,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 36,
-        "registrertePensjonspoeng": 0.7671531443061776,
-        "restpensjon": 434931.0
-      },
-      "2004": {
-        "ar": 2004,
-        "pensjonsgivendeInntekt": 868612,
-        "pensjonsbeholdning": 1588136,
-        "gjennomsnittligG": 30833.511376937604,
-        "omsorgspoeng": 0.06815284382383835,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.8943157887351838,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 18,
-        "registrertePensjonspoeng": 0.21683337085303434,
-        "restpensjon": 168561.0
-      },
-      "2005": {
-        "ar": 2005,
-        "pensjonsgivendeInntekt": 296886,
-        "pensjonsbeholdning": 1677294,
-        "gjennomsnittligG": 13024.536648951667,
-        "omsorgspoeng": 0.6684821805118578,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.8596608235696503,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 70,
-        "registrertePensjonspoeng": 0.4711466427736086,
-        "restpensjon": 329924.0
-      },
-      "2006": {
-        "ar": 2006,
-        "pensjonsgivendeInntekt": 725031,
-        "pensjonsbeholdning": 1742135,
-        "gjennomsnittligG": 66374.38121163375,
-        "omsorgspoeng": 0.9036219270953288,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.7372345857877525,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 15,
-        "registrertePensjonspoeng": 0.43881372169598865,
-        "restpensjon": 275167.0
-      },
-      "2007": {
-        "ar": 2007,
-        "pensjonsgivendeInntekt": 278778,
-        "pensjonsbeholdning": 1758571,
-        "gjennomsnittligG": 18394.832071878198,
-        "omsorgspoeng": 0.8362109229362114,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.6153804838637635,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 59,
-        "registrertePensjonspoeng": 0.9243621233438741,
-        "restpensjon": 231869.0
-      },
-      "2008": {
-        "ar": 2008,
-        "pensjonsgivendeInntekt": 168047,
-        "pensjonsbeholdning": 1811965,
-        "gjennomsnittligG": 8649.878455848602,
-        "omsorgspoeng": 0.33211412802661067,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.9425447276637822,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 66,
-        "registrertePensjonspoeng": 0.6637682704146872,
-        "restpensjon": 142378.0
-      },
-      "2009": {
-        "ar": 2009,
-        "pensjonsgivendeInntekt": 368874,
-        "pensjonsbeholdning": 1907756,
-        "gjennomsnittligG": 17088.02007214428,
-        "omsorgspoeng": 0.3604551668539352,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.2178887017376806,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 46,
-        "registrertePensjonspoeng": 0.6761329521345016,
-        "restpensjon": 299990.0
-      },
-      "2010": {
-        "ar": 2010,
-        "pensjonsgivendeInntekt": 650105,
-        "pensjonsbeholdning": 1951456,
-        "gjennomsnittligG": 25328.437881012134,
-        "omsorgspoeng": 0.7031334621802368,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.9261048349937698,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 91,
-        "registrertePensjonspoeng": 0.13522431563393555,
-        "restpensjon": 134111.0
-      },
-      "2011": {
-        "ar": 2011,
-        "pensjonsgivendeInntekt": 360795,
-        "pensjonsbeholdning": 2013193,
-        "gjennomsnittligG": 1555.8795183543973,
-        "omsorgspoeng": 0.593386679172659,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.8479103335950195,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 55,
-        "registrertePensjonspoeng": 0.642323385435656,
-        "restpensjon": 312993.0
-      },
-      "2012": {
-        "ar": 2012,
-        "pensjonsgivendeInntekt": 748453,
-        "pensjonsbeholdning": 2079894,
-        "gjennomsnittligG": 1794.3429249145936,
-        "omsorgspoeng": 0.4792188787498415,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.10549686338401643,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 52,
-        "registrertePensjonspoeng": 0.8748746779596007,
-        "restpensjon": 338917.0
-      },
-      "2013": {
-        "ar": 2013,
-        "pensjonsgivendeInntekt": 453095,
-        "pensjonsbeholdning": 2127089,
-        "gjennomsnittligG": 16789.333898279878,
-        "omsorgspoeng": 0.6347847713158176,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.4801499473915387,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 22,
-        "registrertePensjonspoeng": 0.7863602891785058,
-        "restpensjon": 84236.0
-      },
-      "2014": {
-        "ar": 2014,
-        "pensjonsgivendeInntekt": 217588,
-        "pensjonsbeholdning": 2175285,
-        "gjennomsnittligG": 88067.9048862044,
-        "omsorgspoeng": 0.31973833049806577,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.023768377042602373,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 45,
-        "registrertePensjonspoeng": 0.7683395980392592,
-        "restpensjon": 458398.0
-      },
-      "2015": {
-        "ar": 2015,
-        "pensjonsgivendeInntekt": 31334,
-        "pensjonsbeholdning": 2227649,
-        "gjennomsnittligG": 22187.31518299931,
-        "omsorgspoeng": 0.9461252708977187,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.24292970198223274,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 51,
-        "registrertePensjonspoeng": 0.8668589534961723,
-        "restpensjon": 328444.0
-      },
-      "1970": {
-        "ar": 1970,
-        "pensjonsgivendeInntekt": 381669,
-        "pensjonsbeholdning": 5513,
-        "gjennomsnittligG": 74540.27867319892,
-        "omsorgspoeng": 0.7580555933218904,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.7548355065185547,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 57,
-        "registrertePensjonspoeng": 0.37292170747214237,
-        "restpensjon": 302312.0
-      },
       "1971": {
         "ar": 1971,
-        "pensjonsgivendeInntekt": 156452,
-        "pensjonsbeholdning": 13581,
-        "gjennomsnittligG": 31773.27523306598,
-        "omsorgspoeng": 0.6498824796474737,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.5591473462877787,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 27,
-        "registrertePensjonspoeng": 0.16958701096429718,
-        "restpensjon": 298218.0
+        "pensjonsgivendeInntekt": 0,
+        "pensjonsbeholdning": null,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 0,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 0,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1972": {
         "ar": 1972,
-        "pensjonsgivendeInntekt": 313517,
-        "pensjonsbeholdning": 105020,
-        "gjennomsnittligG": 62263.425690455035,
-        "omsorgspoeng": 0.6203990726796332,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.6380152377509218,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 2,
-        "registrertePensjonspoeng": 0.23116055210181818,
-        "restpensjon": 254159.0
+        "pensjonsgivendeInntekt": 0,
+        "pensjonsbeholdning": null,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 0,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 0,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1973": {
         "ar": 1973,
-        "pensjonsgivendeInntekt": 182227,
-        "pensjonsbeholdning": 146095,
-        "gjennomsnittligG": 90148.91914822988,
-        "omsorgspoeng": 0.6792216167362448,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.0638716778352233,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 76,
-        "registrertePensjonspoeng": 0.9617867905618763,
-        "restpensjon": 281694.0
+        "pensjonsgivendeInntekt": 0,
+        "pensjonsbeholdning": 0,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 0,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 0,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1974": {
         "ar": 1974,
-        "pensjonsgivendeInntekt": 461404,
-        "pensjonsbeholdning": 195023,
-        "gjennomsnittligG": 63480.26055253485,
-        "omsorgspoeng": 0.6754596118527368,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.8079606853632649,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 92,
-        "registrertePensjonspoeng": 0.4613816732209389,
-        "restpensjon": 142199.0
+        "pensjonsgivendeInntekt": 4200,
+        "pensjonsbeholdning": 0,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 0,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 0,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1975": {
         "ar": 1975,
-        "pensjonsgivendeInntekt": 568166,
-        "pensjonsbeholdning": 219001,
-        "gjennomsnittligG": 17115.313951943077,
-        "omsorgspoeng": 0.3118160255700997,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.9834670983109446,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 67,
-        "registrertePensjonspoeng": 0.39704894329775586,
-        "restpensjon": 494465.0
+        "pensjonsgivendeInntekt": 23900,
+        "pensjonsbeholdning": 0,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 1.21,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 1.21,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1976": {
         "ar": 1976,
-        "pensjonsgivendeInntekt": 333453,
-        "pensjonsbeholdning": 220640,
-        "gjennomsnittligG": 76542.71211051849,
-        "omsorgspoeng": 0.840362346949838,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.7207203275805737,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 5,
-        "registrertePensjonspoeng": 0.07128596506318718,
-        "restpensjon": 410677.0
+        "pensjonsgivendeInntekt": 23400,
+        "pensjonsbeholdning": 861,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 0.95,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 0.95,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1977": {
         "ar": 1977,
-        "pensjonsgivendeInntekt": 106034,
-        "pensjonsbeholdning": 274063,
-        "gjennomsnittligG": 76258.88988334259,
-        "omsorgspoeng": 0.3782129063543067,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.5429088891678174,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 21,
-        "registrertePensjonspoeng": 0.5704517221304857,
-        "restpensjon": 337678.0
+        "pensjonsgivendeInntekt": 31200,
+        "pensjonsbeholdning": 5763,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 1.33,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 1.33,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1978": {
         "ar": 1978,
-        "pensjonsgivendeInntekt": 767390,
-        "pensjonsbeholdning": 373447,
-        "gjennomsnittligG": 60394.799058042634,
-        "omsorgspoeng": 0.5221565099443425,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.43144020311471143,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 56,
-        "registrertePensjonspoeng": 0.5365644644763244,
-        "restpensjon": 423543.0
+        "pensjonsgivendeInntekt": 42800,
+        "pensjonsbeholdning": 11151,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 1.94,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 1.94,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1979": {
         "ar": 1979,
-        "pensjonsgivendeInntekt": 154669,
-        "pensjonsbeholdning": 387547,
-        "gjennomsnittligG": 25570.889329277445,
-        "omsorgspoeng": 0.13275878402225894,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.9998964896638395,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 31,
-        "registrertePensjonspoeng": 0.566300753519018,
-        "restpensjon": 195127.0
+        "pensjonsgivendeInntekt": 9400,
+        "pensjonsbeholdning": 18263,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 0,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 0,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1980": {
         "ar": 1980,
-        "pensjonsgivendeInntekt": 543054,
-        "pensjonsbeholdning": 438731,
-        "gjennomsnittligG": 45613.1811018396,
-        "omsorgspoeng": 0.18041040975331368,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.7221678665014278,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 96,
-        "registrertePensjonspoeng": 0.711087904470677,
-        "restpensjon": 110242.0
+        "pensjonsgivendeInntekt": 10700,
+        "pensjonsbeholdning": 27172,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 0,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 0,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1981": {
         "ar": 1981,
-        "pensjonsgivendeInntekt": 17135,
-        "pensjonsbeholdning": 483550,
-        "gjennomsnittligG": 53637.13470334743,
-        "omsorgspoeng": 0.012520237525138422,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.9808585244114694,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 68,
-        "registrertePensjonspoeng": 0.22380113850485472,
-        "restpensjon": 404071.0
+        "pensjonsgivendeInntekt": 12300,
+        "pensjonsbeholdning": 31596,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 0,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 0,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1982": {
         "ar": 1982,
-        "pensjonsgivendeInntekt": 827582,
-        "pensjonsbeholdning": 543734,
-        "gjennomsnittligG": 22634.390569261388,
-        "omsorgspoeng": 0.4111733026779927,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.6729062039431019,
-        "merknad": [
-          {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
-          }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 77,
-        "registrertePensjonspoeng": 0.9975533193169736,
-        "restpensjon": 261850.0
+        "pensjonsgivendeInntekt": 48900,
+        "pensjonsbeholdning": 37615,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 1.37,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 1.37,
+        "restpensjon": null,
+        "endringOpptjening": null
       },
       "1983": {
         "ar": 1983,
-        "pensjonsgivendeInntekt": 164338,
-        "pensjonsbeholdning": 557319,
-        "gjennomsnittligG": 84303.20774842959,
-        "omsorgspoeng": 0.19709727449764702,
-        "omsorgspoengType": "Omsorgstype",
-        "pensjonspoeng": 0.19634927294623472,
-        "merknad": [
+        "pensjonsgivendeInntekt": 118600,
+        "pensjonsbeholdning": 44131,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.31,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.31,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1984": {
+        "ar": 1984,
+        "pensjonsgivendeInntekt": 108000,
+        "pensjonsbeholdning": 57253,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 3.56,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 3.56,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1985": {
+        "ar": 1985,
+        "pensjonsgivendeInntekt": 127900,
+        "pensjonsbeholdning": 83421,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.05,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.05,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1986": {
+        "ar": 1986,
+        "pensjonsgivendeInntekt": 141200,
+        "pensjonsbeholdning": 110218,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.15,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.15,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1987": {
+        "ar": 1987,
+        "pensjonsgivendeInntekt": 145400,
+        "pensjonsbeholdning": 144423,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 3.97,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 3.97,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1988": {
+        "ar": 1988,
+        "pensjonsgivendeInntekt": 159400,
+        "pensjonsbeholdning": 181344,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.17,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.17,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1989": {
+        "ar": 1989,
+        "pensjonsgivendeInntekt": 183100,
+        "pensjonsbeholdning": 218894,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.67,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.67,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1990": {
+        "ar": 1990,
+        "pensjonsgivendeInntekt": 184200,
+        "pensjonsbeholdning": 259189,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.49,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.49,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1991": {
+        "ar": 1991,
+        "pensjonsgivendeInntekt": 198900,
+        "pensjonsbeholdning": 304105,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.68,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.68,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1992": {
+        "ar": 1992,
+        "pensjonsgivendeInntekt": 213200,
+        "pensjonsbeholdning": 352098,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.89,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.89,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1993": {
+        "ar": 1993,
+        "pensjonsgivendeInntekt": 215400,
+        "pensjonsbeholdning": 400662,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.82,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.82,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1994": {
+        "ar": 1994,
+        "pensjonsgivendeInntekt": 227900,
+        "pensjonsbeholdning": 449769,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.01,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.01,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1995": {
+        "ar": 1995,
+        "pensjonsgivendeInntekt": 225200,
+        "pensjonsbeholdning": 499143,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.8,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.8,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1996": {
+        "ar": 1996,
+        "pensjonsgivendeInntekt": 242000,
+        "pensjonsbeholdning": 555067,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.99,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.99,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1997": {
+        "ar": 1997,
+        "pensjonsgivendeInntekt": 251500,
+        "pensjonsbeholdning": 619801,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.99,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.99,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1998": {
+        "ar": 1998,
+        "pensjonsgivendeInntekt": 264100,
+        "pensjonsbeholdning": 689714,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.95,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.95,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "1999": {
+        "ar": 1999,
+        "pensjonsgivendeInntekt": 269300,
+        "pensjonsbeholdning": 777476,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.8,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.8,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2000": {
+        "ar": 2000,
+        "pensjonsgivendeInntekt": 287700,
+        "pensjonsbeholdning": 862628,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.95,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.95,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2001": {
+        "ar": 2001,
+        "pensjonsgivendeInntekt": 311300,
+        "pensjonsbeholdning": 949732,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.05,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.05,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2002": {
+        "ar": 2002,
+        "pensjonsgivendeInntekt": 334500,
+        "pensjonsbeholdning": 1047902,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.09,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.09,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2003": {
+        "ar": 2003,
+        "pensjonsgivendeInntekt": 350300,
+        "pensjonsbeholdning": 1161639,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.09,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.09,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2004": {
+        "ar": 2004,
+        "pensjonsgivendeInntekt": 357390,
+        "pensjonsbeholdning": 1284885,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.05,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.05,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2005": {
+        "ar": 2005,
+        "pensjonsgivendeInntekt": 370119,
+        "pensjonsbeholdning": 1400690,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.05,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.05,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2006": {
+        "ar": 2006,
+        "pensjonsgivendeInntekt": 401959,
+        "pensjonsbeholdning": 1513770,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.16,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.16,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2007": {
+        "ar": 2007,
+        "pensjonsgivendeInntekt": 407525,
+        "pensjonsbeholdning": 1636087,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.07,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.07,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2008": {
+        "ar": 2008,
+        "pensjonsgivendeInntekt": 417230,
+        "pensjonsbeholdning": 1800770,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5.01,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5.01,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2009": {
+        "ar": 2009,
+        "pensjonsgivendeInntekt": 432959,
+        "pensjonsbeholdning": 1977637,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5,
+        "restpensjon": null,
+        "endringOpptjening": null
+      },
+      "2010": {
+        "ar": 2010,
+        "pensjonsgivendeInntekt": 447506,
+        "pensjonsbeholdning": 2247247,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.99,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.99,
+        "restpensjon": null,
+        "endringOpptjening": [
           {
-            "merknad": "Et objekt som holder data om en merknad knyttet til pensjonpoeng. Gjenstår å finne ut hvordan dette skal implementeres"
+            "dato": "2009-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": [
+              "BEHOLDNING_2010"
+            ],
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 1977637.43335571,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2010-01-01",
+            "arsakType": "INNGAENDE_2010",
+            "arsakDetails": [],
+            "endringBelop": 187612.13331424858,
+            "pensjonsbeholdningBelop": 2165249.5666699586,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2010-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING_2010"
+            ],
+            "endringBelop": 81997.8979982315,
+            "pensjonsbeholdningBelop": 2247247.46466819,
+            "uttaksgrad": 0
           }
-        ],
-        "hjelpMerknad": "En hjelp-merknad, usikker på om denne skal brukes",
-        "maksUforegrad": 72,
-        "registrertePensjonspoeng": 0.9815308601512441,
-        "restpensjon": 404709.0
+        ]
+      },
+      "2011": {
+        "ar": 2011,
+        "pensjonsgivendeInntekt": 468336,
+        "pensjonsbeholdning": 2439758,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 5,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 5,
+        "restpensjon": null,
+        "endringOpptjening": [
+          {
+            "dato": "2010-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 2247247.46466819,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2011-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_2011"
+            ],
+            "endringBelop": 82321.6226583757,
+            "pensjonsbeholdningBelop": 2329569.0873265658,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2011-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 110188.617830547,
+            "pensjonsbeholdningBelop": 2439757.705157113,
+            "uttaksgrad": 0
+          }
+        ]
+      },
+      "2012": {
+        "ar": 2012,
+        "pensjonsgivendeInntekt": 482538,
+        "pensjonsbeholdning": 2618320,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.95,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.95,
+        "restpensjon": null,
+        "endringOpptjening": [
+          {
+            "dato": "2011-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 2439757.70515712,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2012-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_2012"
+            ],
+            "endringBelop": 85871.2274805744,
+            "pensjonsbeholdningBelop": 2525628.9326376943,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2012-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 92690.581827803,
+            "pensjonsbeholdningBelop": 2618319.5144654973,
+            "uttaksgrad": 0
+          }
+        ]
+      },
+      "2013": {
+        "ar": 2013,
+        "pensjonsgivendeInntekt": 493291,
+        "pensjonsbeholdning": 2810429,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.86,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.86,
+        "restpensjon": null,
+        "endringOpptjening": [
+          {
+            "dato": "2012-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 2618319.51446549,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2013-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_2012"
+            ],
+            "endringBelop": 89223.0474821133,
+            "pensjonsbeholdningBelop": 2707542.5619476032,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2013-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 102886.617354009,
+            "pensjonsbeholdningBelop": 2810429.179301612,
+            "uttaksgrad": 0
+          }
+        ]
+      },
+      "2014": {
+        "ar": 2014,
+        "pensjonsgivendeInntekt": 513804,
+        "pensjonsbeholdning": 3008680,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.88,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.88,
+        "restpensjon": null,
+        "endringOpptjening": [
+          {
+            "dato": "2013-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 2810429.17930162,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2014-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_2012"
+            ],
+            "endringBelop": 91740.8404696676,
+            "pensjonsbeholdningBelop": 2902170.0197712877,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2014-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 106509.639725606,
+            "pensjonsbeholdningBelop": 3008679.6594968936,
+            "uttaksgrad": 0
+          }
+        ]
+      },
+      "2015": {
+        "ar": 2015,
+        "pensjonsgivendeInntekt": 520680,
+        "pensjonsbeholdning": 3161951,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.82,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.82,
+        "restpensjon": null,
+        "endringOpptjening": [
+          {
+            "dato": "2014-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 3008679.65949689,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2015-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_2012"
+            ],
+            "endringBelop": 93705.9444933127,
+            "pensjonsbeholdningBelop": 3102385.603990203,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2015-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 59565.8035966121,
+            "pensjonsbeholdningBelop": 3161951.407586815,
+            "uttaksgrad": 0
+          }
+        ]
+      },
+      "2016": {
+        "ar": 2016,
+        "pensjonsgivendeInntekt": 537577,
+        "pensjonsbeholdning": 0,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.86,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.86,
+        "restpensjon": 0,
+        "endringOpptjening": [
+          {
+            "dato": "2015-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 3161951.40758681,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2016-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_2012"
+            ],
+            "endringBelop": 95915.9289108655,
+            "pensjonsbeholdningBelop": 3257867.3364976756,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2016-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 90568.7119546356,
+            "pensjonsbeholdningBelop": 3348436.048452311,
+            "uttaksgrad": 0
+          }
+        ]
+      },
+      "2017": {
+        "ar": 2017,
+        "pensjonsgivendeInntekt": 544360,
+        "pensjonsbeholdning": 0,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.84,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.84,
+        "restpensjon": 0,
+        "endringOpptjening": [
+          {
+            "dato": "2016-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2017-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_HEL"
+            ],
+            "endringBelop": 97475.126329365,
+            "pensjonsbeholdningBelop": 97475.126329365,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2017-01-01",
+            "arsakType": "UTTAK",
+            "arsakDetails": [
+              "UTTAK"
+            ],
+            "endringBelop": -97475.126329365,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2017-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 90568.7119546356,
+            "pensjonsbeholdningBelop": 90568.7119546356,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2017-05-01",
+            "arsakType": "UTTAK",
+            "arsakDetails": [
+              "UTTAK"
+            ],
+            "endringBelop": -90568.7119546356,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          }
+        ]
+      },
+      "2018": {
+        "ar": 2018,
+        "pensjonsgivendeInntekt": 549576,
+        "pensjonsbeholdning": 0,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": 4.74,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": 4.74,
+        "restpensjon": 0,
+        "endringOpptjening": [
+          {
+            "dato": "2017-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2018-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_HEL"
+            ],
+            "endringBelop": 99306.0185578748,
+            "pensjonsbeholdningBelop": 99306.0185578748,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2018-01-01",
+            "arsakType": "UTTAK",
+            "arsakDetails": [
+              "UTTAK"
+            ],
+            "endringBelop": -99306.0185578748,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2018-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 90568.7119546356,
+            "pensjonsbeholdningBelop": 90568.7119546356,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2018-05-01",
+            "arsakType": "UTTAK",
+            "arsakDetails": [
+              "UTTAK"
+            ],
+            "endringBelop": -90568.7119546356,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          }
+        ]
+      },
+      "2019": {
+        "ar": 2019,
+        "pensjonsgivendeInntekt": null,
+        "pensjonsbeholdning": 3378954,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": null,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": null,
+        "restpensjon": 261707.2714951436,
+        "endringOpptjening": [
+          {
+            "dato": "2018-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2019-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_HEL"
+            ],
+            "endringBelop": 102332.60266089006,
+            "pensjonsbeholdningBelop": 102332.60266089006,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2019-01-01",
+            "arsakType": "UTTAK",
+            "arsakDetails": [
+              "UTTAK"
+            ],
+            "endringBelop": -102332.60266089006,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2019-05-01",
+            "arsakType": "REGULERING",
+            "arsakDetails": [
+              "REGULERING"
+            ],
+            "endringBelop": 90568.7119546356,
+            "pensjonsbeholdningBelop": 90568.7119546356,
+            "uttaksgrad": 100
+          },
+          {
+            "dato": "2019-05-01",
+            "arsakType": "UTTAK",
+            "arsakDetails": [
+              "UTTAK"
+            ],
+            "endringBelop": -90568.7119546356,
+            "pensjonsbeholdningBelop": 0,
+            "uttaksgrad": 100
+          }
+        ]
+      },
+      "2020": {
+        "ar": 2020,
+        "pensjonsgivendeInntekt": null,
+        "pensjonsbeholdning": 3482640,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": null,
+        "merknad": null,
+        "maksUforegrad": 0,
+        "registrertePensjonspoeng": null,
+        "restpensjon": 261707.2714951436,
+        "endringOpptjening": [
+          {
+            "dato": "2019-12-31",
+            "arsakType": "INNGAENDE",
+            "arsakDetails": null,
+            "endringBelop": null,
+            "pensjonsbeholdningBelop": 3378953.779957516,
+            "uttaksgrad": 0
+          },
+          {
+            "dato": "2020-01-01",
+            "arsakType": "OPPTJENING",
+            "arsakDetails": [
+              "OPPTJENING_2012"
+            ],
+            "endringBelop": 103686.16811815102,
+            "pensjonsbeholdningBelop": 3482639.948075667,
+            "uttaksgrad": 0
+          }
+        ]
       }
     },
-    "numberOfYearsWithPensjonspoeng": 45,
+    "numberOfYearsWithPensjonspoeng": 41,
     "showRestpensjon": false,
-    "overforOmsorgspoengPossible": true
+    "overforOmsorgspoengPossible": null
   }
 }

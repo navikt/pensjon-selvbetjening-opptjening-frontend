@@ -12,22 +12,12 @@ export const OpptjeningView = () => {
     return(
         <div>
             <div className="opptjeningBody">
-                <h3>Antall år med pensjonspoeng: {opptjening.numberOfYearsWithPensjonspoeng}</h3>
-                <h3>Opptjeningsdata:</h3>
+                <h3>{t('opptjening-number-of-years-with-pensjonspoeng')} {opptjening.numberOfYearsWithPensjonspoeng}</h3>
                 {oData && Object.keys(oData).map((year, idx) => {
                     return (
                         <p key={idx}>
-                            {t('opptjening-year')}: {oData[year].ar}<br/>
-                            {t('opptjening-average-g')}: {oData[year].gjennomsnittligG}<br/>
-                            Hjelpmerknad: {oData[year].hjelpMerknad}<br/>
-                            Maks uføregrad: {oData[year].maksUforegrad}<br/>
-                            Omsorgspoeng: {oData[year].omsorgspoeng}<br/>
-                            Omsorgspoengtype: {oData[year].omsorgspoengType}<br/>
-                            Pensjonsbeholdning: {oData[year].pensjonsbeholdning}<br/>
-                            Pensjonsgivende inntekt: {oData[year].pensjonsgivendeInntekt}<br/>
-                            Pensjonspoeng: {oData[year].pensjonspoeng}<br/>
-                            Regoistrerte pensjonspoeng: {oData[year].registrertePensjonspoeng}<br/>
-                            Restpensjon: {oData[year].restpensjon}
+                            <h3>{t('opptjening-year')}: {oData[year].ar}</h3>
+                            <pre id="json">{JSON.stringify(oData[year], null, 4)}</pre>
                         </p>
                     )
                 })}
