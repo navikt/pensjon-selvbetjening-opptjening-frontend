@@ -31,7 +31,8 @@ function verifyStatusSuccessOrRedirect(response) {
         return;
     }
     if (response.status === 401) {
-        window.location.href = process.env.REACT_APP_LOGINSERVICE_URL;
+        window.location.href = "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/";
+        //window.location.href = process.env.REACT_APP_LOGINSERVICE_URL;
         throw new Error("unauthorized");
     }
     if (response.status >= 200 && response.status < 300) {
