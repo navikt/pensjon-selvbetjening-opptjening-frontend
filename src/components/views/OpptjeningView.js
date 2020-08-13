@@ -13,8 +13,6 @@ export const OpptjeningView = () => {
         <div>
             <div className="opptjeningBody">
                 <h3>{t('opptjening-number-of-years-with-pensjonspoeng')} {opptjening.numberOfYearsWithPensjonspoeng}</h3>
-                {process.env.REACT_APP_LOGINSERVICE_URL}<br/>
-                {process.env.REACT_APP_DECORATOR_URL}
                 {oData && Object.keys(oData).map((year, idx) => {
                     return (
                         <p key={idx}>
