@@ -31,3 +31,7 @@ spec:
   env:
     - name: "API_GATEWAY"
       value: "https://api-gw-q1.oera.no/pensjon-selvbetjening-opptjening-backend"
+    - name: "REACT_APP_LOGINSERVICE_URL"
+      value: "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
+    - name: "REACT_APP_DECORATOR_URL"
+      value: "https://www-q1.nav.no/dekoratoren"
