@@ -7,7 +7,7 @@ export const TopBanner = (props) => {
     const {title, text} = props;
 
     return (
-        <header className="topBanner">
+        <div className="topBanner">
             <div className="topBannerWrapper">
                 <div className="topBannerContent">
                     <div className="topBannerText">
@@ -19,6 +19,6 @@ export const TopBanner = (props) => {
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     )
 };

@@ -17,6 +17,7 @@ export const LanguageSelector = () => {
                 onChange={(event) => changeLanguage(event.target.value)}
                 value={i18n.language}
                 bredde="m"
+                className="languageSelector"
             >
                 <option value="">{t('language-selector-choose-language')}</option>
                 <option value="nb-NO">{t('language-selector-bokmaal')}</option>

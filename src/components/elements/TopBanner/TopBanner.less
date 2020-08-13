@@ -30,7 +30,18 @@
   justify-content: space-evenly;
   margin: 1rem 1rem 1.4rem;
   z-index: 1;
-  width: 100%;
+}
+
+.topBannerText h1{
+  margin: 0 0 0.5rem 0;
+}
+
+.topBannerImgContainer {
+  align-self: flex-start;
+  margin: 0 1rem 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 @media (min-width: 576px){
@@ -38,22 +49,9 @@
     flex-direction: row;
     margin-top: 1rem;
   }
-  .topBannerText {
-    margin-right: 350px;
-  }
+
   .topBannerImgContainer {
     align-self: flex-end;
     margin: 0 1rem;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
   }
-}
-
-.topBannerImgContainer {
-  align-self: flex-start;
-  margin: 0 1rem 0 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
 }

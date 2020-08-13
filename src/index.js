@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Provider} from "react-redux";
-import './index.less';
 import {App} from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './redux/index';
@@ -10,6 +9,7 @@ import { Suspense} from 'react' ;
 import NavFrontendSpinner from "nav-frontend-spinner";
 import { Normaltekst } from 'nav-frontend-typografi';
 import './i18n';
+import './index.less';
 
 ReactDOM.render(
     <Provider store={store}>

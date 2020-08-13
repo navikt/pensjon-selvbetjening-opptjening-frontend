@@ -3,20 +3,20 @@ import { useDispatch, useSelector, shallowEqual} from 'react-redux';
 import {fetchOpptjeningStarted} from "../redux/opptjening/opptjeningActions";
 import {getOpptjeningLoading, getOpptjeningError} from "../redux/opptjening/opptjeningSelectors"
 import NavFrontendSpinner from "nav-frontend-spinner";
-import "./OpptjeningContainer.less"
 
 export const OpptjeningContainer = (props) => {
     const {children} = props;
     const opptjeningLoading = useSelector(getOpptjeningLoading, shallowEqual);
     const opptjeningError = useSelector(getOpptjeningError, shallowEqual);
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(fetchOpptjeningStarted());
     }, [dispatch]);
 
     if(opptjeningLoading){
         return (
-            <div className="loading-spinner"><NavFrontendSpinner/></div>
+            <div className="loadingSpinner"><NavFrontendSpinner/></div>
         )
     }
 
