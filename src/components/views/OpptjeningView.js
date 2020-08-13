@@ -16,7 +16,7 @@ export const OpptjeningView = () => {
                 {oData && Object.keys(oData).map((year, idx) => {
                     return (
                         <p key={idx}>
-                            <h3>{t('opptjening-year')}: {oData[year].ar}</h3>
+                            <h3>{t('opptjening-year')}: {year}</h3>
                             <pre id="json">{JSON.stringify(oData[year], null, 4)}</pre>
                         </p>
                     )
