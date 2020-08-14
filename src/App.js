@@ -7,7 +7,7 @@ export const App = () => {
     return (
         <span>
             <Switch>
-                <Route exact path="/pensjon/opptjening" component={HomePage}/>
+                <Route exact path={process.env.PUBLIC_URL} component={HomePage}/>
             </Switch>
         </span>
     );

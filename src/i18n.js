@@ -22,7 +22,7 @@ i18n
         fallbackLng: 'nb-NO',
         debug: true,
         backend:{
-            loadPath: '/pensjon/opptjening/locales/{{lng}}/{{ns}}.json'
+            loadPath: process.env.PUBLIC_URL + '/locales/{{lng}}/{{ns}}.json'
         },
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default

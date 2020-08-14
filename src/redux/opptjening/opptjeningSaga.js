@@ -4,7 +4,7 @@ import {fetchToJson} from "../../api/api";
 
 function* fetchOpptjening() {
     try {
-        const opptjening = yield call(fetchToJson, "/pensjon/opptjening/api/opptjening");
+        const opptjening = yield call(fetchToJson, process.env.PUBLIC_URL + "/api/opptjening");
         yield put({ "type": FETCH_OPPTJENING_SUCCESS, opptjening });
     } catch (error) {
         yield put({ "type": FETCH_OPPTJENING_FAILURE, error });
