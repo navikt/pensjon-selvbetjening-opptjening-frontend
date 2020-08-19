@@ -5,6 +5,7 @@ import {shallowEqual, useSelector} from "react-redux";
 import {getOpptjening} from "../../redux/opptjening/opptjeningSelectors";
 import Panel from 'nav-frontend-paneler';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
+import {LineChart} from '../elements/LineChart/LineChart';
 import './OpptjeningView.less';
 
 export const OpptjeningView = () => {
@@ -23,8 +24,8 @@ export const OpptjeningView = () => {
                     </div>
                 </div>
             </Panel>
-
-            <Ekspanderbartpanel tittel="Detaljer" border className="panelWrapper">
+            <LineChart data={oData}/>
+            <Ekspanderbartpanel tittel={t("opptjening-what-happened-this-year")} border className="panelWrapper">
                 {oData && Object.keys(oData).map((year, idx) => {
                     return (
                         <p key={idx}>
