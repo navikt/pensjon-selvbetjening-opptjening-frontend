@@ -13,7 +13,6 @@ export const LanguageSelector = () => {
     return(
         <div className="languageSelectorWrapper">
             <Select
-                label={t('language-selector-choose-language')}
                 onChange={(event) => changeLanguage(event.target.value)}
                 value={i18n.language}
                 bredde="m"

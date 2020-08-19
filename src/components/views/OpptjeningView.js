@@ -1,7 +1,10 @@
 import React from "react";
+import _ from 'lodash';
 import { useTranslation } from 'react-i18next';
 import {shallowEqual, useSelector} from "react-redux";
 import {getOpptjening} from "../../redux/opptjening/opptjeningSelectors";
+import Panel from 'nav-frontend-paneler';
+import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import './OpptjeningView.less';
 
 export const OpptjeningView = () => {
@@ -9,10 +12,19 @@ export const OpptjeningView = () => {
     const { t } = useTranslation();
 
     let oData = opptjening.opptjeningData;
+    let maxKey = _.max(Object.keys(oData), o => oData[o]);
     return(
-        <div>
-            <div className="opptjeningBody">
-                <h3>{t('opptjening-number-of-years-with-pensjonspoeng')} {opptjening.numberOfYearsWithPensjonspoeng}</h3>
+        <div className="opptjeningBody">
+            <Panel border>
+                <div className="beholdningPanel">
+                    <div className="content">
+                        {t('opptjening-your-pension-assets')}
+                        <h1 className="typo-systemtittel">{oData[maxKey].pensjonsbeholdning}</h1>
+                    </div>
+                </div>
+            </Panel>
+
+            <Ekspanderbartpanel tittel="Detaljer" border className="panelWrapper">
                 {oData && Object.keys(oData).map((year, idx) => {
                     return (
                         <p key={idx}>
@@ -21,7 +33,7 @@ export const OpptjeningView = () => {
                         </p>
                     )
                 })}
-            </div>
+            </Ekspanderbartpanel>
         </div>
     )
 };
