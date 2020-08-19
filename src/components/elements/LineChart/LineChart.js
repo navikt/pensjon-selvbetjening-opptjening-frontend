@@ -1,10 +1,8 @@
 import React from "react";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
-import {useTranslation} from "react-i18next";
 
 export const LineChart = (data) => {
-    const { t, i18n } = useTranslation();
     const chartRef = useRef(null);
 
     const oData = data.data;
@@ -31,7 +29,7 @@ export const LineChart = (data) => {
         if (!chartRef) return;
         const ctx = chartRef.current.getContext("2d");
         new Chart(ctx, chartConfig);
-    }, [chartRef]);
+    }, [chartConfig, chartRef]);
 
     return(
         <div className="graphContainer">
