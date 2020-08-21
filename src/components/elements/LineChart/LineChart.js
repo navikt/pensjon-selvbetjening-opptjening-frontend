@@ -2,25 +2,39 @@ import React from "react";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 
-export const LineChart = (data) => {
+export const LineChart = (props) => {
     const chartRef = useRef(null);
-
-    const oData = data.data;
-    const dataArray = Object.keys(oData).map((year) => oData[year].pensjonsbeholdning);
-
-
     const chartConfig = {
         type: 'line',
         data: {
-            labels: Object.keys(data.data),
+            labels: props.data.labels,
             datasets: [
                 {
                     label: "Pensjonsbeholdning",
-                    data: dataArray
+                    fill: false,
+                    borderColor: "#FFBD66",
+                    borderWidth: 2,
+                    tension: 0,
+                    radius: 1,
+                    data: props.data.data
                 }
             ]
         },
         options: {
+            onClick: function(event, item){
+                console.log(props.data.labels[item[0]._index]);
+            },
+            legend:{
+                display: false
+            },
+            layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 50,
+                    bottom: 50
+                }
+            }
 
         }
     };
