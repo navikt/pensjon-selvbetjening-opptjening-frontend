@@ -10,7 +10,7 @@ export const LineChart = (props) => {
             labels: props.data.labels,
             datasets: [
                 {
-                    label: "Pensjonsbeholdning",
+                    label: props.datasetLabel,
                     fill: false,
                     borderColor: "#FFBD66",
                     borderWidth: 2,
@@ -22,7 +22,9 @@ export const LineChart = (props) => {
         },
         options: {
             onClick: function(event, item){
-                console.log(props.data.labels[item[0]._index]);
+                if(item && item[0]){
+                    props.onclick(props.data.labels[item[0]._index]);
+                }
             },
             legend:{
                 display: false

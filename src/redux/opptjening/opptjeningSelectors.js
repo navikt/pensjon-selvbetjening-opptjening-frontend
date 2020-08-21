@@ -1,3 +1,4 @@
+import _ from 'lodash';
 export const initialState = {
     opptjening: null,
     opptjeningLoading: true,
@@ -10,14 +11,23 @@ export const getOpptjeningError = (state = initialState) => state.opptjening.opp
 
 export const getPensjonsBeholdningArray = (state = initialState) => {
     const opptjeningData = state.opptjening.opptjening.opptjeningData;
-    const pensjonsBeholdningArray = Object.keys(opptjeningData).map((year) => opptjeningData[year].pensjonsbeholdning);
-
-    return pensjonsBeholdningArray;
+    return Object.keys(opptjeningData).map((year) => opptjeningData[year].pensjonsbeholdning);
 };
 
 export const getYearArray = (state = initialState) => {
     const opptjeningData = state.opptjening.opptjening.opptjeningData;
-    const yearArray = Object.keys(opptjeningData).map((year) => year);
+    return Object.keys(opptjeningData).map((year) => year);
+};
 
-    return yearArray;
+export const getOpptjeningByYear = (state = initialState, year) => {
+    return state.opptjening.opptjening.opptjeningData[year];
+};
+
+export const getLatestPensjonsBeholdning = (state = initialState) => {
+    const oData = state.opptjening.opptjening.opptjeningData;
+    const lastYear = _.max(Object.keys(oData), o => oData[o]);
+    return {
+        "year": lastYear,
+        "beholdning": oData[lastYear].pensjonsbeholdning
+    };
 };
