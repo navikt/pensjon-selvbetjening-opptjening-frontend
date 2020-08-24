@@ -26,7 +26,7 @@ jobs:
       - name: Build application
         env:
           #REACT_APP_LOGINSERVICE_URL: "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
-          REACT_APP_LOGINSERVICE_URL: "https://loginservice.dev.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
+          REACT_APP_LOGINSERVICE_URL: "https://loginservice.dev.nav.no/login?redirect=https://www-q0.dev.nav.no/pensjon/opptjening/"
           #REACT_APP_DECORATOR_URL: "https://www-q1.nav.no/dekoratoren"
           REACT_APP_DECORATOR_URL: "https://dekoratoren.dev.nav.no"
         run: npm run build
