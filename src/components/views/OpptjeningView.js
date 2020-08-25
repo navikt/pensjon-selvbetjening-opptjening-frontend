@@ -7,18 +7,70 @@ import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import {LineChart} from '../elements/LineChart/LineChart';
 import './OpptjeningView.less';
 
-const detailRow = (props) => {
-    const amount = new Intl.NumberFormat('no-NB',
+const formatAmount = (amount, includeSign=true) => {
+    let sign = "+";
+    if(amount < 0){
+        sign = "-"
+    }
+    const formattedAmount = new Intl.NumberFormat('no-NB',
         {
             style: 'currency',
             currency: 'NOK' ,
             minimumFractionDigits: 0,
             maximumFractionDigits: 0
-        }).format(props.belop);
+        }).format(Math.abs(amount));
+    return includeSign ? sign + " " + formattedAmount : formattedAmount;
+};
 
+const detailRow = (props) => {
     return(
-        <div>{props.label} {props.year}: {amount}</div>
+        <div className="detailRow">
+            <span className="detailColumn">{props.label}: </span>
+            <span className="detailColumn">{props.amount}</span>
+        </div>
     )
+};
+
+const buildDetailRows = (opptjening, t)  => {
+    const details = [];
+
+    if (opptjening && opptjening.endringOpptjening) {
+        opptjening.endringOpptjening.forEach((endring) => {
+            let item;
+            let year = (new Date(endring.dato)).getFullYear();
+            if (endring.arsakType === "INNGAENDE") {
+                item = detailRow(
+                    {
+                        "label": t("opptjening-assets-from") + " " + year,
+                        "amount": formatAmount(endring.pensjonsbeholdningBelop)
+                    }
+                )
+            } else if (endring.arsakType === "OPPTJENING") {
+                item = detailRow(
+                    {
+                        "label": t("opptjening-earnings-from") + " " + (year - 2),
+                        "amount": formatAmount(endring.endringBelop)
+                    }
+                )
+            } else if (endring.arsakType === "REGULERING") {
+                item = detailRow(
+                    {
+                        "label": t("opptjening-regulation") + " " + year,
+                        "amount": formatAmount(endring.endringBelop)
+                    }
+                )
+            } else if (endring.arsakType === "UTTAK") {
+                item = detailRow(
+                    {
+                        "label": t("opptjening-withdrawal") + " " + year,
+                        "amount": formatAmount(endring.endringBelop)
+                    }
+                )
+            }
+            details.push(item);
+        });
+    }
+    return details;
 };
 
 export const OpptjeningView = () => {
@@ -30,48 +82,7 @@ export const OpptjeningView = () => {
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
 
-    const details = [];
-
-    if(opptjening && opptjening.endringOpptjening){
-        opptjening.endringOpptjening.forEach((endring) => {
-            let item;
-            if(endring.arsakType === "INNGAENDE"){
-                item = detailRow(
-                    {
-                        "label": "Beholdning fra",
-                        "year": (new Date(endring.dato)).getFullYear(),
-                        "belop": endring.pensjonsbeholdningBelop
-                    }
-                )
-            } else if(endring.arsakType === "OPPTJENING"){
-                item = detailRow(
-                    {
-                        "label": "Opptjening fra",
-                        "year": (new Date(endring.dato)).getFullYear() - 2,
-                        "belop": endring.endringBelop
-                    }
-                )
-            } else if(endring.arsakType === "REGULERING"){
-                item = detailRow(
-                    {
-                        "label": "Regulering",
-                        "year": (new Date(endring.dato)).getFullYear(),
-                        "belop": endring.endringBelop
-                    }
-                )
-            } else if(endring.arsakType === "UTTAK"){
-                item = detailRow(
-                    {
-                        "label": "Uttak",
-                        "year": (new Date(endring.dato)).getFullYear(),
-                        "belop": endring.endringBelop
-                    }
-                )
-            }
-            details.push(item);
-        });
-    }
-
+    const details = buildDetailRows(opptjening, t);
 
     return(
         <div className="opptjeningBody">
@@ -90,6 +101,14 @@ export const OpptjeningView = () => {
             <Ekspanderbartpanel tittel={t("opptjening-what-happened-this-year")} border className="panelWrapper">
                 <div className="detailsBox">
                     {details}
+                    <div className="horizontalLine"/>
+                    {
+                        detailRow(
+                        {
+                            "label": t("opptjening-sum"),
+                            "amount": formatAmount(opptjening.pensjonsbeholdning, false)
+                        })
+                    }
                 </div>
             </Ekspanderbartpanel>
             <Ekspanderbartpanel tittel="Data" className="panelWrapper">
