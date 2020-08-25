@@ -7,26 +7,21 @@ import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import {LineChart} from '../elements/LineChart/LineChart';
 import './OpptjeningView.less';
 
-const formatAmount = (amount, includeSign=true) => {
-    let sign = "+";
-    if(amount < 0){
-        sign = "-"
-    }
-    const formattedAmount = new Intl.NumberFormat('no-NB',
+const formatAmount = (amount) => {
+    return Intl.NumberFormat('nb-NO',
         {
-            style: 'currency',
-            currency: 'NOK' ,
             minimumFractionDigits: 0,
-            maximumFractionDigits: 0
+            maximumFractionDigits: 0,
+
         }).format(Math.abs(amount));
-    return includeSign ? sign + " " + formattedAmount : formattedAmount;
 };
 
 const detailRow = (props) => {
     return(
         <div className="detailRow">
-            <span className="detailColumn">{props.label}: </span>
-            <span className="detailColumn">{props.amount}</span>
+            <span className="labelColumn">{props.label}: </span>
+            <span className="numberColumn">{props.amount}</span>
+            <span className="numberColumn">&nbsp;</span>
         </div>
     )
 };
@@ -38,7 +33,7 @@ const buildDetailRows = (opptjening, t)  => {
         opptjening.endringOpptjening.forEach((endring) => {
             let item;
             let year = (new Date(endring.dato)).getFullYear();
-            if (endring.arsakType === "INNGAENDE") {
+            if (endring.arsakType === "INNGAENDE" || endring.arsakType === "INNGAENDE_2010") {
                 item = detailRow(
                     {
                         "label": t("opptjening-assets-from") + " " + year,
@@ -81,9 +76,29 @@ export const OpptjeningView = () => {
 
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
+    const opptjeningTwoYearsBack = useSelector(state => getOpptjeningByYear(state, currentYear-2));
 
     const details = buildDetailRows(opptjening, t);
 
+    if(details.length>0){
+        details.push(<div className="horizontalLine"/>)
+        details.push(
+            detailRow(
+                {
+                    "label": t("opptjening-sum"),
+                    "amount": formatAmount(opptjening.pensjonsbeholdning)
+                })
+        )
+    } else {
+        details.push(
+            detailRow(
+                {
+                    "label": t('opptjening-your-pension-assets'),
+                    "amount": formatAmount(opptjening.pensjonsbeholdning)
+                })
+        )
+
+    }
     return(
         <div className="opptjeningBody">
             <Panel border>
@@ -101,14 +116,20 @@ export const OpptjeningView = () => {
             <Ekspanderbartpanel tittel={t("opptjening-what-happened-this-year")} border className="panelWrapper">
                 <div className="detailsBox">
                     {details}
-                    <div className="horizontalLine"/>
+                </div>
+                <div className="spacer"/>
+                <div className="detailsBox">
                     {
                         detailRow(
-                        {
-                            "label": t("opptjening-sum"),
-                            "amount": formatAmount(opptjening.pensjonsbeholdning, false)
-                        })
+                            {
+                                "label": t("opptjening-income-base-from") + " " + (currentYear-2) ,
+                                "amount": formatAmount(opptjeningTwoYearsBack.pensjonsgivendeInntekt)
+                            })
                     }
+                </div>
+                <div className="spacer"/>
+                <div className="detailsBox">
+                    Merknader
                 </div>
             </Ekspanderbartpanel>
             <Ekspanderbartpanel tittel="Data" className="panelWrapper">
