@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {getPensjonsBeholdningArray, getYearArray, getOpptjeningByYear, getLatestPensjonsBeholdning} from "../../redux/opptjening/opptjeningSelectors";
 import Panel from 'nav-frontend-paneler';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
+import { Select } from 'nav-frontend-skjema';
 import {LineChart} from '../elements/LineChart/LineChart';
 import './OpptjeningView.less';
 
@@ -68,6 +69,15 @@ const buildDetailRows = (opptjening, t)  => {
     return details;
 };
 
+const buildYearOptions = (yearArray) => {
+    let optionsArray = [];
+    yearArray.forEach((year) => {
+            optionsArray.push(<option value={year}>{year}</option>)
+        }
+    );
+    return optionsArray;
+};
+
 export const OpptjeningView = () => {
     const { t } = useTranslation();
     const yearArray = useSelector(getYearArray);
@@ -79,6 +89,7 @@ export const OpptjeningView = () => {
     const opptjeningTwoYearsBack = useSelector(state => getOpptjeningByYear(state, currentYear-2));
 
     const details = buildDetailRows(opptjening, t);
+    const yearOptions = buildYearOptions(yearArray);
 
     if(details.length>0){
         details.push(<div className="horizontalLine"/>)
@@ -111,7 +122,14 @@ export const OpptjeningView = () => {
             </Panel>
             <LineChart data={{"labels": yearArray, "data":pensjonsBeholdningArray}} onclick={setYear} datasetLabel={t("opptjening-pension-assets")}/>
             <div className="contentCentered">
-                <h2>{currentYear}</h2>
+                <Select
+                    onChange={(event) => setYear(event.target.value)}
+                    value={currentYear}
+                    bredde="xs"
+                    className=""
+                >
+                    {yearOptions}
+                </Select>
             </div>
             <Ekspanderbartpanel tittel={t("opptjening-what-happened-this-year")} border className="panelWrapper">
                 <div className="detailsBox">
