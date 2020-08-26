@@ -4,12 +4,11 @@ import {useSelector} from "react-redux";
 import {getPensjonsBeholdningArray, getYearArray, getOpptjeningByYear, getLatestPensjonsBeholdning} from "../../redux/opptjening/opptjeningSelectors";
 import Panel from 'nav-frontend-paneler';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
-import Lenkepanel from 'nav-frontend-lenkepanel';
 import {LenkepanelBase} from 'nav-frontend-lenkepanel';
 import { Select } from 'nav-frontend-skjema';
 import {LineChart} from '../elements/LineChart/LineChart';
 import './OpptjeningView.less';
-import {Systemtittel, Undertittel} from "nav-frontend-typografi";
+import {Undertittel} from "nav-frontend-typografi";
 import {isDev} from "../../api/api";
 
 const formatAmount = (amount) => {
