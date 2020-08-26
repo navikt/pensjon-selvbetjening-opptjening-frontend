@@ -5,10 +5,11 @@ import {getPensjonsBeholdningArray, getYearArray, getOpptjeningByYear, getLatest
 import Panel from 'nav-frontend-paneler';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import Lenkepanel from 'nav-frontend-lenkepanel';
+import {LenkepanelBase} from 'nav-frontend-lenkepanel';
 import { Select } from 'nav-frontend-skjema';
 import {LineChart} from '../elements/LineChart/LineChart';
 import './OpptjeningView.less';
-import {Undertittel} from "nav-frontend-typografi";
+import {Systemtittel, Undertittel} from "nav-frontend-typografi";
 import {isDev} from "../../api/api";
 
 const formatAmount = (amount) => {
@@ -102,6 +103,12 @@ const getRemarksContainer = (opptjening, t)  => {
     }
 };
 
+const detailsTitle = (title, t) => {
+    return(
+        <div className="detailTitle">{t(title)}</div>
+    )
+};
+
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const yearArray = useSelector(getYearArray);
@@ -140,8 +147,8 @@ export const OpptjeningView = () => {
             <Panel border>
                 <div className="beholdningPanel">
                     <div className="content">
-                        {t('opptjening-your-pension-assets')}
-                        <h1 className="typo-systemtittel">{latestPensjonsBeholdning.beholdning}</h1>
+                        <div className="typo-systemtittel">{t('opptjening-your-pension-assets')}</div>
+                        <div className="typo-sidetittel">{formatAmount(latestPensjonsBeholdning.beholdning)}</div>
                     </div>
                 </div>
             </Panel>
@@ -151,12 +158,12 @@ export const OpptjeningView = () => {
                     onChange={(event) => setYear(event.target.value)}
                     value={currentYear}
                     bredde="xs"
-                    className=""
+                    className="yearSelector"
                 >
                     {yearOptions}
                 </Select>
             </div>
-            <Ekspanderbartpanel tittel={t("opptjening-what-happened-this-year")} border className="panelWrapper">
+            <Ekspanderbartpanel tittel={detailsTitle("opptjening-what-happened-this-year", t)} border className="panelWrapper">
                 <div className="detailsBox">
                     {details}
                 </div>
@@ -172,10 +179,11 @@ export const OpptjeningView = () => {
                 </div>
                 {remarksContainer}
             </Ekspanderbartpanel>
-            <Lenkepanel href={process.env.PUBLIC_URL + "/faq"} border>
-                {t('opptjening-frequently-asked-questions')}
-            </Lenkepanel>
-
+            <LenkepanelBase href={process.env.PUBLIC_URL + "/faq"} border className="panelWrapper">
+                <div className="faqTitle">
+                    <Undertittel className="lenkepanel__heading">{t('opptjening-frequently-asked-questions')}</Undertittel>
+                </div>
+            </LenkepanelBase>
             {isDev() &&
                 <Ekspanderbartpanel tittel="Data" className="panelWrapper">
                     <pre id="json">{JSON.stringify(opptjening, null, 4)}</pre>

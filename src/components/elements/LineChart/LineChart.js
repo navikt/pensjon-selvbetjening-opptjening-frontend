@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
+import './LineChart.less';
 
 export const LineChart = (props) => {
     const chartRef = useRef(null);
@@ -48,7 +49,7 @@ export const LineChart = (props) => {
     }, [chartConfig, chartRef]);
 
     return(
-        <div className="graphContainer">
+        <div className="chartContainer">
             <canvas ref={chartRef}/>
         </div>
     );
