@@ -4,9 +4,12 @@ import {useSelector} from "react-redux";
 import {getPensjonsBeholdningArray, getYearArray, getOpptjeningByYear, getLatestPensjonsBeholdning} from "../../redux/opptjening/opptjeningSelectors";
 import Panel from 'nav-frontend-paneler';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
+import Lenkepanel from 'nav-frontend-lenkepanel';
 import { Select } from 'nav-frontend-skjema';
 import {LineChart} from '../elements/LineChart/LineChart';
 import './OpptjeningView.less';
+import {Undertittel} from "nav-frontend-typografi";
+import {isDev} from "../../api/api";
 
 const formatAmount = (amount) => {
     return Intl.NumberFormat('nb-NO',
@@ -78,8 +81,29 @@ const buildYearOptions = (yearArray) => {
     return optionsArray;
 };
 
+const getRemarksContainer = (opptjening, t)  => {
+    let remarks = [];
+    opptjening.merknader.forEach((merknad) => {
+        remarks.push(<div>{t('remarks:'+merknad)}</div>)
+    });
+
+    if(remarks.length>0){
+        return(
+            <div>
+                <div className="spacer"/>
+                <div className="detailsBox">
+                    <Undertittel>{t('opptjening-remarks-title')}</Undertittel>
+                    {remarks}
+                </div>
+            </div>
+        )
+    } else {
+        return null;
+    }
+};
+
 export const OpptjeningView = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(['translation', 'remarks']);
     const yearArray = useSelector(getYearArray);
     const pensjonsBeholdningArray = useSelector(getPensjonsBeholdningArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
@@ -90,6 +114,7 @@ export const OpptjeningView = () => {
 
     const details = buildDetailRows(opptjening, t);
     const yearOptions = buildYearOptions(yearArray);
+    const remarksContainer = getRemarksContainer(opptjening, t);
 
     if(details.length>0){
         details.push(<div className="horizontalLine"/>)
@@ -145,14 +170,17 @@ export const OpptjeningView = () => {
                             })
                     }
                 </div>
-                <div className="spacer"/>
-                <div className="detailsBox">
-                    Merknader
-                </div>
+                {remarksContainer}
             </Ekspanderbartpanel>
-            <Ekspanderbartpanel tittel="Data" className="panelWrapper">
-                <pre id="json">{JSON.stringify(opptjening, null, 4)}</pre>
-            </Ekspanderbartpanel>
+            <Lenkepanel href={process.env.PUBLIC_URL + "/faq"} border>
+                {t('opptjening-frequently-asked-questions')}
+            </Lenkepanel>
+
+            {isDev() &&
+                <Ekspanderbartpanel tittel="Data" className="panelWrapper">
+                    <pre id="json">{JSON.stringify(opptjening, null, 4)}</pre>
+                </Ekspanderbartpanel>
+            }
         </div>
     )
 };

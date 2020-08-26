@@ -27,6 +27,8 @@
     "nav-frontend-grid-style": "^0.2.20",
     "nav-frontend-ikoner-assets": "^2.0.3",
     "nav-frontend-js-utils": "^1.0.9",
+    "nav-frontend-lenkepanel": "^1.0.47",
+    "nav-frontend-lenkepanel-style": "^0.3.31",
     "nav-frontend-lenker": "^1.0.41",
     "nav-frontend-lenker-style": "^0.2.29",
     "nav-frontend-paneler": "^2.0.10",
