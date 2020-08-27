@@ -1,3 +1,5 @@
+@import (reference) '~nav-frontend-core/less/_variabler';
+
 .beholdningPanel{
   background-image: url('../../assets/sparegris.png');
   background-repeat: no-repeat;
@@ -15,18 +17,14 @@
 
 .panelWrapper {
   margin: 1rem 0 1rem 0;
-  border-color: #C6C2BF;
+  border-color: @navGra20 !important;
 }
 
 .detailsBox{
-  //background-image: url('../../assets/sedler.png');
-  //background-repeat: no-repeat;
-  //background-size: 40px;
-  //background-position-y: bottom;
-  //background-position-x: right;
   background-color: #efefef;
   border-radius: 4px;
   padding: 20px;
+  margin-bottom: 5px;
 }
 
 .detailRow{

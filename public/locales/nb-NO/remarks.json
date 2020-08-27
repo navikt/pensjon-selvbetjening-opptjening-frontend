@@ -1,12 +1,12 @@
 {
-    "AFP": "AFP",
-    "REFORM": "01.01.2010 trådte pensjonsreformen i kraft. Fra dette tidspunktet vil dine opptjente pensjonsrettigheter være helt eller delvis basert på din pensjonsbeholdning.",
-    "INGEN_OPPTJENING": "Ingen opptjening",
-    "UFOREGRAD": "UFOREGRAD",
-    "DAGPENGER": "DAGPENGER",
-    "FORSTEGANGSTJENESTE": "FORSTEGANGSTJENESTE",
-    "OMSORGSOPPTJENING": "OMSORGSOPPTJENING",
-    "OVERFORE_OMSORGSOPPTJENING": "OVERFORE_OMSORGSOPPTJENING",
-    "GRADERT_UTTAK": "GRADERT_UTTAK",
-    "HELT_UTTAK": "HELT_UTTAK"
+    "AFP": "AFP (dersom du har hatt flere perioder med AFP vises kun merknader for siste periode)",
+    "REFORM": "Nye regler for opptjening av alderspensjon ble innført 01.01.2010.",
+    "INGEN_OPPTJENING": "Ingen registrerte pensjonspoeng",
+    "UFOREGRAD": "Uføretrygd: {0} prosent",
+    "DAGPENGER": "Mottak av dagpenger",
+    "FORSTEGANGSTJENESTE": "Avtjent førstegangstjeneste",
+    "OMSORGSOPPTJENING": "Ulønnet omsorgsarbeid",
+    "OVERFORE_OMSORGSOPPTJENING": "Overfør omsorgsopptjening",
+    "GRADERT_UTTAK": "Gradert uttak",
+    "HELT_UTTAK": "Alderspensjon: 100 prosent"
 }

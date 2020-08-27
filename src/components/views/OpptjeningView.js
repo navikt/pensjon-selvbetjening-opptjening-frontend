@@ -89,12 +89,9 @@ const getRemarksContainer = (opptjening, t)  => {
 
     if(remarks.length>0){
         return(
-            <div>
-                <div className="spacer"/>
-                <div className="detailsBox">
-                    <Undertittel>{t('opptjening-remarks-title')}</Undertittel>
-                    {remarks}
-                </div>
+            <div className="detailsBox">
+                <Undertittel>{t('opptjening-remarks-title')}</Undertittel>
+                {remarks}
             </div>
         )
     } else {
@@ -122,25 +119,19 @@ export const OpptjeningView = () => {
     const yearOptions = buildYearOptions(yearArray);
     const remarksContainer = getRemarksContainer(opptjening, t);
 
+    let label = "opptjening-your-pension-assets";
     if(details.length>0){
-        details.push(<div className="horizontalLine"/>)
-        details.push(
-            detailRow(
-                {
-                    "label": t("opptjening-sum"),
-                    "amount": formatAmount(opptjening.pensjonsbeholdning)
-                })
-        )
-    } else {
-        details.push(
-            detailRow(
-                {
-                    "label": t('opptjening-your-pension-assets'),
-                    "amount": formatAmount(opptjening.pensjonsbeholdning)
-                })
-        )
-
+        label = "opptjening-sum";
+        details.push(<div className="horizontalLine"/>);
     }
+    details.push(
+        detailRow(
+            {
+                "label": t(label),
+                "amount": formatAmount(opptjening.pensjonsbeholdning)
+            })
+    );
+
     return(
         <div className="opptjeningBody">
             <Panel border>
@@ -166,16 +157,17 @@ export const OpptjeningView = () => {
                 <div className="detailsBox">
                     {details}
                 </div>
-                <div className="spacer"/>
-                <div className="detailsBox">
-                    {
-                        detailRow(
-                            {
-                                "label": t("opptjening-income-base-from") + " " + (currentYear-2) ,
-                                "amount": formatAmount(opptjeningTwoYearsBack.pensjonsgivendeInntekt)
-                            })
-                    }
-                </div>
+                {opptjeningTwoYearsBack &&
+                    <div className="detailsBox">
+                        {
+                            detailRow(
+                                {
+                                    "label": t("opptjening-income-base-from") + " " + (currentYear - 2),
+                                    "amount": formatAmount(opptjeningTwoYearsBack.pensjonsgivendeInntekt)
+                                })
+                        }
+                    </div>
+                }
                 {remarksContainer}
             </Ekspanderbartpanel>
             <LenkepanelBase href={process.env.PUBLIC_URL + "/faq"} border className="panelWrapper">
