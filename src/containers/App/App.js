@@ -1,6 +1,6 @@
 import React from 'react';
-import {HomePage} from "./components/pages/HomePage";
-import {FaqPage} from "./components/pages/FaqPage";
+import {HomePage} from "../../components/pages/HomePage";
+import {FaqPage} from "../../components/pages/FaqPage";
 
 import {Switch, Route} from "react-router-dom";
 import './App.less';

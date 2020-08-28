@@ -1,5 +1,5 @@
 import React from 'react';
-import {OpptjeningContainer} from "../../containers/OpptjeningContainer";
+import {OpptjeningContainer} from "../../containers/OpptjeningContainer/OpptjeningContainer";
 import {OpptjeningView} from "../views/OpptjeningView";
 import {TopBanner} from "../elements/TopBanner/TopBanner";
 import {LanguageSelector} from "../elements/LanguageSelector/LanguageSelector";
