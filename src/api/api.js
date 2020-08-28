@@ -1,6 +1,4 @@
-export function isDev() {
-    return process.env.NODE_ENV === 'development';
-}
+import {isDev} from "../common/utils";
 
 const RequestMethod = {
     GET: "GET",
