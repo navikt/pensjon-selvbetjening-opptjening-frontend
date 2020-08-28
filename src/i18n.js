@@ -24,7 +24,7 @@ i18n
             caches: ['localStorage', 'cookie']
         },
         fallbackLng: 'nb-NO',
-        debug: true,
+        debug: false,
         backend:{
             loadPath: process.env.PUBLIC_URL + '/locales/{{lng}}/{{ns}}.json'
         },

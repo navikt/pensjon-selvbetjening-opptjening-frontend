@@ -22,7 +22,7 @@ const formatAmount = (amount) => {
 
 const detailRow = (props) => {
     return(
-        <div className="detailRow">
+        <div key={props.key} className="detailRow">
             <span className="labelColumn">{props.label}: </span>
             <span className="numberColumn">{props.amount}</span>
             <span className="numberColumn">&nbsp;</span>
@@ -34,12 +34,13 @@ const buildDetailRows = (opptjening, t)  => {
     const details = [];
 
     if (opptjening && opptjening.endringOpptjening) {
-        opptjening.endringOpptjening.forEach((endring) => {
+        opptjening.endringOpptjening.forEach((endring, idx) => {
             let item;
             let year = (new Date(endring.dato)).getFullYear();
             if (endring.arsakType === "INNGAENDE" || endring.arsakType === "INNGAENDE_2010") {
                 item = detailRow(
                     {
+                        "key":idx,
                         "label": t("opptjening-assets-from") + " " + year,
                         "amount": formatAmount(endring.pensjonsbeholdningBelop)
                     }
@@ -47,6 +48,7 @@ const buildDetailRows = (opptjening, t)  => {
             } else if (endring.arsakType === "OPPTJENING") {
                 item = detailRow(
                     {
+                        "key":idx,
                         "label": t("opptjening-earnings-from") + " " + (year - 2),
                         "amount": formatAmount(endring.endringBelop)
                     }
@@ -54,6 +56,7 @@ const buildDetailRows = (opptjening, t)  => {
             } else if (endring.arsakType === "REGULERING") {
                 item = detailRow(
                     {
+                        "key":idx,
                         "label": t("opptjening-regulation") + " " + year,
                         "amount": formatAmount(endring.endringBelop)
                     }
@@ -61,6 +64,7 @@ const buildDetailRows = (opptjening, t)  => {
             } else if (endring.arsakType === "UTTAK") {
                 item = detailRow(
                     {
+                        "key":idx,
                         "label": t("opptjening-withdrawal") + " " + year,
                         "amount": formatAmount(endring.endringBelop)
                     }
@@ -75,7 +79,7 @@ const buildDetailRows = (opptjening, t)  => {
 const buildYearOptions = (yearArray) => {
     let optionsArray = [];
     yearArray.forEach((year) => {
-            optionsArray.push(<option value={year}>{year}</option>)
+            optionsArray.push(<option key={year} value={year}>{year}</option>)
         }
     );
     return optionsArray;
@@ -83,8 +87,8 @@ const buildYearOptions = (yearArray) => {
 
 const getRemarksContainer = (opptjening, t)  => {
     let remarks = [];
-    opptjening.merknader.forEach((merknad) => {
-        remarks.push(<div>{t('remarks:'+merknad)}</div>)
+    opptjening.merknader.forEach((merknad, idx) => {
+        remarks.push(<div key={idx}>{t('remarks:'+merknad)}</div>)
     });
 
     if(remarks.length>0){
@@ -122,11 +126,12 @@ export const OpptjeningView = () => {
     let label = "opptjening-your-pension-assets";
     if(details.length>0){
         label = "opptjening-sum";
-        details.push(<div className="horizontalLine"/>);
+        details.push(<div key="horizontalLine" className="horizontalLine"/>);
     }
     details.push(
         detailRow(
             {
+                "key": details.length+1,
                 "label": t(label),
                 "amount": formatAmount(opptjening.pensjonsbeholdning)
             })

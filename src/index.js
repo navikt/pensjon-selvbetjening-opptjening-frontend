@@ -13,7 +13,7 @@ import './index.less';
 
 ReactDOM.render(
     <Provider store={store}>
-        <Suspense fallback={NavFrontendSpinner}>
+        <Suspense fallback={<NavFrontendSpinner/>}>
             <Router>
                 <Normaltekst tag="div">
                     <App />
