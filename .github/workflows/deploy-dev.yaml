@@ -66,9 +66,11 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-fss
           RESOURCE: nais/nais-dev-fss.yml
+          VARS: nais/vars-fss.yaml
       - name: Deploy to dev-sbs
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-sbs
           RESOURCE: nais/nais-dev-sbs.yml
+          VARS: nais/vars-sbs.yaml
