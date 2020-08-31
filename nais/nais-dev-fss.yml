@@ -1,0 +1,27 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: pensjon-selvbetjening-opptjening-frontend
+  namespace: default
+  labels:
+    team: pensjonselvbetjening
+spec:
+  image: {{ image_fss }}
+  port: 8080
+  replicas:
+    min: 1
+    max: 1
+  liveness:
+    path: "/api/internal/isAlive"
+    initialDelay: 3
+    timeout: 1
+  ingresses:
+    - "https://pensjon-selvbetjening-opptjening-frontend.nais.preprod.local"
+    - "https://pensjon-selvbetjening-opptjening-frontend.dev-fss.nais.io"
+  readiness:
+    path: "/api/internal/isReady"
+    initialDelay: 3
+    timeout: 1
+  env:
+    - name: "OPPTJENING_BACKEND"
+      value: "https://pensjon-selvbetjening-opptjening-backend.nais.preprod.local"

@@ -6,11 +6,12 @@ on:
       - master
 
 env:
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend:${{ github.sha }}
+  IMAGE_FSS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-fss:${{ github.sha }}
+  IMAGE_SBS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-sbs:${{ github.sha }}
 
 jobs:
   deploy-to-dev:
-    name: Deploy to dev-sbs
+    name: Deploy to dev-fss and dev-sbs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,19 +33,42 @@ jobs:
           #REACT_APP_DECORATOR_URL: "https://www-q1.nav.no/dekoratoren"
           REACT_APP_DECORATOR_URL: "https://dekoratoren.dev.nav.no"
         run: npm run build
-      - name: Build Docker image
+      - name: Build Docker image FSS
         run: |
-          docker build -t ${IMAGE} .
+          docker build -f Dockerfile-fss -t ${IMAGE_FSS} .
+      - name: Build Docker image SBS
+        run: |
+          docker build -f Dockerfile-sbs -t ${IMAGE_SBS} .
       - name: Login to Github Package Registry
         env:
           DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login --username "$GITHUB_REPOSITORY" --password-stdin docker.pkg.github.com
-      - name: Push Docker image
-        run: "docker push ${IMAGE}"
+      - name: Push Docker image FSS
+        run: "docker push ${IMAGE_FSS}"
+      - name: Push Docker image SBS
+        run: "docker push ${IMAGE_SBS}"
+      - name: Generate NAIS variables FSS
+        run: |
+          cat > nais/vars-fss.yaml <<EOF
+          namespace: default
+          image_fss: $IMAGE_FSS
+          EOF
+      - name: Generate NAIS variables SBS
+        run: |
+          cat > nais/vars-sbs.yaml <<EOF
+          namespace: default
+          image_sbs: $IMAGE_SBS
+          EOF
+      - name: Deploy to dev-fss
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-fss
+          RESOURCE: nais/nais-dev-fss.yml
       - name: Deploy to dev-sbs
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-sbs
-          RESOURCE: nais/nais-dev.yml
+          RESOURCE: nais/nais-dev-sbs.yml

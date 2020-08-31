@@ -6,7 +6,7 @@ metadata:
   labels:
     team: pensjonselvbetjening
 spec:
-  image: {{ image }}
+  image: {{ image_sbs }}
   port: 8080
   replicas:
     min: 1
@@ -16,7 +16,7 @@ spec:
     initialDelay: 3
     timeout: 1
   ingresses:
-    - "https://pensjon-selvbetjening-opptjening-frontend.nais.preprod.local"
+    - "https://pensjon-selvbetjening-opptjening-frontend.nais.oera-q.local"
     - "https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io"
     - "https://www-q0.nav.no/pensjon/opptjening"
     - "https://www-q0.dev.nav.no/pensjon/opptjening"
