@@ -6,9 +6,11 @@ import "./FAQLinkPanel.less";
 
 export const FAQLinkPanel = () => {
     const { t } = useTranslation();
-    return <LenkepanelBase href={process.env.PUBLIC_URL + "/faq"} border className="panelWrapper">
-        <div className="faqTitle">
-            <Undertittel className="lenkepanel__heading">{t('opptjening-frequently-asked-questions')}</Undertittel>
-        </div>
-    </LenkepanelBase>;
+    return(
+        <LenkepanelBase role="link" href={process.env.PUBLIC_URL + "/faq"} border className="panelWrapper">
+            <div className="faqTitle">
+                <Undertittel role="title" className="lenkepanel__heading">{t('opptjening-frequently-asked-questions')}</Undertittel>
+            </div>
+        </LenkepanelBase>
+    );
 };
