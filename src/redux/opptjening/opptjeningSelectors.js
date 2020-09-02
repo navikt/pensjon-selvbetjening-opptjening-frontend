@@ -32,3 +32,14 @@ export const getLatestPensjonsBeholdningAndInntekt = (state = initialState) => {
         "pensjonsgivendeInntekt": oData[lastYear].pensjonsgivendeInntekt
     };
 };
+
+export const getInntekter = (state = initialState) => {
+    const opptjeningData = state.opptjening.opptjening.opptjeningData;
+    return Object.keys(opptjeningData).map((year) => {
+        return {
+            "year": year,
+            "pensjonsgivendeInntekt": opptjeningData[year].pensjonsgivendeInntekt
+        }
+    });
+};
+
