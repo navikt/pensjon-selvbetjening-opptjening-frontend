@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux";
 import {
-    getLatestPensjonsBeholdning,
+    getLatestPensjonsBeholdningAndInntekt,
     getOpptjeningByYear,
     getPensjonsBeholdningArray,
     getYearArray
@@ -14,22 +14,27 @@ import {YearSelector} from "../elements/YearSelector/YearSelector";
 import {OpptjeningDetailsPanel} from "../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
 import {isDev} from "../../common/utils";
 import './OpptjeningView.less';
-import {BeholdningPanel} from "../elements/BeholdningPanel/BeholdningPanel";
+import {BeholdningAndInntektPanel} from "../elements/BeholdningAndInntektPanel/BeholdningAndInntektPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const yearArray = useSelector(getYearArray);
     const pensjonsBeholdningArray = useSelector(getPensjonsBeholdningArray);
-    const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
+    const latestPensjonsBeholdningAndInntekt = useSelector(getLatestPensjonsBeholdningAndInntekt);
 
-    const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
+    const [currentYear, setYear] = useState(latestPensjonsBeholdningAndInntekt.year);
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
     const opptjeningTwoYearsBack = useSelector(state => getOpptjeningByYear(state, currentYear-2));
 
     return(
         <div>
-            <BeholdningPanel data={latestPensjonsBeholdning}/>
-            <LineChart data={{"labels": yearArray, "data": pensjonsBeholdningArray}} onclick={setYear} datasetLabel={t("opptjening-pension-assets")}/>
+            <BeholdningAndInntektPanel data={latestPensjonsBeholdningAndInntekt}/>
+            <LineChart
+                data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
+                title={t('opptjening-your-pension-assets')}
+                datasetLabel={t("opptjening-pension-assets")}
+                onclick={setYear}
+            />
             <div className="contentCentered">
                 <YearSelector years={yearArray} onChange={setYear} currentYear={currentYear} size="xs"/>
             </div>

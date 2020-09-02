@@ -1,4 +1,4 @@
-name: NAIS Deploy to dev-sbs
+name: NAIS Deploy to dev-fss and dev-sbs
 
 on:
   push:
