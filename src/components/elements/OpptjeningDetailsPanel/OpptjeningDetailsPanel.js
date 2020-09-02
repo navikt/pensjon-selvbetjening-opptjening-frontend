@@ -16,17 +16,25 @@ const detailRow = (props) => {
 };
 const buildDetailRows = (opptjening, t)  => {
     const details = [];
-
+    let inngaende;
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
             let item;
-            let year = (new Date(endring.dato)).getFullYear();
-            if (endring.arsakType === "INNGAENDE" || endring.arsakType === "INNGAENDE_2010") {
+            if (endring.arsakType === "INNGAENDE") {
+                inngaende = endring.pensjonsbeholdningBelop;
                 item = detailRow(
                     {
-                        "key":idx,
+                        "key": idx,
                         "label": t("opptjening-assets"),
                         "amount": formatAmount(endring.pensjonsbeholdningBelop)
+                    }
+                )
+            } else if (endring.arsakType === "INNGAENDE_2010"){
+                item = detailRow(
+                    {
+                        "key": idx,
+                        "label": t("opptjening-earnings"),
+                        "amount": formatAmount(endring.pensjonsbeholdningBelop-inngaende)
                     }
                 )
             } else if (endring.arsakType === "OPPTJENING") {
