@@ -8,7 +8,7 @@ import "./OpptjeningDetailsPanel.less"
 const detailRow = (props) => {
     return(
         <div key={props.key} className="detailRow">
-            <span className="labelColumn">{props.label}: </span>
+            <span className="labelColumn">{props.label}</span>
             <span className="numberColumn">{props.amount}</span>
             <span className="numberColumn">&nbsp;</span>
         </div>
@@ -25,7 +25,7 @@ const buildDetailRows = (opptjening, t)  => {
                 item = detailRow(
                     {
                         "key":idx,
-                        "label": t("opptjening-assets-from") + " " + year,
+                        "label": t("opptjening-assets"),
                         "amount": formatAmount(endring.pensjonsbeholdningBelop)
                     }
                 )
@@ -33,7 +33,7 @@ const buildDetailRows = (opptjening, t)  => {
                 item = detailRow(
                     {
                         "key":idx,
-                        "label": t("opptjening-earnings-from") + " " + (year - 2),
+                        "label": t("opptjening-earnings"),
                         "amount": formatAmount(endring.endringBelop)
                     }
                 )
@@ -41,7 +41,7 @@ const buildDetailRows = (opptjening, t)  => {
                 item = detailRow(
                     {
                         "key":idx,
-                        "label": t("opptjening-regulation") + " " + year,
+                        "label": t("opptjening-regulation"),
                         "amount": formatAmount(endring.endringBelop)
                     }
                 )
@@ -49,7 +49,7 @@ const buildDetailRows = (opptjening, t)  => {
                 item = detailRow(
                     {
                         "key":idx,
-                        "label": t("opptjening-withdrawal") + " " + year,
+                        "label": t("opptjening-withdrawal"),
                         "amount": formatAmount(endring.endringBelop)
                     }
                 )
@@ -60,9 +60,9 @@ const buildDetailRows = (opptjening, t)  => {
     return details;
 };
 
-const detailsTitle = (title, t) => {
+const detailsTitle = (title) => {
     return(
-        <div className="detailTitle">{t(title)}</div>
+        <div className="detailTitle">{title + "?"}</div>
     )
 };
 
@@ -109,7 +109,7 @@ export const OpptjeningDetailsPanel = (props) => {
     );
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle("opptjening-what-happened-this-year", t)} border
+        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-what-happened-this-year', {currentYear: currentYear}))} border apen
                             className="panelWrapper">
             <div className="detailsBox">
                 {details}
@@ -119,7 +119,7 @@ export const OpptjeningDetailsPanel = (props) => {
                     {
                         detailRow(
                             {
-                                "label": t("opptjening-income-base-from") + " " + (currentYear - 2),
+                                "label": t("opptjening-income-base-from", {currentYear: currentYear, twoYearsback: (currentYear - 2)}),
                                 "amount": formatAmount(opptjeningTwoYearsBack.pensjonsgivendeInntekt)
                             })
                     }
