@@ -2,7 +2,6 @@ import {formatAmount} from "../../../common/utils";
 import React from "react";
 import {useTranslation} from "react-i18next";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import {Undertittel} from "nav-frontend-typografi";
 import 'nav-frontend-tabell-style';
 import "./InntektPanel.less"
 
