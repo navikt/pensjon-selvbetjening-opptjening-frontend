@@ -23,13 +23,12 @@ export const getOpptjeningByYear = (state = initialState, year) => {
     return state.opptjening.opptjening.opptjeningData[year];
 };
 
-export const getLatestPensjonsBeholdningAndInntekt = (state = initialState) => {
+export const getLatestPensjonsBeholdning = (state = initialState) => {
     const oData = state.opptjening.opptjening.opptjeningData;
     const lastYear = _.max(Object.keys(oData), o => oData[o]);
     return {
         "year": lastYear,
         "beholdning": oData[lastYear].pensjonsbeholdning,
-        "pensjonsgivendeInntekt": oData[lastYear].pensjonsgivendeInntekt
     };
 };
 

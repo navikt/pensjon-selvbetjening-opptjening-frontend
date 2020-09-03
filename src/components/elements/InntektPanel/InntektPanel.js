@@ -39,7 +39,7 @@ export const InntektPanel = (props) => {
     const details = buildDetailRows(inntekter, t);
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle("Inntekter")} border className="panelWrapper">
+        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper">
             <div className="inntektDetailsBox">
                 <table className="tabell">
                     <thead>

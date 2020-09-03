@@ -2,7 +2,6 @@ import React from "react";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 import './LineChart.less';
-import {Undertittel} from "nav-frontend-typografi";
 
 export const LineChart = (props) => {
     const chartRef = useRef(null);
@@ -51,7 +50,6 @@ export const LineChart = (props) => {
 
     return(
         <div className="chartContainer">
-            <Undertittel>{props.title}</Undertittel>
             <canvas ref={chartRef}/>
         </div>
     );

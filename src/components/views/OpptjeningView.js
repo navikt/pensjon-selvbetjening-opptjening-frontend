@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux";
 import {
     getInntekter,
-    getLatestPensjonsBeholdningAndInntekt,
+    getLatestPensjonsBeholdning,
     getOpptjeningByYear,
     getPensjonsBeholdningArray,
     getYearArray
@@ -16,25 +16,24 @@ import {OpptjeningDetailsPanel} from "../elements/OpptjeningDetailsPanel/Opptjen
 import {InntektPanel} from "../elements/InntektPanel/InntektPanel";
 import {isDev} from "../../common/utils";
 import './OpptjeningView.less';
-import {BeholdningAndInntektPanel} from "../elements/BeholdningAndInntektPanel/BeholdningAndInntektPanel";
+import {BeholdningPanel} from "../elements/BeholdningPanel/BeholdningPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const yearArray = useSelector(getYearArray);
     const pensjonsBeholdningArray = useSelector(getPensjonsBeholdningArray);
-    const latestPensjonsBeholdningAndInntekt = useSelector(getLatestPensjonsBeholdningAndInntekt);
+    const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
 
-    const [currentYear, setYear] = useState(latestPensjonsBeholdningAndInntekt.year);
+    const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
     const opptjeningTwoYearsBack = useSelector(state => getOpptjeningByYear(state, currentYear-2));
     const inntekter = useSelector(getInntekter);
 
     return(
         <div>
-            <BeholdningAndInntektPanel data={latestPensjonsBeholdningAndInntekt}/>
+            <BeholdningPanel data={latestPensjonsBeholdning}/>
             <LineChart
                 data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
-                title={t('opptjening-your-pension-assets')}
                 datasetLabel={t("opptjening-pension-assets")}
                 onclick={setYear}
             />
