@@ -20,7 +20,7 @@ const buildDetailRows = (inntekter, t)  => {
             {
                 "key": idx,
                 "label": inntekt.year,
-                "amount": formatAmount(inntekt.pensjonsgivendeInntekt)
+                "amount": inntekt.pensjonsgivendeInntekt!==null ? formatAmount(inntekt.pensjonsgivendeInntekt) : t('opptjening-ikke-tilgjengelig-enda')
             }
         ))
     });
