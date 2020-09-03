@@ -13,11 +13,12 @@
     "opptjening-regulation":"Regulation",
     "opptjening-withdrawal":"Withdrawal",
     "opptjening-sum":"Sum",
-    "opptjening-income-base-from": "Assets from {{currentYear}} is based on pensionable income from {{twoYearsback}}",
+    "opptjening-income-base-from": "Assets from {{currentYear}} is based on pensionable income in {{twoYearsback}}",
     "opptjening-remarks-title": "Remarks",
     "opptjening-frequently-asked-questions": "Frequently asked questions",
     "opptjening-pensjonsgivende-inntekter": "Pensionable income",
     "opptjening-ikke-tilgjengelig-enda": "Not available",
+    "opptjening-okning-reform": "Increase due to reform",
 
     "faq-title": "Frequently asked questions",
 

@@ -33,7 +33,7 @@ const buildDetailRows = (opptjening, t)  => {
                 item = detailRow(
                     {
                         "key": idx,
-                        "label": t("opptjening-earnings"),
+                        "label": t("opptjening-okning-reform"),
                         "amount": formatAmount(endring.pensjonsbeholdningBelop-inngaende)
                     }
                 )
@@ -122,7 +122,7 @@ export const OpptjeningDetailsPanel = (props) => {
             <div className="detailsBox">
                 {details}
             </div>
-            {opptjeningTwoYearsBack &&
+            {opptjeningTwoYearsBack && currentYear>=2010 &&
                 <div className="detailsBox">
                     {
                         detailRow(
