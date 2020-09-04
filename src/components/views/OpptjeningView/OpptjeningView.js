@@ -7,16 +7,16 @@ import {
     getOpptjeningByYear,
     getPensjonsBeholdningArray,
     getYearArray
-} from "../../redux/opptjening/opptjeningSelectors";
+} from "../../../redux/opptjening/opptjeningSelectors";
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
-import {LineChart} from '../elements/LineChart/LineChart';
-import {FAQLinkPanel} from "../elements/FAQLinkPanel/FAQLinkPanel";
-import {YearSelector} from "../elements/YearSelector/YearSelector";
-import {OpptjeningDetailsPanel} from "../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
-import {InntektPanel} from "../elements/InntektPanel/InntektPanel";
-import {isDev} from "../../common/utils";
+import {LineChart} from '../../elements/LineChart/LineChart';
+import {FAQLinkPanel} from "../../elements/FAQLinkPanel/FAQLinkPanel";
+import {YearSelector} from "../../elements/YearSelector/YearSelector";
+import {OpptjeningDetailsPanel} from "../../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
+import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
+import {isDev} from "../../../common/utils";
 import './OpptjeningView.less';
-import {BeholdningPanel} from "../elements/BeholdningPanel/BeholdningPanel";
+import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);

@@ -7,7 +7,7 @@ import "./InntektPanel.less"
 
 const detailRow = (props) => {
     return(
-        <tr>
+        <tr key={props.key}>
             <td>{props.label}</td>
             <td>{props.amount}</td>
         </tr>

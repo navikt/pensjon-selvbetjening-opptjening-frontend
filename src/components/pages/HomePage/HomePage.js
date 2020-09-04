@@ -1,6 +1,6 @@
 import React from 'react';
 import {OpptjeningContainer} from "../../../containers/OpptjeningContainer/OpptjeningContainer";
-import {OpptjeningView} from "../../views/OpptjeningView";
+import {OpptjeningView} from "../../views/OpptjeningView/OpptjeningView";
 import {TopBanner} from "../../elements/TopBanner/TopBanner";
 import {LanguageSelector} from "../../elements/LanguageSelector/LanguageSelector";
 import './HomePage.less';
