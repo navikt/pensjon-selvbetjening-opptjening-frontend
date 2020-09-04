@@ -39,7 +39,7 @@ const Breadcrumbs = () => {
     return (
         <nav aria-label={t('breadcrumbs-you-are-here')} className="breadcrumbs">
             <p className="typo-normal item">
-                <Lenke href={basePath}>
+                <Lenke href={basePath +"/"}>
                     {t('opptjening-title')}
                 </Lenke>
             </p>
