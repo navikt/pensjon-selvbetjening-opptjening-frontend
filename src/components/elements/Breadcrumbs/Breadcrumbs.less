@@ -1,0 +1,41 @@
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem 0 2rem;
+  margin-left: 1rem;
+  align-self: flex-start;
+}
+
+.breadcrumbs .item {
+  max-width: 210px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+  color: lightGray;
+}
+
+.breadcrumbs .item:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+.breadcrumbs a {
+  font-weight: lighter;
+  text-decoration: none;
+  color: #0067C5;
+  border-bottom: 1px solid lightgray;
+}
+
+.breadcrumbs a:hover {
+  border-bottom: 1px solid #0067C5;
+}
+.breadcrumbs .current {
+  color: black;
+  font-weight: bold;
+}
+
+.breadcrumbs .chevron--hoyre {
+  color: #78706A;
+  transform: scale(0.8) rotate(-90deg);
+}
