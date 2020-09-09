@@ -1,13 +1,15 @@
 import { all, put, call, takeLatest } from 'redux-saga/effects';
-import {FETCH_OPPTJENING_STARTED, FETCH_OPPTJENING_SUCCESS, FETCH_OPPTJENING_FAILURE} from './opptjeningActions'
+import {FETCH_OPPTJENING_STARTED} from './opptjeningActions'
+import {fetchOpptjeningSuccess, fetchOpptjeningFailure} from './opptjeningActions'
+
 import {fetchToJson} from "../../api/api";
 
-function* fetchOpptjening() {
+export function* fetchOpptjening() {
     try {
         const opptjening = yield call(fetchToJson, process.env.PUBLIC_URL + "/api/opptjening");
-        yield put({ "type": FETCH_OPPTJENING_SUCCESS, opptjening });
+        yield put(fetchOpptjeningSuccess(opptjening));
     } catch (error) {
-        yield put({ "type": FETCH_OPPTJENING_FAILURE, error });
+        yield put(fetchOpptjeningFailure(error));
     }
 }
 
