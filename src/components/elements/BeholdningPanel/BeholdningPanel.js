@@ -2,6 +2,7 @@ import React from "react";
 import {useTranslation} from "react-i18next";
 import {formatAmount} from "../../../common/utils";
 import Panel from "nav-frontend-paneler";
+import {Systemtittel, Sidetittel} from "nav-frontend-typografi";
 import "./BeholdningPanel.less"
 
 export const BeholdningPanel = (props) => {
@@ -11,8 +12,8 @@ export const BeholdningPanel = (props) => {
         <Panel border>
             <div className="beholdningPanel">
                 <div className="content">
-                    <div className="typo-systemtittel">{t('opptjening-your-pension-assets')}</div>
-                    <div className="typo-sidetittel">{formatAmount(latestPensjonsBeholdning.beholdning)}</div>
+                    <Systemtittel>{t('opptjening-your-pension-assets')}</Systemtittel>
+                    <Sidetittel>{formatAmount(latestPensjonsBeholdning.beholdning)}</Sidetittel>
                 </div>
             </div>
         </Panel>

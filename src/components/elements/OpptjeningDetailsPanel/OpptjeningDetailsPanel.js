@@ -7,10 +7,10 @@ import "./OpptjeningDetailsPanel.less"
 
 const detailRow = (props) => {
     return(
-        <div key={props.key} className="detailRow">
-            <span className="labelColumn">{props.label}</span>
-            <span className="numberColumn">{props.amount}</span>
-            <span className="numberColumn">&nbsp;</span>
+        <div role="row" key={props.key} className="detailRow">
+            <span role="cell" className="labelColumn">{props.label}</span>
+            <span role="cell" className="numberColumn">{props.amount}</span>
+            <span role="cell" className="numberColumn">&nbsp;</span>
         </div>
     )
 };
@@ -70,19 +70,19 @@ const buildDetailRows = (opptjening, t)  => {
 
 const detailsTitle = (title) => {
     return(
-        <div className="detailTitle">{title + "?"}</div>
+        <div role="heading" aria-level="2" className="detailTitle">{title + "?"}</div>
     )
 };
 
 const getRemarksContainer = (opptjening, t)  => {
     let remarks = [];
     opptjening.merknader.forEach((merknad, idx) => {
-        remarks.push(<div key={idx}>{t('remarks:'+merknad)}</div>)
+        remarks.push(<div role="row" key={idx}><span role="cell">{t('remarks:'+merknad)}</span></div>)
     });
 
     if(remarks.length>0){
         return(
-            <div className="detailsBox">
+            <div role="table" className="detailsBox">
                 <Undertittel>{t('opptjening-remarks-title')}</Undertittel>
                 {remarks}
             </div>
@@ -119,11 +119,11 @@ export const OpptjeningDetailsPanel = (props) => {
     return(
         <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-what-happened-this-year', {currentYear: currentYear}))} border apen
                             className="panelWrapper">
-            <div className="detailsBox">
+            <div role="table" className="detailsBox">
                 {details}
             </div>
             {opptjeningTwoYearsBack && currentYear>=2010 &&
-                <div className="detailsBox">
+                <div role="table" className="detailsBox">
                     {
                         detailRow(
                             {

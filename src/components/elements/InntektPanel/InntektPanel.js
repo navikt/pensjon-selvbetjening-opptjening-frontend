@@ -7,9 +7,9 @@ import "./InntektPanel.less"
 
 const detailRow = (props) => {
     return(
-        <tr key={props.key}>
-            <td>{props.label}</td>
-            <td>{props.amount}</td>
+        <tr data-testid="income-row" key={props.key}>
+            <td data-testid="income-label">{props.label}</td>
+            <td data-testid="income-amount">{props.amount}</td>
         </tr>
     )
 };
@@ -29,7 +29,7 @@ const buildDetailRows = (inntekter, t)  => {
 
 const detailsTitle = (title) => {
     return(
-        <div className="inntektDetailTitle">{title}</div>
+        <div role="heading" aria-level="2" className="inntektDetailTitle">{title}</div>
     )
 };
 
@@ -44,8 +44,8 @@ export const InntektPanel = (props) => {
                 <table className="tabell">
                     <thead>
                         <tr>
-                            <th>{t('opptjening-year')}</th>
-                            <th>{t('opptjening-income')}</th>
+                            <th data-testid="income-header">{t('opptjening-year')}</th>
+                            <th data-testid="income-header">{t('opptjening-income')}</th>
                         </tr>
                     </thead>
                     <tbody>

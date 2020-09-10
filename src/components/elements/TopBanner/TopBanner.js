@@ -12,8 +12,8 @@ export const TopBanner = (props) => {
         <div className="topBanner">
             <div className="topBannerContent">
                 <div className="topBannerText">
-                    {frontpage && <Sidetittel role="title">{t(title)}</Sidetittel>}
-                    {!frontpage && <Undertittel role="title">{t(title)}</Undertittel>}
+                    {frontpage && <Sidetittel>{t(title)}</Sidetittel>}
+                    {!frontpage && <Undertittel>{t(title)}</Undertittel>}
                     {text && <p className="typo-normal">{t(text)}</p>}
                 </div>
                 {showIllustration &&
