@@ -25,7 +25,7 @@ spec:
   vault:
     enabled: true
     paths:
-      - kvPath: "apikey/apigw/prod/pensjon-selvbetjening-opptjening-backend/pensjon-selvbetjening-opptjening-frontend_p"
+      - kvPath: "apikey/apigw/prod/pensjon-selvbetjening-opptjening-backend/pensjon-selvbetjening-opptjening-frontend"
         mountPath: "/secret/apigw"
   env:
     - name: "API_GATEWAY"
