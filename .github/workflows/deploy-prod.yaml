@@ -1,4 +1,4 @@
-name: NAIS Deploy to dev-sbs
+name: NAIS Deploy to prod-sbs
 
 on:
   push:
@@ -9,8 +9,8 @@ env:
   IMAGE_SBS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-sbs:${{ github.sha }}
 
 jobs:
-  deploy-to-dev:
-    name: Deploy to dev-sbs
+  deploy-to-prod:
+    name: Deploy to prod-sbs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,10 +27,8 @@ jobs:
         run: npm test -- --watchAll=false
       - name: Build application
         env:
-          #REACT_APP_LOGINSERVICE_URL: "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
-          REACT_APP_LOGINSERVICE_URL: "https://loginservice.dev.nav.no/login?redirect=https://www-q0.dev.nav.no/pensjon/opptjening/"
-          #REACT_APP_DECORATOR_URL: "https://www-q1.nav.no/dekoratoren"
-          REACT_APP_DECORATOR_URL: "https://dekoratoren.dev.nav.no"
+          REACT_APP_LOGINSERVICE_URL: "https://loginservice.nav.no/login?redirect=https://www.nav.no/pensjon/opptjening/"
+          REACT_APP_DECORATOR_URL: "https://dekoratoren.nav.no"
         run: npm run build
       - name: Build Docker image SBS
         run: |
@@ -48,10 +46,10 @@ jobs:
           namespace: default
           image_sbs: $IMAGE_SBS
           EOF
-      - name: Deploy to dev-sbs
+      - name: Deploy to prod-sbs
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-sbs
-          RESOURCE: nais/nais-dev-sbs.yml
+          CLUSTER: prod-sbs
+          RESOURCE: nais/nais-prod-sbs.yml
           VARS: nais/vars-sbs.yaml
