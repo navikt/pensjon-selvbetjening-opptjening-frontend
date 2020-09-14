@@ -3,8 +3,11 @@ import { useDispatch, useSelector, shallowEqual} from 'react-redux';
 import {fetchOpptjeningStarted} from "../../redux/opptjening/opptjeningActions";
 import {getOpptjeningLoading, getOpptjeningError} from "../../redux/opptjening/opptjeningSelectors"
 import NavFrontendSpinner from "nav-frontend-spinner";
+import {useTranslation} from "react-i18next";
+import Alertstripe from "nav-frontend-alertstriper";
 
 export const OpptjeningContainer = (props) => {
+    const { t } = useTranslation();
     const {children} = props;
     const opptjeningLoading = useSelector(getOpptjeningLoading, shallowEqual);
     const opptjeningError = useSelector(getOpptjeningError, shallowEqual);
@@ -21,9 +24,11 @@ export const OpptjeningContainer = (props) => {
     }
 
     if(opptjeningError){
-        console.log("Error: " + opptjeningError.message);
+        console.log(opptjeningError.message);
         return (
-            <div></div>
+            <div className="contentWrapper">
+                <Alertstripe type="feil">{t(opptjeningError.message)}</Alertstripe>
+            </div>
         )
     }
 

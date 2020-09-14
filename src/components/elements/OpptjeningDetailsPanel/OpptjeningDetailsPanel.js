@@ -76,9 +76,11 @@ const detailsTitle = (title) => {
 
 const getRemarksContainer = (opptjening, t)  => {
     let remarks = [];
-    opptjening.merknader.forEach((merknad, idx) => {
-        remarks.push(<div role="row" key={idx}><span role="cell">{t('remarks:'+merknad)}</span></div>)
-    });
+    if (opptjening && opptjening.merknader) {
+        opptjening.merknader.forEach((merknad, idx) => {
+            remarks.push(<div role="row" key={idx}><span role="cell">{t('remarks:'+merknad)}</span></div>)
+        });
+    }
 
     if(remarks.length>0){
         return(

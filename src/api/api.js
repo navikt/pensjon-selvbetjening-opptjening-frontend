@@ -26,7 +26,7 @@ const serverRequest = (method, urlPath) => {
 function verifyStatusSuccessOrRedirect(response) {
     // If we are on localhost just return, no need to check for authentication
     if(isDev()){
-        throw new Error("error-status-403");
+        return;
     }
     if (response.status === 401) {
         window.location.href = process.env.REACT_APP_LOGINSERVICE_URL;
