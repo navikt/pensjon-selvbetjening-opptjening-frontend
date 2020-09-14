@@ -28,5 +28,7 @@
     "language-selector-choose-language": "Choose language:",
     "language-selector-bokmaal": "Bokmål",
     "language-selector-nynorsk": "Nynorsk",
-    "language-selector-english": "English"
+    "language-selector-english": "English",
+
+    "error-status-403": "You do not have access to the content"
 }

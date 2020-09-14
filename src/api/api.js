@@ -26,11 +26,14 @@ const serverRequest = (method, urlPath) => {
 function verifyStatusSuccessOrRedirect(response) {
     // If we are on localhost just return, no need to check for authentication
     if(isDev()){
-        return;
+        throw new Error("error-status-403");
     }
     if (response.status === 401) {
         window.location.href = process.env.REACT_APP_LOGINSERVICE_URL;
         throw new Error("unauthorized");
+    }
+    if (response.status === 403) {
+        throw new Error("error-status-403");
     }
     if (response.status >= 200 && response.status < 300) {
         return response.status;
