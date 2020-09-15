@@ -13,8 +13,10 @@ spec:
     max: 1
   liveness:
     path: "/api/internal/isAlive"
-    initialDelay: 3
+    initialDelay: 30
     timeout: 1
+    periodSeconds: 30
+    failureThreshold: 5
   ingresses:
     - "https://pensjon-selvbetjening-opptjening-frontend.nais.oera.no"
     - "https://www.nav.no/pensjon/opptjening"
