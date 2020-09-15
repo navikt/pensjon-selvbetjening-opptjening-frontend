@@ -27,6 +27,7 @@ function verifyStatusSuccessOrRedirect(response) {
         return;
     }
     if (response.status === 401) {
+        console.log(process.env.REACT_APP_LOGINSERVICE_URL)
         window.location.href = process.env.REACT_APP_LOGINSERVICE_URL;
         throw new Error("error-status-401");
     }
