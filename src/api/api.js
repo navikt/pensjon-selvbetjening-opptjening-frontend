@@ -2,9 +2,7 @@ import {isDev} from "../common/utils";
 
 const RequestMethod = {
     GET: "GET",
-    POST: "POST",
-    PUT: "PUT",
-    DELETE: "DELETE"
+    POST: "POST"
 };
 
 const serverRequest = (method, urlPath) => {
@@ -30,7 +28,7 @@ function verifyStatusSuccessOrRedirect(response) {
     }
     if (response.status === 401) {
         window.location.href = process.env.REACT_APP_LOGINSERVICE_URL;
-        throw new Error("unauthorized");
+        throw new Error("error-status-401");
     }
     if (response.status === 403) {
         throw new Error("error-status-403");

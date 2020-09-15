@@ -30,5 +30,6 @@
     "language-selector-nynorsk": "Nynorsk",
     "language-selector-english": "Engelsk",
 
+    "error-status-401": "Du er ikke autorisert",
     "error-status-403": "Du har ikke tilgang til innholdet"
 }
