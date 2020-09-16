@@ -61,8 +61,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "build:prod": "env-cmd -f .env.prod-sbs npm run build",
-    "build:dev": "env-cmd -f .env.dev-sbs npm run build",
+    "build:prod": "env-cmd -f .env.prod npm run build",
+    "build:dev": "env-cmd -f .env.dev npm run build",
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu craco test",
     "eject": "craco eject",
     "json-server": "json-server --watch dev/mock.json --port 4000",
