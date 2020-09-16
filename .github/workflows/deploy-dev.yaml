@@ -34,7 +34,7 @@ jobs:
         run: npm run build
       - name: Build Docker image
         run: |
-          docker build -t ${IMAGE} .
+          docker build -f Dockerfile-sbs -t ${IMAGE} .
       - name: Login to Github Package Registry
         env:
           DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
