@@ -26,10 +26,7 @@ jobs:
       - name: Run tests
         run: npm test -- --watchAll=false
       - name: Build application
-        env:
-          REACT_APP_LOGINSERVICE_URL: "https://loginservice.nav.no/login?redirect=https://www.nav.no/pensjon/opptjening/"
-          REACT_APP_DECORATOR_URL: "https://www.nav.no/dekoratoren"
-        run: npm run build
+        run: npm run build:prod
       - name: Build Docker image SBS
         run: |
           docker build -f Dockerfile-sbs -t ${IMAGE_SBS} .

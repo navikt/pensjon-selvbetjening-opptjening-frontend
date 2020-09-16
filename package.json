@@ -13,6 +13,7 @@
     "classnames": "^2.2.6",
     "concurrently": "^5.2.0",
     "craco-less": "^1.17.0",
+    "env-cmd": "^10.1.0",
     "i18next": "^19.6.3",
     "i18next-browser-languagedetector": "^5.0.0",
     "i18next-http-backend": "^1.0.17",
@@ -60,6 +61,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "build:prod": "env-cmd -f .env.prod npm run build",
+    "build:dev": "env-cmd -f .env.dev npm run build",
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu craco test",
     "eject": "craco eject",
     "json-server": "json-server --watch dev/mock.json --port 4000",
