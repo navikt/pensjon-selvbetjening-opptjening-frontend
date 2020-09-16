@@ -1,4 +1,4 @@
-name: NAIS Deploy to dev-sbs and prod-sbs
+name: NAIS Deploy to dev-sbs
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  IMAGE_SBS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-sbs:${{ github.sha }}
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend:${{ github.sha }}
 
 jobs:
   deploy-to-dev:
@@ -15,35 +15,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Install dependencies
         run: npm ci
       - name: Run tests
         run: npm test -- --watchAll=false
       - name: Build application
         env:
+          #REACT_APP_LOGINSERVICE_URL: "https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/pensjon/opptjening/"
           REACT_APP_LOGINSERVICE_URL: "https://loginservice.dev.nav.no/login?redirect=https://www-q0.dev.nav.no/pensjon/opptjening/"
+          #REACT_APP_DECORATOR_URL: "https://www-q1.nav.no/dekoratoren"
           REACT_APP_DECORATOR_URL: "https://dekoratoren.dev.nav.no"
         run: npm run build
-      - name: Build Docker image SBS
+      - name: Build Docker image
         run: |
-          docker build -f Dockerfile-sbs -t ${IMAGE_SBS} .
+          docker build -t ${IMAGE} .
       - name: Login to Github Package Registry
         env:
           DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login --username "$GITHUB_REPOSITORY" --password-stdin docker.pkg.github.com
-      - name: Push Docker image SBS
-        run: "docker push ${IMAGE_SBS}"
-      - name: Generate NAIS variables SBS
-        run: |
-          cat > nais/vars-sbs.yaml <<EOF
-          namespace: default
-          image_sbs: $IMAGE_SBS
-          EOF
+      - name: Push Docker image
+        run: "docker push ${IMAGE}"
       - name: Deploy to dev-sbs
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-sbs
           RESOURCE: nais/nais-dev-sbs.yml
-          VARS: nais/vars-sbs.yaml
