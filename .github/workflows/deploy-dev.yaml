@@ -1,4 +1,4 @@
-name: NAIS Deploy to dev-sbs
+name: NAIS Deploy to dev-sbs and prod-sbs
 
 on:
   push:
@@ -49,4 +49,45 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-sbs
           RESOURCE: nais/nais-dev-sbs.yml
+          VARS: nais/vars-sbs.yaml
+  deploy-to-prod:
+    name: Deploy to prod-sbs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test -- --watchAll=false
+      - name: Build application
+        run: npm run build:prod
+      - name: Build Docker image SBS
+        run: |
+          docker build -f Dockerfile-sbs -t ${IMAGE_SBS} .
+      - name: Login to Github Package Registry
+        env:
+          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "$DOCKER_PASSWORD" | docker login --username "$GITHUB_REPOSITORY" --password-stdin docker.pkg.github.com
+      - name: Push Docker image SBS
+        run: "docker push ${IMAGE_SBS}"
+      - name: Generate NAIS variables SBS
+        run: |
+          cat > nais/vars-sbs.yaml <<EOF
+          namespace: default
+          image_sbs: $IMAGE_SBS
+          EOF
+      - name: Deploy to prod-sbs
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-sbs
+          RESOURCE: nais/nais-prod-sbs.yml
           VARS: nais/vars-sbs.yaml
