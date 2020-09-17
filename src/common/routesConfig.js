@@ -4,7 +4,7 @@ import {FaqPage} from "../components/pages/FaqPage/FaqPage";
 export const basePath = process.env.PUBLIC_URL;
 export const routesConfig = [
     {
-        path: `${basePath}/`,
+        path: `${basePath}`,
         component: HomePage,
         titleKey: 'opptjening-title',
         exact: true

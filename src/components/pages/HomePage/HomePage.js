@@ -4,6 +4,7 @@ import {OpptjeningView} from "../../views/OpptjeningView/OpptjeningView";
 import {TopBanner} from "../../elements/TopBanner/TopBanner";
 import {LanguageSelector} from "../../elements/LanguageSelector/LanguageSelector";
 import './HomePage.less';
+import Breadcrumbs from "../../elements/Breadcrumbs/Breadcrumbs";
 
 export const HomePage = () => {
     return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
             </div>
             <TopBanner title="opptjening-title" text="opptjening-intro-text"/>
             <div className="mainBody">
+                <Breadcrumbs/>
                 <OpptjeningContainer>
                     <div className="contentWrapper">
                         <OpptjeningView/>

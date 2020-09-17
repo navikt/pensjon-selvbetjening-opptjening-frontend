@@ -3,7 +3,7 @@ import Lenke from 'nav-frontend-lenker'
 import 'nav-frontend-lenker-style'
 import { HoyreChevron } from 'nav-frontend-chevron';
 import { Route, useRouteMatch } from 'react-router-dom'
-import { routesConfig, basePath} from '../../../common/routesConfig'
+import { routesConfig } from '../../../common/routesConfig'
 import './Breadcrumbs.less'
 import {useTranslation} from "react-i18next";
 
@@ -39,16 +39,18 @@ const Breadcrumbs = () => {
     return (
         <nav aria-label={t('breadcrumbs-you-are-here')} className="breadcrumbs">
             <p className="typo-normal item">
-                <Lenke href={basePath +"/"}>
-                    {t('opptjening-title')}
+                <Lenke href={process.env.REACT_APP_DINPENSJON_URL}>
+                    {t("dinpensjon-title")}
                 </Lenke>
             </p>
             <div aria-hidden='true'>
                 <HoyreChevron/>
             </div>
-            {routesConfig.map((route) => (
-                <Route key={route.path} path={route.path} component={Crumb} />
-            ))}
+            {routesConfig.map((route) => {
+                return (
+                    <Route key={route.path} path={route.path} component={Crumb} />
+                )
+            })}
         </nav>
     )
 };
