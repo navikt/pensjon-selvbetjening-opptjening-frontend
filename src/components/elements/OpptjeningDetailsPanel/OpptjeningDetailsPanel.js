@@ -7,9 +7,9 @@ import "./OpptjeningDetailsPanel.less"
 
 const detailRow = (props) => {
     return(
-        <div role="row" key={props.key} className="detailRow">
-            <span role="cell" className="labelColumn">{props.label}</span>
-            <span role="cell" className="numberColumn">{props.amount}</span>
+        <div role="row" data-testid={props.key} key={props.key} className="detailRow">
+            <span role="cell" data-testid={"label-"+ props.key} className="labelColumn">{props.label}</span>
+            <span role="cell" data-testid={"amount-"+ props.key} className="numberColumn">{props.amount}</span>
             <span role="cell" className="numberColumn">&nbsp;</span>
         </div>
     )
@@ -24,7 +24,7 @@ const buildDetailRows = (opptjening, t)  => {
                 inngaende = endring.pensjonsbeholdningBelop;
                 item = detailRow(
                     {
-                        "key": idx,
+                        "key": "detail-" + idx,
                         "label": t("opptjening-assets"),
                         "amount": formatAmount(endring.pensjonsbeholdningBelop)
                     }
@@ -32,7 +32,7 @@ const buildDetailRows = (opptjening, t)  => {
             } else if (endring.arsakType === "INNGAENDE_2010"){
                 item = detailRow(
                     {
-                        "key": idx,
+                        "key": "detail-" + idx,
                         "label": t("opptjening-okning-reform"),
                         "amount": formatAmount(endring.pensjonsbeholdningBelop-inngaende)
                     }
@@ -40,7 +40,7 @@ const buildDetailRows = (opptjening, t)  => {
             } else if (endring.arsakType === "OPPTJENING") {
                 item = detailRow(
                     {
-                        "key":idx,
+                        "key": "detail-" + idx,
                         "label": t("opptjening-earnings"),
                         "amount": formatAmount(endring.endringBelop)
                     }
@@ -48,7 +48,7 @@ const buildDetailRows = (opptjening, t)  => {
             } else if (endring.arsakType === "REGULERING") {
                 item = detailRow(
                     {
-                        "key":idx,
+                        "key": "detail-" + idx,
                         "label": t("opptjening-regulation"),
                         "amount": formatAmount(endring.endringBelop)
                     }
@@ -56,7 +56,7 @@ const buildDetailRows = (opptjening, t)  => {
             } else if (endring.arsakType === "UTTAK") {
                 item = detailRow(
                     {
-                        "key":idx,
+                        "key": "detail-" + idx,
                         "label": t("opptjening-withdrawal"),
                         "amount": formatAmount(endring.endringBelop)
                     }
@@ -78,7 +78,7 @@ const getRemarksContainer = (opptjening, t)  => {
     let remarks = [];
     if (opptjening && opptjening.merknader) {
         opptjening.merknader.forEach((merknad, idx) => {
-            remarks.push(<div role="row" key={idx}><span role="cell">{t('remarks:'+merknad)}</span></div>)
+            remarks.push(<div role="row" data-testid={"remark-row-" + idx} key={idx}><span data-testid={"remark-" + idx} role="cell">{t('remarks:'+merknad)}</span></div>)
         });
     }
 
@@ -105,14 +105,16 @@ export const OpptjeningDetailsPanel = (props) => {
     const remarksContainer = getRemarksContainer(opptjening, t);
 
     let label = "opptjening-your-pension-assets";
+    let key = "opptjening-your-pension-assets";
     if(details.length>0){
+        key = "opptjening-sum";
         label = "opptjening-sum";
         details.push(<div key="horizontalLine" className="horizontalLine"/>);
     }
     details.push(
         detailRow(
             {
-                "key": details.length+1,
+                "key": key,
                 "label": t(label),
                 "amount": formatAmount(opptjening.pensjonsbeholdning)
             })
@@ -129,6 +131,7 @@ export const OpptjeningDetailsPanel = (props) => {
                     {
                         detailRow(
                             {
+                                "key": "incomeBase",
                                 "label": t("opptjening-income-base-from", {currentYear: currentYear, twoYearsback: (currentYear - 2)}),
                                 "amount": formatAmount(opptjeningTwoYearsBack.pensjonsgivendeInntekt)
                             })
