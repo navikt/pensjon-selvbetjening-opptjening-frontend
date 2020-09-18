@@ -16,12 +16,10 @@ const detailRow = (props) => {
 };
 const buildDetailRows = (opptjening, t)  => {
     const details = [];
-    let inngaende;
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
             let item;
             if (endring.arsakType === "INNGAENDE") {
-                inngaende = endring.pensjonsbeholdningBelop;
                 item = detailRow(
                     {
                         "key": "detail-" + idx,
@@ -34,7 +32,7 @@ const buildDetailRows = (opptjening, t)  => {
                     {
                         "key": "detail-" + idx,
                         "label": t("opptjening-okning-reform"),
-                        "amount": formatAmount(endring.pensjonsbeholdningBelop-inngaende)
+                        "amount": formatAmount(endring.endringBelop)
                     }
                 )
             } else if (endring.arsakType === "OPPTJENING") {
