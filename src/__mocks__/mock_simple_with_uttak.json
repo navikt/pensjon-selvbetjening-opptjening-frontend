@@ -1,0 +1,57 @@
+{
+    "opptjening": {
+        "opptjeningData": {
+            "2018": {
+                "pensjonsgivendeInntekt": 543827,
+                "pensjonsbeholdning": 0,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 4.68,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": [
+                    {
+                        "dato": "2017-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": null,
+                        "endringBelop": null,
+                        "pensjonsbeholdningBelop": 3082626.6144945016,
+                        "uttaksgrad": 0
+                    },
+                    {
+                        "dato": "2018-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 85712.55626019507,
+                        "pensjonsbeholdningBelop": 3168339.1707546967,
+                        "uttaksgrad": 0
+                    },
+                    {
+                        "dato": "2018-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 109941.3692251877,
+                        "pensjonsbeholdningBelop": 3278280.5399798844,
+                        "uttaksgrad": 0
+                    },
+                    {
+                        "dato": "2018-05-01",
+                        "arsakType": "UTTAK",
+                        "arsakDetails": [
+                            "UTTAK"
+                        ],
+                        "endringBelop": -3278280.5399798844,
+                        "pensjonsbeholdningBelop": 0.0,
+                        "uttaksgrad": 100
+                    }
+                ]
+            }
+        },
+        "numberOfYearsWithPensjonspoeng": null
+    }
+}

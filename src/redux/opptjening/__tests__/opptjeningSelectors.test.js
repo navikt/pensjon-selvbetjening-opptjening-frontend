@@ -1,7 +1,6 @@
 import * as selectors from '../opptjeningSelectors'
 import mock from '../../../__mocks__/mock'
 
-const initialState = selectors.initialState;
 const mockedState = {
     opptjening:{
         ...mock,
@@ -9,18 +8,19 @@ const mockedState = {
     }
 };
 
-it('should return selector values for the initial state', (state = initialState) => {
-    expect(selectors.getOpptjening(state)).toEqual(null);
-    expect(selectors.getOpptjeningLoading(state)).toEqual(true);
-    expect(selectors.getOpptjeningError(state)).toEqual(undefined);
-    expect(selectors.getOpptjeningData(state)).toEqual({});
-    expect(selectors.getYearArray(state)).toEqual([]);
-    expect(selectors.getOpptjeningByYear(state)).toEqual(null);
-    expect(selectors.getLatestPensjonsBeholdning(state)).toEqual({
+it('should return selector values for the initial state', () => {
+    expect(selectors.getOpptjening()).toEqual(null);
+    expect(selectors.getOpptjeningLoading()).toEqual(true);
+    expect(selectors.getOpptjeningError()).toEqual(undefined);
+    expect(selectors.getOpptjeningData()).toEqual({});
+    expect(selectors.getPensjonsBeholdningArray()).toEqual([]);
+    expect(selectors.getYearArray()).toEqual([]);
+    expect(selectors.getOpptjeningByYear()).toEqual(null);
+    expect(selectors.getLatestPensjonsBeholdning()).toEqual({
         year: undefined,
         beholdning: null
     });
-    expect(selectors.getInntekter(state)).toEqual([]);
+    expect(selectors.getInntekter()).toEqual([]);
 });
 
 it('should return opptjening', () => {
@@ -40,6 +40,13 @@ it('should return opptjeningData', () => {
     const opptjeningData = selectors.getOpptjeningData(mockedState);
     expect(opptjeningData).toHaveProperty("1988");
     expect(opptjeningData).toHaveProperty("2018");
+});
+
+it('should return array of beholdning', () => {
+    const beholdningArray = selectors.getPensjonsBeholdningArray(mockedState);
+    expect(beholdningArray.length).not.toBe(0);
+    expect((beholdningArray)[0]).toEqual(null);
+    expect((beholdningArray)[beholdningArray.length-1]).toEqual(1317011);
 });
 
 

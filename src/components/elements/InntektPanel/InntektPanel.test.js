@@ -5,6 +5,10 @@ import {InntektPanel} from './InntektPanel';
 const data = {
     "inntekter": [
         {
+            "year": 2018,
+            "pensjonsgivendeInntekt": null
+        },
+        {
             "year": 2019,
             "pensjonsgivendeInntekt": 800000
         },
@@ -31,10 +35,15 @@ it('renders the Inntekt panel and opens it with correct data sorted', () => {
     expect(panel.getAllByTestId("income-header")[0]).toHaveTextContent("opptjening-year");
     expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("opptjening-income");
 
-    expect(panel.getAllByTestId("income-row").length).toBe(2);
+    expect(panel.getAllByTestId("income-row").length).toBe(3);
 
     expect(panel.getAllByTestId("income-label")[0]).toHaveTextContent("2020");
     expect(panel.getAllByTestId("income-amount")[0]).toHaveTextContent("900 000");
     expect(panel.getAllByTestId("income-label")[1]).toHaveTextContent("2019");
     expect(panel.getAllByTestId("income-amount")[1]).toHaveTextContent("800 000");
+    expect(panel.getAllByTestId("income-label")[2]).toHaveTextContent("2018");
+    expect(panel.getAllByTestId("income-amount")[2]).toHaveTextContent("opptjening-ikke-tilgjengelig-enda");
+
+
+
 });

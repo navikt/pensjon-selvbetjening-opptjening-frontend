@@ -26,7 +26,7 @@ export const getOpptjeningByYear = (state = initialState, year) => {
 
 export const getLatestPensjonsBeholdning = (state = initialState) => {
     const opptjeningData = getOpptjeningData(state);
-    const lastYear = _.max(Object.keys(opptjeningData), o => opptjeningData[o]);
+    const lastYear = _.max(Object.keys(opptjeningData));
     return {
         "year": lastYear,
         "beholdning": !_.isEmpty(opptjeningData) ? opptjeningData[lastYear].pensjonsbeholdning : null,
