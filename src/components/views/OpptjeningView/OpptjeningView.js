@@ -34,8 +34,11 @@ export const OpptjeningView = () => {
             <BeholdningPanel data={latestPensjonsBeholdning}/>
             <LineChart
                 data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
-                datasetLabel={t("opptjening-pension-assets")}
                 onclick={setYear}
+                title={t("opptjening-increase-in-pension-assets-per-year")}
+                yLabel={t("opptjening-pension-assets")}
+                xLabel={t("opptjening-year")}
+
             />
             <div className="contentCentered">
                 <YearSelector years={yearArray} onChange={setYear} currentYear={currentYear} size="xs"/>

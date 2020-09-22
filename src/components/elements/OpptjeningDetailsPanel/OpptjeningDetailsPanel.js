@@ -10,7 +10,7 @@ const detailRow = (props) => {
         <div role="row" data-testid={props.key} key={props.key} className="detailRow">
             <span role="cell" data-testid={"label-"+ props.key} className="labelColumn">{props.label}</span>
             <span role="cell" data-testid={"amount-"+ props.key} className="numberColumn">{props.amount}</span>
-            <span role="cell" className="numberColumn">&nbsp;</span>
+            <span className="numberColumn">&nbsp;</span>
         </div>
     )
 };

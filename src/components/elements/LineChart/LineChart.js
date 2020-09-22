@@ -2,6 +2,29 @@ import React from "react";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 import './LineChart.less';
+import {Undertittel} from "nav-frontend-typografi";
+
+const dataRow = (props) => {
+    return(
+        <tr key={props.key}>
+            <td>{props.label}</td>
+            <td>{props.data} kr</td>
+        </tr>
+    )
+};
+const buildDataRows = (labels, data)  => {
+    let dataRows = [];
+    labels.forEach((label, idx) => {
+        dataRows.push(dataRow(
+            {
+                "key": idx,
+                "label": label,
+                "data": data[idx]
+            }
+        ))
+    });
+    return dataRows;
+};
 
 export const LineChart = (props) => {
     const chartRef = useRef(null);
@@ -11,9 +34,9 @@ export const LineChart = (props) => {
             labels: props.data.labels,
             datasets: [
                 {
-                    label: props.datasetLabel,
+                    label: props.yLabel,
                     fill: false,
-                    borderColor: "#FFBD66",
+                    borderColor: "#000000",
                     borderWidth: 2,
                     tension: 0,
                     radius: 1,
@@ -37,8 +60,32 @@ export const LineChart = (props) => {
                     top: 50,
                     bottom: 50
                 }
+            },
+            scales: {
+                xAxes: [
+                    {
+                        scaleLabel:{
+                            display: true,
+                            labelString: props.xLabel,
+                            fontSize: 14
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return value + ' kr';
+                            }
+                        },
+                        scaleLabel:{
+                            display: true,
+                            labelString: props.yLabel,
+                            fontSize: 14
+                        }
+                    }
+                ]
             }
-
         }
     };
 
@@ -48,9 +95,24 @@ export const LineChart = (props) => {
         new Chart(ctx, chartConfig);
     }, [chartConfig, chartRef]);
 
+    const dataRows = buildDataRows(props.data.labels, props.data.data);
     return(
         <div className="chartContainer">
-            <canvas ref={chartRef}/>
+            <Undertittel>{props.title}</Undertittel>
+            <canvas ref={chartRef} aria-label={props.title} role="img">
+                {/* Fallback content */}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{props.xLabel}</th>
+                            <th>{props.yLabel}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {dataRows}
+                    </tbody>
+                </table>
+            </canvas>
         </div>
     );
 };
