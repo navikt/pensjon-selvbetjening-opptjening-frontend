@@ -1,7 +1,8 @@
 import {formatAmount} from "../../../common/utils";
-import React from "react";
+import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
-import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
+import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
+import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
 import "./InntektPanel.less"
 
@@ -34,12 +35,17 @@ const detailsTitle = (title) => {
 };
 
 export const InntektPanel = (props) => {
+    const toggleOpen = (apen) =>{
+        setApen(!apen);
+    };
+
+    const [apen, setApen] = useState(false);
     const { t } = useTranslation();
     const inntekter = props.data.inntekter;
     const details = buildDetailRows(inntekter, t);
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper">
+        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={() => toggleOpen(apen)}>
             <div className="inntektDetailsBox">
                 <table className="tabell">
                     <thead>
@@ -53,6 +59,11 @@ export const InntektPanel = (props) => {
                     </tbody>
                 </table>
             </div>
-        </Ekspanderbartpanel>
+            <button type="button" aria-label={t("button-close")} className="closeButton" onClick={() => setApen(false)}>
+                <div>
+                    <OppChevron/>
+                </div>
+            </button>
+        </EkspanderbartpanelBase>
     )
 };
