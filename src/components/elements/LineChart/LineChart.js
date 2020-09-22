@@ -45,6 +45,8 @@ export const LineChart = (props) => {
             ]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             onClick: function(event, item){
                 if(item && item[0]){
                     props.onclick(props.data.labels[item[0]._index]);
