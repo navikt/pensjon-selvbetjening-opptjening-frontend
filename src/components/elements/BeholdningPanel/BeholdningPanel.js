@@ -2,7 +2,7 @@ import React from "react";
 import {useTranslation} from "react-i18next";
 import {formatAmount} from "../../../common/utils";
 import Panel from "nav-frontend-paneler";
-import {Systemtittel, Sidetittel} from "nav-frontend-typografi";
+import {Systemtittel} from "nav-frontend-typografi";
 import "./BeholdningPanel.less"
 
 export const BeholdningPanel = (props) => {
