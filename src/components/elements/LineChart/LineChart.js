@@ -8,7 +8,7 @@ const dataRow = (props) => {
     return(
         <tr key={props.key}>
             <td>{props.label}</td>
-            <td>{props.data} kr</td>
+            <td>{props.data ? props.data + " kr" : ""}</td>
         </tr>
     )
 };
@@ -101,7 +101,7 @@ export const LineChart = (props) => {
     return(
         <div className="chartContainer">
             <Undertittel>{props.title}</Undertittel>
-            <canvas ref={chartRef} aria-label={props.title} role="img">
+            <canvas ref={chartRef} aria-label={props.title}>
                 {/* Fallback content */}
                 <table>
                     <thead>

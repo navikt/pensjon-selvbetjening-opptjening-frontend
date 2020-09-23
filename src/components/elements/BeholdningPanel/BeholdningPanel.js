@@ -13,7 +13,7 @@ export const BeholdningPanel = (props) => {
             <div className="beholdningPanel">
                 <div className="content">
                     <Systemtittel>{t('opptjening-your-pension-assets')}</Systemtittel>
-                    <Sidetittel>{formatAmount(latestPensjonsBeholdning.beholdning)}</Sidetittel>
+                    <div data-testid="assets" className="typo-sidetittel">{formatAmount(latestPensjonsBeholdning.beholdning)}</div>
                 </div>
             </div>
         </Panel>
