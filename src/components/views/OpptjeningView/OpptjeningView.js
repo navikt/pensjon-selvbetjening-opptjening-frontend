@@ -17,6 +17,8 @@ import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
 import {isDev} from "../../../common/utils";
 import './OpptjeningView.less';
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
+import Panel from "nav-frontend-paneler";
+import Tekstomrade from "nav-frontend-tekstomrade";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -32,13 +34,18 @@ export const OpptjeningView = () => {
     return(
         <div>
             <BeholdningPanel data={latestPensjonsBeholdning}/>
-            <LineChart
-                data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
-                title={t("opptjening-increase-in-pension-assets-per-year")}
-                yLabel={t("opptjening-pension-assets")}
-                xLabel={t("opptjening-year")}
+            <Panel border className="panelWrapper">
+                <LineChart
+                    data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
+                    title={t("opptjening-increase-in-pension-assets-per-year")}
+                    yLabel={t("opptjening-pension-assets")}
+                    xLabel={t("opptjening-year")}
 
-            />
+                />
+                <Tekstomrade className="pensionAssetsText">
+                    {t('opptjening-pension-assets-text')}
+                </Tekstomrade>
+            </Panel>
             <div className="contentCentered">
                 <YearSelector years={yearArray} onChange={setYear} currentYear={currentYear} size="xs"/>
             </div>
