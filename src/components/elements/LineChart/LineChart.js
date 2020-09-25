@@ -3,6 +3,7 @@ import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 import './LineChart.less';
 import {Undertittel} from "nav-frontend-typografi";
+import {formatAmount} from "../../../common/utils";
 
 const dataRow = (props) => {
     return(
@@ -26,6 +27,8 @@ const buildDataRows = (labels, data)  => {
     return dataRows;
 };
 
+const emptyFn = ()=>{};
+
 export const LineChart = (props) => {
     const chartRef = useRef(null);
     const chartConfig = {
@@ -36,10 +39,12 @@ export const LineChart = (props) => {
                 {
                     label: props.yLabel,
                     fill: false,
-                    borderColor: "#000000",
+                    borderColor: "#06893A",
                     borderWidth: 2,
+                    backgroundColor: "#ffffff",
                     tension: 0,
-                    radius: 1,
+                    radius: 2.5,
+                    pointBackgroundColor: '#06893A',
                     data: props.data.data
                 }
             ]
@@ -47,9 +52,16 @@ export const LineChart = (props) => {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            animation: {
+                duration: 0
+            },
+            onHover: (event, chartElement) => {
+                event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+            },
             onClick: function(event, item){
                 if(item && item[0]){
-                    props.onclick(props.data.labels[item[0]._index]);
+                    props.onclick ? props.onclick(props.data.labels[item[0]._index]) : emptyFn();
+
                 }
             },
             legend:{
@@ -66,24 +78,29 @@ export const LineChart = (props) => {
             scales: {
                 xAxes: [
                     {
-                        scaleLabel:{
-                            display: true,
-                            labelString: props.xLabel,
-                            fontSize: 14
+                        gridLines: {
+                            color: "#78706A"
+                        },
+
+                        ticks: {
+                            maxTicksLimit: 5,
+                            maxRotation: 0,
+                            minRotation: 0,
+                            fontColor: "#3E3832",
                         }
+
                     }
                 ],
                 yAxes: [
                     {
+                        gridLines: {
+                            color: "#78706A"
+                        },
                         ticks: {
                             callback: function(value, index, values) {
-                                return value + ' kr';
-                            }
-                        },
-                        scaleLabel:{
-                            display: true,
-                            labelString: props.yLabel,
-                            fontSize: 14
+                                return formatAmount(value) + ' kr';
+                            },
+                            fontColor: "#3E3832",
                         }
                     }
                 ]

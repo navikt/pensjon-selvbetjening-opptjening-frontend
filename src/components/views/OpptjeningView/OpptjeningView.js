@@ -34,7 +34,6 @@ export const OpptjeningView = () => {
             <BeholdningPanel data={latestPensjonsBeholdning}/>
             <LineChart
                 data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
-                onclick={setYear}
                 title={t("opptjening-increase-in-pension-assets-per-year")}
                 yLabel={t("opptjening-pension-assets")}
                 xLabel={t("opptjening-year")}
