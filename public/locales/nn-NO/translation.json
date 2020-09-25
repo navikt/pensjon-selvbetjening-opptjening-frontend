@@ -7,6 +7,8 @@
     "opptjening-income": "Inntekt",
     "opptjening-number-of-years-with-pensjonspoeng": "Antall år med pensjonspoeng:",
     "opptjening-your-pension-assets": "Din pensjonsbehaldning:",
+    "opptjening-your-pension-assets-in-folketrygden": "Din pensjonsbehaldning i Folketrygden",
+    "opptjening-beholdning-panel-text": "Pensjonsbeholdningene brukes som utgangspunkt når vi i fremtiden beregner beløpet du får utbetalt i måneden når du pensjoneres.\n\nHusk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver.",
     "opptjening-your-pensionable-income": "Din pensjonsgivande inntekt",
     "opptjening-what-happened-this-year": "Hva skjedde i {{currentYear}}",
     "opptjening-pension-assets": "Pensjonsbehaldning",
