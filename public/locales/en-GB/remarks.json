@@ -5,8 +5,8 @@
     "UFOREGRAD": "UFOREGRAD",
     "DAGPENGER": "DAGPENGER",
     "FORSTEGANGSTJENESTE": "FORSTEGANGSTJENESTE",
-    "OMSORGSOPPTJENING": "OMSORGSOPPTJENING",
-    "OVERFORE_OMSORGSOPPTJENING": "OVERFORE_OMSORGSOPPTJENING",
+    "OMSORGSOPPTJENING": "Du er godskrevet omsorgsopptjening for ulønnet omsorgsarbeid i dette året",
+    "OVERFORE_OMSORGSOPPTJENING": "Her kan du overføre omsorgsopptjening til den andre av barnets foreldre",
     "GRADERT_UTTAK": "GRADERT_UTTAK",
     "HELT_UTTAK": "HELT_UTTAK"
 }

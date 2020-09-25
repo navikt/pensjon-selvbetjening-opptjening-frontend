@@ -78,7 +78,18 @@ const getRemarksContainer = (opptjening, t)  => {
     let remarks = [];
     if (opptjening && opptjening.merknader) {
         opptjening.merknader.forEach((merknad, idx) => {
-            remarks.push(<div role="row" data-testid={"remark-row-" + idx} key={idx}><span data-testid={"remark-" + idx} role="cell">{t('remarks:'+merknad)}</span></div>)
+            // Create link for OVERFOR_OMSORGSOPPTJENING merknad
+            if(merknad === "OVERFORE_OMSORGSOPPTJENING"){
+                remarks.push(
+                    <div role="row" data-testid={"remark-row-" + idx} key={idx}>
+                        <span data-testid={"remark-" + idx} role="cell">
+                            <Lenke href="">{t('remarks:'+merknad)}</Lenke>
+                        </span>
+                    </div>
+                )
+            } else {
+                remarks.push(<div role="row" data-testid={"remark-row-" + idx} key={idx}><span data-testid={"remark-" + idx} role="cell">{t('remarks:'+merknad)}</span></div>)
+            }
         });
     }
 

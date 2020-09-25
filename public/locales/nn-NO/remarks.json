@@ -5,8 +5,8 @@
     "UFOREGRAD": "Uføretrygd: {0} prosent",
     "DAGPENGER": "Mottak av dagpenger",
     "FORSTEGANGSTJENESTE": "Avtjent førstegangstjeneste",
-    "OMSORGSOPPTJENING": "Ulønnet omsorgsarbeid",
-    "OVERFORE_OMSORGSOPPTJENING": "Overfør omsorgsopptjening",
+    "OMSORGSOPPTJENING": "Du er godskrevet omsorgsopptjening for ulønnet omsorgsarbeid i dette året",
+    "OVERFORE_OMSORGSOPPTJENING": "Her kan du overføre omsorgsopptjening til den andre av barnets foreldre",
     "GRADERT_UTTAK": "Gradert uttak",
     "HELT_UTTAK": "Alderspensjon: 100 prosent"
 }

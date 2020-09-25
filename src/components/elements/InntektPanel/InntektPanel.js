@@ -5,6 +5,7 @@ import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
 import "./InntektPanel.less"
+import Lenke from "nav-frontend-lenker";
 
 const detailRow = (props) => {
     return(
@@ -46,6 +47,9 @@ export const InntektPanel = (props) => {
 
     return(
         <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={() => toggleOpen(apen)}>
+            <div className="inntektLinkContainer">
+                <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-income-link-to-skatteetaten')}</Lenke>
+            </div>
             <div className="inntektDetailsBox">
                 <table className="tabell">
                     <thead>
