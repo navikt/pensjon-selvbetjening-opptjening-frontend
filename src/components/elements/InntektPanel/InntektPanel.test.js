@@ -42,7 +42,7 @@ it('renders the Inntekt panel and opens it with correct data sorted', () => {
     expect(panel.getAllByTestId("income-label")[1]).toHaveTextContent("2019");
     expect(panel.getAllByTestId("income-amount")[1]).toHaveTextContent("800 000");
     expect(panel.getAllByTestId("income-label")[2]).toHaveTextContent("2018");
-    expect(panel.getAllByTestId("income-amount")[2]).toHaveTextContent("opptjening-ikke-tilgjengelig-enda");
+    expect(panel.getAllByTestId("income-amount")[2]).toHaveTextContent("opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt");
 
 
 

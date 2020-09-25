@@ -2,8 +2,10 @@ import {formatAmount} from "../../../common/utils";
 import React from "react";
 import {useTranslation} from "react-i18next";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import {Undertittel} from "nav-frontend-typografi";
 import "./OpptjeningDetailsPanel.less"
+import Lenke from "nav-frontend-lenker";
+import {YearSelector} from "../YearSelector/YearSelector";
+import {Label} from "nav-frontend-skjema";
 
 const detailRow = (props) => {
     return(
@@ -14,7 +16,7 @@ const detailRow = (props) => {
         </div>
     )
 };
-const buildDetailRows = (opptjening, t)  => {
+const buildDetailRows = (opptjening, currentYear, t)  => {
     const details = [];
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
@@ -23,7 +25,7 @@ const buildDetailRows = (opptjening, t)  => {
                 item = detailRow(
                     {
                         "key": "detail-" + idx,
-                        "label": t("opptjening-assets"),
+                        "label": t("opptjening-assets", {year: currentYear-1}),
                         "amount": formatAmount(endring.pensjonsbeholdningBelop)
                     }
                 )
@@ -39,7 +41,7 @@ const buildDetailRows = (opptjening, t)  => {
                 item = detailRow(
                     {
                         "key": "detail-" + idx,
-                        "label": t("opptjening-earnings"),
+                        "label": t("opptjening-earnings", {year: currentYear-2}),
                         "amount": formatAmount(endring.endringBelop)
                     }
                 )
@@ -68,7 +70,7 @@ const buildDetailRows = (opptjening, t)  => {
 
 const detailsTitle = (title) => {
     return(
-        <div role="heading" aria-level="2" className="detailTitle">{title + "?"}</div>
+        <div role="heading" aria-level="2" className="detailTitle">{title}</div>
     )
 };
 
@@ -83,7 +85,7 @@ const getRemarksContainer = (opptjening, t)  => {
     if(remarks.length>0){
         return(
             <div role="table" className="detailsBox">
-                <Undertittel>{t('opptjening-remarks-title')}</Undertittel>
+                <h4>{t('opptjening-remarks-title')}</h4>
                 {remarks}
             </div>
         )
@@ -98,8 +100,7 @@ export const OpptjeningDetailsPanel = (props) => {
     const opptjeningTwoYearsBack = props.data.opptjeningTwoYearsBack;
     const currentYear = props.currentYear;
 
-    const details = buildDetailRows(opptjening, t);
-
+    const details = buildDetailRows(opptjening, currentYear, t);
     const remarksContainer = getRemarksContainer(opptjening, t);
 
     let label = "opptjening-your-pension-assets";
@@ -113,15 +114,22 @@ export const OpptjeningDetailsPanel = (props) => {
         detailRow(
             {
                 "key": key,
-                "label": t(label),
+                "label": t(label, {currentYear}),
                 "amount": formatAmount(opptjening.pensjonsbeholdning)
             })
     );
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-what-happened-this-year', {currentYear: currentYear}))} border apen
-                            className="panelWrapper">
+        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-increase-for-year'))} border apen className="panelWrapper">
             <div role="table" className="detailsBox">
+                <div className="yearSelectorContainer">
+                    <Label htmlFor="yearSelector" className="label">Velg år for å vise økningen</Label>
+                    <div className="selectorWrapper">
+                        <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="xs"/>
+                    </div>
+                </div>
+                <h4>{t('opptjening-pension-assets-for-year', {currentYear})}</h4>
+                <div key="horizontalLine" className="horizontalLine"/>
                 {details}
             </div>
             {opptjeningTwoYearsBack && currentYear>=2010 &&
@@ -130,13 +138,16 @@ export const OpptjeningDetailsPanel = (props) => {
                         detailRow(
                             {
                                 "key": "incomeBase",
-                                "label": t("opptjening-income-base-from", {currentYear: currentYear, twoYearsback: (currentYear - 2)}),
+                                "label": t("opptjening-income-base-from", {twoYearsback: (currentYear - 2)}),
                                 "amount": formatAmount(opptjeningTwoYearsBack.pensjonsgivendeInntekt)
                             })
                     }
                 </div>
             }
             {remarksContainer}
+            <div className="linkContainer">
+                <Lenke href="https://www.nav.no/no/person/pensjon/alderspensjon/relatert-informasjon/beregning-av-alderspensjon">{t('opptjening-read-about-pension-calculation')}</Lenke>
+            </div>
         </Ekspanderbartpanel>
     )
 };

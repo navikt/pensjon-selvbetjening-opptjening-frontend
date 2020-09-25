@@ -11,7 +11,6 @@ import {
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import {LineChart} from '../../elements/LineChart/LineChart';
 import {FAQLinkPanel} from "../../elements/FAQLinkPanel/FAQLinkPanel";
-import {YearSelector} from "../../elements/YearSelector/YearSelector";
 import {OpptjeningDetailsPanel} from "../../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
 import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
 import {isDev} from "../../../common/utils";
@@ -46,10 +45,7 @@ export const OpptjeningView = () => {
                     {t('opptjening-pension-assets-text')}
                 </Tekstomrade>
             </Panel>
-            <div className="contentCentered">
-                <YearSelector years={yearArray} onChange={setYear} currentYear={currentYear} size="xs"/>
-            </div>
-            <OpptjeningDetailsPanel data={{opptjening, opptjeningTwoYearsBack}} currentYear={currentYear}/>
+            <OpptjeningDetailsPanel data={{opptjening, opptjeningTwoYearsBack}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
             <InntektPanel data={{inntekter}}/>
             <FAQLinkPanel/>
 
