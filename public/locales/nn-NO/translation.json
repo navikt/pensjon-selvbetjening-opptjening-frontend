@@ -11,7 +11,7 @@
     "opptjening-pension-assets-text": "Pensjonsbeholdningene brukes som utgangspunkt når vi i fremtiden beregner beløpet du får utbetalt i måneden når du pensjoneres.\n\nHusk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver.",
     "opptjening-your-pensionable-income": "Din pensjonsgivande inntekt",
     "opptjening-increase-for-year": "Se aukingen for et spesifikt år",
-    "opptjening-pension-assets-for-year": "Pensjonsbehaldningen for {{currentYear}}",
+    "opptjening-pension-assets-for-year": "Vis pensjonsbehaldningen for",
     "opptjening-pension-assets": "Pensjonsbehaldning",
     "opptjening-assets":"Pensjonsbehaldningen i {{year}}",
     "opptjening-earnings":"Opptening basert på pensjonsgivande inntekt i {{year}}",

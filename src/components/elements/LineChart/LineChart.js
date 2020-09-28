@@ -91,6 +91,7 @@ export const LineChart = (props) => {
                             maxRotation: 0,
                             minRotation: 0,
                             fontColor: "#3E3832",
+                            fontSize: 14
                         }
 
                     }
@@ -105,6 +106,7 @@ export const LineChart = (props) => {
                                 return formatAmount(value) + ' kr';
                             },
                             fontColor: "#3E3832",
+                            fontSize: 14
                         }
                     }
                 ]

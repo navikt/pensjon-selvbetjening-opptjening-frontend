@@ -131,15 +131,14 @@ export const OpptjeningDetailsPanel = (props) => {
     );
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-increase-for-year'))} border apen className="panelWrapper">
+        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-increase-for-year'))} border className="panelWrapper">
             <div role="table" className="detailsBox">
                 <div className="yearSelectorContainer">
-                    <Label htmlFor="yearSelector" className="label">Velg år for å vise økningen</Label>
+                    <h4><Label htmlFor="yearSelector" className="label">{t('opptjening-pension-assets-for-year')}</Label></h4>
                     <div className="selectorWrapper">
                         <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="xs"/>
                     </div>
                 </div>
-                <h4>{t('opptjening-pension-assets-for-year', {currentYear})}</h4>
                 <div key="horizontalLine" className="horizontalLine"/>
                 {details}
             </div>

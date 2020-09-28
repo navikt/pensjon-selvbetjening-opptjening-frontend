@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from '@testing-library/react';
+import {fireEvent, render} from '@testing-library/react';
 import {OpptjeningDetailsPanel} from './OpptjeningDetailsPanel';
 import mock from '../../../__mocks__/mock'
 import mock_uttak from '../../../__mocks__/mock_simple_with_uttak'
@@ -16,6 +16,8 @@ const opptjening2018WithUttak = mock_uttak.opptjening.opptjeningData["2018"];
 
 it('should render open panel without any data passed in', () => {
     const panel = render(<OpptjeningDetailsPanel data={{opptjening: {}, opptjeningTwoYearsBack:{}}} currentYear="" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-increase-for-year");
     expect(panel.getByRole("table")).toBeVisible();
     expect(panel.getByRole("row")).toBeVisible();
@@ -25,6 +27,8 @@ it('should render open panel without any data passed in', () => {
 
 it('should render panel with details and income base two years back', () => {
     const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2016, opptjeningTwoYearsBack: opptjening2014}} currentYear="2016" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+    
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-increase-for-year");
 
     const tables =  panel.queryAllByRole("table");
@@ -60,6 +64,8 @@ it('should render panel with details and income base two years back', () => {
 
 it('should render panel with details and remarks table', () => {
     const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2010, opptjeningTwoYearsBack: opptjening2014}} currentYear="2010" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-increase-for-year");
     expect(panel.queryAllByRole("heading")[1]).toHaveTextContent("opptjening-pension-assets-for-year");
     expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-remarks-title");
@@ -74,6 +80,8 @@ it('should render panel with details and remarks table', () => {
 
 it('should render panel with details panel with correct label 2010 - opptjening-okning-reform', () => {
     const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2010, opptjeningTwoYearsBack: opptjening2008}} currentYear="2010" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-increase-for-year");
 
     const tables =  panel.queryAllByRole("table");
@@ -101,6 +109,8 @@ it('should render panel with details panel with correct label 2010 - opptjening-
 
 it('should render panel with details showing only assets', () => {
     const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2008, opptjeningTwoYearsBack: {}}} currentYear="2008" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-increase-for-year");
 
     const tables =  panel.queryAllByRole("table");
@@ -116,6 +126,8 @@ it('should render panel with details showing only assets', () => {
 
 it('should render panel with details including uttak', () => {
     const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2018WithUttak, opptjeningTwoYearsBack: {}}} currentYear="2018" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-increase-for-year");
 
     const tables =  panel.queryAllByRole("table");
