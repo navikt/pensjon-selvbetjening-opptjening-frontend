@@ -39,6 +39,9 @@
     "language-selector-nynorsk": "Nynorsk",
     "language-selector-english": "Engelsk",
 
+    "chart-toggle-button-graph": "Graf",
+    "chart-toggle-button-table": "Tabell",
+
     "error-status-401": "Du er ikke autorisert",
     "error-status-403": "Du har ikke tilgang til innholdet"
 }

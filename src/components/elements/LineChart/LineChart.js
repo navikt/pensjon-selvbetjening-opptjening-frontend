@@ -1,15 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
+import {useTranslation} from "react-i18next";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
-import './LineChart.less';
 import {Undertittel} from "nav-frontend-typografi";
+import 'nav-frontend-tabell-style';
 import {formatAmount} from "../../../common/utils";
+import './LineChart.less';
+import {ToggleGruppe} from "nav-frontend-toggle";
 
 const dataRow = (props) => {
     return(
         <tr key={props.key}>
             <td>{props.label}</td>
-            <td>{props.data ? props.data + " kr" : ""}</td>
+            <td>{props.data!==null ? props.data + " kr" : ""}</td>
         </tr>
     )
 };
@@ -30,6 +33,7 @@ const buildDataRows = (labels, data)  => {
 const emptyFn = ()=>{};
 
 export const LineChart = (props) => {
+    const { t } = useTranslation();
     const chartRef = useRef(null);
     const chartConfig = {
         type: 'line',
@@ -114,24 +118,65 @@ export const LineChart = (props) => {
         new Chart(ctx, chartConfig);
     }, [chartConfig, chartRef]);
 
+    const [visibleComponent, setVisibleComponent] = useState("chart");
     const dataRows = buildDataRows(props.data.labels, props.data.data);
+
+    let chartClass = "chartContainer";
+    let tableClass = "tableContainer hidden";
+
+    if(visibleComponent === "chart"){
+        chartClass = "chartContainer";
+        tableClass = "dataContainer hidden";
+    } else if (visibleComponent === "table"){
+        chartClass = "chartContainer hidden";
+        tableClass = "dataContainer";
+    }
+
     return(
-        <div className="chartContainer">
-            <Undertittel>{props.title}</Undertittel>
-            <canvas ref={chartRef} aria-label={props.title}>
-                {/* Fallback content */}
-                <table>
+        <div>
+            <div className={chartClass} >
+                <Undertittel>{props.title}</Undertittel>
+                <canvas ref={chartRef} aria-label={props.title}>
+                    {/* Fallback content */}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{props.xLabel}</th>
+                                <th>{props.yLabel}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {dataRows}
+                        </tbody>
+                    </table>
+                </canvas>
+            </div>
+            <div className={tableClass}>
+                <Undertittel>{props.title}</Undertittel>
+                <div className="tableContainer">
+                <table className="tabell">
                     <thead>
-                        <tr>
-                            <th>{props.xLabel}</th>
-                            <th>{props.yLabel}</th>
-                        </tr>
+                    <tr>
+                        <th>{props.xLabel}</th>
+                        <th>{props.yLabel}</th>
+                    </tr>
                     </thead>
                     <tbody>
                         {dataRows}
                     </tbody>
                 </table>
-            </canvas>
+                </div>
+            </div>
+
+            <div className="toggleKnapper">
+                <ToggleGruppe
+                    defaultToggles={[
+                        { children: t('chart-toggle-button-graph'), pressed: true, onClick: () => {setVisibleComponent("chart")} },
+                        { children: t('chart-toggle-button-table'), onClick: () => {setVisibleComponent("table")} },
+                    ]}
+                    minstEn
+                />
+            </div>
         </div>
     );
 };
