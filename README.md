@@ -25,7 +25,7 @@ App'en kjører da opp en lokal JSON-server som mocker data.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run :
 
 ### `npm start`
 
