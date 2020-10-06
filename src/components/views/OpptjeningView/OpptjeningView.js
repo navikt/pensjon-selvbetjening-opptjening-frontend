@@ -8,12 +8,10 @@ import {
     getPensjonsBeholdningArray,
     getYearArray
 } from "../../../redux/opptjening/opptjeningSelectors";
-import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import {LineChart} from '../../elements/LineChart/LineChart';
 import {FAQLinkPanel} from "../../elements/FAQLinkPanel/FAQLinkPanel";
 import {OpptjeningDetailsPanel} from "../../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
 import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
-import {isDev} from "../../../common/utils";
 import './OpptjeningView.less';
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import Panel from "nav-frontend-paneler";
@@ -48,13 +46,6 @@ export const OpptjeningView = () => {
             <OpptjeningDetailsPanel data={{opptjening, opptjeningTwoYearsBack}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
             <InntektPanel data={{inntekter}}/>
             <FAQLinkPanel/>
-
-            {/*Show raw data in DEVELOPMENT*/}
-            {isDev() &&
-                <Ekspanderbartpanel tittel="Data" className="panelWrapper">
-                    <pre id="json">{JSON.stringify(opptjening, null, 4)}</pre>
-                </Ekspanderbartpanel>
-            }
         </div>
     )
 };
