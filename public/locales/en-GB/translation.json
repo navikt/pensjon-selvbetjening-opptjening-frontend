@@ -42,6 +42,9 @@
     "chart-toggle-button-graph": "Chart",
     "chart-toggle-button-table": "Table",
 
+    "404-title": "404: Page not found",
+
     "error-status-401": "You are not authorized",
-    "error-status-403": "You do not have access to the content"
+    "error-status-403": "A technical problem occured. Please try to log in again later.  We are sorry for the inconvenience.",
+    "error-status-404": "We are not able to find the page or service you are looking for."
 }

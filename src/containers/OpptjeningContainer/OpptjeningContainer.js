@@ -24,7 +24,6 @@ export const OpptjeningContainer = (props) => {
     }
 
     if(opptjeningError){
-        console.log(opptjeningError.message);
         return (
             <div className="contentWrapper">
                 <Alertstripe type="feil">{t(opptjeningError.message)}</Alertstripe>

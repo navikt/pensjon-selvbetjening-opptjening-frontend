@@ -42,6 +42,9 @@
     "chart-toggle-button-graph": "Graf",
     "chart-toggle-button-table": "Tabell",
 
+    "404-title": "404: Finner ikke siden",
+
     "error-status-401": "Du er ikke autorisert",
-    "error-status-403": "Du har ikke tilgang til innholdet"
+    "error-status-403": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen.",
+    "error-status-404": "Vi kan ikke finne siden eller tjenesten du etterspør."
 }
