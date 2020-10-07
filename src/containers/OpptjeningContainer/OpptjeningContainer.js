@@ -19,13 +19,13 @@ export const OpptjeningContainer = (props) => {
 
     if(opptjeningLoading){
         return (
-            <div className="loadingSpinner"><NavFrontendSpinner/></div>
+            <div className="loadingSpinner" data-testid="opptjening-loading"><NavFrontendSpinner/></div>
         )
     }
 
     if(opptjeningError){
         return (
-            <div className="contentWrapper">
+            <div className="contentWrapper" data-testid="opptjening-error">
                 <Alertstripe type="feil">{t(opptjeningError.message)}</Alertstripe>
             </div>
         )

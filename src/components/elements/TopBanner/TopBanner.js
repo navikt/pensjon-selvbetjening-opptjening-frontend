@@ -10,7 +10,7 @@ export const TopBanner = (props) => {
 
     return (
         <div className="topBanner">
-            <div className="topBannerContent">
+            <div className="topBannerContent" data-testid="topbanner">
                 <div className="topBannerText">
                     {frontpage && <Sidetittel>{t(title)}</Sidetittel>}
                     {!frontpage && <Undertittel>{t(title)}</Undertittel>}

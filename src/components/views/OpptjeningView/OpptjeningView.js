@@ -29,7 +29,7 @@ export const OpptjeningView = () => {
     const inntekter = useSelector(getInntekter);
 
     return(
-        <div>
+        <div data-testid="opptjeningview">
             <BeholdningPanel data={latestPensjonsBeholdning}/>
             <Panel border className="panelWrapper">
                 <LineChart

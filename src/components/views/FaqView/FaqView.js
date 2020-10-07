@@ -17,7 +17,7 @@ export const FaqView = () => {
         )
     }
     return(
-        <div>
+        <div data-testid="faqview">
             {faq}
         </div>
     )

@@ -37,7 +37,7 @@ const Crumb = () => {
 const Breadcrumbs = () => {
     const { t } = useTranslation();
     return (
-        <nav aria-label={t('breadcrumbs-you-are-here')} className="breadcrumbs">
+        <nav aria-label={t('breadcrumbs-you-are-here')} className="breadcrumbs" data-testid="breadcrumbs">
             <p className="typo-normal item">
                 <Lenke href={process.env.REACT_APP_DINPENSJON_URL}>
                     {t("dinpensjon-title")}
