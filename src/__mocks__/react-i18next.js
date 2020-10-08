@@ -41,7 +41,18 @@ module.exports = {
     withTranslation: () => Component => props => <Component t={k => k} {...props} />,
     Trans: ({ children }) => renderNodes(children),
     Translation: ({ children }) => children(k => k, { i18n: {} }),
-    useTranslation: () => {
+    useTranslation: (ns) => {
+
+        // Mock number of questions-property for FAQ-page, otherwise return the key
+        if(ns && ns.length>0 && ns[0] === 'faq'){
+            useMock.t = (k) => {
+                if(k === 'faq-number-of-questions'){
+                    return 2
+                } else {
+                    return k
+                }
+            }
+        }
         return useMock
     },
 

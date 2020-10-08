@@ -3,6 +3,8 @@ import {fireEvent, render} from '@testing-library/react';
 import {OpptjeningDetailsPanel} from './OpptjeningDetailsPanel';
 import mock from '../../../__mocks__/mock'
 import mock_uttak from '../../../__mocks__/mock_simple_with_uttak'
+import mock_overfore_omsorgspoeng from '../../../__mocks__/mock_simple_with_overfore_omsorgspoeng'
+
 
 import {formatAmount} from "../../../common/utils";
 
@@ -11,6 +13,8 @@ const opptjening2014 = mock.opptjening.opptjeningData["2014"];
 const opptjening2010 = mock.opptjening.opptjeningData["2010"];
 const opptjening2008 = mock.opptjening.opptjeningData["2008"];
 const opptjening2018WithUttak = mock_uttak.opptjening.opptjeningData["2018"];
+const opptjening2018WithOverforeOmsorgsPoeng = mock_overfore_omsorgspoeng.opptjening.opptjeningData["2018"];
+
 
 
 
@@ -28,7 +32,7 @@ it('should render open panel without any data passed in', () => {
 it('should render panel with details and income base two years back', () => {
     const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2016, opptjeningTwoYearsBack: opptjening2014}} currentYear="2016" yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
-    
+
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-increase-for-year");
 
     const tables =  panel.queryAllByRole("table");
@@ -156,4 +160,22 @@ it('should render panel with details including uttak', () => {
     expect(panel.getByTestId("opptjening-sum")).toBeVisible();
     expect(panel.getByTestId("label-opptjening-sum")).toHaveTextContent("opptjening-sum");
     expect(panel.getByTestId("amount-opptjening-sum").textContent).toEqual(formatAmount(sum));
+});
+
+
+it('should render panel with details including link to overfore omsorgspoeng', () => {
+    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2018WithOverforeOmsorgsPoeng, opptjeningTwoYearsBack: {}}} currentYear="2018" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-increase-for-year");
+
+    const tables =  panel.queryAllByRole("table");
+    const detailsTable = tables[0];
+    const remarksTable = tables[2];
+
+    expect(detailsTable).toBeVisible();
+    expect(remarksTable).toBeVisible();
+
+    expect(panel.getByTestId("remark-row-0")).toBeVisible();
+    expect(panel.queryAllByRole("link")[0]).toHaveTextContent("remarks:OVERFORE_OMSORGSOPPTJENING");
 });

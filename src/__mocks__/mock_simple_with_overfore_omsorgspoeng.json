@@ -1,0 +1,47 @@
+{
+    "opptjening": {
+        "opptjeningData": {
+            "2018": {
+                "pensjonsgivendeInntekt": null,
+                "pensjonsbeholdning": 1317011,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": null,
+                "merknader": ["OVERFORE_OMSORGSOPPTJENING"],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": [
+                    {
+                        "dato": "2017-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": null,
+                        "endringBelop": null,
+                        "pensjonsbeholdningBelop": 1221929.8815890653,
+                        "uttaksgrad": 0
+                    },
+                    {
+                        "dato": "2018-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 50913.322334762146,
+                        "pensjonsbeholdningBelop": 1272843.2039238275,
+                        "uttaksgrad": 0
+                    },
+                    {
+                        "dato": "2018-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 44167.659176156856,
+                        "pensjonsbeholdningBelop": 1317010.8630999844,
+                        "uttaksgrad": 0
+                    }
+                ]
+            }
+        },
+        "numberOfYearsWithPensjonspoeng": null
+    }
+}
