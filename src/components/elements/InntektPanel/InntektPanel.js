@@ -36,7 +36,7 @@ const detailsTitle = (title) => {
 };
 
 export const InntektPanel = (props) => {
-    const toggleOpen = (apen) =>{
+    const toggleOpen = () => {
         setApen(!apen);
     };
 
@@ -46,28 +46,30 @@ export const InntektPanel = (props) => {
     const details = buildDetailRows(inntekter, t);
 
     return(
-        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={() => toggleOpen(apen)}>
-            <div className="inntektLinkContainer">
-                <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-income-link-to-skatteetaten')}</Lenke>
-            </div>
-            <div className="inntektDetailsBox">
-                <table className="tabell">
-                    <thead>
-                        <tr>
-                            <th data-testid="income-header">{t('opptjening-year')}</th>
-                            <th data-testid="income-header">{t('opptjening-income')}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {details}
-                    </tbody>
-                </table>
-            </div>
-            <button type="button" aria-label={t("button-close")} className="closeButton" onClick={() => setApen(false)}>
-                <div>
-                    <OppChevron/>
+        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
+            <div data-testid="inntektContainer">
+                <div className="inntektLinkContainer">
+                    <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-income-link-to-skatteetaten')}</Lenke>
                 </div>
-            </button>
+                <div className="inntektDetailsBox">
+                    <table className="tabell">
+                        <thead>
+                            <tr>
+                                <th data-testid="income-header">{t('opptjening-year')}</th>
+                                <th data-testid="income-header">{t('opptjening-income')}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {details}
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" aria-label={t("button-close")} className="closeButton" onClick={toggleOpen}>
+                    <div>
+                        <OppChevron/>
+                    </div>
+                </button>
+            </div>
         </EkspanderbartpanelBase>
     )
 };
