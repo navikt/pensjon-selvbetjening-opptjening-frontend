@@ -5,7 +5,7 @@ import { Router } from 'react-router-dom'
 
 import '@testing-library/jest-dom/extend-expect'
 
-import { App } from './app'
+import { App } from './App'
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
 import mock from "../../__mocks__/mock";
