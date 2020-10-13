@@ -16,6 +16,7 @@ import './OpptjeningView.less';
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import Panel from "nav-frontend-paneler";
 import Tekstomrade from "nav-frontend-tekstomrade";
+import {getUnleash} from "../../../redux/unleash/unleashSelectors";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -23,6 +24,7 @@ export const OpptjeningView = () => {
     const pensjonsBeholdningArray = useSelector(getPensjonsBeholdningArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
 
+    const unleash = useSelector(getUnleash);
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
     const opptjeningTwoYearsBack = useSelector(state => getOpptjeningByYear(state, currentYear-2));
@@ -46,6 +48,7 @@ export const OpptjeningView = () => {
             <OpptjeningDetailsPanel data={{opptjening, opptjeningTwoYearsBack}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
             <InntektPanel data={{inntekter}}/>
             <FAQLinkPanel/>
+            {unleash.unleashId}
         </div>
     )
 };

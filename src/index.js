@@ -10,10 +10,15 @@ import NavFrontendSpinner from "nav-frontend-spinner";
 import { Normaltekst } from 'nav-frontend-typografi';
 import './i18n';
 import './index.less';
+import {UnleashContainer} from "./containers/Unleash/UnleashContainer";
 
 ReactDOM.render(
     <Provider store={store}>
         <Suspense fallback={<NavFrontendSpinner/>}>
+            <UnleashContainer>
+
+            </UnleashContainer>
+
             <Router>
                 <Normaltekst tag="div">
                     <App />
