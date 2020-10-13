@@ -6,19 +6,19 @@ import {NotFoundPage} from "../components/pages/NotFoundPage/NotFoundPage";
 export const basePath = process.env.PUBLIC_URL;
 export const routesConfig = [
     {
-        path: `${basePath}`,
+        path: `/`,
         component: HomePage,
         titleKey: 'opptjening-title',
         exact: true
     },
     {
-        path: `${basePath}/faq`,
+        path: `/faq`,
         component: FaqPage,
         titleKey: 'faq-title',
         exact: true
     },
     {
-        path: `${basePath}/404`,
+        path: `/404`,
         component: NotFoundPage,
         titleKey: '404-title',
         exact: true

@@ -14,7 +14,7 @@ import './index.less';
 ReactDOM.render(
     <Provider store={store}>
         <Suspense fallback={<NavFrontendSpinner/>}>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <Normaltekst tag="div">
                     <App />
                 </Normaltekst>
