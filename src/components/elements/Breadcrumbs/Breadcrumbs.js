@@ -3,7 +3,7 @@ import Lenke from 'nav-frontend-lenker'
 import 'nav-frontend-lenker-style'
 import { HoyreChevron } from 'nav-frontend-chevron';
 import { Route, useRouteMatch } from 'react-router-dom'
-import { routesConfig } from '../../../common/routesConfig'
+import { routesConfig, basePath} from '../../../common/routesConfig'
 import './Breadcrumbs.less'
 import {useTranslation} from "react-i18next";
 
@@ -12,12 +12,19 @@ const Crumb = () => {
     const { t } = useTranslation();
 
     const route = routesConfig.find((route) => route.path === match.url);
-    return route ? (
+    let url;
+    if(match.url === '/'){
+        url = basePath;
+    } else {
+        url = basePath + match.url
+    }
+
+    return route.path ? (
         <>
             {!match.isExact ? (
                 <>
                     <p className="typo-normal item">
-                        <Lenke href={match.url || ''}>
+                        <Lenke href={url || ''}>
                             {t(route.titleKey)}
                         </Lenke>
                     </p>
