@@ -19,7 +19,7 @@ const detailRow = (props) => {
 
 const getTextParagraph = (text, key) =>{
     return(
-        <p key={key} className="">{text}</p>
+        <p key={key} className="typo-normal">{text}</p>
     )
 };
 
