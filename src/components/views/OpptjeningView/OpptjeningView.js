@@ -25,7 +25,6 @@ export const OpptjeningView = () => {
 
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
-    const opptjeningTwoYearsBack = useSelector(state => getOpptjeningByYear(state, currentYear-2));
     const inntekter = useSelector(getInntekter);
 
     return(
@@ -43,7 +42,7 @@ export const OpptjeningView = () => {
                     {t('opptjening-pension-assets-text')}
                 </Tekstomrade>
             </Panel>
-            <OpptjeningDetailsPanel data={{opptjening, opptjeningTwoYearsBack}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
+            <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
             <InntektPanel data={{inntekter}}/>
             <FAQLinkPanel/>
         </div>

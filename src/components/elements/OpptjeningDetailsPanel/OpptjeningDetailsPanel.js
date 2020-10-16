@@ -16,8 +16,42 @@ const detailRow = (props) => {
         </div>
     )
 };
-const buildDetailRows = (opptjening, currentYear, t)  => {
-    const details = [];
+
+const getTextParagraph = (text, key) =>{
+    return(
+        <p key={key} className="">{text}</p>
+    )
+};
+
+const grunnlagTexts = (grunnlagTextArray, faqText) =>{
+    const grunnlagTexts = grunnlagTextArray.map((txt, idx) => {
+        return getTextParagraph(txt, "grunnlagtext-" + idx);
+    });
+    grunnlagTexts.push(getTextParagraph(faqText, "faqtext"));
+    return grunnlagTexts;
+};
+
+const getLabelForGrunnlagCode = (grunnlagCode, grunnlag, t) => {
+    if(grunnlagCode === "INNTEKT_GRUNNLAG"){
+        return t("opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt", {grunnlag})
+    } else if(grunnlagCode === "UFORE_GRUNNLAG"){
+        return t("opptjening-details-opptjening-basert-paa-uforetrygd", {grunnlag})
+    } else if(grunnlagCode === "FORSTEGANGSTJENESTE_GRUNNLAG"){
+        return t("opptjening-details-opptjening-basert-paa-forstegangstjeneste", {grunnlag})
+    } else if(grunnlagCode === "DAGPENGER_GRUNNLAG"){
+        return t("opptjening-details-opptjening-basert-paa-dagpenger", {grunnlag})
+    } else if(grunnlagCode === "OMSORGSOPPTJENING_GRUNNLAG"){
+        return t("opptjening-details-omsorgsopptjening", {grunnlag})
+    } else if(grunnlagCode === "NO_GRUNNLAG"){
+        return t("opptjening-details-opptjening")
+    }
+};
+
+const buildDetails = (opptjening, currentYear, t)  => {
+    let details = [];
+    let grunnlagTextArray = [];
+    let grunnlagTypes = [];
+    let faqText = "";
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
             let item;
@@ -25,7 +59,7 @@ const buildDetailRows = (opptjening, currentYear, t)  => {
                 item = detailRow(
                     {
                         "key": "detail-" + idx,
-                        "label": t("opptjening-assets", {year: currentYear-1}),
+                        "label": t('opptjening-details-beholdning-i-starten-av-aaret', {year: currentYear-1}),
                         "amount": formatAmount(endring.pensjonsbeholdningBelop)
                     }
                 )
@@ -33,15 +67,31 @@ const buildDetailRows = (opptjening, currentYear, t)  => {
                 item = detailRow(
                     {
                         "key": "detail-" + idx,
-                        "label": t("opptjening-okning-reform"),
+                        "label": t('opptjening-details-okning-pga-reform'),
                         "amount": formatAmount(endring.endringBelop)
                     }
                 )
             } else if (endring.arsakType === "OPPTJENING") {
+                const grunnlag = formatAmount(endring.grunnlag);
+                let label = "";
+                if(endring.grunnlagTypes.length === 1){
+                    const grunnlagType = t('grunnlag:' + endring.grunnlagTypes[0] + '_TYPE');
+                    label = getLabelForGrunnlagCode(endring.grunnlagTypes[0], grunnlag, t);
+                    grunnlagTextArray.push(t('grunnlag:' + endring.grunnlagTypes[0] + '_DESCRIPTION', {year: currentYear-2}));
+                    faqText = t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagType});
+                } else {
+                    endring.grunnlagTypes.forEach((type) => {
+                        grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {year: currentYear-2}));
+                        grunnlagTypes.push(t('grunnlag:' + type + '_TYPE'));
+                    });
+                    label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypes.join(', '), grunnlag})
+                    faqText = t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypes.join(', ')});
+                }
+
                 item = detailRow(
                     {
                         "key": "detail-" + idx,
-                        "label": t("opptjening-earnings", {year: currentYear-2}),
+                        "label": label,
                         "amount": formatAmount(endring.endringBelop)
                     }
                 )
@@ -49,7 +99,7 @@ const buildDetailRows = (opptjening, currentYear, t)  => {
                 item = detailRow(
                     {
                         "key": "detail-" + idx,
-                        "label": t("opptjening-regulation"),
+                        "label": t('opptjening-details-aarlig-regulering'),
                         "amount": formatAmount(endring.endringBelop)
                     }
                 )
@@ -57,7 +107,7 @@ const buildDetailRows = (opptjening, currentYear, t)  => {
                 item = detailRow(
                     {
                         "key": "detail-" + idx,
-                        "label": t("opptjening-withdrawal"),
+                        "label": t('opptjening-details-uttak'),
                         "amount": formatAmount(endring.endringBelop)
                     }
                 )
@@ -65,7 +115,10 @@ const buildDetailRows = (opptjening, currentYear, t)  => {
             details.push(item);
         });
     }
-    return details;
+    return {
+        "detailRows": details,
+        "grunnlagTexts" : grunnlagTexts(grunnlagTextArray, faqText)
+    };
 };
 
 const detailsTitle = (title) => {
@@ -96,7 +149,7 @@ const getRemarksContainer = (opptjening, t)  => {
     if(remarks.length>0){
         return(
             <div role="table" className="detailsBox">
-                <h4>{t('opptjening-remarks-title')}</h4>
+                <h4>{t('opptjening-details-merknader-tittel')}</h4>
                 {remarks}
             </div>
         )
@@ -106,22 +159,21 @@ const getRemarksContainer = (opptjening, t)  => {
 };
 
 export const OpptjeningDetailsPanel = (props) => {
-    const { t } = useTranslation(['translation', 'remarks']);
+    const { t } = useTranslation(['translation', 'remarks', 'grunnlag']);
     const opptjening = props.data.opptjening;
-    const opptjeningTwoYearsBack = props.data.opptjeningTwoYearsBack;
     const currentYear = props.currentYear;
 
-    const details = buildDetailRows(opptjening, currentYear, t);
+    const {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
     const remarksContainer = getRemarksContainer(opptjening, t);
 
-    let label = "opptjening-your-pension-assets";
-    let key = "opptjening-your-pension-assets";
-    if(details.length>0){
-        key = "opptjening-sum";
-        label = "opptjening-sum";
-        details.push(<div key="horizontalLine" className="horizontalLine"/>);
+    let label = "opptjening-details-din-pensjonsbeholdning";
+    let key = "opptjening-details-din-pensjonsbeholdning";
+    if(detailRows.length>0){
+        key = "opptjening-details-total-pensjonsbeholdning";
+        label = "opptjening-details-total-pensjonsbeholdning";
+        detailRows.push(<div key="horizontalLine" className="horizontalLine"/>);
     }
-    details.push(
+    detailRows.push(
         detailRow(
             {
                 "key": key,
@@ -131,32 +183,23 @@ export const OpptjeningDetailsPanel = (props) => {
     );
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-increase-for-year'))} border className="panelWrapper">
+        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper">
             <div role="table" className="detailsBox">
                 <div className="yearSelectorContainer">
-                    <h4><Label htmlFor="yearSelector" className="label">{t('opptjening-pension-assets-for-year')}</Label></h4>
+                    <h4><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h4>
                     <div className="selectorWrapper">
                         <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="xs"/>
                     </div>
                 </div>
                 <div key="horizontalLine" className="horizontalLine"/>
-                {details}
+                {detailRows}
             </div>
-            {opptjeningTwoYearsBack && currentYear>=2010 &&
-                <div role="table" className="detailsBox">
-                    {
-                        detailRow(
-                            {
-                                "key": "incomeBase",
-                                "label": t("opptjening-income-base-from", {twoYearsback: (currentYear - 2)}),
-                                "amount": formatAmount(opptjeningTwoYearsBack.pensjonsgivendeInntekt)
-                            })
-                    }
-                </div>
-            }
+            <div className="detailsBox">
+                {grunnlagTexts}
+            </div>
             {remarksContainer}
             <div className="linkContainer">
-                <Lenke href="https://www.nav.no/no/person/pensjon/alderspensjon/relatert-informasjon/beregning-av-alderspensjon">{t('opptjening-read-about-pension-calculation')}</Lenke>
+                <Lenke href="https://www.nav.no/no/person/pensjon/alderspensjon/relatert-informasjon/beregning-av-alderspensjon">{t('opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen')}</Lenke>
             </div>
         </Ekspanderbartpanel>
     )
