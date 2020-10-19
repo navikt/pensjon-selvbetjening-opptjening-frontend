@@ -32,18 +32,21 @@ const grunnlagTexts = (grunnlagTextArray, faqText) =>{
 };
 
 const getLabelForGrunnlagCode = (grunnlagCode, grunnlag, t) => {
-    if(grunnlagCode === "INNTEKT_GRUNNLAG"){
-        return t("opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt", {grunnlag})
-    } else if(grunnlagCode === "UFORE_GRUNNLAG"){
-        return t("opptjening-details-opptjening-basert-paa-uforetrygd", {grunnlag})
-    } else if(grunnlagCode === "FORSTEGANGSTJENESTE_GRUNNLAG"){
-        return t("opptjening-details-opptjening-basert-paa-forstegangstjeneste", {grunnlag})
-    } else if(grunnlagCode === "DAGPENGER_GRUNNLAG"){
-        return t("opptjening-details-opptjening-basert-paa-dagpenger", {grunnlag})
-    } else if(grunnlagCode === "OMSORGSOPPTJENING_GRUNNLAG"){
-        return t("opptjening-details-omsorgsopptjening", {grunnlag})
-    } else if(grunnlagCode === "NO_GRUNNLAG"){
-        return t("opptjening-details-opptjening")
+    switch(grunnlagCode){
+        case "INNTEKT_GRUNNLAG":
+            return t("opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt", {grunnlag});
+        case "UFORE_GRUNNLAG":
+            return t("opptjening-details-opptjening-basert-paa-uforetrygd", {grunnlag});
+        case "FORSTEGANGSTJENESTE_GRUNNLAG":
+            return t("opptjening-details-opptjening-basert-paa-forstegangstjeneste", {grunnlag});
+        case "DAGPENGER_GRUNNLAG":
+            return t("opptjening-details-opptjening-basert-paa-dagpenger", {grunnlag});
+        case "OMSORGSOPPTJENING_GRUNNLAG":
+            return t("opptjening-details-omsorgsopptjening", {grunnlag});
+        case "NO_GRUNNLAG":
+            return t("opptjening-details-opptjening");
+        default:
+            return t("opptjening-details-opptjening");
     }
 };
 
@@ -55,62 +58,70 @@ const buildDetails = (opptjening, currentYear, t)  => {
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
             let item;
-            if (endring.arsakType === "INNGAENDE") {
-                item = detailRow(
-                    {
-                        "key": "detail-" + idx,
-                        "label": t('opptjening-details-beholdning-i-starten-av-aaret', {year: currentYear-1}),
-                        "amount": formatAmount(endring.pensjonsbeholdningBelop)
+            switch(endring.arsakType){
+                case "INNGAENDE":
+                    item = detailRow(
+                        {
+                            "key": "detail-" + idx,
+                            "label": t('opptjening-details-beholdning-i-starten-av-aaret'),
+                            "amount": formatAmount(endring.pensjonsbeholdningBelop)
+                        }
+                    );
+                    break;
+                case "INNGAENDE_2010":
+                    item = detailRow(
+                        {
+                            "key": "detail-" + idx,
+                            "label": t('opptjening-details-okning-pga-reform'),
+                            "amount": formatAmount(endring.endringBelop)
+                        }
+                    );
+                    break;
+                case "OPPTJENING":
+                    const grunnlag = formatAmount(endring.grunnlag);
+                    let label = "";
+                    if(endring.grunnlagTypes.length === 1){
+                        const grunnlagType = t('grunnlag:' + endring.grunnlagTypes[0] + '_TYPE');
+                        label = getLabelForGrunnlagCode(endring.grunnlagTypes[0], grunnlag, t);
+                        grunnlagTextArray.push(t('grunnlag:' + endring.grunnlagTypes[0] + '_DESCRIPTION', {year: currentYear-2}));
+                        faqText = t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagType});
+                    } else {
+                        endring.grunnlagTypes.forEach((type) => {
+                            grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {year: currentYear-2}));
+                            grunnlagTypes.push(t('grunnlag:' + type + '_TYPE'));
+                        });
+                        label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypes.join(', '), grunnlag});
+                        faqText = t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypes.join(', ')});
                     }
-                )
-            } else if (endring.arsakType === "INNGAENDE_2010"){
-                item = detailRow(
-                    {
-                        "key": "detail-" + idx,
-                        "label": t('opptjening-details-okning-pga-reform'),
-                        "amount": formatAmount(endring.endringBelop)
-                    }
-                )
-            } else if (endring.arsakType === "OPPTJENING") {
-                const grunnlag = formatAmount(endring.grunnlag);
-                let label = "";
-                if(endring.grunnlagTypes.length === 1){
-                    const grunnlagType = t('grunnlag:' + endring.grunnlagTypes[0] + '_TYPE');
-                    label = getLabelForGrunnlagCode(endring.grunnlagTypes[0], grunnlag, t);
-                    grunnlagTextArray.push(t('grunnlag:' + endring.grunnlagTypes[0] + '_DESCRIPTION', {year: currentYear-2}));
-                    faqText = t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagType});
-                } else {
-                    endring.grunnlagTypes.forEach((type) => {
-                        grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {year: currentYear-2}));
-                        grunnlagTypes.push(t('grunnlag:' + type + '_TYPE'));
-                    });
-                    label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypes.join(', '), grunnlag})
-                    faqText = t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypes.join(', ')});
-                }
 
-                item = detailRow(
-                    {
-                        "key": "detail-" + idx,
-                        "label": label,
-                        "amount": formatAmount(endring.endringBelop)
-                    }
-                )
-            } else if (endring.arsakType === "REGULERING") {
-                item = detailRow(
-                    {
-                        "key": "detail-" + idx,
-                        "label": t('opptjening-details-aarlig-regulering'),
-                        "amount": formatAmount(endring.endringBelop)
-                    }
-                )
-            } else if (endring.arsakType === "UTTAK") {
-                item = detailRow(
-                    {
-                        "key": "detail-" + idx,
-                        "label": t('opptjening-details-uttak'),
-                        "amount": formatAmount(endring.endringBelop)
-                    }
-                )
+                    item = detailRow(
+                        {
+                            "key": "detail-" + idx,
+                            "label": label,
+                            "amount": formatAmount(endring.endringBelop)
+                        }
+                    );
+                    break;
+                case "REGULERING":
+                    item = detailRow(
+                        {
+                            "key": "detail-" + idx,
+                            "label": t('opptjening-details-aarlig-regulering'),
+                            "amount": formatAmount(endring.endringBelop)
+                        }
+                    );
+                    break;
+                case "UTTAK":
+                    item = detailRow(
+                        {
+                            "key": "detail-" + idx,
+                            "label": t('opptjening-details-uttak'),
+                            "amount": formatAmount(endring.endringBelop)
+                        }
+                    );
+                    break;
+                default:
+                    break;
             }
             details.push(item);
         });
