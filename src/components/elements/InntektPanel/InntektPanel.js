@@ -6,7 +6,7 @@ import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
 import "./InntektPanel.less"
 import Lenke from "nav-frontend-lenker";
-import {initAmplitude, amplitudeLogger} from "../../../amplitude";
+import {amplitudeLogger} from "../../../common/amplitude";
 
 const detailRow = (props) => {
     return(
@@ -38,7 +38,6 @@ const detailsTitle = (title) => {
 
 export const InntektPanel = (props) => {
     const toggleOpen = () => {
-        initAmplitude();
         amplitudeLogger("Toggle Inntektspanel", apen);
         setApen(!apen);
     };

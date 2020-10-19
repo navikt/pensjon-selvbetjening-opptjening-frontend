@@ -10,7 +10,9 @@ import NavFrontendSpinner from "nav-frontend-spinner";
 import { Normaltekst } from 'nav-frontend-typografi';
 import './i18n';
 import './index.less';
+import {initAmplitude} from "./common/amplitude";
 
+initAmplitude();
 ReactDOM.render(
     <Provider store={store}>
         <Suspense fallback={<NavFrontendSpinner/>}>
