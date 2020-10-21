@@ -15,7 +15,7 @@ import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
 import './OpptjeningView.less';
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import Panel from "nav-frontend-paneler";
-import Tekstomrade from "nav-frontend-tekstomrade";
+import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -30,6 +30,7 @@ export const OpptjeningView = () => {
     return(
         <div data-testid="opptjeningview">
             <BeholdningPanel data={latestPensjonsBeholdning}/>
+            <BeholdningForklartPanel/>
             <Panel border className="panelWrapper">
                 <LineChart
                     data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
@@ -38,9 +39,6 @@ export const OpptjeningView = () => {
                     xLabel={t("opptjening-year")}
 
                 />
-                <Tekstomrade className="pensionAssetsText">
-                    {t('opptjening-pension-assets-text')}
-                </Tekstomrade>
             </Panel>
             <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
             <InntektPanel data={{inntekter}}/>
