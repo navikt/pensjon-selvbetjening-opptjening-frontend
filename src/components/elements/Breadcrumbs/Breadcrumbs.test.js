@@ -3,8 +3,6 @@ import { render, screen } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
 
-import '@testing-library/jest-dom/extend-expect'
-
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
 import Breadcrumbs from "./Breadcrumbs";

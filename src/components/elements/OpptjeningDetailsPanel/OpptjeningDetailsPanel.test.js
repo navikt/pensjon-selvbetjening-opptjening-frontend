@@ -4,11 +4,9 @@ import {OpptjeningDetailsPanel} from './OpptjeningDetailsPanel';
 import mock from '../../../__mocks__/mock'
 import mock_uttak from '../../../__mocks__/mock_simple_with_uttak'
 import mock_overfore_omsorgspoeng from '../../../__mocks__/mock_simple_with_overfore_omsorgspoeng'
-
-
 import {formatAmount} from "../../../common/utils";
+//import {axe} from "jest-axe";
 
-const opptjening2016 = mock.opptjening.opptjeningData["2016"];
 const opptjening2014 = mock.opptjening.opptjeningData["2014"];
 const opptjening2010 = mock.opptjening.opptjeningData["2010"];
 const opptjening2008 = mock.opptjening.opptjeningData["2008"];
@@ -16,7 +14,12 @@ const opptjening2018WithUttak = mock_uttak.opptjening.opptjeningData["2018"];
 const opptjening2018WithOverforeOmsorgsPoeng = mock_overfore_omsorgspoeng.opptjening.opptjeningData["2018"];
 
 
-
+// it('should not fail any accessibility tests', async () => {
+//     const {debug, getByRole, container} = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2010, opptjeningTwoYearsBack: opptjening2014}} currentYear="2010" yearArray={[]}/>);
+//     fireEvent.click(getByRole("heading"));
+//
+//     expect(await axe(container)).toHaveNoViolations();
+// });
 
 it('should render open panel without any data passed in', () => {
     const panel = render(<OpptjeningDetailsPanel data={{opptjening: {}, opptjeningTwoYearsBack:{}}} currentYear="" yearArray={[]}/>);

@@ -2,9 +2,6 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
-
-import '@testing-library/jest-dom/extend-expect'
-
 import { App } from './App'
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
