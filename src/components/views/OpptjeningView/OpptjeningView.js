@@ -9,7 +9,7 @@ import {
     getYearArray
 } from "../../../redux/opptjening/opptjeningSelectors";
 import {LineChart} from '../../elements/LineChart/LineChart';
-import {FAQLinkPanel} from "../../elements/FAQLinkPanel/FAQLinkPanel";
+import {FAQPanel} from "../../elements/FAQPanel/FAQPanel";
 import {OpptjeningDetailsPanel} from "../../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
 import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
 import './OpptjeningView.less';
@@ -42,7 +42,7 @@ export const OpptjeningView = () => {
             </Panel>
             <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
             <InntektPanel data={{inntekter}}/>
-            <FAQLinkPanel/>
+            <FAQPanel/>
         </div>
     )
 };

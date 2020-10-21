@@ -25,26 +25,6 @@ it('renders the breadcrumb for frontpage', () => {
     expect(breadcrumb.getByText("opptjening-title")).toBeInTheDocument();
 });
 
-
-it('renders the breadcrumb for the FAQ page', () => {
-    const mockStore = configureStore();
-    let store = mockStore({});
-
-    const history = createMemoryHistory();
-    history.push('/faq');
-    const breadcrumb = render(
-        <Provider store={store}>
-            <Router history={history}>
-                <Breadcrumbs />
-            </Router>
-        </Provider>
-    );
-
-    expect(breadcrumb.getByText("dinpensjon-title")).toBeInTheDocument();
-    expect(breadcrumb.getByText("opptjening-title")).toBeInTheDocument();
-    expect(breadcrumb.getByText("faq-title")).toBeInTheDocument();
-});
-
 it('renders the breadcrumb for the 404 page', () => {
     const mockStore = configureStore();
     let store = mockStore({});
