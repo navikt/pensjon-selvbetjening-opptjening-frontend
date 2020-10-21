@@ -8,7 +8,6 @@
     "opptjening-number-of-years-with-pensjonspoeng": "Number of years with pension points:",
     "opptjening-your-pension-assets": "Your pension assets",
     "opptjening-your-pension-assets-in-folketrygden": "Your pension assets in Folketrygden",
-    "opptjening-pension-assets-text": "Pensjonsbeholdningene brukes som utgangspunkt når vi i fremtiden beregner beløpet du får utbetalt i måneden når du pensjoneres.\n\nHusk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver.",
     "opptjening-your-pensionable-income": "Your pensionable income",
     "opptjening-pension-assets": "Pension assets",
     "opptjening-frequently-asked-questions": "Frequently asked questions",
@@ -17,6 +16,9 @@
     "opptjening-button-close": "Close",
     "opptjening-increase-in-pension-assets-per-year": "Increase in pension assets per year",
     "opptjening-income-link-to-skatteetaten": "Information abount income comes from skattemeldingen at Skatteetaten.",
+
+    "pensjonsbeholdning-forklart" : "Pension assets explained",
+    "pensjonsbeholdning-forklart-tekst": "Pensjonsbeholdningene brukes som utgangspunkt når vi i fremtiden beregner beløpet du får utbetalt i måneden når du pensjoneres.\n\nHusk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver.",
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Assets at the start of the year",
