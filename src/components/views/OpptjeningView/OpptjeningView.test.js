@@ -25,7 +25,7 @@ it('should render Opptjening view and display only the headings for the differen
     expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-increase-in-pension-assets-per-year"); //Chart - Table-view
     expect(view.queryAllByRole("heading")[4]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
     expect(view.queryAllByRole("heading")[5]).toHaveTextContent("opptjening-pensjonsgivende-inntekter"); //Inntekter-panel
-    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("opptjening-frequently-asked-questions"); //FAQ-panel
+    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
 
     expect(view.queryAllByRole("table").length).toBe(2); // Chart tables
 });

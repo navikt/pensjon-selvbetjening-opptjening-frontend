@@ -209,9 +209,6 @@ export const OpptjeningDetailsPanel = (props) => {
                 {grunnlagTexts}
             </div>
             {remarksContainer}
-            <div className="linkContainer">
-                <Lenke href="https://www.nav.no/no/person/pensjon/alderspensjon/relatert-informasjon/beregning-av-alderspensjon">{t('opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen')}</Lenke>
-            </div>
         </Ekspanderbartpanel>
     )
 };

@@ -4,7 +4,7 @@ import {FAQPanel} from './FAQPanel';
 
 it('renders the FAQ link panel with correct link and text', () => {
     const { getByRole } = render(<FAQPanel/>);
-    expect(getByRole('heading')).toHaveTextContent("opptjening-frequently-asked-questions");
+    expect(getByRole('heading')).toHaveTextContent("faq-ofte-stilte-sporsmaal");
 });
 
 it('should render FaqView with two questions', () => {
