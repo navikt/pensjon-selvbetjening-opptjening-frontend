@@ -27,7 +27,9 @@ const grunnlagTexts = (grunnlagTextArray, faqText) =>{
     const grunnlagTexts = grunnlagTextArray.map((txt, idx) => {
         return getTextParagraph(txt, "grunnlagtext-" + idx);
     });
-    grunnlagTexts.push(getTextParagraph(faqText, "faqtext"));
+    if(faqText && faqText!==""){
+        grunnlagTexts.push(getTextParagraph(faqText, "faqtext"));
+    }
     return grunnlagTexts;
 };
 
@@ -54,7 +56,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
     let details = [];
     let grunnlagTextArray = [];
     let grunnlagTypes = [];
-    let faqText = "";
+    let faqText;
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
             let item;
@@ -169,6 +171,18 @@ const getRemarksContainer = (opptjening, t)  => {
     }
 };
 
+const getGrunnlagTextsContainer = (grunnlagTexts)  => {
+    if(grunnlagTexts && grunnlagTexts.length>0){
+        return (
+            <div className="detailsBox">
+                {grunnlagTexts}
+            </div>
+        )
+    } else {
+        return null;
+    }
+};
+
 export const OpptjeningDetailsPanel = (props) => {
     const { t } = useTranslation(['translation', 'remarks', 'grunnlag']);
     const opptjening = props.data.opptjening;
@@ -176,6 +190,7 @@ export const OpptjeningDetailsPanel = (props) => {
 
     const {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
     const remarksContainer = getRemarksContainer(opptjening, t);
+    const grunnlagTextsContainer = getGrunnlagTextsContainer(grunnlagTexts);
 
     let label = "opptjening-details-din-pensjonsbeholdning";
     let key = "opptjening-details-din-pensjonsbeholdning";
@@ -205,9 +220,7 @@ export const OpptjeningDetailsPanel = (props) => {
                 <div key="horizontalLine" className="horizontalLine"/>
                 {detailRows}
             </div>
-            <div className="detailsBox">
-                {grunnlagTexts}
-            </div>
+            {grunnlagTextsContainer}
             {remarksContainer}
         </Ekspanderbartpanel>
     )
