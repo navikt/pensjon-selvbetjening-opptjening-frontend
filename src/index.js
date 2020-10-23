@@ -11,7 +11,9 @@ import { Normaltekst } from 'nav-frontend-typografi';
 import './i18n';
 import './index.less';
 import {UnleashContainer} from "./containers/Unleash/UnleashContainer";
+import {initAmplitude} from "./common/amplitude";
 
+initAmplitude();
 ReactDOM.render(
     <Provider store={store}>
         <Suspense fallback={<NavFrontendSpinner/>}>

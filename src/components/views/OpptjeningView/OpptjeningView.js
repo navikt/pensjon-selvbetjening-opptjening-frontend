@@ -9,14 +9,14 @@ import {
     getYearArray
 } from "../../../redux/opptjening/opptjeningSelectors";
 import {LineChart} from '../../elements/LineChart/LineChart';
-import {FAQLinkPanel} from "../../elements/FAQLinkPanel/FAQLinkPanel";
+import {FAQPanel} from "../../elements/FAQPanel/FAQPanel";
 import {OpptjeningDetailsPanel} from "../../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
 import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
 import './OpptjeningView.less';
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import Panel from "nav-frontend-paneler";
-import Tekstomrade from "nav-frontend-tekstomrade";
 import {getUnleash} from "../../../redux/unleash/unleashSelectors";
+import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -27,12 +27,12 @@ export const OpptjeningView = () => {
     const unleash = useSelector(getUnleash);
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
-    const opptjeningTwoYearsBack = useSelector(state => getOpptjeningByYear(state, currentYear-2));
     const inntekter = useSelector(getInntekter);
 
     return(
         <div data-testid="opptjeningview">
             <BeholdningPanel data={latestPensjonsBeholdning}/>
+            <BeholdningForklartPanel/>
             <Panel border className="panelWrapper">
                 <LineChart
                     data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
@@ -41,13 +41,10 @@ export const OpptjeningView = () => {
                     xLabel={t("opptjening-year")}
 
                 />
-                <Tekstomrade className="pensionAssetsText">
-                    {t('opptjening-pension-assets-text')}
-                </Tekstomrade>
             </Panel>
-            <OpptjeningDetailsPanel data={{opptjening, opptjeningTwoYearsBack}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
+            <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
             <InntektPanel data={{inntekter}}/>
-            <FAQLinkPanel/>
+            <FAQPanel/>
             {unleash.unleashId}
         </div>
     )

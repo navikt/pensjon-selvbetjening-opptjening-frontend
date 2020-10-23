@@ -29,12 +29,29 @@
   margin-bottom: 5px;
 }
 
-.toggleKnapper{
-  padding: 20px;
+.chartTitleContainer{
+  color: @navMorkGra;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.chartButton{
+  margin-right:0.5rem;
+}
+
+.selected {
+  background-color: @navDypBla !important;
+  border-color: @navDypBla !important;
+  color: #ffffff !important;
 }
 
 @media (max-width: 576px){
   .chartContainer{
     height:23vh;
+  }
+
+  .chartTitleContainer{
+    flex-direction: column;
   }
 }

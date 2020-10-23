@@ -20,11 +20,11 @@ it('should render Opptjening view and display only the headings for the differen
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
 
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-your-pension-assets-in-folketrygden"); //Beholdning-panel
-    expect(view.queryAllByRole("heading")[1]).toHaveTextContent("opptjening-increase-in-pension-assets-per-year"); //Chart - Chart-view
-    expect(view.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-increase-in-pension-assets-per-year"); //Chart - Table-view
-    expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-increase-for-year"); //OpptjeningDetails-panel
+    expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart"); //BeholdningForklart-panel
+    expect(view.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-increase-in-pension-assets-per-year"); //Chart - Chart-view
+    expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
     expect(view.queryAllByRole("heading")[4]).toHaveTextContent("opptjening-pensjonsgivende-inntekter"); //Inntekter-panel
-    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("opptjening-frequently-asked-questions"); //FAQ-panel
+    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
 
     expect(view.queryAllByRole("table").length).toBe(2); // Chart tables
 });
@@ -36,7 +36,7 @@ it('should render Opptjening view, open OpptjeningDetails-panel and show details
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[3]); // OpptjeningDetails
 
-    expect(view.queryAllByRole("table").length).toBe(4); // Chart tables + details tables
+    expect(view.queryAllByRole("table").length).toBe(3); // Chart tables + details tables
 });
 
 it('should render Opptjening view, open Inntekter-panel and display inntekter table', () => {
@@ -45,6 +45,5 @@ it('should render Opptjening view, open Inntekter-panel and display inntekter ta
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[4]); // Inntekter
-
     expect(view.queryAllByRole("table").length).toBe(3); // Chart tables + inntekter table
 });

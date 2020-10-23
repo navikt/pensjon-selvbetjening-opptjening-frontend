@@ -44,9 +44,9 @@ module.exports = {
     useTranslation: (ns) => {
 
         // Mock number of questions-property for FAQ-page, otherwise return the key
-        if(ns && ns.length>0 && ns[0] === 'faq'){
+        if(ns && ns.length>0 && ns[1] === 'faq'){
             useMock.t = (k) => {
-                if(k === 'faq-number-of-questions'){
+                if(k === 'faq:faq-number-of-questions'){
                     return 2
                 } else {
                     return k

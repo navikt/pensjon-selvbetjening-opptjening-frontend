@@ -25,6 +25,10 @@
                         "arsakDetails": [
                             "OPPTJENING_2012"
                         ],
+                        "grunnlag": null,
+                        "grunnlagTypes": [
+                            "NO_GRUNNLAG"
+                        ],
                         "endringBelop": 50913.322334762146,
                         "pensjonsbeholdningBelop": 1272843.2039238275,
                         "uttaksgrad": 0

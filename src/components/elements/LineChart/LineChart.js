@@ -6,7 +6,7 @@ import {Undertittel} from "nav-frontend-typografi";
 import 'nav-frontend-tabell-style';
 import {formatAmount} from "../../../common/utils";
 import './LineChart.less';
-import {ToggleGruppe} from "nav-frontend-toggle";
+import {Knapp} from "nav-frontend-knapper";
 
 const dataRow = (props) => {
     return(
@@ -43,13 +43,16 @@ export const LineChart = (props) => {
                 {
                     label: props.yLabel,
                     fill: false,
-                    borderColor: "#06893A",
+                    borderColor: "#005B82",
                     borderWidth: 2,
                     backgroundColor: "#ffffff",
                     tension: 0,
                     radius: 2.5,
-                    pointBackgroundColor: '#06893A',
-                    data: props.data.data
+                    pointBackgroundColor: '#005B82',
+                    data: props.data.data,
+                    pointHoverRadius: 10,
+                    pointHoverBackgroundColor: 'rgba(62, 56, 50, 0.38)',
+                    pointHoverBorderColor: 'rgba(62, 56, 50, 0.38)'
                 }
             ]
         },
@@ -110,6 +113,32 @@ export const LineChart = (props) => {
                         }
                     }
                 ]
+            },
+            tooltips: {
+                callbacks: {
+                    title: function(tooltipItem, data) {
+                        return data['labels'][tooltipItem[0]['index']];
+                    },
+                    beforeLabel: function(tooltipItem, data) {
+                        return "Pensjonsbeholdning:"
+                    },
+                    label: function(tooltipItem, data) {
+                        return 'kr ' + formatAmount(data['datasets'][0]['data'][tooltipItem['index']]);
+                    }
+                },
+                backgroundColor: '#005B82',
+                titleFontSize: 16,
+                titleFontColor: '#ffffff',
+                bodyFontColor: '#ffffff',
+                bodyFontSize: 14,
+                displayColors: false,
+                borderColor: '#000000',
+                borderWidth: 1,
+                cornerRadius: 0,
+                yPadding: 20,
+                xPadding: 15,
+                yAlign: 'bottom',
+                caretSize: 0,
             }
         }
     };
@@ -125,19 +154,32 @@ export const LineChart = (props) => {
 
     let chartClass = "chartContainer";
     let tableClass = "tableContainer hidden";
+    let chartButton = "chartButton selected";
+    let tableButton = "tableButton";
+
 
     if(visibleComponent === "chart"){
         chartClass = "chartContainer";
         tableClass = "dataContainer hidden";
+        chartButton = "chartButton selected";
+        tableButton = "tableButton"
     } else if (visibleComponent === "table"){
         chartClass = "chartContainer hidden";
         tableClass = "dataContainer";
+        chartButton = "chartButton";
+        tableButton = "tableButton selected";
     }
 
     return(
         <div>
-            <div className={chartClass} >
+            <div className="chartTitleContainer">
                 <Undertittel>{props.title}</Undertittel>
+                <div>
+                    <Knapp mini className={chartButton} onClick={() => setVisibleComponent("chart")}>{t('chart-toggle-button-graph')}</Knapp>
+                    <Knapp mini className={tableButton} onClick={() => setVisibleComponent("table")}>{t('chart-toggle-button-table')}</Knapp>
+                </div>
+            </div>
+            <div className={chartClass} >
                 <canvas ref={chartRef} aria-label={props.title}>
                     {/* Fallback content */}
                     <table>
@@ -154,30 +196,19 @@ export const LineChart = (props) => {
                 </canvas>
             </div>
             <div className={tableClass}>
-                <Undertittel>{props.title}</Undertittel>
                 <div className="tableContainer">
-                <table className="tabell">
-                    <thead>
-                    <tr>
-                        <th>{props.xLabel}</th>
-                        <th>{props.yLabel}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        {dataRows}
-                    </tbody>
-                </table>
+                    <table className="tabell">
+                        <thead>
+                        <tr>
+                            <th>{props.xLabel}</th>
+                            <th>{props.yLabel}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {dataRows}
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-
-            <div className="toggleKnapper">
-                <ToggleGruppe
-                    defaultToggles={[
-                        { children: t('chart-toggle-button-graph'), pressed: true, onClick: () => {setVisibleComponent("chart")} },
-                        { children: t('chart-toggle-button-table'), onClick: () => {setVisibleComponent("table")} },
-                    ]}
-                    minstEn
-                />
             </div>
         </div>
     );

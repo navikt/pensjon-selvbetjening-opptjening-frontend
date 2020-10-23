@@ -1,5 +1,4 @@
 import {HomePage} from "../components/pages/HomePage/HomePage";
-import {FaqPage} from "../components/pages/FaqPage/FaqPage";
 import {NotFoundPage} from "../components/pages/NotFoundPage/NotFoundPage";
 
 
@@ -9,12 +8,6 @@ export const routesConfig = [
         path: `/`,
         component: HomePage,
         titleKey: 'opptjening-title',
-        exact: true
-    },
-    {
-        path: `/faq`,
-        component: FaqPage,
-        titleKey: 'faq-title',
         exact: true
     },
     {
