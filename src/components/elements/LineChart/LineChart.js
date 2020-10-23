@@ -12,7 +12,7 @@ const dataRow = (props) => {
     return(
         <tr key={props.key}>
             <td>{props.label}</td>
-            <td>{props.data!==null ? props.data + " kr" : ""}</td>
+            <td>{props.data!==null ? formatAmount(props.data) + " kr" : ""}</td>
         </tr>
     )
 };
@@ -47,12 +47,12 @@ export const LineChart = (props) => {
                     borderWidth: 2,
                     backgroundColor: "#ffffff",
                     tension: 0,
-                    radius: 2.5,
+                    radius: 3.5,
                     pointBackgroundColor: '#005B82',
                     data: props.data.data,
                     pointHoverRadius: 10,
                     pointHoverBackgroundColor: 'rgba(62, 56, 50, 0.38)',
-                    pointHoverBorderColor: 'rgba(62, 56, 50, 0.38)'
+                    pointHoverBorderColor: 'rgba(62, 56, 50, 0.45)'
                 }
             ]
         },
@@ -120,11 +120,11 @@ export const LineChart = (props) => {
                         return data['labels'][tooltipItem[0]['index']];
                     },
                     beforeLabel: function(tooltipItem, data) {
-                        return "Pensjonsbeholdning:"
+                        return t('chart-pensjonsbeholdning') + ":";
                     },
                     label: function(tooltipItem, data) {
                         return 'kr ' + formatAmount(data['datasets'][0]['data'][tooltipItem['index']]);
-                    }
+                    },
                 },
                 backgroundColor: '#005B82',
                 titleFontSize: 16,
@@ -137,8 +137,7 @@ export const LineChart = (props) => {
                 cornerRadius: 0,
                 yPadding: 20,
                 xPadding: 15,
-                yAlign: 'bottom',
-                caretSize: 0,
+                caretSize: 10,
             }
         }
     };
@@ -174,9 +173,9 @@ export const LineChart = (props) => {
         <div>
             <div className="chartTitleContainer">
                 <Undertittel>{props.title}</Undertittel>
-                <div>
-                    <Knapp mini className={chartButton} onClick={() => setVisibleComponent("chart")}>{t('chart-toggle-button-graph')}</Knapp>
-                    <Knapp mini className={tableButton} onClick={() => setVisibleComponent("table")}>{t('chart-toggle-button-table')}</Knapp>
+                <div className="buttonContainer">
+                    <Knapp mini className={chartButton} onClick={() => setVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
+                    <Knapp mini className={tableButton} onClick={() => setVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
                 </div>
             </div>
             <div className={chartClass} >
@@ -205,7 +204,7 @@ export const LineChart = (props) => {
                         </tr>
                         </thead>
                         <tbody>
-                            {dataRows}
+                            {dataRows.reverse()}
                         </tbody>
                     </table>
                 </div>

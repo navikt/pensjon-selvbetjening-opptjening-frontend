@@ -34,10 +34,9 @@ export const OpptjeningView = () => {
             <Panel border className="panelWrapper">
                 <LineChart
                     data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
-                    title={t("opptjening-increase-in-pension-assets-per-year")}
-                    yLabel={t("opptjening-pension-assets")}
-                    xLabel={t("opptjening-year")}
-
+                    title={t("chart-pensjonsbeholdningen-din")}
+                    yLabel={t("chart-pensjonsbeholdning")}
+                    xLabel={t("chart-aar")}
                 />
             </Panel>
             <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>

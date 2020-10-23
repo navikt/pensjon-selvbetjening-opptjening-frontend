@@ -9,11 +9,9 @@
     "opptjening-your-pension-assets": "Din pensjonsbehaldning:",
     "opptjening-your-pension-assets-in-folketrygden": "Din pensjonsbehaldning i Folketrygden",
     "opptjening-your-pensionable-income": "Din pensjonsgivande inntekt",
-    "opptjening-pension-assets": "Pensjonsbehaldning",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et seinere tidspunkt.",
     "opptjening-button-close": "Lukk",
-    "opptjening-increase-in-pension-assets-per-year": "Auking i pensjonsbehaldningen per år",
     "opptjening-income-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
 
     "pensjonsbeholdning-forklart" : "Pensjonsbeholdning forklart",
@@ -40,6 +38,12 @@
 
     "faq-ofte-stilte-sporsmaal": "Ofte stilte spørsmål",
 
+    "chart-pensjonsbeholdning": "Pensjonsbeholdning",
+    "chart-pensjonsbeholdningen-din": "Pensjonsbeholdningen din",
+    "chart-graf": "Graf",
+    "chart-tabell": "Tabell",
+    "chart-aar": "År",
+
     "breadcrumbs-you-are-here": "Du er her",
     "year-selector-choose-year": "Velg år:",
 
@@ -47,9 +51,6 @@
     "language-selector-bokmaal": "Bokmål",
     "language-selector-nynorsk": "Nynorsk",
     "language-selector-english": "Engelsk",
-
-    "chart-toggle-button-graph": "Graf",
-    "chart-toggle-button-table": "Tabell",
 
     "404-title": "404: Finner ikke siden",
 
