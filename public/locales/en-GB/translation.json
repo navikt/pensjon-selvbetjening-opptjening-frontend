@@ -15,7 +15,10 @@
     "opptjening-income-link-to-skatteetaten": "Information abount income comes from skattemeldingen at Skatteetaten.",
 
     "pensjonsbeholdning-forklart" : "Pension assets explained",
-    "pensjonsbeholdning-forklart-tekst": "Pensjonsbeholdningene brukes som utgangspunkt når vi i fremtiden beregner beløpet du får utbetalt i måneden når du pensjoneres.\n\nHusk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver.",
+    "pensjonsbeholdning-forklart-tekst": [
+        "Pensjonsbeholdningen tilsvarer summen av årlig pensjonsopptjening i folketrygden. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
+        "Husk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver."
+    ],
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Assets at the start of the year",
