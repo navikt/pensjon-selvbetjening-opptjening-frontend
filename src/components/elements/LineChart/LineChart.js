@@ -12,7 +12,7 @@ const dataRow = (props) => {
     return(
         <tr key={props.key}>
             <td>{props.label}</td>
-            <td>{props.data!==null ? formatAmount(props.data) + " kr" : ""}</td>
+            <td>{props.data!==null ? "kr " + formatAmount(props.data) : ""}</td>
         </tr>
     )
 };
@@ -106,7 +106,7 @@ export const LineChart = (props) => {
                         },
                         ticks: {
                             callback: function(value, index, values) {
-                                return formatAmount(value) + ' kr';
+                                return 'kr ' + formatAmount(value);
                             },
                             fontColor: "#3E3832",
                             fontSize: 14
