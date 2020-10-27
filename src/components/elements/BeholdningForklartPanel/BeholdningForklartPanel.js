@@ -14,7 +14,7 @@ export const BeholdningForklartPanel = (props) => {
     return(
         <Ekspanderbartpanel tittel={detailsTitle(t('pensjonsbeholdning-forklart'))} border className="panelWrapper">
             <Tekstomrade className="explanationText">
-                {t('pensjonsbeholdning-forklart-tekst')}
+                {t('pensjonsbeholdning-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>
         </Ekspanderbartpanel>
     )
