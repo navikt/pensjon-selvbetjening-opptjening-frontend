@@ -13,6 +13,7 @@ it('should return selector values for the initial state', () => {
     expect(selectors.getOpptjeningLoading()).toEqual(true);
     expect(selectors.getOpptjeningError()).toEqual(undefined);
     expect(selectors.getOpptjeningData()).toEqual({});
+    expect(selectors.getOpptjeningDataWithoutNullYears()).toEqual({});
     expect(selectors.getPensjonsBeholdningArray()).toEqual([]);
     expect(selectors.getYearArray()).toEqual([]);
     expect(selectors.getOpptjeningByYear()).toEqual(null);
@@ -42,18 +43,26 @@ it('should return opptjeningData', () => {
     expect(opptjeningData).toHaveProperty("2020");
 });
 
-it('should return array of beholdning', () => {
+it('should return opptjeningData without years with null pensjonsbeholdning', () => {
+    const opptjeningData = selectors.getOpptjeningDataWithoutNullYears(mockedState);
+    expect(opptjeningData).toHaveProperty("1998");
+    expect(opptjeningData).toHaveProperty("2020");
+});
+
+
+
+it('should return array of beholdning and first item should not have null beholdning', () => {
     const beholdningArray = selectors.getPensjonsBeholdningArray(mockedState);
     expect(beholdningArray.length).not.toBe(0);
-    expect((beholdningArray)[0]).toEqual(null);
+    expect((beholdningArray)[0]).not.toEqual(null);
     expect((beholdningArray)[beholdningArray.length-1]).toEqual(552778);
 });
 
 
-it('should return array of years', () => {
+it('should return array of years, where first year has not null Pensjonsbeholdning', () => {
     const yearArray = selectors.getYearArray(mockedState);
     expect(yearArray.length).not.toBe(0);
-    expect((yearArray)[0]).toEqual("1989");
+    expect((yearArray)[0]).toEqual("1998");
     expect((yearArray)[yearArray.length-1]).toEqual("2020");
 });
 

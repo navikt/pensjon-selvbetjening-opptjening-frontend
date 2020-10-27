@@ -1,6 +1,7 @@
+import React from "react";
+import ReactMarkdown from 'react-markdown'
 import Panel from 'nav-frontend-paneler';
 import {Normaltekst, Undertittel} from "nav-frontend-typografi";
-import React from "react";
 import {useTranslation} from "react-i18next";
 import "./FAQPanel.less";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
@@ -14,7 +15,7 @@ export const FAQPanel = () => {
         faq.push(
             <Ekspanderbartpanel key={i} tittel={<Normaltekst>{t('faq:faq-question-'+i)}</Normaltekst>} border className="questionWrapper">
                 <div key="horizontalLine" className="faqHorizontalLine"/>
-                {t('faq:faq-answer-'+i)}
+                <ReactMarkdown>{t('faq:faq-answer-'+i, {joinArrays: "\n\n"})}</ReactMarkdown>
             </Ekspanderbartpanel>
         )
     }
