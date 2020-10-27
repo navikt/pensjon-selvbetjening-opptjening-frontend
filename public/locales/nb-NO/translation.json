@@ -8,18 +8,17 @@
     "opptjening-number-of-years-with-pensjonspoeng": "Antall år med pensjonspoeng:",
     "opptjening-your-pension-assets": "Din pensjonsbeholdning",
     "opptjening-your-pension-assets-in-folketrygden": "Din pensjonsbeholdning i Folketrygden",
-
     "opptjening-your-pensionable-income": "Din pensjonsgivende inntekt",
-    "opptjening-pension-assets": "Pensjonsbeholdning",
-    "opptjening-frequently-asked-questions": "Ofte stilte spørsmål",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivende inntekter",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et senere tidspunkt.",
     "opptjening-button-close": "Lukk",
-    "opptjening-increase-in-pension-assets-per-year": "Økning i pensjonsbeholdningen per år",
     "opptjening-income-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
 
     "pensjonsbeholdning-forklart" : "Pensjonsbeholdning forklart",
-    "pensjonsbeholdning-forklart-tekst": "Pensjonsbeholdningene brukes som utgangspunkt når vi i fremtiden beregner beløpet du får utbetalt i måneden når du pensjoneres.\n\nHusk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver.",
+    "pensjonsbeholdning-forklart-tekst": [
+        "Pensjonsbeholdningen tilsvarer summen av årlig pensjonsopptjening i folketrygden. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
+        "Husk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver."
+    ],
 
     "opptjening-details-din-okning-ar-for-ar": "Din økning år for år",
     "opptjening-details-beholdning-i-starten-av-aaret": "Beholdning i starten av året",
@@ -42,6 +41,12 @@
 
     "faq-ofte-stilte-sporsmaal": "Ofte stilte spørsmål",
 
+    "chart-pensjonsbeholdning": "Pensjonsbeholdning",
+    "chart-pensjonsbeholdningen-din": "Pensjonsbeholdningen din",
+    "chart-graf": "Graf",
+    "chart-tabell": "Tabell",
+    "chart-aar": "År",
+
     "breadcrumbs-you-are-here": "Du er her",
     "year-selector-choose-year": "Velg år:",
 
@@ -49,9 +54,6 @@
     "language-selector-bokmaal": "Bokmål",
     "language-selector-nynorsk": "Nynorsk",
     "language-selector-english": "Engelsk",
-
-    "chart-toggle-button-graph": "Graf",
-    "chart-toggle-button-table": "Tabell",
 
     "404-title": "404: Finner ikke siden",
 

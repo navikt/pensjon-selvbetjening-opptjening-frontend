@@ -10,13 +10,28 @@ export const getOpptjeningLoading = (state = initialState) => state.opptjening ?
 export const getOpptjeningError = (state = initialState) => state.opptjening ? state.opptjening.opptjeningError : undefined;
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
 
-export const getPensjonsBeholdningArray = (state = initialState) => {
+export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     const opptjeningData = getOpptjeningData(state);
+    let prev = null;
+    Object.keys(opptjeningData).every((year) => {
+        prev = opptjeningData[year].pensjonsbeholdning;
+        if(prev !== null) return false;
+        if(opptjeningData[year].pensjonsbeholdning === null){
+            delete opptjeningData[year];
+        }
+        return true;
+    });
+    return opptjeningData
+};
+
+
+export const getPensjonsBeholdningArray = (state = initialState) => {
+    const opptjeningData = getOpptjeningDataWithoutNullYears(state);
     return Object.keys(opptjeningData).map((year) => opptjeningData[year].pensjonsbeholdning);
 };
 
 export const getYearArray = (state = initialState) => {
-    const opptjeningData = getOpptjeningData(state);
+    const opptjeningData = getOpptjeningDataWithoutNullYears(state);
     return Object.keys(opptjeningData).map((year) => year);
 };
 
@@ -25,7 +40,7 @@ export const getOpptjeningByYear = (state = initialState, year) => {
 };
 
 export const getLatestPensjonsBeholdning = (state = initialState) => {
-    const opptjeningData = getOpptjeningData(state);
+    const opptjeningData = getOpptjeningDataWithoutNullYears(state);
     const lastYear = _.max(Object.keys(opptjeningData));
     return {
         "year": lastYear,
@@ -34,7 +49,7 @@ export const getLatestPensjonsBeholdning = (state = initialState) => {
 };
 
 export const getInntekter = (state = initialState) => {
-    const opptjeningData = getOpptjeningData(state);
+    const opptjeningData = getOpptjeningDataWithoutNullYears(state);
     return Object.keys(opptjeningData).map((year) => {
         return {
             "year": year,

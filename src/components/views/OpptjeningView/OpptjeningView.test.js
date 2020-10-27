@@ -21,7 +21,7 @@ it('should render Opptjening view and display only the headings for the differen
 
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-your-pension-assets-in-folketrygden"); //Beholdning-panel
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart"); //BeholdningForklart-panel
-    expect(view.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-increase-in-pension-assets-per-year"); //Chart - Chart-view
+    expect(view.queryAllByRole("heading")[2]).toHaveTextContent("chart-pensjonsbeholdningen-din"); //Chart - Chart-view
     expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
     expect(view.queryAllByRole("heading")[4]).toHaveTextContent("opptjening-pensjonsgivende-inntekter"); //Inntekter-panel
     expect(view.queryAllByRole("heading")[5]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
