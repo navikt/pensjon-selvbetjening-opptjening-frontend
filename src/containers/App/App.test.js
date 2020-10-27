@@ -5,14 +5,9 @@ import { Router } from 'react-router-dom'
 import { App } from './App'
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
-import mock from "../../__mocks__/mock";
+import {mockBasicSuccessState} from "../../__mocks__/mockDataGenerator";
 
-const mockedStateSuccess = {
-    opptjening:{
-        ...mock,
-        opptjeningLoading: false
-    }
-};
+const mockedStateSuccess = mockBasicSuccessState(20, 1972)
 
 it('renders the frontpage and renders the opptjening-title in the banner and the breadcumb', () => {
     const mockStore = configureStore();

@@ -1,12 +1,9 @@
 import * as selectors from '../opptjeningSelectors'
-import mock from '../../../__mocks__/mock'
+import {mockBasicSuccessState} from "../../../__mocks__/mockDataGenerator";
 
-const mockedState = {
-    opptjening:{
-        ...mock,
-        opptjeningLoading: false
-    }
-};
+const mockedState = mockBasicSuccessState(32, 1971)
+const mockOpptjeningData = mockedState.opptjening.opptjening.opptjeningData
+const keys = Object.keys(mockOpptjeningData)
 
 it('should return selector values for the initial state', () => {
     expect(selectors.getOpptjening()).toEqual(null);
@@ -43,38 +40,55 @@ it('should return opptjeningData', () => {
 });
 
 it('should return array of beholdning', () => {
+    const expectedFirstBeholdning = mockOpptjeningData[keys[0]].pensjonsbeholdning
+    const expectedLastBeholdning = mockOpptjeningData[keys[keys.length-1]].pensjonsbeholdning
+
     const beholdningArray = selectors.getPensjonsBeholdningArray(mockedState);
+
     expect(beholdningArray.length).not.toBe(0);
-    expect((beholdningArray)[0]).toEqual(null);
-    expect((beholdningArray)[beholdningArray.length-1]).toEqual(552778);
+    expect((beholdningArray)[0]).toEqual(expectedFirstBeholdning);
+    expect((beholdningArray)[beholdningArray.length-1]).toEqual(expectedLastBeholdning);
 });
 
 
 it('should return array of years', () => {
     const yearArray = selectors.getYearArray(mockedState);
+
     expect(yearArray.length).not.toBe(0);
     expect((yearArray)[0]).toEqual("1989");
     expect((yearArray)[yearArray.length-1]).toEqual("2020");
 });
 
-it('should return inntekt for year 2016', () => {
-    const opptjening2018 = selectors.getOpptjeningByYear(mockedState, 2017);
-    expect(opptjening2018.pensjonsgivendeInntekt).toBe(3000);
-    expect(opptjening2018.endringOpptjening.length).toBe(3);
+it('should return inntekt for year 2017', () => {
+    const expectedInntektIn2017 = mockOpptjeningData[2017].pensjonsgivendeInntekt
+    const expectedEndringIn2017 = mockOpptjeningData[2017].endringOpptjening.length
+
+    const opptjening2017 = selectors.getOpptjeningByYear(mockedState, 2017);
+
+    expect(opptjening2017.pensjonsgivendeInntekt).toBe(expectedInntektIn2017);
+    expect(opptjening2017.endringOpptjening.length).toBe(expectedEndringIn2017);
 });
 
 it('should return the pensjonsbeholdning from latest year', () => {
+    const expectedLatestYear = keys[keys.length-1]
+    const expectedLatestPensjonsbeholdning = mockOpptjeningData[keys[keys.length-1]].pensjonsbeholdning
+
     const latestPensjonsBeholdning = selectors.getLatestPensjonsBeholdning(mockedState);
-    expect(latestPensjonsBeholdning.year).toBe("2020");
-    expect(latestPensjonsBeholdning.beholdning).toBe(552778);
+
+    expect(latestPensjonsBeholdning.year).toBe(expectedLatestYear);
+    expect(latestPensjonsBeholdning.beholdning).toBe(expectedLatestPensjonsbeholdning);
 });
 
 it('should return array of inntekter for all years', () => {
+    const expectedYear = keys[keys.length-3]
+    const expectedPensjonsgivendeInntekt = mockOpptjeningData[expectedYear].pensjonsgivendeInntekt
+
     const inntekter = selectors.getInntekter(mockedState);
     const totalInntekter = inntekter.length;
+
     expect(totalInntekter).not.toBe(0);
-    expect(inntekter[totalInntekter-3].year).toBe("2018");
-    expect(inntekter[totalInntekter-3].pensjonsgivendeInntekt).toBe(0);
+    expect(inntekter[totalInntekter-3].year).toBe(expectedYear);
+    expect(inntekter[totalInntekter-3].pensjonsgivendeInntekt).toBe(expectedPensjonsgivendeInntekt);
 });
 
 
