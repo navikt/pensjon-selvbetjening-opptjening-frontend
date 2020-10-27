@@ -1,5 +1,9 @@
 import * as selectors from '../opptjeningSelectors'
-import {mockBasicSuccessState} from "../../../__mocks__/mockDataGenerator";
+import {
+    constructOpptjening,
+    mockBasicSuccessState,
+    mockStateFromOpptjeningData
+} from "../../../__mocks__/mockDataGenerator";
 
 const mockedState = mockBasicSuccessState(32, 1971)
 const mockOpptjeningData = mockedState.opptjening.opptjening.opptjeningData
@@ -40,28 +44,48 @@ it('should return opptjeningData', () => {
     expect(opptjeningData).toHaveProperty("2020");
 });
 
-it('should return opptjeningData without years with null pensjonsbeholdning', () => {
-    const opptjeningData = selectors.getOpptjeningDataWithoutNullYears(mockedState);
-    expect(opptjeningData).toHaveProperty("1998");
-    expect(opptjeningData).toHaveProperty("2020");
+it('should return opptjeningData without first years with null pensjonsbeholdning', () => {
+    const mockStateWithSeveralBeholdningNull = mockStateFromOpptjeningData(2000,
+        [
+            constructOpptjening({pensjonsbeholdning: null}),
+            constructOpptjening({pensjonsbeholdning: null}),
+            constructOpptjening({pensjonsbeholdning: 2}),
+            constructOpptjening({pensjonsbeholdning: 3})
+        ])
+
+    const opptjeningData = selectors.getOpptjeningDataWithoutNullYears(mockStateWithSeveralBeholdningNull);
+
+    expect(Object.keys(opptjeningData).length).toBe(2);
+    expect(Object.keys(opptjeningData)[0]).toEqual("2002")
+    expect(Object.keys(opptjeningData)[1]).toEqual("2003")
 });
 
 
-
 it('should return array of beholdning and first item should not have null beholdning', () => {
-    const beholdningArray = selectors.getPensjonsBeholdningArray(mockedState);
-    expect(beholdningArray.length).not.toBe(0);
-    expect((beholdningArray)[0]).not.toEqual(null);
-    expect((beholdningArray)[beholdningArray.length-1]).toEqual(552778);
+    const expectedFirstBeholdning = 552778
+    const mockStateWithFirstBeholdningNull = mockStateFromOpptjeningData(2000,
+        [
+            constructOpptjening({pensjonsbeholdning: null}),
+            constructOpptjening({pensjonsbeholdning: expectedFirstBeholdning})
+        ])
+
+
+    const beholdningArray = selectors.getPensjonsBeholdningArray(mockStateWithFirstBeholdningNull);
+
+    expect(beholdningArray.length).toBe(1);
+    expect((beholdningArray)[0]).toEqual(expectedFirstBeholdning);
 });
 
 
 it('should return array of years, where first year has not null Pensjonsbeholdning', () => {
+    const expectedFirstYear = keys[0]
+    const expectedLastYear = keys[keys.length - 1]
+
     const yearArray = selectors.getYearArray(mockedState);
 
     expect(yearArray.length).not.toBe(0);
-    expect((yearArray)[0]).toEqual("1998");
-    expect((yearArray)[yearArray.length-1]).toEqual("2020");
+    expect((yearArray)[0]).toEqual(expectedFirstYear);
+    expect((yearArray)[yearArray.length - 1]).toEqual(expectedLastYear);
 });
 
 it('should return inntekt for year 2017', () => {
@@ -75,8 +99,8 @@ it('should return inntekt for year 2017', () => {
 });
 
 it('should return the pensjonsbeholdning from latest year', () => {
-    const expectedLatestYear = keys[keys.length-1]
-    const expectedLatestPensjonsbeholdning = mockOpptjeningData[keys[keys.length-1]].pensjonsbeholdning
+    const expectedLatestYear = keys[keys.length - 1]
+    const expectedLatestPensjonsbeholdning = mockOpptjeningData[keys[keys.length - 1]].pensjonsbeholdning
 
     const latestPensjonsBeholdning = selectors.getLatestPensjonsBeholdning(mockedState);
 
@@ -85,15 +109,15 @@ it('should return the pensjonsbeholdning from latest year', () => {
 });
 
 it('should return array of inntekter for all years', () => {
-    const expectedYear = keys[keys.length-3]
+    const expectedYear = keys[keys.length - 3]
     const expectedPensjonsgivendeInntekt = mockOpptjeningData[expectedYear].pensjonsgivendeInntekt
 
     const inntekter = selectors.getInntekter(mockedState);
     const totalInntekter = inntekter.length;
 
     expect(totalInntekter).not.toBe(0);
-    expect(inntekter[totalInntekter-3].year).toBe(expectedYear);
-    expect(inntekter[totalInntekter-3].pensjonsgivendeInntekt).toBe(expectedPensjonsgivendeInntekt);
+    expect(inntekter[totalInntekter - 3].year).toBe(expectedYear);
+    expect(inntekter[totalInntekter - 3].pensjonsgivendeInntekt).toBe(expectedPensjonsgivendeInntekt);
 });
 
 

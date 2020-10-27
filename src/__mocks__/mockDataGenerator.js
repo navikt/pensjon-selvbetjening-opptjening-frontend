@@ -108,3 +108,17 @@ export const mockBasicSuccessState = (opptjeningCount, fodselsaar) => {
         }
     }
 }
+export const mockStateFromOpptjeningData = (startYear, opptjeningList) =>{
+    const opptjeningData ={}
+    opptjeningList.forEach(opptjening =>{
+        opptjeningData[startYear] = opptjening
+        startYear++
+    })
+    return {
+        opptjening: {
+            opptjening: {
+                opptjeningData: opptjeningData
+            }
+        }
+    }
+}
