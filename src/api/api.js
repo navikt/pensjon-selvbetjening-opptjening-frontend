@@ -5,6 +5,24 @@ const RequestMethod = {
     POST: "POST"
 };
 
+const serverRequestPost = (method, urlPath, body) => {
+    const OPTIONS = {
+        method: method,
+        credentials: getCredentialsParam(),
+        headers: { 'Content-Type': 'application/json' },
+        body: body
+    };
+
+    return new Promise((resolve, reject) => {
+        fetch(urlPath, OPTIONS)
+            .then((response) => {
+                verifyStatusSuccessOrRedirect(response);
+                resolve(response.json());
+            })
+            .catch((reason) => reject(reason));
+    });
+};
+
 const serverRequest = (method, urlPath) => {
     const OPTIONS = {
         method: method,
@@ -44,9 +62,9 @@ function getCredentialsParam() {
 }
 
 export function fetchToJson(urlPath) {
-    return serverRequest(RequestMethod.GET, urlPath, "");
+    return serverRequest(RequestMethod.GET, urlPath);
 }
 
 export function fetchPost(urlPath, body) {
-    return serverRequest(RequestMethod.POST, urlPath, body);
+    return serverRequestPost(RequestMethod.POST, urlPath, body);
 }

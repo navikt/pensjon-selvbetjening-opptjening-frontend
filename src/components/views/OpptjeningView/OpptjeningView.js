@@ -15,7 +15,6 @@ import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
 import './OpptjeningView.less';
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import Panel from "nav-frontend-paneler";
-import {getUnleash} from "../../../redux/unleash/unleashSelectors";
 import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
 
 export const OpptjeningView = () => {
@@ -24,7 +23,6 @@ export const OpptjeningView = () => {
     const pensjonsBeholdningArray = useSelector(getPensjonsBeholdningArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
 
-    const unleash = useSelector(getUnleash);
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
     const inntekter = useSelector(getInntekter);
@@ -39,13 +37,11 @@ export const OpptjeningView = () => {
                     title={t("opptjening-increase-in-pension-assets-per-year")}
                     yLabel={t("opptjening-pension-assets")}
                     xLabel={t("opptjening-year")}
-
                 />
             </Panel>
             <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
             <InntektPanel data={{inntekter}}/>
             <FAQPanel/>
-            {unleash.unleashId}
         </div>
     )
 };
