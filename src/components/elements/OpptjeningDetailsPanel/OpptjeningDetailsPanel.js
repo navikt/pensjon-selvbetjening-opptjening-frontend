@@ -210,7 +210,7 @@ export const OpptjeningDetailsPanel = (props) => {
 
     return(
         <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper">
-            <div role="table" className="detailsBox">
+            <div className="detailsBox">
                 <div className="yearSelectorContainer">
                     <h4><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h4>
                     <div className="selectorWrapper">
@@ -218,7 +218,9 @@ export const OpptjeningDetailsPanel = (props) => {
                     </div>
                 </div>
                 <div key="horizontalLine" className="horizontalLine"/>
-                {detailRows}
+                <div role="table">
+                    {detailRows}
+                </div>
             </div>
             {grunnlagTextsContainer}
             {remarksContainer}
