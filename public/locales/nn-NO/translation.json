@@ -11,7 +11,6 @@
     "opptjening-your-pensionable-income": "Din pensjonsgivande inntekt",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et seinere tidspunkt.",
-    "opptjening-button-close": "Lukk",
     "opptjening-income-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
 
     "pensjonsbeholdning-forklart" : "Pensjonsbeholdning forklart",
@@ -38,6 +37,8 @@
     "opptjening-details-din-pensjonsbeholdning": "Din pensjonsbehaldning",
     "opptjening-details-vis-pensjonsbeholdningen-for": "Vis pensjonsbehaldningen for",
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Les mer om hvordan vi beregner pensjonen.",
+
+    "inntekt-lukk-panel":  "Lukk panel",
 
     "faq-ofte-stilte-sporsmaal": "Ofte stilte spørsmål",
 
