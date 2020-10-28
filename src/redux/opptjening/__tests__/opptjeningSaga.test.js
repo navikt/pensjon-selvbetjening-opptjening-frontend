@@ -1,9 +1,10 @@
 import { runSaga } from 'redux-saga';
 import * as api from '../../../api/api';
-import mock from '../../../__mocks__/mock';
 import { fetchOpptjeningSuccess, fetchOpptjeningFailure } from '../opptjeningActions';
-
 import {fetchOpptjening} from '../opptjeningSaga';
+import {mockBasicSuccessState} from "../../../__mocks__/mockDataGenerator";
+
+const mock = mockBasicSuccessState(20, 1972)
 
 it('should call api and dispatch success action', async () => {
     const fetchToJson = jest.spyOn(api, 'fetchToJson')
