@@ -3,18 +3,17 @@ import {fireEvent, render} from '@testing-library/react';
 import {OpptjeningDetailsPanel} from './OpptjeningDetailsPanel';
 import {formatAmount} from "../../../common/utils";
 import {constructOpptjening, constructEndringOpptjening} from "../../../__mocks__/mockDataGenerator";
-//import {axe} from "jest-axe";
+import {axe} from "jest-axe";
 
+it('should not fail any accessibility tests', async () => {
+    const {getByRole, container} = render(<OpptjeningDetailsPanel data={{opptjening: {}}} currentYear="2010" yearArray={[]}/>);
+    fireEvent.click(getByRole("heading"));
 
-// it('should not fail any accessibility tests', async () => {
-//     const {debug, getByRole, container} = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2010, opptjeningTwoYearsBack: opptjening2014}} currentYear="2010" yearArray={[]}/>);
-//     fireEvent.click(getByRole("heading"));
-//
-//     expect(await axe(container)).toHaveNoViolations();
-// });
+    expect(await axe(container)).toHaveNoViolations();
+});
 
 it('should render open panel without any data passed in', () => {
-    const panel = render(<OpptjeningDetailsPanel data={{opptjening: {}, opptjeningTwoYearsBack: {}}} currentYear=""
+    const panel = render(<OpptjeningDetailsPanel data={{opptjening: {}}} currentYear=""
                                                  yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 
@@ -103,7 +102,7 @@ it('should render panel with details showing only assets', () => {
         pensjonsbeholdning: 212556
     })
 
-    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2008, opptjeningTwoYearsBack: {}}}
+    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2008}}
                                                  currentYear="2008" yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 
@@ -151,7 +150,7 @@ it('should render panel with details including uttak', () => {
     })
 
     const panel = render(<OpptjeningDetailsPanel
-        data={{opptjening: opptjeningWithUttak, opptjeningTwoYearsBack: {}}} currentYear="2018" yearArray={[]}/>);
+        data={{opptjening: opptjeningWithUttak}} currentYear="2018" yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
@@ -182,7 +181,7 @@ it('should render panel with details including link to overfore omsorgspoeng', (
     const opptjening2018WithOverforeOmsorgsPoeng = constructOpptjening({merknader:["OVERFORE_OMSORGSOPPTJENING"]})
 
     const panel = render(<OpptjeningDetailsPanel
-        data={{opptjening: opptjening2018WithOverforeOmsorgsPoeng, opptjeningTwoYearsBack: {}}} currentYear="2018"
+        data={{opptjening: opptjening2018WithOverforeOmsorgsPoeng}} currentYear="2018"
         yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 

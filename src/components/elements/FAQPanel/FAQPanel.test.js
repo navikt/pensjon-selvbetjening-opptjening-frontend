@@ -1,6 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import {FAQPanel} from './FAQPanel';
+import {axe} from "jest-axe";
+
+it('should not fail any accessibility tests', async () => {
+    const {container} = render(<FAQPanel/>);
+
+    expect(await axe(container)).toHaveNoViolations();
+});
 
 it('renders the FAQ link panel with correct link and text', () => {
     const { getByRole } = render(<FAQPanel/>);

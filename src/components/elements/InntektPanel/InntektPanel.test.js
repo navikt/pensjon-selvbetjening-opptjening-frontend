@@ -4,8 +4,17 @@ import userEvent from '@testing-library/user-event'
 import {InntektPanel} from './InntektPanel';
 import {constructInntekt, mockBasicInntektState} from "../../../__mocks__/mockDataGenerator";
 import {formatAmount} from "../../../common/utils";
+import {axe} from "jest-axe";
 
 const mockData = mockBasicInntektState(3, 2018)
+
+it('should not fail any accessibility tests', async () => {
+    const {getByRole, container} = render(<InntektPanel data={mockData}/>);
+    userEvent.click(getByRole("heading"));
+
+    expect(await axe(container)).toHaveNoViolations();
+});
+
 
 it('should render the closed Inntekt panel with correct heading', () => {
 

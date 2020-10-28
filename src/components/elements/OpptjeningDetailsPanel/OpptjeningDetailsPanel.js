@@ -136,7 +136,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
 
 const detailsTitle = (title) => {
     return(
-        <div role="heading" aria-level="2" className="detailTitle">{title}</div>
+        <div id="opptjeningDetailsTitle" role="heading" aria-level="2" className="detailTitle">{title}</div>
     )
 };
 
@@ -212,7 +212,7 @@ export const OpptjeningDetailsPanel = (props) => {
         <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper">
             <div className="detailsBox">
                 <div className="yearSelectorContainer">
-                    <h4><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h4>
+                    <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h3>
                     <div className="selectorWrapper">
                         <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="xs"/>
                     </div>

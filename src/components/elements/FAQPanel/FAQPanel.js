@@ -24,7 +24,7 @@ export const FAQPanel = () => {
         <Panel border className="panelWrapper">
             <div className="faqTitleContainer">
                 <div className="faqTitle">
-                    <Undertittel className="lenkepanel__heading">{t('faq-ofte-stilte-sporsmaal')}</Undertittel>
+                    <Undertittel id="faqTitle" className="lenkepanel__heading">{t('faq-ofte-stilte-sporsmaal')}</Undertittel>
                 </div>
             </div>
             <div data-testid="faqview">

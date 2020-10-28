@@ -172,7 +172,7 @@ export const LineChart = (props) => {
     return(
         <div>
             <div className="chartTitleContainer">
-                <Undertittel>{props.title}</Undertittel>
+                <Undertittel id="chartTitle">{props.title}</Undertittel>
                 <div className="buttonContainer">
                     <Knapp mini className={chartButton} onClick={() => setVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
                     <Knapp mini className={tableButton} onClick={() => setVisibleComponent("table")}>{t('chart-tabell')}</Knapp>

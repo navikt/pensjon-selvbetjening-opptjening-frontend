@@ -3,9 +3,18 @@ import { render, fireEvent } from '@testing-library/react';
 import { OpptjeningView} from './OpptjeningView';
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
+import {axe} from "jest-axe";
 import {mockBasicSuccessState} from "../../../__mocks__/mockDataGenerator";
 
-const mockedState = mockBasicSuccessState(20, 1972)
+const mockedState = mockBasicSuccessState(20, 1972);
+
+it('should not fail any accessibility tests', async () => {
+    const mockStore = configureStore();
+    let store = mockStore(mockedState);
+
+    const {container} = render(<Provider store={store}><OpptjeningView/></Provider>);
+    expect(await axe(container)).toHaveNoViolations();
+});
 
 it('should render Opptjening view and display only the headings for the different panels', () => {
     const mockStore = configureStore();

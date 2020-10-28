@@ -17,9 +17,9 @@ export const HomePage = () => {
             <div className="mainBody">
                 <Breadcrumbs/>
                 <OpptjeningContainer>
-                    <div className="contentWrapper">
+                    <main className="contentWrapper">
                         <OpptjeningView/>
-                    </div>
+                    </main>
                 </OpptjeningContainer>
             </div>
         </div>
