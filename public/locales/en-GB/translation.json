@@ -14,10 +14,7 @@
     "opptjening-income-link-to-skatteetaten": "Information abount income comes from skattemeldingen at Skatteetaten.",
 
     "pensjonsbeholdning-forklart" : "Pension assets explained",
-    "pensjonsbeholdning-forklart-tekst": [
-        "Pensjonsbeholdningen tilsvarer summen av årlig pensjonsopptjening i folketrygden. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
-        "Husk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver."
-    ],
+    "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbeholdning fra og med det første året du har pensjonsgivende inntekt. Beholdningen øker for hvert år basert på forrige års beholdning, pensjonsgivende inntekt og eventuell annen opptjening av pensjonsrettigheter, samt en årlig regulering. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Assets at the start of the year",
@@ -28,7 +25,8 @@
     "opptjening-details-opptjening-basert-paa-flere-ytelser": "Opptjening basert på {{grunnlagTypes}}* ({{grunnlag}})",
     "opptjening-details-omsorgsopptjening": "Omsorgsopptjening* ({{grunnlag}})",
     "opptjening-details-opptjening":  "Opptjening*",
-    "opptjening-details-okning-pga-reform": "Increase due to reform",
+    "opptjening-details-okning-pga-reform": "Increase due to reform*",
+    "opptjening-details-okning-pga-reform-merknad": "* Fram til 1. mai 2011 er det ikke fastsatt en egen lønnsvekstfaktor. Endringen i folketrygdens grunnbeløp gjenspeiler den årlige lønnsveksten. Beholdningen er i 2010 derfor regulert med økningen i grunnbeløpet i 2010.",
     "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurer du på hva {{grunnlagType}} betyr i denne sammenhengen?  Se ofte stilte spørmål lenger ned.",
     "opptjening-details-aarlig-regulering": "Yearly regulation",
     "opptjening-details-total-pensjonsbeholdning": "Total pension assets in {{currentYear}}",

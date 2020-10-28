@@ -36,13 +36,7 @@ it('should render panel with details and remarks table', () => {
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
     expect(panel.queryAllByRole("heading")[1]).toHaveTextContent("opptjening-details-vis-pensjonsbeholdningen-for");
     expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-merknader-tittel");
-
-    const tables = panel.queryAllByRole("table");
-    const remarksTable = tables[1];
-
-    expect(remarksTable).toBeVisible();
-    expect(panel.getByTestId("remark-row-0")).toBeVisible();
-    expect(panel.getByTestId("remark-0")).toHaveTextContent("remarks:" + expectedMerknad);
+    expect(panel.getByTestId("remarkstext-0")).toHaveTextContent("remarks:" + expectedMerknad);
 });
 
 it('should render panel with details panel with correct label 2010 - opptjening-details-okning-pga-reform', () => {
@@ -186,15 +180,12 @@ it('should render panel with details including link to overfore omsorgspoeng', (
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
+    expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-merknader-tittel");
 
     const tables = panel.queryAllByRole("table");
     const detailsTable = tables[0];
-    const remarksTable = tables[1];
 
     expect(detailsTable).toBeVisible();
-    expect(remarksTable).toBeVisible();
-
-    expect(panel.getByTestId("remark-row-0")).toBeVisible();
     expect(panel.queryAllByRole("link")[0]).toHaveTextContent("remarks:OVERFORE_OMSORGSOPPTJENING");
 });
 
