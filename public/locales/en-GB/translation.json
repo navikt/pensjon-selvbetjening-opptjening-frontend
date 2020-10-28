@@ -16,26 +16,26 @@
 
     "pensjonsbeholdning-forklart" : "Pension assets explained",
     "pensjonsbeholdning-forklart-tekst": [
-        "Pensjonsbeholdningen tilsvarer summen av årlig pensjonsopptjening i folketrygden. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
-        "Husk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver."
+        "The pension assets corresponds to the sum of annual pension earnings in the National Insurance Scheme. The pension portfolio is used as a starting point for calculating the retirement pension you receive from NAV when you re.",
+        "Remember: You may also be entitled to another state or private savings pension from an employer."
     ],
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Assets at the start of the year",
-    "opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt": "Opptjening basert på pensjonsgivende inntekt* ({{grunnlag}})",
-    "opptjening-details-opptjening-basert-paa-uforetrygd": "Opptjening basert på uføretrygd* ({{grunnlag}})",
-    "opptjening-details-opptjening-basert-paa-forstegangstjeneste": "Opptjening basert på førstegangstjeneste* ({{grunnlag}})",
-    "opptjening-details-opptjening-basert-paa-dagpenger": "Opptjening basert på dagpenger* ({{grunnlag}})",
-    "opptjening-details-opptjening-basert-paa-flere-ytelser": "Opptjening basert på {{grunnlagTypes}}* ({{grunnlag}})",
-    "opptjening-details-omsorgsopptjening": "Omsorgsopptjening* ({{grunnlag}})",
-    "opptjening-details-opptjening":  "Opptjening*",
+    "opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt": "Earnings based on pensionable income* ({{grunnlag}})",
+    "opptjening-details-opptjening-basert-paa-uforetrygd": "Earnings based on disability benefits* ({{grunnlag}})",
+    "opptjening-details-opptjening-basert-paa-forstegangstjeneste": "Earnings based on first-time military service* ({{grunnlag}})",
+    "opptjening-details-opptjening-basert-paa-dagpenger": "Earnings based on unemployment benefits* ({{grunnlag}})",
+    "opptjening-details-opptjening-basert-paa-flere-ytelser": "Earnings based on {{grunnlagTypes}}* ({{grunnlag}})",
+    "opptjening-details-omsorgsopptjening": "Care earnings* ({{grunnlag}})",
+    "opptjening-details-opptjening":  "Earnings*",
     "opptjening-details-okning-pga-reform": "Increase due to reform",
-    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurer du på hva {{grunnlagType}} betyr i denne sammenhengen?  Se ofte stilte spørmål lenger ned.",
+    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Wondering what {{grunnlagTypes}} means in this context?  See frequently asked questions further down.",
     "opptjening-details-aarlig-regulering": "Yearly regulation",
     "opptjening-details-total-pensjonsbeholdning": "Total pension assets in {{currentYear}}",
     "opptjening-details-uttak": "Withdrawal",
     "opptjening-details-merknader-tittel": "Remarks",
-    "opptjening-details-din-pensjonsbeholdning": "Your pension asssets",
+    "opptjening-details-din-pensjonsbeholdning": "Your pension assets",
     "opptjening-details-vis-pensjonsbeholdningen-for": "Show pension assets for",
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Read about how we calculate the pension.",
 
