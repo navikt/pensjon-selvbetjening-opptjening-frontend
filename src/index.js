@@ -17,12 +17,13 @@ initAmplitude();
 ReactDOM.render(
     <Provider store={store}>
         <Suspense fallback={<NavFrontendSpinner/>}>
-            <UnleashContainer></UnleashContainer>
-            <Router basename={process.env.PUBLIC_URL}>
-                <Normaltekst tag="div">
-                    <App />
-                </Normaltekst>
-            </Router>
+            <UnleashContainer>
+                <Router basename={process.env.PUBLIC_URL}>
+                    <Normaltekst tag="div">
+                        <App />
+                    </Normaltekst>
+                </Router>
+            </UnleashContainer>
         </Suspense>
     </Provider>,
     document.getElementById('root')

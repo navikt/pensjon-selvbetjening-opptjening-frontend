@@ -1,4 +1,8 @@
 {
+    "unleash": {
+        "toggle1": true,
+        "toggle2": false
+    },
     "opptjening": {
         "opptjeningData": {
             "1989": {

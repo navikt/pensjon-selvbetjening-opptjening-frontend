@@ -66,5 +66,8 @@ export function fetchToJson(urlPath) {
 }
 
 export function fetchPost(urlPath, body) {
+    if(isDev()){
+        return serverRequest(RequestMethod.GET, urlPath);
+    }
     return serverRequestPost(RequestMethod.POST, urlPath, body);
 }

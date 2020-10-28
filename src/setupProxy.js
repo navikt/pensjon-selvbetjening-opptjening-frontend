@@ -15,12 +15,12 @@ module.exports = function(app) {
     app.use(
         '/pensjon/opptjening/api/unleash',
         createProxyMiddleware({
-            target: 'http://localhost:8080/api/unleash',
-           // target: 'http://localhost:4000/unleash',
+           // target: 'http://localhost:8080/api/unleash',
+            target: 'http://localhost:4000/unleash',
             changeOrigin: true,
             pathRewrite: {
-                '^/pensjon/opptjening/api/unleash' : '/'
-               // '^/pensjon/opptjening/' : '/'
+               // '^/pensjon/opptjening/api/unleash' : '/'
+                '^/pensjon/opptjening/' : '/'
             }
         })
     );
