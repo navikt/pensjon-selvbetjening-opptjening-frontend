@@ -29,6 +29,7 @@ jobs:
           REACT_APP_LOGINSERVICE_URL: "https://loginservice.dev.nav.no/login?redirect=https://www-q0.dev.nav.no/pensjon/opptjening"
           REACT_APP_DECORATOR_URL: "https://dekoratoren.dev.nav.no"
           REACT_APP_DINPENSJON_URL: "https://tjenester.nav.no/pselv/publisering/dinpensjon.jsf"
+          REACT_APP_DINEPENSJONSPOENG_URL: "https://tjenester.nav.no/pselv/publisering/dinepensjonspoeng.jsf"
         run: npm run build
       - name: Build Docker image SBS
         run: |
