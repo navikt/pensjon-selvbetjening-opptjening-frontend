@@ -1,7 +1,7 @@
 import reducer from '../opptjeningReducer';
 import * as actions from '../opptjeningActions';
 import expect from 'expect';
-import mock from '../../../__mocks__/mock'
+import {mockBasicSuccessState} from "../../../__mocks__/mockDataGenerator";
 
 const initialState = {
     opptjening: null,
@@ -26,7 +26,7 @@ it('should handle FETCH_OPPTJENING_STARTED action', () =>{
 });
 
 it('should handle FETCH_OPPTJENING_SUCCESS action', () =>{
-    const opptjeningResponse = mock;
+    const opptjeningResponse = mockBasicSuccessState(20, 1972)
     expect(reducer(initialState, actions.fetchOpptjeningSuccess(opptjeningResponse))).toEqual({
         opptjening: opptjeningResponse,
         opptjeningLoading: false

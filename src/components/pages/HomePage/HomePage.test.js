@@ -1,32 +1,16 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import { Provider } from 'react-redux'
+import {render, fireEvent} from '@testing-library/react';
+import {Provider} from 'react-redux'
 import configureStore from 'redux-mock-store'
-import mock from '../../../__mocks__/mock'
+import {mockBasicSuccessState, mockErrorState, mockLoadingState} from "../../../__mocks__/mockDataGenerator";
 import {HomePage} from "./HomePage";
 import {BrowserRouter as Router} from "react-router-dom";
 
-const mockedStateSuccess = {
-    opptjening:{
-        ...mock,
-        opptjeningLoading: false
-    }
-};
+const mockedStateSuccess = mockBasicSuccessState(20, 1972)
 
-const mockedStateLoading = {
-    opptjening:{
-        opptjeningLoading: true
-    }
-};
+const mockedStateLoading = mockLoadingState()
 
-const mockedStateError = {
-    opptjening:{
-        opptjeningLoading: false,
-        opptjeningError: {
-            message: "ERROR"
-        }
-    }
-};
+const mockedStateError = mockErrorState()
 
 const mockStore = configureStore();
 

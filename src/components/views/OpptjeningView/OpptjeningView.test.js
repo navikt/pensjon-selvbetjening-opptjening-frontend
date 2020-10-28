@@ -3,15 +3,9 @@ import { render, fireEvent } from '@testing-library/react';
 import { OpptjeningView} from './OpptjeningView';
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
+import {mockBasicSuccessState} from "../../../__mocks__/mockDataGenerator";
 
-import mock from '../../../__mocks__/mock'
-
-const mockedState = {
-    opptjening:{
-        ...mock,
-        opptjeningLoading: false
-    }
-};
+const mockedState = mockBasicSuccessState(20, 1972)
 
 it('should render Opptjening view and display only the headings for the different panels', () => {
     const mockStore = configureStore();

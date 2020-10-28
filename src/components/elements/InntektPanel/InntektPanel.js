@@ -66,7 +66,7 @@ export const InntektPanel = (props) => {
                         </tbody>
                     </table>
                 </div>
-                <button type="button" aria-label={t("button-close")} className="closeButton" onClick={toggleOpen}>
+                <button type="button" aria-label={t("inntekt-lukk-panel")} className="closeButton" onClick={toggleOpen}>
                     <div>
                         <OppChevron/>
                     </div>
