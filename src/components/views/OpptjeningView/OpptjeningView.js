@@ -16,6 +16,7 @@ import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
 import './OpptjeningView.less';
+import {amplitudeLogger, SELECT_EVENT} from "../../../common/amplitude";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -24,8 +25,14 @@ export const OpptjeningView = () => {
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
 
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
+
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
     const inntekter = useSelector(getInntekter);
+
+    const selectYear = (year) => {
+        amplitudeLogger(SELECT_EVENT, {"component": t('opptjening-details-din-okning-ar-for-ar'), "year": year});
+        setYear(year);
+    };
 
     return(
         <div data-testid="opptjeningview">
@@ -46,7 +53,7 @@ export const OpptjeningView = () => {
                 </Panel>
             </section>
             <section title={t('opptjening-details-din-okning-ar-for-ar')}>
-                <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={setYear}/>
+                <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={selectYear}/>
             </section>
             <section title={t('opptjening-pensjonsgivende-inntekter')}>
                 <InntektPanel data={{inntekter}}/>

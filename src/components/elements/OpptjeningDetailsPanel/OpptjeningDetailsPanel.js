@@ -1,11 +1,12 @@
 import {formatAmount} from "../../../common/utils";
-import React from "react";
+import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
-import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
+import {EkspanderbartpanelBase} from "nav-frontend-ekspanderbartpanel";
 import "./OpptjeningDetailsPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {YearSelector} from "../YearSelector/YearSelector";
 import {Label} from "nav-frontend-skjema";
+import {amplitudeLogger, CLICK_PANEL_EVENT} from "../../../common/amplitude";
 
 const detailRow = (props) => {
     return(
@@ -179,6 +180,12 @@ const getGrunnlagTextsContainer = (grunnlagTexts)  => {
 };
 
 export const OpptjeningDetailsPanel = (props) => {
+    const toggleOpen = () => {
+        amplitudeLogger(CLICK_PANEL_EVENT, {"component": t('opptjening-details-din-okning-ar-for-ar'), "open": !apen});
+        setApen(!apen);
+    };
+    const [apen, setApen] = useState(false);
+
     const { t } = useTranslation(['translation', 'remarks', 'grunnlag']);
     const opptjening = props.data.opptjening;
     const currentYear = props.currentYear;
@@ -205,7 +212,7 @@ export const OpptjeningDetailsPanel = (props) => {
     );
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper">
+        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
             <div className="detailsBox">
                 <div className="yearSelectorContainer">
                     <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h3>
@@ -220,6 +227,6 @@ export const OpptjeningDetailsPanel = (props) => {
             </div>
             {grunnlagTextsContainer}
             {remarksContainer}
-        </Ekspanderbartpanel>
+        </EkspanderbartpanelBase>
     )
 };
