@@ -5,19 +5,14 @@
     "opptjening-intro-text": "Her finner du en samlet oversikt over pensjonsoppteningen din.",
     "opptjening-year": "År",
     "opptjening-income": "Inntekt",
-    "opptjening-number-of-years-with-pensjonspoeng": "Antall år med pensjonspoeng:",
-    "opptjening-your-pension-assets": "Din pensjonsbehaldning:",
-    "opptjening-your-pension-assets-in-folketrygden": "Din pensjonsbehaldning i Folketrygden",
-    "opptjening-your-pensionable-income": "Din pensjonsgivande inntekt",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et seinere tidspunkt.",
     "opptjening-income-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
 
+    "beholdning-din-pensjonsbeholdning-i-folketrygden": "Din pensjonsbehaldning i folketrygda",
+
     "pensjonsbeholdning-forklart" : "Pensjonsbeholdning forklart",
-    "pensjonsbeholdning-forklart-tekst": [
-        "Pensjonsbeholdningen tilsvarer summen av årlig pensjonsopptjening i folketrygden. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
-        "Husk: Det kan være at du også har rett til annen statlig eller privat oppspart pensjon fra en arbeidsgiver."
-    ],
+    "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbeholdning fra og med det første året du har pensjonsgivende inntekt. Beholdningen øker for hvert år basert på forrige års beholdning, pensjonsgivende inntekt og eventuell annen opptjening av pensjonsrettigheter, samt en årlig regulering. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
 
     "opptjening-details-din-okning-ar-for-ar": "Din auking år for år",
     "opptjening-details-beholdning-i-starten-av-aaret": "Behaldning i starten av året",
@@ -28,7 +23,8 @@
     "opptjening-details-opptjening-basert-paa-flere-ytelser": "Opptening basert på {{grunnlagTypes}}* ({{grunnlag}})",
     "opptjening-details-omsorgsopptjening": "Omsorgsoppteening* ({{grunnlag}})",
     "opptjening-details-opptjening":  "Opptening*",
-    "opptjening-details-okning-pga-reform": "Auking pga. reform",
+    "opptjening-details-okning-pga-reform": "Auking pga. reform*",
+    "opptjening-details-okning-pga-reform-merknad": "* Fram til 1. mai 2011 er det ikke fastsatt en egen lønnsvekstfaktor. Endringen i folketrygdens grunnbeløp gjenspeiler den årlige lønnsveksten. Beholdningen er i 2010 derfor regulert med økningen i grunnbeløpet i 2010.",
     "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurer du på hva {{grunnlagType}} betyr i denne sammenhengen?  Se ofte stilte spørmål lenger ned.",
     "opptjening-details-aarlig-regulering": "Årlig regulering",
     "opptjening-details-total-pensjonsbeholdning": "Total pensjonsbehaldning i {{currentYear}}",

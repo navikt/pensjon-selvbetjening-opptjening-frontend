@@ -1,11 +1,12 @@
 import {formatAmount} from "../../../common/utils";
-import React from "react";
+import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
-import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
+import {EkspanderbartpanelBase} from "nav-frontend-ekspanderbartpanel";
 import "./OpptjeningDetailsPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {YearSelector} from "../YearSelector/YearSelector";
 import {Label} from "nav-frontend-skjema";
+import {amplitudeLogger, CLICK_PANEL_EVENT} from "../../../common/amplitude";
 
 const detailRow = (props) => {
     return(
@@ -19,18 +20,14 @@ const detailRow = (props) => {
 
 const getTextParagraph = (text, key) =>{
     return(
-        <p key={key} className="typo-normal">{text}</p>
+        <p key={key} data-testid={key} className="typo-normal">{text}</p>
     )
 };
 
-const grunnlagTexts = (grunnlagTextArray, faqText) =>{
-    const grunnlagTexts = grunnlagTextArray.map((txt, idx) => {
-        return getTextParagraph(txt, "grunnlagtext-" + idx);
+const getTextParagraphsFromTextArray = (textArray, key) =>{
+    return textArray.map((txt, idx) => {
+        return getTextParagraph(txt, key + "-" + idx);
     });
-    if(faqText && faqText!==""){
-        grunnlagTexts.push(getTextParagraph(faqText, "faqtext"));
-    }
-    return grunnlagTexts;
 };
 
 const getLabelForGrunnlagCode = (grunnlagCode, grunnlag, t) => {
@@ -56,7 +53,6 @@ const buildDetails = (opptjening, currentYear, t)  => {
     let details = [];
     let grunnlagTextArray = [];
     let grunnlagTypes = [];
-    let faqText;
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
             let item;
@@ -71,6 +67,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
                     );
                     break;
                 case "INNGAENDE_2010":
+                    grunnlagTextArray.push(t('opptjening-details-okning-pga-reform-merknad'));
                     item = detailRow(
                         {
                             "key": "detail-" + idx,
@@ -86,14 +83,14 @@ const buildDetails = (opptjening, currentYear, t)  => {
                         const grunnlagType = t('grunnlag:' + endring.grunnlagTypes[0] + '_TYPE');
                         label = getLabelForGrunnlagCode(endring.grunnlagTypes[0], grunnlag, t);
                         grunnlagTextArray.push(t('grunnlag:' + endring.grunnlagTypes[0] + '_DESCRIPTION', {year: currentYear-2}));
-                        faqText = t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagType});
+                        grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagType}));
                     } else {
                         endring.grunnlagTypes.forEach((type) => {
                             grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {year: currentYear-2}));
                             grunnlagTypes.push(t('grunnlag:' + type + '_TYPE'));
                         });
                         label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypes.join(', '), grunnlag});
-                        faqText = t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypes.join(', ')});
+                        grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypes.join(', ')}));
                     }
 
                     item = detailRow(
@@ -130,40 +127,39 @@ const buildDetails = (opptjening, currentYear, t)  => {
     }
     return {
         "detailRows": details,
-        "grunnlagTexts" : grunnlagTexts(grunnlagTextArray, faqText)
+        "grunnlagTexts" : getTextParagraphsFromTextArray(grunnlagTextArray, "grunnlagtext")
     };
 };
 
 const detailsTitle = (title) => {
     return(
-        <div role="heading" aria-level="2" className="detailTitle">{title}</div>
+        <div id="opptjeningDetailsTitle" role="heading" aria-level="2" className="detailTitle">{title}</div>
     )
 };
 
-const getRemarksContainer = (opptjening, t)  => {
+const getRemarksContainer = (opptjening, currentYear, t)  => {
     let remarks = [];
+
+    if(currentYear<2010){
+        remarks.push(t('remarks:PRE_2010'));
+    }
+
     if (opptjening && opptjening.merknader) {
         opptjening.merknader.forEach((merknad, idx) => {
             // Create link for OVERFOR_OMSORGSOPPTJENING merknad
             if(merknad === "OVERFORE_OMSORGSOPPTJENING"){
-                remarks.push(
-                    <div role="row" data-testid={"remark-row-" + idx} key={idx}>
-                        <span data-testid={"remark-" + idx} role="cell">
-                            <Lenke href="">{t('remarks:'+merknad)}</Lenke>
-                        </span>
-                    </div>
-                )
+                remarks.push(<Lenke href="">{t('remarks:'+merknad)}</Lenke>)
             } else {
-                remarks.push(<div role="row" data-testid={"remark-row-" + idx} key={idx}><span data-testid={"remark-" + idx} role="cell">{t('remarks:'+merknad)}</span></div>)
+                remarks.push(t('remarks:'+merknad));
             }
         });
     }
 
     if(remarks.length>0){
         return(
-            <div role="table" className="detailsBox">
-                <h4>{t('opptjening-details-merknader-tittel')}</h4>
-                {remarks}
+            <div className="detailsBox">
+                <h3>{t('opptjening-details-merknader-tittel')}</h3>
+                {getTextParagraphsFromTextArray(remarks, "remarkstext")}
             </div>
         )
     } else {
@@ -184,12 +180,18 @@ const getGrunnlagTextsContainer = (grunnlagTexts)  => {
 };
 
 export const OpptjeningDetailsPanel = (props) => {
+    const toggleOpen = () => {
+        amplitudeLogger(CLICK_PANEL_EVENT, {"component": t('opptjening-details-din-okning-ar-for-ar'), "open": !apen});
+        setApen(!apen);
+    };
+    const [apen, setApen] = useState(false);
+
     const { t } = useTranslation(['translation', 'remarks', 'grunnlag']);
     const opptjening = props.data.opptjening;
     const currentYear = props.currentYear;
 
     const {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
-    const remarksContainer = getRemarksContainer(opptjening, t);
+    const remarksContainer = getRemarksContainer(opptjening, currentYear, t);
     const grunnlagTextsContainer = getGrunnlagTextsContainer(grunnlagTexts);
 
     let label = "opptjening-details-din-pensjonsbeholdning";
@@ -199,6 +201,7 @@ export const OpptjeningDetailsPanel = (props) => {
         label = "opptjening-details-total-pensjonsbeholdning";
         detailRows.push(<div key="horizontalLine" className="horizontalLine"/>);
     }
+
     detailRows.push(
         detailRow(
             {
@@ -209,10 +212,10 @@ export const OpptjeningDetailsPanel = (props) => {
     );
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper">
+        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
             <div className="detailsBox">
                 <div className="yearSelectorContainer">
-                    <h4><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h4>
+                    <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h3>
                     <div className="selectorWrapper">
                         <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="xs"/>
                     </div>
@@ -224,6 +227,6 @@ export const OpptjeningDetailsPanel = (props) => {
             </div>
             {grunnlagTextsContainer}
             {remarksContainer}
-        </Ekspanderbartpanel>
+        </EkspanderbartpanelBase>
     )
 };

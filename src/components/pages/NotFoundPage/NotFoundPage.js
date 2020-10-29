@@ -11,9 +11,9 @@ export const NotFoundPage = () => {
             <TopBanner title="404-title" text="" showIllustration={false} frontpage={false}/>
             <div className="mainBody">
                 <Breadcrumbs/>
-                <div className="contentWrapper" data-testid="error-status-404">
+                <main className="contentWrapper" data-testid="error-status-404">
                     <Alertstripe type="feil">{t("error-status-404")}</Alertstripe>
-                </div>
+                </main>
             </div>
         </div>
     )
