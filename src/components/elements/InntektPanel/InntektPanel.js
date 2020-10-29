@@ -6,7 +6,7 @@ import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
 import "./InntektPanel.less"
 import Lenke from "nav-frontend-lenker";
-import {amplitudeLogger} from "../../../common/amplitude";
+import {amplitudeLogger, CLICK_BUTTON_EVENT, CLICK_PANEL_EVENT} from "../../../common/amplitude";
 
 const detailRow = (props) => {
     return(
@@ -37,8 +37,13 @@ const detailsTitle = (title) => {
 };
 
 export const InntektPanel = (props) => {
-    const toggleOpen = () => {
-        amplitudeLogger("Toggle Inntektspanel", apen);
+    const toggleOpen = (props) => {
+        if(props === 'button'){
+            amplitudeLogger(CLICK_BUTTON_EVENT, {"component": t('opptjening-pensjonsgivende-inntekter'), "open": !apen});
+        } else {
+            amplitudeLogger(CLICK_PANEL_EVENT, {"component": t('opptjening-pensjonsgivende-inntekter'), "open": !apen});
+        }
+
         setApen(!apen);
     };
 
@@ -66,7 +71,7 @@ export const InntektPanel = (props) => {
                         </tbody>
                     </table>
                 </div>
-                <button type="button" aria-label={t("inntekt-lukk-panel")} className="closeButton" onClick={toggleOpen}>
+                <button type="button" aria-label={t("inntekt-lukk-panel")} className="closeButton" onClick={() => toggleOpen('button')}>
                     <div>
                         <OppChevron/>
                     </div>

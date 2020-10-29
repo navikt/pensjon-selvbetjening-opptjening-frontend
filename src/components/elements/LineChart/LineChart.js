@@ -7,7 +7,7 @@ import 'nav-frontend-tabell-style';
 import {formatAmount} from "../../../common/utils";
 import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
-import {amplitudeLogger} from "../../../common/amplitude";
+import {amplitudeLogger, CLICK_BUTTON_EVENT} from "../../../common/amplitude";
 
 const dataRow = (props) => {
     return(
@@ -153,7 +153,7 @@ export const LineChart = (props) => {
     const dataRows = buildDataRows(props.data.labels, props.data.data);
 
     const toggleVisibleComponent = (component) => {
-        component === "chart" ? amplitudeLogger("Klikk på graf eller tabell", {"knapp": "Graf"}) : amplitudeLogger("Klikk på graf eller tabell", {"knapp": "Tabell"});
+        component === "chart" ? amplitudeLogger(CLICK_BUTTON_EVENT, {"component": props.title, "button" : "Graf knapp"}) : amplitudeLogger(CLICK_BUTTON_EVENT, {"component": props.title, "button": "Tabell knapp"});
         setVisibleComponent(component);
     };
 
