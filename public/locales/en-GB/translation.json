@@ -6,8 +6,8 @@
     "opptjening-year": "Year",
     "opptjening-income": "Income",
     "opptjening-number-of-years-with-pensjonspoeng": "Number of years with pension points:",
-    "opptjening-your-pension-assets": "Your pension assets",
-    "opptjening-your-pension-assets-in-folketrygden": "Your pension assets in Folketrygden",
+    "opptjening-your-pension-assets": "Your accumulated pension capital",
+    "opptjening-your-pension-assets-in-folketrygden": "Your accumulated pension capital in the National Insurance Act",
     "opptjening-your-pensionable-income": "Your pensionable income",
     "opptjening-pensjonsgivende-inntekter": "Pensionable income",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Will be available later.",
@@ -15,7 +15,7 @@
 
     "pensjonsbeholdning-forklart" : "Pension assets explained",
     "pensjonsbeholdning-forklart-tekst": [
-        "The pension assets corresponds to the sum of annual pension earnings in the National Insurance Scheme. The pension portfolio is used as a starting point for calculating the retirement pension you receive from NAV when you re.",
+        "The accumulated pension capital corresponds to the sum of annual pension earnings in the National Insurance Act. The accumulated pension capital is used as a starting point for calculating the retirement pension you receive from NAV when you retire.",
         "Remember: You may also be entitled to another state or private savings pension from an employer."
     ],
 
@@ -23,10 +23,10 @@
     "opptjening-details-beholdning-i-starten-av-aaret": "Assets at the start of the year",
     "opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt": "Earnings based on pensionable income* ({{grunnlag}})",
     "opptjening-details-opptjening-basert-paa-uforetrygd": "Earnings based on disability benefits* ({{grunnlag}})",
-    "opptjening-details-opptjening-basert-paa-forstegangstjeneste": "Earnings based on first-time military service* ({{grunnlag}})",
+    "opptjening-details-opptjening-basert-paa-forstegangstjeneste": "Earnings based on compulsory military service* ({{grunnlag}})",
     "opptjening-details-opptjening-basert-paa-dagpenger": "Earnings based on unemployment benefits* ({{grunnlag}})",
     "opptjening-details-opptjening-basert-paa-flere-ytelser": "Earnings based on {{grunnlagTypes}}* ({{grunnlag}})",
-    "opptjening-details-omsorgsopptjening": "Care earnings* ({{grunnlag}})",
+    "opptjening-details-omsorgsopptjening": "Pension rights for unpaid care work* ({{grunnlag}})",
     "opptjening-details-opptjening":  "Earnings*",
     "opptjening-details-okning-pga-reform": "Increase due to reform",
     "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Wondering what {{grunnlagTypes}} means in this context?  See frequently asked questions further down.",
@@ -34,16 +34,16 @@
     "opptjening-details-total-pensjonsbeholdning": "Total pension assets in {{currentYear}}",
     "opptjening-details-uttak": "Withdrawal",
     "opptjening-details-merknader-tittel": "Remarks",
-    "opptjening-details-din-pensjonsbeholdning": "Your pension assets",
-    "opptjening-details-vis-pensjonsbeholdningen-for": "Show pension assets for",
+    "opptjening-details-din-pensjonsbeholdning": "Your accumulated pension capital",
+    "opptjening-details-vis-pensjonsbeholdningen-for": "Show accumulated pension capital for",
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Read about how we calculate the pension.",
 
     "inntekt-lukk-panel":  "Close panel",
 
     "faq-ofte-stilte-sporsmaal": "Frequently asked questions",
 
-    "chart-pensjonsbeholdning": "Pension assets",
-    "chart-pensjonsbeholdningen-din": "Your pension assets",
+    "chart-pensjonsbeholdning": "Accumulated pension capital",
+    "chart-pensjonsbeholdningen-din": "Your accumulated pension capital",
     "chart-graf": "Chart",
     "chart-tabell": "Table",
     "chart-aar": "Year",
