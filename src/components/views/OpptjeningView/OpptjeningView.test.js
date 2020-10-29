@@ -22,7 +22,7 @@ it('should render Opptjening view and display only the headings for the differen
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
 
-    expect(view.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-your-pension-assets-in-folketrygden"); //Beholdning-panel
+    expect(view.queryAllByRole("heading")[0]).toHaveTextContent("beholdning-din-pensjonsbeholdning-i-folketrygden"); //Beholdning-panel
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart"); //BeholdningForklart-panel
     expect(view.queryAllByRole("heading")[2]).toHaveTextContent("chart-pensjonsbeholdningen-din"); //Chart - Chart-view
     expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel

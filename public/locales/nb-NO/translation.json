@@ -5,13 +5,11 @@
     "opptjening-intro-text": "Her finner du en samlet oversikt over pensjonsopptjeningen din.",
     "opptjening-year": "År",
     "opptjening-income": "Inntekt",
-    "opptjening-number-of-years-with-pensjonspoeng": "Antall år med pensjonspoeng:",
-    "opptjening-your-pension-assets": "Din pensjonsbeholdning",
-    "opptjening-your-pension-assets-in-folketrygden": "Din pensjonsbeholdning i Folketrygden",
-    "opptjening-your-pensionable-income": "Din pensjonsgivende inntekt",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivende inntekter",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et senere tidspunkt.",
     "opptjening-income-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
+
+    "beholdning-din-pensjonsbeholdning-i-folketrygden": "Din pensjonsbeholdning i folketrygden",
 
     "pensjonsbeholdning-forklart" : "Pensjonsbeholdning forklart",
     "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbeholdning fra og med det første året du har pensjonsgivende inntekt. Beholdningen øker for hvert år basert på forrige års beholdning, pensjonsgivende inntekt og eventuell annen opptjening av pensjonsrettigheter, samt en årlig regulering. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
