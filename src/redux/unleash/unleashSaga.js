@@ -7,7 +7,7 @@ import {fetchPost} from "../../api/api";
 export function* fetchUnleash() {
     try {
         const unleash = yield call(fetchPost, process.env.PUBLIC_URL + "/api/unleash", JSON.stringify({
-            "unleash": ["toggle1","toggle2"]
+            "toggleList": ["toggle1","toggle2"]
         } ));
         yield put(fetchUnleashSuccess(unleash));
     } catch (error) {
