@@ -7,6 +7,7 @@ import 'nav-frontend-tabell-style';
 import {formatAmount} from "../../../common/utils";
 import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
+import {amplitudeLogger} from "../../../common/amplitude";
 
 const dataRow = (props) => {
     return(
@@ -151,6 +152,11 @@ export const LineChart = (props) => {
     const [visibleComponent, setVisibleComponent] = useState("chart");
     const dataRows = buildDataRows(props.data.labels, props.data.data);
 
+    const toggleVisibleComponent = (component) => {
+        component === "chart" ? amplitudeLogger("Klikk på graf eller tabell", {"knapp": "Graf"}) : amplitudeLogger("Klikk på graf eller tabell", {"knapp": "Tabell"});
+        setVisibleComponent(component);
+    };
+
     let chartClass = "chartContainer";
     let tableClass = "tableContainer hidden";
     let chartButton = "chartButton selected";
@@ -174,8 +180,8 @@ export const LineChart = (props) => {
             <div className="chartTitleContainer">
                 <Undertittel id="chartTitle">{props.title}</Undertittel>
                 <div className="buttonContainer">
-                    <Knapp mini className={chartButton} onClick={() => setVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
-                    <Knapp mini className={tableButton} onClick={() => setVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
+                    <Knapp mini className={chartButton} onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
+                    <Knapp mini className={tableButton} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
                 </div>
             </div>
             <div className={chartClass} >
