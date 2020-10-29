@@ -11,7 +11,7 @@
     "opptjening-your-pensionable-income": "Your pensionable income",
     "opptjening-pensjonsgivende-inntekter": "Pensionable income",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Will be available later.",
-    "opptjening-income-link-to-skatteetaten": "Information abount income comes from skattemeldingen at Skatteetaten.",
+    "opptjening-income-link-to-skatteetaten": "The information on income comes from the tax assessment from the tax authorities.",
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Your accumulated pension capital in the National Insurance Act",
 
@@ -34,11 +34,11 @@
     "opptjening-details-okning-pga-reform-merknad": "* Until 1 May 2011, a separate wage growth factor has not been determined. The change in the National Insurance Act basic amount (G) reflects the annual wage growth. The accumulated pension capital in 2010 is therefore adjusted with the increase in the basic amount (G) in 2010.",
     "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Wondering what {{grunnlagType}} means in this context?  See frequently asked questions further down.",
     "opptjening-details-aarlig-regulering": "Yearly regulation",
-    "opptjening-details-total-pensjonsbeholdning": "Total pension assets in {{currentYear}}",
+    "opptjening-details-total-pensjonsbeholdning": "Total accumulated pension capital in {{currentYear}}",
     "opptjening-details-uttak": "Withdrawal",
     "opptjening-details-merknader-tittel": "Remarks",
     "opptjening-details-din-pensjonsbeholdning": "Your pension asssets",
-    "opptjening-details-vis-pensjonsbeholdningen-for": "Show pension assets for",
+    "opptjening-details-vis-pensjonsbeholdningen-for": "Show accumulated pension capital for",
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Read about how we calculate the pension.",
 
     "inntekt-lukk-panel":  "Close panel",
@@ -46,7 +46,7 @@
     "faq-ofte-stilte-sporsmaal": "Frequently asked questions",
 
     "chart-pensjonsbeholdning": "Pension assets",
-    "chart-pensjonsbeholdningen-din": "Your pension assets",
+    "chart-pensjonsbeholdningen-din": "Your accumulated pension capital",
     "chart-graf": "Chart",
     "chart-tabell": "Table",
     "chart-aar": "Year",
