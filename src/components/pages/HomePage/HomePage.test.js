@@ -1,34 +1,24 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import { Provider } from 'react-redux'
+import {render, fireEvent} from '@testing-library/react';
+import {Provider} from 'react-redux'
 import configureStore from 'redux-mock-store'
-import mock from '../../../__mocks__/mock'
+import {mockBasicSuccessState, mockErrorState, mockLoadingState} from "../../../__mocks__/mockDataGenerator";
 import {HomePage} from "./HomePage";
 import {BrowserRouter as Router} from "react-router-dom";
+import {axe} from "jest-axe";
 
-const mockedStateSuccess = {
-    opptjening:{
-        ...mock,
-        opptjeningLoading: false
-    }
-};
-
-const mockedStateLoading = {
-    opptjening:{
-        opptjeningLoading: true
-    }
-};
-
-const mockedStateError = {
-    opptjening:{
-        opptjeningLoading: false,
-        opptjeningError: {
-            message: "ERROR"
-        }
-    }
-};
-
+const mockedStateSuccess = mockBasicSuccessState(20, 1972)
+const mockedStateLoading = mockLoadingState()
+const mockedStateError = mockErrorState()
 const mockStore = configureStore();
+
+
+it('should not fail any accessibility tests', async () => {
+    let store = mockStore(mockedStateSuccess);
+    const {container} = render(<Provider store={store}><Router><HomePage/></Router></Provider>);
+
+    expect(await axe(container)).toHaveNoViolations();
+});
 
 it('should render homepage with languageSelector, topBanner, breadcrumbs and body', () => {
     let store = mockStore(mockedStateSuccess);

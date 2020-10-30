@@ -49,6 +49,7 @@ function verifyStatusSuccessOrRedirect(response) {
         throw new Error("error-status-401");
     }
     if (response.status === 403) {
+        window.location.href = process.env.REACT_APP_DINEPENSJONSPOENG_URL;
         throw new Error("error-status-403");
     }
     if (response.status >= 200 && response.status < 300) {

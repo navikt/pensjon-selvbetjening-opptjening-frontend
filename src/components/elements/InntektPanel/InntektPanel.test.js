@@ -2,33 +2,33 @@ import React from 'react';
 import {render} from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import {InntektPanel} from './InntektPanel';
+import {constructInntekt, mockBasicInntektState} from "../../../__mocks__/mockDataGenerator";
+import {formatAmount} from "../../../common/utils";
+import {axe} from "jest-axe";
 
-const data = {
-    "inntekter": [
-        {
-            "year": 2018,
-            "pensjonsgivendeInntekt": null
-        },
-        {
-            "year": 2019,
-            "pensjonsgivendeInntekt": 800000
-        },
-        {
-            "year": 2020,
-            "pensjonsgivendeInntekt": 900000
-        },
-    ]
-};
+const mockData = mockBasicInntektState(3, 2018)
 
-it('renders the closed Inntekt panel with correct heading', () => {
+it('should not fail any accessibility tests', async () => {
+    const {getByRole, container} = render(<InntektPanel data={mockData}/>);
+    userEvent.click(getByRole("heading"));
 
-    const panel = render(<InntektPanel data={data}/>);
+    expect(await axe(container)).toHaveNoViolations();
+});
+
+
+it('should render the closed Inntekt panel with correct heading', () => {
+
+    const panel = render(<InntektPanel data={mockData}/>);
     expect(panel.getByRole("heading")).toHaveTextContent("opptjening-pensjonsgivende-inntekter");
     expect(panel.queryAllByTestId("income-header").length).toBe(0)
 });
 
-it('renders the Inntekt panel and opens it with correct data sorted', () => {
-    const panel = render(<InntektPanel data={data}/>);
+it('should render the Inntekt panel and open it with correct mockData sorted', () => {
+    const expectedInntekt2018 = mockData.inntekter[0]
+    const expectedInntekt2019 = mockData.inntekter[1]
+    const expectedInntekt2020 = mockData.inntekter[2]
+
+    const panel = render(<InntektPanel data={mockData}/>);
     expect(panel.getByRole("heading")).toHaveTextContent("opptjening-pensjonsgivende-inntekter");
 
     userEvent.click(panel.getByRole("heading"));
@@ -38,16 +38,32 @@ it('renders the Inntekt panel and opens it with correct data sorted', () => {
 
     expect(panel.getAllByTestId("income-row").length).toBe(3);
 
-    expect(panel.getAllByTestId("income-label")[0]).toHaveTextContent("2020");
-    expect(panel.getAllByTestId("income-amount")[0]).toHaveTextContent("900 000");
-    expect(panel.getAllByTestId("income-label")[1]).toHaveTextContent("2019");
-    expect(panel.getAllByTestId("income-amount")[1]).toHaveTextContent("800 000");
-    expect(panel.getAllByTestId("income-label")[2]).toHaveTextContent("2018");
-    expect(panel.getAllByTestId("income-amount")[2]).toHaveTextContent("opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt");
+    expect(panel.getAllByTestId("income-label")[0]).toHaveTextContent(expectedInntekt2020.year);
+    expect(panel.getAllByTestId("income-amount")[0].textContent).toEqual(formatAmount(expectedInntekt2020.pensjonsgivendeInntekt));
+    expect(panel.getAllByTestId("income-label")[1]).toHaveTextContent(expectedInntekt2019.year);
+    expect(panel.getAllByTestId("income-amount")[1].textContent).toEqual(formatAmount(expectedInntekt2019.pensjonsgivendeInntekt));
+    expect(panel.getAllByTestId("income-label")[2]).toHaveTextContent(expectedInntekt2018.year);
+    expect(panel.getAllByTestId("income-amount")[2].textContent).toEqual(formatAmount(expectedInntekt2018.pensjonsgivendeInntekt));
 });
 
-it('renders the Inntekt panel, open and close it, and display no data', async () => {
-    const panel = render(<InntektPanel data={data}/>);
+it('should render text about opplysninger pa senere tidspunkt when inntekt is null', () => {
+    const expectedYear = 2020;
+    const inntektState = {inntekter: [constructInntekt({year: expectedYear, pensjonsgivendeInntekt: null})]}
+
+    const panel = render(<InntektPanel data={inntektState}/>);
+    expect(panel.getByRole("heading")).toHaveTextContent("opptjening-pensjonsgivende-inntekter");
+
+    userEvent.click(panel.getByRole("heading"));
+
+    expect(panel.getAllByTestId("income-header")[0]).toHaveTextContent("opptjening-year");
+    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("opptjening-income");
+
+    expect(panel.getAllByTestId("income-label")[0]).toHaveTextContent(expectedYear);
+    expect(panel.getAllByTestId("income-amount")[0]).toHaveTextContent("opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt");
+});
+
+it('should render the Inntekt panel, open and close it, and display no mockData', async () => {
+    const panel = render(<InntektPanel data={mockData}/>);
     expect(panel.getByRole("heading")).toHaveTextContent("opptjening-pensjonsgivende-inntekter");
 
     userEvent.click(panel.getAllByRole("button")[0]);

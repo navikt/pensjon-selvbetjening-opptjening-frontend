@@ -9,7 +9,7 @@ export const TopBanner = (props) => {
     const {frontpage=true, title, text, showIllustration=true} = props;
 
     return (
-        <div className="topBanner">
+        <header className="topBanner">
             <div className="topBannerContent" data-testid="topbanner">
                 <div className="topBannerText">
                     {frontpage && <Sidetittel>{t(title)}</Sidetittel>}
@@ -22,6 +22,6 @@ export const TopBanner = (props) => {
                     </div>
                 }
             </div>
-        </div>
+        </header>
     )
 };

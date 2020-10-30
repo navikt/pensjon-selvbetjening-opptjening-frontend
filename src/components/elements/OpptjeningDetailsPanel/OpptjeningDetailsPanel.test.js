@@ -1,28 +1,20 @@
 import React from 'react';
 import {fireEvent, render} from '@testing-library/react';
 import {OpptjeningDetailsPanel} from './OpptjeningDetailsPanel';
-import mock from '../../../__mocks__/mock'
-import mock_uttak from '../../../__mocks__/mock_simple_with_uttak'
-import mock_overfore_omsorgspoeng from '../../../__mocks__/mock_simple_with_overfore_omsorgspoeng'
 import {formatAmount} from "../../../common/utils";
-//import {axe} from "jest-axe";
+import {constructOpptjening, constructEndringOpptjening} from "../../../__mocks__/mockDataGenerator";
+import {axe} from "jest-axe";
 
-const opptjening2014 = mock.opptjening.opptjeningData["2014"];
-const opptjening2010 = mock.opptjening.opptjeningData["2010"];
-const opptjening2008 = mock.opptjening.opptjeningData["2008"];
-const opptjening2018WithUttak = mock_uttak.opptjening.opptjeningData["2018"];
-const opptjening2018WithOverforeOmsorgsPoeng = mock_overfore_omsorgspoeng.opptjening.opptjeningData["2018"];
+it('should not fail any accessibility tests', async () => {
+    const {getByRole, container} = render(<OpptjeningDetailsPanel data={{opptjening: {}}} currentYear="2010" yearArray={[]}/>);
+    fireEvent.click(getByRole("heading"));
 
-
-// it('should not fail any accessibility tests', async () => {
-//     const {debug, getByRole, container} = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2010, opptjeningTwoYearsBack: opptjening2014}} currentYear="2010" yearArray={[]}/>);
-//     fireEvent.click(getByRole("heading"));
-//
-//     expect(await axe(container)).toHaveNoViolations();
-// });
+    expect(await axe(container)).toHaveNoViolations();
+});
 
 it('should render open panel without any data passed in', () => {
-    const panel = render(<OpptjeningDetailsPanel data={{opptjening: {}, opptjeningTwoYearsBack:{}}} currentYear="" yearArray={[]}/>);
+    const panel = render(<OpptjeningDetailsPanel data={{opptjening: {}}} currentYear=""
+                                                 yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
@@ -33,57 +25,84 @@ it('should render open panel without any data passed in', () => {
 });
 
 it('should render panel with details and remarks table', () => {
-    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2010, opptjeningTwoYearsBack: opptjening2014}} currentYear="2010" yearArray={[]}/>);
+    const expectedMerknad = "REFORM"
+    const opptjeningWithMerknad = constructOpptjening({merknader: [expectedMerknad]})
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithMerknad}} currentYear="2010"
+        yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
     expect(panel.queryAllByRole("heading")[1]).toHaveTextContent("opptjening-details-vis-pensjonsbeholdningen-for");
     expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-merknader-tittel");
-
-    const tables =  panel.queryAllByRole("table");
-    const remarksTable = tables[1];
-
-    expect(remarksTable).toBeVisible();
-    expect(panel.getByTestId("remark-row-0")).toBeVisible();
-    expect(panel.getByTestId("remark-0")).toHaveTextContent("remarks:REFORM");
+    expect(panel.getByTestId("remarkstext-0")).toHaveTextContent("remarks:" + expectedMerknad);
 });
 
 it('should render panel with details panel with correct label 2010 - opptjening-details-okning-pga-reform', () => {
-    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2010, opptjeningTwoYearsBack: opptjening2008}} currentYear="2010" yearArray={[]}/>);
+    const expectedBeholdningBelop = 268407
+    const expectedOpptjeningBelop = 62033
+    const expectedReguleringBelop = 12513
+    const expectedPensjonsbeholdning = 342955
+
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "INNGAENDE",
+            pensjonsbeholdningBelop: expectedBeholdningBelop
+        }),
+        constructEndringOpptjening({
+            arsakType: "INNGAENDE_2010",
+            endringBelop: expectedOpptjeningBelop,
+            grunnlagTypes: []
+        }),
+        constructEndringOpptjening({
+            arsakType: "REGULERING",
+            endringBelop: expectedReguleringBelop
+        })
+    ]
+    const opptjening2010 = constructOpptjening({
+        endringOpptjening: endringOpptjening, pensjonsbeholdning: expectedPensjonsbeholdning
+    })
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjening2010}} currentYear="2010"
+        yearArray={[]}/>);
+
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
 
-    const tables =  panel.queryAllByRole("table");
+    const tables = panel.queryAllByRole("table");
     const detailsTable = tables[0];
 
-    const beholdningBelop = opptjening2010.endringOpptjening[0].pensjonsbeholdningBelop;
-    const opptjeningBelop = opptjening2010.endringOpptjening[1].endringBelop;
-    const reguleringBelop = opptjening2010.endringOpptjening[2].endringBelop;
-    const sum = opptjeningBelop + beholdningBelop + reguleringBelop;
 
     expect(detailsTable).toBeVisible();
     expect(panel.getByTestId("detail-0")).toBeVisible();
     expect(panel.getByTestId("label-detail-0")).toHaveTextContent("opptjening-details-beholdning-i-starten-av-aaret");
-    expect(panel.getByTestId("amount-detail-0").textContent).toEqual(formatAmount(beholdningBelop));
+    expect(panel.getByTestId("amount-detail-0").textContent).toEqual(formatAmount(expectedBeholdningBelop));
     expect(panel.getByTestId("detail-1")).toBeVisible();
     expect(panel.getByTestId("label-detail-1")).toHaveTextContent("opptjening-details-okning-pga-reform");
-    expect(panel.getByTestId("amount-detail-1").textContent).toEqual(formatAmount(opptjeningBelop));
+    expect(panel.getByTestId("amount-detail-1").textContent).toEqual(formatAmount(expectedOpptjeningBelop));
     expect(panel.getByTestId("detail-2")).toBeVisible();
     expect(panel.getByTestId("label-detail-2")).toHaveTextContent("opptjening-details-aarlig-regulering");
-    expect(panel.getByTestId("amount-detail-2").textContent).toEqual(formatAmount(reguleringBelop));
+    expect(panel.getByTestId("amount-detail-2").textContent).toEqual(formatAmount(expectedReguleringBelop));
     expect(panel.getByTestId("opptjening-details-total-pensjonsbeholdning")).toBeVisible();
     expect(panel.getByTestId("label-opptjening-details-total-pensjonsbeholdning")).toHaveTextContent("opptjening-details-total-pensjonsbeholdning");
-    expect(panel.getByTestId("amount-opptjening-details-total-pensjonsbeholdning").textContent).toEqual(formatAmount(sum));
+    expect(panel.getByTestId("amount-opptjening-details-total-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedPensjonsbeholdning));
 });
 
 it('should render panel with details showing only assets', () => {
-    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2008, opptjeningTwoYearsBack: {}}} currentYear="2008" yearArray={[]}/>);
+    const opptjening2008 = constructOpptjening({
+        pensjonsbeholdning: 212556
+    })
+
+    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2008}}
+                                                 currentYear="2008" yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
 
-    const tables =  panel.queryAllByRole("table");
+    const tables = panel.queryAllByRole("table");
     const detailsTable = tables[0];
     const beholdning = opptjening2008.pensjonsbeholdning;
 
@@ -95,53 +114,137 @@ it('should render panel with details showing only assets', () => {
 });
 
 it('should render panel with details including uttak', () => {
-    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2018WithUttak, opptjeningTwoYearsBack: {}}} currentYear="2018" yearArray={[]}/>);
+    const expectedInngaendeBeholdningBelop = 268407
+    const expectedOpptjeningBelop = 62033
+    const expectedReguleringBelop = 12513
+    const expectedPensjonsbeholdning = 342955
+    const expectedUttakBelop = 50000
+
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "INNGAENDE",
+            pensjonsbeholdningBelop: expectedInngaendeBeholdningBelop
+        }),
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: expectedOpptjeningBelop,
+            grunnlagTypes: ["INNTEKT_GRUNNLAG"]
+        }),
+        constructEndringOpptjening({
+            arsakType: "REGULERING",
+            endringBelop: expectedReguleringBelop
+        }),
+        constructEndringOpptjening({
+            arsakType: "UTTAK",
+            endringBelop: expectedUttakBelop
+        })
+    ]
+    const opptjeningWithUttak = constructOpptjening({
+        endringOpptjening: endringOpptjening, pensjonsbeholdning: expectedPensjonsbeholdning
+    })
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithUttak}} currentYear="2018" yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
 
-    const tables =  panel.queryAllByRole("table");
+    const tables = panel.queryAllByRole("table");
     const detailsTable = tables[0];
-
-    const beholdningBelop = opptjening2018WithUttak.endringOpptjening[0].pensjonsbeholdningBelop;
-    const opptjeningBelop = opptjening2018WithUttak.endringOpptjening[1].endringBelop;
-    const reguleringBelop = opptjening2018WithUttak.endringOpptjening[2].endringBelop;
-    const uttakBelop = opptjening2018WithUttak.endringOpptjening[3].endringBelop;
-
-    const sum = opptjeningBelop + beholdningBelop + reguleringBelop + uttakBelop;
 
     expect(detailsTable).toBeVisible();
     expect(panel.getByTestId("detail-0")).toBeVisible();
     expect(panel.getByTestId("label-detail-0")).toHaveTextContent("opptjening-details-beholdning-i-starten-av-aaret");
-    expect(panel.getByTestId("amount-detail-0").textContent).toEqual(formatAmount(beholdningBelop));
+    expect(panel.getByTestId("amount-detail-0").textContent).toEqual(formatAmount(expectedInngaendeBeholdningBelop));
     expect(panel.getByTestId("detail-1")).toBeVisible();
     expect(panel.getByTestId("label-detail-1")).toHaveTextContent("opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt");
-    expect(panel.getByTestId("amount-detail-1").textContent).toEqual(formatAmount(opptjeningBelop));
+    expect(panel.getByTestId("amount-detail-1").textContent).toEqual(formatAmount(expectedOpptjeningBelop));
     expect(panel.getByTestId("detail-2")).toBeVisible();
     expect(panel.getByTestId("label-detail-2")).toHaveTextContent("opptjening-details-aarlig-regulering");
-    expect(panel.getByTestId("amount-detail-2").textContent).toEqual(formatAmount(reguleringBelop));
+    expect(panel.getByTestId("amount-detail-2").textContent).toEqual(formatAmount(expectedReguleringBelop));
     expect(panel.getByTestId("detail-3")).toBeVisible();
     expect(panel.getByTestId("label-detail-3")).toHaveTextContent("opptjening-details-uttak");
-    expect(panel.getByTestId("amount-detail-3").textContent).toEqual(formatAmount(uttakBelop));
+    expect(panel.getByTestId("amount-detail-3").textContent).toEqual(formatAmount(expectedUttakBelop));
     expect(panel.getByTestId("opptjening-details-total-pensjonsbeholdning")).toBeVisible();
     expect(panel.getByTestId("label-opptjening-details-total-pensjonsbeholdning")).toHaveTextContent("opptjening-details-total-pensjonsbeholdning");
-    expect(panel.getByTestId("amount-opptjening-details-total-pensjonsbeholdning").textContent).toEqual(formatAmount(sum));
+    expect(panel.getByTestId("amount-opptjening-details-total-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedPensjonsbeholdning));
 });
 
 
 it('should render panel with details including link to overfore omsorgspoeng', () => {
-    const panel = render(<OpptjeningDetailsPanel data={{opptjening: opptjening2018WithOverforeOmsorgsPoeng, opptjeningTwoYearsBack: {}}} currentYear="2018" yearArray={[]}/>);
+    const opptjening2018WithOverforeOmsorgsPoeng = constructOpptjening({merknader:["OVERFORE_OMSORGSOPPTJENING"]})
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjening2018WithOverforeOmsorgsPoeng}} currentYear="2018"
+        yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
+    expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-merknader-tittel");
+
+    const tables = panel.queryAllByRole("table");
+    const detailsTable = tables[0];
+
+    expect(detailsTable).toBeVisible();
+    expect(panel.queryAllByRole("link")[0]).toHaveTextContent("remarks:OVERFORE_OMSORGSOPPTJENING");
+});
+
+it('should render labels for inntekt-grunnlag when INNTEKT_GRUNNLAG', () => {
+    testOpptjeningWithGrunnlagType(["INNTEKT_GRUNNLAG"], "opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt")
+});
+
+it('should render labels for dagpenger-grunnlag when DAGPENGER_GRUNNLAG', () => {
+    testOpptjeningWithGrunnlagType(["DAGPENGER_GRUNNLAG"], "opptjening-details-opptjening-basert-paa-dagpenger")
+});
+
+it('should render labels for uforetrygd-grunnlag when UFORE_GRUNNLAG', () => {
+    testOpptjeningWithGrunnlagType(["UFORE_GRUNNLAG"], "opptjening-details-opptjening-basert-paa-uforetrygd")
+});
+
+it('should render labels for førstegangstjeneste-grunnlag when FORSTEGANGSTJENESTE_GRUNNLAG', () => {
+    testOpptjeningWithGrunnlagType(["FORSTEGANGSTJENESTE_GRUNNLAG"], "opptjening-details-opptjening-basert-paa-forstegangstjeneste")
+});
+
+it('should render labels for omsorgsopptjening-grunnlag when OMSORGSOPPTJENING_GRUNNLAG', () => {
+    testOpptjeningWithGrunnlagType(["OMSORGSOPPTJENING_GRUNNLAG"], "opptjening-details-omsorgsopptjening")
+});
+
+it('should render labels for no grunnlag when NO_GRUNNLAG', () => {
+    testOpptjeningWithGrunnlagType(["NO_GRUNNLAG"], "opptjening-details-opptjening")
+});
+
+it('should render label when several grunnlag', () => {
+    testOpptjeningWithGrunnlagType(["UFORE_GRUNNLAG", "FORSTEGANGSTJENESTE_GRUNNLAG"], "opptjening-details-opptjening-basert-paa-flere-ytelser")
+});
+
+const testOpptjeningWithGrunnlagType = (grunnlagTypes, expectedGrunnlagText) => {
+    const expectedOpptjeningBelop = 150
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "INNGAENDE",
+        }),
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: expectedOpptjeningBelop,
+            grunnlagTypes: grunnlagTypes
+        })
+    ]
+
+    const opptjeningWithGrunnlag = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    })
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithGrunnlag}} currentYear="2018" yearArray={[]}/>);
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
 
-    const tables =  panel.queryAllByRole("table");
+    const tables = panel.queryAllByRole("table");
     const detailsTable = tables[0];
-    const remarksTable = tables[1];
 
     expect(detailsTable).toBeVisible();
-    expect(remarksTable).toBeVisible();
-
-    expect(panel.getByTestId("remark-row-0")).toBeVisible();
-    expect(panel.queryAllByRole("link")[0]).toHaveTextContent("remarks:OVERFORE_OMSORGSOPPTJENING");
-});
+    expect(panel.getByTestId("detail-1")).toBeVisible();
+    expect(panel.getByTestId("label-detail-1")).toHaveTextContent(expectedGrunnlagText);
+    expect(panel.getByTestId("amount-detail-1").textContent).toEqual(formatAmount(expectedOpptjeningBelop));
+}

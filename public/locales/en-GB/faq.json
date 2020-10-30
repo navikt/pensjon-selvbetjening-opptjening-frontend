@@ -1,73 +1,73 @@
 {
     "faq-number-of-questions": 12,
 
-    "faq-question-1": "Hva er Pensjonsbeholdning?",
+    "faq-question-1": "What is accumulated pension capital?",
     "faq-answer-1": [
-        "Pensjonsbeholdningen tilsvarer summen av årlig pensjonsopptjening som bygges opp i løpet av livet på grunnlag av pensjonsgivende inntekt, førstegangstjeneste, mottak av dagpenger, uføretrygd og omsorgsarbeid.",
-        "Pensjonsopptjeningen for et kalenderår oppreguleres med lønnsvekst og tilføres pensjonsbeholdningen ved utløpet av året ligningen for det aktuelle året er ferdig.",
-        "Pensjonsbeholdningen er grunnlag for beregning av alderspensjon fra folketrygden. For å se hva du vil få i årlig pensjon må du gå til vår pensjonskalkulator."
+        "The accumulated pension capital corresponds to the sum of the annual pension earnings that is built up during life on the basis of pensionable income, compulsory military service, receipt of unemployment benefits, disability benefits and unpaid care work.",
+        "Pension earnings for a calendar year are adjusted upwards with wage growth and are added to the accumulated pension capital at the end of the year in which the tax assessment for the relevant year is completed.",
+        "The accumulated pension capital is the basis for calculating Retirement pension from the National Insurance Act. To see what you will receive in the annual pension, you must use our pension calculator."
     ],
 
-    "faq-question-2": "Hvordan reguleres Pensjonsbeholdningen?",
-    "faq-answer-2": "Pensjonsbeholdningen reguleres årlig i samsvar med lønnsveksten. ",
+    "faq-question-2": "How is the accumulated pension capital regulated?",
+    "faq-answer-2": "The accumulated pension capital is adjusted annually in accordance with wage growth. ",
 
-    "faq-question-3": "Hva betyr pensjonsgivende inntekt?",
+    "faq-question-3": "What does pensionable income mean?",
     "faq-answer-3": [
-        "I folketrygden er pensjonsgivende inntekt med enkelte unntak det samme som personinntekt etter skatteloven. Det betyr at all brutto lønnsinntekt for lønnstakere og beregnet personinntekt fra næring for selvstendige regnes som pensjonsgivende. Mottatte skattepliktige trygdeytelser som sykepenger og arbeidsavklaringspenger inngår også i den pensjonsgivende inntekten.",
-        "Den pensjonsgivende inntekten beregnes av skatteetaten."
+        "In the National Insurance Act, pensionable income is, with some exceptions, the same as personal income according to the Tax Act. This means that all gross wage income for employees and calculated personal income from industry for the self-employed is considered pensionable. Received taxable social security benefits such as sickness benefits and work assessment benefits are also included in the pensionable income.",
+        "The pensionable income is calculated by the tax authorities."
     ],
 
-    "faq-question-4": "Hvordan beregnes opptjening fra inntekt? ",
+    "faq-question-4": "How is earnings calculated from income? ",
     "faq-answer-4": [
-        "For hvert år du har pensjonsgivende inntekt legges 18,1 prosent av inntekten inn i pensjonsbeholdningen din. Du tjener opp til pensjon fra første krone. Sykepenger, arbeidsavklaringspenger og omsorgslønn blir også regnet som pensjonsgivende inntekt.",
-        "Du kan få pensjonsopptjening fram til og med året du fyller 75 år. Hvis du fylte 13 år i 2010 eller senere kan du få opptjening fra det året du fylte/fyller 13 år. Var du 17 år eller eldre i 2010 kan du få opptjening fra det året du fylte 17 år.",
-        "Årlig inntekt blir medregnet fra 1. januar året etter at fastsettingen er ferdig. Det betyr for eksempel at inntekten for 2016 først blir medregnet i pensjonen fra 1. januar 2018."
+        "For each year you have pensionable income, 18.1 per cent of the income is added to your accumulated pension capital. You add to your pension from the first krone you earn. Sickness benefits, work assessment benefits and unpaid care pay are also counted as pensionable income.",
+        "You can receive pension earnings up to- and including, the year you turn 75. If you turned 13 in 2010 or later, you can earn from the year you turned 13. If you were 17 years or older in 2010, you can earn from the year you turned 17.",
+        "Annual income is included from 1 January of the year after the determination is completed. This means, for example, that the income for 2016 will only be included in the pension from 1 January 2018."
     ],
 
-    "faq-question-5": "Hvordan påvirket pensjonsreformen 2010 beholdningen min?",
-    "faq-answer-5": "Pensjonsbeholdningen din ble etablert med virkning 1. januar 2010 i forbindelse med at pensjonsreformen trådte i kraft. Da ble den opptjeningen du hadde i kalenderår frem til og med 2008 (siste ferdiglignede år) summert til en beholdningsstørrelse. ",
+    "faq-question-5": "How did the 2010 pension reform affect my accumulated pension capital?",
+    "faq-answer-5": "Your accumulated pension capital was established with effect from 1 January 2010 in connection with the pension reform coming into force. From then on, the earnings you had in the calendar year up to, and including 2008, (last completed similar year) were added to one accumulated pension capital. ",
 
-    "faq-question-6": "Hvordan beregnes opptjening for dagpenger?",
-    "faq-answer-6": "For perioder med dagpenger blir 18,1 prosent av en inntekt som er lagt til grunn for fastsettelse av dagpenger lagt til pensjonsbeholdningen din.",
+    "faq-question-6": "How is earnings calculated for unemployment benefits?",
+    "faq-answer-6": "For periods with unemployment benefits, 18.1 per cent of an income that is used as a basis for determining unemployment benefits is added to your accumulated pension capital.",
 
-    "faq-question-7": "Hvordan beregnes opptjening for uføretrygd?",
-    "faq-answer-7": "For perioder med uføretrygd blir 18,1 prosent av en antatt inntekt lagt til pensjonsbeholdningen din. Dette gjelder til og med det året du fyller 61 år.",
+    "faq-question-7": "How is earnings for disability benefits calculated?",
+    "faq-answer-7": "For periods of disability benefits, 18.1 percent of an estimated income is added to your pension portfolio. This applies up to, and including the year you turn 61.",
 
-    "faq-question-8": "Hva er omsorgsopptjening? ",
+    "faq-question-8": "What is pension rights for unpaid care work?",
     "faq-answer-8": [
-        "Omsorgsopptjening er ikke en ekstra lønn som du får utbetalt fra folketrygden, men en ordning som bidrar til at du kan få høyere pensjon når du blir pensjonist. Du må være medlem i folketrygden i omsorgsperioden for å ha rett til omsorgsopptjening.",
-        "Ordningen med omsorgsopptjening ble innført fra 1992. Du vil normalt ikke få omsorgsopptjening for år før dette."
+        "Pension rights for unpaid care work is not an extra salary that you receive from the National Insurance Act, but a scheme that helps you to receive a higher pension when you retire. You must be a member of the National Insurance Act during the care period to be entitled to pension rights for unpaid care work.",
+        "The pension rights for unpaid care work was introduced from 1992. You will not normally receive pension rights for unpaid care work for years before this."
     ],
 
-    "faq-question-9": "Hvordan beregnes opptjening ved omsorg for små barn? ",
+    "faq-question-9": "How is earnings calculated for caring for young children?",
     "faq-answer-9": [
-        "Hvis du mottar barnetrygd får du automatisk godskrevet omsorgsopptjening for år der du",
-        "- har hatt omsorg for barn som ikke har fylt seks år",
-        "- er mellom 17 og 69 år ",
-        "Omsorgsopptjeningen tilsvarer pensjonsopptjeningen du ville fått av en inntekt på 4,5 ganger folketrygdens grunnbeløp (G). Tjener du mer enn dette vil pensjonsopptjeningen basere seg på lønnsinntekten din i stedet. Det er kun én av foreldrene som får omsorgsopptjening, men det er mulig å overføre omsorgsopptjening til den andre dersom det er mer lønnsomt.",
-        "Hadde du omsorg for barn før 2010 har du fått omsorgsopptjening til og med det året barnet fylte seks år. Dette tilsvarer pensjonsopptjeningen du ville fått av en inntekt på 4 G.",
-        "#### Omsorgsopptjening for barn før 1992 ",
-        "Hadde du omsorg for barn under sju år i perioden 1967-1991 er det egne regler for opptjening til alderspensjon og avtalefestet pensjon i privat sektor.",
-        "#### Omsorgsopptjening for deg som er født mellom 1948 og 1953",
-        "For deg som født mellom 1948 og 1953 kan omsorgsopptjeningen for år før 1992 bare benyttes til å beregne avtalefestet pensjon i privat sektor. Les mer om avtalefestet pensjon (AFP) i privat sektor.",
-        "#### Omsorgsopptjening for deg som er født i 1954 eller senere",
-        "For deg som er født i 1954 eller senere kan omsorgsopptjeningen for år før 1992 benyttes både til å beregne avtalefestet pensjon i privat sektor og alderspensjon fra folketrygden beregnet helt eller delvis etter nye regler som kommer til anvendelse fra 2016. Les mer om alderspensjon. "
+        "If you receive child benefit, you will automatically receive credited care earnings for years where you ",
+        "- has cared for children under the age of six",
+        "- is between 17 and 69 years old",
+        "The pension rights for unpaid care work corresponds to the pension earnings you would receive from an income of 4.5 times the National Insurance Acts basic amount (G). If you earn more than this, your pension earnings will be based on your salary income instead. Only one parent receives pension rights for unpaid care work, but it is possible to transfer this to the other parent if that is more profitable.",
+        "If you cared for children before 2010, you received pension rights for unpaid care work up to-, and including, the year the child turned six years old. This corresponds to the pension earnings you would receive from an income of 4 G.",
+        "#### Pension rights for unpaid care work for children before 1992 ",
+        "If you cared for children under the age of seven in the period 1967-1991, there are separate rules for earning a retirement pension and a contractual pension in the private sector.",
+        "#### Pension rights for unpaid care work for those born between 1948 and 1953",
+        "For those of you born between 1948 and 1953, the pension rights for unpaid care work for the year before 1992 can only be used to calculate a contractual pension in the private sector. Read more about contractual pension (AFP) in the private sector.",
+        "#### Pension rights for unpaid care work for you who were born in 1954 or later",
+        "For those born in 1954 or later, the pension rights for unpaid care work for the year before 1992 can be used both to calculate contractual pensions in the private sector and retirement pensions from the National Insurance Act calculated in full, or in part, according to new rules that apply from 2016. Read more about retirement pensions."
     ],
 
-    "faq-question-10": "Hvem kan få opptjening som følge av omsorg for syke, funksjonshemmede eller eldre personer?",
+    "faq-question-10": "Who can receive earnings as a result of care for the sick, disabled or elderly people?",
     "faq-answer-10": [
-        "Du kan få omsorgsopptjening hvis du tar deg av syke, funksjonshemmede eller eldre personer som er medlem i folketrygden. For å få omsorgsopptjening, må visse krav oppfylles:",
-        "- Du må utføre omsorgsarbeid på minst 22 timer per uke.",
-        "- Du må utføre omsorgsarbeid med en varighet på minst seks måneder per kalenderår. Reisetid på opptil en halv time per besøk kan regnes med.",
-        "- Omsorgsarbeidet må i utgangspunktet være ulønnet.",
-        "- Personen du har omsorg for må være medlem i folketrygden.",
-        "Noen ganger kan kommunen gi omsorgsstønad til personer som utfører pleie og omsorgsarbeid for familie. I slike tilfeller kan du også få omsorgsopptjening.",
-        "Det er mulig å få omsorgsopptjening selv om omsorgsperioden har vart kortere enn et halvt år. Dette gjelder hvis omsorgsmottakeren dør eller blir innlagt i institusjon. Forutsetningen er at du har tjent opp omsorgsopptjening de tre siste årene."
+      "You can receive pension rights for unpaid care work if you take care of sick, disabled or elderly people who are members of the National Insurance Act. In order to receive pension rights for unpaid care work, certain requirements must be met:",
+      "- You must perform care work of at least 22 hours per week.",
+      "- You must perform care work with a duration of at least six months per calendar year. Travel time of up to half an hour per visit can be counted.",
+      "- The care work must in principle be unpaid.",
+      "- The person you care for must be a member of the National Insurance Act.",
+        "Sometimes the municipality can provide care allowance to people who perform care and unpaid care work for the family. In such cases, you can also receive pension rights for unpaid care work.",
+        "It is possible to receive pension rights for unpaid care work even if the care period has been shorter than half a year. This applies if the care recipient dies or is admitted to an institution. The prerequisite is that you have had pension rights for unpaid care work in the last three years."
     ],
 
-    "faq-question-11": "Hvordan beregnes opptjening for Førstegangstjeneste?",
-    "faq-answer-11": "Du kan også få opptjening til pensjonsbeholdningen basert på førstegangstjeneste som ble påbegynt tidligst i 2010. Opptjeningen utgjør 18,1 prosent av folketrygdens grunnbeløp.",
+    "faq-question-11": "How to calculate earnings for compulsory military service?",
+    "faq-answer-11": "You can also add to your accumulated pension capital based on compulsory military service that was started in 2010 at the earliest. The earnings will be 18.1 per cent of the National Insurance Act basic amount.",
 
-    "faq-question-12": "Er dette all pensjonsopptjeningen min?",
-    "faq-answer-12": "Her vises kun opptjening i folketrygden som gir grunnlag for alderspensjon fra NAV. Dersom du har rett til offentlig eller privat tjenestepensjon/AFP, eller har andre individuelle pensjonsordninger, vil ikke det fremkomme her. I Pensjonskalkulatoren henter vi inn opplysninger fra offentlige og de fleste private pensjonsaktører. Pensjonskalkulatoren vil dermed gi et bedre bilde på dine totale pensjonsrettigheter."
+    "faq-question-12": "Is this all my pension earnings?",
+    "faq-answer-12": "Only pension earnings in the National Insurance Act are shown here, which provide a basis for retirement pension from NAV. If you are entitled to a public or private occupational pension / AFP, or have other individual pension schemes, it will not appear here. We collect information from public and most private pension actors in the Pension Calculator. The Pension Calculator will thus give a better picture of your total pension rights."
 }
