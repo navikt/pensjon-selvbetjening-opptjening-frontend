@@ -1,4 +1,4 @@
-import i18next from "i18next";
+import i18n from "i18next";
 
 export const formatAmount = (amount) => {
     if(amount!==null){
@@ -19,5 +19,5 @@ export function isDev() {
 }
 
 export const getLabelByLanguage = (language, key) => {
-    return i18next.getDataByLanguage(language).translation[key];
+    return i18n.getDataByLanguage(language).translation[key];
 };
