@@ -1,13 +1,13 @@
 {
-    "AFP": "AFP",
-    "REFORM": "REFORM",
-    "INGEN_OPPTJENING": "INGEN_OPPTJENING",
-    "UFOREGRAD": "UFOREGRAD",
-    "DAGPENGER": "DAGPENGER",
-    "FORSTEGANGSTJENESTE": "FORSTEGANGSTJENESTE",
+    "AFP": "AFP (if you have had several periods with AFP, only notes for the last period are displayed)",
+    "REFORM": "Your accumulated pension capital was established with effect from 1 January 2010 in connection with the pension reform coming into force. Then the earnings you had in the calendar year up to-, and including, 2008 (last completed similar year) were added to the asset size.",
+    "INGEN_OPPTJENING": "No registered pension points",
+    "UFOREGRAD": "disability benefits: {0} percent",
+    "DAGPENGER": "Receipt of unemployment benefits",
+    "FORSTEGANGSTJENESTE": "Served compulsory military service",
     "OMSORGSOPPTJENING": "You are credited with care earnings for unpaid care work this year",
     "OVERFORE_OMSORGSOPPTJENING": "Here you can transfer unpaid care earnings to the other of the child's parents",
-    "GRADERT_UTTAK": "GRADERT_UTTAK",
-    "HELT_UTTAK": "HELT_UTTAK",
+    "GRADERT_UTTAK": "Gradert uttak",
+    "HELT_UTTAK": "Alderspensjon: 100 prosent",
     "PRE_2010": "Your accumulated pension capital was established with effect from 1 January 2010 in connection with the pension reform coming into force. At that point the earnings you had in the calendar years up to-, and including, 2008 (last completed similar year) were added to the assets size."
 }
