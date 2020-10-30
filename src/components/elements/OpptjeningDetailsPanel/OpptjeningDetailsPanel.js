@@ -1,4 +1,4 @@
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, getLabelByLanguage} from "../../../common/utils";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {EkspanderbartpanelBase} from "nav-frontend-ekspanderbartpanel";
@@ -6,7 +6,7 @@ import "./OpptjeningDetailsPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {YearSelector} from "../YearSelector/YearSelector";
 import {Label} from "nav-frontend-skjema";
-import {amplitudeLogger, CLICK_PANEL_EVENT} from "../../../common/amplitude";
+import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
 
 const detailRow = (props) => {
     return(
@@ -181,7 +181,8 @@ const getGrunnlagTextsContainer = (grunnlagTexts)  => {
 
 export const OpptjeningDetailsPanel = (props) => {
     const toggleOpen = () => {
-        amplitudeLogger(CLICK_PANEL_EVENT, {"component": t('opptjening-details-din-okning-ar-for-ar'), "open": !apen});
+        const componentTitle = getLabelByLanguage("nb-NO", "opptjening-details-din-okning-ar-for-ar");
+        amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "EkspanderbartPanel", "name": "Åpne panel", "value": !apen});
         setApen(!apen);
     };
     const [apen, setApen] = useState(false);

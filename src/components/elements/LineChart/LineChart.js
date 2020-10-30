@@ -4,10 +4,10 @@ import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 import {Undertittel} from "nav-frontend-typografi";
 import 'nav-frontend-tabell-style';
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, getLabelByLanguage} from "../../../common/utils";
 import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
-import {amplitudeLogger, CLICK_BUTTON_EVENT} from "../../../common/amplitude";
+import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
 
 const dataRow = (props) => {
     return(
@@ -153,7 +153,10 @@ export const LineChart = (props) => {
     const dataRows = buildDataRows(props.data.labels, props.data.data);
 
     const toggleVisibleComponent = (component) => {
-        component === "chart" ? amplitudeLogger(CLICK_BUTTON_EVENT, {"component": props.title, "button" : "Graf knapp"}) : amplitudeLogger(CLICK_BUTTON_EVENT, {"component": props.title, "button": "Tabell knapp"});
+        const componentTitle = getLabelByLanguage("nb-NO", props.title);
+        component === "chart"
+            ? amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "Knapp", "name":"Graf", "value": true})
+            : amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "Knapp", "name":"Tabell", "value": true});
         setVisibleComponent(component);
     };
 
