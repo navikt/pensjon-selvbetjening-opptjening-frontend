@@ -13,7 +13,7 @@ export const FAQPanel = () => {
     const numberOfQuestions = t('faq:faq-number-of-questions');
 
     const toggleOpen = (index) => {
-        const name = getLabelByLanguage("nb-NO", "faq:faq-question-"+index);
+        const name = getLabelByLanguage("nb-NO", "faq-question-"+index, "faq");
         amplitudeLogger(CLICK_EVENT, {"component": "FAQ", "type": "EkspanderbartPanel", "name": name, "value": !apen["faq-question-" + index]});
         apen["faq-question-" + index] = !apen["faq-question-" + index];
         setApen(apen);
