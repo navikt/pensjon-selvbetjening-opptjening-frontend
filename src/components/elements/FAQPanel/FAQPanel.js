@@ -12,15 +12,15 @@ export const FAQPanel = () => {
     const numberOfQuestions = t('faq:faq-number-of-questions');
 
     const toggleOpen = (index) => {
-        amplitudeLogger(CLICK_EVENT, {"component": "FAQ", "type": "EkspanderbartPanel", "name": t('faq:faq-answer-'+index), "value": !apen["faq-answer-" + index]});
-        apen["faq-answer-" + index] = !apen["faq-answer-" + index];
+        amplitudeLogger(CLICK_EVENT, {"component": "FAQ", "type": "EkspanderbartPanel", "name": t('faq:faq-question-'+index), "value": !apen["faq-question-" + index]});
+        apen["faq-question-" + index] = !apen["faq-question-" + index];
         setApen(apen);
     };
 
     let faq = [];
     let apenDefaultState = {};
     for(let i=1;i<=numberOfQuestions;i++){
-        apenDefaultState["faq-answer-"+i] = false;
+        apenDefaultState["faq-question-"+i] = false;
         faq.push(
             <Ekspanderbartpanel key={i} tittel={<Normaltekst>{t('faq:faq-question-'+i)}</Normaltekst>} border className="questionWrapper" onClick={() => toggleOpen(i)}>
                 <div key="horizontalLine" className="faqHorizontalLine"/>
