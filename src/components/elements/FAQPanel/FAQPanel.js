@@ -6,13 +6,15 @@ import {useTranslation} from "react-i18next";
 import "./FAQPanel.less";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
+import {getLabelByLanguage} from "../../../common/utils";
 
 export const FAQPanel = () => {
     const { t } = useTranslation(['translation', 'faq']);
     const numberOfQuestions = t('faq:faq-number-of-questions');
 
     const toggleOpen = (index) => {
-        amplitudeLogger(CLICK_EVENT, {"component": "FAQ", "type": "EkspanderbartPanel", "name": t('faq:faq-question-'+index), "value": !apen["faq-question-" + index]});
+        const name = getLabelByLanguage("nb-NO", "faq:faq-question-"+index);
+        amplitudeLogger(CLICK_EVENT, {"component": "FAQ", "type": "EkspanderbartPanel", "name": name, "value": !apen["faq-question-" + index]});
         apen["faq-question-" + index] = !apen["faq-question-" + index];
         setApen(apen);
     };
