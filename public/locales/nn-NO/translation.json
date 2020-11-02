@@ -6,33 +6,33 @@
     "opptjening-year": "År",
     "opptjening-income": "Inntekt",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
-    "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysinga vil koma på et seinere tidspunkt.",
-    "opptjening-income-link-to-skatteetaten": "Opplysingane om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
+    "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysinga vil koma på et seinare tidspunkt.",
+    "opptjening-income-link-to-skatteetaten": "Opplysingane om inntekt er henta frå skattemeldinga hos Skatteetaten.",
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Din pensjonsbehaldning i folketrygda",
 
     "pensjonsbeholdning-forklart" : "Pensjonsbehaldning forklart",
-    "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbehaldning fra og med det første året du har pensjonsgivande inntekt. Behaldninga øker for kvart år basert på førre års behaldning, pensjonsgivande inntekt og eventuell anna opptening av pensjonsrettigheter, samt ei årleg regulering. pensjonsbehaldningen brukast som utgangspunkt for utrekning av alderspensjonen du får fra NAV når du pensjonerar deg.",
+    "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbehaldning frå og med det første året du har pensjonsgivande inntekt. Behaldninga aukar for kvart år basert på førre års behaldning, pensjonsgivande inntekt og eventuell anna opptening av pensjonsrettigheter, samt ei årleg regulering. Pensjonsbehaldninga brukast som utgangspunkt for utrekning av alderspensjonen du får frå NAV når du pensjonerer deg.",
 
     "opptjening-details-din-okning-ar-for-ar": "Din auking år for år",
     "opptjening-details-beholdning-i-starten-av-aaret": "Behaldning i starten av året",
     "opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt": "Opptening basert på pensjonsgivande inntekt* ({{grunnlag}})",
     "opptjening-details-opptjening-basert-paa-uforetrygd": "Opptening basert på uføretrygd* ({{grunnlag}})",
-    "opptjening-details-opptjening-basert-paa-forstegangstjeneste": "Opptening basert på førstegangsteneste* ({{grunnlag}})",
+    "opptjening-details-opptjening-basert-paa-forstegangstjeneste": "Opptening basert på fyrstegongsteneste* ({{grunnlag}})",
     "opptjening-details-opptjening-basert-paa-dagpenger": "Opptening basert på dagpengar* ({{grunnlag}})",
     "opptjening-details-opptjening-basert-paa-flere-ytelser": "Opptening basert på {{grunnlagTypes}}* ({{grunnlag}})",
     "opptjening-details-omsorgsopptjening": "Omsorgsopptening* ({{grunnlag}})",
     "opptjening-details-opptjening":  "Opptening*",
     "opptjening-details-okning-pga-reform": "Auking pga. reform*",
-    "opptjening-details-okning-pga-reform-merknad": "* Fram til 1. mai 2011 er det ikkje fastsatt ein eigen lønsvekstfaktor. Endringa i folketrygdas grunnbeløp speilar den årlege lønsveksta. Behaldninga er i 2010 derfor regulert med økninga i grunnbeløpe i 2010.",
-    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurar du på kva {{grunnlagType}} inneber i denne samanheng?  Se ofte stilte spørmål lenger ned.",
+    "opptjening-details-okning-pga-reform-merknad": "* Fram til 1. mai 2011 er det ikkje fastsatt ein eigen lønnsvekstfaktor. Endringa i folketrygdas grunnbeløp speilar den årlege lønnsveksten. Behaldninga er i 2010 derfor regulert med aukinga i grunnbeløpet i 2010.",
+    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurar du på kva {{grunnlagType}} inneber i denne samanheng?  Se ofte stilte spørsmål lenger ned.",
     "opptjening-details-aarlig-regulering": "Årleg regulering",
     "opptjening-details-total-pensjonsbehaldning": "Total pensjonsbehaldning i {{currentYear}}",
     "opptjening-details-uttak": "Uttak",
     "opptjening-details-merknader-tittel": "Merknadar",
     "opptjening-details-din-pensjonsbehaldning": "Din pensjonsbehaldning",
     "opptjening-details-vis-pensjonsbehaldningen-for": "Vis pensjonsbehaldninga for",
-    "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Les meir om korleis vi beregnar pensjonen.",
+    "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Les meir om korleis vi reknar ut pensjonen.",
 
     "inntekt-lukk-panel":  "Lukk panel",
 
@@ -55,6 +55,6 @@
     "404-title": "404: Finner ikkje sida",
 
     "error-status-401": "Du er ikkje autorisert",
-    "error-status-403": "Det oppstod eit teknisk problem. Du kan prøve å logge inn seinere. Vi ber om orsaking for feilen.",
+    "error-status-403": "Det oppstod eit teknisk problem. Du kan prøve å logge inn seinare. Vi ber om orsaking for feilen.",
     "error-status-404": "Vi kan ikkje finne sida eller tenesta du søkar."
 }
