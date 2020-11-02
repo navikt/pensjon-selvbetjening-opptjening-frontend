@@ -18,6 +18,6 @@ export function isDev() {
     return process.env.NODE_ENV === 'development';
 }
 
-export const getLabelByLanguage = (language, key) => {
-    return i18n.getDataByLanguage(language).translation[key];
+export const getLabelByLanguage = (language, key, namespace="translation") => {
+    return i18n.getDataByLanguage(language)[namespace][key];
 };
