@@ -13,7 +13,7 @@ const detailRow = (props) => {
         <div role="row" data-testid={props.key} key={props.key} className="detailRow">
             <span role="cell" data-testid={"label-"+ props.key} className="labelColumn">{props.label}</span>
             <span role="cell" data-testid={"amount-"+ props.key} className="numberColumn">{props.amount}</span>
-            <span aria-hidden="true" className="numberColumn">&nbsp;</span>
+            <span aria-hidden="true" className="emptyColumn">&nbsp;</span>
         </div>
     )
 };
@@ -218,7 +218,7 @@ export const OpptjeningDetailsPanel = (props) => {
                 <div className="yearSelectorContainer">
                     <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h3>
                     <div className="selectorWrapper">
-                        <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="xs"/>
+                        <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="s"/>
                     </div>
                 </div>
                 <div key="horizontalLine" className="horizontalLine"/>

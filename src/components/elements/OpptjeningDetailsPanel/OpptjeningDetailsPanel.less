@@ -42,6 +42,14 @@
   text-align: right;
 }
 
+.emptyColumn {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  text-align: right;
+}
+
 .linkContainer {
   padding: 1.2rem;
 }
@@ -62,4 +70,18 @@
 
 .yearSelectorContainer select {
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+}
+
+@media (max-width: 576px){
+  .emptyColumn {
+    display: none;
+  }
+
+  .yearSelectorContainer{
+    display: block;
+  }
+
+  .yearSelectorContainer .selectorWrapper {
+    padding-top: 0.5rem;
+  }
 }
