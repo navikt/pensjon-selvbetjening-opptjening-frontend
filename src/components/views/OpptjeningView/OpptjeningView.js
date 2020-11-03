@@ -17,6 +17,7 @@ import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
 import './OpptjeningView.less';
 import {amplitudeLogger, SELECT_EVENT} from "../../../common/amplitude";
+import {getLabelByLanguage} from "../../../common/utils";
 
 
 export const OpptjeningView = () => {
@@ -31,7 +32,8 @@ export const OpptjeningView = () => {
     const inntekter = useSelector(getInntekter);
 
     const selectYear = (year) => {
-        amplitudeLogger(SELECT_EVENT, {"component": t('opptjening-details-din-okning-ar-for-ar'), "year": year});
+        const componentTitle = getLabelByLanguage("nb-NO", "opptjening-details-din-okning-ar-for-ar");
+        amplitudeLogger(SELECT_EVENT, {"component": componentTitle, "type": "Select", "name": "År", "value": year});
         setYear(year);
     };
 

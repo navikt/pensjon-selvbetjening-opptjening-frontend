@@ -1,4 +1,4 @@
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, getLabelByLanguage} from "../../../common/utils";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
@@ -6,11 +6,11 @@ import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
 import "./InntektPanel.less"
 import Lenke from "nav-frontend-lenker";
-import {amplitudeLogger, CLICK_BUTTON_EVENT, CLICK_PANEL_EVENT} from "../../../common/amplitude";
+import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
 
 const detailRow = (props) => {
     return(
-        <tr data-testid="income-row" key={props.key}>
+        <tr data-testid="income-row" key={props.key} className="row">
             <td data-testid="income-label">{props.label}</td>
             <td data-testid="income-amount">{props.amount}</td>
         </tr>
@@ -38,10 +38,11 @@ const detailsTitle = (title) => {
 
 export const InntektPanel = (props) => {
     const toggleOpen = (props) => {
+        const componentTitle = getLabelByLanguage("nb-NO", "opptjening-pensjonsgivende-inntekter");
         if(props === 'button'){
-            amplitudeLogger(CLICK_BUTTON_EVENT, {"component": t('opptjening-pensjonsgivende-inntekter'), "open": !apen});
+            amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "Knapp", "name":"Lukk panel", "value": apen});
         } else {
-            amplitudeLogger(CLICK_PANEL_EVENT, {"component": t('opptjening-pensjonsgivende-inntekter'), "open": !apen});
+            amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "EkspanderbartPanel", "name": "Åpne panel", "value": !apen});
         }
 
         setApen(!apen);
@@ -61,9 +62,9 @@ export const InntektPanel = (props) => {
                 <div className="inntektDetailsBox">
                     <table className="tabell">
                         <thead>
-                            <tr>
-                                <th data-testid="income-header">{t('opptjening-year')}</th>
-                                <th data-testid="income-header">{t('opptjening-income')}</th>
+                            <tr className="row">
+                                <th data-testid="income-header" className="column1">{t('opptjening-year')}</th>
+                                <th data-testid="income-header" className="column2">{t('opptjening-income')}</th>
                             </tr>
                         </thead>
                         <tbody>

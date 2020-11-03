@@ -1,3 +1,5 @@
+import i18n from "i18next";
+
 export const formatAmount = (amount) => {
     if(amount!==null){
         return Intl.NumberFormat('nb-NO',
@@ -15,3 +17,7 @@ export const formatAmount = (amount) => {
 export function isDev() {
     return process.env.NODE_ENV === 'development';
 }
+
+export const getLabelByLanguage = (language, key, namespace="translation") => {
+    return i18n.getDataByLanguage(language)[namespace][key];
+};

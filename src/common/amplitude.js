@@ -1,8 +1,7 @@
 import amplitude from 'amplitude-js';
 
-export const CLICK_PANEL_EVENT = "Klikk på panel";
-export const CLICK_BUTTON_EVENT = "Klikk på knapp";
-export const SELECT_EVENT = "Valg i dropdown";
+export const CLICK_EVENT = "click";
+export const SELECT_EVENT = "select";
 
 export const initAmplitude = () => {
     if (amplitude) {
