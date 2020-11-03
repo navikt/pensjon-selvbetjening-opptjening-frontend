@@ -17,8 +17,6 @@ import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
 import './OpptjeningView.less';
 import {amplitudeLogger, SELECT_EVENT} from "../../../common/amplitude";
-import {getUnleash} from "../../../redux/unleash/unleashSelectors";
-
 
 
 export const OpptjeningView = () => {
@@ -26,9 +24,6 @@ export const OpptjeningView = () => {
     const yearArray = useSelector(getYearArray);
     const pensjonsBeholdningArray = useSelector(getPensjonsBeholdningArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
-
-    const unleash = useSelector(getUnleash);
-    console.log(unleash);
 
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
 

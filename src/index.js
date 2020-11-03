@@ -10,7 +10,7 @@ import NavFrontendSpinner from "nav-frontend-spinner";
 import { Normaltekst } from 'nav-frontend-typografi';
 import './i18n';
 import './index.less';
-import {UnleashContainer} from "./containers/Unleash/UnleashContainer";
+import {UnleashContainer} from "./containers/UnleashContainer/UnleashContainer";
 import {initAmplitude} from "./common/amplitude";
 
 initAmplitude();
