@@ -11,7 +11,7 @@ import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
 
 const dataRow = (props) => {
     return(
-        <tr key={props.key}>
+        <tr key={props.key} className="row">
             <td>{props.label}</td>
             <td>{props.data!==null ? "kr " + formatAmount(props.data) : ""}</td>
         </tr>
@@ -208,9 +208,9 @@ export const LineChart = (props) => {
                 <div className="tableContainer">
                     <table className="tabell">
                         <thead>
-                        <tr>
-                            <th>{props.xLabel}</th>
-                            <th>{props.yLabel}</th>
+                        <tr className="row">
+                            <th className="column1">{props.xLabel}</th>
+                            <th className="column2">{props.yLabel}</th>
                         </tr>
                         </thead>
                         <tbody>
