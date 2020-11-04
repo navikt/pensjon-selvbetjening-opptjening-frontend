@@ -3,7 +3,7 @@ import {FETCH_UNLEASH_STARTED} from './unleashActions'
 import {fetchUnleashSuccess, fetchUnleashFailure} from './unleashActions'
 import {fetchPost} from "../../api/api";
 
-const toggleNames = require('./toggleNames.json');
+const toggleNames = require('../../common/toggleNames.json');
 
 export function* fetchUnleash() {
     try {
