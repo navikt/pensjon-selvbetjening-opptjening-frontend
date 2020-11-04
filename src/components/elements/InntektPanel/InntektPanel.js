@@ -10,7 +10,7 @@ import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
 
 const detailRow = (props) => {
     return(
-        <tr data-testid="income-row" key={props.key}>
+        <tr data-testid="income-row" key={props.key} className="row">
             <td data-testid="income-label">{props.label}</td>
             <td data-testid="income-amount">{props.amount}</td>
         </tr>
@@ -62,9 +62,9 @@ export const InntektPanel = (props) => {
                 <div className="inntektDetailsBox">
                     <table className="tabell">
                         <thead>
-                            <tr>
-                                <th data-testid="income-header">{t('opptjening-year')}</th>
-                                <th data-testid="income-header">{t('opptjening-income')}</th>
+                            <tr className="row">
+                                <th data-testid="income-header" className="column1">{t('opptjening-year')}</th>
+                                <th data-testid="income-header" className="column2">{t('opptjening-income')}</th>
                             </tr>
                         </thead>
                         <tbody>
