@@ -1,12 +1,12 @@
 @import (reference) '~nav-frontend-core/less/_variabler';
 
 .beholdningPanel{
-  background-image: url('../../../assets/sparegris.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding-left: 85px;
   display: flex;
-  flex-direction: row;
+  align-items:center;
+}
+
+.beholdningPanel .illustration{
+  padding-right: 0.8rem;
 }
 
 .beholdningPanel .content{
@@ -14,10 +14,4 @@
   flex: 1;
   justify-content: center;
   flex-direction: column;
-}
-
-@media (max-width: 320px){
-  .beholdningPanel{
-    padding-left: 100px;
-  }
 }
