@@ -10,17 +10,20 @@ import NavFrontendSpinner from "nav-frontend-spinner";
 import { Normaltekst } from 'nav-frontend-typografi';
 import './i18n';
 import './index.less';
+import {UnleashContainer} from "./containers/UnleashContainer/UnleashContainer";
 import {initAmplitude} from "./common/amplitude";
 
 initAmplitude();
 ReactDOM.render(
     <Provider store={store}>
         <Suspense fallback={<NavFrontendSpinner/>}>
-            <Router basename={process.env.PUBLIC_URL}>
-                <Normaltekst tag="div">
-                    <App />
-                </Normaltekst>
-            </Router>
+            <UnleashContainer>
+                <Router basename={process.env.PUBLIC_URL}>
+                    <Normaltekst tag="div">
+                        <App />
+                    </Normaltekst>
+                </Router>
+            </UnleashContainer>
         </Suspense>
     </Provider>,
     document.getElementById('root')

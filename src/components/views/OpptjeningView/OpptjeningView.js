@@ -19,6 +19,7 @@ import './OpptjeningView.less';
 import {amplitudeLogger, SELECT_EVENT} from "../../../common/amplitude";
 import {getLabelByLanguage} from "../../../common/utils";
 
+
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const yearArray = useSelector(getYearArray);
