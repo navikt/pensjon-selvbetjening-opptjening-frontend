@@ -9,7 +9,7 @@ it('should return all defined routes', () => {
     expect(routesConfig.length).toEqual(2);
 
     expect(routesConfig[0].path).toEqual("/");
-    expect(routesConfig[0].titleKey).toEqual("opptjening-title");
+    expect(routesConfig[0].titleKey).toEqual("opptjening-tittel");
     expect(routesConfig[0].component).toEqual(HomePage);
 
     expect(routesConfig[1].path).toEqual("/404");

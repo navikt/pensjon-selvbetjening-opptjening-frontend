@@ -21,7 +21,7 @@ export const YearSelector = (props) => {
             value={props.currentYear}
             bredde={props.size}
             className="yearSelector"
-            aria-label={t('year-selector-choose-year')}
+            aria-label={t('aarvelger-velg-aar')}
         >
             {yearOptions}
         </Select>

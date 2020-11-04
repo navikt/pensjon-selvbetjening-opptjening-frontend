@@ -13,7 +13,7 @@ export const HomePage = () => {
             <div className="contentCentered">
                 <LanguageSelector/>
             </div>
-            <TopBanner title="opptjening-title" text="opptjening-intro-text"/>
+            <TopBanner title="opptjening-tittel" text="opptjening-intro-tekst"/>
             <div className="mainBody">
                 <Breadcrumbs/>
                 <OpptjeningContainer>

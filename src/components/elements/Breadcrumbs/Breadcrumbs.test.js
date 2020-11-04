@@ -41,8 +41,8 @@ it('renders the breadcrumb for frontpage', () => {
         </Provider>
     );
 
-    expect(breadcrumb.getByText("dinpensjon-title")).toBeInTheDocument();
-    expect(breadcrumb.getByText("opptjening-title")).toBeInTheDocument();
+    expect(breadcrumb.getByText("dinpensjon-tittel")).toBeInTheDocument();
+    expect(breadcrumb.getByText("opptjening-tittel")).toBeInTheDocument();
 });
 
 it('renders the breadcrumb for the 404 page', () => {
@@ -59,7 +59,7 @@ it('renders the breadcrumb for the 404 page', () => {
         </Provider>
     );
 
-    expect(breadcrumb.getByText("dinpensjon-title")).toBeInTheDocument();
-    expect(breadcrumb.getByText("opptjening-title")).toBeInTheDocument();
+    expect(breadcrumb.getByText("dinpensjon-tittel")).toBeInTheDocument();
+    expect(breadcrumb.getByText("opptjening-tittel")).toBeInTheDocument();
     expect(breadcrumb.getByText("404-title")).toBeInTheDocument();
 });

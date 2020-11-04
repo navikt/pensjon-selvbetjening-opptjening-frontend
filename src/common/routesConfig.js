@@ -7,7 +7,7 @@ export const routesConfig = [
     {
         path: `/`,
         component: HomePage,
-        titleKey: 'opptjening-title',
+        titleKey: 'opptjening-tittel',
         exact: true
     },
     {

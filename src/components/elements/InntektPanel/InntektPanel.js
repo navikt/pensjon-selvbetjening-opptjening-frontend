@@ -57,14 +57,14 @@ export const InntektPanel = (props) => {
         <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
             <div data-testid="inntektContainer">
                 <div className="inntektLinkContainer">
-                    <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-income-link-to-skatteetaten')}</Lenke>
+                    <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-inntekt-link-to-skatteetaten')}</Lenke>
                 </div>
                 <div className="inntektDetailsBox">
                     <table className="tabell">
                         <thead>
                             <tr className="row">
-                                <th data-testid="income-header" className="column1">{t('opptjening-year')}</th>
-                                <th data-testid="income-header" className="column2">{t('opptjening-income')}</th>
+                                <th data-testid="income-header" className="column1">{t('opptjening-aar')}</th>
+                                <th data-testid="income-header" className="column2">{t('opptjening-inntekt')}</th>
                             </tr>
                         </thead>
                         <tbody>

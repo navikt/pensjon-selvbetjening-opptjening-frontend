@@ -9,7 +9,7 @@ import {mockBasicSuccessState} from "../../__mocks__/mockDataGenerator";
 
 const mockedStateSuccess = mockBasicSuccessState(20, 1972)
 
-it('renders the frontpage and renders the opptjening-title in the banner and the breadcumb', () => {
+it('renders the frontpage and renders the opptjening-tittel in the banner and the breadcumb', () => {
     const mockStore = configureStore();
     let store = mockStore(mockedStateSuccess);
 
@@ -22,9 +22,9 @@ it('renders the frontpage and renders the opptjening-title in the banner and the
             </Router>
         </Provider>
     );
-    expect(getByText("dinpensjon-title")).toBeInTheDocument(); // Breadbrumb
-    expect(getAllByText("opptjening-title")[0]).toBeInTheDocument();
-    expect(getAllByText("opptjening-title")[1]).toBeInTheDocument();
+    expect(getByText("dinpensjon-tittel")).toBeInTheDocument(); // Breadbrumb
+    expect(getAllByText("opptjening-tittel")[0]).toBeInTheDocument();
+    expect(getAllByText("opptjening-tittel")[1]).toBeInTheDocument();
 
 });
 
@@ -41,8 +41,8 @@ it('navigates to 404-page and renders the 404-title in the banner and the breadc
             </Router>
         </Provider>
     );
-    expect(getByText("dinpensjon-title")).toBeInTheDocument();
-    expect(getAllByText("opptjening-title")[0]).toBeInTheDocument();
+    expect(getByText("dinpensjon-tittel")).toBeInTheDocument();
+    expect(getAllByText("opptjening-tittel")[0]).toBeInTheDocument();
     expect(getAllByText("404-title")[0]).toBeInTheDocument();
     expect(getAllByText("404-title")[1]).toBeInTheDocument();
 });

@@ -1,13 +1,13 @@
 {
-    "dinpensjon-title": "Din pensjon",
+    "dinpensjon-tittel": "Din pensjon",
 
-    "opptjening-title": "Din pensjonsopptjening",
-    "opptjening-intro-text": "Her finner du en samlet oversikt over pensjonsopptjeningen din.",
-    "opptjening-year": "År",
-    "opptjening-income": "Inntekt",
+    "opptjening-tittel": "Din pensjonsopptjening",
+    "opptjening-intro-tekst": "Her finner du en samlet oversikt over pensjonsopptjeningen din.",
+    "opptjening-aar": "År",
+    "opptjening-inntekt": "Inntekt",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivende inntekter",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et senere tidspunkt.",
-    "opptjening-income-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
+    "opptjening-inntekt-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Din pensjonsbeholdning i folketrygden",
 
@@ -44,13 +44,13 @@
     "chart-tabell": "Tabell",
     "chart-aar": "År",
 
-    "breadcrumbs-you-are-here": "Du er her",
-    "year-selector-choose-year": "Velg år:",
+    "broedsmule-du-er-her": "Du er her",
+    "aarvelger-velg-aar": "Velg år:",
 
-    "language-selector-choose-language": "Velg språk:",
-    "language-selector-bokmaal": "Bokmål",
-    "language-selector-nynorsk": "Nynorsk",
-    "language-selector-english": "Engelsk",
+    "spraakvelger-velg-spraak": "Velg språk:",
+    "spraakvelger-bokmaal": "Bokmål",
+    "spraakvelger-nynorsk": "Nynorsk",
+    "spraakvelger-engelsk": "Engelsk",
 
     "404-title": "404: Finner ikke siden",
 

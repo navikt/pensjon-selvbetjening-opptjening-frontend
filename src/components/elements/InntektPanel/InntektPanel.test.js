@@ -33,8 +33,8 @@ it('should render the Inntekt panel and open it with correct mockData sorted', (
 
     userEvent.click(panel.getByRole("heading"));
 
-    expect(panel.getAllByTestId("income-header")[0]).toHaveTextContent("opptjening-year");
-    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("opptjening-income");
+    expect(panel.getAllByTestId("income-header")[0]).toHaveTextContent("opptjening-aar");
+    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("opptjening-inntekt");
 
     expect(panel.getAllByTestId("income-row").length).toBe(3);
 
@@ -55,8 +55,8 @@ it('should render text about opplysninger pa senere tidspunkt when inntekt is nu
 
     userEvent.click(panel.getByRole("heading"));
 
-    expect(panel.getAllByTestId("income-header")[0]).toHaveTextContent("opptjening-year");
-    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("opptjening-income");
+    expect(panel.getAllByTestId("income-header")[0]).toHaveTextContent("opptjening-aar");
+    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("opptjening-inntekt");
 
     expect(panel.getAllByTestId("income-label")[0]).toHaveTextContent(expectedYear);
     expect(panel.getAllByTestId("income-amount")[0]).toHaveTextContent("opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt");
@@ -79,6 +79,6 @@ it('should render the Inntekt panel, open and close it, and display no mockData'
     // });
     //expect(panel.queryByTestId("inntektContainer")).toBeNull();
     // Panel should be closed......but is not in the test - GUI works as expected....
-    //expect(panel.getAllByTestId("income-header")[0]).not.toHaveTextContent("opptjening-year");
+    //expect(panel.getAllByTestId("income-header")[0]).not.toHaveTextContent("opptjening-aar");
 
 });

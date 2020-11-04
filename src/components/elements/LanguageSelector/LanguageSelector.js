@@ -18,12 +18,12 @@ export const LanguageSelector = () => {
                 value={i18n.language}
                 bredde="m"
                 className="languageSelector"
-                aria-label={t('language-selector-choose-language')}
+                aria-label={t('spraakvelger-velg-spraak')}
             >
-                <option data-testid="option-default" value="">{t('language-selector-choose-language')}</option>
-                <option data-testid="option-nb-NO" value="nb-NO">{t('language-selector-bokmaal')}</option>
-                <option data-testid="option-nn-NO" value="nn-NO">{t('language-selector-nynorsk')}</option>
-                <option data-testid="option-en-GB" value="en-GB">{t('language-selector-english')}</option>
+                <option data-testid="option-default" value="">{t('spraakvelger-velg-spraak')}</option>
+                <option data-testid="option-nb-NO" value="nb-NO">{t('spraakvelger-bokmaal')}</option>
+                <option data-testid="option-nn-NO" value="nn-NO">{t('spraakvelger-nynorsk')}</option>
+                <option data-testid="option-en-GB" value="en-GB">{t('spraakvelger-engelsk')}</option>
             </Select>
         </div>
     );

@@ -1,13 +1,13 @@
 {
-    "dinpensjon-title": "Your pension",
+    "dinpensjon-tittel": "Your pension",
 
-    "opptjening-title": "Your pension earnings",
-    "opptjening-intro-text": "Here you will find a comprehensive overview of your pension earnings.",
-    "opptjening-year": "Year",
-    "opptjening-income": "Income",
+    "opptjening-tittel": "Your pension earnings",
+    "opptjening-intro-tekst": "Here you will find a comprehensive overview of your pension earnings.",
+    "opptjening-aar": "Year",
+    "opptjening-inntekt": "Income",
     "opptjening-pensjonsgivende-inntekter": "Pensionable income",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Will be available later.",
-    "opptjening-income-link-to-skatteetaten": "The information on income comes from the tax assessment from the tax authorities.",
+    "opptjening-inntekt-link-to-skatteetaten": "The information on income comes from the tax assessment from the tax authorities.",
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Your accumulated pension capital in the National Insurance Act",
 
@@ -44,13 +44,13 @@
     "chart-tabell": "Table",
     "chart-aar": "Year",
 
-    "breadcrumbs-you-are-here": "You are here",
-    "year-selector-choose-year": "Choose year:",
+    "broedsmule-du-er-her": "You are here",
+    "aarvelger-velg-aar": "Choose year:",
 
-    "language-selector-choose-language": "Choose language:",
-    "language-selector-bokmaal": "Bokmål",
-    "language-selector-nynorsk": "Nynorsk",
-    "language-selector-english": "English",
+    "spraakvelger-velg-spraak": "Choose language:",
+    "spraakvelger-bokmaal": "Bokmål",
+    "spraakvelger-nynorsk": "Nynorsk",
+    "spraakvelger-engelsk": "English",
 
     "404-title": "404: Page not found",
 
