@@ -13,10 +13,10 @@
 }
 
 .topBannerContent {
-  margin: 0 auto;
+  margin: 1.4rem auto 0;
   max-width: 900px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
   overflow: hidden;
@@ -36,21 +36,29 @@
 }
 
 .topBannerImgContainer {
-  align-self: flex-start;
-  margin: 0 1rem 0 0;
+  align-self: flex-end;
+  margin: 0 1rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  width: 45%;
+  position: relative;
 }
 
-@media (min-width: 576px){
+@media (max-width: 576px){
   .topBannerContent {
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 1rem;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .topBannerText{
+    width: 100%;
   }
 
   .topBannerImgContainer {
-    align-self: flex-end;
-    margin: 0 1rem;
+    align-self: flex-start;
+    margin: 0 1rem 0 0;
+    width: 100%;
   }
 }
