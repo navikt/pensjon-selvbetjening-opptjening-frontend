@@ -89,7 +89,9 @@ const buildDetails = (opptjening, currentYear, t)  => {
                             grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {year: currentYear-2}));
                             grunnlagTypes.push(t('grunnlag:' + type + '_TYPE'));
                         });
-                        label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypes.join(', '), grunnlag});
+
+                        const ogString = t('opptjening-details-og');
+                        label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypes.join(', ').replace(/,([^,]*)$/,' ' + ogString + '$1'), grunnlag});
                         grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypes.join(', ')}));
                     }
 
