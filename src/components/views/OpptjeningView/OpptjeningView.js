@@ -18,8 +18,6 @@ import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/Be
 import './OpptjeningView.less';
 import {amplitudeLogger, SELECT_EVENT} from "../../../common/amplitude";
 import {getLabelByLanguage} from "../../../common/utils";
-import {FeatureToggle} from "../../elements/FeatureToggle/FeatureToggle";
-import {DEMO1} from "../../../common/FeatureToggles";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -40,9 +38,6 @@ export const OpptjeningView = () => {
 
     return(
         <div data-testid="opptjeningview">
-            <FeatureToggle featureName={DEMO1} enabled={true}>
-                <b>FEATURE ENABLED</b>
-            </FeatureToggle>
             <section aria-labelledby="pensjonsBeholdningTitle">
                 <BeholdningPanel data={latestPensjonsBeholdning}/>
             </section>
