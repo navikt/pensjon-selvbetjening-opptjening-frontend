@@ -2,7 +2,8 @@
 export const initialState = {
     unleash: null,
     unleashLoading: true,
-    unleashError: undefined
+    unleashError: undefined,
+    toggleNames: null
 };
 
 export const getUnleash = (state = initialState) => state.unleash ? state.unleash.unleash : null;

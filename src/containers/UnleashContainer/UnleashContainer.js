@@ -3,6 +3,8 @@ import { useDispatch, useSelector, shallowEqual} from 'react-redux';
 import {fetchUnleashStarted} from "../../redux/unleash/unleashActions";
 import {getUnleashLoading, getUnleashError} from "../../redux/unleash/unleashSelectors"
 import NavFrontendSpinner from "nav-frontend-spinner";
+const toggleNames = require('../../common/toggleNames.json');
+
 
 export const UnleashContainer = (props) => {
     const {children} = props;
@@ -11,7 +13,7 @@ export const UnleashContainer = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchUnleashStarted());
+        dispatch(fetchUnleashStarted(toggleNames));
     }, [dispatch]);
 
     if(unleashLoading){
