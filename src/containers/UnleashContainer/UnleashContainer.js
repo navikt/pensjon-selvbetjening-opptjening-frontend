@@ -13,7 +13,9 @@ export const UnleashContainer = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchUnleashStarted(toggleNames));
+        if(toggleNames && toggleNames.toggleList && toggleNames.toggleList.length>0){
+            dispatch(fetchUnleashStarted(toggleNames));
+        }
     }, [dispatch]);
 
     if(unleashLoading){

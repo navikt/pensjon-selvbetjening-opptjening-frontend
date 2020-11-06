@@ -1,7 +1,7 @@
 {
   "unleash": {
     "toggles": {
-      "toggle1": false
+      "pensjon.selvbetjening.opptjening.demo1": true
     }
   },
   "opptjening": {
