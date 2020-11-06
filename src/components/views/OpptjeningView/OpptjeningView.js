@@ -21,7 +21,6 @@ import {getLabelByLanguage} from "../../../common/utils";
 import {FeatureToggle} from "../../elements/FeatureToggle/FeatureToggle";
 import {DEMO1} from "../../../common/FeatureToggles";
 
-
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const yearArray = useSelector(getYearArray);

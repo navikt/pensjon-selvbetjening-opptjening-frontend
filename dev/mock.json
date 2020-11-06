@@ -700,9 +700,9 @@
         "omsorgspoeng": null,
         "omsorgspoengType": null,
         "pensjonspoeng": null,
-        "merknader": [],
+        "merknader": ["UFOREGRAD"],
         "restpensjon": null,
-        "maksUforegrad": 0,
+        "maksUforegrad": 50,
         "endringOpptjening": [
           {
             "dato": "2018-12-31",
