@@ -41,10 +41,10 @@ export const OpptjeningView = () => {
     return(
         <div data-testid="opptjeningview">
             <FeatureToggle featureName="pensjon.selvbetjening.opptjening.demo1" enabled={true}>
-                <h1>DEMO1 ENABLED</h1>
+                <b>DEMO1 ENABLED</b>
             </FeatureToggle>
             <FeatureToggle featureName="pensjon.selvbetjening.opptjening.demo1" enabled={false}>
-                <h1>DEMO1 DISABLED</h1>
+                <b>DEMO1 DISABLED</b>
             </FeatureToggle>
 
             <section aria-labelledby="pensjonsBeholdningTitle">
