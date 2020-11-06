@@ -18,6 +18,7 @@ import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/Be
 import './OpptjeningView.less';
 import {amplitudeLogger, SELECT_EVENT} from "../../../common/amplitude";
 import {getLabelByLanguage} from "../../../common/utils";
+import {FeatureToggle} from "../../elements/FeatureToggle/FeatureToggle";
 
 
 export const OpptjeningView = () => {
@@ -39,6 +40,13 @@ export const OpptjeningView = () => {
 
     return(
         <div data-testid="opptjeningview">
+            <FeatureToggle featureName="pensjon.selvbetjening.opptjening.demo1" enabled={true}>
+                <h1>DEMO1 ENABLED</h1>
+            </FeatureToggle>
+            <FeatureToggle featureName="pensjon.selvbetjening.opptjening.demo1" enabled={false}>
+                <h1>DEMO1 DISABLED</h1>
+            </FeatureToggle>
+
             <section aria-labelledby="pensjonsBeholdningTitle">
                 <BeholdningPanel data={latestPensjonsBeholdning}/>
             </section>
