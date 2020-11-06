@@ -40,13 +40,6 @@ export const OpptjeningView = () => {
 
     return(
         <div data-testid="opptjeningview">
-            <FeatureToggle featureName="pensjon.selvbetjening.opptjening.demo1" enabled={true}>
-                <b>DEMO1 ENABLED</b>
-            </FeatureToggle>
-            <FeatureToggle featureName="pensjon.selvbetjening.opptjening.demo1" enabled={false}>
-                <b>DEMO1 DISABLED</b>
-            </FeatureToggle>
-
             <section aria-labelledby="pensjonsBeholdningTitle">
                 <BeholdningPanel data={latestPensjonsBeholdning}/>
             </section>
