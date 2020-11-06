@@ -2,7 +2,7 @@
     "AFP": "AFP (dersom du har hatt flere perioder med AFP vises kun merknader for siste periode)",
     "REFORM": "Pensjonsbeholdningen din ble etablert med virkning 1. januar 2010 i forbindelse med at pensjonsreformen trådte i kraft. Da ble den opptjeningen du hadde i kalenderår frem til og med 2008 (siste ferdiglignede år) summert til en beholdningsstørrelse.",
     "INGEN_OPPTJENING": "Du har ingen registrerte pensjonspoeng dette året",
-    "UFOREGRAD": "Uføretrygd: {0} prosent",
+    "UFOREGRAD": "Uføretrygd: {{maxUforegrad}} prosent",
     "DAGPENGER": "Mottak av dagpenger",
     "FORSTEGANGSTJENESTE": "Avtjent førstegangstjeneste",
     "OMSORGSOPPTJENING": "Du er godskrevet omsorgsopptjening for ulønnet omsorgsarbeid i dette året",

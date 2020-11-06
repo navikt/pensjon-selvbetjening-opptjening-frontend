@@ -2,7 +2,7 @@
     "AFP": "AFP (dersom du har hatt fleire periodar med AFP vises berre merknadar for siste periode)",
     "REFORM": "Pensjonsbehaldninga di ble innførd med verking frå 1. januar 2010 i samband med at pensjonsreforma vart gjennomførd. Da vert den oppteninga du hadde i kalenderår fram til og med 2008 (siste år med ferdig likning) summert til ein behaldningsstorleik.",
     "INGEN_OPPTJENING": "Du har inga registrerte pensjonspoeng dette året",
-    "UFOREGRAD": "Uføretrygd: {0} prosent",
+    "UFOREGRAD": "Uføretrygd: {{maxUforegrad}} prosent",
     "DAGPENGER": "Mottak av dagpengar",
     "FORSTEGANGSTJENESTE": "Avtent førstegongsteneste",
     "OMSORGSOPPTJENING": "Du er har fått omsorgsopptening for omsorgsarbeid utan lønn i dette året",

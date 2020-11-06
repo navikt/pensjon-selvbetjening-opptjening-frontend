@@ -165,8 +165,10 @@ const getRemarksContainer = (opptjening, currentYear, t)  => {
     if (opptjening && opptjening.merknader) {
         opptjening.merknader.forEach((merknad, idx) => {
             // Create link for OVERFOR_OMSORGSOPPTJENING merknad
-            if(merknad === "OVERFORE_OMSORGSOPPTJENING"){
-                remarks.push(<Lenke href="">{t('remarks:'+merknad)}</Lenke>)
+            if(merknad === "OVERFORE_OMSORGSOPPTJENING") {
+                remarks.push(<Lenke href="">{t('remarks:' + merknad)}</Lenke>)
+            } else if (merknad === "UFOREGRAD") {
+                remarks.push(t('remarks:'+merknad, {maxUforegrad: opptjening.maksUforegrad}));
             } else {
                 remarks.push(t('remarks:'+merknad));
             }
