@@ -7,7 +7,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 unleashLoading: true,
-                unleashError: undefined
+                unleashError: undefined,
             };
 
         case FETCH_UNLEASH_SUCCESS:
