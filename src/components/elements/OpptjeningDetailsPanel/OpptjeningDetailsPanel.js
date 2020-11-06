@@ -86,7 +86,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
                         grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagType}));
                     } else {
                         endring.grunnlagTypes.forEach((type) => {
-                            grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {year: currentYear-2}));
+                            grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {maksUforegrad: opptjening.maksUforegrad + "%", year: currentYear-2}));
                             grunnlagTypes.push(t('grunnlag:' + type + '_TYPE'));
                         });
 
@@ -168,7 +168,7 @@ const getRemarksContainer = (opptjening, currentYear, t)  => {
             if(merknad === "OVERFORE_OMSORGSOPPTJENING") {
                 remarks.push(<Lenke href="">{t('remarks:' + merknad)}</Lenke>)
             } else if (merknad === "UFOREGRAD") {
-                remarks.push(t('remarks:'+merknad, {maxUforegrad: opptjening.maksUforegrad}));
+                // Do not show merknad, already explained in grunnlag
             } else {
                 remarks.push(t('remarks:'+merknad));
             }
