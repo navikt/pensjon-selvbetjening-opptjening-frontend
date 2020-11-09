@@ -1,6 +1,6 @@
 {
     "INNTEKT_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on your pensionable income from {{year}}.",
-    "UFORE_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you had {{maksUforegrad}} disability benefits in {{year}}.",
+    "UFORE_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you had {{uforegrad}} disability benefits in {{year}}.",
     "FORSTEGANGSTJENESTE_GRUNNLAG_DESCRIPTION": "* Earnings for this year are based on your first-time military service in {{year}}.",
     "DAGPENGER_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you received unemployment benefits in {{year}}.",
     "OMSORGSOPPTJENING_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you had care for children under 6 years of age or other care work in {{year}}.  Siden omsorgsopptjeningen var større enn din inntekt dette året, er det denne som danner grunnlaget for opptjeningen.",

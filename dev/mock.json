@@ -729,7 +729,8 @@
               "FORSTEGANGSTJENESTE_GRUNNLAG"
             ],
             "pensjonsbeholdningBelop": 536313.6646388767,
-            "uttaksgrad": 0
+            "uttaksgrad": 0,
+            "uforegrad": 50
           },
           {
             "dato": "2019-05-01",
