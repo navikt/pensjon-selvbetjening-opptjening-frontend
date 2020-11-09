@@ -28,7 +28,7 @@ export const BeholdningPanel = (props) => {
                 </svg>
                 <div className="content">
                     <Systemtittel id="pensjonsBeholdningTitle">{t('beholdning-din-pensjonsbeholdning-i-folketrygden')}</Systemtittel>
-                    <div data-testid="assets" className="typo-sidetittel">{formatAmount(latestPensjonsBeholdning.beholdning)}</div>
+                    <div data-testid="assets" className="typo-sidetittel">kr {formatAmount(latestPensjonsBeholdning.beholdning)}</div>
                 </div>
             </div>
         </Panel>
