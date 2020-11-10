@@ -39,11 +39,11 @@ it('should render the Inntekt panel and open it with correct mockData sorted', (
     expect(panel.getAllByTestId("income-row").length).toBe(3);
 
     expect(panel.getAllByTestId("income-label")[0]).toHaveTextContent(expectedInntekt2020.year);
-    expect(panel.getAllByTestId("income-amount")[0].textContent).toEqual(formatAmount(expectedInntekt2020.pensjonsgivendeInntekt));
+    expect(panel.getAllByTestId("income-amount")[0].textContent).toEqual("kr " + formatAmount(expectedInntekt2020.pensjonsgivendeInntekt));
     expect(panel.getAllByTestId("income-label")[1]).toHaveTextContent(expectedInntekt2019.year);
-    expect(panel.getAllByTestId("income-amount")[1].textContent).toEqual(formatAmount(expectedInntekt2019.pensjonsgivendeInntekt));
+    expect(panel.getAllByTestId("income-amount")[1].textContent).toEqual("kr " + formatAmount(expectedInntekt2019.pensjonsgivendeInntekt));
     expect(panel.getAllByTestId("income-label")[2]).toHaveTextContent(expectedInntekt2018.year);
-    expect(panel.getAllByTestId("income-amount")[2].textContent).toEqual(formatAmount(expectedInntekt2018.pensjonsgivendeInntekt));
+    expect(panel.getAllByTestId("income-amount")[2].textContent).toEqual("kr " + formatAmount(expectedInntekt2018.pensjonsgivendeInntekt));
 });
 
 it('should render text about opplysninger pa senere tidspunkt when inntekt is null', () => {

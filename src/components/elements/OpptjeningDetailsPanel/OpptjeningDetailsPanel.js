@@ -12,6 +12,7 @@ const detailRow = (props) => {
     return(
         <div role="row" data-testid={props.key} key={props.key} className="detailRow">
             <span role="cell" data-testid={"label-"+ props.key} className="labelColumn">{props.label}</span>
+            <span role="cell" data-testid={"kr-"+ props.key} className="krColumn">kr</span>
             <span role="cell" data-testid={"amount-"+ props.key} className="numberColumn">{props.amount}</span>
             <span aria-hidden="true" className="emptyColumn">&nbsp;</span>
         </div>
