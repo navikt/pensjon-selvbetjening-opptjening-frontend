@@ -80,20 +80,22 @@ const buildDetails = (opptjening, currentYear, t)  => {
                 case "OPPTJENING":
                     const grunnlag = formatAmount(endring.grunnlag);
                     let label = "";
+                    const uforegrad = endring.uforegrad ?  endring.uforegrad + "%" : "";
                     if(endring.grunnlagTypes.length === 1){
                         const grunnlagType = t('grunnlag:' + endring.grunnlagTypes[0] + '_TYPE');
                         label = getLabelForGrunnlagCode(endring.grunnlagTypes[0], grunnlag, t);
-                        grunnlagTextArray.push(t('grunnlag:' + endring.grunnlagTypes[0] + '_DESCRIPTION', {maksUforegrad: opptjening.maksUforegrad + "%", year: currentYear-2}));
+                        grunnlagTextArray.push(t('grunnlag:' + endring.grunnlagTypes[0] + '_DESCRIPTION', {uforegrad, year: currentYear-2}));
                         grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagType}));
                     } else {
                         endring.grunnlagTypes.forEach((type) => {
-                            grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {maksUforegrad: opptjening.maksUforegrad + "%", year: currentYear-2}));
+                            grunnlagTextArray.push(t('grunnlag:' + type + '_DESCRIPTION', {uforegrad, year: currentYear-2}));
                             grunnlagTypes.push(t('grunnlag:' + type + '_TYPE'));
                         });
 
                         const ogString = t('opptjening-details-og');
-                        label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypes.join(', ').replace(/,([^,]*)$/,' ' + ogString + '$1'), grunnlag});
-                        grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypes.join(', ')}));
+                        const grunnlagTypesString = grunnlagTypes.join(', ').replace(/,([^,]*)$/,' ' + ogString + '$1');
+                        label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypesString, grunnlag});
+                        grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypesString}));
                     }
 
                     item = detailRow(
