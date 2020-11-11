@@ -139,6 +139,7 @@ export const LineChart = (props) => {
                 yPadding: 20,
                 xPadding: 15,
                 caretSize: 10,
+                bodySpacing: 5,
             }
         }
     };
