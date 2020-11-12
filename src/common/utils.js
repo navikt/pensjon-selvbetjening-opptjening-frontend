@@ -19,5 +19,6 @@ export function isDev() {
 }
 
 export const getLabelByLanguage = (language, key, namespace="translation") => {
-    return i18n.getDataByLanguage(language)[namespace][key];
+    const label = i18n.getDataByLanguage(language)[namespace][key];
+    return label ? label : key;
 };
