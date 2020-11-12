@@ -16,7 +16,6 @@
 
 .dataContainer{
    background-color: #ffffff;
-   padding: 1rem;
    text-align: left;
    position: relative;
  }
@@ -44,6 +43,28 @@
   background-color: @navDypBla !important;
   border-color: @navDypBla !important;
   color: #ffffff !important;
+}
+
+.chartAmountRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.chartKrColumn{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-basis: 20px;
+  flex-grow: 0;
+}
+
+.chartNumberColumn {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 75px;
+  text-align: right;
 }
 
 @media (max-width: 576px){

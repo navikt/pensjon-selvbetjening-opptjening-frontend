@@ -8,11 +8,22 @@ import "./InntektPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
 
-const detailRow = (props) => {
+const amountRow = (amount) => {
     return(
-        <tr data-testid="income-row" key={props.key} className="row">
-            <td data-testid="income-label">{props.label}</td>
-            <td data-testid="income-amount">{props.amount}</td>
+        <div className="inntektAmountRow">
+            <span className="inntektKrColumn">kr</span>
+            <span className="inntektNumberColumn">{amount}</span>
+        </div>
+    )
+};
+
+const detailRow = (props) => {
+    const {key, label, amount, explanationText} = props;
+    const amountTxt = amount != null ? amountRow(amount) : explanationText;
+    return(
+        <tr data-testid="income-row" key={key} className="row">
+            <td data-testid="income-label">{label}</td>
+            <td data-testid="income-amount">{amountTxt}</td>
         </tr>
     )
 };
@@ -23,7 +34,8 @@ const buildDetailRows = (inntekter, t)  => {
             {
                 "key": idx,
                 "label": inntekt.year,
-                "amount": inntekt.pensjonsgivendeInntekt!==null ? "kr " + formatAmount(inntekt.pensjonsgivendeInntekt) : t('opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt')
+                "amount": inntekt.pensjonsgivendeInntekt!==null ? formatAmount(inntekt.pensjonsgivendeInntekt) : null,
+                "explanationText": t('opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt')
             }
         ))
     });

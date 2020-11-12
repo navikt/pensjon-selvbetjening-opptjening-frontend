@@ -9,11 +9,23 @@ import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
 import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
 
-const dataRow = (props) => {
+
+const amountRow = (amount) => {
     return(
-        <tr key={props.key} className="row">
-            <td>{props.label}</td>
-            <td>{props.data!==null ? "kr " + formatAmount(props.data) : ""}</td>
+        <div className="chartAmountRow">
+            <span className="chartKrColumn">kr</span>
+            <span className="chartNumberColumn">{formatAmount(amount)}</span>
+        </div>
+    )
+};
+
+const dataRow = (props) => {
+    const {key, label, data} = props;
+    const amountTxt = data != null ? amountRow(data) : "";
+    return(
+        <tr key={key} className="row">
+            <td>{label}</td>
+            <td>{amountTxt}</td>
         </tr>
     )
 };

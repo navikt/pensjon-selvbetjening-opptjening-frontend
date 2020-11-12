@@ -52,7 +52,7 @@
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
-  flex: 1;
+  flex: 0.5;
   text-align: right;
 }
 
@@ -86,16 +86,29 @@
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
 }
 
-@media (max-width: 576px){
+@media (max-width: 767px) {
   .emptyColumn {
     display: none;
   }
+}
 
+@media (max-width: 576px){
   .yearSelectorContainer{
     display: block;
   }
 
   .yearSelectorContainer .selectorWrapper {
     padding-top: 0.5rem;
+  }
+
+  .labelColumn {
+    flex: 2;
+  }
+  .numberColumn {
+    flex: 1;
+  }
+
+  .krColumn{
+    display: none;
   }
 }
