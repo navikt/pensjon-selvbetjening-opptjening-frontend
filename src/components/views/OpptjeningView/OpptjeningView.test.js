@@ -1,10 +1,18 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import {render, fireEvent, getByTestId} from '@testing-library/react';
 import { OpptjeningView} from './OpptjeningView';
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import {axe} from "jest-axe";
-import {mockBasicSuccessState} from "../../../__mocks__/mockDataGenerator";
+import {
+    constructOpptjening,
+    mockBasicSuccessState,
+    mockStateFromOpptjeningData
+} from "../../../__mocks__/mockDataGenerator";
+import {formatAmount} from "../../../common/utils";
+import * as amplitude from "../../../common/amplitude";
+import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
+import userEvent from "@testing-library/user-event";
 
 const mockedState = mockBasicSuccessState(20, 1972);
 
@@ -32,6 +40,17 @@ it('should render Opptjening view and display only the headings for the differen
     expect(view.queryAllByRole("table").length).toBe(2); // Chart tables
 });
 
+it('should render Opptjening view, open Pensjonsbeholdning forklart-panel and show explanation', () => {
+    const mockStore = configureStore();
+    let store = mockStore(mockedState);
+
+    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    fireEvent.click(view.queryAllByRole("heading")[1]);
+
+    expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart");
+});
+
+
 it('should render Opptjening view, open OpptjeningDetails-panel and show details tables', () => {
     const mockStore = configureStore();
     let store = mockStore(mockedState);
@@ -49,4 +68,51 @@ it('should render Opptjening view, open Inntekter-panel and display inntekter ta
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[4]); // Inntekter
     expect(view.queryAllByRole("table").length).toBe(3); // Chart tables + inntekter table
+});
+
+it('should render Opptjening view, open details panel, and show correct beholdning for selected year', () =>{
+    const mockStore = configureStore();
+    const expectedBeholdning2000 = 1000000;
+    const expectedBeholdning2001 = 2000000;
+
+    const mockState = mockStateFromOpptjeningData(2000,
+        [
+            constructOpptjening({pensjonsbeholdning: expectedBeholdning2000}),
+            constructOpptjening({pensjonsbeholdning: expectedBeholdning2001})
+        ]
+    );
+    let store = mockStore(mockState);
+
+    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    fireEvent.click(view.queryAllByRole("heading")[3]); // OpptjeningDetails
+    fireEvent.change(view.getByTestId("year-selector"), {
+        target: {
+            value: "2000"
+        }
+    });
+    expect(view.getByTestId("amount-opptjening-details-din-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning2000));
+
+    fireEvent.change(view.getByTestId("year-selector"), {
+        target: {
+            value: "2001"
+        }
+    });
+    expect(view.getByTestId("amount-opptjening-details-din-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning2001));
+});
+
+it('should Opptjening view, open details panel, select year and log two events to Amplitude', () => {
+    let spy = jest.spyOn(amplitude, "logToAmplitude");
+    const mockStore = configureStore();
+    let store = mockStore(mockedState);
+
+    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+
+    fireEvent.click(view.queryAllByRole("heading")[3]); // OpptjeningDetails
+    fireEvent.change(view.getByTestId("year-selector"), {
+        target: {
+            value: "2000"
+        }
+    });
+
+    expect(spy).toBeCalledTimes(2)
 });
