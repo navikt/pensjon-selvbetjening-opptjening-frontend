@@ -5,6 +5,7 @@ import {InntektPanel} from './InntektPanel';
 import {constructInntekt, mockBasicInntektState} from "../../../__mocks__/mockDataGenerator";
 import {formatAmount} from "../../../common/utils";
 import {axe} from "jest-axe";
+import * as amplitude from '../../../common/amplitude'
 
 const mockData = mockBasicInntektState(3, 2018)
 
@@ -81,4 +82,14 @@ it('should render the Inntekt panel, open and close it, and display no mockData'
     // Panel should be closed......but is not in the test - GUI works as expected....
     //expect(panel.getAllByTestId("income-header")[0]).not.toHaveTextContent("opptjening-aar");
 
+});
+
+it('should render the Inntekt panel, and log event to Amplitude', () => {
+    let spy = jest.spyOn(amplitude, "logToAmplitude");
+    const panel = render(<InntektPanel data={mockData}/>);
+
+    userEvent.click(panel.getByRole("heading"));
+    expect(panel.getByTestId("inntektContainer")).toBeVisible();
+
+    expect(spy).toHaveBeenCalled();
 });

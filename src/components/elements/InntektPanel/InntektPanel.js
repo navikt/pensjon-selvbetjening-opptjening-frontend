@@ -1,4 +1,4 @@
-import {formatAmount, getLabelByLanguage} from "../../../common/utils";
+import {formatAmount} from "../../../common/utils";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
@@ -6,7 +6,7 @@ import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
 import "./InntektPanel.less"
 import Lenke from "nav-frontend-lenker";
-import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
+import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 
 const amountRow = (amount) => {
     return(
@@ -60,13 +60,7 @@ const detailsTitle = (title) => {
 
 export const InntektPanel = (props) => {
     const toggleOpen = (props) => {
-        const componentTitle = getLabelByLanguage("nb-NO", "opptjening-pensjonsgivende-inntekter");
-        if(props === 'button'){
-            amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "Knapp", "name":"Lukk panel", "value": apen});
-        } else {
-            amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "EkspanderbartPanel", "name": "Åpne panel", "value": !apen});
-        }
-
+        logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "opptjening-pensjonsgivende-inntekter", type: props.type, value: !apen});
         setApen(!apen);
     };
 
@@ -76,7 +70,7 @@ export const InntektPanel = (props) => {
     const details = buildDetailRows(inntekter, t);
 
     return(
-        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
+        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
             <div data-testid="inntektContainer">
                 <div className="inntektLinkContainer">
                     <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-inntekt-link-to-skatteetaten')}</Lenke>
@@ -94,7 +88,7 @@ export const InntektPanel = (props) => {
                         </tbody>
                     </table>
                 </div>
-                <button type="button" aria-label={t("inntekt-lukk-panel")} className="closeButton" onClick={() => toggleOpen('button')}>
+                <button type="button" aria-label={t("inntekt-lukk-panel")} className="closeButton" onClick={() => toggleOpen({type: 'Knapp'})}>
                     <div>
                         <OppChevron/>
                     </div>

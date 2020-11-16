@@ -1,7 +1,10 @@
 module.exports = {
     getDataByLanguage: (lng) => {
         return {
-            translation: (k) => k
+            faq: (k) => k,
+            grunnlag: (k) => k,
+            remarks: (k) => k,
+            translation: (k) => k,
         }
     }
 };

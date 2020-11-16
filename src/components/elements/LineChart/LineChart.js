@@ -4,10 +4,10 @@ import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 import {Undertittel} from "nav-frontend-typografi";
 import 'nav-frontend-tabell-style';
-import {formatAmount, getLabelByLanguage} from "../../../common/utils";
+import {formatAmount} from "../../../common/utils";
 import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
-import {amplitudeLogger, CLICK_EVENT} from "../../../common/amplitude";
+import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 
 
 const amountRow = (amount) => {
@@ -166,10 +166,8 @@ export const LineChart = (props) => {
     const dataRows = buildDataRows(props.data.labels, props.data.data);
 
     const toggleVisibleComponent = (component) => {
-        const componentTitle = getLabelByLanguage("nb-NO", "chart-pensjonsbeholdningen-din");
-        component === "chart"
-            ? amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "Knapp", "name":"Graf", "value": true})
-            : amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "Knapp", "name":"Tabell", "value": true});
+        const loggerName = (component === "chart") ? "Graf" : "Tabell";
+        logToAmplitude({eventType: CLICK_EVENT, name: loggerName, titleKey: "chart-pensjonsbeholdningen-din", type: "Knapp", value: true});
         setVisibleComponent(component);
     };
 
