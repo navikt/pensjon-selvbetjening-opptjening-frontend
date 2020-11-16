@@ -139,7 +139,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
 const detailsTitle = (title) => {
     return(
         <div id="opptjeningDetailsTitle" role="heading" aria-level="2" className="detailTitle">
-            <svg width="1.2rem" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration">
+            <svg width="1.2rem" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" className="illustration">
                 <path d="M1.56614 10.7656L27 5V24.3821L2.43386 29.951C1.35559 30.1954 0.287241 29.5019 0.0476259 28.4019C0.0159704 28.2566 0 28.1082 0 27.9593L0 12.7573C0 11.801 0.651064 10.9731 1.56614 10.7656Z" fill="#3E3832"/>
                 <path d="M18 6C19.6569 6 21 4.65685 21 3C21 1.34315 19.6569 0 18 0C16.3431 0 15 1.34315 15 3C15 4.65685 16.3431 6 18 6Z" fill="#E7E9E9"/>
                 <path d="M26 8C27.6569 8 29 6.65685 29 5C29 3.34315 27.6569 2 26 2C24.3431 2 23 3.34315 23 5C23 6.65685 24.3431 8 26 8Z" fill="#E7E9E9"/>

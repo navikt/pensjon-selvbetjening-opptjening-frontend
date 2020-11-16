@@ -11,7 +11,7 @@ export const BeholdningPanel = (props) => {
     return(
         <Panel border>
             <div className="beholdningPanel">
-                <svg width="4rem" viewBox="0 0 71 89" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration">
+                <svg width="4rem" viewBox="0 0 71 89" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" className="illustration">
                     <path d="M38 20C43.5228 20 48 15.5228 48 10C48 4.47715 43.5228 0 38 0C32.4772 0 28 4.47715 28 10C28 15.5228 32.4772 20 38 20Z" fill="#FFBD66"/>
                     <path d="M36.5 84C65.8848 84 68 73.2549 68 60.0001C68 46.7454 66.9282 34.0667 37.7891 34.0003C6.28906 33.9285 5 46.7454 5 60.0001C5 73.2549 7.11523 84 36.5 84Z" fill="#C86151"/>
                     <path d="M13 59C14.1046 59 15 57.6569 15 56C15 54.3431 14.1046 53 13 53C11.8954 53 11 54.3431 11 56C11 57.6569 11.8954 59 13 59Z" fill="#3E3832"/>

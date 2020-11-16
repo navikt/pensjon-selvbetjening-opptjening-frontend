@@ -40,7 +40,7 @@ export const FAQPanel = () => {
         <Panel border className="panelWrapper">
             <div className="faqTitleContainer">
                 <div className="faqTitle">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" viewBox="0 0 62 80" id="ark-hjelp" className="illustration">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" viewBox="0 0 62 80" id="ark-hjelp" focusable="false"  className="illustration">
                         <g fill="none" fillRule="evenodd">
                             <path fill="#E4E4DB" d="M0 13.322v62.635A4.036 4.036 0 0 0 4.029 80h53.944A4.035 4.035 0 0 0 62 75.957V4.043A4.035 4.035 0 0 0 57.973 0H14.021L0 13.322z"></path>
                             <path fill="#C9C9C9" d="M14.149 0v9.285c0 2.235-1.82 4.046-4.066 4.046H0L14.149 0z"></path>

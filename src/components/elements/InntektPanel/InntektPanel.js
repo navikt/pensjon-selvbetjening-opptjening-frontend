@@ -45,7 +45,7 @@ const buildDetailRows = (inntekter, t)  => {
 const detailsTitle = (title) => {
     return(
         <div role="heading" aria-level="2" className="inntektDetailTitle">
-            <svg width="1.3rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration">
+            <svg width="1.3rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" className="illustration">
                 <path fillRule="evenodd" clipRule="evenodd" d="M4.5 13H0.5C0.224 13 0 13.2372 0 13.5294V21.4706C0 21.7628 0.224 22 0.5 22H4.5C4.775 22 5 21.7628 5 21.4706V13.5294C5 13.2372 4.775 13 4.5 13Z" fill="#337C9B"/>
                 <path d="M16.5 7C18.43 7 20 5.43 20 3.5C20 1.569 18.43 0 16.5 0C14.57 0 13 1.569 13 3.5C13 5.43 14.57 7 16.5 7Z" fill="#FFA733"/>
                 <path d="M16 2.5C16 2.224 16.224 2 16.5 2C16.775 2 17 2.224 17 2.5V4.5C17 4.776 16.775 5 16.5 5C16.224 5 16 4.776 16 4.5V2.5Z" fill="#B26D14"/>

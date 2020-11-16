@@ -39,7 +39,7 @@ export const OpptjeningView = () => {
             <section aria-labelledby="pensjonsBeholdningTitle">
                 <BeholdningPanel data={latestPensjonsBeholdning}/>
             </section>
-            <section title={t('pensjonsbeholdning-forklart')}>
+            <section aria-label={"title " + t('pensjonsbeholdning-forklart')}>
                 <BeholdningForklartPanel/>
             </section>
             <section aria-labelledby="chartTitle">
@@ -52,10 +52,10 @@ export const OpptjeningView = () => {
                     />
                 </Panel>
             </section>
-            <section title={t('opptjening-details-din-okning-ar-for-ar')}>
+            <section aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
                 <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray} onChange={selectYear}/>
             </section>
-            <section title={t('opptjening-pensjonsgivende-inntekter')}>
+            <section aria-label={"title " + t('opptjening-pensjonsgivende-inntekter')}>
                 <InntektPanel data={{inntekter}}/>
             </section>
             <section aria-labelledby="faqTitle">

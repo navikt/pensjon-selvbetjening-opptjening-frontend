@@ -7,7 +7,7 @@ import "./BeholdningForklartPanel.less";
 const detailsTitle = (title) => {
     return(
         <div role="heading" aria-level="2" className="beholdningForklartTitle">
-            <svg width="1.2rem" viewBox="0 0 26 43" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration">
+            <svg width="1.2rem" viewBox="0 0 26 43" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" className="illustration">
                 <path d="M20 6C21.6569 6 23 4.65685 23 3C23 1.34315 21.6569 0 20 0C18.3431 0 17 1.34315 17 3C17 4.65685 18.3431 6 20 6Z" fill="#E7E9E9"/>
                 <path d="M17 11C19.2091 11 21 9.20914 21 7C21 4.79086 19.2091 3 17 3C14.7909 3 13 4.79086 13 7C13 9.20914 14.7909 11 17 11Z" fill="#FFD399"/>
                 <path d="M13 42.9998C20.1797 42.9998 26 43.0906 26 35.7498C26 28.409 20.1797 20.0415 13 20.0415C5.8203 20.0415 0 28.409 0 35.7498C0 43.0906 5.8203 42.9998 13 42.9998Z" fill="#D87F0A"/>

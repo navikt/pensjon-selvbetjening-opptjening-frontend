@@ -8,7 +8,7 @@ export const TopBanner = (props) => {
     const {frontpage=true, title, text, showIllustration=true} = props;
 
     return (
-        <header className="topBanner">
+        <div className="topBanner">
             <div className="topBannerContent" data-testid="topbanner">
                 <div className="topBannerText">
                     {frontpage && <Sidetittel>{t(title)}</Sidetittel>}
@@ -18,7 +18,7 @@ export const TopBanner = (props) => {
 
                 {showIllustration &&
                     <div role="presentation" className="topBannerImgContainer">
-                        <svg width="430" viewBox="0 0 430 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="430" viewBox="0 0 430 154" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" >
                             <path d="M240.94 76.0869L342 155H175L240.94 76.0869Z" fill="#CCDEE6"/>
                             <path d="M296.871 119.461L278.183 117.756L282.489 126.412L259.091 113.813L266.312 135.63L242.581 109.804L236.94 122L225.086 108.177L205.07 118.878L240.941 76.0869L296.871 119.461Z" fill="white"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M207 20.499C207 14.7008 202.299 10 196.499 10C192.26 10 188.608 12.5122 186.95 16.1288C184.773 14.7772 182.225 14 179.501 14C171.494 14 165 20.7175 165 29.0011C165 37.2847 171.494 44 179.501 44C183.571 44 187.25 42.2648 189.883 39.4706C191.257 41.022 193.264 42 195.499 42C199.642 42 203 38.6419 203 34.5C203 32.7258 202.385 31.096 201.355 29.8122C204.71 28.0594 207 24.5469 207 20.499Z" fill="white"/>
@@ -97,6 +97,6 @@ export const TopBanner = (props) => {
                     </div>
                 }
             </div>
-        </header>
+        </div>
     )
 };

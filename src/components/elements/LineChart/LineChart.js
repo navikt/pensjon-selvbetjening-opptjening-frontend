@@ -199,7 +199,7 @@ export const LineChart = (props) => {
                 </div>
             </div>
             <div className={chartClass} >
-                <canvas ref={chartRef} aria-label={props.title}>
+                <canvas ref={chartRef}>
                     {/* Fallback content */}
                     <table>
                         <thead>

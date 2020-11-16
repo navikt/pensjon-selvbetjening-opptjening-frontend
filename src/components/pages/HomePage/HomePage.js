@@ -14,7 +14,7 @@ export const HomePage = () => {
                 <LanguageSelector/>
             </div>
             <TopBanner title="opptjening-tittel" text="opptjening-intro-tekst"/>
-            <div className="mainBody">
+            <div className="mainBody" id="maincontent" tabIndex="-1">
                 <Breadcrumbs/>
                 <OpptjeningContainer>
                     <main className="contentWrapper">

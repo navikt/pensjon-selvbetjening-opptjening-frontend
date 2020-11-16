@@ -19,6 +19,7 @@ export const LanguageSelector = () => {
                 bredde="m"
                 className="languageSelector"
                 aria-label={t('spraakvelger-velg-spraak')}
+                autoComplete="off"
             >
                 <option data-testid="option-default" value="">{t('spraakvelger-velg-spraak')}</option>
                 <option data-testid="option-nb-NO" value="nb-NO">{t('spraakvelger-bokmaal')}</option>
