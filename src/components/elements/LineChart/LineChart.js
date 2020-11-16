@@ -167,7 +167,6 @@ export const LineChart = (props) => {
 
     const toggleVisibleComponent = (component) => {
         const componentTitle = getLabelByLanguage("nb-NO", "chart-pensjonsbeholdningen-din");
-        console.log(componentTitle)
         component === "chart"
             ? amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "Knapp", "name":"Graf", "value": true})
             : amplitudeLogger(CLICK_EVENT, {"component": componentTitle, "type": "Knapp", "name":"Tabell", "value": true});
