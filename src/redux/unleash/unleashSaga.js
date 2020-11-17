@@ -9,7 +9,7 @@ export function* fetchUnleash(action) {
         const unleash = yield call(fetchPost, process.env.PUBLIC_URL + "/api/unleash", JSON.stringify(action.toggleNames));
         yield put(fetchUnleashSuccess(unleash));
     } catch (error) {
-        logger.error(`Kunne ikke hente Unleash info. ${error.message}`);
+        logger.error(`Kunne ikke hente Unleash info. ${error}`);
         yield put(fetchUnleashFailure(error));
     }
 }

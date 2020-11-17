@@ -10,7 +10,7 @@ export function* fetchOpptjening() {
         const opptjening = yield call(fetchToJson, process.env.PUBLIC_URL + "/api/opptjening");
         yield put(fetchOpptjeningSuccess(opptjening));
     } catch (error) {
-        logger.error(`Kunne ikke hente opptjening info. ${error.message}`);
+        logger.error(`Kunne ikke hente opptjening info. ${error}`);
         yield put(fetchOpptjeningFailure(error));
     }
 }
