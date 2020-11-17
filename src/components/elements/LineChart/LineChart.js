@@ -198,7 +198,7 @@ export const LineChart = (props) => {
                     <Knapp mini className={tableButton} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
                 </div>
             </div>
-            <div className={chartClass} >
+            <div className={chartClass} data-testid="chartContainer">
                 <canvas ref={chartRef}>
                     {/* Fallback content */}
                     <table>
@@ -214,7 +214,7 @@ export const LineChart = (props) => {
                     </table>
                 </canvas>
             </div>
-            <div className={tableClass}>
+            <div className={tableClass} data-testid="dataContainer">
                 <div className="tableContainer">
                     <table className="tabell">
                         <thead>
