@@ -6,6 +6,7 @@
     "@craco/craco": "^5.6.4",
     "@navikt/craco-plugins": "^1.0.1",
     "@navikt/fnrvalidator": "^1.1.3",
+    "@navikt/frontendlogger": "^2.0.0",
     "@testing-library/dom": "^7.24.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.2",
