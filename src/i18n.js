@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import {logger} from "./common/logging";
 // not like to use this?
 // have a look at the Quick start guide
 // for passing in lng and translations on init
@@ -32,7 +33,7 @@ i18n
             escapeValue: false, // not needed for react as it escapes by default
         }
     }, (err) => {
-            if (err) return console.log('Loading i18n error', err);
+            if (err) return logger.error(`'Loading i18n error'. ${err}`);
             i18n.changeLanguage('nb-NO')
     });
 
