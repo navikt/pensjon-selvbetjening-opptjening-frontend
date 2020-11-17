@@ -33,7 +33,7 @@ it('should handle FETCH_OPPTJENING_SUCCESS action', () =>{
     });
 });
 
-it('should handle FETCH_OPPTJENING_SUCCESS action', () =>{
+it('should handle FETCH_OPPTJENING_FAILURE action', () =>{
     const error = {
        msg: "FAILURE"
     };
