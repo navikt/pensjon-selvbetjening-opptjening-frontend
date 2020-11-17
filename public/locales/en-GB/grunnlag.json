@@ -1,13 +1,13 @@
 {
     "INNTEKT_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on your pensionable income from {{year}}.",
     "UFORE_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you had {{uforegrad}} disability benefits in {{year}}.",
-    "FORSTEGANGSTJENESTE_GRUNNLAG_DESCRIPTION": "* Earnings for this year are based on your first-time military service in {{year}}.",
+    "FORSTEGANGSTJENESTE_GRUNNLAG_DESCRIPTION": "* Earnings for this year are based on your compulsory military service in {{year}}.",
     "DAGPENGER_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you received unemployment benefits in {{year}}.",
-    "OMSORGSOPPTJENING_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you had care for children under 6 years of age or other care work in {{year}}.  Siden omsorgsopptjeningen var større enn din inntekt dette året, er det denne som danner grunnlaget for opptjeningen.",
+    "OMSORGSOPPTJENING_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you had care for children under 6 years of age or other care work in {{year}}. Since the care-related credits were greater than your income this year, the pension earnings are based on the credits.",
     "NO_GRUNNLAG_DESCRIPTION": "* We have no basis from {{year}}, and it is therefore not possible to calculate the earnings for this year.",
     "INNTEKT_GRUNNLAG_TYPE": "pensionable income",
     "UFORE_GRUNNLAG_TYPE": "disability benefits",
-    "FORSTEGANGSTJENESTE_GRUNNLAG_TYPE": "first-time military service",
+    "FORSTEGANGSTJENESTE_GRUNNLAG_TYPE": "compulsory military service",
     "DAGPENGER_GRUNNLAG_TYPE": "unemployment benefits",
     "NO_GRUNNLAG_TYPE": "no basis"
 }

@@ -9,10 +9,10 @@
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Will be available later.",
     "opptjening-inntekt-link-to-skatteetaten": "The information on income comes from the tax assessment from the tax authorities.",
 
-    "beholdning-din-pensjonsbeholdning-i-folketrygden": "Your accumulated pension capital in the National Insurance Act",
+    "beholdning-din-pensjonsbeholdning-i-folketrygden": "Your accumulated pension capital in the National Insurance Scheme",
 
     "pensjonsbeholdning-forklart" : "The accumulated pension capital explained",
-    "pensjonsbeholdning-forklart-tekst": "You accumulate pension capital from the first year you have pensionable income. The assets increases for each year based on the previous year's assets, pensionable income and any other accrual of pension rights, as well as an annual adjustment. The pension assets is used as a starting point for calculating the retirement pension you receive from NAV. ",
+    "pensjonsbeholdning-forklart-tekst": "You accumulate pension capital from the first year you have pensionable income. The assets increase each year based on the previous year's assets, pensionable income and any other accrual of pension rights, as well as an annual adjustment. The pension assets is used as a starting point for calculating the retirement pension you receive from NAV.",
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Accumulated pension capital at the start of the year",
@@ -24,8 +24,8 @@
     "opptjening-details-omsorgsopptjening": "Pension rights for unpaid care work* (kr {{grunnlag}})",
     "opptjening-details-opptjening": "Earnings*",
     "opptjening-details-okning-pga-reform": "Increase due to reform",
-    "opptjening-details-okning-pga-reform-merknad": "* Until 1 May 2011, a separate wage growth factor has not been determined. The change in the National Insurance Act basic amount (G) reflects the annual wage growth. The accumulated pension capital in 2010 is therefore adjusted with the increase in the basic amount (G) in 2010.",
-    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Wondering what {{grunnlagType}} means in this context?  See frequently asked questions further down.",
+    "opptjening-details-okning-pga-reform-merknad": "* Until 1 May 2011, a separate wage growth factor has not been determined. The change in the National Insurance Scheme's basic amount (G) reflects the annual wage growth. The accumulated pension capital in 2010 is therefore adjusted with the increase in the basic amount (G) in 2010.",
+    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Wondering what {{grunnlagType}} means in this context? See frequently asked questions further down.",
     "opptjening-details-aarlig-regulering": "Yearly regulation",
     "opptjening-details-total-pensjonsbeholdning": "Total accumulated pension capital in {{currentYear}}",
     "opptjening-details-uttak": "Withdrawal",
@@ -35,7 +35,7 @@
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Read about how we calculate the pension.",
     "opptjening-details-og": "and",
 
-    "inntekt-lukk-panel":  "Close panel",
+    "inntekt-lukk-panel": "Close panel",
 
     "faq-ofte-stilte-sporsmaal": "Frequently asked questions",
 
@@ -56,6 +56,6 @@
     "404-title": "404: Page not found",
 
     "error-status-401": "You are not authorized",
-    "error-status-403": "A technical problem occured. Please try to log in again later.  We are sorry for the inconvenience.",
+    "error-status-403": "A technical problem occurred. Please try to log in again later. We are sorry for the inconvenience.",
     "error-status-404": "We are not able to find the page or service you are looking for."
 }
