@@ -1,6 +1,5 @@
 import reducer from '../unleashReducer';
 import * as actions from '../unleashActions';
-import expect from 'expect';
 
 const initialState = {
     unleash: null,
