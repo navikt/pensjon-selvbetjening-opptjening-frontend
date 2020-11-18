@@ -1,13 +1,13 @@
 {
     "dinpensjon-tittel": "Din pensjon",
 
-    "opptjening-tittel": "Din pensjonsopptening",
+    "opptjening-tittel": "Di pensjonsopptening",
     "opptjening-intro-tekst": "Her finner du ei samla oversyn over pensjonsoppteninga di.",
     "opptjening-aar": "År",
     "opptjening-inntekt": "Inntekt",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
-    "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysinga vil koma på et seinare tidspunkt.",
-    "opptjening-inntekt-link-to-skatteetaten": "Opplysingane om inntekt er henta frå skattemeldinga hos Skatteetaten.",
+    "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysninga vil koma på et seinare tidspunkt.",
+    "opptjening-inntekt-link-to-skatteetaten": "Opplysningane om inntekt er henta frå skattemeldinga hos Skatteetaten.",
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Din pensjonsbehaldning i folketrygda",
 
@@ -24,8 +24,8 @@
     "opptjening-details-omsorgsopptjening": "Omsorgsopptening* (kr {{grunnlag}})",
     "opptjening-details-opptjening":  "Opptening*",
     "opptjening-details-okning-pga-reform": "Auking pga. reform*",
-    "opptjening-details-okning-pga-reform-merknad": "* Fram til 1. mai 2011 er det ikkje fastsatt ein eigen lønnsvekstfaktor. Endringa i folketrygdas grunnbeløp speilar den årlege lønnsveksten. Behaldninga er i 2010 derfor regulert med aukinga i grunnbeløpet i 2010.",
-    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurar du på kva {{grunnlagType}} inneber i denne samanheng?  Se ofte stilte spørsmål lenger ned.",
+    "opptjening-details-okning-pga-reform-merknad": "* Fram til 1. mai 2011 er det ikkje fastsatt ein eigen lønnsvekstfaktor. Endringa i folketrygdas grunnbeløp speglar den årlege lønnsveksten. Behaldninga er i 2010 difor regulert med aukinga i grunnbeløpet i 2010.",
+    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurar du på kva {{grunnlagType}} inneber i denne samanheng?  Sjå ofte stilte spørsmål lenger ned.",
     "opptjening-details-aarlig-regulering": "Årleg regulering",
     "opptjening-details-total-pensjonsbeholdning": "Total pensjonsbehaldning i {{currentYear}}",
     "opptjening-details-uttak": "Uttak",
