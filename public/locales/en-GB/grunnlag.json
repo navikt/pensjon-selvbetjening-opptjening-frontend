@@ -9,5 +9,6 @@
     "UFORE_GRUNNLAG_TYPE": "disability benefits",
     "FORSTEGANGSTJENESTE_GRUNNLAG_TYPE": "compulsory military service",
     "DAGPENGER_GRUNNLAG_TYPE": "unemployment benefits",
+    "OMSORGSOPPTJENING_GRUNNLAG_TYPE": "unpaid care earnings",
     "NO_GRUNNLAG_TYPE": "no basis"
 }

@@ -9,5 +9,6 @@
     "UFORE_GRUNNLAG_TYPE": "uføretrygd",
     "FORSTEGANGSTJENESTE_GRUNNLAG_TYPE": "førstegangstjeneste",
     "DAGPENGER_GRUNNLAG_TYPE": "dagpenger",
+    "OMSORGSOPPTJENING_GRUNNLAG_TYPE": "omsorgsopptjening",
     "NO_GRUNNLAG_TYPE": "ikke noe grunnlag"
 }
