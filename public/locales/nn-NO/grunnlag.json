@@ -1,5 +1,5 @@
 {
-    "INNTEKT_GRUNNLAG_DESCRIPTION": "* Oppteninga for dette året er basert på den pensjonsgivande inntekt di frå {{year}}.",
+    "INNTEKT_GRUNNLAG_DESCRIPTION": "* Oppteninga for dette året er basert på den pensjonsgivande inntekta di frå {{year}}.",
     "UFORE_GRUNNLAG_DESCRIPTION": "* Oppteninga for dette året er basert på at du hadde {{uforegrad}} uføretrygd i {{year}}.",
     "FORSTEGANGSTJENESTE_GRUNNLAG_DESCRIPTION": "* Oppteninga for dette året er basert på at du avtente førstegongsteneste i {{year}}.",
     "DAGPENGER_GRUNNLAG_DESCRIPTION": "* Oppteninga for dette året er basert på at du tok imot dagpengar i {{year}}.",
