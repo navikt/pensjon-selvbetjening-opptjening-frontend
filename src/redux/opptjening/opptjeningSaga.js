@@ -10,7 +10,12 @@ export function* fetchOpptjening() {
         const opptjening = yield call(fetchToJson, process.env.PUBLIC_URL + "/api/opptjening");
         yield put(fetchOpptjeningSuccess(opptjening));
     } catch (error) {
-        logger.error(`Kunne ikke hente opptjening info. ${error}`);
+        if(error === "error-status-401")
+            logger.info("You are not authorized");
+        else if(error === "error-status-403")
+            logger.info("A technical problem occurred. Please try to log in again later. We are sorry for the inconvenience.");
+        else
+            logger.error(error);
         yield put(fetchOpptjeningFailure(error));
     }
 }

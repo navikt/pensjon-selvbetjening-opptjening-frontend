@@ -9,7 +9,12 @@ export function* fetchUnleash(action) {
         const unleash = yield call(fetchPost, process.env.PUBLIC_URL + "/api/unleash", JSON.stringify(action.toggleNames));
         yield put(fetchUnleashSuccess(unleash));
     } catch (error) {
-        logger.error(`Kunne ikke hente Unleash info. ${error}`);
+        if(error === "error-status-401")
+            logger.info("You are not authorized");
+        else if(error === "error-status-403")
+            logger.info("A technical problem occurred. Please try to log in again later. We are sorry for the inconvenience.");
+        else
+            logger.error(error);
         yield put(fetchUnleashFailure(error));
     }
 }
