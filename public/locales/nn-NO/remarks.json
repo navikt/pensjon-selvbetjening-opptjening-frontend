@@ -1,6 +1,6 @@
 {
     "AFP": "AFP (dersom du har hatt fleire periodar med AFP vises berre merknadar for siste periode)",
-    "REFORM": "Pensjonsbehaldninga di vart innførd med verknad frå 1. januar 2010 i samband med at pensjonsreforma vart gjennomførd. Då vert den oppteninga du hadde i kalenderår fram til og med 2008 (siste år med ferdig likning) summert til ein behaldningsstorleik.",
+    "REFORM": "Pensjonsbehaldninga di vart innførd med verknad frå 1. januar 2010 i samband med at pensjonsreforma vart gjennomførd. Då vert den oppteninga du hadde i kalenderår fram til og med 2008 (siste år med ferdig skattemelding) summert til ein behaldningsstorleik.",
     "INGEN_OPPTJENING": "Du har inga registrerte pensjonspoeng dette året",
     "DAGPENGER": "Mottak av dagpengar",
     "FORSTEGANGSTJENESTE": "Avtent førstegongsteneste",
@@ -9,5 +9,5 @@
     "OMSORGSOPPTJENING_GRUNNLAG_TYPE": "Omsorgsopptening",
     "GRADERT_UTTAK": "Gradert uttak",
     "HELT_UTTAK": "Alderspensjon: 100 prosent",
-    "PRE_2010": "Pensjonsbehaldninga di vart innførd med verknad frå 1. januar 2010 i samband med at pensjonsreforma vart gjennomførd. Då vert den oppteninga du hadde i kalenderår fram til og med 2008 (siste år med ferdig likning) summert til ein behaldningsstorleik."
+    "PRE_2010": "Pensjonsbehaldninga di vart innførd med verknad frå 1. januar 2010 i samband med at pensjonsreforma vart gjennomførd. Då vert den oppteninga du hadde i kalenderår fram til og med 2008 (siste år med ferdig skattemelding) summert til ein behaldningsstorleik."
 }
