@@ -160,6 +160,7 @@ const detailsTitle = (title) => {
 
 const getRemarksContainer = (opptjening, currentYear, t)  => {
     let remarks = [];
+    const overforeUrl = process.env.REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL ? process.env.REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL : "";
 
     if(currentYear<2010){
         remarks.push(t('remarks:PRE_2010'));
@@ -169,7 +170,8 @@ const getRemarksContainer = (opptjening, currentYear, t)  => {
         opptjening.merknader.forEach((merknad, idx) => {
             // Create link for OVERFOR_OMSORGSOPPTJENING merknad
             if(merknad === "OVERFORE_OMSORGSOPPTJENING") {
-                remarks.push(<Lenke href="">{t('remarks:' + merknad)}</Lenke>)
+                remarks.push(<Lenke href={overforeUrl}>{t('remarks:' + merknad)}</Lenke>)
+
             } else if (merknad === "UFOREGRAD") {
                 // Do not show merknad, already explained in grunnlag
             } else {

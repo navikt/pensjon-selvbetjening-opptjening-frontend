@@ -11,7 +11,8 @@ export const getOpptjeningError = (state = initialState) => state.opptjening ? s
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
 
 export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
-    const opptjeningData = getOpptjeningData(state);
+    //Make a copy of opptjeningData before filtering
+    const opptjeningData = {...getOpptjeningData(state)};
     let prev = null;
     Object.keys(opptjeningData).every((year) => {
         prev = opptjeningData[year].pensjonsbeholdning;
@@ -49,7 +50,7 @@ export const getLatestPensjonsBeholdning = (state = initialState) => {
 };
 
 export const getInntekter = (state = initialState) => {
-    const opptjeningData = getOpptjeningDataWithoutNullYears(state);
+    const opptjeningData = getOpptjeningData(state);
     return Object.keys(opptjeningData).map((year) => {
         return {
             "year": year,
