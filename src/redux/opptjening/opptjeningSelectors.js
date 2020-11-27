@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import {BORN_BEFORE_1943, BORN_AFTER_1963, BORN_BETWEEN_1943_AND_1954, BORN_BETWEEN_1954_AND_1963} from "../../common/userGroups";
+
 export const initialState = {
     opptjening: null,
     opptjeningLoading: true,
@@ -9,6 +11,7 @@ export const getOpptjening = (state = initialState) => state.opptjening ? state.
 export const getOpptjeningLoading = (state = initialState) => state.opptjening ? state.opptjening.opptjeningLoading : true;
 export const getOpptjeningError = (state = initialState) => state.opptjening ? state.opptjening.opptjeningError : undefined;
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
+export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
 
 export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     //Make a copy of opptjeningData before filtering
@@ -59,3 +62,28 @@ export const getInntekter = (state = initialState) => {
     });
 };
 
+export const getInntekterPoengAndMerknader = (state = initialState) => {
+    const opptjeningData = getOpptjeningData(state);
+    let returnObject = {};
+    Object.keys(opptjeningData).map((year) => {
+        return returnObject[year] = {
+            "pensjonsgivendeInntekt": opptjeningData[year].pensjonsgivendeInntekt,
+            "merknader": opptjeningData[year].merknader,
+            "pensjonsPoeng": opptjeningData[year].pensjonspoeng
+        }
+    });
+    return returnObject;
+};
+
+export const getUserGroup = (state = initialState) => {
+    const fodselsAar = getFodselsAar(state);
+    if(fodselsAar >= 1943 && fodselsAar<1954){
+        return BORN_BETWEEN_1943_AND_1954;
+    } else if (fodselsAar >= 1954 && fodselsAar < 1963) {
+        return BORN_BETWEEN_1954_AND_1963
+    } else if (fodselsAar > 1962){
+        return BORN_AFTER_1963
+    } else {
+        return BORN_BEFORE_1943;
+    }
+};

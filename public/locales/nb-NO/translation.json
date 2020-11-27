@@ -3,8 +3,6 @@
 
     "opptjening-tittel": "Din pensjonsopptjening",
     "opptjening-intro-tekst": "Her finner du en samlet oversikt over pensjonsopptjeningen din.",
-    "opptjening-aar": "År",
-    "opptjening-inntekt": "Inntekt",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivende inntekter",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et senere tidspunkt.",
     "opptjening-inntekt-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
@@ -35,7 +33,11 @@
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Les mer om hvordan vi beregner pensjonen.",
     "opptjening-details-og": "og",
 
-    "inntekt-lukk-panel": "Lukk panel",
+    "inntekt-lukk-panel":  "Lukk panel",
+    "inntekt-aar": "År",
+    "inntekt-inntekt": "Inntekt",
+    "inntekt-pensjonspoeng": "Pensjonspoeng",
+    "inntekt-merknad": "Merknad",
 
     "faq-ofte-stilte-sporsmaal": "Ofte stilte spørsmål",
 

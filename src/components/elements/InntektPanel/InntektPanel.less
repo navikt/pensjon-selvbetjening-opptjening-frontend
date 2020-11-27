@@ -47,6 +47,32 @@
 .inntektNumberColumn {
   display: flex;
   flex-direction: column;
-  flex-basis: 75px;
+  flex-basis: 65px;
   text-align: right;
+}
+
+.inntektTabell p {
+  margin-bottom: 0.5rem;
+}
+
+.inntektTabell .col1{
+  width: 10%;
+}
+
+.inntektTabell .col2{
+  width: 30%;
+}
+
+.inntektTabell .col3{
+  width: 20%;
+}
+
+.inntektTabell .col4{
+  width: 40%;
+}
+
+@media (max-width: 576px){
+  .inntektTabell {
+    display: none;
+  }
 }

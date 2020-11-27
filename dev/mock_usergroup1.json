@@ -1,0 +1,522 @@
+{
+    "unleash": {
+        "toggles": {
+            "pensjon.selvbetjening.opptjening.demo1": true
+        }
+    },
+    "opptjening": {
+        "opptjeningData": {
+            "1984": {
+                "pensjonsgivendeInntekt": 142204,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1985": {
+                "pensjonsgivendeInntekt": 152214,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1986": {
+                "pensjonsgivendeInntekt": 164832,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1987": {
+                "pensjonsgivendeInntekt": 175852,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1988": {
+                "pensjonsgivendeInntekt": 185363,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1989": {
+                "pensjonsgivendeInntekt": 193925,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1990": {
+                "pensjonsgivendeInntekt": 201736,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1991": {
+                "pensjonsgivendeInntekt": 210497,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1992": {
+                "pensjonsgivendeInntekt": 217311,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1993": {
+                "pensjonsgivendeInntekt": 222514,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1994": {
+                "pensjonsgivendeInntekt": 227243,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1995": {
+                "pensjonsgivendeInntekt": 233413,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1996": {
+                "pensjonsgivendeInntekt": 242805,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1997": {
+                "pensjonsgivendeInntekt": 252358,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1998": {
+                "pensjonsgivendeInntekt": 266857,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1999": {
+                "pensjonsgivendeInntekt": 278934,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2000": {
+                "pensjonsgivendeInntekt": 290675,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2001": {
+                "pensjonsgivendeInntekt": 304050,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2002": {
+                "pensjonsgivendeInntekt": 319852,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2003": {
+                "pensjonsgivendeInntekt": 336262,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2004": {
+                "pensjonsgivendeInntekt": 349330,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2005": {
+                "pensjonsgivendeInntekt": 360866,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2006": {
+                "pensjonsgivendeInntekt": 373496,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2007": {
+                "pensjonsgivendeInntekt": 393589,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2008": {
+                "pensjonsgivendeInntekt": 415238,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2009": {
+                "pensjonsgivendeInntekt": 432650,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": ["OMSORGSOPPTJENING", "DAGPENGER" ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2010": {
+                "pensjonsgivendeInntekt": null,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2011": {
+                "pensjonsgivendeInntekt": null,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1967": {
+                "pensjonsgivendeInntekt": 10000,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.85,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1968": {
+                "pensjonsgivendeInntekt": 40000,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.78,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1969": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1970": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1971": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1972": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1973": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1974": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1975": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1976": {
+                "pensjonsgivendeInntekt": 72102,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1977": {
+                "pensjonsgivendeInntekt": 80412,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1978": {
+                "pensjonsgivendeInntekt": 87424,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1979": {
+                "pensjonsgivendeInntekt": 91330,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1980": {
+                "pensjonsgivendeInntekt": 99940,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1981": {
+                "pensjonsgivendeInntekt": 112107,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1982": {
+                "pensjonsgivendeInntekt": 124178,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1983": {
+                "pensjonsgivendeInntekt": 134189,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            }
+        },
+        "numberOfYearsWithPensjonspoeng": 38,
+        "fodselsaar": 1943
+    }
+}
