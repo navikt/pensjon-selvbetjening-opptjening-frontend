@@ -7,7 +7,7 @@ import {logger} from "../../common/logging";
 
 export function* fetchOpptjening() {
     try {
-        const opptjening = yield call(fetchToJson, process.env.PUBLIC_URL + "/api/opptjening");
+        const opptjening = yield call(fetchToJson, process.env.PUBLIC_URL + process.env.REACT_APP_OPPTJENING_ENDPOINT);
         yield put(fetchOpptjeningSuccess(opptjening));
     } catch (error) {
         logger.error(`Kunne ikke hente opptjening info. ${error}`);
