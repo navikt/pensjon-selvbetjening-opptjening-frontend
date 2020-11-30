@@ -9,7 +9,7 @@ const serverRequestPost = (method, urlPath, body) => {
     const OPTIONS = {
         method: method,
         credentials: getCredentialsParam(),
-        headers: { 'Content-Type': 'application/json' },
+        headers: {'Content-Type': 'application/json'},
         body: body
     };
 
@@ -44,11 +44,11 @@ function verifyStatusSuccessOrRedirect(response) {
 
     console.log(redirect)
     // If we are on localhost just return, no need to check for authentication
-    if(isDev()){
+    if (isDev()) {
         return;
     }
     if (response.status === 401) {
-        window.location.href = process.env.REACT_APP_LOGINSERVICE_URL + redirect;
+        window.location.href = process.env.REACT_APP_LOGINSERVICE_URL + encodeURI(redirect);
         throw new Error("error-status-401");
     }
     if (response.status === 403) {
@@ -70,7 +70,7 @@ export function fetchToJson(urlPath) {
 }
 
 export function fetchPost(urlPath, body) {
-    if(isDev()){
+    if (isDev()) {
         return serverRequest(RequestMethod.GET, urlPath);
     }
     return serverRequestPost(RequestMethod.POST, urlPath, body);
