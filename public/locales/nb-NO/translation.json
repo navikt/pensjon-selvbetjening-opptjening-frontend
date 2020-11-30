@@ -25,7 +25,7 @@
     "opptjening-details-opptjening": "Opptjening*",
     "opptjening-details-okning-pga-reform": "Økning pga. reform*",
     "opptjening-details-okning-pga-reform-merknad": "* Fram til 1. mai 2011 er det ikke fastsatt en egen lønnsvekstfaktor. Endringen i folketrygdens grunnbeløp gjenspeiler den årlige lønnsveksten. Beholdningen er i 2010 derfor regulert med økningen i grunnbeløpet i 2010.",
-    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurer du på hva {{grunnlagType}} betyr i denne sammenhengen? Se ofte stilte spørsmål lenger ned.",
+    "opptjening-details-lurer-du-paa-se-ofte-stilte-spm": "Lurer du på hva \"{{grunnlagType}}\" betyr i denne sammenhengen? Se ofte stilte spørsmål lenger ned.",
     "opptjening-details-aarlig-regulering": "Årlig regulering",
     "opptjening-details-total-pensjonsbeholdning": "Total pensjonsbeholdning i {{currentYear}}",
     "opptjening-details-uttak": "Uttak",
