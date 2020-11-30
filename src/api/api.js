@@ -40,18 +40,15 @@ const serverRequest = (method, urlPath) => {
 };
 
 function verifyStatusSuccessOrRedirect(response) {
-    const paramsString = window.location.search;
-    const searchParams = new URLSearchParams(paramsString);
-    const fnr = searchParams.get("_brukerId");
+    const redirect = window.location.href;
 
-    const loginQueryParam = fnr ? "%3Ffnr%3D" + fnr : "";
-
+    console.log(redirect)
     // If we are on localhost just return, no need to check for authentication
     if(isDev()){
         return;
     }
     if (response.status === 401) {
-        window.location.href = process.env.REACT_APP_LOGINSERVICE_URL + loginQueryParam;
+        window.location.href = process.env.REACT_APP_LOGINSERVICE_URL + redirect;
         throw new Error("error-status-401");
     }
     if (response.status === 403) {
