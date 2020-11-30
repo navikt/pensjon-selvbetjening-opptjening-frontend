@@ -9,7 +9,7 @@ export function* fetchOpptjening() {
     const paramsString = window.location.search;
     const searchParams = new URLSearchParams(paramsString);
     const fnr = searchParams.get("fnr");
-    const fnrQueryParam = fnr ? "%3Ffnr%3D" + fnr : "";
+    const fnrQueryParam = fnr ? "?fnr=" + fnr : "";
 
     try {
         const opptjening = yield call(fetchToJson, process.env.PUBLIC_URL + process.env.REACT_APP_OPPTJENING_ENDPOINT + fnrQueryParam);
