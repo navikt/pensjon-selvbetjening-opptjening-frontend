@@ -24,6 +24,7 @@ spec:
   ingresses:
     - "https://pensjon-selvbetjening-opptjening-frontend.nais.preprod.local"
     - "https://pensjon-selvbetjening-opptjening-frontend.dev-fss.nais.io"
+    - "https://pensjon-selvbetjening-opptjening-frontend.dev.adeo.no"
   env:
     - name: "OPPTJENING_BACKEND"
       value: "https://pensjon-selvbetjening-opptjening-backend.nais.preprod.local"
