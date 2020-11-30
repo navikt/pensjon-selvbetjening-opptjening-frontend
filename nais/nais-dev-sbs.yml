@@ -2,7 +2,7 @@ apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
   name: pensjon-selvbetjening-opptjening-frontend
-  namespace: default
+  namespace: pensjonselvbetjening
   labels:
     team: pensjonselvbetjening
 spec:
