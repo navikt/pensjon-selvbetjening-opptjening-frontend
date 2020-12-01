@@ -3,8 +3,6 @@
 
     "opptjening-tittel": "Di pensjonsopptening",
     "opptjening-intro-tekst": "Her finner du ei samla oversyn over pensjonsoppteninga di.",
-    "opptjening-aar": "År",
-    "opptjening-inntekt": "Inntekt",
     "opptjening-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysninga vil koma på et seinare tidspunkt.",
     "opptjening-inntekt-link-to-skatteetaten": "Opplysningane om inntekt er henta frå skattemeldinga hos Skatteetaten.",
@@ -36,6 +34,11 @@
     "opptjening-details-og": "og",
 
     "inntekt-lukk-panel":  "Lukk panel",
+    "inntekt-aar": "År",
+    "inntekt-inntekt": "Inntekt",
+    "inntekt-pensjonspoeng": "Pensjonspoeng",
+    "inntekt-merknad": "Merknad",
+
 
     "faq-ofte-stilte-sporsmaal": "Ofte stilte spørsmål",
 

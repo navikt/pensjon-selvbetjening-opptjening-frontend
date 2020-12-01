@@ -3,8 +3,6 @@
 
     "opptjening-tittel": "Your pension earnings",
     "opptjening-intro-tekst": "Here you will find a comprehensive overview of your pension earnings.",
-    "opptjening-aar": "Year",
-    "opptjening-inntekt": "Income",
     "opptjening-pensjonsgivende-inntekter": "Pensionable income",
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Will be available later.",
     "opptjening-inntekt-link-to-skatteetaten": "The information on income comes from the tax assessment from the tax authorities.",
@@ -36,6 +34,11 @@
     "opptjening-details-og": "and",
 
     "inntekt-lukk-panel": "Close panel",
+    "inntekt-aar": "Year",
+    "inntekt-inntekt": "Income",
+    "inntekt-pensjonspoeng": "Pensjonspoeng",
+    "inntekt-merknad": "Remarks",
+
 
     "faq-ofte-stilte-sporsmaal": "Frequently asked questions",
 
