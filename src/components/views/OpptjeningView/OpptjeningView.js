@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux";
 import {
+    getInntekter,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData,
     getPensjonsBeholdningArray, getUserGroup,
@@ -21,6 +22,7 @@ import {
     BORN_BETWEEN_1954_AND_1963
 } from "../../../common/userGroups";
 import {UserGroup} from "../../elements/UserGroup/UserGroup";
+import {InntektWithMerknadPanel} from "../../elements/InntektWithMerknadPanel/InntektWithMerknadPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -32,6 +34,8 @@ export const OpptjeningView = () => {
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
 
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
+    const inntekter = useSelector(getInntekter);
+
     const opptjeningData = useSelector(getOpptjeningData);
 
     const selectYear = (year) => {
@@ -63,9 +67,16 @@ export const OpptjeningView = () => {
                                             onChange={selectYear}/>
                 </section>
             </UserGroup>
-            <section aria-label={"title " + t('opptjening-pensjonsgivende-inntekter')}>
-                <InntektPanel data={opptjeningData} userGroup={userGroup}/>
-            </section>
+            <UserGroup userGroups={[BORN_AFTER_1963]} include={true}>
+                <section aria-label={"title " + t('opptjening-pensjonsgivende-inntekter')}>
+                    <InntektPanel data={{inntekter}}/>
+                </section>
+            </UserGroup>
+            <UserGroup userGroups={[BORN_AFTER_1963]} include={false}>
+                <section aria-label={"title " + t('opptjening-pensjonsgivende-inntekter')}>
+                    <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
+                </section>
+            </UserGroup>
             <section aria-labelledby="faqTitle">
                 <FAQPanel/>
             </section>

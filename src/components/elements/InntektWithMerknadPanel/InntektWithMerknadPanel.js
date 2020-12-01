@@ -4,9 +4,16 @@ import {useTranslation} from "react-i18next";
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
-import "./InntektPanel.less"
+import "./InntektWithMerknadPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
+import {BORN_BETWEEN_1943_AND_1954} from "../../../common/userGroups";
+
+const getTextParagraph = (text, key) =>{
+    return(
+        <p key={key} data-testid={key} className="typo-normal">{text}</p>
+    )
+};
 
 const amountRow = (amount) => {
     return(
@@ -18,26 +25,38 @@ const amountRow = (amount) => {
 };
 
 const detailRow = (props) => {
-    const {key, label, amount, explanationText} = props;
+    const {key, label, amount, explanationText, pensjonsPoeng, merknader, userGroup} = props;
     const amountTxt = amount != null ? amountRow(amount) : explanationText;
+
     return(
         <tr data-testid="income-row" key={key} className="row">
             <td data-testid="income-label">{label}</td>
             <td data-testid="income-amount">{amountTxt}</td>
+            {userGroup === BORN_BETWEEN_1943_AND_1954 && <td data-testid="income-amount">{pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</td>}
+            <td data-testid="income-amount">{merknader}</td>
         </tr>
     )
 };
-const buildDetailRows = (inntekter, t)  => {
+const buildDetailRows = (opptjeningData, userGroup, t)  => {
     const details = [];
-    inntekter.forEach((inntekt, idx) => {
+    Object.keys(opptjeningData).forEach((year, idx) => {
+        const merknadArray = [];
+        const merknader = opptjeningData[year].merknader;
+        merknader.forEach((m, idx) => {
+            merknadArray.push(getTextParagraph(t("remarks:" + m, {maxUforegrad: opptjeningData[year].maksUforegrad}), "remarkstext-" + idx))
+        });
         details.push(detailRow(
             {
                 "key": idx,
-                "label": inntekt.year,
-                "amount": inntekt.pensjonsgivendeInntekt!==null ? formatAmount(inntekt.pensjonsgivendeInntekt) : null,
-                "explanationText": t('opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt')
+                "label": year,
+                "amount": opptjeningData[year].pensjonsgivendeInntekt!==null ? formatAmount(opptjeningData[year].pensjonsgivendeInntekt) : null,
+                "explanationText": t('opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt'),
+                "pensjonsPoeng": opptjeningData[year].pensjonspoeng,
+                "merknader": merknadArray,
+                "userGroup": userGroup
             }
         ))
+
     });
     return details.reverse();
 };
@@ -58,7 +77,7 @@ const detailsTitle = (title) => {
     )
 };
 
-export const InntektPanel = (props) => {
+export const InntektWithMerknadPanel = (props) => {
     const toggleOpen = (props) => {
         logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "opptjening-pensjonsgivende-inntekter", type: props.type, value: !apen});
         setApen(!apen);
@@ -66,8 +85,8 @@ export const InntektPanel = (props) => {
 
     const [apen, setApen] = useState(false);
     const { t } = useTranslation();
-    const inntekter = props.data.inntekter;
-    const details = buildDetailRows(inntekter, t);
+    const { data, userGroup } = props;
+    const detailRows = buildDetailRows(data, userGroup, t);
 
     return(
         <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
@@ -76,15 +95,17 @@ export const InntektPanel = (props) => {
                     <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-inntekt-link-to-skatteetaten')}</Lenke>
                 </div>
                 <div className="inntektDetailsBox">
-                    <table className="tabell">
+                    <table className="tabell inntektTabell">
                         <thead>
-                        <tr className="row">
-                            <th data-testid="income-header" className="column1">{t('inntekt-aar')}</th>
-                            <th data-testid="income-header" className="column2">{t('inntekt-inntekt')}</th>
-                        </tr>
+                            <tr className="row">
+                                <th data-testid="income-header" className="col1">{t('inntekt-aar')}</th>
+                                <th data-testid="income-header" className="col2">{t('inntekt-inntekt')}</th>
+                                {userGroup === BORN_BETWEEN_1943_AND_1954 && <th data-testid="income-header" className="col3">{t('inntekt-pensjonspoeng')}</th>}
+                                <th data-testid="income-header" className="col4">{t('inntekt-merknad')}</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        {details}
+                            {detailRows}
                         </tbody>
                     </table>
                 </div>
