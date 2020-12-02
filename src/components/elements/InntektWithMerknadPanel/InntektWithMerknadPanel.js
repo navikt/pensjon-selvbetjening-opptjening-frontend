@@ -7,7 +7,7 @@ import 'nav-frontend-tabell-style';
 import "./InntektWithMerknadPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
-import {BORN_BETWEEN_1943_AND_1954} from "../../../common/userGroups";
+import {BORN_BEFORE_1943, BORN_BETWEEN_1943_AND_1954} from "../../../common/userGroups";
 
 const getTextParagraph = (text, key) =>{
     return(
@@ -79,7 +79,7 @@ const detailsTitle = (title) => {
 
 export const InntektWithMerknadPanel = (props) => {
     const toggleOpen = (props) => {
-        logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "opptjening-pensjonsgivende-inntekter", type: props.type, value: !apen});
+        logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "inntekt-pensjonsgivende-inntekter", type: props.type, value: !apen});
         setApen(!apen);
     };
 
@@ -87,9 +87,10 @@ export const InntektWithMerknadPanel = (props) => {
     const { t } = useTranslation();
     const { data, userGroup } = props;
     const detailRows = buildDetailRows(data, userGroup, t);
+    const title = userGroup === BORN_BETWEEN_1943_AND_1954 || userGroup === BORN_BEFORE_1943 ? 'inntekt-pensjonsgivende-inntekter-og-pensjonspoeng' : 'inntekt-pensjonsgivende-inntekter';
 
     return(
-        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-pensjonsgivende-inntekter'))} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
+        <EkspanderbartpanelBase tittel={detailsTitle(t(title))} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
             <div data-testid="inntektContainer">
                 <div className="inntektLinkContainer">
                     <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-inntekt-link-to-skatteetaten')}</Lenke>

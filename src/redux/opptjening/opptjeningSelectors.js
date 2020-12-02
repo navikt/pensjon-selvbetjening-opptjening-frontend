@@ -62,19 +62,6 @@ export const getInntekter = (state = initialState) => {
     });
 };
 
-export const getInntekterPoengAndMerknader = (state = initialState) => {
-    const opptjeningData = getOpptjeningData(state);
-    let returnObject = {};
-    Object.keys(opptjeningData).map((year) => {
-        return returnObject[year] = {
-            "pensjonsgivendeInntekt": opptjeningData[year].pensjonsgivendeInntekt,
-            "merknader": opptjeningData[year].merknader,
-            "pensjonsPoeng": opptjeningData[year].pensjonspoeng
-        }
-    });
-    return returnObject;
-};
-
 export const getUserGroup = (state = initialState) => {
     const fodselsAar = getFodselsAar(state);
     if(fodselsAar >= 1943 && fodselsAar<1954){

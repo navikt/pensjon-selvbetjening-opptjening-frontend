@@ -20,7 +20,7 @@ it('should not fail any accessibility tests', async () => {
 it('should render the closed Inntekt panel with correct heading', () => {
 
     const panel = render(<InntektPanel data={mockData}/>);
-    expect(panel.getByRole("heading")).toHaveTextContent("opptjening-pensjonsgivende-inntekter");
+    expect(panel.getByRole("heading")).toHaveTextContent("inntekt-pensjonsgivende-inntekter");
     expect(panel.queryAllByTestId("income-header").length).toBe(0)
 });
 
@@ -30,7 +30,7 @@ it('should render the Inntekt panel and open it with correct mockData sorted', (
     const expectedInntekt2020 = mockData.inntekter[2]
 
     const panel = render(<InntektPanel data={mockData}/>);
-    expect(panel.getByRole("heading")).toHaveTextContent("opptjening-pensjonsgivende-inntekter");
+    expect(panel.getByRole("heading")).toHaveTextContent("inntekt-pensjonsgivende-inntekter");
 
     userEvent.click(panel.getByRole("heading"));
 
@@ -52,7 +52,7 @@ it('should render text about opplysninger pa senere tidspunkt when inntekt is nu
     const inntektState = {inntekter: [constructInntekt({year: expectedYear, pensjonsgivendeInntekt: null})]}
 
     const panel = render(<InntektPanel data={inntektState}/>);
-    expect(panel.getByRole("heading")).toHaveTextContent("opptjening-pensjonsgivende-inntekter");
+    expect(panel.getByRole("heading")).toHaveTextContent("inntekt-pensjonsgivende-inntekter");
 
     userEvent.click(panel.getByRole("heading"));
 
@@ -65,7 +65,7 @@ it('should render text about opplysninger pa senere tidspunkt when inntekt is nu
 
 it('should render the Inntekt panel, open and close it, and display no mockData', async () => {
     const panel = render(<InntektPanel data={mockData}/>);
-    expect(panel.getByRole("heading")).toHaveTextContent("opptjening-pensjonsgivende-inntekter");
+    expect(panel.getByRole("heading")).toHaveTextContent("inntekt-pensjonsgivende-inntekter");
 
     userEvent.click(panel.getAllByRole("button")[0]);
     expect(panel.getByTestId("inntektContainer")).toBeVisible();
