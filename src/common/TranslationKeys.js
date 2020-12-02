@@ -26,7 +26,9 @@ export const compareKeysForTwoFiles = (file1Path, file2Path) =>{
     const keysJson2 = Object.keys(json2);
     if(keysJson1.length === keysJson2.length){
         return keysJson2.every(i => keysJson1.includes(i));
-    }else
+    } else {
+        console.log("Translation files not equal length", file1Path, file2Path);
         return false;
+    }
 };
 
