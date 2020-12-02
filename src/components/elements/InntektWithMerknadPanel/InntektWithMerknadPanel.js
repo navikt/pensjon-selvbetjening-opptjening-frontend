@@ -32,8 +32,8 @@ const detailRow = (props) => {
         <tr data-testid="income-row" key={key} className="row">
             <td data-testid="income-label">{label}</td>
             <td data-testid="income-amount">{amountTxt}</td>
-            {userGroup === BORN_BETWEEN_1943_AND_1954 && <td data-testid="income-amount">{pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</td>}
-            <td data-testid="income-amount">{merknader}</td>
+            {userGroup === BORN_BETWEEN_1943_AND_1954 && <td data-testid="pensjonspoeng">{pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</td>}
+            <td data-testid="remark">{merknader}</td>
         </tr>
     )
 };
