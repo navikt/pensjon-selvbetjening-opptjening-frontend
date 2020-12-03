@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {EkspanderbartpanelBase} from "nav-frontend-ekspanderbartpanel";
 import "./OpptjeningDetailsPanel.less"
-import Lenke from "nav-frontend-lenker";
 import {YearSelector} from "../YearSelector/YearSelector";
 import {Label} from "nav-frontend-skjema";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
@@ -160,21 +159,13 @@ const detailsTitle = (title) => {
 
 const getRemarksContainer = (opptjening, currentYear, t)  => {
     let remarks = [];
-    const overforeUrl = process.env.REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL ? process.env.REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL : "";
-
     if(currentYear<2010){
         remarks.push(t('remarks:PRE_2010'));
     }
 
     if (opptjening && opptjening.merknader) {
-        opptjening.merknader.forEach((merknad, idx) => {
-            // Create link for OVERFOR_OMSORGSOPPTJENING merknad
-            if(merknad === "OVERFORE_OMSORGSOPPTJENING") {
-                remarks.push(<Lenke href={overforeUrl}>{t('remarks:' + merknad)}</Lenke>)
-
-            } else if (merknad === "UFOREGRAD") {
-                // Do not show merknad, already explained in grunnlag
-            } else {
+        opptjening.merknader.forEach((merknad) => {
+            if (merknad==='REFORM'){
                 remarks.push(t('remarks:'+merknad));
             }
         });
