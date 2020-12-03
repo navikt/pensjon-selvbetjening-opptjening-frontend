@@ -34,12 +34,21 @@ const amountListItem = (amount) => {
     return(<span>kr {amount}</span>)
 };
 
+const getMerknadText = (merknad, t, uforegrad) =>{
+    const overforeUrl = process.env.REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL ? process.env.REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL : "";
+    let merknadText = t("remarks:" + merknad, {maxUforegrad: uforegrad})
+    if(merknad==='OVERFORE_OMSORGSOPPTJENING'){
+        merknadText = <Lenke href={overforeUrl}>{merknadText}</Lenke>
+    }
+    return merknadText
+}
+
 const detailRow = (props) => {
     const {key, year, amount, explanationText, pensjonsPoeng, merknader, userGroup, t, uforegrad} = props;
     const amountTxt = amount != null ? amountRow(amount) : explanationText;
     const merknadArray = [];
     merknader.forEach((m, idx) => {
-        merknadArray.push(getTextParagraph(t("remarks:" + m, {maxUforegrad: uforegrad}), "remarkstext-" + idx))
+        merknadArray.push(getTextParagraph(getMerknadText(m, t, uforegrad), "remarkstext-" + idx))
     });
 
     return(
@@ -58,7 +67,7 @@ const detailListItem = (props) => {
     const merknadArray = [];
 
     merknader.forEach((m, idx) => {
-        merknadArray.push(getMerknadListItem(t("remarks:" + m, {maxUforegrad: uforegrad}), "remarkstext-" + idx))
+        merknadArray.push(getMerknadListItem(getMerknadText(m, t, uforegrad), "remarkstext-" + idx))
     });
 
     return(
