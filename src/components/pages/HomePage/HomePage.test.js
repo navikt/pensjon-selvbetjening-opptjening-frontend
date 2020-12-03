@@ -26,7 +26,7 @@ it('should render homepage with languageSelector, topBanner, breadcrumbs and bod
 
     expect(page.getByTestId("language-selector")).toBeVisible();
     expect(page.getByTestId("topbanner")).toBeVisible();
-    expect(page.getByTestId("breadcrumbs")).toBeVisible();
+    //expect(page.getByTestId("breadcrumbs")).toBeVisible();
     expect(page.getByTestId("opptjeningview")).toBeVisible();
 });
 
@@ -36,7 +36,7 @@ it('should render homepage with languageSelector, topBanner, breadcrumbs and loa
 
     expect(page.getByTestId("language-selector")).toBeVisible();
     expect(page.getByTestId("topbanner")).toBeVisible();
-    expect(page.getByTestId("breadcrumbs")).toBeVisible();
+    //expect(page.getByTestId("breadcrumbs")).toBeVisible();
     expect(page.queryByTestId("opptjeningview")).not.toBeInTheDocument();
     expect(page.getByTestId("opptjening-loading")).toBeVisible();
 });
@@ -47,7 +47,7 @@ it('should render homepage with languageSelector, topBanner, breadcrumbs and err
 
     expect(page.getByTestId("language-selector")).toBeVisible();
     expect(page.getByTestId("topbanner")).toBeVisible();
-    expect(page.getByTestId("breadcrumbs")).toBeVisible();
+   // expect(page.getByTestId("breadcrumbs")).toBeVisible();
     expect(page.queryByTestId("opptjeningview")).not.toBeInTheDocument();
     expect(page.getByTestId("opptjening-error")).toBeVisible();
 });
