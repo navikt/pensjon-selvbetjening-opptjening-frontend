@@ -71,8 +71,37 @@
   width: 40%;
 }
 
+.inntektList{
+  display: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.inntektList li{
+  list-style: none;
+}
+
+.inntektList ul{
+  padding: 0;
+}
+
+.inntektList .inntektItem{
+  padding: 1rem;
+  border-bottom: 1px solid #c7c4c0;
+}
+
+.inntektList .inntektItem li p {
+  padding:0.5rem 0 0 1rem;
+}
+//.inntektList .inntektItem li p:before {
+//  content: "\2010\0020";
+//}
+
 @media (max-width: 576px){
   .inntektTabell {
     display: none;
+  }
+  .inntektList {
+    display: block;
   }
 }

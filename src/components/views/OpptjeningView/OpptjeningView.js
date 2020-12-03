@@ -68,7 +68,7 @@ export const OpptjeningView = () => {
                 </section>
             </UserGroup>
             <UserGroup userGroups={[BORN_AFTER_1963]} include={true}>
-                <section aria-labelledby={"inntektTitle"}>
+                <section aria-label={"title " + t('opptjening-pensjonsgivende-inntekter')}>
                     <InntektPanel data={{inntekter}}/>
                 </section>
             </UserGroup>

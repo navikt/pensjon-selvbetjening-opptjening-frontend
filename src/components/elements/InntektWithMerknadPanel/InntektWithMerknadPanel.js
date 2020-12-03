@@ -24,41 +24,64 @@ const amountRow = (amount) => {
     )
 };
 
+const amountListItem = (amount) => {
+    return(<span>kr {amount}</span>)
+};
+
 const detailRow = (props) => {
-    const {key, label, amount, explanationText, pensjonsPoeng, merknader, userGroup} = props;
+    const {key, year, amount, explanationText, pensjonsPoeng, merknader, userGroup} = props;
     const amountTxt = amount != null ? amountRow(amount) : explanationText;
 
     return(
         <tr data-testid="income-row" key={key} className="row">
-            <td data-testid="income-label">{label}</td>
+            <td data-testid="income-label">{year}</td>
             <td data-testid="income-amount">{amountTxt}</td>
             {userGroup === BORN_BETWEEN_1943_AND_1954 && <td data-testid="pensjonspoeng">{pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</td>}
             <td data-testid="remark">{merknader}</td>
         </tr>
     )
 };
-const buildDetailRows = (opptjeningData, userGroup, t)  => {
-    const details = [];
+
+const detailListItem = (props) => {
+    const {key, year, amount, explanationText, pensjonsPoeng, merknader, userGroup, t} = props;
+    const amountTxt = amount != null ? amountListItem(amount) : explanationText;
+    return(
+        <li className="inntektItem" key={key}>
+            <ul>
+                <li>{t('inntekt-aar') + ":"} {year}</li>
+                <li>{t('inntekt-inntekt') + ":"} {amountTxt}</li>
+                {userGroup === BORN_BETWEEN_1943_AND_1954 && <li>{t('inntekt-pensjonspoeng') + ":"} {pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</li>}
+                <li>{merknader.length > 0 && t('inntekt-merknader') + ":"} {merknader}</li>
+            </ul>
+        </li>
+    )
+}
+
+const buildDetails = (opptjeningData, userGroup, t)  => {
+    const detailRows = [];
+    const detailListItems = [];
     Object.keys(opptjeningData).forEach((year, idx) => {
         const merknadArray = [];
         const merknader = opptjeningData[year].merknader;
         merknader.forEach((m, idx) => {
             merknadArray.push(getTextParagraph(t("remarks:" + m, {maxUforegrad: opptjeningData[year].maksUforegrad}), "remarkstext-" + idx))
         });
-        details.push(detailRow(
-            {
-                "key": idx,
-                "label": year,
-                "amount": opptjeningData[year].pensjonsgivendeInntekt!==null ? formatAmount(opptjeningData[year].pensjonsgivendeInntekt) : null,
-                "explanationText": t('opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt'),
-                "pensjonsPoeng": opptjeningData[year].pensjonspoeng,
-                "merknader": merknadArray,
-                "userGroup": userGroup
-            }
-        ))
+        const detailProps = {
+            "key": idx,
+            "year": year,
+            "amount": opptjeningData[year].pensjonsgivendeInntekt!==null ? formatAmount(opptjeningData[year].pensjonsgivendeInntekt) : null,
+            "explanationText": t('opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt'),
+            "pensjonsPoeng": opptjeningData[year].pensjonspoeng,
+            "merknader": merknadArray,
+            "userGroup": userGroup,
+            "t": t
+        };
 
+        detailRows.push(detailRow(detailProps));
+        detailListItems.push(detailListItem(detailProps));
     });
-    return details.reverse();
+
+    return {detailRows: detailRows.reverse(), detailListItems: detailListItems.reverse()};
 };
 
 const detailsTitle = (title) => {
@@ -86,7 +109,7 @@ export const InntektWithMerknadPanel = (props) => {
     const [apen, setApen] = useState(false);
     const { t } = useTranslation();
     const { data, userGroup } = props;
-    const detailRows = buildDetailRows(data, userGroup, t);
+    const {detailRows, detailListItems} = buildDetails(data, userGroup, t);
     const title = userGroup === BORN_BETWEEN_1943_AND_1954 || userGroup === BORN_BEFORE_1943 ? 'inntekt-pensjonsgivende-inntekter-og-pensjonspoeng' : 'inntekt-pensjonsgivende-inntekter';
 
     return(
@@ -109,6 +132,9 @@ export const InntektWithMerknadPanel = (props) => {
                             {detailRows}
                         </tbody>
                     </table>
+                    <ul className="inntektList">
+                        {detailListItems}
+                    </ul>
                 </div>
                 <button type="button" aria-label={t("inntekt-lukk-panel")} className="closeButton" onClick={() => toggleOpen({type: 'Knapp'})}>
                     <div>

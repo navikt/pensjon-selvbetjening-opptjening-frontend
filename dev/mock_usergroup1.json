@@ -287,7 +287,7 @@
                 "omsorgspoeng": null,
                 "omsorgspoengType": null,
                 "pensjonspoeng": 5.0,
-                "merknader": ["OMSORGSOPPTJENING", "DAGPENGER" ],
+                "merknader": ["OMSORGSOPPTJENING", "DAGPENGER", "OVERFORE_OMSORGSOPPTJENING"],
                 "restpensjon": null,
                 "maksUforegrad": 0,
                 "endringOpptjening": null
@@ -309,9 +309,9 @@
                 "omsorgspoeng": null,
                 "omsorgspoengType": null,
                 "pensjonspoeng": 5.0,
-                "merknader": [],
+                "merknader": ["UFOREGRAD"],
                 "restpensjon": null,
-                "maksUforegrad": 0,
+                "maksUforegrad": 50,
                 "endringOpptjening": null
             },
             "1967": {
