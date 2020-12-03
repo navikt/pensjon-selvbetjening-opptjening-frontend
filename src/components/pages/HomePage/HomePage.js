@@ -5,11 +5,15 @@ import {TopBanner} from "../../elements/TopBanner/TopBanner";
 import {LanguageSelector} from "../../elements/LanguageSelector/LanguageSelector";
 import './HomePage.less';
 import Breadcrumbs from "../../elements/Breadcrumbs/Breadcrumbs";
+import {useTranslation} from "react-i18next";
+
 export const HomePage = () => {
+    const { t } = useTranslation();
     return (
         // Move GRID to separate re-usable template
         <div>
-            <Breadcrumbs/>
+            <Breadcrumbs brodsmuler={[ { url: '/', title: t('opptjening-tittel'), handleInApp: true }]}>
+            </Breadcrumbs>
             <div className="contentCentered">
                 <LanguageSelector/>
             </div>
