@@ -47,7 +47,7 @@ it('should render homepage with languageSelector, topBanner, breadcrumbs and err
 
     expect(page.getByTestId("language-selector")).toBeVisible();
     expect(page.getByTestId("topbanner")).toBeVisible();
-   // expect(page.getByTestId("breadcrumbs")).toBeVisible();
+    //expect(page.getByTestId("breadcrumbs")).toBeVisible();
     expect(page.queryByTestId("opptjeningview")).not.toBeInTheDocument();
     expect(page.getByTestId("opptjening-error")).toBeVisible();
 });
