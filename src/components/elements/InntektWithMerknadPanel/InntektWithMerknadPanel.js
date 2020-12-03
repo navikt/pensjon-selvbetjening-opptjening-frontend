@@ -15,6 +15,12 @@ const getTextParagraph = (text, key) =>{
     )
 };
 
+const getMerknadListItem = (text, key) =>{
+  return(
+      <li key={key}>{text}</li>
+  )
+};
+
 const amountRow = (amount) => {
     return(
         <div className="inntektAmountRow">
@@ -29,29 +35,39 @@ const amountListItem = (amount) => {
 };
 
 const detailRow = (props) => {
-    const {key, year, amount, explanationText, pensjonsPoeng, merknader, userGroup} = props;
+    const {key, year, amount, explanationText, pensjonsPoeng, merknader, userGroup, t, uforegrad} = props;
     const amountTxt = amount != null ? amountRow(amount) : explanationText;
+    const merknadArray = [];
+    merknader.forEach((m, idx) => {
+        merknadArray.push(getTextParagraph(t("remarks:" + m, {maxUforegrad: uforegrad}), "remarkstext-" + idx))
+    });
 
     return(
         <tr data-testid="income-row" key={key} className="row">
             <td data-testid="income-label">{year}</td>
             <td data-testid="income-amount">{amountTxt}</td>
             {userGroup === BORN_BETWEEN_1943_AND_1954 && <td data-testid="pensjonspoeng">{pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</td>}
-            <td data-testid="remark">{merknader}</td>
+            <td data-testid="remark">{merknadArray}</td>
         </tr>
     )
 };
 
 const detailListItem = (props) => {
-    const {key, year, amount, explanationText, pensjonsPoeng, merknader, userGroup, t} = props;
+    const {key, year, amount, explanationText, pensjonsPoeng, merknader, userGroup, t, uforegrad} = props;
     const amountTxt = amount != null ? amountListItem(amount) : explanationText;
+    const merknadArray = [];
+
+    merknader.forEach((m, idx) => {
+        merknadArray.push(getMerknadListItem(t("remarks:" + m, {maxUforegrad: uforegrad}), "remarkstext-" + idx))
+    });
+
     return(
         <li className="inntektItem" key={key}>
             <ul>
-                <li>{t('inntekt-aar') + ":"} {year}</li>
+                <li><b>{t('inntekt-aar') + ":"} {year}</b></li>
                 <li>{t('inntekt-inntekt') + ":"} {amountTxt}</li>
                 {userGroup === BORN_BETWEEN_1943_AND_1954 && <li>{t('inntekt-pensjonspoeng') + ":"} {pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</li>}
-                <li>{merknader.length > 0 && t('inntekt-merknader') + ":"} {merknader}</li>
+                {merknadArray.length > 0 && <li className="listItemMerknad">{t('inntekt-merknader') + ":"} <ul>{merknadArray}</ul></li>}
             </ul>
         </li>
     )
@@ -61,20 +77,16 @@ const buildDetails = (opptjeningData, userGroup, t)  => {
     const detailRows = [];
     const detailListItems = [];
     Object.keys(opptjeningData).forEach((year, idx) => {
-        const merknadArray = [];
-        const merknader = opptjeningData[year].merknader;
-        merknader.forEach((m, idx) => {
-            merknadArray.push(getTextParagraph(t("remarks:" + m, {maxUforegrad: opptjeningData[year].maksUforegrad}), "remarkstext-" + idx))
-        });
         const detailProps = {
             "key": idx,
             "year": year,
             "amount": opptjeningData[year].pensjonsgivendeInntekt!==null ? formatAmount(opptjeningData[year].pensjonsgivendeInntekt) : null,
             "explanationText": t('opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt'),
             "pensjonsPoeng": opptjeningData[year].pensjonspoeng,
-            "merknader": merknadArray,
+            "merknader": opptjeningData[year].merknader,
             "userGroup": userGroup,
-            "t": t
+            "t": t,
+            "uforegrad":opptjeningData[year].maksUforegrad
         };
 
         detailRows.push(detailRow(detailProps));
