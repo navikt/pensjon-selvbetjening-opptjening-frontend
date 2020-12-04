@@ -7,7 +7,7 @@ import 'nav-frontend-tabell-style';
 import "./InntektWithMerknadPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
-import {BORN_BEFORE_1943, BORN_BETWEEN_1943_AND_1954} from "../../../common/userGroups";
+import {BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953} from "../../../common/userGroups";
 
 const getTextParagraph = (text, key) =>{
     return(
@@ -58,7 +58,7 @@ const detailRow = (props) => {
         <tr data-testid="income-row" key={key} className="row">
             <td data-testid="income-label">{year}</td>
             <td data-testid="income-amount">{amountTxt}</td>
-            {userGroup === BORN_BETWEEN_1943_AND_1954 && <td data-testid="pensjonspoeng">{pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</td>}
+            {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <td data-testid="pensjonspoeng">{pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</td>}
             <td data-testid="remark">{merknadArray}</td>
         </tr>
     )
@@ -78,7 +78,7 @@ const detailListItem = (props) => {
             <ul>
                 <li><b>{t('inntekt-aar') + ":"} {year}</b></li>
                 <li>{t('inntekt-inntekt') + ":"} {amountTxt}</li>
-                {userGroup === BORN_BETWEEN_1943_AND_1954 && <li>{t('inntekt-pensjonspoeng') + ":"} {pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</li>}
+                {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <li>{t('inntekt-pensjonspoeng') + ":"} {pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</li>}
                 {merknadArray.length > 0 && <li className="listItemMerknad">{t('inntekt-merknader') + ":"} <ul>{merknadArray}</ul></li>}
             </ul>
         </li>
@@ -129,7 +129,7 @@ export const InntektWithMerknadPanel = (props) => {
     const { t } = useTranslation();
     const { data, userGroup } = props;
     const {detailRows, detailListItems} = buildDetails(data, userGroup, t);
-    const title = userGroup === BORN_BETWEEN_1943_AND_1954 || userGroup === BORN_BEFORE_1943 ? 'inntekt-pensjonsgivende-inntekter-og-pensjonspoeng' : 'inntekt-pensjonsgivende-inntekter';
+    const title = userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 || userGroup === BORN_BEFORE_1943 ? 'inntekt-pensjonsgivende-inntekter-og-pensjonspoeng' : 'inntekt-pensjonsgivende-inntekter';
 
     const toggleOpen = (props) => {
         logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: title, type: props.type, value: !apen});
@@ -148,7 +148,7 @@ export const InntektWithMerknadPanel = (props) => {
                             <tr className="row">
                                 <th data-testid="income-header" className="col1">{t('inntekt-aar')}</th>
                                 <th data-testid="income-header" className="col2">{t('inntekt-inntekt')}</th>
-                                {userGroup === BORN_BETWEEN_1943_AND_1954 && <th data-testid="income-header" className="col3">{t('inntekt-pensjonspoeng')}</th>}
+                                {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <th data-testid="income-header" className="col3">{t('inntekt-pensjonspoeng')}</th>}
                                 <th data-testid="income-header" className="col4">{t('inntekt-merknad')}</th>
                             </tr>
                         </thead>

@@ -6,10 +6,18 @@ import {useTranslation} from "react-i18next";
 import "./FAQPanel.less";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
+import {BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953} from "../../../common/userGroups";
 
-export const FAQPanel = () => {
-    const { t } = useTranslation(['translation', 'faq']);
-    const numberOfQuestions = t('faq:faq-number-of-questions');
+
+export const FAQPanel = (props) => {
+    const {userGroup} = props;
+    let faqNamespace = "faq_" + userGroup.toLowerCase();
+    if(userGroup===BORN_BEFORE_1943){
+        faqNamespace = "faq_" + BORN_IN_OR_BETWEEN_1943_AND_1953.toLowerCase();
+    }
+    const { t } = useTranslation(['translation', 'faq', faqNamespace]);
+    const numberOfSpecialQuestions = t(faqNamespace + ':faq-number-of-questions');
+    const numberOfCommonQuestions = t('faq:faq-number-of-questions');
 
     const toggleOpen = (index) => {
         const nameProps = {
@@ -25,7 +33,16 @@ export const FAQPanel = () => {
 
     let faq = [];
     let apenDefaultState = {};
-    for(let i=1;i<=numberOfQuestions;i++){
+    for(let i=1;i<=numberOfSpecialQuestions;i++){
+        apenDefaultState["faq-question-"+i] = false;
+        faq.push(
+            <Ekspanderbartpanel key={i} tittel={<Normaltekst>{t(faqNamespace + ':faq-question-'+i)}</Normaltekst>} border className="questionWrapper" onClick={() => toggleOpen(i)}>
+                <div key="horizontalLine" className="faqHorizontalLine"/>
+                <ReactMarkdown>{t(faqNamespace + ':faq-answer-'+i, {joinArrays: "\n\n"})}</ReactMarkdown>
+            </Ekspanderbartpanel>
+        )
+    }
+    for(let i=1;i<=numberOfCommonQuestions;i++){
         apenDefaultState["faq-question-"+i] = false;
         faq.push(
             <Ekspanderbartpanel key={i} tittel={<Normaltekst>{t('faq:faq-question-'+i)}</Normaltekst>} border className="questionWrapper" onClick={() => toggleOpen(i)}>

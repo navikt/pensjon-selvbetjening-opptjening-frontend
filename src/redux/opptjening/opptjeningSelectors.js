@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {BORN_BEFORE_1943, BORN_AFTER_1963, BORN_BETWEEN_1943_AND_1954, BORN_BETWEEN_1954_AND_1963} from "../../common/userGroups";
+import {BORN_BEFORE_1943, BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../common/userGroups";
 
 export const initialState = {
     opptjening: null,
@@ -64,12 +64,12 @@ export const getInntekter = (state = initialState) => {
 
 export const getUserGroup = (state = initialState) => {
     const fodselsAar = getFodselsAar(state);
-    if(fodselsAar >= 1943 && fodselsAar<1954){
-        return BORN_BETWEEN_1943_AND_1954;
-    } else if (fodselsAar >= 1954 && fodselsAar < 1963) {
-        return BORN_BETWEEN_1954_AND_1963
+    if(fodselsAar >= 1943 && fodselsAar<=1953){
+        return BORN_IN_OR_BETWEEN_1943_AND_1953;
+    } else if (fodselsAar >= 1954 && fodselsAar <= 1962) {
+        return BORN_IN_OR_BETWEEN_1954_AND_1962
     } else if (fodselsAar > 1962){
-        return BORN_AFTER_1963
+        return BORN_AFTER_1962
     } else {
         return BORN_BEFORE_1943;
     }

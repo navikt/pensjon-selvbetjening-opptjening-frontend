@@ -16,8 +16,8 @@ import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/Be
 import './OpptjeningView.less';
 import { logToAmplitude, SELECT_EVENT} from "../../../common/amplitude";
 import {
-    BORN_AFTER_1963, BORN_BEFORE_1943, BORN_BETWEEN_1943_AND_1954,
-    BORN_BETWEEN_1954_AND_1963
+    BORN_AFTER_1962, BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953,
+    BORN_IN_OR_BETWEEN_1954_AND_1962
 } from "../../../common/userGroups";
 import {UserGroup} from "../../elements/UserGroup/UserGroup";
 import {InntektWithMerknadPanel} from "../../elements/InntektWithMerknadPanel/InntektWithMerknadPanel";
@@ -43,7 +43,7 @@ export const OpptjeningView = () => {
 
     return(
         <div data-testid="opptjeningview">
-            <UserGroup userGroups={[BORN_BETWEEN_1954_AND_1963, BORN_AFTER_1963]} include={true}>
+            <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
                 <section aria-labelledby="pensjonsBeholdningTitle">
                     <BeholdningPanel data={latestPensjonsBeholdning}/>
                 </section>
@@ -65,7 +65,7 @@ export const OpptjeningView = () => {
                                             onChange={selectYear}/>
                 </section>
             </UserGroup>
-            <UserGroup userGroups={[BORN_BETWEEN_1943_AND_1954, BORN_BEFORE_1943]} include={true}>
+            <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>
                 <section aria-label={"title " + t('pensjonspoeng-forklart')}>
                     <PensjonspoengForklartPanel/>
                 </section>
@@ -74,7 +74,7 @@ export const OpptjeningView = () => {
                 <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
             </section>
             <section aria-labelledby="faqTitle">
-                <FAQPanel/>
+                <FAQPanel userGroup={userGroup}/>
             </section>
         </div>
     )

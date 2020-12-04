@@ -6,7 +6,7 @@ import {constructOpptjening, mockStateFromOpptjeningData} from "../../../__mocks
 import {formatAmount} from "../../../common/utils";
 import {axe} from "jest-axe";
 import * as amplitude from '../../../common/amplitude'
-import {BORN_AFTER_1963, BORN_BETWEEN_1943_AND_1954, BORN_BETWEEN_1954_AND_1963} from "../../../common/userGroups";
+import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
 
 const startYear = 2018
 const mockData = mockStateFromOpptjeningData(
@@ -19,7 +19,7 @@ const mockData = mockStateFromOpptjeningData(
     ]).opptjening.opptjening.opptjeningData
 
 it('should not fail any accessibility tests', async () => {
-    const {getByRole, container} = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1963}/>);
+    const {getByRole, container} = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1962}/>);
     userEvent.click(getByRole("heading"));
 
     expect(await axe(container)).toHaveNoViolations();
@@ -28,7 +28,7 @@ it('should not fail any accessibility tests', async () => {
 
 it('should render the closed Inntekt panel with correct heading', () => {
 
-    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1963}/>);
+    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1962}/>);
     expect(panel.getByRole("heading")).toHaveTextContent("inntekt-pensjonsgivende-inntekter");
     expect(panel.queryAllByTestId("income-header").length).toBe(0)
 });
@@ -38,7 +38,7 @@ it('should render the Inntekt panel and open it with correct mockData sorted', (
     const expectedInntekt2019 = mockData[startYear + 1].pensjonsgivendeInntekt
     const expectedInntekt2020 = mockData[startYear + 2].pensjonsgivendeInntekt
 
-    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1963}/>);
+    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1962}/>);
     expect(panel.getByRole("heading")).toHaveTextContent("inntekt-pensjonsgivende-inntekter");
 
     userEvent.click(panel.getByRole("heading"));
@@ -60,7 +60,7 @@ it('should render the Inntekt panel and open it with correct mockData sorted', (
 it('should render text about opplysninger pa senere tidspunkt when inntekt is null', () => {
     const expectedYear = 2021;
 
-    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1963}/>);
+    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1962}/>);
     expect(panel.getByRole("heading")).toHaveTextContent("inntekt-pensjonsgivende-inntekter");
 
     userEvent.click(panel.getByRole("heading"));
@@ -73,7 +73,7 @@ it('should render text about opplysninger pa senere tidspunkt when inntekt is nu
 });
 
 it('should render the Inntekt panel, open and close it, and display no mockData', async () => {
-    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1963}/>);
+    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1962}/>);
     expect(panel.getByRole("heading")).toHaveTextContent("inntekt-pensjonsgivende-inntekter");
 
     userEvent.click(panel.getAllByRole("button")[0]);
@@ -95,7 +95,7 @@ it('should render the Inntekt panel, open and close it, and display no mockData'
 
 it('should render the Inntekt panel, and log event to Amplitude', () => {
     let spy = jest.spyOn(amplitude, "logToAmplitude");
-    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1963}/>);
+    const panel = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_AFTER_1962}/>);
 
     userEvent.click(panel.getByRole("heading"));
     expect(panel.getByTestId("inntektContainer")).toBeVisible();
@@ -103,16 +103,16 @@ it('should render the Inntekt panel, and log event to Amplitude', () => {
     expect(spy).toHaveBeenCalled();
 });
 
-it('should render the InntektWithMerknadPanel with pensjonspoeng when user BORN_BETWEEN_1943_AND_1954', () => {
-    const {getAllByTestId, getByRole} = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_BETWEEN_1943_AND_1954}/>);
+it('should render the InntektWithMerknadPanel with pensjonspoeng when user BORN_IN_OR_BETWEEN_1943_AND_1953', () => {
+    const {getAllByTestId, getByRole} = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_IN_OR_BETWEEN_1943_AND_1953}/>);
 
     userEvent.click(getByRole("heading"));
 
     expect(getAllByTestId("income-header")[2]).toHaveTextContent("inntekt-pensjonspoeng");
 });
 
-it('should not render the InntektWithMerknadPanel with pensjonspoeng when user BORN_BETWEEN_1954_AND_1963', () => {
-    const {getAllByTestId, getByRole} = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_BETWEEN_1954_AND_1963}/>);
+it('should not render the InntektWithMerknadPanel with pensjonspoeng when user BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
+    const {getAllByTestId, getByRole} = render(<InntektWithMerknadPanel data={mockData} userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
 
     userEvent.click(getByRole("heading"));
 
