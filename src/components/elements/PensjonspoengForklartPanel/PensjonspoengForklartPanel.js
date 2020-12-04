@@ -2,7 +2,7 @@ import {useTranslation} from "react-i18next";
 import React from "react";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Tekstomrade from "nav-frontend-tekstomrade";
-import "./BeholdningForklartPanel.less";
+import "./PensjonspoengForklartPanel.less";
 
 const detailsTitle = (title) => {
     return(
@@ -20,12 +20,12 @@ const detailsTitle = (title) => {
         </div>
     )
 };
-export const BeholdningForklartPanel = () => {
+export const PensjonspoengForklartPanel = () => {
     const { t } = useTranslation();
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('pensjonsbeholdning-forklart'))} border className="panelWrapper">
+        <Ekspanderbartpanel tittel={detailsTitle(t('pensjonspoeng-forklart'))} border className="panelWrapper">
             <Tekstomrade data-testid="explanationText" className="explanationText">
-                {t('pensjonsbeholdning-forklart-tekst', {joinArrays: "\n\n"})}
+                {t('pensjonspoeng-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>
         </Ekspanderbartpanel>
     )

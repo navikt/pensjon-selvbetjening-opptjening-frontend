@@ -16,11 +16,12 @@ import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/Be
 import './OpptjeningView.less';
 import { logToAmplitude, SELECT_EVENT} from "../../../common/amplitude";
 import {
-    BORN_AFTER_1963,
+    BORN_AFTER_1963, BORN_BEFORE_1943, BORN_BETWEEN_1943_AND_1954,
     BORN_BETWEEN_1954_AND_1963
 } from "../../../common/userGroups";
 import {UserGroup} from "../../elements/UserGroup/UserGroup";
 import {InntektWithMerknadPanel} from "../../elements/InntektWithMerknadPanel/InntektWithMerknadPanel";
+import {PensjonspoengForklartPanel} from "../../elements/PensjonspoengForklartPanel/PensjonspoengForklartPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -62,6 +63,11 @@ export const OpptjeningView = () => {
                 <section aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
                     <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray}
                                             onChange={selectYear}/>
+                </section>
+            </UserGroup>
+            <UserGroup userGroups={[BORN_BETWEEN_1943_AND_1954, BORN_BEFORE_1943]} include={true}>
+                <section aria-label={"title " + t('pensjonspoeng-forklart')}>
+                    <PensjonspoengForklartPanel/>
                 </section>
             </UserGroup>
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>

@@ -9,8 +9,11 @@
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Your accumulated pension capital in the National Insurance Scheme",
 
-    "pensjonsbeholdning-forklart" : "The accumulated pension capital explained",
+    "pensjonsbeholdning-forklart": "The accumulated pension capital explained",
     "pensjonsbeholdning-forklart-tekst": "You accumulate pension capital from the first year you have pensionable income. The assets increase each year based on the previous year's assets, pensionable income and any other accrual of pension rights, as well as an annual adjustment. The pension assets is used as a starting point for calculating the retirement pension you receive from NAV.",
+
+    "pensjonspoeng-forklart": "Pension points explained",
+    "pensjonspoeng-forklart-tekst": "Explanation...",
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Accumulated pension capital at the start of the year",
