@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import {useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux";
 import {
-    getInntekter,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData,
     getPensjonsBeholdningArray, getUserGroup,
@@ -12,7 +11,6 @@ import Panel from "nav-frontend-paneler";
 import {LineChart} from '../../elements/LineChart/LineChart';
 import {FAQPanel} from "../../elements/FAQPanel/FAQPanel";
 import {OpptjeningDetailsPanel} from "../../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
-import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
 import './OpptjeningView.less';
@@ -34,7 +32,6 @@ export const OpptjeningView = () => {
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
 
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
-    const inntekter = useSelector(getInntekter);
 
     const opptjeningData = useSelector(getOpptjeningData);
 
@@ -67,16 +64,9 @@ export const OpptjeningView = () => {
                                             onChange={selectYear}/>
                 </section>
             </UserGroup>
-            <UserGroup userGroups={[BORN_AFTER_1963]} include={true}>
-                <section aria-label={"title " + t('opptjening-pensjonsgivende-inntekter')}>
-                    <InntektPanel data={{inntekter}}/>
-                </section>
-            </UserGroup>
-            <UserGroup userGroups={[BORN_AFTER_1963]} include={false}>
-                <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
-                    <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
-                </section>
-            </UserGroup>
+            <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
+                <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
+            </section>
             <section aria-labelledby="faqTitle">
                 <FAQPanel/>
             </section>

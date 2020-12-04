@@ -11,7 +11,7 @@ import {BORN_BEFORE_1943, BORN_BETWEEN_1943_AND_1954} from "../../../common/user
 
 const getTextParagraph = (text, key) =>{
     return(
-        <p key={key} data-testid={key} className="typo-normal">{text}</p>
+        text !== null && <p key={key} data-testid={key} className="typo-normal">{text}</p>
     )
 };
 
@@ -39,6 +39,9 @@ const getMerknadText = (merknad, t, uforegrad) =>{
     let merknadText = t("remarks:" + merknad, {maxUforegrad: uforegrad})
     if(merknad==='OVERFORE_OMSORGSOPPTJENING'){
         merknadText = <Lenke href={overforeUrl}>{merknadText}</Lenke>
+    }
+    if(merknad==='REFORM'){
+        return null
     }
     return merknadText
 }
@@ -122,16 +125,16 @@ const detailsTitle = (title) => {
 };
 
 export const InntektWithMerknadPanel = (props) => {
-    const toggleOpen = (props) => {
-        logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "inntekt-pensjonsgivende-inntekter", type: props.type, value: !apen});
-        setApen(!apen);
-    };
-
     const [apen, setApen] = useState(false);
     const { t } = useTranslation();
     const { data, userGroup } = props;
     const {detailRows, detailListItems} = buildDetails(data, userGroup, t);
     const title = userGroup === BORN_BETWEEN_1943_AND_1954 || userGroup === BORN_BEFORE_1943 ? 'inntekt-pensjonsgivende-inntekter-og-pensjonspoeng' : 'inntekt-pensjonsgivende-inntekter';
+
+    const toggleOpen = (props) => {
+        logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: title, type: props.type, value: !apen});
+        setApen(!apen);
+    };
 
     return(
         <EkspanderbartpanelBase tittel={detailsTitle(t(title))} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
