@@ -56,16 +56,6 @@ module.exports = {
             }
         }
 
-        // if(ns && ns.length===3 && ns[2].includes('faq_born')){
-        //     useMock.t = (k) => {
-        //         if(k === ns[2] + ':faq-number-of-questions:faq-number-of-questions'){
-        //             return 1
-        //         } else {
-        //             return k
-        //         }
-        //     }
-        // }
-
         return useMock
     },
 
