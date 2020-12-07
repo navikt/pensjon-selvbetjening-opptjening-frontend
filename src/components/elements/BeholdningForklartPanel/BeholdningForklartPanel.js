@@ -32,7 +32,7 @@ export const BeholdningForklartPanel = () => {
 
     return(
         <Ekspanderbartpanel tittel={detailsTitle(t('pensjonsbeholdning-forklart'))} border className="panelWrapper" onClick={toggleOpen}>
-            <Tekstomrade className="explanationText">
+            <Tekstomrade data-testid="explanationText" className="explanationText">
                 {t('pensjonsbeholdning-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>
         </Ekspanderbartpanel>
