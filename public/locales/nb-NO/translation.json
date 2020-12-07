@@ -3,16 +3,17 @@
 
     "opptjening-tittel": "Din pensjonsopptjening",
     "opptjening-intro-tekst": "Her finner du en samlet oversikt over pensjonsopptjeningen din.",
-    "opptjening-aar": "År",
-    "opptjening-inntekt": "Inntekt",
-    "opptjening-pensjonsgivende-inntekter": "Pensjonsgivende inntekter",
+
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et senere tidspunkt.",
     "opptjening-inntekt-link-to-skatteetaten": "Opplysningene om inntekt er hentet fra skattemeldingen hos Skatteetaten.",
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Din pensjonsbeholdning i folketrygden",
 
-    "pensjonsbeholdning-forklart" : "Pensjonsbeholdning forklart",
+    "pensjonsbeholdning-forklart": "Pensjonsbeholdning forklart",
     "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbeholdning fra og med det første året du har pensjonsgivende inntekt. Beholdningen øker for hvert år basert på forrige års beholdning, pensjonsgivende inntekt og eventuell annen opptjening av pensjonsrettigheter, samt en årlig regulering. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
+
+    "pensjonspoeng-forklart": "Pensjonspoeng forklart",
+    "pensjonspoeng-forklart-tekst": "Forklaring...",
 
     "opptjening-details-din-okning-ar-for-ar": "Din økning år for år",
     "opptjening-details-beholdning-i-starten-av-aaret": "Beholdning i starten av året",
@@ -35,7 +36,14 @@
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Les mer om hvordan vi beregner pensjonen.",
     "opptjening-details-og": "og",
 
-    "inntekt-lukk-panel": "Lukk panel",
+    "inntekt-lukk-panel":  "Lukk panel",
+    "inntekt-aar": "År",
+    "inntekt-inntekt": "Inntekt",
+    "inntekt-pensjonsgivende-inntekter": "Pensjonsgivende inntekter",
+    "inntekt-pensjonsgivende-inntekter-og-pensjonspoeng": "Pensjonsgivende inntekter og pensjonspoeng",
+    "inntekt-pensjonspoeng": "Pensjonspoeng",
+    "inntekt-merknad": "Merknad",
+    "inntekt-merknader": "Merknader",
 
     "faq-ofte-stilte-sporsmaal": "Ofte stilte spørsmål",
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, fireEvent, getByTestId} from '@testing-library/react';
+import {render, fireEvent} from '@testing-library/react';
 import { OpptjeningView} from './OpptjeningView';
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
@@ -11,8 +11,6 @@ import {
 } from "../../../__mocks__/mockDataGenerator";
 import {formatAmount} from "../../../common/utils";
 import * as amplitude from "../../../common/amplitude";
-import {InntektPanel} from "../../elements/InntektPanel/InntektPanel";
-import userEvent from "@testing-library/user-event";
 
 const mockedState = mockBasicSuccessState(20, 1972);
 
@@ -34,7 +32,7 @@ it('should render Opptjening view and display only the headings for the differen
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart"); //BeholdningForklart-panel
     expect(view.queryAllByRole("heading")[2]).toHaveTextContent("chart-pensjonsbeholdningen-din"); //Chart - Chart-view
     expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
-    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("opptjening-pensjonsgivende-inntekter"); //Inntekter-panel
+    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
     expect(view.queryAllByRole("heading")[5]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
 
     expect(view.queryAllByRole("table").length).toBe(2); // Chart tables
@@ -75,12 +73,10 @@ it('should render Opptjening view, open details panel, and show correct beholdni
     const expectedBeholdning2000 = 1000000;
     const expectedBeholdning2001 = 2000000;
 
-    const mockState = mockStateFromOpptjeningData(2000,
-        [
-            constructOpptjening({pensjonsbeholdning: expectedBeholdning2000}),
-            constructOpptjening({pensjonsbeholdning: expectedBeholdning2001})
-        ]
-    );
+    const mockState = mockStateFromOpptjeningData(2000, [
+        constructOpptjening({pensjonsbeholdning: expectedBeholdning2000}),
+        constructOpptjening({pensjonsbeholdning: expectedBeholdning2001})
+    ]);
     let store = mockStore(mockState);
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);

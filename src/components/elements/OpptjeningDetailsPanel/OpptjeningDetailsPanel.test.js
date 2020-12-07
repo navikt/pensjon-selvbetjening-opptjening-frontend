@@ -170,25 +170,6 @@ it('should render panel with details including uttak', () => {
     expect(panel.getByTestId("amount-opptjening-details-total-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedPensjonsbeholdning));
 });
 
-
-it('should render panel with details including link to overfore omsorgspoeng', () => {
-    const opptjening2018WithOverforeOmsorgsPoeng = constructOpptjening({merknader:["OVERFORE_OMSORGSOPPTJENING"]})
-
-    const panel = render(<OpptjeningDetailsPanel
-        data={{opptjening: opptjening2018WithOverforeOmsorgsPoeng}} currentYear="2018"
-        yearArray={[]}/>);
-    fireEvent.click(panel.getByRole("heading"));
-
-    expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
-    expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-merknader-tittel");
-
-    const tables = panel.queryAllByRole("table");
-    const detailsTable = tables[0];
-
-    expect(detailsTable).toBeVisible();
-    expect(panel.queryAllByRole("link")[0]).toHaveTextContent("remarks:OVERFORE_OMSORGSOPPTJENING");
-});
-
 it('should render labels for inntekt-grunnlag when INNTEKT_GRUNNLAG', () => {
     testOpptjeningWithGrunnlagType(["INNTEKT_GRUNNLAG"], "opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt")
 });

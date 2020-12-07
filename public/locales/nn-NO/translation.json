@@ -3,16 +3,17 @@
 
     "opptjening-tittel": "Di pensjonsopptening",
     "opptjening-intro-tekst": "Her finner du ei samla oversyn over pensjonsoppteninga di.",
-    "opptjening-aar": "År",
-    "opptjening-inntekt": "Inntekt",
-    "opptjening-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
+
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysninga vil koma på et seinare tidspunkt.",
     "opptjening-inntekt-link-to-skatteetaten": "Opplysningane om inntekt er henta frå skattemeldinga hos Skatteetaten.",
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Din pensjonsbehaldning i folketrygda",
 
-    "pensjonsbeholdning-forklart" : "Pensjonsbehaldning forklart",
+    "pensjonsbeholdning-forklart": "Pensjonsbehaldning forklart",
     "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbehaldning frå og med det første året du har pensjonsgivande inntekt. Behaldninga aukar for kvart år basert på førre års behaldning, pensjonsgivande inntekt og eventuell anna opptening av pensjonsrettar, samt ei årleg regulering. Pensjonsbehaldninga brukast som utgangspunkt for utrekning av alderspensjonen du får frå NAV når du pensjonerar deg.",
+
+    "pensjonspoeng-forklart": "Pensjonspoeng forklart",
+    "pensjonspoeng-forklart-tekst": "Forklaring...",
 
     "opptjening-details-din-okning-ar-for-ar": "Di auking år for år",
     "opptjening-details-beholdning-i-starten-av-aaret": "Behaldning i starten av året",
@@ -36,6 +37,14 @@
     "opptjening-details-og": "og",
 
     "inntekt-lukk-panel":  "Lukk panel",
+    "inntekt-aar": "År",
+    "inntekt-inntekt": "Inntekt",
+    "inntekt-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
+    "inntekt-pensjonsgivende-inntekter-og-pensjonspoeng": "Pensjonsgivande inntekter og pensjonspoeng",
+    "inntekt-pensjonspoeng": "Pensjonspoeng",
+    "inntekt-merknad": "Merknad",
+    "inntekt-merknader": "Merknader",
+
 
     "faq-ofte-stilte-sporsmaal": "Ofte stilte spørsmål",
 

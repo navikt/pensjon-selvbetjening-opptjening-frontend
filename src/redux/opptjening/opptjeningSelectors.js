@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import {BORN_BEFORE_1943, BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../common/userGroups";
+
 export const initialState = {
     opptjening: null,
     opptjeningLoading: true,
@@ -9,6 +11,7 @@ export const getOpptjening = (state = initialState) => state.opptjening ? state.
 export const getOpptjeningLoading = (state = initialState) => state.opptjening ? state.opptjening.opptjeningLoading : true;
 export const getOpptjeningError = (state = initialState) => state.opptjening ? state.opptjening.opptjeningError : undefined;
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
+export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
 
 export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     //Make a copy of opptjeningData before filtering
@@ -59,3 +62,15 @@ export const getInntekter = (state = initialState) => {
     });
 };
 
+export const getUserGroup = (state = initialState) => {
+    const fodselsAar = getFodselsAar(state);
+    if(fodselsAar >= 1943 && fodselsAar<=1953){
+        return BORN_IN_OR_BETWEEN_1943_AND_1953;
+    } else if (fodselsAar >= 1954 && fodselsAar <= 1962) {
+        return BORN_IN_OR_BETWEEN_1954_AND_1962
+    } else if (fodselsAar > 1962){
+        return BORN_AFTER_1962
+    } else {
+        return BORN_BEFORE_1943;
+    }
+};

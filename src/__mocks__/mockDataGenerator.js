@@ -1,6 +1,6 @@
 export const constructOpptjening = (props) => {
     return {
-        merknader: props.merknader,
+        merknader: props.merknader != null ? props.merknader : [],
         pensjonsgivendeInntekt: props.pensjonsgivendeInntekt,
         pensjonsbeholdning: props.pensjonsbeholdning,
         omsorgspoeng: props.omsorgspoeng,
@@ -8,7 +8,7 @@ export const constructOpptjening = (props) => {
         pensjonspoeng: props.pensjonspoeng,
         restpensjon: props.restpensjon,
         maksUforegrad: props.maksUforegrad,
-        endringOpptjening: props.endringOpptjening
+        endringOpptjening: props.endringOpptjening != null ? props.endringOpptjening : []
     }
 }
 
@@ -108,7 +108,7 @@ export const mockBasicSuccessState = (opptjeningCount, fodselsaar) => {
         }
     }
 }
-export const mockStateFromOpptjeningData = (startYear, opptjeningList) =>{
+export const mockStateFromOpptjeningData = (startYear, opptjeningList, fodselsaar = 1972) =>{
     const opptjeningData ={}
     opptjeningList.forEach(opptjening =>{
         opptjeningData[startYear] = opptjening
@@ -117,8 +117,10 @@ export const mockStateFromOpptjeningData = (startYear, opptjeningList) =>{
     return {
         opptjening: {
             opptjening: {
-                opptjeningData: opptjeningData
+                opptjeningData: opptjeningData,
+                fodselsaar: fodselsaar
             }
         }
+
     }
 }

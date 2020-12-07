@@ -74,7 +74,9 @@
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu craco test --env=jsdom-fourteen",
     "eject": "craco eject",
     "json-server": "json-server --watch dev/mock.json --port 4000",
-    "dev": "concurrently \"npm start\" \"npm run json-server\""
+    "json-server-usergroup-1": "json-server --watch dev/mock_usergroup1.json --port 4000",
+    "dev": "concurrently \"npm start\" \"npm run json-server\"",
+    "dev-usergroup-1": "concurrently \"npm start\" \"npm run json-server-usergroup-1\""
   },
   "eslintConfig": {
     "extends": "react-app"

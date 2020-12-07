@@ -45,13 +45,12 @@ it('should return opptjeningData', () => {
 });
 
 it('should return opptjeningData without first years with null pensjonsbeholdning', () => {
-    const mockStateWithSeveralBeholdningNull = mockStateFromOpptjeningData(2000,
-        [
-            constructOpptjening({pensjonsbeholdning: null}),
-            constructOpptjening({pensjonsbeholdning: null}),
-            constructOpptjening({pensjonsbeholdning: 2}),
-            constructOpptjening({pensjonsbeholdning: 3})
-        ])
+    const mockStateWithSeveralBeholdningNull = mockStateFromOpptjeningData(2000, [
+        constructOpptjening({pensjonsbeholdning: null}),
+        constructOpptjening({pensjonsbeholdning: null}),
+        constructOpptjening({pensjonsbeholdning: 2}),
+        constructOpptjening({pensjonsbeholdning: 3})
+    ])
 
     const opptjeningData = selectors.getOpptjeningDataWithoutNullYears(mockStateWithSeveralBeholdningNull);
 
@@ -63,11 +62,10 @@ it('should return opptjeningData without first years with null pensjonsbeholdnin
 
 it('should return array of beholdning and first item should not have null beholdning', () => {
     const expectedFirstBeholdning = 552778
-    const mockStateWithFirstBeholdningNull = mockStateFromOpptjeningData(2000,
-        [
-            constructOpptjening({pensjonsbeholdning: null}),
-            constructOpptjening({pensjonsbeholdning: expectedFirstBeholdning})
-        ])
+    const mockStateWithFirstBeholdningNull = mockStateFromOpptjeningData(2000, [
+        constructOpptjening({pensjonsbeholdning: null}),
+        constructOpptjening({pensjonsbeholdning: expectedFirstBeholdning})
+    ])
 
 
     const beholdningArray = selectors.getPensjonsBeholdningArray(mockStateWithFirstBeholdningNull);
