@@ -1,8 +1,9 @@
 import {useTranslation} from "react-i18next";
-import React from "react";
+import React, {useState} from "react";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Tekstomrade from "nav-frontend-tekstomrade";
 import "./BeholdningForklartPanel.less";
+import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 
 const detailsTitle = (title) => {
     return(
@@ -22,9 +23,16 @@ const detailsTitle = (title) => {
 };
 export const BeholdningForklartPanel = () => {
     const { t } = useTranslation();
+
+    const toggleOpen = () => {
+        logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "pensjonsbeholdning-forklart", type: "EkspanderbartPanel", value: !apen});
+        setApen(!apen);
+    };
+    const [apen, setApen] = useState(false);
+
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('pensjonsbeholdning-forklart'))} border className="panelWrapper">
-            <Tekstomrade data-testid="explanationText" className="explanationText">
+        <Ekspanderbartpanel tittel={detailsTitle(t('pensjonsbeholdning-forklart'))} border className="panelWrapper" onClick={toggleOpen}>
+            <Tekstomrade className="explanationText">
                 {t('pensjonsbeholdning-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>
         </Ekspanderbartpanel>
