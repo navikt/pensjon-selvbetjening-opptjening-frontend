@@ -48,6 +48,8 @@ module.exports = {
             useMock.t = (k) => {
                 if(k === 'faq:faq-number-of-questions'){
                     return 2
+                } else if(k === ns[2] + ':faq-number-of-questions'){
+                    return 1
                 } else {
                     return k
                 }

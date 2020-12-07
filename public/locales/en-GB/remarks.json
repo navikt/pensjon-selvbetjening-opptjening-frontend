@@ -1,7 +1,7 @@
 {
     "AFP": "AFP (if you have had several periods with AFP, only notes for the last period are displayed)",
     "REFORM": "Your accumulated pension capital was established with effect from 1 January 2010 in connection with the pension reform coming into force. Then the earnings you had in the calendar year up to and including 2008 (last completed similar year) were added to the asset size.",
-    "INGEN_OPPTJENING": "No registered pension points",
+    "INGEN_OPPTJENING": "No registered pension earnings",
     "UFOREGRAD": "Disability benefits: {{maxUforegrad}} percent",
     "DAGPENGER": "Receipt of unemployment benefits",
     "FORSTEGANGSTJENESTE": "Served compulsory military service",
