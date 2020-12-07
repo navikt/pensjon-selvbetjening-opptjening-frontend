@@ -17,7 +17,7 @@ const getTextParagraph = (text, key) =>{
 
 const getMerknadListItem = (text, key) =>{
   return(
-      <li key={key}>{text}</li>
+      text!==null && <li key={key}>{text}</li>
   )
 };
 
@@ -70,7 +70,10 @@ const detailListItem = (props) => {
     const merknadArray = [];
 
     merknader.forEach((m, idx) => {
-        merknadArray.push(getMerknadListItem(getMerknadText(m, t, uforegrad), "remarkstext-" + idx))
+        const merknadListItem = getMerknadListItem(getMerknadText(m, t, uforegrad), "remarkstext-" + idx);
+        if(merknadListItem) {
+            merknadArray.push(merknadListItem);
+        }
     });
 
     return(
