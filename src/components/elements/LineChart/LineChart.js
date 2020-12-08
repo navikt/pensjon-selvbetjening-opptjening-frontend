@@ -31,9 +31,9 @@ const dataRow = (props) => {
     const pensjonspoeng = data.pensjonspoeng;
     return(
         <tr key={key} className="row">
-            <td>{label}</td>
-            <td>{pensjonsbeholdningTxt}</td>
-            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td>{pensjonspoeng}</td>}
+            <td data-testid="tableDataYear">{label}</td>
+            <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng}</td>}
         </tr>
     )
 };
@@ -252,29 +252,16 @@ export const LineChart = (props) => {
                 </div>
             </div>
             <div className={chartClass} data-testid="chartContainer">
-                <canvas ref={chartRef}>
-                    {/* Fallback content */}
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>{yearLabel}</th>
-                                <th>{pensjonsbeholdningLabel}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {dataRows}
-                        </tbody>
-                    </table>
-                </canvas>
+                <canvas ref={chartRef}/>
             </div>
             <div className={tableClass} data-testid="dataContainer">
                 <div className="tableContainer">
                     <table className="tabell">
                         <thead>
                         <tr className="row">
-                            <th className="column1">{yearLabel}</th>
-                            <th className="column2">{pensjonsbeholdningLabel}</th>
-                            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <th className="column3">{pensjonspoengLabel}</th>}
+                            <th data-testid="tableHeaderYear" className="column1">{yearLabel}</th>
+                            <th data-testid="tableHeaderPensjonsbeholdning" className="column2">{pensjonsbeholdningLabel}</th>
+                            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <th data-testid="tableHeaderPensjonspoeng" className="column3">{pensjonspoengLabel}</th>}
                         </tr>
                         </thead>
                         <tbody>
