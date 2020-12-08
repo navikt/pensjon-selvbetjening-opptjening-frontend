@@ -4,14 +4,9 @@ import {LineChart} from './LineChart';
 import userEvent from "@testing-library/user-event";
 
 it('should render the Chart with title, buttons, and hidden table', () => {
-    const {getByRole, getByTestId, getAllByRole} = render(<LineChart
-        data={{"labels": ["2020", "2019"], "data": ["1000", "2000"]}}
-        title={"DIN PENSJONSBEHOLDNING"}
-        yLabel={"PENSJONSBEHOLDNING"}
-        xLabel={"ÅR"}
-    />);
+    const {getByRole, getByTestId, getAllByRole} = render(<LineChart/>);
 
-    expect(getByRole("heading")).toHaveTextContent("DIN PENSJONSBEHOLDNING");
+    expect(getByRole("heading")).toHaveTextContent("chart-pensjonsbeholdningen-din");
     expect(getAllByRole("button")).toHaveLength(2);
     expect(getAllByRole("button")[0]).toHaveTextContent("chart-graf");
     expect(getAllByRole("button")[1]).toHaveTextContent("chart-tabell");
@@ -22,12 +17,7 @@ it('should render the Chart with title, buttons, and hidden table', () => {
 });
 
 it('should show the table or chart depending on which button is clicked', () => {
-    const {getByTestId, getAllByRole} = render(<LineChart
-        data={{"labels": ["2020", "2019"], "data": ["1000", "2000"]}}
-        title={"DIN PENSJONSBEHOLDNING"}
-        yLabel={"PENSJONSBEHOLDNING"}
-        xLabel={"ÅR"}
-    />);
+    const {getByTestId, getAllByRole} = render(<LineChart/>);
 
 
     userEvent.click(getAllByRole("button")[1]);

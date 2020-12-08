@@ -28,6 +28,18 @@ export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     return opptjeningData
 };
 
+export const getPensjonsbeholdningAndPensjonspoeng = (state = initialState) => {
+    const opptjeningData = getOpptjeningData(state);
+    let opptjeningMap ={};
+    Object.keys(opptjeningData).forEach((year) => {
+        opptjeningMap[year] ={
+            pensjonspoeng: opptjeningData[year].pensjonspoeng,
+            pensjonsbeholdning: opptjeningData[year].pensjonsbeholdning
+        }
+    });
+
+    return opptjeningMap;
+};
 
 export const getPensjonsBeholdningArray = (state = initialState) => {
     const opptjeningData = getOpptjeningDataWithoutNullYears(state);

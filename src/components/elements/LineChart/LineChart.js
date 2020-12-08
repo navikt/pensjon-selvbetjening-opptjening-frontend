@@ -8,35 +8,45 @@ import {formatAmount} from "../../../common/utils";
 import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
+import {BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
 
-
-const amountRow = (amount) => {
-    return(
-        <div className="chartAmountRow">
-            <span className="chartKrColumn">kr</span>
-            <span className="chartNumberColumn">{formatAmount(amount)}</span>
-        </div>
-    )
+const amountRow = (amount, t) => {
+    if(amount!==null) {
+        return (
+            <div className="chartAmountRow">
+                <span className="chartKrColumn">kr</span>
+                <span className="chartNumberColumn">{formatAmount(amount)}</span>
+            </div>
+        )
+    } else{
+        return (
+            <div>{t('chart-ingen-pensjonsbeholdning')}</div>
+        )
+    }
 };
 
 const dataRow = (props) => {
-    const {key, label, data} = props;
-    const amountTxt = data != null ? amountRow(data) : "";
+    const {key, label, data, userGroup, t} = props;
+    const pensjonsbeholdningTxt = data != null ? amountRow(data.pensjonsbeholdning, t) : "";
+    const pensjonspoeng = data.pensjonspoeng;
     return(
         <tr key={key} className="row">
             <td>{label}</td>
-            <td>{amountTxt}</td>
+            <td>{pensjonsbeholdningTxt}</td>
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td>{pensjonspoeng}</td>}
         </tr>
     )
 };
-const buildDataRows = (labels, data)  => {
+const buildDataRows = (tableMap, userGroup, t)  => {
     let dataRows = [];
-    labels.forEach((label, idx) => {
+    Object.keys(tableMap).forEach((year, idx) => {
         dataRows.push(dataRow(
             {
                 "key": idx,
-                "label": label,
-                "data": data[idx]
+                "label": year,
+                "data": tableMap[year],
+                "userGroup": userGroup,
+                "t": t
             }
         ))
     });
@@ -45,16 +55,54 @@ const buildDataRows = (labels, data)  => {
 
 const emptyFn = ()=>{};
 
+const removeYearsWithNullOpptjening =  (opptjeningMap) => {
+    //Make a copy of opptjeningData before filtering
+    const opptjeningMapCopy = {...opptjeningMap};
+    let prevBeholdning = null;
+    let prevPoeng = null;
+    Object.keys(opptjeningMapCopy).every((year) => {
+        prevBeholdning = opptjeningMapCopy[year].pensjonsbeholdning;
+        prevPoeng = opptjeningMapCopy[year].pensjonspoeng;
+        if(prevBeholdning !== null || (prevPoeng !== null && prevPoeng !== 0)) return false;
+        if(opptjeningMapCopy[year].pensjonsbeholdning === null && (opptjeningMapCopy[year].pensjonspoeng === null || opptjeningMapCopy[year].pensjonspoeng === 0)){
+            delete opptjeningMapCopy[year];
+        }
+        return true;
+    });
+    return opptjeningMapCopy
+};
+
+const removeYearsWithNullBeholdning =  (opptjeningMap) => {
+    //Make a copy of opptjeningData before filtering
+    const opptjeningMapCopy = {...opptjeningMap};
+    let prev = null;
+    Object.keys(opptjeningMapCopy).every((year) => {
+        prev = opptjeningMapCopy[year].pensjonsbeholdning;
+        if(prev !== null) return false;
+        if(opptjeningMapCopy[year].pensjonsbeholdning === null){
+            delete opptjeningMapCopy[year];
+        }
+        return true;
+    });
+    return opptjeningMapCopy
+};
+
 export const LineChart = (props) => {
     const { t } = useTranslation();
+    const {data, userGroup} = props
+    const yearLabel = t("chart-aar");
+    const pensjonsbeholdningLabel = t("chart-pensjonsbeholdning");
+    const pensjonspoengLabel = t('chart-pensjonspoeng');
     const chartRef = useRef(null);
+    const tableMap = removeYearsWithNullOpptjening(data);
+    const chartMap = removeYearsWithNullBeholdning(data);
     const chartConfig = {
         type: 'line',
         data: {
-            labels: props.data.labels,
+            labels: Object.keys(chartMap),
             datasets: [
                 {
-                    label: props.yLabel,
+                    label: pensjonsbeholdningLabel,
                     fill: false,
                     borderColor: "#005B82",
                     borderWidth: 2,
@@ -62,7 +110,7 @@ export const LineChart = (props) => {
                     tension: 0,
                     radius: 3.5,
                     pointBackgroundColor: '#005B82',
-                    data: props.data.data,
+                    data: Object.values(chartMap).map((prop) => prop.pensjonsbeholdning),
                     pointHoverRadius: 10,
                     pointHoverBackgroundColor: 'rgba(62, 56, 50, 0.38)',
                     pointHoverBorderColor: 'rgba(62, 56, 50, 0.45)'
@@ -80,7 +128,7 @@ export const LineChart = (props) => {
             },
             onClick: function(event, item){
                 if(item && item[0]){
-                    props.onclick ? props.onclick(props.data.labels[item[0]._index]) : emptyFn();
+                    props.onclick ? props.onclick(Object.keys(chartMap)[item[0]._index]) : emptyFn();
 
                 }
             },
@@ -136,7 +184,12 @@ export const LineChart = (props) => {
                         return t('chart-pensjonsbeholdning') + ":";
                     },
                     label: function(tooltipItem, data) {
-                        return 'kr ' + formatAmount(data['datasets'][0]['data'][tooltipItem['index']]);
+                        const year = data['labels'][tooltipItem['index']];
+                        if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
+                            return ['kr ' + formatAmount(chartMap[year].pensjonsbeholdning), '',t('chart-pensjonspoeng') + ': ' + chartMap[year].pensjonspoeng];
+                        } else {
+                            return 'kr ' + formatAmount(chartMap[year].pensjonsbeholdning);
+                        }
                     },
                 },
                 backgroundColor: '#005B82',
@@ -163,7 +216,7 @@ export const LineChart = (props) => {
     }, [chartConfig, chartRef]);
 
     const [visibleComponent, setVisibleComponent] = useState("chart");
-    const dataRows = buildDataRows(props.data.labels, props.data.data);
+    const dataRows = buildDataRows(tableMap, userGroup, t);
 
     const toggleVisibleComponent = (component) => {
         const loggerName = (component === "chart") ? "Graf" : "Tabell";
@@ -192,7 +245,7 @@ export const LineChart = (props) => {
     return(
         <div>
             <div className="chartTitleContainer">
-                <Undertittel id="chartTitle">{props.title}</Undertittel>
+                <Undertittel id="chartTitle">{t("chart-pensjonsbeholdningen-din")}</Undertittel>
                 <div className="buttonContainer">
                     <Knapp mini className={chartButton} onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
                     <Knapp mini className={tableButton} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
@@ -204,8 +257,8 @@ export const LineChart = (props) => {
                     <table>
                         <thead>
                             <tr>
-                                <th>{props.xLabel}</th>
-                                <th>{props.yLabel}</th>
+                                <th>{yearLabel}</th>
+                                <th>{pensjonsbeholdningLabel}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -219,8 +272,9 @@ export const LineChart = (props) => {
                     <table className="tabell">
                         <thead>
                         <tr className="row">
-                            <th className="column1">{props.xLabel}</th>
-                            <th className="column2">{props.yLabel}</th>
+                            <th className="column1">{yearLabel}</th>
+                            <th className="column2">{pensjonsbeholdningLabel}</th>
+                            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <th className="column3">{pensjonspoengLabel}</th>}
                         </tr>
                         </thead>
                         <tbody>

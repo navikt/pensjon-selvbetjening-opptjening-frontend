@@ -75,8 +75,10 @@
     "eject": "craco eject",
     "json-server": "json-server --watch dev/mock.json --port 4000",
     "json-server-usergroup-1": "json-server --watch dev/mock_usergroup1.json --port 4000",
+    "json-server-usergroup-2": "json-server --watch dev/mock_usergroup2.json --port 4000",
     "dev": "concurrently \"npm start\" \"npm run json-server\"",
-    "dev-usergroup-1": "concurrently \"npm start\" \"npm run json-server-usergroup-1\""
+    "dev-usergroup-1": "concurrently \"npm start\" \"npm run json-server-usergroup-1\"",
+    "dev-usergroup-2": "concurrently \"npm start\" \"npm run json-server-usergroup-2\""
   },
   "eslintConfig": {
     "extends": "react-app"
