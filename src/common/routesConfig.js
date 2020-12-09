@@ -15,5 +15,17 @@ export const routesConfig = [
         component: NotFoundPage,
         titleKey: '404-title',
         exact: true
+    },
+    {
+        path: `/test`,
+        component: NotFoundPage,
+        titleKey: 'test',
+        exact: true
+    },
+    {
+        path: `/test/test1`,
+        component: NotFoundPage,
+        titleKey: 'test1',
+        exact: true
     }
 ];
