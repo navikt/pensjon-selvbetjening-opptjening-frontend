@@ -9,11 +9,18 @@ const Breadcrumbs = () => {
     const match = useRouteMatch();
     const history = useHistory();
     const { t } = useTranslation();
-    const baseRoute = routesConfig.find((route) => route.path === "/");
+
     const defaultBreadcrumb = [
-        { url: process.env.REACT_APP_DINPENSJON_URL, title: t("dinpensjon-tittel"), handleInApp: true },
-        { url: baseRoute.path, title: t(baseRoute.titleKey), handleInApp: baseRoute.exact }
+        { url: process.env.REACT_APP_DINPENSJON_URL, title: t("dinpensjon-tittel"), handleInApp: true }
     ];
+
+    const breadcrumbData = match.url.split("/");
+    breadcrumbData.pop();
+    breadcrumbData.forEach(function(data){
+        const route = routesConfig.find((route) => route.path.replace("/","") === data);
+        if(route)
+            defaultBreadcrumb.push({url: route.path, title: t(route.titleKey), handleInApp: route.exact});
+    });
 
     if(match.url !== "/")
     {
@@ -21,7 +28,6 @@ const Breadcrumbs = () => {
         defaultBreadcrumb.push({url: route.path, title: t(route.titleKey), handleInApp: route.exact});
     }
 
-    //routesConfig.map(route =>{console.log(match)});
     onBreadcrumbClick(breadcrumb => {
         history.push(breadcrumb.url);
     });
