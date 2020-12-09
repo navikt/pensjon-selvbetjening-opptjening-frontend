@@ -6,6 +6,7 @@ import {LanguageSelector} from "../../elements/LanguageSelector/LanguageSelector
 import './HomePage.less';
 import Breadcrumbs from "../../elements/Breadcrumbs/Breadcrumbs";
 import {useTranslation} from "react-i18next";
+import {SparkVelger} from "../../elements/LanguageSelector/SparkVelger";
 
 export const HomePage = () => {
     const { t } = useTranslation();
@@ -13,9 +14,7 @@ export const HomePage = () => {
         // Move GRID to separate re-usable template
         <div>
             <Breadcrumbs/>
-            <div className="contentCentered">
-                <LanguageSelector/>
-            </div>
+            <SparkVelger/>
             <TopBanner title="opptjening-tittel" text="opptjening-intro-tekst"/>
             <div className="mainBody" id="maincontent" tabIndex="-1">
                 <OpptjeningContainer>

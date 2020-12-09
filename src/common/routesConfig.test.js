@@ -6,7 +6,8 @@ import {NotFoundPage} from "../components/pages/NotFoundPage/NotFoundPage";
 
 it('should return all defined routes', () => {
     expect(basePath).toEqual(process.env.PUBLIC_URL);
-    expect(routesConfig.length).toEqual(2);
+    expect(routesConfig.length).toEqual(4
+    );
 
     expect(routesConfig[0].path).toEqual("/");
     expect(routesConfig[0].titleKey).toEqual("opptjening-tittel");
