@@ -35,7 +35,7 @@ it('should render Opptjening view and display only the headings for the differen
     expect(view.queryAllByRole("heading")[4]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
     expect(view.queryAllByRole("heading")[5]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
 
-    expect(view.queryAllByRole("table").length).toBe(2); // Chart tables
+    expect(view.queryAllByRole("table").length).toBe(1); // Chart tables
 });
 
 it('should render Opptjening view, open Pensjonsbeholdning forklart-panel and show explanation', () => {
@@ -56,7 +56,7 @@ it('should render Opptjening view, open OpptjeningDetails-panel and show details
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[3]); // OpptjeningDetails
 
-    expect(view.queryAllByRole("table").length).toBe(3); // Chart tables + details tables
+    expect(view.queryAllByRole("table").length).toBe(2); // Chart tables + details tables
 });
 
 it('should render Opptjening view, open Inntekter-panel and display inntekter table', () => {
@@ -65,7 +65,7 @@ it('should render Opptjening view, open Inntekter-panel and display inntekter ta
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[4]); // Inntekter
-    expect(view.queryAllByRole("table").length).toBe(3); // Chart tables + inntekter table
+    expect(view.queryAllByRole("table").length).toBe(2); // Chart tables + inntekter table
 });
 
 it('should render Opptjening view, open details panel, and show correct beholdning for selected year', () =>{

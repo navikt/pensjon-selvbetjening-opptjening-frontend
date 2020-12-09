@@ -3,8 +3,7 @@ import {useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux";
 import {
     getLatestPensjonsBeholdning,
-    getOpptjeningByYear, getOpptjeningData,
-    getPensjonsBeholdningArray, getUserGroup,
+    getOpptjeningByYear, getOpptjeningData, getPensjonsbeholdningAndPensjonspoeng, getUserGroup,
     getYearArray
 } from "../../../redux/opptjening/opptjeningSelectors";
 import Panel from "nav-frontend-paneler";
@@ -27,8 +26,8 @@ export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const userGroup = useSelector(getUserGroup);
     const yearArray = useSelector(getYearArray);
-    const pensjonsBeholdningArray = useSelector(getPensjonsBeholdningArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
+    const pensjonsbeholdningAndPensjonspoengMap = useSelector(getPensjonsbeholdningAndPensjonspoeng);
 
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
 
@@ -53,10 +52,8 @@ export const OpptjeningView = () => {
                 <section aria-labelledby="chartTitle">
                     <Panel border className="panelWrapper">
                         <LineChart
-                            data={{"labels": yearArray, "data": pensjonsBeholdningArray}}
-                            title={t("chart-pensjonsbeholdningen-din")}
-                            yLabel={t("chart-pensjonsbeholdning")}
-                            xLabel={t("chart-aar")}
+                            data={pensjonsbeholdningAndPensjonspoengMap}
+                            userGroup={userGroup}
                         />
                     </Panel>
                 </section>
