@@ -72,11 +72,41 @@
 }
 
 .tabell .column2{
-  width: 45%;
+  width: 43%;
 }
 
 .tabell .column3{
-  width: 20%;
+  width: 22%;
+}
+
+.beholdningAndPoengList {
+  display: none;
+  padding:0;
+  margin:0;
+}
+
+.beholdningAndPoengList ul{
+  padding: 0;
+}
+
+.beholdningAndPoengList .beholdningPoengItem{
+  padding: 1rem;
+  border-bottom: 1px solid #c7c4c0;
+  list-style: none;
+}
+
+.beholdningAndPoengList .beholdningPoengItem li{
+  list-style: none;
+}
+
+@media (max-width: 767px) {
+  .beholdningAndPoengTabell {
+    display: none;
+  }
+
+  .beholdningAndPoengList {
+    display: block;
+  }
 }
 
 @media (max-width: 576px){

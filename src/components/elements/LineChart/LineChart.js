@@ -25,6 +25,18 @@ const amountRow = (amount, t) => {
     }
 };
 
+const amountListItem = (amount, t) => {
+    if(amount!==null) {
+        return (
+            <span>kr {formatAmount(amount)}</span>
+        )
+    } else{
+        return (
+            <span>{t('chart-ingen-pensjonsbeholdning')}</span>
+        )
+    }
+};
+
 const dataRow = (props) => {
     const {key, label, data, userGroup, t} = props;
     const pensjonsbeholdningTxt = data != null ? amountRow(data.pensjonsbeholdning, t) : "";
@@ -33,24 +45,41 @@ const dataRow = (props) => {
         <tr key={key} className="row">
             <td data-testid="tableDataYear">{label}</td>
             <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
-            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng}</td>}
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!==null ? pensjonspoeng.toFixed(2) : null}</td>}
         </tr>
     )
 };
-const buildDataRows = (tableMap, userGroup, t)  => {
+
+const listItem = (props) => {
+    const {key, label, data, userGroup, t} = props;
+    const pensjonsbeholdningTxt = data != null ? amountListItem(data.pensjonsbeholdning, t) : "";
+    const pensjonspoeng = data.pensjonspoeng;
+    return(
+        <li className="beholdningPoengItem" key={key}>
+            <ul>
+                <li><b>{t("chart-aar")+": "} {label}</b></li>
+                <li>{t("chart-pensjonsbeholdning")+": "} {pensjonsbeholdningTxt}</li>
+                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? pensjonspoeng.toFixed(2) : null}</li>}
+            </ul>
+        </li>
+    )
+};
+
+const buildData = (tableMap, userGroup, t)  => {
     let dataRows = [];
+    let dataListItems = [];
     Object.keys(tableMap).forEach((year, idx) => {
-        dataRows.push(dataRow(
-            {
-                "key": idx,
-                "label": year,
-                "data": tableMap[year],
-                "userGroup": userGroup,
-                "t": t
-            }
-        ))
+        const props = {
+            "key": idx,
+            "label": year,
+            "data": tableMap[year],
+            "userGroup": userGroup,
+            "t": t
+        };
+        dataRows.push(dataRow(props))
+        dataListItems.push(listItem(props))
     });
-    return dataRows;
+    return {dataRows, dataListItems};
 };
 
 const emptyFn = ()=>{};
@@ -216,7 +245,7 @@ export const LineChart = (props) => {
     }, [chartConfig, chartRef]);
 
     const [visibleComponent, setVisibleComponent] = useState("chart");
-    const dataRows = buildDataRows(tableMap, userGroup, t);
+    const {dataRows, dataListItems} = buildData(tableMap, userGroup, t);
 
     const toggleVisibleComponent = (component) => {
         const loggerName = (component === "chart") ? "Graf" : "Tabell";
@@ -256,7 +285,7 @@ export const LineChart = (props) => {
             </div>
             <div className={tableClass} data-testid="dataContainer">
                 <div className="tableContainer">
-                    <table className="tabell">
+                    <table className="tabell beholdningAndPoengTabell">
                         <thead>
                         <tr className="row">
                             <th data-testid="tableHeaderYear" className="column1">{yearLabel}</th>
@@ -268,7 +297,11 @@ export const LineChart = (props) => {
                             {dataRows.reverse()}
                         </tbody>
                     </table>
+                    <ul className="beholdningAndPoengList">
+                        {dataListItems.reverse()}
+                    </ul>
                 </div>
+
             </div>
         </div>
     );
