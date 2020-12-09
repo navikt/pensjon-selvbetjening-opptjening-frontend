@@ -12,8 +12,7 @@ export const HomePage = () => {
     return (
         // Move GRID to separate re-usable template
         <div>
-            <Breadcrumbs brodsmuler={[ { url: '/', title: t('opptjening-tittel'), handleInApp: true }]}>
-            </Breadcrumbs>
+            <Breadcrumbs/>
             <div className="contentCentered">
                 <LanguageSelector/>
             </div>

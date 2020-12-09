@@ -8,9 +8,7 @@ export const NotFoundPage = () => {
     const { t } = useTranslation();
     return (
         <div>
-            <Breadcrumbs brodsmuler={[ { url: '/', title: t('opptjening-tittel'), handleInApp: true },
-                {url: process.env.PUBLIC_URL+'/404', title: t("404-title"), handleInApp: true}]}
-            />
+            <Breadcrumbs/>
             <TopBanner title="404-title" text="" showIllustration={false} frontpage={false}/>
             <div className="mainBody">
                 <main className="contentWrapper" data-testid="error-status-404">
