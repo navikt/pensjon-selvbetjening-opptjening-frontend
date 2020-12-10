@@ -13,7 +13,7 @@ export const FAQPanel = () => {
 
     const toggleOpen = (index) => {
         const nameProps = {
-            lng: "nb-NO",
+            lng: "nb",
             key: "faq-question-"+index,
             ns: "faq"
         };

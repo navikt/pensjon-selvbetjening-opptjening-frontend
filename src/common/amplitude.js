@@ -22,13 +22,13 @@ export function amplitudeLogger (name, values) {
 
 export const logToAmplitude = (props) => {
     const {eventType, name, titleKey, type, value} = props;
-    let componentTitle = getLabelByLanguage("nb-NO", titleKey);
+    let componentTitle = getLabelByLanguage("nb", titleKey);
     let eventName = "";
 
     if(name instanceof Object){
         eventName = getLabelByLanguage(name.lng, name.key, name.ns);
     } else {
-        eventName = getLabelByLanguage("nb-NO", name);
+        eventName = getLabelByLanguage("nb", name);
     }
 
     const loggerProps = {"component": componentTitle, type, name: eventName, value};

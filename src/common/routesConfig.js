@@ -5,7 +5,7 @@ import {NotFoundPage} from "../components/pages/NotFoundPage/NotFoundPage";
 export const basePath = process.env.PUBLIC_URL;
 export const routesConfig = [
     {
-        path: `/:lng/*`,
+        path: `/:lng/`,
         component: HomePage,
         titleKey: 'opptjening-tittel',
         exact: true

@@ -21,12 +21,12 @@ i18n
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
         detection: {
-            order:['path', 'querystring', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'subdomain'],
+            order:['path', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'subdomain', 'querystring'],
             caches: ['localStorage', 'cookie'],
             lookupFromPathIndex: 2
         },
-        fallbackLng: 'nb-NO',
-        debug: false,
+        fallbackLng: 'nb',
+        debug: true,
         backend:{
             loadPath: process.env.PUBLIC_URL + '/locales/{{lng}}/{{ns}}.json'
         },
@@ -35,11 +35,11 @@ i18n
         }
     }, (err) => {
             if (err) return logger.error(`'Loading i18n error'. ${err}`);
-            i18n.changeLanguage('nb-NO')
+            i18n.changeLanguage('nb')
     });
 
-i18n.loadLanguages(['nb-NO'], () => {});
-i18n.language = 'nb-NO';
-document.documentElement.lang = 'nb-NO';
+i18n.loadLanguages(['nb'], () => {});
+// i18n.language = 'nb';
+// document.documentElement.lang = 'nb';
 
 export default i18n;
