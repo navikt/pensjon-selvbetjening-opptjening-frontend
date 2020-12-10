@@ -21,6 +21,7 @@ import {
 import {UserGroup} from "../../elements/UserGroup/UserGroup";
 import {InntektWithMerknadPanel} from "../../elements/InntektWithMerknadPanel/InntektWithMerknadPanel";
 import {PensjonspoengForklartPanel} from "../../elements/PensjonspoengForklartPanel/PensjonspoengForklartPanel";
+import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/BeholdningAndPensjonspoengForklartPanel/BeholdningAndPensjonspoengForklartPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -65,6 +66,11 @@ export const OpptjeningView = () => {
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>
                 <section aria-label={"title " + t('pensjonspoeng-forklart')}>
                     <PensjonspoengForklartPanel/>
+                </section>
+            </UserGroup>
+            <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962]} include={true}>
+                <section aria-label={"title " + t('beholdning-and-pensjonspoeng-forklart')}>
+                    <BeholdningAndPensjonspoengForklartPanel/>
                 </section>
             </UserGroup>
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>

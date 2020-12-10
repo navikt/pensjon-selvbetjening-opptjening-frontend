@@ -12,6 +12,7 @@ export const getOpptjeningLoading = (state = initialState) => state.opptjening ?
 export const getOpptjeningError = (state = initialState) => state.opptjening ? state.opptjening.opptjeningError : undefined;
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
 export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
+export const getAndelNyttRegelverk = (state = initialState) => state.opptjening ? state.opptjening.opptjening.andelNyttRegelverk : null;
 
 export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     //Make a copy of opptjeningData before filtering
