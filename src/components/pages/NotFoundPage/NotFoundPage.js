@@ -9,7 +9,6 @@ export const NotFoundPage = () => {
     const { t } = useTranslation();
     return (
         <div>
-            <Breadcrumbs/>
             <SprakVelger/>
             <TopBanner title="404-title" text="" showIllustration={false} frontpage={false}/>
             <div className="mainBody">

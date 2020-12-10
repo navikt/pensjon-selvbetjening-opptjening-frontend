@@ -13,7 +13,6 @@ export const HomePage = () => {
     return (
         // Move GRID to separate re-usable template
         <div>
-            <Breadcrumbs/>
             <SprakVelger/>
             <TopBanner title="opptjening-tittel" text="opptjening-intro-tekst"/>
             <div className="mainBody" id="maincontent" tabIndex="-1">

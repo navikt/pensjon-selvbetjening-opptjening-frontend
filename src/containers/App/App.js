@@ -10,7 +10,7 @@ export const App = () => {
                 {routesConfig.map((route) => (
                     <Route key={route.path} path={route.path} {...route} />
                 ))}
-                <Redirect to={"/404"} />
+                <Redirect to={"/nb/"} />
             </Switch>
         </div>
     );

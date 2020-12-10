@@ -1,13 +1,14 @@
-import { onLanguageSelect, setAvailableLanguages} from "@navikt/nav-dekoratoren-moduler/dist";
+import { onLanguageSelect, setAvailableLanguages, setParams} from "@navikt/nav-dekoratoren-moduler/dist";
 import React from "react";
 import {basePath} from "../../../common/routesConfig";
 import {useTranslation} from "react-i18next";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useHistory} from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export const SprakVelger = () => {
     const { i18n } = useTranslation();
     const location = useLocation();
-
+    const history = useHistory();
     onLanguageSelect((language) => {
        let languageCode;
        switch (language.locale){
@@ -24,12 +25,13 @@ export const SprakVelger = () => {
                languageCode = "nb-NO";
        }
         i18n.changeLanguage(languageCode);
+        history.push(language.url);
     });
 
     setAvailableLanguages([
-        {"locale":"nb", "url":basePath + "?lng=nb-NO",handleInApp:true},
-        {"locale":"en", "url":basePath + "?lng=en-GB", handleInApp:true},
-        {"locale":"nn", "url":basePath + "?lng=nn-NO", handleInApp:true },
+        {"locale":"nb", "url": "/nb/",handleInApp:true},
+        {"locale":"en", "url": "/en/", handleInApp:true},
+        {"locale":"nn", "url": "/nn/", handleInApp:true },
     ])
 
     return <></>;

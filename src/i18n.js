@@ -21,8 +21,9 @@ i18n
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
         detection: {
-            order:['querystring', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'path', 'subdomain'],
-            caches: ['localStorage', 'cookie']
+            order:['path', 'querystring', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'subdomain'],
+            caches: ['localStorage', 'cookie'],
+            lookupFromPathIndex: 2
         },
         fallbackLng: 'nb-NO',
         debug: false,
