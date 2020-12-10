@@ -61,6 +61,8 @@ export const BeholdningAndPensjonspoengForklartPanel = () => {
             <div className="regelverkShareDiagram">
                 {shareItems(andelNyttRegelverk)}
             </div>
+            <div className="pensjonsbeholdningColorBox"/><span className="colorBoxText">Pensjonsbeholdning {andelNyttRegelverk} av 10</span>
+            <div className="pensjonspoengColorBox"/><span className="colorBoxText">Pensjonspoeng {10-andelNyttRegelverk} av 10</span>
         </Ekspanderbartpanel>
     )
 
