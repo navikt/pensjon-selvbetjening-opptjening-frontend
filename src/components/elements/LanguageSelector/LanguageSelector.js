@@ -22,9 +22,9 @@ export const LanguageSelector = () => {
                 autoComplete="off"
             >
                 <option data-testid="option-default" value="">{t('spraakvelger-velg-spraak')}</option>
-                <option data-testid="option-nb-NO" value="nb-NO">{t('spraakvelger-bokmaal')}</option>
-                <option data-testid="option-nn-NO" value="nn-NO">{t('spraakvelger-nynorsk')}</option>
-                <option data-testid="option-en-GB" value="en-GB">{t('spraakvelger-engelsk')}</option>
+                <option data-testid="option-nb" value="nb">{t('spraakvelger-bokmaal')}</option>
+                <option data-testid="option-nn" value="nn">{t('spraakvelger-nynorsk')}</option>
+                <option data-testid="option-en" value="en">{t('spraakvelger-engelsk')}</option>
             </Select>
         </div>
     );

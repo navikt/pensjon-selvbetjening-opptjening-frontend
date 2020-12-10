@@ -4,10 +4,10 @@ const path = require('path');
 /*This function returns true only if the keys of all the json files
   for all three languages are equal */
 export function compareJsonKeys(){
-    const pathEN = '../../public/locales/en-GB';
-    const pathNN = '../../public/locales/nn-NO';
-    const pathNB = '../../public/locales/nb-NO';
-    const directoryPathToNB = path.resolve("./public/locales/nb-NO");
+    const pathEN = '../../public/locales/en';
+    const pathNN = '../../public/locales/nn';
+    const pathNB = '../../public/locales/nb';
+    const directoryPathToNB = path.resolve("./public/locales/nb");
     const fileList = fs.readdirSync(directoryPathToNB);
 
     return fileList.every(function (file) {
