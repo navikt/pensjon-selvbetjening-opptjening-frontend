@@ -43,15 +43,29 @@ export const OpptjeningView = () => {
         setYear(year);
     };
 
+    const ForklartSection = () =>{
+        if(userGroup===BORN_AFTER_1962){
+            return (
+                <section aria-label={"title " + t('pensjonsbeholdning-forklart')}>
+                    <BeholdningForklartPanel/>
+                </section>
+            )
+        } else if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
+            return (
+                <section aria-label={"title " + t('beholdning-and-pensjonspoeng-forklart')}>
+                    <BeholdningAndPensjonspoengForklartPanel andelNyttRegelverk={andelNyttRegelverk}/>
+                </section>
+            )
+        }
+    }
+
     return(
         <div data-testid="opptjeningview">
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
                 <section aria-labelledby="pensjonsBeholdningTitle">
                     <BeholdningPanel data={latestPensjonsBeholdning}/>
                 </section>
-                <section aria-label={"title " + t('pensjonsbeholdning-forklart')}>
-                    <BeholdningForklartPanel/>
-                </section>
+                <ForklartSection/>
                 <section aria-labelledby="chartTitle">
                     <Panel border className="panelWrapper">
                         <LineChart
@@ -68,11 +82,6 @@ export const OpptjeningView = () => {
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>
                 <section aria-label={"title " + t('pensjonspoeng-forklart')}>
                     <PensjonspoengForklartPanel/>
-                </section>
-            </UserGroup>
-            <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962]} include={true}>
-                <section aria-label={"title " + t('beholdning-and-pensjonspoeng-forklart')}>
-                    <BeholdningAndPensjonspoengForklartPanel andelNyttRegelverk={andelNyttRegelverk}/>
                 </section>
             </UserGroup>
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
