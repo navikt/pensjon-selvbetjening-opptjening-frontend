@@ -9,7 +9,7 @@ import {getAndelNyttRegelverk} from "../../../redux/opptjening/opptjeningSelecto
 
 const detailsTitle = (title) => {
     return(
-        <div role="heading" aria-level="2" className="beholdningForklartTitle">
+        <div role="heading" aria-level="2" className="beholdningAndPensjonspoengForklartTitle">
             <svg width="1.2rem" viewBox="0 0 26 43" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" className="illustration">
                 <path d="M20 6C21.6569 6 23 4.65685 23 3C23 1.34315 21.6569 0 20 0C18.3431 0 17 1.34315 17 3C17 4.65685 18.3431 6 20 6Z" fill="#E7E9E9"/>
                 <path d="M17 11C19.2091 11 21 9.20914 21 7C21 4.79086 19.2091 3 17 3C14.7909 3 13 4.79086 13 7C13 9.20914 14.7909 11 17 11Z" fill="#FFD399"/>
@@ -30,12 +30,12 @@ const shareItem = (type) => {
     )
 }
 
-const shareItems = (andelNyttRegelverk) =>{
+const shareItems = (andelNyttRegelverk, andelGammeltRegelverk) =>{
     let shareItems = [];
     for(let i=0;i<andelNyttRegelverk; i++){
         shareItems.push(shareItem("pensjonsbeholdningShare"))
     }
-    for(let i=0;i<10-andelNyttRegelverk; i++){
+    for(let i=0;i<andelGammeltRegelverk; i++){
         shareItems.push(shareItem("pensjonspoengShare"))
     }
 
@@ -46,6 +46,7 @@ const shareItems = (andelNyttRegelverk) =>{
 export const BeholdningAndPensjonspoengForklartPanel = () => {
     const { t } = useTranslation();
     const andelNyttRegelverk = useSelector(getAndelNyttRegelverk);
+    const andelGammeltRegelverk = 10 - andelNyttRegelverk;
     const toggleOpen = () => {
         logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "pensjonsbeholdning-forklart", type: "EkspanderbartPanel", value: !apen});
         setApen(!apen);
@@ -55,14 +56,16 @@ export const BeholdningAndPensjonspoengForklartPanel = () => {
 
     return(
         <Ekspanderbartpanel tittel={detailsTitle(t('pensjonsbeholdning-forklart'))} border className="panelWrapper" onClick={toggleOpen}>
-            <Tekstomrade data-testid="explanationText" className="explanationText">
+            <Tekstomrade data-testid="beholdningAndPensjonspoengForklartExplanationText" className="explanationText">
                 {t('pensjonsbeholdning-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>
             <div className="regelverkShareDiagram">
-                {shareItems(andelNyttRegelverk)}
+                {shareItems(andelNyttRegelverk, andelGammeltRegelverk)}
             </div>
-            <div className="pensjonsbeholdningColorBox"/><span className="colorBoxText">Pensjonsbeholdning {andelNyttRegelverk} av 10</span>
-            <div className="pensjonspoengColorBox"/><span className="colorBoxText">Pensjonspoeng {10-andelNyttRegelverk} av 10</span>
+            <div className="pensjonsbeholdningColorBox"/>
+            <span className="colorBoxText">{t("beholdning_and_pensjonspoeng_forklart_andel_pensjonsbeholdning", {andelNyttRegelverk})}</span>
+            <div className="pensjonspoengColorBox"/>
+            <span className="colorBoxText">{t("beholdning_and_pensjonspoeng_forklart_andel_pensjonspoeng", {andelGammeltRegelverk})}</span>
         </Ekspanderbartpanel>
     )
 
