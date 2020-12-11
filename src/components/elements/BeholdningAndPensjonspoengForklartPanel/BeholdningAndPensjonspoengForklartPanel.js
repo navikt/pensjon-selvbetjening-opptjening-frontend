@@ -4,8 +4,6 @@ import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Tekstomrade from "nav-frontend-tekstomrade";
 import "./BeholdningAndPensjonspoengForklartPanel.less";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
-import {useSelector} from "react-redux";
-import {getAndelNyttRegelverk} from "../../../redux/opptjening/opptjeningSelectors";
 
 const detailsTitle = (title) => {
     return(
@@ -43,9 +41,9 @@ const shareItems = (andelNyttRegelverk, andelGammeltRegelverk) =>{
 }
 
 
-export const BeholdningAndPensjonspoengForklartPanel = () => {
+export const BeholdningAndPensjonspoengForklartPanel = (props) => {
     const { t } = useTranslation();
-    const andelNyttRegelverk = useSelector(getAndelNyttRegelverk);
+    const {andelNyttRegelverk}= props;
     const andelGammeltRegelverk = 10 - andelNyttRegelverk;
     const toggleOpen = () => {
         logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "pensjonsbeholdning-forklart", type: "EkspanderbartPanel", value: !apen});
@@ -55,17 +53,20 @@ export const BeholdningAndPensjonspoengForklartPanel = () => {
 
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('pensjonsbeholdning-forklart'))} border className="panelWrapper" onClick={toggleOpen}>
-            <Tekstomrade data-testid="beholdningAndPensjonspoengForklartExplanationText" className="explanationText">
-                {t('pensjonsbeholdning-forklart-tekst', {joinArrays: "\n\n"})}
+        <Ekspanderbartpanel tittel={detailsTitle(t('beholdning-and-pensjonspoeng-forklart'))} border className="panelWrapper" onClick={toggleOpen}>
+            <Tekstomrade data-testid="beholdningAndPensjonspoengForklartExplanationText" className="beholdningAndPensjonspoengForklartExplanationText">
+                {t('beholdning-and-pensjonspoeng-forklart-tekst', {joinArrays: "\n\n"})}
+            </Tekstomrade>
+            <Tekstomrade data-testid="beholdningAndPensjonspoengForklartExplanationText" className="beholdningAndPensjonspoengForklartExplanationText">
+                {t('beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst')}
             </Tekstomrade>
             <div className="regelverkShareDiagram">
                 {shareItems(andelNyttRegelverk, andelGammeltRegelverk)}
             </div>
             <div className="pensjonsbeholdningColorBox"/>
-            <span className="colorBoxText">{t("beholdning_and_pensjonspoeng_forklart_andel_pensjonsbeholdning", {andelNyttRegelverk})}</span>
+            <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning", {andelNyttRegelverk})}</span>
             <div className="pensjonspoengColorBox"/>
-            <span className="colorBoxText">{t("beholdning_and_pensjonspoeng_forklart_andel_pensjonspoeng", {andelGammeltRegelverk})}</span>
+            <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng", {andelGammeltRegelverk})}</span>
         </Ekspanderbartpanel>
     )
 
