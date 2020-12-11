@@ -17,15 +17,16 @@ const Breadcrumbs = () => {
     const breadcrumbData = match.url.split("/");
     breadcrumbData.pop();
     breadcrumbData.forEach(function(data){
-        const route = routesConfig.find((route) => route.path.replace("/","") === data);
+        const route = routesConfig.find((route) => route.path.replace("/:lng/","") === data);
         if(route)
-            defaultBreadcrumb.push({url: route.path, title: t(route.titleKey), handleInApp: route.exact});
+            defaultBreadcrumb.push({url: "/" + match.params.lng + "/" + data, title: t(route.titleKey), handleInApp: route.exact});
     });
 
-    if(match.url !== "/")
+    if(match.path !== "/:lng/")
     {
-        const route = routesConfig.find((route) => route.path === match.url);
-        defaultBreadcrumb.push({url: route.path, title: t(route.titleKey), handleInApp: route.exact});
+        const route = routesConfig.find((route) => route.path === match.path);
+        if(route)
+            defaultBreadcrumb.push({url: match.url, title: t(route.titleKey), handleInApp: route.exact});
     }
 
     onBreadcrumbClick(breadcrumb => {
