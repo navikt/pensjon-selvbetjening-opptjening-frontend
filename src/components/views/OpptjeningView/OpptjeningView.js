@@ -23,6 +23,7 @@ import {UserGroup} from "../../elements/UserGroup/UserGroup";
 import {InntektWithMerknadPanel} from "../../elements/InntektWithMerknadPanel/InntektWithMerknadPanel";
 import {PensjonspoengForklartPanel} from "../../elements/PensjonspoengForklartPanel/PensjonspoengForklartPanel";
 import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/BeholdningAndPensjonspoengForklartPanel/BeholdningAndPensjonspoengForklartPanel";
+import {PensjonskalkulatorLenkePanel} from "../../elements/PensjonskalkulatorLenkePanel/PensjonskalkulatorLenkePanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -87,6 +88,9 @@ export const OpptjeningView = () => {
             </UserGroup>
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
                 <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
+            </section>
+            <section>
+                <PensjonskalkulatorLenkePanel/>
             </section>
             <section aria-labelledby="faqTitle">
                 <FAQPanel userGroup={userGroup}/>
