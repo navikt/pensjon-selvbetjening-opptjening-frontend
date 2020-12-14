@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux";
 import {
-    getAndelPensjonBasertPaBeholdning,
+    getAndelPensjonBasertPaBeholdning, getFodselsAar,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData, getPensjonsbeholdningAndPensjonspoeng, getUserGroup,
     getYearArray
@@ -27,6 +27,7 @@ import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/Beholdning
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const userGroup = useSelector(getUserGroup);
+    const fodselsar = useSelector(getFodselsAar);
     const yearArray = useSelector(getYearArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
     const pensjonsbeholdningAndPensjonspoengMap = useSelector(getPensjonsbeholdningAndPensjonspoeng);
@@ -53,7 +54,7 @@ export const OpptjeningView = () => {
         } else if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
             return (
                 <section aria-label={"title " + t('beholdning-and-pensjonspoeng-forklart')}>
-                    <BeholdningAndPensjonspoengForklartPanel andelPensjonBasertPaBeholdning={andelPensjonBasertPaBeholdning}/>
+                    <BeholdningAndPensjonspoengForklartPanel andelPensjonBasertPaBeholdning={andelPensjonBasertPaBeholdning} fodselsar={fodselsar}/>
                 </section>
             )
         }

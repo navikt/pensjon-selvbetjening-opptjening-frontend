@@ -27,7 +27,7 @@ const shareItems = (andelPensjonBasertPaBeholdning, andelPensjonBasertPaPensjons
 
 export const BeholdningAndPensjonspoengForklartPanel = (props) => {
     const { t } = useTranslation();
-    const {andelPensjonBasertPaBeholdning}= props;
+    const {andelPensjonBasertPaBeholdning, fodselsar}= props;
     const andelPensjonBasertPaPensjonspoeng = 10 - andelPensjonBasertPaBeholdning;
 
     return(
@@ -36,7 +36,7 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
                 <Undertittel id="beholdingAndPensjonspoengForklartTitle" className="lenkepanel__heading title">{t('beholdning-and-pensjonspoeng-forklart')}</Undertittel>
             </div>
             <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
-                {t('beholdning-and-pensjonspoeng-forklart-tekst', {joinArrays: "\n\n"})}
+                {t('beholdning-and-pensjonspoeng-forklart-tekst', {fodselsar})}
             </Tekstomrade>
             <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
                 {t('beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst')}
