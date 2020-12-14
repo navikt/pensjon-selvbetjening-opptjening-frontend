@@ -517,6 +517,7 @@
             }
         },
         "numberOfYearsWithPensjonspoeng": 38,
-        "fodselsaar": 1943
+        "fodselsaar": 1943,
+        "andelPensjonBasertPaBeholdning": 0
     }
 }

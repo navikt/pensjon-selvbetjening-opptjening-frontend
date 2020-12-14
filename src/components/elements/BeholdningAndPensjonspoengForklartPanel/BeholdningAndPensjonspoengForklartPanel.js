@@ -12,12 +12,12 @@ const shareItem = (type, idx) => {
     )
 }
 
-const shareItems = (andelNyttRegelverk, andelGammeltRegelverk) =>{
+const shareItems = (andelPensjonBasertPaBeholdning, andelPensjonBasertPaPensjonspoeng) =>{
     let shareItems = [];
-    for(let i=0;i<andelNyttRegelverk; i++){
+    for(let i=0;i<andelPensjonBasertPaBeholdning; i++){
         shareItems.push(shareItem("pensjonsbeholdningShare", i))
     }
-    for(let i=0;i<andelGammeltRegelverk; i++){
+    for(let i=0;i<andelPensjonBasertPaPensjonspoeng; i++){
         shareItems.push(shareItem("pensjonspoengShare", i))
     }
 
@@ -27,8 +27,8 @@ const shareItems = (andelNyttRegelverk, andelGammeltRegelverk) =>{
 
 export const BeholdningAndPensjonspoengForklartPanel = (props) => {
     const { t } = useTranslation();
-    const {andelNyttRegelverk}= props;
-    const andelGammeltRegelverk = 10 - andelNyttRegelverk;
+    const {andelPensjonBasertPaBeholdning}= props;
+    const andelPensjonBasertPaPensjonspoeng = 10 - andelPensjonBasertPaBeholdning;
 
     return(
         <Panel border className="panelWrapper">
@@ -42,13 +42,13 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
                 {t('beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst')}
             </Tekstomrade>
             <div className="regelverkShareDiagram">
-                {shareItems(andelNyttRegelverk, andelGammeltRegelverk)}
+                {shareItems(andelPensjonBasertPaBeholdning, andelPensjonBasertPaPensjonspoeng)}
             </div>
             <div>
                 <div className="pensjonsbeholdningColorBox"/>
-                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning", {andelNyttRegelverk})}</span>
+                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning", {andelPensjonBasertPaBeholdning})}</span>
                 <div className="pensjonspoengColorBox"/>
-                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng", {andelGammeltRegelverk})}</span>
+                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng", {andelPensjonBasertPaPensjonspoeng})}</span>
             </div>
             <div className="beholdningAndPoengForklartLink"><Lenke href={""} >{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>
         </Panel>

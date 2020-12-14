@@ -11,7 +11,7 @@ it('renders beholdningAndPensjonspoengForklartPanel with correct heading and tex
 
 it('should render correct amount of bars in regelverkShareDiagram', () => {
     const expectedNumberOfPensjonsbeholdningShare = 7;
-    render(<BeholdningAndPensjonspoengForklartPanel andelNyttRegelverk={expectedNumberOfPensjonsbeholdningShare}/>);
+    render(<BeholdningAndPensjonspoengForklartPanel andelPensjonBasertPaBeholdning={expectedNumberOfPensjonsbeholdningShare}/>);
 
     expect(screen.getAllByTestId("pensjonsbeholdningShare").length).toBe(expectedNumberOfPensjonsbeholdningShare);
     expect(screen.getAllByTestId("pensjonspoengShare").length).toBe(10 - expectedNumberOfPensjonsbeholdningShare);
