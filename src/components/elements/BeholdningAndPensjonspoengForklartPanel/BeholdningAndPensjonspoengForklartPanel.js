@@ -50,7 +50,7 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
                 <div className="pensjonspoengColorBox"/>
                 <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng", {andelGammeltRegelverk})}</span>
             </div>
-            <div className="opptjeningForklartLink"><Lenke href={""} >{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>
+            <div className="beholdningAndPoengForklartLink"><Lenke href={""} >{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>
         </Panel>
     )
 
