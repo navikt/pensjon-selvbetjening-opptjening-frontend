@@ -6,19 +6,19 @@ import Panel from "nav-frontend-paneler";
 import {Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 
-const shareItem = (type) => {
+const shareItem = (type, idx) => {
     return(
-        <div className={type}/>
+        <div key={type + idx} data-testid={type} className={type}/>
     )
 }
 
 const shareItems = (andelNyttRegelverk, andelGammeltRegelverk) =>{
     let shareItems = [];
     for(let i=0;i<andelNyttRegelverk; i++){
-        shareItems.push(shareItem("pensjonsbeholdningShare"))
+        shareItems.push(shareItem("pensjonsbeholdningShare", i))
     }
     for(let i=0;i<andelGammeltRegelverk; i++){
-        shareItems.push(shareItem("pensjonspoengShare"))
+        shareItems.push(shareItem("pensjonspoengShare", i))
     }
 
     return shareItems
@@ -35,10 +35,10 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
             <div className="beholdningAndPoengForklartTitleContainer">
                 <Undertittel id="beholdingAndPensjonspoengForklartTitle" className="lenkepanel__heading title">{t('beholdning-and-pensjonspoeng-forklart')}</Undertittel>
             </div>
-            <Tekstomrade data-testid="beholdningAndPensjonspoengForklartExplanationText" className="beholdningAndPensjonspoengForklartExplanationText">
+            <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
                 {t('beholdning-and-pensjonspoeng-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>
-            <Tekstomrade data-testid="beholdningAndPensjonspoengForklartExplanationText" className="beholdningAndPensjonspoengForklartExplanationText">
+            <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
                 {t('beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst')}
             </Tekstomrade>
             <div className="regelverkShareDiagram">
