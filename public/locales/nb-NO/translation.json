@@ -15,6 +15,13 @@
     "pensjonspoeng-forklart": "Pensjonspoeng forklart",
     "pensjonspoeng-forklart-tekst": "Forklaring...",
 
+    "beholdning-and-pensjonspoeng-forklart": "Pensjonsbeholdning og pensjonspoeng forklart",
+    "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er født i 1957 tjener opp alderspensjon forholdsmessig etter både gamle og nye regler. Det betyr at du tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning. Begge brukes i utregningen av pensjonen din.",
+    "beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst": "Din fordeling etter nye og gamle regler kan illustreres slik:",
+    "beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning": "Pensjonsbeholdning {{andelNyttRegelverk}} av 10",
+    "beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng": "Pensjonspoeng {{andelGammeltRegelverk}} av 10",
+    "beholdning-and-pensjonspoeng-forklart-lenke": "Les om gamle og nye regler i folketrygden.",
+
     "opptjening-details-din-okning-ar-for-ar": "Din økning år for år",
     "opptjening-details-beholdning-i-starten-av-aaret": "Beholdning i starten av året",
     "opptjening-details-opptjening-basert-paa-pensjonsgivende-inntekt": "Opptjening basert på pensjonsgivende inntekt* (kr {{grunnlag}})",

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux";
 import {
+    getAndelNyttRegelverk,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData, getPensjonsbeholdningAndPensjonspoeng, getUserGroup,
     getYearArray
@@ -21,6 +22,7 @@ import {
 import {UserGroup} from "../../elements/UserGroup/UserGroup";
 import {InntektWithMerknadPanel} from "../../elements/InntektWithMerknadPanel/InntektWithMerknadPanel";
 import {PensjonspoengForklartPanel} from "../../elements/PensjonspoengForklartPanel/PensjonspoengForklartPanel";
+import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/BeholdningAndPensjonspoengForklartPanel/BeholdningAndPensjonspoengForklartPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -28,6 +30,7 @@ export const OpptjeningView = () => {
     const yearArray = useSelector(getYearArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
     const pensjonsbeholdningAndPensjonspoengMap = useSelector(getPensjonsbeholdningAndPensjonspoeng);
+    const andelNyttRegelverk = useSelector(getAndelNyttRegelverk)
 
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
 
@@ -40,15 +43,29 @@ export const OpptjeningView = () => {
         setYear(year);
     };
 
+    const ForklartSection = () =>{
+        if(userGroup===BORN_AFTER_1962){
+            return (
+                <section aria-label={"title " + t('pensjonsbeholdning-forklart')}>
+                    <BeholdningForklartPanel/>
+                </section>
+            )
+        } else if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
+            return (
+                <section aria-label={"title " + t('beholdning-and-pensjonspoeng-forklart')}>
+                    <BeholdningAndPensjonspoengForklartPanel andelNyttRegelverk={andelNyttRegelverk}/>
+                </section>
+            )
+        }
+    }
+
     return(
         <div data-testid="opptjeningview">
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
                 <section aria-labelledby="pensjonsBeholdningTitle">
                     <BeholdningPanel data={latestPensjonsBeholdning}/>
                 </section>
-                <section aria-label={"title " + t('pensjonsbeholdning-forklart')}>
-                    <BeholdningForklartPanel/>
-                </section>
+                <ForklartSection/>
                 <section aria-labelledby="chartTitle">
                     <Panel border className="panelWrapper">
                         <LineChart

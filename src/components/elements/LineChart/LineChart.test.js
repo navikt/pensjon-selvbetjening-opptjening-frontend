@@ -6,7 +6,7 @@ import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common
 import {formatAmount} from "../../../common/utils";
 
 it('should render the Chart with title, buttons, and hidden table', () => {
-    const {getByRole, getByTestId, getAllByRole} = render(<LineChart/>);
+    const {getByRole, getByTestId, getAllByRole} = render(<LineChart userGroup={BORN_AFTER_1962}/>);
 
     expect(getByRole("heading")).toHaveTextContent("chart-pensjonsbeholdningen-din");
     expect(getAllByRole("button")).toHaveLength(2);
@@ -19,7 +19,7 @@ it('should render the Chart with title, buttons, and hidden table', () => {
 });
 
 it('should show the table or chart depending on which button is clicked', () => {
-    const {getByTestId, getAllByRole} = render(<LineChart/>);
+    const {getByTestId, getAllByRole} = render(<LineChart userGroup={BORN_AFTER_1962}/>);
 
 
     userEvent.click(getAllByRole("button")[1]);
