@@ -1,12 +1,13 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
+import {Undertittel} from "nav-frontend-typografi";
 import "./PensjonskalkulatorLenkePanel.less"
-import LenkepanelBase from "nav-frontend-lenkepanel/lib";
+import {LenkepanelBase} from "nav-frontend-lenkepanel";
 
 export const PensjonskalkulatorLenkePanel = () => {
     const { t } = useTranslation();
     return(
-        <LenkepanelBase border href={process.env.REACT_APP_PENSJONSKALKULATOR_URL} tittelProps={"undertittel"}>
+        <LenkepanelBase border href={process.env.REACT_APP_PENSJONSKALKULATOR_URL}>
             <div className="pensjonskalkulatorLenkePanel">
                 <svg width="20" height="32" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration">
                     <rect width="20" height="32" rx="2" fill="#3E3832"/>
@@ -23,7 +24,7 @@ export const PensjonskalkulatorLenkePanel = () => {
                     <rect x="8" y="25" width="10" height="4" rx="2" fill="#E7E9E9"/>
                 </svg>
                 <div className="content">
-                    {t('pensjonskalkulator-lenke-title')}
+                    <Undertittel className="lenkepanel__heading">{t('pensjonskalkulator-lenke-title')}</Undertittel>
                 </div>
             </div>
         </LenkepanelBase>
