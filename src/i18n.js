@@ -22,10 +22,8 @@ i18n
     .init({
         detection: {
             order:['path', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'subdomain', 'querystring'],
-            caches: ['localStorage', 'cookie'],
             lookupFromPathIndex: 2
         },
-        fallbackLng: 'nb',
         debug: true,
         backend:{
             loadPath: process.env.PUBLIC_URL + '/locales/{{lng}}/{{ns}}.json'
