@@ -7,7 +7,7 @@ import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 
 const detailsTitle = (title) => {
     return(
-        <div role="heading" aria-level="2" className="beholdningForklartTitle">
+        <div role="heading" aria-level="2" className="opptjeningFlereStederTitle">
             <div className="title">{title}</div>
         </div>
     )
@@ -26,7 +26,7 @@ export const OpptjeningFlereStederPanel = () => {
         <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-flere-steder-title'))} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
             <Tekstomrade className="opptjeningMaterTitle">{t('opptjening-flere-steder-forklart-title')}</Tekstomrade>
             <div className="opptjeningMate">
-                <div role="img" className="">
+                <div role="img">
                     <svg viewBox="0 0 53 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 0H42.998L51 8V57H4V0Z" fill="#E7E9E9"/>
                         <path fillRule="evenodd" clipRule="evenodd" d="M49.968 7V56.173H7.783H7.121C5.499 56.173 4.183 54.858 4.183 53.235C4.183 51.613 5.499 50.298 7.121 50.298H45.205V0H5.671C2.539 0 0 2.539 0 5.672V51.41C0 56.526 3.884 59 9 59H53V7H49.968Z" fill="#BA3A26"/>
@@ -40,7 +40,7 @@ export const OpptjeningFlereStederPanel = () => {
             </div>
 
             <div className="opptjeningMate">
-                <div role="img" className="">
+                <div role="img">
                     <svg viewBox="0 0 53 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 0H42.998L51 8V57H4V0Z" fill="#E7E9E9"/>
                         <path fillRule="evenodd" clipRule="evenodd" d="M49.968 7V56.173H7.783H7.121C5.499 56.173 4.183 54.858 4.183 53.235C4.183 51.613 5.499 50.298 7.121 50.298H45.205V0H5.671C2.539 0 0 2.539 0 5.672V51.41C0 56.526 3.884 59 9 59H53V7H49.968Z" fill="#BA3A26"/>
@@ -54,7 +54,7 @@ export const OpptjeningFlereStederPanel = () => {
             </div>
 
             <div className="opptjeningMate">
-                <div role="img" className="">
+                <div role="img">
                     <svg viewBox="0 0 53 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 0H42.998L51 8V57H4V0Z" fill="#E7E9E9"/>
                         <path fillRule="evenodd" clipRule="evenodd" d="M49.968 7V56.173H7.783H7.121C5.499 56.173 4.183 54.858 4.183 53.235C4.183 51.613 5.499 50.298 7.121 50.298H45.205V0H5.671C2.539 0 0 2.539 0 5.672V51.41C0 56.526 3.884 59 9 59H53V7H49.968Z" fill="#BA3A26"/>
