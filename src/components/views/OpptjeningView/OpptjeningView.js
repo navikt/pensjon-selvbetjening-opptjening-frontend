@@ -82,7 +82,7 @@ export const OpptjeningView = () => {
                 </section>
                 <section aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
                     <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray}
-                                            onChange={selectYear}/>
+                                            onChange={selectYear} userGroup={userGroup}/>
                 </section>
             </UserGroup>
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>

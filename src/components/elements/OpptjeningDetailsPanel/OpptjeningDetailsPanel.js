@@ -6,6 +6,7 @@ import "./OpptjeningDetailsPanel.less"
 import {YearSelector} from "../YearSelector/YearSelector";
 import {Label} from "nav-frontend-skjema";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
+import {BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
 
 const detailRow = (props) => {
     return(
@@ -195,6 +196,19 @@ const getGrunnlagTextsContainer = (grunnlagTexts)  => {
     }
 };
 
+const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
+    return (
+        <div className="detailsBox">
+            <h3>{t('opptjening-details-pensjonspoeng-title')}</h3>
+            <div  className="detailRow">
+                <span className="labelColumn">{t('opptjening-details-pensjonspoeng-label', {currentYear})}</span>
+                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng}</span>
+                <span aria-hidden="true" className="emptyColumn">&nbsp;</span>
+            </div>
+        </div>
+    )
+}
+
 export const OpptjeningDetailsPanel = (props) => {
     const toggleOpen = () => {
         logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "opptjening-details-din-okning-ar-for-ar", type: "EkspanderbartPanel", value: !apen});
@@ -205,10 +219,12 @@ export const OpptjeningDetailsPanel = (props) => {
     const { t } = useTranslation(['translation', 'remarks', 'grunnlag']);
     const opptjening = props.data.opptjening;
     const currentYear = props.currentYear;
+    const userGroup = props.userGroup;
 
     const {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
     const remarksContainer = getRemarksContainer(opptjening, currentYear, t);
     const grunnlagTextsContainer = getGrunnlagTextsContainer(grunnlagTexts);
+    const pensjonspoengContainer = getPensjonspoengContainer(opptjening.pensjonspoeng, currentYear, t);
 
     let label = "opptjening-details-din-pensjonsbeholdning";
     let key = "opptjening-details-din-pensjonsbeholdning";
@@ -243,6 +259,7 @@ export const OpptjeningDetailsPanel = (props) => {
             </div>
             {grunnlagTextsContainer}
             {remarksContainer}
+            {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && pensjonspoengContainer}
         </EkspanderbartpanelBase>
     )
 };

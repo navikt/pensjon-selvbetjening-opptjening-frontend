@@ -42,6 +42,8 @@
     "opptjening-details-vis-pensjonsbeholdningen-for": "Show accumulated pension capital for",
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Read about how we calculate the pension.",
     "opptjening-details-og": "and",
+    "opptjening-details-pensjonspoeng-title": "Pension points:",
+    "opptjening-details-pensjonspoeng-label": "Pension points based on income in {{currentYear}}",
 
     "inntekt-lukk-panel": "Close panel",
     "inntekt-aar": "Year",

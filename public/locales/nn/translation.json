@@ -42,6 +42,8 @@
     "opptjening-details-vis-pensjonsbeholdningen-for": "Vis pensjonsbehaldninga for",
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Les meir om korleis vi reknar ut pensjonen.",
     "opptjening-details-og": "og",
+    "opptjening-details-pensjonspoeng-title": "Pensjonspoeng:",
+    "opptjening-details-pensjonspoeng-label": "Pensjonspoeng basert på inntekt i {{currentYear}}",
 
     "inntekt-lukk-panel":  "Lukk panel",
     "inntekt-aar": "År",
