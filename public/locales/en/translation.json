@@ -68,7 +68,13 @@
     "broedsmule-du-er-her": "You are here",
     "aarvelger-velg-aar": "Choose year:",
 
-    "opptjening-flere-steder-title": "You might have pension earnings other places",
+    "opptjening-flere-steder-title": "You might have other forms of pension savings",
+    "opptjening-flere-steder-forklart-title": "There are three ways to save for pension:",
+    "opptjening-flere-steder-individuell": "Individual saving (...)",
+    "opptjening-flere-steder-tjenestepensjon": "Occupational pension (You and your your employer save together)",
+    "opptjening-flere-steder-folketrygden": "National Insurance Scheme (The state saves for you)",
+    "opptjening-flere-steder-forklart": "Every norwegian citizen gets pension from the National Insurance Scheme. If you are unsure if you have individual savings or occupational pension, you can for example check with your bank or ask your current or past employer.",
+
 
     "spraakvelger-velg-spraak": "Choose language:",
     "spraakvelger-bokmaal": "Bokmål",

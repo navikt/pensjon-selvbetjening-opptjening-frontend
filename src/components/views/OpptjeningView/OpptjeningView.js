@@ -24,6 +24,7 @@ import {InntektWithMerknadPanel} from "../../elements/InntektWithMerknadPanel/In
 import {PensjonspoengForklartPanel} from "../../elements/PensjonspoengForklartPanel/PensjonspoengForklartPanel";
 import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/BeholdningAndPensjonspoengForklartPanel/BeholdningAndPensjonspoengForklartPanel";
 import {PensjonskalkulatorLenkePanel} from "../../elements/PensjonskalkulatorLenkePanel/PensjonskalkulatorLenkePanel";
+import {OpptjeningFlereStederPanel} from "../../elements/OpptjeningFlereStederPanel/OpptjeningFlereStederPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -68,6 +69,9 @@ export const OpptjeningView = () => {
                     <BeholdningPanel data={latestPensjonsBeholdning}/>
                 </section>
                 <ForklartSection/>
+                <section aria-label={"title " + t('opptjening-flere-steder-title')}>
+                    <OpptjeningFlereStederPanel/>
+                </section>
                 <section aria-labelledby="chartTitle">
                     <Panel border className="panelWrapper">
                         <LineChart
@@ -84,6 +88,9 @@ export const OpptjeningView = () => {
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>
                 <section aria-label={"title " + t('pensjonspoeng-forklart')}>
                     <PensjonspoengForklartPanel/>
+                </section>
+                <section aria-label={"title " + t('opptjening-flere-steder-title')}>
+                    <OpptjeningFlereStederPanel/>
                 </section>
             </UserGroup>
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
