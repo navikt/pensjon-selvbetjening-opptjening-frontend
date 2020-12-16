@@ -1,31 +1,32 @@
+import {onLanguageSelect, setAvailableLanguages} from "@navikt/nav-dekoratoren-moduler/dist";
 import React from "react";
 import {useTranslation} from "react-i18next";
-import { Select } from 'nav-frontend-skjema';
-import "./LanguageSelector.less"
+import {useHistory} from "react-router-dom";
 
 export const LanguageSelector = () => {
-    const { t, i18n } = useTranslation();
+    const {i18n} = useTranslation();
+    const history = useHistory();
 
-    const changeLanguage = lng => {
-        i18n.changeLanguage(lng);
-    };
+    onLanguageSelect((language) => {
+        i18n.changeLanguage(language.locale);
 
-    return(
-        <div className="languageSelectorWrapper">
-            <Select
-                data-testid="language-selector"
-                onChange={(event) => changeLanguage(event.target.value)}
-                value={i18n.language}
-                bredde="m"
-                className="languageSelector"
-                aria-label={t('spraakvelger-velg-spraak')}
-                autoComplete="off"
-            >
-                <option data-testid="option-default" value="">{t('spraakvelger-velg-spraak')}</option>
-                <option data-testid="option-nb" value="nb">{t('spraakvelger-bokmaal')}</option>
-                <option data-testid="option-nn" value="nn">{t('spraakvelger-nynorsk')}</option>
-                <option data-testid="option-en" value="en">{t('spraakvelger-engelsk')}</option>
-            </Select>
-        </div>
-    );
+        const pathArr = history.location.pathname.split('/');
+
+        if(pathArr.length > 2){
+            const urlTail = pathArr.slice(2,pathArr.length);
+            const urlJoin = urlTail.join("/");
+            console.log(urlJoin);
+            history.push(language.url + urlJoin);
+        }else
+            history.push(language.url);
+    });
+
+    setAvailableLanguages([
+        {"locale": "nb", "url": "/nb/", handleInApp: true},
+        {"locale": "en", "url": "/en/", handleInApp: true},
+        {"locale": "nn", "url": "/nn/", handleInApp: true},
+    ])
+
+    return <></>;
 };
+
