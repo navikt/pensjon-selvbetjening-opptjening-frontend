@@ -38,7 +38,7 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
             <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
                 {t('beholdning-and-pensjonspoeng-forklart-tekst', {fodselsar})}
             </Tekstomrade>
-            <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
+            <Tekstomrade className="beholdningAndPensjonspoengForklartIllustrationText">
                 {t('beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst')}
             </Tekstomrade>
             <div className="regelverkShareDiagram">
@@ -49,6 +49,18 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
                 <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning", {andelPensjonBasertPaBeholdning})}</span>
                 <div className="pensjonspoengColorBox"/>
                 <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng", {andelPensjonBasertPaPensjonspoeng})}</span>
+            </div>
+            <div className="pensjonsopptjeningForklaring">
+                <b>{t('opptjening-flere-steder-pensjonspoeng-title')}</b>
+                <Tekstomrade>
+                    {t('opptjening-flere-steder-pensjonspoeng-text')}
+                </Tekstomrade>
+            </div>
+            <div className="pensjonsopptjeningForklaring">
+                <b>{t('opptjening-flere-steder-pensjonsbeholdning-title')}</b>
+                <Tekstomrade>
+                    {t('opptjening-flere-steder-pensjonsbeholdning-text')}
+                </Tekstomrade>
             </div>
             <div className="beholdningAndPoengForklartLink"><Lenke href={""} >{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>
         </Panel>

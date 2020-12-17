@@ -13,7 +13,7 @@
     "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbehaldning frå og med det første året du har pensjonsgivande inntekt. Behaldninga aukar for kvart år basert på førre års behaldning, pensjonsgivande inntekt og eventuell anna opptening av pensjonsrettar, samt ei årleg regulering. Pensjonsbehaldninga brukast som utgangspunkt for utrekning av alderspensjonen du får frå NAV når du pensjonerar deg.",
 
     "pensjonspoeng-forklart": "Pensjonspoeng forklart",
-    "pensjonspoeng-forklart-tekst": "Forklaring...",
+    "pensjonspoeng-forklart-tekst": "Forklaring...TODO",
 
     "beholdning-and-pensjonspoeng-forklart": "Pensjonsbehaldning og pensjonspoeng forklart",
     "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er født i {{fodselsar}} tjener opp alderspensjon forholdsmessig etter både gamle og nye regler. Det betyr at du tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning. Begge brukes i utregningen av pensjonen din.",
@@ -76,6 +76,10 @@
     "opptjening-flere-steder-tjenestepensjon": "Tjenestepensjon (Du og din arbeidsgjevar sparar saman)",
     "opptjening-flere-steder-folketrygden": "Folketrygda (Staten sparar for deg)",
     "opptjening-flere-steder-forklart": "Alle får pensjon i folketrygda. Hvis du er usikker på om du har individuell sparing eller tjenestepensjon kan du for eksempel sjå hos banken din eller spørje nåværande eller tidlegare arbeidsgjevar.",
+    "opptjening-flere-steder-pensjonspoeng-title": "Pensjonspoeng forklart:",
+    "opptjening-flere-steder-pensjonspoeng-text": "Hvert år du har inntekt får du pensjonspoeng...TODO",
+    "opptjening-flere-steder-pensjonsbeholdning-title": "Pensjonsbeholdning forklart:",
+    "opptjening-flere-steder-pensjonsbeholdning-text": "Hvert år øker pensjonsbeholdningen din med 18.1 % av inntekten du hadde for to år siden...TODO",
 
     "spraakvelger-velg-spraak": "Vel språk:",
     "spraakvelger-bokmaal": "Bokmål",

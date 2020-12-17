@@ -13,7 +13,7 @@
     "pensjonsbeholdning-forklart-tekst": "You accumulate pension capital from the first year you have pensionable income. The assets increase each year based on the previous year's assets, pensionable income and any other accrual of pension rights, as well as an annual adjustment. The pension assets is used as a starting point for calculating the retirement pension you receive from NAV.",
 
     "pensjonspoeng-forklart": "Pension points explained",
-    "pensjonspoeng-forklart-tekst": "Explanation...",
+    "pensjonspoeng-forklart-tekst": "Explanation...TODO",
 
     "beholdning-and-pensjonspoeng-forklart": "Accumulated pension capital and pension points explained",
     "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er født i {{fodselsar}} tjener opp alderspensjon forholdsmessig etter både gamle og nye regler. Det betyr at du tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning. Begge brukes i utregningen av pensjonen din.",
@@ -76,7 +76,10 @@
     "opptjening-flere-steder-tjenestepensjon": "Occupational pension (You and your your employer save together)",
     "opptjening-flere-steder-folketrygden": "National Insurance Scheme (The state saves for you)",
     "opptjening-flere-steder-forklart": "Every norwegian citizen gets pension from the National Insurance Scheme. If you are unsure if you have individual savings or occupational pension, you can for example check with your bank or ask your current or past employer.",
-
+    "opptjening-flere-steder-pensjonspoeng-title": "Pension points explained:",
+    "opptjening-flere-steder-pensjonspoeng-text": "Hvert år du har inntekt får du pensjonspoeng...TODO",
+    "opptjening-flere-steder-pensjonsbeholdning-title": "accumulated pension capital explained:",
+    "opptjening-flere-steder-pensjonsbeholdning-text": "Hvert år øker pensjonsbeholdningen din med 18.1 % av inntekten du hadde for to år siden...TODO",
 
     "spraakvelger-velg-spraak": "Choose language:",
     "spraakvelger-bokmaal": "Bokmål",

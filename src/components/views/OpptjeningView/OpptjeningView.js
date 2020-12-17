@@ -69,9 +69,6 @@ export const OpptjeningView = () => {
                     <BeholdningPanel data={latestPensjonsBeholdning}/>
                 </section>
                 <ForklartSection/>
-                <section aria-label={"title " + t('opptjening-flere-steder-title')}>
-                    <OpptjeningFlereStederPanel/>
-                </section>
                 <section aria-labelledby="chartTitle">
                     <Panel border className="panelWrapper">
                         <LineChart
@@ -89,14 +86,14 @@ export const OpptjeningView = () => {
                 <section aria-label={"title " + t('pensjonspoeng-forklart')}>
                     <PensjonspoengForklartPanel/>
                 </section>
-                <section aria-label={"title " + t('opptjening-flere-steder-title')}>
-                    <OpptjeningFlereStederPanel/>
-                </section>
             </UserGroup>
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
                 <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
             </section>
-            <section aria-labelledby="pensjonskalkulatorLenke">
+            <section aria-label={"title " + t('opptjening-flere-steder-title')}>
+                <OpptjeningFlereStederPanel/>
+            </section>
+            <section>
                 <PensjonskalkulatorLenkePanel/>
             </section>
             <section aria-labelledby="faqTitle">
