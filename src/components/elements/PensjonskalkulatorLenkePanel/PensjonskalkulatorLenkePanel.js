@@ -7,7 +7,7 @@ import {LenkepanelBase} from "nav-frontend-lenkepanel";
 export const PensjonskalkulatorLenkePanel = () => {
     const { t } = useTranslation();
     return(
-        <LenkepanelBase border href={process.env.REACT_APP_PENSJONSKALKULATOR_URL}>
+        <LenkepanelBase border href={process.env.REACT_APP_PENSJONSKALKULATOR_URL} className="panelWrapper">
             <div className="pensjonskalkulatorLenkePanel">
                 <svg viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration" focusable="false">
                     <rect width="20" height="32" rx="2" fill="#3E3832"/>
