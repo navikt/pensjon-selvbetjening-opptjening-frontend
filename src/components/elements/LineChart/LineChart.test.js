@@ -18,6 +18,11 @@ it('should render the Chart with title, buttons, and hidden table', () => {
     expect(getByTestId("dataContainer")).toHaveClass("hidden");
 });
 
+it('should render the Chart with title chart-pensjonsbeholdningen-og-pensjonspoengene-dine when BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
+    const {getByRole} = render(<LineChart userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
+    expect(getByRole("heading")).toHaveTextContent("chart-pensjonsbeholdningen-og-pensjonspoengene-dine");
+});
+
 it('should show the table or chart depending on which button is clicked', () => {
     const {getByTestId, getAllByRole} = render(<LineChart userGroup={BORN_AFTER_1962}/>);
 
