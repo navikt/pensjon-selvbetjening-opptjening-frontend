@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import { onBreadcrumbClick, setBreadcrumbs } from '@navikt/nav-dekoratoren-moduler';
-import {useTranslation} from "react-i18next";
-import {routesConfig} from "../../../common/routesConfig";
-import { useRouteMatch} from 'react-router-dom'
+import { useTranslation } from "react-i18next";
+import { routesConfig } from "../../../common/routesConfig";
+import { useRouteMatch } from 'react-router-dom'
 
 const Breadcrumbs = () => {
     const match = useRouteMatch();
@@ -11,7 +11,7 @@ const Breadcrumbs = () => {
     const { t } = useTranslation();
 
     const defaultBreadcrumb = [
-        { url: process.env.REACT_APP_DINPENSJON_URL, title: t("dinpensjon-tittel"), handleInApp: true }
+        { url: process.env.REACT_APP_DINPENSJON_URL, title: t("dinpensjon-tittel"), handleInApp: false }
     ];
 
     const breadcrumbData = match.url.split("/");
