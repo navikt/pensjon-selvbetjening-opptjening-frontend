@@ -46,8 +46,8 @@
     "inntekt-lukk-panel":  "Lukk panel",
     "inntekt-aar": "År",
     "inntekt-inntekt": "Inntekt",
-    "inntekt-pensjonsgivende-inntekter": "Pensjonsgivande inntekter",
-    "inntekt-pensjonsgivende-inntekter-og-pensjonspoeng": "Pensjonsgivande inntekter og pensjonspoeng",
+    "inntekt-pensjonsgivende-inntekter": "Dine pensjonsgivande inntekter",
+    "inntekt-pensjonsgivende-inntekter-og-pensjonspoeng": "Dine pensjonsgivande inntekter og pensjonspoeng",
     "inntekt-pensjonspoeng": "Pensjonspoeng",
     "inntekt-merknad": "Merknad",
     "inntekt-merknader": "Merknader",
@@ -62,6 +62,8 @@
     "chart-aar": "År",
     "chart-ingen-pensjonsbeholdning": "Ingen pensjonsbehaldning",
     "chart-pensjonspoeng": "Pensjonspoeng",
+
+    "pensjonskalkulator-lenke-title": "Kva får eg i pensjon?",
 
     "broedsmule-du-er-her": "Du er her",
     "aarvelger-velg-aar": "Vel år:",
