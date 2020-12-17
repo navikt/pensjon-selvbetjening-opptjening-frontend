@@ -89,7 +89,7 @@ export const OpptjeningView = () => {
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
                 <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
             </section>
-            <section>
+            <section aria-labelledby="pensjonskalkulatorLenke">
                 <PensjonskalkulatorLenkePanel/>
             </section>
             <section aria-labelledby="faqTitle">

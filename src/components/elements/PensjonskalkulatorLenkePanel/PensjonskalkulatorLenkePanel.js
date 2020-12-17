@@ -9,7 +9,7 @@ export const PensjonskalkulatorLenkePanel = () => {
     return(
         <LenkepanelBase border href={process.env.REACT_APP_PENSJONSKALKULATOR_URL}>
             <div className="pensjonskalkulatorLenkePanel">
-                <svg viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration">
+                <svg viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration" focusable="false">
                     <rect width="20" height="32" rx="2" fill="#3E3832"/>
                     <rect x="2" y="3" width="16" height="7" fill="#E7E9E9"/>
                     <rect x="12" y="7" width="2" height="1" fill="#3E3832"/>
@@ -24,7 +24,7 @@ export const PensjonskalkulatorLenkePanel = () => {
                     <rect x="8" y="25" width="10" height="4" rx="2" fill="#E7E9E9"/>
                 </svg>
                 <div className="content">
-                    <Undertittel className="lenkepanel__heading">{t('pensjonskalkulator-lenke-title')}</Undertittel>
+                    <Undertittel id="pensjonskalkulatorLenke" className="lenkepanel__heading">{t('pensjonskalkulator-lenke-title')}</Undertittel>
                 </div>
             </div>
         </LenkepanelBase>
