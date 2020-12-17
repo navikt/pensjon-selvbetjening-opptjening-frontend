@@ -33,8 +33,9 @@ it('should render Opptjening view and display only the headings for the differen
     expect(view.queryAllByRole("heading")[2]).toHaveTextContent("chart-pensjonsbeholdningen-din"); //Chart - Chart-view
     expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
     expect(view.queryAllByRole("heading")[4]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
-    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("pensjonskalkulator-lenke-title"); //PensjonskalkulatorLenkePanel
-    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
+    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("opptjening-flere-steder-title"); //OpptjeningFlereStederPanel
+    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("pensjonskalkulator-lenke-title"); //PensjonskalkulatorLenkePanel
+    expect(view.queryAllByRole("heading")[7]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
 
     expect(view.queryAllByRole("table").length).toBe(1); // Chart tables
 });
