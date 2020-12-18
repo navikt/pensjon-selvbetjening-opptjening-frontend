@@ -11,7 +11,7 @@ import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
 
 const amountRow = (amount, t) => {
-    if(amount!==null) {
+    if(amount!==0) {
         return (
             <div className="chartAmountRow">
                 <span className="chartKrColumn">kr</span>
@@ -26,7 +26,7 @@ const amountRow = (amount, t) => {
 };
 
 const amountListItem = (amount, t) => {
-    if(amount!==null) {
+    if(amount!==0) {
         return (
             <span>kr {formatAmount(amount)}</span>
         )
@@ -39,7 +39,7 @@ const amountListItem = (amount, t) => {
 
 const dataRow = (props) => {
     const {key, label, data, userGroup, t} = props;
-    const pensjonsbeholdningTxt = data != null ? amountRow(data.pensjonsbeholdning, t) : "";
+    const pensjonsbeholdningTxt = data.pensjonsbeholdning != null ? amountRow(data.pensjonsbeholdning, t) : amountRow(0, t);
     const pensjonspoeng = data.pensjonspoeng;
     return(
         <tr key={key} className="row">
@@ -52,7 +52,7 @@ const dataRow = (props) => {
 
 const listItem = (props) => {
     const {key, label, data, userGroup, t} = props;
-    const pensjonsbeholdningTxt = data != null ? amountListItem(data.pensjonsbeholdning, t) : "";
+    const pensjonsbeholdningTxt = data.pensjonsbeholdning != null ? amountListItem(data.pensjonsbeholdning, t) : amountListItem(0, t);
     const pensjonspoeng = data.pensjonspoeng;
     return(
         <li className="beholdningPoengItem" key={key}>
@@ -84,31 +84,15 @@ const buildData = (tableMap, userGroup, t)  => {
 
 const emptyFn = ()=>{};
 
-const removeYearsWithNullOpptjening =  (opptjeningMap) => {
+const removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0 =  (opptjeningMap) => {
     //Make a copy of opptjeningData before filtering
     const opptjeningMapCopy = {...opptjeningMap};
-    let prevBeholdning = null;
-    let prevPoeng = null;
-    Object.keys(opptjeningMapCopy).every((year) => {
-        prevBeholdning = opptjeningMapCopy[year].pensjonsbeholdning;
-        prevPoeng = opptjeningMapCopy[year].pensjonspoeng;
-        if(prevBeholdning !== null || (prevPoeng !== null && prevPoeng !== 0)) return false;
-        if(opptjeningMapCopy[year].pensjonsbeholdning === null && (opptjeningMapCopy[year].pensjonspoeng === null || opptjeningMapCopy[year].pensjonspoeng === 0)){
-            delete opptjeningMapCopy[year];
-        }
-        return true;
-    });
-    return opptjeningMapCopy
-};
 
-const removeYearsWithNullBeholdning =  (opptjeningMap) => {
-    //Make a copy of opptjeningData before filtering
-    const opptjeningMapCopy = {...opptjeningMap};
-    let prev = null;
     Object.keys(opptjeningMapCopy).every((year) => {
-        prev = opptjeningMapCopy[year].pensjonsbeholdning;
-        if(prev !== null) return false;
-        if(opptjeningMapCopy[year].pensjonsbeholdning === null){
+        if(opptjeningMapCopy[year].pensjonsbeholdning == null){
+            opptjeningMapCopy[year].pensjonsbeholdning = 0;
+        }
+        if(opptjeningMapCopy[year].pensjonsbeholdning === null && (opptjeningMapCopy[year].pensjonspoeng === null || opptjeningMapCopy[year].pensjonspoeng === 0)){
             delete opptjeningMapCopy[year];
         }
         return true;
@@ -123,8 +107,8 @@ export const LineChart = (props) => {
     const pensjonsbeholdningLabel = t("chart-pensjonsbeholdning");
     const pensjonspoengLabel = t('chart-pensjonspoeng');
     const chartRef = useRef(null);
-    const tableMap = removeYearsWithNullOpptjening(data);
-    const chartMap = removeYearsWithNullBeholdning(data);
+    const tableMap = removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0(data);
+    const chartMap = removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0(data);
     const chartConfig = {
         type: 'line',
         data: {
@@ -214,10 +198,14 @@ export const LineChart = (props) => {
                     },
                     label: function(tooltipItem, data) {
                         const year = data['labels'][tooltipItem['index']];
+                        const tooltipBeholdning = chartMap[year].pensjonsbeholdning==null || chartMap[year].pensjonsbeholdning===0 ?
+                            t('chart-ingen-pensjonsbeholdning', {year: year - 2}) :
+                            'kr ' + formatAmount(chartMap[year].pensjonsbeholdning);
+
                         if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
-                            return ['kr ' + formatAmount(chartMap[year].pensjonsbeholdning), '',t('chart-pensjonspoeng') + ': ' + chartMap[year].pensjonspoeng];
+                            return [tooltipBeholdning, '',t('chart-pensjonspoeng') + ': ' + chartMap[year].pensjonspoeng];
                         } else {
-                            return 'kr ' + formatAmount(chartMap[year].pensjonsbeholdning);
+                            return tooltipBeholdning;
                         }
                     },
                 },

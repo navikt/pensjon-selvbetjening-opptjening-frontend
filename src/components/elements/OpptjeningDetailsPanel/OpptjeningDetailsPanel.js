@@ -238,7 +238,7 @@ export const OpptjeningDetailsPanel = (props) => {
         detailRows.push(<div key="horizontalLine" className="horizontalLine"/>);
     }
 
-    if (opptjening.pensjonsbeholdning !== null) {
+    if (opptjening.pensjonsbeholdning !== null && opptjening.pensjonsbeholdning !== 0) {
         detailRows.push(
             detailRow(
                 {
