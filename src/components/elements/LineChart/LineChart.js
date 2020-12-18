@@ -281,20 +281,22 @@ export const LineChart = (props) => {
         <div>
             <div className="chartTitleContainer">
                 <Undertittel id="chartTitle">{t("chart-pensjonsbeholdningen-din")}</Undertittel>
-                {userGroup === BORN_AFTER_1962 &&
-                    <div>
-                        <Knapp mini className={chartButton + " leftButton"}
-                               onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
-                        <Knapp mini className={tableButton} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
-                    </div>
-                }
-                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 &&
-                    <div>
-                        <Knapp mini className={tableButton + " leftButton"}
-                               onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
-                        <Knapp mini className={chartButton} onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
-                    </div>
-                }
+                <div className="buttonContainer">
+                    {userGroup === BORN_AFTER_1962 &&
+                        <div>
+                            <Knapp mini className={chartButton + " leftButton"}
+                                   onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
+                            <Knapp mini className={tableButton} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
+                        </div>
+                    }
+                    {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 &&
+                        <div>
+                            <Knapp mini className={tableButton + " leftButton"}
+                                   onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
+                            <Knapp mini className={chartButton} onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
+                        </div>
+                    }
+                </div>
             </div>
             <div className={chartClass} data-testid="chartContainer">
                 <canvas ref={chartRef}/>
