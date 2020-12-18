@@ -3,11 +3,16 @@ import {useTranslation} from "react-i18next";
 import {Undertittel} from "nav-frontend-typografi";
 import "./PensjonskalkulatorLenkePanel.less"
 import {LenkepanelBase} from "nav-frontend-lenkepanel";
+import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 
 export const PensjonskalkulatorLenkePanel = () => {
+    const logPensjonskalkulatorClickToAmplitude = (props) => {
+        logToAmplitude({eventType: CLICK_EVENT, name: "Klikk på lenke", titleKey: "pensjonskalkulator-lenke-title", type: props.type, value: true});
+    };
+
     const { t } = useTranslation();
     return(
-        <LenkepanelBase border href={process.env.REACT_APP_PENSJONSKALKULATOR_URL} className="panelWrapper">
+        <LenkepanelBase border href={process.env.REACT_APP_PENSJONSKALKULATOR_URL} className="panelWrapper" onClick={() => logPensjonskalkulatorClickToAmplitude({type: "Lenkepanel"})}>
             <div className="pensjonskalkulatorLenkePanel">
                 <svg viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration" focusable="false">
                     <rect width="20" height="32" rx="2" fill="#3E3832"/>
