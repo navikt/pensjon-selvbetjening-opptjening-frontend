@@ -36,7 +36,8 @@ it('should render panel with details and remarks table', () => {
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
     expect(panel.queryAllByRole("heading")[1]).toHaveTextContent("opptjening-details-velg-ar");
-    expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-merknader-tittel");
+    expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-pensjonsbeholdning-title");
+    expect(panel.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-merknader-tittel");
     expect(panel.getByTestId("remarkstext-0")).toHaveTextContent("remarks:" + expectedMerknad);
 });
 

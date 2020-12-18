@@ -199,7 +199,7 @@ const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
             <h3>{t('opptjening-details-pensjonspoeng-title')}</h3>
             <div  className="detailRow">
                 <span className="labelColumn">{t('opptjening-details-pensjonspoeng-label', {currentYear})}</span>
-                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng.toFixed(2)}</span>
+                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng!=null ? pensjonspoeng.toFixed(2) : null}</span>
                 <span aria-hidden="true" className="emptyColumn">&nbsp;</span>
             </div>
         </div>

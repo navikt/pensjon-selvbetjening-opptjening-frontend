@@ -45,7 +45,7 @@ const dataRow = (props) => {
         <tr key={key} className="row">
             <td data-testid="tableDataYear">{label}</td>
             <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
-            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!==null ? pensjonspoeng.toFixed(2) : null}</td>}
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? pensjonspoeng.toFixed(2) : null}</td>}
         </tr>
     )
 };
