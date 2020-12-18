@@ -139,19 +139,16 @@ const buildDetails = (opptjening, currentYear, t)  => {
 const detailsTitle = (title) => {
     return(
         <div id="opptjeningDetailsTitle" role="heading" aria-level="2" className="detailTitle">
-            <svg width="1.2rem" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" className="illustration">
-                <path d="M1.56614 10.7656L27 5V24.3821L2.43386 29.951C1.35559 30.1954 0.287241 29.5019 0.0476259 28.4019C0.0159704 28.2566 0 28.1082 0 27.9593L0 12.7573C0 11.801 0.651064 10.9731 1.56614 10.7656Z" fill="#3E3832"/>
-                <path d="M18 6C19.6569 6 21 4.65685 21 3C21 1.34315 19.6569 0 18 0C16.3431 0 15 1.34315 15 3C15 4.65685 16.3431 6 18 6Z" fill="#E7E9E9"/>
-                <path d="M26 8C27.6569 8 29 6.65685 29 5C29 3.34315 27.6569 2 26 2C24.3431 2 23 3.34315 23 5C23 6.65685 24.3431 8 26 8Z" fill="#E7E9E9"/>
-                <rect x="6" y="5" width="24" height="13" fill="#E3B0A8"/>
-                <rect x="25" y="5" width="3" height="13" fill="#F1D8D4"/>
-                <rect x="5" y="6" width="24" height="13" fill="#C2EAF7"/>
-                <rect x="24" y="6" width="3" height="13" fill="#E0F5FB"/>
-                <rect x="4" y="7" width="24" height="13" fill="#9BD0B0"/>
-                <rect x="23" y="7" width="3" height="13" fill="#CDE7D8"/>
-                <path fillRule="evenodd" clipRule="evenodd" d="M7 12.9341V9.06856H7.60472L9.9446 12.1035V9.06856H10.5098V12.9341H9.9051L7.56522 9.89651V12.9341H7ZM11.3212 11.0514C11.3212 10.4098 11.5197 9.90749 11.9168 9.5445C12.3139 9.1815 12.8264 9 13.4544 9C13.8657 9 14.2364 9.08526 14.5666 9.25577C14.8968 9.42628 15.1486 9.66403 15.3218 9.96902C15.495 10.274 15.5816 10.6199 15.5816 11.0066C15.5816 11.3986 15.4904 11.7493 15.3081 12.0587C15.1258 12.3681 14.8675 12.6023 14.5332 12.7614C14.1989 12.9205 13.8383 13 13.4514 13C13.032 13 12.6572 12.9121 12.327 12.7363C11.9968 12.5605 11.7466 12.3206 11.5764 12.0165C11.4063 11.7124 11.3212 11.3907 11.3212 11.0514ZM11.9289 11.0593C11.9289 11.5252 12.0733 11.8921 12.362 12.1602C12.6507 12.4283 13.0128 12.5623 13.4483 12.5623C13.892 12.5623 14.2572 12.4269 14.5438 12.1562C14.8305 11.8855 14.9738 11.5014 14.9738 11.004C14.9738 10.6893 14.9125 10.4146 14.79 10.18C14.6674 9.94529 14.4881 9.76335 14.2521 9.63415C14.0161 9.50494 13.7512 9.44034 13.4575 9.44034C13.0401 9.44034 12.681 9.56471 12.3802 9.81345C12.0794 10.0622 11.9289 10.4775 11.9289 11.0593ZM16.317 12.9341V9.06856H16.9065V10.9855L19.1187 9.06856H19.918L18.0491 10.6348L20 12.9341H19.2221L17.6358 10.9776L16.9065 11.5946V12.9341H16.317Z" fill="#117938"/>
-                <path d="M2.06897 13H30V32H2.06897C0.926307 32 0 31.1046 0 30V15C0 13.8954 0.926307 13 2.06897 13Z" fill="#59514B"/>
-                <rect x="23" y="21" width="7" height="4" rx="2" fill="#E7E9E9"/>
+            <svg viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration">
+                <rect x="2" width="24" height="13" fill="#E3B0A8"/>
+                <rect x="21" width="3" height="13" fill="#F1D8D4"/>
+                <rect x="1" y="1" width="24" height="13" fill="#C2EAF7"/>
+                <rect x="20" y="1" width="3" height="13" fill="#E0F5FB"/>
+                <rect y="2" width="24" height="13" fill="#9BD0B0"/>
+                <rect x="19" y="2" width="3" height="13" fill="#CDE7D8"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M3 7.93408V4.06856H3.60472L5.9446 7.10349V4.06856H6.50982V7.93408H5.9051L3.56522 4.89651V7.93408H3ZM7.32118 6.05142C7.32118 5.4098 7.51971 4.90749 7.91678 4.5445C8.31386 4.1815 8.8264 4 9.45442 4C9.86567 4 10.2364 4.08526 10.5666 4.25577C10.8968 4.42628 11.1486 4.66403 11.3218 4.96902C11.495 5.27401 11.5816 5.61986 11.5816 6.00659C11.5816 6.3986 11.4904 6.74928 11.3081 7.05867C11.1258 7.36805 10.8675 7.60228 10.5332 7.76137C10.1989 7.92046 9.83832 8 9.45138 8C9.03202 8 8.65724 7.91211 8.32702 7.73632C7.9968 7.56054 7.74661 7.32059 7.57644 7.01648C7.40626 6.71237 7.32118 6.39069 7.32118 6.05142ZM7.92894 6.05933C7.92894 6.52516 8.07328 6.89211 8.36197 7.16018C8.65066 7.42826 9.01278 7.56229 9.44834 7.56229C9.89201 7.56229 10.2572 7.42694 10.5438 7.15623C10.8305 6.88552 10.9738 6.50143 10.9738 6.00396C10.9738 5.6893 10.9125 5.41464 10.79 5.17996C10.6674 4.94529 10.4881 4.76335 10.2521 4.63415C10.0161 4.50494 9.75121 4.44034 9.45746 4.44034C9.04013 4.44034 8.68104 4.56471 8.3802 4.81345C8.07936 5.06219 7.92894 5.47747 7.92894 6.05933ZM12.317 7.93408V4.06856H12.9065V5.9855L15.1187 4.06856H15.918L14.0491 5.63481L16 7.93408H15.2221L13.6358 5.97759L12.9065 6.59459V7.93408H12.317Z" fill="#117938"/>
+                <path d="M5 20C7.20914 20 9 18.2091 9 16C9 13.7909 7.20914 12 5 12C2.79086 12 1 13.7909 1 16C1 18.2091 2.79086 20 5 20Z" fill="#FFD399"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M8 17C8 18.6569 9.34315 20 11 20C12.6569 20 14 18.6569 14 17C14 15.3431 12.6569 14 11 14C9.34315 14 8 15.3431 8 17ZM12 17C12 17.5523 11.5523 18 11 18C10.4477 18 10 17.5523 10 17C10 16.4477 10.4477 16 11 16C11.5523 16 12 16.4477 12 17Z" fill="#E7E9E9"/>
             </svg>
             <div className="title">{title}</div>
         </div>
@@ -245,13 +242,14 @@ export const OpptjeningDetailsPanel = (props) => {
 
     return(
         <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
-            <div className="detailsBox">
-                <div className="yearSelectorContainer">
-                    <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h3>
-                    <div className="selectorWrapper">
-                        <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="s"/>
-                    </div>
+            <div className="yearSelectorContainer">
+                <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-velg-ar')}</Label></h3>
+                <div className="selectorWrapper">
+                    <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="s"/>
                 </div>
+            </div>
+            <div className="detailsBox">
+                <h3>{t('opptjening-details-pensjonsbeholdning-title')}</h3>
                 <div key="horizontalLine" className="horizontalLine"/>
                 <div role="table">
                     {detailRows}
