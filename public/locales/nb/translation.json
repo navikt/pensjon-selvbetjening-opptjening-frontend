@@ -45,6 +45,7 @@
     "opptjening-details-pensjonspoeng-title": "Pensjonspoeng",
     "opptjening-details-pensjonspoeng-label": "Pensjonspoeng basert på inntekt i {{currentYear}}",
     "opptjening-details-pensjonsbeholdning-title": "Pensjonsbeholdning",
+    "opptjening-details-ingen-pensjonsbeholdning":"Det er ikke registrert noe beholdning dette året. Dette skyldes at du ikke hadde inntekt i {{year}}",
 
     "inntekt-lukk-panel":  "Lukk panel",
     "inntekt-aar": "År",

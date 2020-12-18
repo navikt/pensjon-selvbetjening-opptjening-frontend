@@ -199,7 +199,7 @@ const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
             <h3>{t('opptjening-details-pensjonspoeng-title')}</h3>
             <div  className="detailRow">
                 <span className="labelColumn">{t('opptjening-details-pensjonspoeng-label', {currentYear})}</span>
-                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng}</span>
+                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng.toFixed(2)}</span>
                 <span aria-hidden="true" className="emptyColumn">&nbsp;</span>
             </div>
         </div>
@@ -208,37 +208,52 @@ const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
 
 export const OpptjeningDetailsPanel = (props) => {
     const toggleOpen = () => {
-        logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "opptjening-details-din-okning-ar-for-ar", type: "EkspanderbartPanel", value: !apen});
+        logToAmplitude({
+            eventType: CLICK_EVENT,
+            name: "Åpne panel",
+            titleKey: "opptjening-details-din-okning-ar-for-ar",
+            type: "EkspanderbartPanel",
+            value: !apen
+        });
         setApen(!apen);
     };
     const [apen, setApen] = useState(false);
 
-    const { t } = useTranslation(['translation', 'remarks', 'grunnlag']);
+    const {t} = useTranslation(['translation', 'remarks', 'grunnlag']);
     const opptjening = props.data.opptjening;
     const currentYear = props.currentYear;
     const userGroup = props.userGroup;
 
-    const {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
+    let {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
     const remarksContainer = getRemarksContainer(opptjening, currentYear, t);
     const grunnlagTextsContainer = getGrunnlagTextsContainer(grunnlagTexts);
     const pensjonspoengContainer = getPensjonspoengContainer(opptjening.pensjonspoeng, currentYear, t);
 
     let label = "opptjening-details-din-pensjonsbeholdning";
     let key = "opptjening-details-din-pensjonsbeholdning";
-    if(detailRows.length>0){
+
+    if (detailRows.length > 0) {
         key = "opptjening-details-total-pensjonsbeholdning";
         label = "opptjening-details-total-pensjonsbeholdning";
         detailRows.push(<div key="horizontalLine" className="horizontalLine"/>);
     }
 
-    detailRows.push(
-        detailRow(
-            {
-                "key": key,
-                "label": t(label, {currentYear}),
-                "amount": formatAmount(opptjening.pensjonsbeholdning)
-            })
-    );
+    if (opptjening.pensjonsbeholdning !== null) {
+        detailRows.push(
+            detailRow(
+                {
+                    "key": key,
+                    "label": t(label, {currentYear}),
+                    "amount": formatAmount(opptjening.pensjonsbeholdning)
+                })
+        );
+    } else{
+        detailRows=(
+            <div role="row">
+                <span role="cell">{t('opptjening-details-ingen-pensjonsbeholdning',{year: currentYear-2})}</span>
+            </div>
+        )
+    }
 
     return(
         <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>

@@ -45,6 +45,7 @@
     "opptjening-details-pensjonspoeng-title": "Pension points",
     "opptjening-details-pensjonspoeng-label": "Pension points based on income in {{currentYear}}",
     "opptjening-details-pensjonsbeholdning-title": "Accumulated pension capital",
+    "opptjening-details-ingen-pensjonsbeholdning": "There is no registered accumulated pension this year. This is because you did not have any income in {{year}}",
 
     "inntekt-lukk-panel": "Close panel",
     "inntekt-aar": "Year",
