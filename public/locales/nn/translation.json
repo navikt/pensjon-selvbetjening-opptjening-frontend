@@ -21,6 +21,10 @@
     "beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning": "Pensjonsbehaldning {{andelPensjonBasertPaBeholdning}} av 10",
     "beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng": "Pensjonspoeng {{andelPensjonBasertPaPensjonspoeng}} av 10",
     "beholdning-and-pensjonspoeng-forklart-lenke": "Les om gamle og nye reglar i folketrygden.",
+    "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title": "Pensjonspoeng forklart:",
+    "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text": "Hvert år du har inntekt får du pensjonspoeng...TODO",
+    "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title": "Pensjonsbeholdning forklart:",
+    "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text": "Hvert år øker pensjonsbeholdningen din med 18.1 % av inntekten du hadde for to år siden...TODO",
 
     "opptjening-details-din-okning-ar-for-ar": "Di auking år for år",
     "opptjening-details-beholdning-i-starten-av-aaret": "Behaldning i starten av året",
@@ -79,10 +83,6 @@
     "opptjening-flere-steder-tjenestepensjon": "Tjenestepensjon (du og din arbeidsgjevar sparar saman)",
     "opptjening-flere-steder-folketrygden": "Folketrygda (staten sparar for deg)",
     "opptjening-flere-steder-forklart": "Alle får pensjon i folketrygda. Hvis du er usikker på om du har individuell sparing eller tjenestepensjon kan du for eksempel sjå hos banken din eller spørje nåværande eller tidlegare arbeidsgjevar.",
-    "opptjening-flere-steder-pensjonspoeng-title": "Pensjonspoeng forklart:",
-    "opptjening-flere-steder-pensjonspoeng-text": "Hvert år du har inntekt får du pensjonspoeng...TODO",
-    "opptjening-flere-steder-pensjonsbeholdning-title": "Pensjonsbeholdning forklart:",
-    "opptjening-flere-steder-pensjonsbeholdning-text": "Hvert år øker pensjonsbeholdningen din med 18.1 % av inntekten du hadde for to år siden...TODO",
 
     "spraakvelger-velg-spraak": "Vel språk:",
     "spraakvelger-bokmaal": "Bokmål",

@@ -51,15 +51,15 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
                 <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng", {andelPensjonBasertPaPensjonspoeng})}</span>
             </div>
             <div className="pensjonsopptjeningForklaring">
-                <b>{t('opptjening-flere-steder-pensjonspoeng-title')}</b>
+                <h3>{t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title')}</h3>
                 <Tekstomrade>
-                    {t('opptjening-flere-steder-pensjonspoeng-text')}
+                    {t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text')}
                 </Tekstomrade>
             </div>
             <div className="pensjonsopptjeningForklaring">
-                <b>{t('opptjening-flere-steder-pensjonsbeholdning-title')}</b>
+                <h3>{t('beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title')}</h3>
                 <Tekstomrade>
-                    {t('opptjening-flere-steder-pensjonsbeholdning-text')}
+                    {t('beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text')}
                 </Tekstomrade>
             </div>
             <div className="beholdningAndPoengForklartLink"><Lenke href={""} >{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>

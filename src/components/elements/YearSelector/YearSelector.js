@@ -1,7 +1,6 @@
 import React from "react";
 import {Select} from "nav-frontend-skjema";
 import "./YearSelector.less";
-import {useTranslation} from "react-i18next";
 
 const buildYearOptions = (yearArray) => {
     let optionsArray = [];
@@ -12,16 +11,16 @@ const buildYearOptions = (yearArray) => {
 };
 
 export const YearSelector = (props) => {
-    const { t } = useTranslation();
     const yearOptions = buildYearOptions(props.years);
     return(
         <Select
             data-testid="year-selector"
+            id="yearSelector"
             onChange={(event) => props.onChange(event.target.value)}
             value={props.currentYear}
             bredde={props.size}
             className="yearSelector"
-            aria-label={t('aarvelger-velg-aar')}
+            autoComplete="off"
         >
             {yearOptions}
         </Select>

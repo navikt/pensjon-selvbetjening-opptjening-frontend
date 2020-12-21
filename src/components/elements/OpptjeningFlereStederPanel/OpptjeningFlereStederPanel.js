@@ -41,8 +41,8 @@ export const OpptjeningFlereStederPanel = () => {
             <Tekstomrade className="opptjeningMaterTitle">{t('opptjening-flere-steder-forklart-title')}</Tekstomrade>
             <div className="opptjeningMater">
                 <div className="opptjeningMate">
-                    <div role="img">
-                        <svg width="1rem" viewBox="0 0 53 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div role="presentation">
+                        <svg width="1rem" viewBox="0 0 53 59" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" role="presentation">
                             <path d="M4 0H42.998L51 8V57H4V0Z" fill="#E7E9E9"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M49.968 7V56.173H7.783H7.121C5.499 56.173 4.183 54.858 4.183 53.235C4.183 51.613 5.499 50.298 7.121 50.298H45.205V0H5.671C2.539 0 0 2.539 0 5.672V51.41C0 56.526 3.884 59 9 59H53V7H49.968Z" fill="#BA3A26"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M8 30.362L10.0538 25.3053H12.0272L9.97603 30.362H8Z" fill="white"/>
@@ -55,8 +55,8 @@ export const OpptjeningFlereStederPanel = () => {
                 </div>
 
                 <div className="opptjeningMate">
-                    <div role="img">
-                        <svg viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div role="presentation">
+                        <svg viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" role="presentation">
                             <rect x="1.16357" width="13.964" height="8.1229" fill="#E3B0A8"/>
                             <rect x="12.2183" width="1.7455" height="8.1229" fill="#F1D8D4"/>
                             <rect x="0.582031" y="0.625" width="13.964" height="8.1229" fill="#C2EAF7"/>
@@ -72,8 +72,8 @@ export const OpptjeningFlereStederPanel = () => {
                 </div>
 
                 <div className="opptjeningMate">
-                    <div role="img">
-                        <svg viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div role="presentation">
+                        <svg viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" role="presentation">
                             <path d="M21.6374 5.50068H0.734863L11.1862 0L21.6374 5.50068Z" fill="#005B82"/>
                             <path d="M11.2736 4.53431C11.9295 4.53431 12.4612 4.01191 12.4612 3.36749C12.4612 2.72308 11.9295 2.20068 11.2736 2.20068C10.6177 2.20068 10.0859 2.72308 10.0859 3.36749C10.0859 4.01191 10.6177 4.53431 11.2736 4.53431Z" fill="#CCDEE6"/>
                             <rect x="0.734863" y="15.9517" width="20.9026" height="2.75034" fill="#337C9B"/>

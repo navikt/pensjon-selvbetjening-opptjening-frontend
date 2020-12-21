@@ -21,6 +21,10 @@
     "beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning": "Accumulated pension capital {{andelPensjonBasertPaBeholdning}} of 10",
     "beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng": "Pension points {{andelPensjonBasertPaPensjonspoeng}} of 10",
     "beholdning-and-pensjonspoeng-forklart-lenke": "Read about old and new rules in the National Insurance Scheme",
+    "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title": "Pension points explained:",
+    "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text": "Hvert år du har inntekt får du pensjonspoeng...TODO",
+    "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title": "Accumulated pension capital explained:",
+    "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text": "Hvert år øker pensjonsbeholdningen din med 18.1 % av inntekten du hadde for to år siden...TODO",
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Accumulated pension capital at the start of the year",
@@ -79,10 +83,6 @@
     "opptjening-flere-steder-tjenestepensjon": "Occupational pension (you and your your employer save together)",
     "opptjening-flere-steder-folketrygden": "National Insurance Scheme (the state saves for you)",
     "opptjening-flere-steder-forklart": "Every norwegian citizen gets pension from the National Insurance Scheme. If you are unsure if you have individual savings or occupational pension, you can for example check with your bank or ask your current or past employer.",
-    "opptjening-flere-steder-pensjonspoeng-title": "Pension points explained:",
-    "opptjening-flere-steder-pensjonspoeng-text": "Hvert år du har inntekt får du pensjonspoeng...TODO",
-    "opptjening-flere-steder-pensjonsbeholdning-title": "accumulated pension capital explained:",
-    "opptjening-flere-steder-pensjonsbeholdning-text": "Hvert år øker pensjonsbeholdningen din med 18.1 % av inntekten du hadde for to år siden...TODO",
 
     "spraakvelger-velg-spraak": "Choose language:",
     "spraakvelger-bokmaal": "Bokmål",

@@ -14,7 +14,7 @@ const detailRow = (props) => {
             <span role="cell" data-testid={"label-"+ props.key} className="labelColumn">{props.label}</span>
             <span role="cell" data-testid={"kr-"+ props.key} className="krColumn">kr</span>
             <span role="cell" data-testid={"amount-"+ props.key} className="numberColumn">{props.amount}</span>
-            <span aria-hidden="true" className="emptyColumn">&nbsp;</span>
+            <span role="presentation" className="emptyColumn">&nbsp;</span>
         </div>
     )
 };
@@ -139,7 +139,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
 const detailsTitle = (title) => {
     return(
         <div id="opptjeningDetailsTitle" role="heading" aria-level="2" className="detailTitle">
-            <svg viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration">
+            <svg viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="illustration" focusable="false" role="presentation">
                 <rect x="2" width="24" height="13" fill="#E3B0A8"/>
                 <rect x="21" width="3" height="13" fill="#F1D8D4"/>
                 <rect x="1" y="1" width="24" height="13" fill="#C2EAF7"/>
@@ -200,7 +200,7 @@ const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
             <div  className="detailRow">
                 <span className="labelColumn">{t('opptjening-details-pensjonspoeng-label', {currentYear})}</span>
                 <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng!=null ? pensjonspoeng.toFixed(2) : null}</span>
-                <span aria-hidden="true" className="emptyColumn">&nbsp;</span>
+                <span role="presentation" className="emptyColumn">&nbsp;</span>
             </div>
         </div>
     )
@@ -260,7 +260,7 @@ export const OpptjeningDetailsPanel = (props) => {
             <div className="yearSelectorContainer">
                 <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-velg-ar')}</Label></h3>
                 <div className="selectorWrapper">
-                    <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="s"/>
+                    <YearSelector years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="s"/>
                 </div>
             </div>
             <div className="detailsBox">
