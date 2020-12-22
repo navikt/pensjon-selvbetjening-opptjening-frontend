@@ -10,7 +10,25 @@ export const App = () => {
                 {routesConfig.map((route) => (
                     <Route key={route.path} path={route.path} {...route} />
                 ))}
-                <Redirect to={"/nb/"} />
+                <Route exact path="/">
+                    <Redirect to="/nb/"/>
+                </Route>
+                <Route path="/:lng([a-z]{2})">
+                    {({ match, location }) => {
+                        const params = match ? match.params : {};
+                        const { lng = 'nb' } = params;
+
+                        const { pathname } = location;
+                        if (!pathname.includes(`/${lng}/`)) {
+                            return <Redirect to={`/${lng}/`} />;
+                        }
+
+                        return (
+                            <Redirect to={`/${lng}/404`} />
+                        );
+                    }}
+                </Route>
+                <Redirect to = {"/nb/404"}/>
             </Switch>
         </div>
     );
