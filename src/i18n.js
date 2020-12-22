@@ -20,6 +20,10 @@ i18n
     // init i18next
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
+        fallbackLng: 'nb',
+        supportedLngs: ['en', 'nn', 'nb'],
+        whitelist: ['en', 'nn', 'nb'],
+        //load: 'currentOnly',
         detection: {
             order:['path', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'subdomain', 'querystring'],
             lookupFromPathIndex: 2
@@ -36,7 +40,8 @@ i18n
             i18n.changeLanguage('nb')
     });
 
-i18n.loadLanguages(['nb'], () => {});
+
+i18n.loadLanguages(['nb', 'nn','en'], () => {});
 // i18n.language = 'nb';
 // document.documentElement.lang = 'nb';
 
