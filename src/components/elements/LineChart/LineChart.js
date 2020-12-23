@@ -2,13 +2,13 @@ import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
-import {Undertittel} from "nav-frontend-typografi";
 import 'nav-frontend-tabell-style';
 import {formatAmount} from "../../../common/utils";
 import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
 const amountRow = (amount, t) => {
     if(amount!==0) {
@@ -253,7 +253,6 @@ export const LineChart = (props) => {
     let chartButton = "chartButton selected";
     let tableButton = "tableButton";
 
-
     if(visibleComponent === "chart"){
         chartClass = "chartContainer";
         tableClass = "dataContainer hidden";
@@ -266,25 +265,33 @@ export const LineChart = (props) => {
         tableButton = "selected";
     }
 
+    const ChartKnapp = (props) => {return (<Knapp mini className={chartButton + " " + props.className} onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>)}
+    const TableKnapp = (props) => {return (<Knapp mini className={tableButton + " " + props.className} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>)}
+
+    let title, buttons;
+    if(userGroup === BORN_AFTER_1962) {
+        title = t("chart-pensjonsbeholdningen-din");
+        buttons = (
+            <div className="buttonContainer">
+                <ChartKnapp className="leftButton"/>
+                <TableKnapp/>
+            </div>
+        )
+    } else if (userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962) {
+        title = t("chart-pensjonsbeholdningen-og-pensjonspoengene-dine");
+        buttons = (
+            <div className="buttonContainer">
+                <TableKnapp className="leftButton"/>
+                <ChartKnapp/>
+            </div>
+        )
+    }
+
     return(
         <div>
             <div className="chartTitleContainer">
-                {userGroup === BORN_AFTER_1962 && <Undertittel id="chartTitle">{t("chart-pensjonsbeholdningen-din")}</Undertittel>}
-                {userGroup === BORN_AFTER_1962 &&
-                    <div>
-                        <Knapp mini className={chartButton + " leftButton"}
-                               onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
-                        <Knapp mini className={tableButton} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
-                    </div>
-                }
-                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <Undertittel id="chartTitle">{t("chart-pensjonsbeholdningen-og-pensjonspoengene-dine")}</Undertittel>}
-                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 &&
-                    <div>
-                        <Knapp mini className={tableButton + " leftButton"}
-                               onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>
-                        <Knapp mini className={chartButton} onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>
-                    </div>
-                }
+                <PanelTitle id="chartTitle" titleString={title}/>
+                {buttons}
             </div>
             <div className={chartClass} data-testid="chartContainer">
                 <canvas ref={chartRef}/>

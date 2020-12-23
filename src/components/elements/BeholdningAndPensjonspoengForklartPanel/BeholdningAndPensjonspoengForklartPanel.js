@@ -3,14 +3,14 @@ import React from "react";
 import Tekstomrade from "nav-frontend-tekstomrade";
 import "./BeholdningAndPensjonspoengForklartPanel.less";
 import Panel from "nav-frontend-paneler";
-import {Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
 const shareItem = (type, idx) => {
     return(
         <div key={type + idx} data-testid={type} className={type}/>
     )
-}
+};
 
 const shareItems = (andelPensjonBasertPaBeholdning, andelPensjonBasertPaPensjonspoeng) =>{
     let shareItems = [];
@@ -33,7 +33,7 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
     return(
         <Panel border className="panelWrapper">
             <div className="beholdningAndPoengForklartTitleContainer">
-                <Undertittel id="beholdingAndPensjonspoengForklartTitle" className="lenkepanel__heading title">{t('beholdning-and-pensjonspoeng-forklart')}</Undertittel>
+                <PanelTitle titleString={t('beholdning-and-pensjonspoeng-forklart')}/>
             </div>
             <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
                 {t('beholdning-and-pensjonspoeng-forklart-tekst', {fodselsar})}
