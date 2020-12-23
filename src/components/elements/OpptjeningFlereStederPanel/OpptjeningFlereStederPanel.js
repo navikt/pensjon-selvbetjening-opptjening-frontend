@@ -27,21 +27,21 @@ export const OpptjeningFlereStederPanel = () => {
             <div className="opptjeningMater">
                 <div className="opptjeningMate">
                     <div role="presentation">
-                        <img src={navBok} className="illustration" alt=""/>
+                        <img src={navBok} alt=""/>
                     </div>
                     <span className="opptjeningMateText">{t('opptjening-flere-steder-folketrygden')}</span>
                 </div>
 
                 <div className="opptjeningMate">
                     <div role="presentation">
-                        <img src={handMedSedler} className="illustration" alt=""/>
+                        <img src={handMedSedler} alt=""/>
                     </div>
                     <span className="opptjeningMateText">{t('opptjening-flere-steder-tjenestepensjon')}</span>
                 </div>
 
                 <div className="opptjeningMate">
                     <div role="presentation">
-                        <img src={bank} className="illustration" alt=""/>
+                        <img src={bank} alt=""/>
                     </div>
                     <span className="opptjeningMateText">{t('opptjening-flere-steder-individuell')}</span>
                 </div>
