@@ -21,9 +21,6 @@ i18n
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
         fallbackLng: 'nb',
-        supportedLngs: ['en', 'nn', 'nb'],
-        whitelist: ['en', 'nn', 'nb'],
-        //load: 'currentOnly',
         detection: {
             order:['path', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'subdomain', 'querystring'],
             lookupFromPathIndex: 2
@@ -36,13 +33,13 @@ i18n
             escapeValue: false, // not needed for react as it escapes by default
         }
     }, (err) => {
-            if (err) return logger.error(`'Loading i18n error'. ${err}`);
-            i18n.changeLanguage('nb')
+            if (err) {
+                return logger.error(`'Loading i18n error'. ${err}`);
+            }
+
     });
 
 
 i18n.loadLanguages(['nb', 'nn','en'], () => {});
-// i18n.language = 'nb';
-// document.documentElement.lang = 'nb';
 
 export default i18n;
