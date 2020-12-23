@@ -8,6 +8,7 @@ import {Label} from "nav-frontend-skjema";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
 import sedler from "../../../assets/sedler.svg"
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
 const detailRow = (props) => {
     return(
@@ -137,15 +138,6 @@ const buildDetails = (opptjening, currentYear, t)  => {
     };
 };
 
-const detailsTitle = (title) => {
-    return(
-        <div id="opptjeningDetailsTitle" role="heading" aria-level="2" className="detailTitle">
-            <img src={sedler} className="illustration" alt=""/>
-            <div className="title">{title}</div>
-        </div>
-    )
-};
-
 const getRemarksContainer = (opptjening, currentYear, t)  => {
     let remarks = [];
     if(currentYear<2010){
@@ -195,7 +187,7 @@ const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
             </div>
         </div>
     )
-}
+};
 
 export const OpptjeningDetailsPanel = (props) => {
     const toggleOpen = () => {
@@ -246,8 +238,10 @@ export const OpptjeningDetailsPanel = (props) => {
         )
     }
 
+    const panelTitle = <PanelTitle id="opptjeningDetailsTitle" titleString={t('opptjening-details-din-okning-ar-for-ar')} illustrationClass="detailIllustration" illustration={sedler}/>;
+
     return(
-        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
+        <EkspanderbartpanelBase tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
             <div className="yearSelectorContainer">
                 <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-velg-ar')}</Label></h3>
                 <div className="selectorWrapper">

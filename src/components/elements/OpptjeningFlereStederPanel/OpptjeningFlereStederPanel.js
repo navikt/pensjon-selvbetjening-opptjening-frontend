@@ -8,16 +8,7 @@ import lommebok from "../../../assets/lommebok.svg";
 import navBok from "../../../assets/navBok.svg";
 import handMedSedler from "../../../assets/handMedSedler.svg";
 import bank from "../../../assets/bank.svg";
-
-
-const detailsTitle = (title) => {
-    return(
-        <div role="heading" aria-level="2" className="opptjeningFlereStederTitle">
-            <img src={lommebok} className="illustration" alt=""/>
-            <div className="title">{title}</div>
-        </div>
-    )
-};
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
 export const OpptjeningFlereStederPanel = () => {
     const [apen, setApen] = useState(false);
@@ -28,8 +19,10 @@ export const OpptjeningFlereStederPanel = () => {
         setApen(!apen);
     };
 
+    const panelTitle = <PanelTitle titleString={t('opptjening-flere-steder-title')} illustrationClass="opptjeningFlereStederIllustration" illustration={lommebok}/>;
+
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('opptjening-flere-steder-title'))} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
+        <Ekspanderbartpanel tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
             <Tekstomrade className="opptjeningMaterTitle">{t('opptjening-flere-steder-forklart-title')}</Tekstomrade>
             <div className="opptjeningMater">
                 <div className="opptjeningMate">

@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import ReactMarkdown from 'react-markdown'
 import Panel from 'nav-frontend-paneler';
-import {Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Normaltekst} from "nav-frontend-typografi";
 import {useTranslation} from "react-i18next";
 import "./FAQPanel.less";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953} from "../../../common/userGroups";
 import sporsmalstegn from "../../../assets/sporsmalstegn.svg";
-
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
 export const FAQPanel = (props) => {
     const {userGroup} = props;
@@ -57,10 +57,7 @@ export const FAQPanel = (props) => {
     return(
         <Panel border className="panelWrapper">
             <div className="faqTitleContainer">
-                <div className="faqTitle">
-                    <img src={sporsmalstegn} className="illustration" alt=""/>
-                    <Undertittel id="faqTitle" className="lenkepanel__heading title">{t('faq-ofte-stilte-sporsmaal')}</Undertittel>
-                </div>
+                <PanelTitle id="faqTitle" titleString={t('faq-ofte-stilte-sporsmaal')} illustrationClass="faqIllustration" illustration={sporsmalstegn}/>
             </div>
             <div data-testid="faqview">
                 {faq}

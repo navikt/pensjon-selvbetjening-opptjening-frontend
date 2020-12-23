@@ -9,6 +9,7 @@ import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953} from "../../../common/userGroups";
 import handMedMynter from "../../../assets/handMedMynter.svg";
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
 const getTextParagraph = (text, key) =>{
     return(
@@ -112,15 +113,6 @@ const buildDetails = (opptjeningData, userGroup, t)  => {
     return {detailRows: detailRows.reverse(), detailListItems: detailListItems.reverse()};
 };
 
-const detailsTitle = (title) => {
-    return(
-        <div role="heading" aria-level="2" className="inntektDetailTitle">
-            <img src={handMedMynter} className="illustration" alt=""/>
-            <div className="title">{title}</div>
-        </div>
-    )
-};
-
 export const InntektWithMerknadPanel = (props) => {
     const [apen, setApen] = useState(false);
     const { t } = useTranslation();
@@ -133,8 +125,10 @@ export const InntektWithMerknadPanel = (props) => {
         setApen(!apen);
     };
 
+    const panelTitle = <PanelTitle titleString={t(title)} illustrationClass="inntektDetailIllustration" illustration={handMedMynter}/>
+
     return(
-        <EkspanderbartpanelBase tittel={detailsTitle(t(title))} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
+        <EkspanderbartpanelBase tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
             <div data-testid="inntektContainer">
                 <div className="inntektLinkContainer">
                     <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-inntekt-link-to-skatteetaten')}</Lenke>

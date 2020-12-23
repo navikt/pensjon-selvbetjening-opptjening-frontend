@@ -5,15 +5,8 @@ import Tekstomrade from "nav-frontend-tekstomrade";
 import "./BeholdningForklartPanel.less";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import pengesekk from "../../../assets/pengesekk.svg";
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
-const detailsTitle = (title) => {
-    return(
-        <div role="heading" aria-level="2" className="beholdningForklartTitle">
-            <img src={pengesekk} className="illustration" alt=""/>
-            <div className="title">{title}</div>
-        </div>
-    )
-};
 export const BeholdningForklartPanel = () => {
     const { t } = useTranslation();
 
@@ -22,9 +15,10 @@ export const BeholdningForklartPanel = () => {
         setApen(!apen);
     };
     const [apen, setApen] = useState(false);
+    const panelTitle = <PanelTitle titleString={t('pensjonsbeholdning-forklart')} illustrationClass="beholdningForklartIllustration" illustration={pengesekk}/>;
 
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('pensjonsbeholdning-forklart'))} border className="panelWrapper" onClick={toggleOpen}>
+        <Ekspanderbartpanel tittel={panelTitle} border className="panelWrapper" onClick={toggleOpen}>
             <Tekstomrade data-testid="explanationText" className="explanationText">
                 {t('pensjonsbeholdning-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>

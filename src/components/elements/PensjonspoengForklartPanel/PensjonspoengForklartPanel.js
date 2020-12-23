@@ -4,19 +4,14 @@ import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Tekstomrade from "nav-frontend-tekstomrade";
 import "./PensjonspoengForklartPanel.less";
 import pengesekk from "../../../assets/pengesekk.svg";
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
-const detailsTitle = (title) => {
-    return(
-        <div role="heading" aria-level="2" className="beholdningForklartTitle">
-            <img src={pengesekk} className="illustration" alt=""/>
-            <div className="title">{title}</div>
-        </div>
-    )
-};
 export const PensjonspoengForklartPanel = () => {
     const { t } = useTranslation();
+    const panelTitle = <PanelTitle titleString={t('pensjonspoeng-forklart')} illustrationClass="pensjonspoengForklartIllustration" illustration={pengesekk}/>
+
     return(
-        <Ekspanderbartpanel tittel={detailsTitle(t('pensjonspoeng-forklart'))} border className="panelWrapper">
+        <Ekspanderbartpanel tittel={panelTitle} border className="panelWrapper">
             <Tekstomrade data-testid="explanationText" className="explanationText">
                 {t('pensjonspoeng-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>
