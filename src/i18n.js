@@ -25,7 +25,7 @@ i18n
             order:['path', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'subdomain', 'querystring'],
             lookupFromPathIndex: 2
         },
-        debug: true,
+        debug: false,
         backend:{
             loadPath: process.env.PUBLIC_URL + '/locales/{{lng}}/{{ns}}.json'
         },

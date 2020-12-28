@@ -17,12 +17,12 @@ const Breadcrumbs = () => {
     const breadcrumbData = match.url.split("/");
     breadcrumbData.pop();
     breadcrumbData.forEach(function(data){
-        const route = routesConfig.find((route) => route.path.replace("/:lng/","") === data);
+        const route = routesConfig.find((route) => route.path.replace("/:lng(en|nn|nb)/","") === data);
         if(route)
             defaultBreadcrumb.push({url: "/" + match.params.lng + "/" + data, title: t(route.titleKey), handleInApp: route.exact});
     });
 
-    if(match.path !== "/:lng/")
+    if(match.path !== "/:lng(en|nn|nb)/")
     {
         const route = routesConfig.find((route) => route.path === match.path);
         if(route)

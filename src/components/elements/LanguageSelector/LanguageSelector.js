@@ -15,7 +15,6 @@ export const LanguageSelector = () => {
         if(pathArr.length > 2){
             const urlTail = pathArr.slice(2,pathArr.length);
             const urlJoin = urlTail.join("/");
-            console.log(urlJoin);
             history.push(language.url + urlJoin);
         }else
             history.push(language.url);

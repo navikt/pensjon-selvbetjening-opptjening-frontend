@@ -14,17 +14,13 @@ export const App = () => {
                     <Redirect to="/nb/"/>
                 </Route>
                 <Route path="/:lng([a-z]{2})">
-                    {({ match, location }) => {
+                    {({ match }) => {
                         const params = match ? match.params : {};
-                        const { lng = 'nb' } = params;
-
-                        const { pathname } = location;
-                        if (!pathname.includes(`/${lng}/`)) {
-                            return <Redirect to={`/${lng}/`} />;
-                        }
+                        let { lng = 'nb' } = params;
+                        const lang = ['nb', 'nn', 'en'].includes(lng) ? lng : 'nb';
 
                         return (
-                            <Redirect to={`/${lng}/404`} />
+                            <Redirect to={`/${lang}/404`} />
                         );
                     }}
                 </Route>
@@ -32,4 +28,6 @@ export const App = () => {
             </Switch>
         </div>
     );
-};
+}
+;
+
