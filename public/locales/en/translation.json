@@ -46,8 +46,8 @@
     "inntekt-lukk-panel": "Close panel",
     "inntekt-aar": "Year",
     "inntekt-inntekt": "Income",
-    "inntekt-pensjonsgivende-inntekter": "Pensionable income",
-    "inntekt-pensjonsgivende-inntekter-og-pensjonspoeng": "Pensionable income and pension points",
+    "inntekt-pensjonsgivende-inntekter": "Your pensionable income",
+    "inntekt-pensjonsgivende-inntekter-og-pensjonspoeng": "Your pensionable income and pension points",
     "inntekt-pensjonspoeng": "Pension points",
     "inntekt-merknad": "Remarks",
     "inntekt-merknader": "Remarks",
@@ -62,6 +62,8 @@
     "chart-aar": "Year",
     "chart-ingen-pensjonsbeholdning": "No pension assets",
     "chart-pensjonspoeng": "Pension points",
+
+    "pensjonskalkulator-lenke-title": "How much pension will I get?",
 
     "broedsmule-du-er-her": "You are here",
     "aarvelger-velg-aar": "Choose year:",
