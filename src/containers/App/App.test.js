@@ -14,7 +14,7 @@ it('renders the frontpage and renders the opptjening-tittel in the banner', () =
     let store = mockStore(mockedStateSuccess);
 
     const history = createMemoryHistory();
-    history.push('/:lng/');
+    history.push('/nb/');
     const {getAllByText} = render(
         <Provider store={store}>
             <Router history={history}>
@@ -30,7 +30,7 @@ it('navigates to 404-page and renders the 404-title in the banner', () => {
     let store = mockStore(mockedStateSuccess);
 
     const history = createMemoryHistory();
-    history.push('/:lng/404');
+    history.push('/nb/404');
     const {getAllByText} = render(
         <Provider store={store}>
             <Router history={history}>
