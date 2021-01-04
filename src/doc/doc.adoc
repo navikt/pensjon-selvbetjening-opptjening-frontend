@@ -1,0 +1,10 @@
+= Pensjon Selvbetjening Opptjening Frontend
+:toc: left
+:toclevels: 2
+:doctype: book
+:sectnums:
+:sectnumlevels: 3
+:nofooter:
+
+include::../components/pages/HomePage/HomePage.adoc[]
+include::../components/pages/NotFoundPage/NotFoundPage.adoc[]
