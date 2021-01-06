@@ -1,10 +1,17 @@
-= Pensjon Selvbetjening Opptjening Frontend
 :toc: left
 :toclevels: 2
 :doctype: book
 :sectnums:
 :sectnumlevels: 3
 :nofooter:
+:imagesdir: images
+
+= Pensjon Selvbetjening Opptjening Frontend
+
+include::./intro.adoc[]
 
 include::../components/pages/HomePage/HomePage.adoc[]
 include::../components/pages/NotFoundPage/NotFoundPage.adoc[]
+include::../components/elements/BeholdningPanel/BeholdningPanel.adoc[]
+
+

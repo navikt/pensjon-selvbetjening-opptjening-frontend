@@ -1,3 +1,3 @@
 const asciidoctor = require('asciidoctor')();
-asciidoctor.convertFile("src/doc/doc.adoc", { to_dir:'public', to_file: 'doc.html', standalone: true, safe: 'unsafe'});
+asciidoctor.convertFile("src/doc/doc.adoc", { to_dir:'public/doc', to_file: 'index.html', standalone: true, safe: 'unsafe', mkdirs:true});
 

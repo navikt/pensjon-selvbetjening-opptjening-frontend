@@ -1,0 +1,2 @@
+Applikasjonen pensjon-selvbetjening-opptjening-frontend henter data fra pensjon-selvbetjening-opptjening-backend
+og viser en innlogget brukers samlede opptjening.
