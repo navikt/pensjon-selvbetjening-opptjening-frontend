@@ -8,6 +8,7 @@ import "./InntektWithMerknadPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953} from "../../../common/userGroups";
+import {SKATTEMELDING_FOR_PERSON} from "../../../common/externalUrls";
 import handMedMynter from "../../../assets/handMedMynter.svg";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
 
@@ -131,7 +132,7 @@ export const InntektWithMerknadPanel = (props) => {
         <EkspanderbartpanelBase tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
             <div data-testid="inntektContainer">
                 <div className="inntektLinkContainer">
-                    <Lenke href="https://www.skatteetaten.no/person/skatt/skattemelding/skattemelding-for-person/">{t('opptjening-inntekt-link-to-skatteetaten')}</Lenke>
+                    <Lenke href={SKATTEMELDING_FOR_PERSON}>{t('opptjening-inntekt-link-to-skatteetaten')}</Lenke>
                 </div>
                 <div className="inntektDetailsBox">
                     <table className="tabell inntektTabell">

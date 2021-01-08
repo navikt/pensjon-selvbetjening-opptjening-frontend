@@ -5,6 +5,7 @@ import "./BeholdningAndPensjonspoengForklartPanel.less";
 import Panel from "nav-frontend-paneler";
 import Lenke from "nav-frontend-lenker";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
+import {PENSJONSOPPTJENING_FOR_DEG_FODT_MELLOM_1954_OG_1962} from "../../../common/externalUrls";
 
 const shareItem = (type, idx) => {
     return(
@@ -62,7 +63,7 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
                     {t('beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text')}
                 </Tekstomrade>
             </div>
-            <div className="beholdningAndPoengForklartLink"><Lenke href={""} >{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>
+            <div className="beholdningAndPoengForklartLink"><Lenke href={PENSJONSOPPTJENING_FOR_DEG_FODT_MELLOM_1954_OG_1962}>{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>
         </Panel>
     )
 
