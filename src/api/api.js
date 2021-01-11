@@ -42,7 +42,6 @@ const serverRequest = (method, urlPath) => {
 function verifyStatusSuccessOrRedirect(response) {
     const redirect = window.location.href;
 
-    console.log(redirect)
     // If we are on localhost just return, no need to check for authentication
     if (isDev()) {
         return;

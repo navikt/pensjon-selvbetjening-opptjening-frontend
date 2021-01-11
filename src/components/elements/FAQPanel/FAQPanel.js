@@ -21,7 +21,7 @@ export const FAQPanel = (props) => {
 
     const toggleOpen = (index, type) => {
         const nameProps = {
-            lng: "nb-NO",
+            lng: "nb",
             key: "faq-question-"+index,
             ns: type==="special" ? faqNamespace : "faq"
         };

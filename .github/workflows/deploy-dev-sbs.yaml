@@ -1,11 +1,6 @@
 name: NAIS Deploy to dev-sbs
 
-on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: "Which branch to deploy"
-        required: true
+on: workflow_dispatch
 
 jobs:
   deploy-to-dev:
@@ -16,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.inputs.branch }}
       - uses: actions/cache@v1
         with:
           path: ~/.npm

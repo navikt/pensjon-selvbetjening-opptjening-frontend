@@ -1,65 +1,40 @@
-import React from 'react'
-import Lenke from 'nav-frontend-lenker'
-import 'nav-frontend-lenker-style'
-import { HoyreChevron } from 'nav-frontend-chevron';
-import { Route, useRouteMatch } from 'react-router-dom'
-import { routesConfig, basePath} from '../../../common/routesConfig'
-import './Breadcrumbs.less'
-import {useTranslation} from "react-i18next";
-
-const Crumb = () => {
-    const match = useRouteMatch();
-    const { t } = useTranslation();
-
-    const route = routesConfig.find((route) => route.path === match.url);
-    let url;
-    if(match.url === '/'){
-        url = basePath;
-    } else {
-        url = basePath + match.url
-    }
-
-    return route.path ? (
-        <>
-            {!match.isExact ? (
-                <>
-                    <p className="typo-normal item">
-                        <Lenke href={url || ''}>
-                            {t(route.titleKey)}
-                        </Lenke>
-                    </p>
-                    <div aria-hidden='true'>
-                        <HoyreChevron/>
-                    </div>
-                </>
-            ) : (
-                <p aria-current="page" className="typo-normal item current">
-                    {t(route.titleKey)}
-                </p>
-            )}
-        </>
-    ) : null
-};
+import * as React from 'react';
+import { useHistory } from 'react-router-dom';
+import { onBreadcrumbClick, setBreadcrumbs } from '@navikt/nav-dekoratoren-moduler';
+import { useTranslation } from "react-i18next";
+import { routesConfig } from "../../../common/routesConfig";
+import { useRouteMatch } from 'react-router-dom'
 
 const Breadcrumbs = () => {
+    const match = useRouteMatch();
+    const history = useHistory();
     const { t } = useTranslation();
-    return (
-        <nav aria-label={t('broedsmule-du-er-her')} className="breadcrumbs" data-testid="breadcrumbs">
-            <p className="typo-normal item">
-                <Lenke href={process.env.REACT_APP_DINPENSJON_URL}>
-                    {t("dinpensjon-tittel")}
-                </Lenke>
-            </p>
-            <div aria-hidden='true'>
-                <HoyreChevron/>
-            </div>
-            {routesConfig.map((route) => {
-                return (
-                    <Route key={route.path} path={route.path} component={Crumb} />
-                )
-            })}
-        </nav>
-    )
+
+    const defaultBreadcrumb = [
+        { url: process.env.REACT_APP_DINPENSJON_URL, title: t("dinpensjon-tittel"), handleInApp: false }
+    ];
+
+    const breadcrumbData = match.url.split("/");
+    breadcrumbData.pop();
+    breadcrumbData.forEach(function(data){
+        const route = routesConfig.find((route) => route.path.replace("/:lng(en|nn|nb)/","") === data);
+        if(route)
+            defaultBreadcrumb.push({url: "/" + match.params.lng + "/" + data, title: t(route.titleKey), handleInApp: route.exact});
+    });
+
+    if(match.path !== "/:lng(en|nn|nb)/")
+    {
+        const route = routesConfig.find((route) => route.path === match.path);
+        if(route)
+            defaultBreadcrumb.push({url: match.url, title: t(route.titleKey), handleInApp: route.exact});
+    }
+
+    onBreadcrumbClick(breadcrumb => {
+        history.push(breadcrumb.url);
+    });
+
+    setBreadcrumbs(defaultBreadcrumb);
+    return <></>;
 };
 
-export default Breadcrumbs
+export default Breadcrumbs;
