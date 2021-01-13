@@ -24,15 +24,6 @@ const getMerknadListItem = (text, key) =>{
   )
 };
 
-const amountRow = (amount) => {
-    return(
-        <div className="inntektAmountRow">
-            <span className="inntektKrColumn">kr</span>
-            <span className="inntektNumberColumn">{amount}</span>
-        </div>
-    )
-};
-
 const amountListItem = (amount) => {
     return(<span>kr {amount}</span>)
 };
@@ -51,7 +42,7 @@ const getMerknadText = (merknad, t, uforegrad) =>{
 
 const detailRow = (props) => {
     const {key, year, amount, explanationText, pensjonsPoeng, merknader, userGroup, t, uforegrad} = props;
-    const amountTxt = amount != null ? amountRow(amount) : explanationText;
+    const amountTxt = amount != null ? amount : explanationText;
     const merknadArray = [];
     merknader.forEach((m, idx) => {
         merknadArray.push(getTextParagraph(getMerknadText(m, t, uforegrad), "remarkstext-" + idx))
@@ -139,7 +130,7 @@ export const InntektWithMerknadPanel = (props) => {
                         <thead>
                             <tr className="row">
                                 <th data-testid="income-header" className="col1">{t('inntekt-aar')}</th>
-                                <th data-testid="income-header" className="col2">{t('inntekt-inntekt')}</th>
+                                <th data-testid="income-header" className="col2">{t('inntekt-inntekt-kr')}</th>
                                 {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <th data-testid="income-header" className="col3">{t('inntekt-pensjonspoeng')}</th>}
                                 <th data-testid="income-header" className="col4">{t('inntekt-merknad')}</th>
                             </tr>
