@@ -13,10 +13,7 @@ import {PanelTitle} from "../PanelTitle/PanelTitle";
 const amountRow = (amount, t) => {
     if(amount!==0) {
         return (
-            <div className="chartAmountRow">
-                <span className="chartKrColumn">kr</span>
-                <span className="chartNumberColumn">{formatAmount(amount)}</span>
-            </div>
+            <div>{formatAmount(amount)}</div>
         )
     } else{
         return (
@@ -105,6 +102,7 @@ export const LineChart = (props) => {
     const {data, userGroup} = props
     const yearLabel = t("chart-aar");
     const pensjonsbeholdningLabel = t("chart-pensjonsbeholdning");
+    const pensjonsbeholdningKrLabel = t("chart-pensjonsbeholdning-kr");
     const pensjonspoengLabel = t('chart-pensjonspoeng');
     const chartRef = useRef(null);
     const tableMap = removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0(data);
@@ -302,7 +300,7 @@ export const LineChart = (props) => {
                         <thead>
                         <tr className="row">
                             <th data-testid="tableHeaderYear" className="column1">{yearLabel}</th>
-                            <th data-testid="tableHeaderPensjonsbeholdning" className="column2">{pensjonsbeholdningLabel}</th>
+                            <th data-testid="tableHeaderPensjonsbeholdning" className="column2">{pensjonsbeholdningKrLabel}</th>
                             {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <th data-testid="tableHeaderPensjonspoeng" className="column3">{pensjonspoengLabel}</th>}
                         </tr>
                         </thead>
