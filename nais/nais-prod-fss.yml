@@ -25,4 +25,4 @@ spec:
     - "https://pensjon-selvbetjening-opptjening-frontend.intern.nav.no"
   env:
     - name: "OPPTJENING_BACKEND"
-      value: "https://pensjon-selvbetjening-opptjening-backend.adeo.no"
+      value: "https://pensjon-selvbetjening-opptjening-backend.nais.adeo.no"
