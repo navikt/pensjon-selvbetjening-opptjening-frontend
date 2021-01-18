@@ -22,7 +22,7 @@ spec:
     initialDelay: 30
     timeout: 1
   ingresses:
-    - "https://pensjon-selvbetjening-opptjening-frontend.adeo.no"
+    - "https://pensjon-selvbetjening-opptjening-frontend.intern.nav.no"
   env:
     - name: "OPPTJENING_BACKEND"
       value: "https://pensjon-selvbetjening-opptjening-backend.adeo.no"
