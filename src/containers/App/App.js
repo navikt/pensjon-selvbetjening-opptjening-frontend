@@ -11,16 +11,20 @@ export const App = () => {
                     <Route key={route.path} path={route.path} {...route} />
                 ))}
                 <Route exact path="/">
-                    <Redirect to="/nb/"/>
+                    {({location}) => {
+                        return(
+                            <Redirect to={`/nb/${location.search}`}/>
+                        );
+                    }}
                 </Route>
                 <Route path="/:lng([a-z]{2})">
-                    {({ match }) => {
+                    {({ match, location }) => {
                         const params = match ? match.params : {};
                         let { lng = 'nb' } = params;
                         const lang = ['nb', 'nn', 'en'].includes(lng) ? lng : 'nb';
 
                         return (
-                            <Redirect to={`/${lang}/404`} />
+                            <Redirect to={`/${lang}/404/${location.search}`} />
                         );
                     }}
                 </Route>
