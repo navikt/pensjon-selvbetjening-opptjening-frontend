@@ -11,13 +11,15 @@ export const LanguageSelector = () => {
         i18n.changeLanguage(language.locale);
 
         const pathArr = history.location.pathname.split('/');
+        const queryParams = history.location.search;
 
         if(pathArr.length > 2){
             const urlTail = pathArr.slice(2,pathArr.length);
             const urlJoin = urlTail.join("/");
-            history.push(language.url + urlJoin);
-        }else
-            history.push(language.url);
+            history.push(language.url + urlJoin + queryParams);
+        } else {
+            history.push(language.url + queryParams);
+        }
     });
 
     setAvailableLanguages([
