@@ -1,8 +1,9 @@
 import opptjening from './opptjening/opptjeningReducer'
 import unleash from './unleash/unleashReducer'
 
-export default {
+const reducers =  {
     opptjening,
     unleash
-}
+};
 
+export default reducers;

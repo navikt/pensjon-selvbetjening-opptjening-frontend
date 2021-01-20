@@ -1,7 +1,7 @@
 import {initialState} from './opptjeningSelectors'
 import {FETCH_OPPTJENING_STARTED, FETCH_OPPTJENING_SUCCESS, FETCH_OPPTJENING_FAILURE} from './opptjeningActions'
 
-export default (state = initialState, action) => {
+const reducer =  (state = initialState, action) => {
     switch (action.type) {
         case FETCH_OPPTJENING_STARTED:
             return {
@@ -27,3 +27,5 @@ export default (state = initialState, action) => {
             return state
     }
 }
+
+export default reducer;

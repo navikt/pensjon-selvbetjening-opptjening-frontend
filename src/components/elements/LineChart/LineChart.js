@@ -241,8 +241,9 @@ export const LineChart = (props) => {
     useEffect(() => {
         if (!chartRef) return;
         const ctx = chartRef.current.getContext("2d");
+        if(!ctx) return;
         new Chart(ctx, chartConfig);
-    }, [chartConfig, chartRef]);
+    });
 
     let initialState = "chart";
 
