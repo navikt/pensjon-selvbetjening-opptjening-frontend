@@ -243,7 +243,7 @@ export const LineChart = (props) => {
         const ctx = chartRef.current.getContext("2d");
         if(!ctx) return;
         new Chart(ctx, chartConfig);
-    }, [chartConfig, chartRef]);
+    });
 
     let initialState = "chart";
 

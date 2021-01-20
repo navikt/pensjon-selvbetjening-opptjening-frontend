@@ -1,7 +1,7 @@
 import {initialState} from './unleashSelectors'
 import {FETCH_UNLEASH_STARTED, FETCH_UNLEASH_SUCCESS, FETCH_UNLEASH_FAILURE} from './unleashActions'
 
-export default (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_UNLEASH_STARTED:
             return {
@@ -26,4 +26,6 @@ export default (state = initialState, action) => {
         default:
             return state
     }
-}
+};
+
+export default reducer;
