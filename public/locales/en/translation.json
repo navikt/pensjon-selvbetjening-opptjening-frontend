@@ -13,7 +13,10 @@
     "pensjonsbeholdning-forklart-tekst": "You accumulate pension capital from the first year you have pensionable income. The assets increase each year based on the previous year's assets, pensionable income two years back and any other accrual of pension rights, as well as an annual adjustment. The pension assets is used as a starting point for calculating the retirement pension you receive from NAV.",
 
     "pensjonspoeng-forklart": "Pension points explained",
-    "pensjonspoeng-forklart-tekst": "Explanation...TODO",
+    "pensjonspoeng-forklart-tekst": [
+        "Her finner du opplysninger om pensjonsopptjeningen din for de aktuelle årene etter at folketrygden ble innført i 1967. Du kunne tjene opp pensjonsrettigheter fra det året du fylte 17 år og fram til og med året du fyller 69 år.",
+        "NAV mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)."
+    ],
 
     "beholdning-and-pensjonspoeng-forklart": "Accumulated pension capital and pension points explained",
     "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er født i {{fodselsar}} tjener opp alderspensjon forholdsmessig etter både gamle og nye regler. Det betyr at du tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning. Begge brukes i utregningen av pensjonen din.",

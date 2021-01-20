@@ -13,8 +13,10 @@
     "pensjonsbeholdning-forklart-tekst": "Du opparbeider pensjonsbeholdning fra og med det første året du har pensjonsgivende inntekt. Beholdningen øker for hvert år basert på forrige års beholdning, pensjonsgivende inntekt to år tilbake i tid og eventuell annen opptjening av pensjonsrettigheter, samt en årlig regulering. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
 
     "pensjonspoeng-forklart": "Pensjonspoeng forklart",
-    "pensjonspoeng-forklart-tekst": "Forklaring...TODO",
-
+    "pensjonspoeng-forklart-tekst": [
+        "Her finner du opplysninger om pensjonsopptjeningen din for de aktuelle årene etter at folketrygden ble innført i 1967. Du kunne tjene opp pensjonsrettigheter fra det året du fylte 17 år og fram til og med året du fyller 69 år.",
+        "NAV mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)."
+    ],
     "beholdning-and-pensjonspoeng-forklart": "Pensjonsbeholdning og pensjonspoeng forklart",
     "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er født i {{fodselsar}} tjener opp alderspensjon forholdsmessig etter både gamle og nye regler. Det betyr at du tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning. Begge brukes i utregningen av pensjonen din.",
     "beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst": "Din fordeling etter nye og gamle regler kan illustreres slik:",
