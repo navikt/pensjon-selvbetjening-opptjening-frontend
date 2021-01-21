@@ -39,7 +39,7 @@ export const FAQPanel = (props) => {
         faq.push(
             <Ekspanderbartpanel key={"special" + i} tittel={<Normaltekst>{t(faqNamespace + ':faq-question-'+i)}</Normaltekst>} border className="questionWrapper" onClick={() => toggleOpen(i, 'special')}>
                 <div key="horizontalLine" className="faqHorizontalLine"/>
-                <ReactMarkdown>{t(faqNamespace + ':faq-answer-'+i, {joinArrays: "\n\n"})}</ReactMarkdown>
+                <ReactMarkdown linkTarget="blank">{t(faqNamespace + ':faq-answer-'+i, {joinArrays: "\n\n"})}</ReactMarkdown>
             </Ekspanderbartpanel>
         )
     }
@@ -48,7 +48,7 @@ export const FAQPanel = (props) => {
         faq.push(
             <Ekspanderbartpanel key={"common" + i} tittel={<Normaltekst>{t('faq:faq-question-'+i)}</Normaltekst>} border className="questionWrapper" onClick={() => toggleOpen(i, 'common')}>
                 <div key="horizontalLine" className="faqHorizontalLine"/>
-                <ReactMarkdown>{t('faq:faq-answer-'+i, {joinArrays: "\n\n"})}</ReactMarkdown>
+                <ReactMarkdown linkTarget="blank">{t('faq:faq-answer-'+i, {joinArrays: "\n\n"})}</ReactMarkdown>
             </Ekspanderbartpanel>
         )
     }
