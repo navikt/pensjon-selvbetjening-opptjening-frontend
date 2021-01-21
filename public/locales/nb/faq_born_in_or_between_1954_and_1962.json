@@ -1,9 +1,32 @@
 {
-    "faq-number-of-questions": 0,
+    "faq-number-of-questions": 7,
 
-    "faq-question-1": "Hva betyr pensjonsgivende inntekt?",
+    "faq-question-1": "Hva er pensjonsbeholdning?",
     "faq-answer-1": [
-        "I folketrygden er pensjonsgivende inntekt med enkelte unntak det samme som personinntekt etter skatteloven. Det betyr at all brutto lønnsinntekt for lønnstakere og beregnet personinntekt fra næring for selvstendige regnes som pensjonsgivende. Mottatte skattepliktige trygdeytelser som sykepenger og arbeidsavklaringspenger inngår også i den pensjonsgivende inntekten.",
-        "Den pensjonsgivende inntekten beregnes av Skatteetaten."
-    ]
+        "Pensjonsbeholdningen tilsvarer summen av årlig pensjonsopptjening som bygges opp i løpet av livet på grunnlag av pensjonsgivende inntekt, førstegangstjeneste, mottak av dagpenger, uføretrygd og omsorgsarbeid.",
+        "Pensjonsopptjeningen for et kalenderår oppreguleres med lønnsvekst og tilføres pensjonsbeholdningen ved utløpet av året skattemeldingen for det aktuelle året er ferdig.",
+        "Pensjonsbeholdningen er grunnlag for beregning av alderspensjon fra folketrygden. For å se hva du vil få i årlig pensjon må du gå til vår pensjonskalkulator."
+    ],
+
+    "faq-question-2": "Hvordan reguleres pensjonsbeholdningen?",
+    "faq-answer-2": "Pensjonsbeholdningen reguleres årlig i samsvar med lønnsveksten.",
+
+    "faq-question-3": "Hvordan beregnes opptjening fra inntekt?",
+    "faq-answer-3": [
+        "For hvert år du har pensjonsgivende inntekt legges 18,1 prosent av inntekten inn i pensjonsbeholdningen din. Du tjener opp til pensjon fra første krone. Sykepenger, arbeidsavklaringspenger og omsorgslønn blir også regnet som pensjonsgivende inntekt.",
+        "Du kan få pensjonsopptjening frem til og med året du fyller 75 år. Hvis du fylte 13 år i 2010 eller senere kan du få opptjening fra det året du fylte/fyller 13 år. Var du 17 år eller eldre i 2010 kan du få opptjening fra det året du fylte 17 år.",
+        "Årlig inntekt blir medregnet fra 1. januar året etter at fastsettingen er ferdig. Det betyr for eksempel at inntekten for 2016 først blir medregnet i pensjonen fra 1. januar 2018."
+    ],
+
+    "faq-question-4": "Hvordan påvirket pensjonsreformen 2010 beholdningen min?",
+    "faq-answer-4": "Pensjonsbeholdningen din ble etablert med virkning 1. januar 2010 i forbindelse med at pensjonsreformen trådte i kraft. Da ble den opptjeningen du hadde i kalenderår frem til og med 2008 (siste ferdiglignede år) summert til en beholdningsstørrelse.",
+
+    "faq-question-5": "Hvordan beregnes opptjening for dagpenger?",
+    "faq-answer-5": "For perioder med dagpenger blir 18,1 prosent av en inntekt som er lagt til grunn for fastsettelse av dagpenger lagt til pensjonsbeholdningen din.",
+
+    "faq-question-6": "Hvordan beregnes opptjening for uføretrygd?",
+    "faq-answer-6": "For perioder med uføretrygd blir 18,1 prosent av en antatt inntekt lagt til pensjonsbeholdningen din. Dette gjelder til og med det året du fyller 61 år.",
+
+    "faq-question-7": "Hvordan beregnes opptjening for førstegangstjeneste?",
+    "faq-answer-7": "Du kan også få opptjening til pensjonsbeholdningen basert på førstegangstjeneste som ble påbegynt tidligst i 2010. Opptjeningen utgjør 18,1 prosent av folketrygdens grunnbeløp (G)."
 }
