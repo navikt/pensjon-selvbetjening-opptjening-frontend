@@ -13,21 +13,18 @@
     "pensjonsbeholdning-forklart-tekst": "You accumulate pension capital from the first year you have pensionable income. The assets increase each year based on the previous year's assets, pensionable income two years back and any other accrual of pension rights, as well as an annual adjustment. The pension assets is used as a starting point for calculating the retirement pension you receive from NAV.",
 
     "pensjonspoeng-forklart": "Pension points explained",
-    "pensjonspoeng-forklart-tekst": [
-        "Her finner du opplysninger om pensjonsopptjeningen din for de aktuelle årene etter at folketrygden ble innført i 1967. Du kunne tjene opp pensjonsrettigheter fra det året du fylte 17 år og fram til og med året du fyller 69 år.",
-        "NAV mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)."
-    ],
+    "pensjonspoeng-forklart-tekst": "Pensjonspoeng beregnes av pensjonsgivende inntekt, først og fremst arbeidsinntekt og personinntekt fra næringsvirksomhet hvert år, fra og med det året man fyller 17 til og med det året man fyller 69. Pensjonspoeng brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
 
     "beholdning-and-pensjonspoeng-forklart": "Accumulated pension capital and pension points explained",
-    "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er født i {{fodselsar}} tjener opp alderspensjon forholdsmessig etter både gamle og nye regler. Det betyr at du tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning. Begge brukes i utregningen av pensjonen din.",
+    "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er **født i {{fodselsar}}** tjener opp, og får beregnet din alderspensjon etter en kombinasjon av gamle og nye opptjeningsregler i folketrygden. Det nye regelverket fases gradvis inn med en tidel ekstra for hvert årskull. Du som er **født i {{fodselsar}}** får derfor {{andelPensjonBasertPaPensjonspoeng}} tideler etter gammelt regelverk og {{andelPensjonBasertPaBeholdning}} tideler etter nytt regelverk.",
     "beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst": "Din fordeling etter nye og gamle regler kan illustreres slik:",
-    "beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning": "Accumulated pension capital {{andelPensjonBasertPaBeholdning}} of 10",
-    "beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng": "Pension points {{andelPensjonBasertPaPensjonspoeng}} of 10",
+    "beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning": "Accumulated pension capital",
+    "beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng": "Pension points",
     "beholdning-and-pensjonspoeng-forklart-lenke": "Read about old and new rules in the National Insurance Scheme",
     "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title": "Pension points explained:",
-    "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text": "Hvert år du har inntekt får du pensjonspoeng...TODO",
+    "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text": "Pensjonspoeng beregnes av pensjonsgivende inntekt, først og fremst arbeidsinntekt og personinntekt fra næringsvirksomhet hvert år, fra og med det året man fyller 17 til og med det året man fyller 69. Pensjonspoeng brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
     "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title": "Accumulated pension capital explained:",
-    "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text": "Hvert år øker pensjonsbeholdningen din med 18.1 % av inntekten du hadde for to år siden...TODO",
+    "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text": "Du opparbeider pensjonsbeholdning fra og med det første året du har pensjonsgivende inntekt. Beholdningen øker for hvert år basert på forrige års beholdning, pensjonsgivende inntekt og eventuell annen opptjening av pensjonsrettigheter, samt en årlig regulering. Pensjonsbeholdningen brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Accumulated pension capital at the start of the year",

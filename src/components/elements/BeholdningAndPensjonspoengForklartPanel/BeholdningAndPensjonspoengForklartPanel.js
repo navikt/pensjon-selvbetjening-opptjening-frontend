@@ -6,6 +6,7 @@ import Panel from "nav-frontend-paneler";
 import Lenke from "nav-frontend-lenker";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
 import {PENSJONSOPPTJENING_FOR_DEG_FODT_MELLOM_1954_OG_1962} from "../../../common/externalUrls";
+import ReactMarkdown from "react-markdown";
 
 const shareItem = (type, idx) => {
     return(
@@ -36,9 +37,9 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
             <div className="beholdningAndPoengForklartTitleContainer">
                 <PanelTitle titleString={t('beholdning-and-pensjonspoeng-forklart')}/>
             </div>
-            <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
-                {t('beholdning-and-pensjonspoeng-forklart-tekst', {fodselsar})}
-            </Tekstomrade>
+            <ReactMarkdown className="beholdningAndPensjonspoengForklartExplanationText">
+                {t('beholdning-and-pensjonspoeng-forklart-tekst', {fodselsar, andelPensjonBasertPaBeholdning, andelPensjonBasertPaPensjonspoeng})}
+            </ReactMarkdown>
             <Tekstomrade className="beholdningAndPensjonspoengForklartIllustrationText">
                 {t('beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst')}
             </Tekstomrade>
@@ -47,15 +48,15 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
             </div>
             <div>
                 <div className="pensjonsbeholdningColorBox"/>
-                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning", {andelPensjonBasertPaBeholdning})}</span>
+                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning")}</span>
                 <div className="pensjonspoengColorBox"/>
-                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng", {andelPensjonBasertPaPensjonspoeng})}</span>
+                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng")}</span>
             </div>
             <div className="pensjonsopptjeningForklaring">
                 <h3>{t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title')}</h3>
-                <Tekstomrade>
-                    {t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text')}
-                </Tekstomrade>
+                <ReactMarkdown>
+                    {t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text', {joinArrays: "\n\n"})}
+                </ReactMarkdown>
             </div>
             <div className="pensjonsopptjeningForklaring">
                 <h3>{t('beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title')}</h3>
