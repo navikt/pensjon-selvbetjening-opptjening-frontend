@@ -1,5 +1,5 @@
 {
-    "faq-number-of-questions": 7,
+    "faq-number-of-questions": 9,
 
     "faq-question-1": "What is accumulated pension capital?",
     "faq-answer-1": [
@@ -28,5 +28,11 @@
     "faq-answer-6": "For periods of disability benefits, 18.1 per cent of an estimated income is added to your pension portfolio. This applies up to, and including, the year you turn 61.",
 
     "faq-question-7": "How to calculate earnings for compulsory military service?",
-    "faq-answer-7": "You can also add to your accumulated pension capital based on compulsory military service that was started in 2010 at the earliest. The earnings will be 18.1 per cent of the National Insurance Scheme's basic amount."
+    "faq-answer-7": "You can also add to your accumulated pension capital based on compulsory military service that was started in 2010 at the earliest. The earnings will be 18.1 per cent of the National Insurance Scheme's basic amount.",
+
+    "faq-question-8": "Hvorfor har jeg ikke pensjonsbeholdning",
+    "faq-answer-8": "Det er ikke registrert pensjonsopptjening eller pensjonspoeng. NAV mottar den pensjonsgivende inntekten fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)",
+
+    "faq-question-9": "Hva menes med overgangsregler?",
+    "faq-answer-9": "Det kan tjenes opp pensjonsrettigheter fra det året man fylte 17 år og til og med det året man fyller 75 år. De som er født i perioden 1954-1962 tjener opp til alderspensjonen etter gamle og nye regler i folketrygdloven. Det betyr at man tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning."
 }
