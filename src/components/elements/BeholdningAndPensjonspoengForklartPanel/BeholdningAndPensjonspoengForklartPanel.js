@@ -54,9 +54,9 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
             </div>
             <div className="pensjonsopptjeningForklaring">
                 <h3>{t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title')}</h3>
-                <ReactMarkdown>
+                <Tekstomrade>
                     {t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text', {joinArrays: "\n\n"})}
-                </ReactMarkdown>
+                </Tekstomrade>
             </div>
             <div className="pensjonsopptjeningForklaring">
                 <h3>{t('beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title')}</h3>

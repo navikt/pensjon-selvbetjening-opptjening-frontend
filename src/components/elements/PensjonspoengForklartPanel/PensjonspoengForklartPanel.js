@@ -5,7 +5,7 @@ import "./PensjonspoengForklartPanel.less";
 import pengesekk from "../../../assets/pengesekk.svg";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
-import ReactMarkdown from "react-markdown";
+import Tekstomrade from "nav-frontend-tekstomrade";
 
 export const PensjonspoengForklartPanel = () => {
     const { t } = useTranslation();
@@ -18,9 +18,9 @@ export const PensjonspoengForklartPanel = () => {
 
     return(
         <Ekspanderbartpanel tittel={panelTitle} border className="panelWrapper" onClick={toggleOpen}>
-            <ReactMarkdown data-testid="explanationText" className="pensjonspoengExplanationText" linkTarget="blank">
-                {t('pensjonspoeng-forklart-tekst', {joinArrays: "\n\n"})}
-            </ReactMarkdown>
+            <Tekstomrade data-testid="explanationText" className="pensjonspoengExplanationText">
+                {t('pensjonspoeng-forklart-tekst')}
+            </Tekstomrade>
         </Ekspanderbartpanel>
     )
 };

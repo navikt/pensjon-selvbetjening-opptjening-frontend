@@ -5,7 +5,6 @@
     "opptjening-intro-tekst": "Her finner du ei samla oversyn over pensjonsoppteninga di.",
 
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysninga vil koma på et seinare tidspunkt.",
-    "opptjening-inntekt-link-to-skatteetaten": "Opplysningane om inntekt er henta frå skattemeldinga hos Skatteetaten.",
 
     "beholdning-din-pensjonsbeholdning-i-folketrygden": "Din pensjonsbehaldning i folketrygda",
 
@@ -51,6 +50,7 @@
     "opptjening-details-pensjonsbeholdning-title": "Pensjonsbehaldning",
     "opptjening-details-ingen-pensjonsbeholdning":"Det er ikkje registrert noko behaldning dette året. Dette skyldast at du ikkje hadde inntekt i {{year}}",
 
+    "inntekt-tekst": "NAV mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor]({{skatteetatenLink}}).",
     "inntekt-lukk-panel":  "Lukk panel",
     "inntekt-aar": "År",
     "inntekt-inntekt": "Inntekt",

@@ -8,9 +8,10 @@ import "./InntektWithMerknadPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953} from "../../../common/userGroups";
-import {SKATTEMELDING_FOR_PERSON} from "../../../common/externalUrls";
+import {SKATTEETATEN} from "../../../common/externalUrls";
 import handMedMynter from "../../../assets/handMedMynter.svg";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
+import ReactMarkdown from "react-markdown";
 
 const getTextParagraph = (text, key) =>{
     return(
@@ -123,7 +124,9 @@ export const InntektWithMerknadPanel = (props) => {
         <EkspanderbartpanelBase tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
             <div data-testid="inntektContainer">
                 <div className="inntektLinkContainer">
-                    <Lenke href={SKATTEMELDING_FOR_PERSON}>{t('opptjening-inntekt-link-to-skatteetaten')}</Lenke>
+                    <ReactMarkdown linkTarget="blank">
+                        {t('inntekt-tekst', {skatteetatenLink: SKATTEETATEN})}
+                    </ReactMarkdown>
                 </div>
                 <div className="inntektDetailsBox">
                     <table className="tabell inntektTabell">
