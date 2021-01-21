@@ -49,6 +49,7 @@
     "opptjening-details-pensjonspoeng-label": "Pension points based on income in {{currentYear}}",
     "opptjening-details-pensjonsbeholdning-title": "Accumulated pension capital",
     "opptjening-details-ingen-pensjonsbeholdning": "There is no registered accumulated pension this year. This is because you did not have any income in {{year}}",
+
     "inntekt-tekst": "The information on income comes from the tax assessment from the tax authorities. if something is not correct with your income, please contact your [local tax authority]({{skatteetatenLink}}).",
     "inntekt-lukk-panel": "Close panel",
     "inntekt-aar": "Year",
