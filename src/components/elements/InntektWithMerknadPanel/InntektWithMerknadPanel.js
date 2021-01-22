@@ -127,7 +127,7 @@ export const InntektWithMerknadPanel = (props) => {
 
     return(
         <div>
-            <a href="#" name="inntektPanelTop"/>
+            <span id="inntektPanelTop"/>
             <EkspanderbartpanelBase tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
                 <div data-testid="inntektContainer">
                     <div className="inntektLinkContainer">
