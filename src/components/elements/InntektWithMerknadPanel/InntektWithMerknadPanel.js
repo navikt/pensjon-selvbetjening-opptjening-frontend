@@ -118,40 +118,48 @@ export const InntektWithMerknadPanel = (props) => {
         setApen(!apen);
     };
 
+    const topOfPanel = (props) => {
+        logToAmplitude({eventType: CLICK_EVENT, name: "Til toppen av panel", titleKey: title, type: props.type, value: true});
+        window.location.href = "#inntektPanelTop";
+    };
+
     const panelTitle = <PanelTitle titleString={t(title)} illustrationClass="inntektDetailIllustration" illustration={handMedMynter}/>
 
     return(
-        <EkspanderbartpanelBase tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
-            <div data-testid="inntektContainer">
-                <div className="inntektLinkContainer">
-                    <ReactMarkdown linkTarget="blank">
-                        {t('inntekt-tekst', {skatteetatenLink: SKATTEETATEN})}
-                    </ReactMarkdown>
-                </div>
-                <div className="inntektDetailsBox">
-                    <table className="tabell inntektTabell">
-                        <thead>
-                            <tr className="row">
-                                <th data-testid="income-header" className="col1">{t('inntekt-aar')}</th>
-                                <th data-testid="income-header" className="col2">{t('inntekt-inntekt-kr')}</th>
-                                {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <th data-testid="income-header" className="col3">{t('inntekt-pensjonspoeng')}</th>}
-                                <th data-testid="income-header" className="col4">{t('inntekt-merknad')}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {detailRows}
-                        </tbody>
-                    </table>
-                    <ul className="inntektList">
-                        {detailListItems}
-                    </ul>
-                </div>
-                <button type="button" aria-label={t("inntekt-lukk-panel")} className="closeButton" onClick={() => toggleOpen({type: 'Knapp'})}>
-                    <div>
-                        <OppChevron/>
+        <div>
+            <a href="#" name="inntektPanelTop"/>
+            <EkspanderbartpanelBase tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
+                <div data-testid="inntektContainer">
+                    <div className="inntektLinkContainer">
+                        <ReactMarkdown linkTarget="blank">
+                            {t('inntekt-tekst', {skatteetatenLink: SKATTEETATEN})}
+                        </ReactMarkdown>
                     </div>
-                </button>
-            </div>
-        </EkspanderbartpanelBase>
+                    <div className="inntektDetailsBox">
+                        <table className="tabell inntektTabell">
+                            <thead>
+                                <tr className="row">
+                                    <th data-testid="income-header" className="col1">{t('inntekt-aar')}</th>
+                                    <th data-testid="income-header" className="col2">{t('inntekt-inntekt-kr')}</th>
+                                    {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <th data-testid="income-header" className="col3">{t('inntekt-pensjonspoeng')}</th>}
+                                    <th data-testid="income-header" className="col4">{t('inntekt-merknad')}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {detailRows}
+                            </tbody>
+                        </table>
+                        <ul className="inntektList">
+                            {detailListItems}
+                        </ul>
+                    </div>
+                    <button type="button" aria-label={t("inntekt-til-toppen")} className="closeButton" onClick={() => topOfPanel({type: 'Knapp'})}>
+                        <div>
+                            <OppChevron/>
+                        </div>
+                    </button>
+                </div>
+            </EkspanderbartpanelBase>
+        </div>
     )
 };
