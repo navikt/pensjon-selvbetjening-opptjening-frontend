@@ -6,7 +6,7 @@ metadata:
   labels:
     team: pensjonselvbetjening
 spec:
-  image: {{ image_sbs }}
+  image: {{ image_prod_sbs }}
   port: 8080
   ingresses:
     - "https://pensjon-selvbetjening-opptjening-frontend.nais.oera.no"

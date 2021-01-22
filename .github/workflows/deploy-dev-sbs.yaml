@@ -7,7 +7,7 @@ jobs:
     name: Deploy to dev-sbs
     runs-on: ubuntu-latest
     env:
-      IMAGE_SBS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-dev:${{ github.sha }}
+      IMAGE_DEV_SBS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-dev-sbs:${{ github.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -31,21 +31,21 @@ jobs:
           REACT_APP_PENSJONSKALKULATOR_URL: "https://pensjon-pselv-q2.dev.nav.no/pselv/simulering.jsf"
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://pensjon-pselv-q2.dev.nav.no/pselv/publisering/overforeomsorgspoeng.jsf"
         run: npm run build
-      - name: Build Docker image SBS
+      - name: Build Docker image dev-sbs
         run: |
-          docker build -f Dockerfile-sbs -t ${IMAGE_SBS} .
+          docker build -f Dockerfile-sbs -t ${IMAGE_DEV_SBS} .
       - name: Login to Github Package Registry
         env:
           DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login --username "$GITHUB_REPOSITORY" --password-stdin docker.pkg.github.com
-      - name: Push Docker image SBS
-        run: "docker push ${IMAGE_SBS}"
-      - name: Generate NAIS variables SBS
+      - name: Push Docker image dev-sbs
+        run: "docker push ${IMAGE_DEV_SBS}"
+      - name: Generate NAIS variables dev-sbs
         run: |
-          cat > nais/vars-sbs.yaml <<EOF
+          cat > nais/vars-dev-sbs.yaml <<EOF
           namespace: default
-          image_sbs: $IMAGE_SBS
+          image_dev_sbs: $IMAGE_DEV_SBS
           EOF
       - name: Deploy to dev-sbs
         uses: nais/deploy/actions/deploy@v1
@@ -53,4 +53,4 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-sbs
           RESOURCE: nais/nais-dev-sbs.yml
-          VARS: nais/vars-sbs.yaml
+          VARS: nais/vars-dev-sbs.yaml

@@ -10,7 +10,7 @@ jobs:
     name: Deploy to dev-fss
     runs-on: ubuntu-latest
     env:
-      IMAGE_FSS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-fss:${{ github.sha }}
+      IMAGE_DEV_FSS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-dev-fss:${{ github.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -34,21 +34,21 @@ jobs:
           REACT_APP_PENSJONSKALKULATOR_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/simulering.jsf"
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/publisering/overforeomsorgspoeng.jsf"
         run: npm run build
-      - name: Build Docker image FSS
+      - name: Build Docker image dev-fss
         run: |
-          docker build -f Dockerfile-fss -t ${IMAGE_FSS} .
+          docker build -f Dockerfile-fss -t ${IMAGE_DEV_FSS} .
       - name: Login to Github Package Registry
         env:
           DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login --username "$GITHUB_REPOSITORY" --password-stdin docker.pkg.github.com
-      - name: Push Docker image FSS
-        run: "docker push ${IMAGE_FSS}"
-      - name: Generate NAIS variables FSS
+      - name: Push Docker image dev-fss
+        run: "docker push ${IMAGE_DEV_FSS}"
+      - name: Generate NAIS variables dev-fss
         run: |
-          cat > nais/vars-fss.yaml <<EOF
+          cat > nais/vars-dev-fss.yaml <<EOF
           namespace: default
-          image_fss: $IMAGE_FSS
+          image_dev_fss: $IMAGE_DEV_FSS
           EOF
       - name: Deploy to dev-fss
         uses: nais/deploy/actions/deploy@v1
@@ -56,4 +56,4 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-fss
           RESOURCE: nais/nais-dev-fss.yml
-          VARS: nais/vars-fss.yaml
+          VARS: nais/vars-dev-fss.yaml
