@@ -27,6 +27,7 @@ jobs:
       - name: Build application
         env:
           REACT_APP_LOGINSERVICE_URL: "https://loginservice.nav.no/login?redirect="
+          REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjening"
           REACT_APP_DECORATOR_URL: "https://www.nav.no/dekoratoren"
           REACT_APP_DINPENSJON_URL: "https://tjenester.nav.no/pselv/publisering/dinpensjon.jsf"
           REACT_APP_DINEPENSJONSPOENG_URL: "https://tjenester.nav.no/pselv/publisering/dinepensjonspoeng.jsf"
