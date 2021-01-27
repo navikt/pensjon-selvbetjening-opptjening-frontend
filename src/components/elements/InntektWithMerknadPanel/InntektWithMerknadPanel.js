@@ -12,6 +12,7 @@ import {SKATTEETATEN} from "../../../common/externalUrls";
 import handMedMynter from "../../../assets/handMedMynter.svg";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
 import ReactMarkdown from "react-markdown";
+import * as urlHelper from "../../../common/urlHelper";
 
 const getTextParagraph = (text, key) =>{
     return(
@@ -30,7 +31,7 @@ const amountListItem = (amount) => {
 };
 
 const getMerknadText = (merknad, t, uforegrad) =>{
-    const overforeUrl = process.env.REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL ? process.env.REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL : "";
+    const overforeUrl = urlHelper.OVERFORE_OMSORGSOPPTJENING_URL ? urlHelper.OVERFORE_OMSORGSOPPTJENING_URL : "";
     let merknadText = t("remarks:" + merknad, {maxUforegrad: uforegrad})
     if(merknad==='OVERFORE_OMSORGSOPPTJENING'){
         merknadText = <Lenke href={overforeUrl}>{merknadText}</Lenke>
