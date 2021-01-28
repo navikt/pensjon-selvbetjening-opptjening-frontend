@@ -49,11 +49,11 @@ function verifyStatusSuccessOrRedirect(response) {
     }
     if (response.status === 401) {
         window.location.href = process.env.REACT_APP_LOGINSERVICE_URL + encodeURIComponent(redirect);
-        //throw new Error("error-status-401");
+        throw new Error("error-status-401");
     }
     if (response.status === 403) {
         window.location.href = urlHelper.DINEPENSJONSPOENG_URL;
-        //throw new Error("error-status-403");
+        throw new Error("error-status-403");
     }
     if (response.status >= 200 && response.status < 300) {
         return response.status;
