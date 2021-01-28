@@ -1,4 +1,4 @@
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, formatNumber} from "../../../common/utils";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
@@ -54,7 +54,7 @@ const detailRow = (props) => {
         <tr data-testid="income-row" key={key} className="row">
             <td data-testid="income-label">{year}</td>
             <td data-testid="income-amount">{amountTxt}</td>
-            {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <td data-testid="pensjonspoeng">{pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</td>}
+            {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <td data-testid="pensjonspoeng">{pensjonsPoeng!==null ? formatNumber(pensjonsPoeng) : null}</td>}
             <td data-testid="remark">{merknadArray}</td>
         </tr>
     )
@@ -77,7 +77,7 @@ const detailListItem = (props) => {
             <ul>
                 <li><b>{t('inntekt-aar') + ":"} {year}</b></li>
                 <li>{t('inntekt-inntekt') + ":"} {amountTxt}</li>
-                {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <li>{t('inntekt-pensjonspoeng') + ":"} {pensjonsPoeng!==null ? pensjonsPoeng.toFixed(2) : null}</li>}
+                {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <li>{t('inntekt-pensjonspoeng') + ":"} {pensjonsPoeng!==null ? formatNumber(pensjonsPoeng) : null}</li>}
                 {merknadArray.length > 0 && <li className="listItemMerknad">{t('inntekt-merknader') + ":"} <ul>{merknadArray}</ul></li>}
             </ul>
         </li>

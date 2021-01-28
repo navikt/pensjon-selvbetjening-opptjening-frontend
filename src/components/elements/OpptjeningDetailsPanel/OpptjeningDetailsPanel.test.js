@@ -1,7 +1,7 @@
 import React from 'react';
 import {fireEvent, render} from '@testing-library/react';
 import {OpptjeningDetailsPanel} from './OpptjeningDetailsPanel';
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, formatNumber} from "../../../common/utils";
 import {constructOpptjening, constructEndringOpptjening} from "../../../__mocks__/mockDataGenerator";
 import {axe} from "jest-axe";
 import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
@@ -243,7 +243,7 @@ it('should render container for pensjonspoeng when usergroup BORN_IN_OR_BETWEEN_
 
     expect(panel.getByText("opptjening-details-pensjonspoeng-title")).toBeInTheDocument();
     expect(panel.getByText("opptjening-details-pensjonspoeng-label")).toBeInTheDocument();
-    expect(panel.getByTestId("pensjonspoengContainer-pensjonspoeng")).toHaveTextContent(expectedPensjonspoeng);
+    expect(panel.getByTestId("pensjonspoengContainer-pensjonspoeng")).toHaveTextContent(formatNumber(expectedPensjonspoeng));
 });
 
 it('should not render container for pensjonspoeng when usergroup BORN_AFTER_1962', () => {

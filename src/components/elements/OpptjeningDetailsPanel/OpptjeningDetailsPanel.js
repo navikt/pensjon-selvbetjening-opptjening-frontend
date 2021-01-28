@@ -1,4 +1,4 @@
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, formatNumber} from "../../../common/utils";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {EkspanderbartpanelBase} from "nav-frontend-ekspanderbartpanel";
@@ -182,7 +182,7 @@ const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
             <h3>{t('opptjening-details-pensjonspoeng-title')}</h3>
             <div  className="detailRow">
                 <span className="labelColumn">{t('opptjening-details-pensjonspoeng-label', {currentYear})}</span>
-                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng!=null ? pensjonspoeng.toFixed(2) : null}</span>
+                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : null}</span>
                 <span role="presentation" className="emptyColumn">&nbsp;</span>
             </div>
         </div>

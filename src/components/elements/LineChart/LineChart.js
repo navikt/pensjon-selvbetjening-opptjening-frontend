@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 import 'nav-frontend-tabell-style';
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, formatNumber} from "../../../common/utils";
 import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
@@ -42,7 +42,7 @@ const dataRow = (props) => {
         <tr key={key} className="row">
             <td data-testid="tableDataYear">{label}</td>
             <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
-            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? pensjonspoeng.toFixed(2) : null}</td>}
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : null}</td>}
         </tr>
     )
 };
@@ -56,7 +56,7 @@ const listItem = (props) => {
             <ul>
                 <li><b>{t("chart-aar")+": "} {label}</b></li>
                 <li>{t("chart-pensjonsbeholdning")+": "} {pensjonsbeholdningTxt}</li>
-                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? pensjonspoeng.toFixed(2) : null}</li>}
+                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? formatNumber(pensjonspoeng) : null}</li>}
             </ul>
         </li>
     )
@@ -201,7 +201,7 @@ export const LineChart = (props) => {
                             'kr ' + formatAmount(chartMap[year].pensjonsbeholdning);
 
                         if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
-                            return [tooltipBeholdning, '',t('chart-pensjonspoeng') + ': ' + chartMap[year].pensjonspoeng];
+                            return [tooltipBeholdning, '',t('chart-pensjonspoeng') + ': ' + formatNumber(chartMap[year].pensjonspoeng)];
                         } else {
                             return tooltipBeholdning;
                         }
