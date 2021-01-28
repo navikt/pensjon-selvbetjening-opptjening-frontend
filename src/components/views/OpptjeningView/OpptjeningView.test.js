@@ -33,10 +33,46 @@ it('should render Opptjening view and display only the headings for the differen
     expect(view.queryAllByRole("heading")[2]).toHaveTextContent("chart-pensjonsbeholdningen-din"); //Chart - Chart-view
     expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
     expect(view.queryAllByRole("heading")[4]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
-    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("pensjonskalkulator-lenke-title"); //PensjonskalkulatorLenkePanel
-    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
+    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("opptjening-flere-steder-title"); //OpptjeningFlereStederPanel
+    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("pensjonskalkulator-lenke-title"); //PensjonskalkulatorLenkePanel
+    expect(view.queryAllByRole("heading")[7]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
 
     expect(view.queryAllByRole("table").length).toBe(1); // Chart tables
+});
+
+it('should render Opptjening view and display the headings for the different panels for users born between 1954 and 1962', () => {
+    const mockedState = mockBasicSuccessState(20, 1958);
+    const mockStore = configureStore();
+    let store = mockStore(mockedState);
+
+    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+
+    expect(view.queryAllByRole("heading")[0]).toHaveTextContent("beholdning-din-pensjonsbeholdning-i-folketrygden"); //Beholdning-panel
+    expect(view.queryAllByRole("heading")[1]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart"); //BeholdningAndPensjonspoengForklart-panel
+    expect(view.queryAllByRole("heading")[2]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title"); //Subtitle in BeholdningAndPensjonspoengForklart Panel
+    expect(view.queryAllByRole("heading")[3]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title"); //Subtitle in BeholdningAndPensjonspoengForklart Panel
+    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("chart-pensjonsbeholdningen-og-pensjonspoengene-dine"); //Chart - Chart-view
+    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
+    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
+    expect(view.queryAllByRole("heading")[7]).toHaveTextContent("opptjening-flere-steder-title"); //OpptjeningFlereStederPanel
+    expect(view.queryAllByRole("heading")[8]).toHaveTextContent("pensjonskalkulator-lenke-title"); //PensjonskalkulatorLenkePanel
+    expect(view.queryAllByRole("heading")[9]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
+
+    expect(view.queryAllByRole("table").length).toBe(1); // Chart tables
+});
+
+it('should render Opptjening view and display the headings for the different panels for users born before 1954', () => {
+    const mockedState = mockBasicSuccessState(20, 1948);
+    const mockStore = configureStore();
+    let store = mockStore(mockedState);
+
+    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+
+    expect(view.queryAllByRole("heading")[0]).toHaveTextContent("pensjonspoeng-forklart"); //Pensjonspoeng
+    expect(view.queryAllByRole("heading")[1]).toHaveTextContent("inntekt-pensjonsgivende-inntekter-og-pensjonspoeng"); //Inntekter-panel
+    expect(view.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-flere-steder-title"); //OpptjeningFlereStederPanel
+    expect(view.queryAllByRole("heading")[3]).toHaveTextContent("pensjonskalkulator-lenke-title"); //PensjonskalkulatorLenkePanel
+    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
 });
 
 it('should render Opptjening view, open Pensjonsbeholdning forklart-panel and show explanation', () => {

@@ -44,17 +44,17 @@ it('should render the Inntekt panel and open it with correct mockData sorted', (
     userEvent.click(panel.getByRole("heading"));
 
     expect(panel.getAllByTestId("income-header")[0]).toHaveTextContent("inntekt-aar");
-    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("inntekt-inntekt");
+    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("inntekt-inntekt-kr");
     expect(panel.getAllByTestId("income-header")[2]).toHaveTextContent("inntekt-merknad");
 
     expect(panel.getAllByTestId("income-row").length).toBe(4);
 
     expect(panel.getAllByTestId("income-label")[1]).toHaveTextContent(startYear + 2);
-    expect(panel.getAllByTestId("income-amount")[1].textContent).toEqual("kr" + formatAmount(expectedInntekt2020));
+    expect(panel.getAllByTestId("income-amount")[1].textContent).toEqual(formatAmount(expectedInntekt2020));
     expect(panel.getAllByTestId("income-label")[2]).toHaveTextContent(startYear + 1);
-    expect(panel.getAllByTestId("income-amount")[2].textContent).toEqual("kr" + formatAmount(expectedInntekt2019));
+    expect(panel.getAllByTestId("income-amount")[2].textContent).toEqual(formatAmount(expectedInntekt2019));
     expect(panel.getAllByTestId("income-label")[3]).toHaveTextContent(startYear);
-    expect(panel.getAllByTestId("income-amount")[3].textContent).toEqual("kr" + formatAmount(expectedInntekt2018));
+    expect(panel.getAllByTestId("income-amount")[3].textContent).toEqual(formatAmount(expectedInntekt2018));
 });
 
 it('should render text about opplysninger pa senere tidspunkt when inntekt is null', () => {
@@ -66,7 +66,7 @@ it('should render text about opplysninger pa senere tidspunkt when inntekt is nu
     userEvent.click(panel.getByRole("heading"));
 
     expect(panel.getAllByTestId("income-header")[0]).toHaveTextContent("inntekt-aar");
-    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("inntekt-inntekt");
+    expect(panel.getAllByTestId("income-header")[1]).toHaveTextContent("inntekt-inntekt-kr");
 
     expect(panel.getAllByTestId("income-label")[0]).toHaveTextContent(expectedYear);
     expect(panel.getAllByTestId("income-amount")[0]).toHaveTextContent("opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt");

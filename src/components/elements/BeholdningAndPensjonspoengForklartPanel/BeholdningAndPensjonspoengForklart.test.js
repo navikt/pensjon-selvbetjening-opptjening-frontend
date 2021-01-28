@@ -4,7 +4,9 @@ import {BeholdningAndPensjonspoengForklartPanel} from './BeholdningAndPensjonspo
 
 it('renders beholdningAndPensjonspoengForklartPanel with correct heading and text', () => {
     render(<BeholdningAndPensjonspoengForklartPanel/>);
-    expect(screen.getByRole('heading')).toHaveTextContent("beholdning-and-pensjonspoeng-forklart");
+    expect(screen.getAllByRole('heading')[0]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart");
+    expect(screen.getAllByRole('heading')[1]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title");
+    expect(screen.getAllByRole('heading')[2]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title");
     expect(screen.getByText("beholdning-and-pensjonspoeng-forklart-tekst")).toBeInTheDocument();
     expect(screen.getByText("beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst")).toBeInTheDocument();
 });

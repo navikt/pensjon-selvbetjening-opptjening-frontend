@@ -4,6 +4,7 @@ import { onBreadcrumbClick, setBreadcrumbs } from '@navikt/nav-dekoratoren-modul
 import { useTranslation } from "react-i18next";
 import { routesConfig } from "../../../common/routesConfig";
 import { useRouteMatch } from 'react-router-dom'
+import * as urlHelper from "../../../common/urlHelper";
 
 const Breadcrumbs = () => {
     const match = useRouteMatch();
@@ -11,7 +12,7 @@ const Breadcrumbs = () => {
     const { t } = useTranslation();
 
     const defaultBreadcrumb = [
-        { url: process.env.REACT_APP_DINPENSJON_URL, title: t("dinpensjon-tittel"), handleInApp: false }
+        { url: urlHelper.DINPENSJON_URL, title: t("dinpensjon-tittel"), handleInApp: false }
     ];
 
     const breadcrumbData = match.url.split("/");

@@ -14,6 +14,10 @@ export const formatAmount = (amount) => {
 
 };
 
+export const formatNumber = (number) => {
+    return number.toLocaleString("nb-NO", {minimumFractionDigits: 2, maximumFractionDigits: 2})
+};
+
 export function isDev() {
     return process.env.NODE_ENV === 'development';
 }

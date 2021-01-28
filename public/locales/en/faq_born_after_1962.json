@@ -1,10 +1,35 @@
 {
-    "faq-number-of-questions": 0,
+    "faq-number-of-questions": 8,
 
-    "faq-question-1": "Hva er pensjonsbeholdning?",
+    "faq-question-1": "What is accumulated pension capital?",
     "faq-answer-1": [
-        "Pensjonsbeholdningen tilsvarer summen av årlig pensjonsopptjening som bygges opp i løpet av livet på grunnlag av pensjonsgivende inntekt, førstegangstjeneste, mottak av dagpenger, uføretrygd og omsorgsarbeid.",
-        "Pensjonsopptjeningen for et kalenderår oppreguleres med lønnsvekst og tilføres pensjonsbeholdningen ved utløpet av året skattemeldingen for det aktuelle året er ferdig.",
-        "Pensjonsbeholdningen er grunnlag for beregning av alderspensjon fra folketrygden. For å se hva du vil få i årlig pensjon må du gå til vår pensjonskalkulator."
-    ]
+        "The accumulated pension capital corresponds to the sum of the annual pension earnings that is built up during life on the basis of pensionable income, compulsory military service, receipt of unemployment benefits, disability benefits and unpaid care work.",
+        "Pension earnings for a calendar year are adjusted upwards with wage growth and are added to the accumulated pension capital at the end of the year in which the tax assessment for the relevant year is completed.",
+        "The accumulated pension capital is the basis for calculating retirement pension from the National Insurance Scheme. To see what you will receive in the annual pension, you must use our pension calculator."
+    ],
+
+    "faq-question-2": "How is the accumulated pension capital regulated?",
+    "faq-answer-2": "The accumulated pension capital is adjusted annually in accordance with wage growth.",
+
+    "faq-question-3": "How is earnings calculated from income?",
+    "faq-answer-3": [
+        "For each year you have pensionable income, 18.1 per cent of the income is added to your accumulated pension capital. You add to your pension from the first krone you earn. Sickness benefits, work assessment benefits and unpaid care pay are also counted as pensionable income.",
+        "You can receive pension earnings up to, and including, the year you turn 75. If you turned 13 in 2010 or later, you can earn from the year you turned 13. If you were 17 years or older in 2010, you can earn from the year you turned 17.",
+        "Annual income is included from 1 January of the year after the determination is completed. This means, for example, that the income for 2016 will only be included in the pension from 1 January 2018."
+    ],
+
+    "faq-question-4": "How did the 2010 pension reform affect my accumulated pension capital?",
+    "faq-answer-4": "Your accumulated pension capital was established with effect from 1 January 2010 in connection with the pension reform coming into force. From then on, the earnings you had in the calendar year up to, and including, 2008 (last completed similar year) were added to one accumulated pension capital.",
+
+    "faq-question-5": "How is earnings calculated for unemployment benefits?",
+    "faq-answer-5": "For periods with unemployment benefits, 18.1 per cent of an income that is used as a basis for determining unemployment benefits is added to your accumulated pension capital.",
+
+    "faq-question-6": "How is earnings for disability benefits calculated?",
+    "faq-answer-6": "For periods of disability benefits, 18.1 per cent of an estimated income is added to your pension portfolio. This applies up to, and including, the year you turn 61.",
+
+    "faq-question-7": "How to calculate earnings for compulsory military service?",
+    "faq-answer-7": "You can also add to your accumulated pension capital based on compulsory military service that was started in 2010 at the earliest. The earnings will be 18.1 per cent of the National Insurance Scheme's basic amount.",
+
+    "faq-question-8": "Hvorfor har jeg ikke pensjonsbeholdning?",
+    "faq-answer-8": "Det er ikke registrert pensjonsopptjening. NAV mottar den pensjonsgivende inntekten fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)"
 }

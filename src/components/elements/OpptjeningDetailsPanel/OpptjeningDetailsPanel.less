@@ -21,16 +21,10 @@
   width: 100%;
 }
 
-.detailTitle{
-  display: flex;
-  align-items:center;
-}
-
-.detailTitle .title{
-  padding-top: 0.3rem;
-}
-.detailTitle .illustration{
-  padding-right: 0.8rem;
+.detailIllustration{
+  padding-right: 0.5rem;
+  width: 1.5rem;
+  padding-top: 0.2rem;
 }
 
 .labelColumn {
@@ -71,6 +65,7 @@
 .yearSelectorContainer {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .yearSelectorContainer .label {
@@ -83,7 +78,7 @@
 }
 
 .yearSelectorContainer select {
-  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  padding: 0.7rem 0.5rem 0.7rem 0.5rem;
 }
 
 @media (max-width: 767px) {
@@ -110,5 +105,11 @@
 
   .krColumn{
     display: none;
+  }
+}
+
+@media (max-width: 375px){
+  .labelColumn {
+    flex: 1;
   }
 }

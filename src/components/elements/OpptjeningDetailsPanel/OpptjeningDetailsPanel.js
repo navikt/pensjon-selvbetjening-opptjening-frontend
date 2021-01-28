@@ -1,4 +1,4 @@
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, formatNumber} from "../../../common/utils";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {EkspanderbartpanelBase} from "nav-frontend-ekspanderbartpanel";
@@ -6,6 +6,9 @@ import "./OpptjeningDetailsPanel.less"
 import {YearSelector} from "../YearSelector/YearSelector";
 import {Label} from "nav-frontend-skjema";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
+import {BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
+import sedler from "../../../assets/sedler.svg"
+import {PanelTitle} from "../PanelTitle/PanelTitle";
 
 const detailRow = (props) => {
     return(
@@ -13,7 +16,7 @@ const detailRow = (props) => {
             <span role="cell" data-testid={"label-"+ props.key} className="labelColumn">{props.label}</span>
             <span role="cell" data-testid={"kr-"+ props.key} className="krColumn">kr</span>
             <span role="cell" data-testid={"amount-"+ props.key} className="numberColumn">{props.amount}</span>
-            <span aria-hidden="true" className="emptyColumn">&nbsp;</span>
+            <span role="presentation" className="emptyColumn">&nbsp;</span>
         </div>
     )
 };
@@ -135,28 +138,6 @@ const buildDetails = (opptjening, currentYear, t)  => {
     };
 };
 
-const detailsTitle = (title) => {
-    return(
-        <div id="opptjeningDetailsTitle" role="heading" aria-level="2" className="detailTitle">
-            <svg width="1.2rem" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" className="illustration">
-                <path d="M1.56614 10.7656L27 5V24.3821L2.43386 29.951C1.35559 30.1954 0.287241 29.5019 0.0476259 28.4019C0.0159704 28.2566 0 28.1082 0 27.9593L0 12.7573C0 11.801 0.651064 10.9731 1.56614 10.7656Z" fill="#3E3832"/>
-                <path d="M18 6C19.6569 6 21 4.65685 21 3C21 1.34315 19.6569 0 18 0C16.3431 0 15 1.34315 15 3C15 4.65685 16.3431 6 18 6Z" fill="#E7E9E9"/>
-                <path d="M26 8C27.6569 8 29 6.65685 29 5C29 3.34315 27.6569 2 26 2C24.3431 2 23 3.34315 23 5C23 6.65685 24.3431 8 26 8Z" fill="#E7E9E9"/>
-                <rect x="6" y="5" width="24" height="13" fill="#E3B0A8"/>
-                <rect x="25" y="5" width="3" height="13" fill="#F1D8D4"/>
-                <rect x="5" y="6" width="24" height="13" fill="#C2EAF7"/>
-                <rect x="24" y="6" width="3" height="13" fill="#E0F5FB"/>
-                <rect x="4" y="7" width="24" height="13" fill="#9BD0B0"/>
-                <rect x="23" y="7" width="3" height="13" fill="#CDE7D8"/>
-                <path fillRule="evenodd" clipRule="evenodd" d="M7 12.9341V9.06856H7.60472L9.9446 12.1035V9.06856H10.5098V12.9341H9.9051L7.56522 9.89651V12.9341H7ZM11.3212 11.0514C11.3212 10.4098 11.5197 9.90749 11.9168 9.5445C12.3139 9.1815 12.8264 9 13.4544 9C13.8657 9 14.2364 9.08526 14.5666 9.25577C14.8968 9.42628 15.1486 9.66403 15.3218 9.96902C15.495 10.274 15.5816 10.6199 15.5816 11.0066C15.5816 11.3986 15.4904 11.7493 15.3081 12.0587C15.1258 12.3681 14.8675 12.6023 14.5332 12.7614C14.1989 12.9205 13.8383 13 13.4514 13C13.032 13 12.6572 12.9121 12.327 12.7363C11.9968 12.5605 11.7466 12.3206 11.5764 12.0165C11.4063 11.7124 11.3212 11.3907 11.3212 11.0514ZM11.9289 11.0593C11.9289 11.5252 12.0733 11.8921 12.362 12.1602C12.6507 12.4283 13.0128 12.5623 13.4483 12.5623C13.892 12.5623 14.2572 12.4269 14.5438 12.1562C14.8305 11.8855 14.9738 11.5014 14.9738 11.004C14.9738 10.6893 14.9125 10.4146 14.79 10.18C14.6674 9.94529 14.4881 9.76335 14.2521 9.63415C14.0161 9.50494 13.7512 9.44034 13.4575 9.44034C13.0401 9.44034 12.681 9.56471 12.3802 9.81345C12.0794 10.0622 11.9289 10.4775 11.9289 11.0593ZM16.317 12.9341V9.06856H16.9065V10.9855L19.1187 9.06856H19.918L18.0491 10.6348L20 12.9341H19.2221L17.6358 10.9776L16.9065 11.5946V12.9341H16.317Z" fill="#117938"/>
-                <path d="M2.06897 13H30V32H2.06897C0.926307 32 0 31.1046 0 30V15C0 13.8954 0.926307 13 2.06897 13Z" fill="#59514B"/>
-                <rect x="23" y="21" width="7" height="4" rx="2" fill="#E7E9E9"/>
-            </svg>
-            <div className="title">{title}</div>
-        </div>
-    )
-};
-
 const getRemarksContainer = (opptjening, currentYear, t)  => {
     let remarks = [];
     if(currentYear<2010){
@@ -195,47 +176,80 @@ const getGrunnlagTextsContainer = (grunnlagTexts)  => {
     }
 };
 
+const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
+    return (
+        <div className="detailsBox">
+            <h3>{t('opptjening-details-pensjonspoeng-title')}</h3>
+            <div  className="detailRow">
+                <span className="labelColumn">{t('opptjening-details-pensjonspoeng-label', {currentYear})}</span>
+                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : null}</span>
+                <span role="presentation" className="emptyColumn">&nbsp;</span>
+            </div>
+        </div>
+    )
+};
+
 export const OpptjeningDetailsPanel = (props) => {
     const toggleOpen = () => {
-        logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "opptjening-details-din-okning-ar-for-ar", type: "EkspanderbartPanel", value: !apen});
+        logToAmplitude({
+            eventType: CLICK_EVENT,
+            name: "Åpne panel",
+            titleKey: "opptjening-details-din-okning-ar-for-ar",
+            type: "EkspanderbartPanel",
+            value: !apen
+        });
         setApen(!apen);
     };
     const [apen, setApen] = useState(false);
 
-    const { t } = useTranslation(['translation', 'remarks', 'grunnlag']);
+    const {t} = useTranslation(['translation', 'remarks', 'grunnlag']);
     const opptjening = props.data.opptjening;
     const currentYear = props.currentYear;
+    const userGroup = props.userGroup;
 
-    const {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
+    let {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
     const remarksContainer = getRemarksContainer(opptjening, currentYear, t);
     const grunnlagTextsContainer = getGrunnlagTextsContainer(grunnlagTexts);
+    const pensjonspoengContainer = getPensjonspoengContainer(opptjening.pensjonspoeng, currentYear, t);
 
     let label = "opptjening-details-din-pensjonsbeholdning";
     let key = "opptjening-details-din-pensjonsbeholdning";
-    if(detailRows.length>0){
+
+    if (detailRows.length > 0) {
         key = "opptjening-details-total-pensjonsbeholdning";
         label = "opptjening-details-total-pensjonsbeholdning";
         detailRows.push(<div key="horizontalLine" className="horizontalLine"/>);
     }
 
-    detailRows.push(
-        detailRow(
-            {
-                "key": key,
-                "label": t(label, {currentYear}),
-                "amount": formatAmount(opptjening.pensjonsbeholdning)
-            })
-    );
+    if (opptjening.pensjonsbeholdning !== null && opptjening.pensjonsbeholdning !== 0) {
+        detailRows.push(
+            detailRow(
+                {
+                    "key": key,
+                    "label": t(label, {currentYear}),
+                    "amount": formatAmount(opptjening.pensjonsbeholdning)
+                })
+        );
+    } else{
+        detailRows=(
+            <div role="row">
+                <span role="cell">{t('opptjening-details-ingen-pensjonsbeholdning',{year: currentYear-2})}</span>
+            </div>
+        )
+    }
+
+    const panelTitle = <PanelTitle id="opptjeningDetailsTitle" titleString={t('opptjening-details-din-okning-ar-for-ar')} illustrationClass="detailIllustration" illustration={sedler}/>;
 
     return(
-        <EkspanderbartpanelBase tittel={detailsTitle(t('opptjening-details-din-okning-ar-for-ar'))} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
-            <div className="detailsBox">
-                <div className="yearSelectorContainer">
-                    <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-vis-pensjonsbeholdningen-for')}</Label></h3>
-                    <div className="selectorWrapper">
-                        <YearSelector id="yearSelector" years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="s"/>
-                    </div>
+        <EkspanderbartpanelBase tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={toggleOpen}>
+            <div className="yearSelectorContainer">
+                <h3><Label htmlFor="yearSelector" className="label">{t('opptjening-details-velg-ar')}</Label></h3>
+                <div className="selectorWrapper">
+                    <YearSelector years={props.yearArray} onChange={props.onChange} currentYear={currentYear} size="s"/>
                 </div>
+            </div>
+            <div className="detailsBox">
+                <h3>{t('opptjening-details-pensjonsbeholdning-title')}</h3>
                 <div key="horizontalLine" className="horizontalLine"/>
                 <div role="table">
                     {detailRows}
@@ -243,6 +257,7 @@ export const OpptjeningDetailsPanel = (props) => {
             </div>
             {grunnlagTextsContainer}
             {remarksContainer}
+            {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && pensjonspoengContainer}
         </EkspanderbartpanelBase>
     )
 };

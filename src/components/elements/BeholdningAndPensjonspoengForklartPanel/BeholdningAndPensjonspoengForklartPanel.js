@@ -3,14 +3,16 @@ import React from "react";
 import Tekstomrade from "nav-frontend-tekstomrade";
 import "./BeholdningAndPensjonspoengForklartPanel.less";
 import Panel from "nav-frontend-paneler";
-import {Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
+import {PanelTitle} from "../PanelTitle/PanelTitle";
+import {PENSJONSOPPTJENING_FOR_DEG_FODT_MELLOM_1954_OG_1962} from "../../../common/externalUrls";
+import ReactMarkdown from "react-markdown";
 
 const shareItem = (type, idx) => {
     return(
         <div key={type + idx} data-testid={type} className={type}/>
     )
-}
+};
 
 const shareItems = (andelPensjonBasertPaBeholdning, andelPensjonBasertPaPensjonspoeng) =>{
     let shareItems = [];
@@ -33,12 +35,12 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
     return(
         <Panel border className="panelWrapper">
             <div className="beholdningAndPoengForklartTitleContainer">
-                <Undertittel id="beholdingAndPensjonspoengForklartTitle" className="lenkepanel__heading title">{t('beholdning-and-pensjonspoeng-forklart')}</Undertittel>
+                <PanelTitle titleString={t('beholdning-and-pensjonspoeng-forklart')}/>
             </div>
-            <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
-                {t('beholdning-and-pensjonspoeng-forklart-tekst', {fodselsar})}
-            </Tekstomrade>
-            <Tekstomrade className="beholdningAndPensjonspoengForklartExplanationText">
+            <ReactMarkdown className="beholdningAndPensjonspoengForklartExplanationText">
+                {t('beholdning-and-pensjonspoeng-forklart-tekst', {fodselsar, andelPensjonBasertPaBeholdning, andelPensjonBasertPaPensjonspoeng})}
+            </ReactMarkdown>
+            <Tekstomrade className="beholdningAndPensjonspoengForklartIllustrationText">
                 {t('beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst')}
             </Tekstomrade>
             <div className="regelverkShareDiagram">
@@ -46,11 +48,23 @@ export const BeholdningAndPensjonspoengForklartPanel = (props) => {
             </div>
             <div>
                 <div className="pensjonsbeholdningColorBox"/>
-                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning", {andelPensjonBasertPaBeholdning})}</span>
+                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning")}</span>
                 <div className="pensjonspoengColorBox"/>
-                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng", {andelPensjonBasertPaPensjonspoeng})}</span>
+                <span className="colorBoxText">{t("beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng")}</span>
             </div>
-            <div className="beholdningAndPoengForklartLink"><Lenke href={""} >{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>
+            <div className="pensjonsopptjeningForklaring">
+                <h3>{t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title')}</h3>
+                <Tekstomrade>
+                    {t('beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text', {joinArrays: "\n\n"})}
+                </Tekstomrade>
+            </div>
+            <div className="pensjonsopptjeningForklaring">
+                <h3>{t('beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title')}</h3>
+                <Tekstomrade>
+                    {t('beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text')}
+                </Tekstomrade>
+            </div>
+            <div className="beholdningAndPoengForklartLink"><Lenke href={PENSJONSOPPTJENING_FOR_DEG_FODT_MELLOM_1954_OG_1962}>{t('beholdning-and-pensjonspoeng-forklart-lenke')}</Lenke></div>
         </Panel>
     )
 

@@ -1,9 +1,10 @@
 import React from 'react';
 import {fireEvent, render} from '@testing-library/react';
 import {OpptjeningDetailsPanel} from './OpptjeningDetailsPanel';
-import {formatAmount} from "../../../common/utils";
+import {formatAmount, formatNumber} from "../../../common/utils";
 import {constructOpptjening, constructEndringOpptjening} from "../../../__mocks__/mockDataGenerator";
 import {axe} from "jest-axe";
+import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
 
 it('should not fail any accessibility tests', async () => {
     const {getByRole, container} = render(<OpptjeningDetailsPanel data={{opptjening: {}}} currentYear="2010" yearArray={[]}/>);
@@ -34,8 +35,9 @@ it('should render panel with details and remarks table', () => {
     fireEvent.click(panel.getByRole("heading"));
 
     expect(panel.queryAllByRole("heading")[0]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar");
-    expect(panel.queryAllByRole("heading")[1]).toHaveTextContent("opptjening-details-vis-pensjonsbeholdningen-for");
-    expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-merknader-tittel");
+    expect(panel.queryAllByRole("heading")[1]).toHaveTextContent("opptjening-details-velg-ar");
+    expect(panel.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-details-pensjonsbeholdning-title");
+    expect(panel.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-merknader-tittel");
     expect(panel.getByTestId("remarkstext-0")).toHaveTextContent("remarks:" + expectedMerknad);
 });
 
@@ -229,3 +231,29 @@ const testOpptjeningWithGrunnlagType = (grunnlagTypes, expectedGrunnlagText) => 
     expect(panel.getByTestId("label-detail-1")).toHaveTextContent(expectedGrunnlagText);
     expect(panel.getByTestId("amount-detail-1").textContent).toEqual(formatAmount(expectedOpptjeningBelop));
 }
+
+it('should render container for pensjonspoeng when usergroup BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
+    const expectedPensjonspoeng = 2.1;
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: constructOpptjening({pensjonspoeng: expectedPensjonspoeng})}}
+        currentYear="2018"
+        yearArray={[]}
+        userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.getByText("opptjening-details-pensjonspoeng-title")).toBeInTheDocument();
+    expect(panel.getByText("opptjening-details-pensjonspoeng-label")).toBeInTheDocument();
+    expect(panel.getByTestId("pensjonspoengContainer-pensjonspoeng")).toHaveTextContent(formatNumber(expectedPensjonspoeng));
+});
+
+it('should not render container for pensjonspoeng when usergroup BORN_AFTER_1962', () => {
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: {}}}
+        currentYear="2018"
+        yearArray={[]}
+        userGroup={BORN_AFTER_1962}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.queryByText("opptjening-details-pensjonspoeng-title")).not.toBeInTheDocument()
+    expect(panel.queryByText("opptjening-details-pensjonspoeng-label")).not.toBeInTheDocument();
+});

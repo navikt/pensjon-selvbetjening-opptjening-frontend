@@ -48,7 +48,7 @@ export const getPensjonsBeholdningArray = (state = initialState) => {
 };
 
 export const getYearArray = (state = initialState) => {
-    const opptjeningData = getOpptjeningDataWithoutNullYears(state);
+    const opptjeningData = getOpptjeningData(state);
     return Object.keys(opptjeningData).map((year) => year);
 };
 

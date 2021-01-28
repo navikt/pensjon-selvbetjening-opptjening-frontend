@@ -18,6 +18,11 @@ it('should render the Chart with title, buttons, and hidden table', () => {
     expect(getByTestId("dataContainer")).toHaveClass("hidden");
 });
 
+it('should render the Chart with title chart-pensjonsbeholdningen-og-pensjonspoengene-dine when BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
+    const {getByRole} = render(<LineChart userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
+    expect(getByRole("heading")).toHaveTextContent("chart-pensjonsbeholdningen-og-pensjonspoengene-dine");
+});
+
 it('should show the table or chart depending on which button is clicked', () => {
     const {getByTestId, getAllByRole} = render(<LineChart userGroup={BORN_AFTER_1962}/>);
 
@@ -45,10 +50,10 @@ it('should not show pensjonspoeng for usergroup BORN_AFTER_1962', () => {
         userGroup={BORN_AFTER_1962}/>);
 
     expect(getByTestId("tableHeaderYear")).toHaveTextContent("chart-aar");
-    expect(getByTestId("tableHeaderPensjonsbeholdning")).toHaveTextContent("chart-pensjonsbeholdning");
+    expect(getByTestId("tableHeaderPensjonsbeholdning")).toHaveTextContent("chart-pensjonsbeholdning-kr");
     expect(queryByTestId("tableHeaderPensjonspoeng")).not.toBeInTheDocument();
     expect(getByTestId("tableDataYear")).toHaveTextContent(2000);
-    expect(getByTestId("tableDataPensjonsbeholdning").textContent).toEqual("kr" + formatAmount(expectedBeholdning));
+    expect(getByTestId("tableDataPensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning));
 
 });
 
@@ -67,10 +72,10 @@ it('should show pensjonspoeng for usergroup BORN_IN_OR_BETWEEN_1954_AND_1962', (
         userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
 
     expect(getByTestId("tableHeaderYear")).toHaveTextContent("chart-aar");
-    expect(getByTestId("tableHeaderPensjonsbeholdning")).toHaveTextContent("chart-pensjonsbeholdning");
+    expect(getByTestId("tableHeaderPensjonsbeholdning")).toHaveTextContent("chart-pensjonsbeholdning-kr");
     expect(getByTestId("tableHeaderPensjonspoeng")).toHaveTextContent("chart-pensjonspoeng");
     expect(getByTestId("tableDataYear")).toHaveTextContent(2000);
-    expect(getByTestId("tableDataPensjonsbeholdning").textContent).toEqual("kr" + formatAmount(expectedBeholdning));
+    expect(getByTestId("tableDataPensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning));
     expect(getByTestId("tableDataPensjonspoeng")).toHaveTextContent(expectedPensjonspoeng);
 
 });
