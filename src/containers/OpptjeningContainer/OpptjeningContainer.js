@@ -5,6 +5,9 @@ import {getOpptjeningLoading, getOpptjeningError} from "../../redux/opptjening/o
 import NavFrontendSpinner from "nav-frontend-spinner";
 import {useTranslation} from "react-i18next";
 import Alertstripe from "nav-frontend-alertstriper";
+import * as urlHelper from "../../common/urlHelper";
+import "./OpptjeningContainer.less"
+import Lenke from "nav-frontend-lenker";
 
 export const OpptjeningContainer = (props) => {
     const { t } = useTranslation();
@@ -24,11 +27,27 @@ export const OpptjeningContainer = (props) => {
     }
 
     if(opptjeningError){
-        return (
-            <div className="contentWrapper" data-testid="opptjening-error">
-                <Alertstripe type="feil">{t(opptjeningError.message)}</Alertstripe>
-            </div>
-        )
+        if(opptjeningError.message === "error-status-401") {
+            //401 - Unauthorized - go directly to login - no error message - no "blink"
+            return <></>
+        } else if (opptjeningError.message === "error-status-418"){
+            // 418 - I'm a teapot - to be removed - temporarily redirect to old solution for some users we are missing functionality for (i.e. uttak)
+            return (
+                <div className="contentWrapper" data-testid="opptjening-error">
+                    <Alertstripe type="advarsel">
+                        {t(opptjeningError.message)}
+                        <br/>
+                        <Lenke href={urlHelper.DINEPENSJONSPOENG_URL}>Dine pensjonspoeng</Lenke>
+                    </Alertstripe>
+                </div>
+            )
+        } else {
+            return (
+                <div className="contentWrapper" data-testid="opptjening-error">
+                    <Alertstripe type="feil">{t(opptjeningError.message)}</Alertstripe>
+                </div>
+            )
+        }
     }
 
     return <>{children}</>

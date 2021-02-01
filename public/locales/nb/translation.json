@@ -94,6 +94,8 @@
     "404-title": "404: Finner ikke siden",
 
     "error-status-401": "Du er ikke autorisert",
-    "error-status-403": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen.",
-    "error-status-404": "Vi kan ikke finne siden eller tjenesten du etterspør."
+    "error-status-403": "Du har ikke tilgang til å se dette innholdet.",
+    "error-status-404": "Vi kan ikke finne siden eller tjenesten du etterspør.",
+    "error-status-418": "Vi er ikke helt ferdig med de nye opptjeningssidene enda.  Du finner våre gamle opptjeningssider på lenken under:",
+    "error-status-common": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen."
 }

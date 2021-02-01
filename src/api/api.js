@@ -1,5 +1,5 @@
 import {isDev} from "../common/utils";
-import * as urlHelper from "../common/urlHelper";
+import {logger} from "../common/logging";
 
 const RequestMethod = {
     GET: "GET",
@@ -52,13 +52,16 @@ function verifyStatusSuccessOrRedirect(response) {
         throw new Error("error-status-401");
     }
     if (response.status === 403) {
-        window.location.href = urlHelper.DINEPENSJONSPOENG_URL;
         throw new Error("error-status-403");
+    }
+    if (response.status === 418) {
+        throw new Error("error-status-418");
     }
     if (response.status >= 200 && response.status < 300) {
         return response.status;
     }
-    throw new Error(response.statusText);
+    logger.error(response.statusText);
+    throw new Error("error-status-common");
 }
 
 function getCredentialsParam() {
