@@ -41,14 +41,11 @@ const serverRequest = (method, urlPath) => {
 };
 
 function verifyStatusSuccessOrRedirect(response) {
-    const redirect = window.location.href;
-
     // If we are on localhost just return, no need to check for authentication
     if (isDev()) {
         return;
     }
     if (response.status === 401) {
-        window.location.href = process.env.REACT_APP_LOGINSERVICE_URL + encodeURIComponent(redirect);
         throw new Error("error-status-401");
     }
     if (response.status === 403) {
