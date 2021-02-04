@@ -86,6 +86,9 @@
     "opptjening-flere-steder-folketrygden": "Folketrygden (staten sparer for deg)",
     "opptjening-flere-steder-forklart": "Alle får pensjon i folketrygden. Hvis du er usikker på om du har individuell sparing eller tjenestepensjon kan du for eksempel se hos banken din eller spørre nåværende eller tidligere arbeidsgivere.",
 
+    "login-logg-inn": "Logg inn",
+    "login-text": "Du må være logget inn på nav.no for å kunne se din pensjonsopptjening",
+
     "spraakvelger-velg-spraak": "Velg språk:",
     "spraakvelger-bokmaal": "Bokmål",
     "spraakvelger-nynorsk": "Nynorsk",
@@ -94,6 +97,10 @@
     "404-title": "404: Finner ikke siden",
 
     "error-status-401": "Du er ikke autorisert",
-    "error-status-403": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen.",
-    "error-status-404": "Vi kan ikke finne siden eller tjenesten du etterspør."
+    "error-status-403": "Du har ikke tilgang til å se informasjon om denne personens pensjonsopptjening.",
+    "error-status-404": "Vi kan ikke finne siden eller tjenesten du etterspør.",
+    "error-status-418": "Vi jobber med å lage en ny side som viser opptjeningen din. Inntil videre kan du bruke de gamle sidene.",
+    "error-status-common": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen.",
+
+    "error-status-418-link-title": "Gå til de gamle sidene for pensjonsopptjening"
 }

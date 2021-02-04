@@ -1,5 +1,5 @@
 import {isDev} from "../common/utils";
-import * as urlHelper from "../common/urlHelper";
+import {logger} from "../common/logging";
 
 const RequestMethod = {
     GET: "GET",
@@ -41,24 +41,24 @@ const serverRequest = (method, urlPath) => {
 };
 
 function verifyStatusSuccessOrRedirect(response) {
-    const redirect = window.location.href;
-
     // If we are on localhost just return, no need to check for authentication
     if (isDev()) {
         return;
     }
     if (response.status === 401) {
-        window.location.href = process.env.REACT_APP_LOGINSERVICE_URL + encodeURIComponent(redirect);
         throw new Error("error-status-401");
     }
     if (response.status === 403) {
-        window.location.href = urlHelper.DINEPENSJONSPOENG_URL;
         throw new Error("error-status-403");
+    }
+    if (response.status === 418) {
+        throw new Error("error-status-418");
     }
     if (response.status >= 200 && response.status < 300) {
         return response.status;
     }
-    throw new Error(response.statusText);
+    logger.error(response.statusText);
+    throw new Error("error-status-common");
 }
 
 function getCredentialsParam() {
