@@ -107,17 +107,43 @@ export const LineChart = (props) => {
     const chartRef = useRef(null);
     const tableMap = removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0(data);
     const chartMap = removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0(data);
+
+    Chart.defaults.LineWithLine = Chart.defaults.line;
+    Chart.controllers.LineWithLine = Chart.controllers.line.extend({
+        draw: function(ease) {
+            Chart.controllers.line.prototype.draw.call(this, ease);
+
+            if (this.chart.tooltip._active && this.chart.tooltip._active.length) {
+                let activePoint = this.chart.tooltip._active[0],
+                    ctx = this.chart.ctx,
+                    x = activePoint.tooltipPosition().x,
+                    topY = activePoint.tooltipPosition().y,
+                    bottomY = this.chart.scales['y-axis-0'].bottom;
+
+                // draw line
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(x, topY);
+                ctx.lineTo(x, bottomY);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#005B82';
+                ctx.stroke();
+                ctx.restore();
+            }
+        }
+    });
+
     const chartConfig = {
-        type: 'line',
+        type: 'LineWithLine',
         data: {
             labels: Object.keys(chartMap),
             datasets: [
                 {
                     label: pensjonsbeholdningLabel,
-                    fill: false,
+                    fill: true,
                     borderColor: "#005B82",
                     borderWidth: 2,
-                    backgroundColor: "#ffffff",
+                    backgroundColor: 'rgb(102, 164, 220, 0.33)',
                     tension: 0,
                     radius: 3.5,
                     pointBackgroundColor: '#005B82',
@@ -207,6 +233,8 @@ export const LineChart = (props) => {
                         }
                     },
                 },
+                intersect: false,
+                axis: 'x',
                 backgroundColor: '#005B82',
                 titleFontSize: 16,
                 titleFontColor: '#ffffff',
