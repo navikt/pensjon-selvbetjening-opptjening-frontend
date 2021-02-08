@@ -99,7 +99,7 @@ const removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0 =  (opptjenin
 
 export const LineChart = (props) => {
     const { t } = useTranslation();
-    const {data, userGroup} = props
+    const {data, userGroup} = props;
     const yearLabel = t("chart-aar");
     const pensjonsbeholdningLabel = t("chart-pensjonsbeholdning");
     const pensjonsbeholdningKrLabel = t("chart-pensjonsbeholdning-kr");
@@ -148,9 +148,6 @@ export const LineChart = (props) => {
                     radius: 3.5,
                     pointBackgroundColor: '#005B82',
                     data: Object.values(chartMap).map((prop) => prop.pensjonsbeholdning),
-                    pointHoverRadius: 10,
-                    pointHoverBackgroundColor: 'rgba(62, 56, 50, 0.38)',
-                    pointHoverBorderColor: 'rgba(62, 56, 50, 0.45)'
                 }
             ]
         },
