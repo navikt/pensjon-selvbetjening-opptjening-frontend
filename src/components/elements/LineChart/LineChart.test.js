@@ -6,7 +6,7 @@ import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common
 import {formatAmount} from "../../../common/utils";
 
 it('should render the Chart with title, buttons, and hidden table', () => {
-    const {getByRole, getByTestId, getAllByRole} = render(<LineChart userGroup={BORN_AFTER_1962}/>);
+    const {getByRole, getByTestId, getAllByRole} = render(<LineChart data={{}} userGroup={BORN_AFTER_1962}/>);
 
     expect(getByRole("heading")).toHaveTextContent("chart-pensjonsbeholdningen-din");
     expect(getAllByRole("button")).toHaveLength(2);
@@ -19,12 +19,12 @@ it('should render the Chart with title, buttons, and hidden table', () => {
 });
 
 it('should render the Chart with title chart-pensjonsbeholdningen-og-pensjonspoengene-dine when BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
-    const {getByRole} = render(<LineChart userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
+    const {getByRole} = render(<LineChart data={{}} userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
     expect(getByRole("heading")).toHaveTextContent("chart-pensjonsbeholdningen-og-pensjonspoengene-dine");
 });
 
 it('should show the table or chart depending on which button is clicked', () => {
-    const {getByTestId, getAllByRole} = render(<LineChart userGroup={BORN_AFTER_1962}/>);
+    const {getByTestId, getAllByRole} = render(<LineChart data={{}} userGroup={BORN_AFTER_1962}/>);
 
 
     userEvent.click(getAllByRole("button")[1]);

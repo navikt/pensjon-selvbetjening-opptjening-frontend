@@ -15,7 +15,9 @@ export const formatAmount = (amount) => {
 };
 
 export const formatNumber = (number) => {
-    return number.toLocaleString("nb-NO", {minimumFractionDigits: 2, maximumFractionDigits: 2})
+    if(number!==null){
+        return number.toLocaleString("nb-NO", {minimumFractionDigits: 2, maximumFractionDigits: 2})
+    }
 };
 
 export function isDev() {

@@ -11,52 +11,52 @@ import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common
 import {PanelTitle} from "../PanelTitle/PanelTitle";
 
 const amountRow = (amount, t) => {
-    if(amount!==0) {
-        return (
-            <div>{formatAmount(amount)}</div>
-        )
-    } else{
+    if(amount === null) {
         return (
             <div>{t('chart-ingen-pensjonsbeholdning')}</div>
+        )
+    } else {
+        return (
+            <div>{formatAmount(amount)}</div>
         )
     }
 };
 
 const amountListItem = (amount, t) => {
-    if(amount!==0) {
+    if(amount === null) {
         return (
-            <span>kr {formatAmount(amount)}</span>
+            <span>{t('chart-ingen-pensjonsbeholdning')}</span>
         )
     } else{
         return (
-            <span>{t('chart-ingen-pensjonsbeholdning')}</span>
+            <span>kr {formatAmount(amount)}</span>
         )
     }
 };
 
 const dataRow = (props) => {
     const {key, label, data, userGroup, t} = props;
-    const pensjonsbeholdningTxt = data.pensjonsbeholdning != null ? amountRow(data.pensjonsbeholdning, t) : amountRow(0, t);
+    const pensjonsbeholdningTxt = amountRow(data.pensjonsbeholdning, t);
     const pensjonspoeng = data.pensjonspoeng;
     return(
         <tr key={key} className="row">
             <td data-testid="tableDataYear">{label}</td>
             <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
-            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : null}</td>}
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen-pensjonspoeng')}</td>}
         </tr>
     )
 };
 
 const listItem = (props) => {
     const {key, label, data, userGroup, t} = props;
-    const pensjonsbeholdningTxt = data.pensjonsbeholdning != null ? amountListItem(data.pensjonsbeholdning, t) : amountListItem(0, t);
+    const pensjonsbeholdningTxt = amountListItem(data.pensjonsbeholdning, t);
     const pensjonspoeng = data.pensjonspoeng;
     return(
         <li className="beholdningPoengItem" key={key}>
             <ul>
                 <li><b>{t("chart-aar")+": "} {label}</b></li>
                 <li>{t("chart-pensjonsbeholdning")+": "} {pensjonsbeholdningTxt}</li>
-                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? formatNumber(pensjonspoeng) : null}</li>}
+                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? formatNumber(pensjonspoeng) : t('chart-ingen-pensjonspoeng')}</li>}
             </ul>
         </li>
     )
@@ -81,17 +81,15 @@ const buildData = (tableMap, userGroup, t)  => {
 
 const emptyFn = ()=>{};
 
-const removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0 =  (opptjeningMap) => {
-    //Make a copy of opptjeningData before filtering
-    const opptjeningMapCopy = {...opptjeningMap};
-
+const setPensjonsbeholdningNullTo0 =  (opptjeningMap) => {
+    let opptjeningMapCopy = JSON.parse(JSON.stringify(opptjeningMap));
     Object.keys(opptjeningMapCopy).every((year) => {
         if(opptjeningMapCopy[year].pensjonsbeholdning == null){
             opptjeningMapCopy[year].pensjonsbeholdning = 0;
         }
-        if(opptjeningMapCopy[year].pensjonsbeholdning === null && (opptjeningMapCopy[year].pensjonspoeng === null || opptjeningMapCopy[year].pensjonspoeng === 0)){
-            delete opptjeningMapCopy[year];
-        }
+        // if(opptjeningMapCopy[year].pensjonsbeholdning === 0 && (opptjeningMapCopy[year].pensjonspoeng === null || opptjeningMapCopy[year].pensjonspoeng === 0)){
+        //     delete opptjeningMapCopy[year];
+        // }
         return true;
     });
     return opptjeningMapCopy
@@ -103,10 +101,10 @@ export const LineChart = (props) => {
     const yearLabel = t("chart-aar");
     const pensjonsbeholdningLabel = t("chart-pensjonsbeholdning");
     const pensjonsbeholdningKrLabel = t("chart-pensjonsbeholdning-kr");
-    const pensjonspoengLabel = t('chart-pensjonspoeng');
+    const pensjonspoengLabel = t("chart-pensjonspoeng");
     const chartRef = useRef(null);
-    const tableMap = removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0(data);
-    const chartMap = removeYearsWithNullOpptjeningAndSetPensjonsbeholdningNullTo0(data);
+    const tableMap = data;
+    const chartMap = setPensjonsbeholdningNullTo0(data);
 
     Chart.defaults.LineWithLine = Chart.defaults.line;
     Chart.controllers.LineWithLine = Chart.controllers.line.extend({
@@ -219,12 +217,13 @@ export const LineChart = (props) => {
                     },
                     label: function(tooltipItem, data) {
                         const year = data['labels'][tooltipItem['index']];
-                        const tooltipBeholdning = chartMap[year].pensjonsbeholdning==null || chartMap[year].pensjonsbeholdning===0 ?
+                        const tooltipBeholdning = tableMap[year].pensjonsbeholdning == null ?
                             t('chart-ingen-pensjonsbeholdning', {year: year - 2}) :
-                            'kr ' + formatAmount(chartMap[year].pensjonsbeholdning);
+                            'kr ' + formatAmount(tableMap[year].pensjonsbeholdning);
 
                         if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
-                            return [tooltipBeholdning, '',t('chart-pensjonspoeng') + ': ' + formatNumber(chartMap[year].pensjonspoeng)];
+                            let poeng = formatNumber(tableMap[year].pensjonspoeng) ? formatNumber(tableMap[year].pensjonspoeng) : t('chart-ingen-pensjonspoeng');
+                            return [tooltipBeholdning, '',t('chart-pensjonspoeng') + ': ' + poeng];
                         } else {
                             return tooltipBeholdning;
                         }
