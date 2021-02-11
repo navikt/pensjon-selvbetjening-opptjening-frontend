@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 import 'nav-frontend-tabell-style';
-import {formatAmount, formatNumber} from "../../../common/utils";
+import {formatAmount, formatNumber, getCurrentLocale} from "../../../common/utils";
 import './LineChart.less';
 import {Knapp} from "nav-frontend-knapper";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
@@ -212,21 +212,34 @@ export const LineChart = (props) => {
                     title: function(tooltipItem, data) {
                         return data['labels'][tooltipItem[0]['index']];
                     },
-                    beforeLabel: function(tooltipItem, data) {
-                        return t('chart-pensjonsbeholdning') + ":";
-                    },
                     label: function(tooltipItem, data) {
                         const year = data['labels'][tooltipItem['index']];
+                        let tooltip = [];
                         const tooltipBeholdning = tableMap[year].pensjonsbeholdning == null ?
-                            t('chart-ingen-pensjonsbeholdning', {year: year - 2}) :
-                            'kr ' + formatAmount(tableMap[year].pensjonsbeholdning);
+                            t('chart-ingen-pensjonsbeholdning') :
+                            "kr " + formatAmount(tableMap[year].pensjonsbeholdning);
+
+                        if(tableMap[year].uttak.length>0){
+                            const a = tableMap[year].uttak.map((uttak) => {
+                                const dato =  new Date(uttak.dato);
+                                const month = dato.toLocaleDateString(getCurrentLocale(), {month: 'long'});
+                                return uttak.uttaksgrad + "% (" + month + ")"
+                            });
+
+                            tooltip.push(t('chart-uttak-av-pensjon') + ": " + a.join(", "));
+                            tooltip.push("");
+                        }
+
+                        tooltip.push(t('chart-pensjonsbeholdning') + ":");
+                        tooltip.push(tooltipBeholdning);
 
                         if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
                             let poeng = formatNumber(tableMap[year].pensjonspoeng) ? formatNumber(tableMap[year].pensjonspoeng) : t('chart-ingen-pensjonspoeng');
-                            return [tooltipBeholdning, '',t('chart-pensjonspoeng') + ': ' + poeng];
-                        } else {
-                            return tooltipBeholdning;
+                            tooltip.push("");
+                            tooltip.push(t('chart-pensjonspoeng') + ": " + poeng);
                         }
+
+                        return tooltip;
                     },
                 },
                 intersect: false,

@@ -29,13 +29,36 @@ export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     return opptjeningData
 };
 
+export const getUttakForYear = (state = initialState, year) => {
+    const opptjeningData = getOpptjeningData(state);
+    const endringOpptjening = opptjeningData[year].endringOpptjening;
+    let previousUttak;
+    return endringOpptjening ?
+        endringOpptjening.filter((endring) => {
+            return endring.arsakType === "UTTAK";
+        }).map((uttak) => {
+            if(uttak.uttaksgrad !== previousUttak){
+                previousUttak = uttak.uttaksgrad;
+                return {
+                    dato: uttak.dato,
+                    uttaksgrad: uttak.uttaksgrad
+                }
+            }
+            return null;
+        }).filter((uttak) =>{
+            return uttak;
+        })
+        : [];
+};
+
 export const getPensjonsbeholdningAndPensjonspoeng = (state = initialState) => {
     const opptjeningData = getOpptjeningData(state);
     let opptjeningMap ={};
     Object.keys(opptjeningData).forEach((year) => {
-        opptjeningMap[year] ={
+        opptjeningMap[year] = {
             pensjonspoeng: opptjeningData[year].pensjonspoeng,
-            pensjonsbeholdning: opptjeningData[year].pensjonsbeholdning
+            pensjonsbeholdning: opptjeningData[year].pensjonsbeholdning,
+            uttak: getUttakForYear(state, year)
         }
     });
 

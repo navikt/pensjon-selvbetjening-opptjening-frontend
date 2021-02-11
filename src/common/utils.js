@@ -28,3 +28,17 @@ export const getLabelByLanguage = (language, key, namespace="translation") => {
     const label = i18n.getDataByLanguage(language)[namespace][key];
     return label ? label : key;
 };
+
+export const getCurrentLocale = () => {
+    const language = i18n.language;
+    switch (language) {
+        case "nb":
+            return "nb-NO";
+        case "nn":
+            return "nn-NO";
+        case "en":
+            return "en-GB";
+        default:
+            return "nb-NO";
+    }
+}
