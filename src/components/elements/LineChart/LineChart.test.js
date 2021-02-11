@@ -43,7 +43,8 @@ it('should not show pensjonspoeng for usergroup BORN_AFTER_1962', () => {
             {
                 2000:{
                     pensjonspoeng: null,
-                    pensjonsbeholdning: expectedBeholdning
+                    pensjonsbeholdning: expectedBeholdning,
+                    uttak: []
                 }
             }
         }
@@ -65,7 +66,8 @@ it('should show pensjonspoeng for usergroup BORN_IN_OR_BETWEEN_1954_AND_1962', (
             {
                 2000:{
                     pensjonspoeng: expectedPensjonspoeng,
-                    pensjonsbeholdning: expectedBeholdning
+                    pensjonsbeholdning: expectedBeholdning,
+                    uttak: []
                 }
             }
         }

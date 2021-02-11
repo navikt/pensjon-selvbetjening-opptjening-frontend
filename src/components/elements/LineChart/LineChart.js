@@ -38,11 +38,21 @@ const dataRow = (props) => {
     const {key, label, data, userGroup, t} = props;
     const pensjonsbeholdningTxt = amountRow(data.pensjonsbeholdning, t);
     const pensjonspoeng = data.pensjonspoeng;
+    const uttakArray = getUttakArray(data);
+
+    let cellClass = "";
+    let rowClass = "";
+    if(uttakArray.length>0){
+        cellClass = "uttakCell";
+        rowClass = "uttakRow";
+    }
+
     return(
         <tr key={key} className="row">
-            <td data-testid="tableDataYear">{label}</td>
-            <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
-            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen-pensjonspoeng')}</td>}
+            <td data-testid="tableDataYear" className={cellClass}><div className={rowClass}>{label}</div></td>
+            <td data-testid="tableDataPensjonsbeholdning" className={cellClass}><div className={rowClass}>{pensjonsbeholdningTxt}</div></td>
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng" className={cellClass}><div className={rowClass}>{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen-pensjonspoeng')}</div></td>}
+            <td data-testid="tableDataUttak" className={cellClass}><div className={rowClass}>{uttakArray.join(", ")}</div></td>
         </tr>
     )
 };
@@ -51,12 +61,21 @@ const listItem = (props) => {
     const {key, label, data, userGroup, t} = props;
     const pensjonsbeholdningTxt = amountListItem(data.pensjonsbeholdning, t);
     const pensjonspoeng = data.pensjonspoeng;
+    const uttakArray = getUttakArray(data);
+    let uttakList = "";
+    let uttakItem = "beholdningPoengItem";
+
+    if(uttakArray.length>0){
+        uttakItem = "beholdningPoengUttakItem";
+        uttakList = "beholdningPoengUttakList";
+    }
     return(
-        <li className="beholdningPoengItem" key={key}>
-            <ul>
+        <li className={uttakItem} key={key}>
+            <ul className={uttakList}>
                 <li><b>{t("chart-aar")+": "} {label}</b></li>
                 <li>{t("chart-pensjonsbeholdning")+": "} {pensjonsbeholdningTxt}</li>
                 {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? formatNumber(pensjonspoeng) : t('chart-ingen-pensjonspoeng')}</li>}
+                <li>{t("chart-uttak")}: {uttakArray.join(", ")}</li>
             </ul>
         </li>
     )
@@ -95,6 +114,18 @@ const setPensjonsbeholdningNullTo0 =  (opptjeningMap) => {
     return opptjeningMapCopy
 };
 
+const getUttakArray = (data) => {
+    let uttakArray = [];
+    if(data.uttak.length>0){
+        uttakArray = data.uttak.map((uttak) => {
+            const dato =  new Date(uttak.dato);
+            const month = dato.toLocaleDateString(getCurrentLocale(), {month: 'long'});
+            return uttak.uttaksgrad + "% (" + month + ")"
+        });
+    }
+    return uttakArray;
+};
+
 export const LineChart = (props) => {
     const { t } = useTranslation();
     const {data, userGroup} = props;
@@ -102,6 +133,7 @@ export const LineChart = (props) => {
     const pensjonsbeholdningLabel = t("chart-pensjonsbeholdning");
     const pensjonsbeholdningKrLabel = t("chart-pensjonsbeholdning-kr");
     const pensjonspoengLabel = t("chart-pensjonspoeng");
+    const uttakLabel = t("chart-uttak");
     const chartRef = useRef(null);
     const tableMap = data;
     const chartMap = setPensjonsbeholdningNullTo0(data);
@@ -219,14 +251,9 @@ export const LineChart = (props) => {
                             t('chart-ingen-pensjonsbeholdning') :
                             "kr " + formatAmount(tableMap[year].pensjonsbeholdning);
 
-                        if(tableMap[year].uttak.length>0){
-                            const a = tableMap[year].uttak.map((uttak) => {
-                                const dato =  new Date(uttak.dato);
-                                const month = dato.toLocaleDateString(getCurrentLocale(), {month: 'long'});
-                                return uttak.uttaksgrad + "% (" + month + ")"
-                            });
-
-                            tooltip.push(t('chart-uttak-av-pensjon') + ": " + a.join(", "));
+                        const uttakArray = getUttakArray(tableMap[year]);
+                        if(uttakArray.length>0){
+                            tooltip.push(t('chart-uttak-av-pensjon') + ": " + uttakArray.join(", "));
                             tooltip.push("");
                         }
 
@@ -339,6 +366,7 @@ export const LineChart = (props) => {
                             <th data-testid="tableHeaderYear" className="column1">{yearLabel}</th>
                             <th data-testid="tableHeaderPensjonsbeholdning" className="column2">{pensjonsbeholdningKrLabel}</th>
                             {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <th data-testid="tableHeaderPensjonspoeng" className="column3">{pensjonspoengLabel}</th>}
+                            <th data-testid="tableHeaderUttak" className="column4">{uttakLabel}</th>
                         </tr>
                         </thead>
                         <tbody>
