@@ -49,6 +49,7 @@
     "opptjening-details-pensjonspoeng-label": "Pension points based on income in {{currentYear}}",
     "opptjening-details-pensjonsbeholdning-title": "Accumulated pension capital",
     "opptjening-details-ingen-pensjonsbeholdning": "There is no registered accumulated pension this year. This is because you did not have any income in {{year}}",
+    "opptjening-details-ingen-pensjonspoeng": "There is no registered pension points this year.",
 
     "inntekt-tekst": "The information on income comes from the tax assessment from the tax authorities. if something is not correct with your income, please contact your [local tax authority]({{skatteetatenLink}}).",
     "inntekt-lukk-panel": "Close panel",
@@ -72,11 +73,10 @@
     "chart-graf": "Chart",
     "chart-tabell": "Table",
     "chart-aar": "Year",
-    "chart-ingen-pensjonsbeholdning": "No pension assets",
     "chart-pensjonspoeng": "Pension points",
-    "chart-ingen-pensjonspoeng": "No pension points",
-    "chart-uttak-av-pensjon": "Uttak av pensjon",
-    "chart-uttak": "Uttak",
+    "chart-ingen": "None",
+    "chart-uttak-av-pensjon": "Withdrawal of pension",
+    "chart-uttak": "Withdrawal",
 
     "pensjonskalkulator-lenke-title": "Calculate your pension in the pension calculator",
 

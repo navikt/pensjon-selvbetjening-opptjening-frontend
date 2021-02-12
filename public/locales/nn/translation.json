@@ -49,6 +49,7 @@
     "opptjening-details-pensjonspoeng-label": "Pensjonspoeng basert på inntekt i {{currentYear}}",
     "opptjening-details-pensjonsbeholdning-title": "Pensjonsbehaldning",
     "opptjening-details-ingen-pensjonsbeholdning":"Det er ikkje registrert noko behaldning dette året. Dette skyldast at du ikkje hadde inntekt i {{year}}",
+    "opptjening-details-ingen-pensjonspoeng":"Det er ikkje registrert noko pensjonspoeng dette året.",
 
     "inntekt-tekst": "NAV mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor]({{skatteetatenLink}}).",
     "inntekt-lukk-panel":  "Lukk panel",
@@ -72,9 +73,8 @@
     "chart-graf": "Graf",
     "chart-tabell": "Tabell",
     "chart-aar": "År",
-    "chart-ingen-pensjonsbeholdning": "Ingen pensjonsbehaldning",
     "chart-pensjonspoeng": "Pensjonspoeng",
-    "chart-ingen-pensjonspoeng": "Ingen pensjonspoeng",
+    "chart-ingen": "Ingen",
     "chart-uttak-av-pensjon": "Uttak av pensjon",
     "chart-uttak": "Uttak",
 

@@ -13,7 +13,7 @@ import {PanelTitle} from "../PanelTitle/PanelTitle";
 const amountRow = (amount, t) => {
     if(amount === null) {
         return (
-            <div>{t('chart-ingen-pensjonsbeholdning')}</div>
+            <div>{t('chart-ingen')}</div>
         )
     } else {
         return (
@@ -25,7 +25,7 @@ const amountRow = (amount, t) => {
 const amountListItem = (amount, t) => {
     if(amount === null) {
         return (
-            <span>{t('chart-ingen-pensjonsbeholdning')}</span>
+            <span>{t('chart-ingen')}</span>
         )
     } else{
         return (
@@ -51,7 +51,7 @@ const dataRow = (props) => {
         <tr key={key} className="row">
             <td data-testid="tableDataYear" className={cellClass}><div className={rowClass}>{label}</div></td>
             <td data-testid="tableDataPensjonsbeholdning" className={cellClass}><div className={rowClass}>{pensjonsbeholdningTxt}</div></td>
-            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng" className={cellClass}><div className={rowClass}>{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen-pensjonspoeng')}</div></td>}
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng" className={cellClass}><div className={rowClass}>{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen')}</div></td>}
             <td data-testid="tableDataUttak" className={cellClass}><div className={rowClass}>{uttakArray.join(", ")}</div></td>
         </tr>
     )
@@ -74,7 +74,7 @@ const listItem = (props) => {
             <ul className={uttakList}>
                 <li><b>{t("chart-aar")+": "} {label}</b></li>
                 <li>{t("chart-pensjonsbeholdning")+": "} {pensjonsbeholdningTxt}</li>
-                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? formatNumber(pensjonspoeng) : t('chart-ingen-pensjonspoeng')}</li>}
+                {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? formatNumber(pensjonspoeng) : t('chart-ingen')}</li>}
                 <li>{t("chart-uttak")}: {uttakArray.join(", ")}</li>
             </ul>
         </li>
@@ -120,7 +120,7 @@ const getUttakArray = (data) => {
         uttakArray = data.uttak.map((uttak) => {
             const dato =  new Date(uttak.dato);
             const month = dato.toLocaleDateString(getCurrentLocale(), {month: 'long'});
-            return uttak.uttaksgrad + "% (" + month + ")"
+            return uttak.uttaksgrad + " % (" + month + ")"
         });
     }
     return uttakArray;
@@ -248,12 +248,13 @@ export const LineChart = (props) => {
                         const year = data['labels'][tooltipItem['index']];
                         let tooltip = [];
                         const tooltipBeholdning = tableMap[year].pensjonsbeholdning == null ?
-                            t('chart-ingen-pensjonsbeholdning') :
+                            t('chart-ingen') :
                             "kr " + formatAmount(tableMap[year].pensjonsbeholdning);
 
                         const uttakArray = getUttakArray(tableMap[year]);
                         if(uttakArray.length>0){
-                            tooltip.push(t('chart-uttak-av-pensjon') + ": " + uttakArray.join(", "));
+                            tooltip.push(t('chart-uttak-av-pensjon') + ":");
+                            tooltip.push(uttakArray.join(", "));
                             tooltip.push("");
                         }
 
@@ -261,9 +262,10 @@ export const LineChart = (props) => {
                         tooltip.push(tooltipBeholdning);
 
                         if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
-                            let poeng = formatNumber(tableMap[year].pensjonspoeng) ? formatNumber(tableMap[year].pensjonspoeng) : t('chart-ingen-pensjonspoeng');
+                            let poeng = formatNumber(tableMap[year].pensjonspoeng) ? formatNumber(tableMap[year].pensjonspoeng) : t('chart-ingen');
                             tooltip.push("");
-                            tooltip.push(t('chart-pensjonspoeng') + ": " + poeng);
+                            tooltip.push(t('chart-pensjonspoeng') + ":");
+                            tooltip.push(poeng)
                         }
 
                         return tooltip;
