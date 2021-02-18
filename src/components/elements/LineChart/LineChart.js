@@ -253,7 +253,7 @@ export const LineChart = (props) => {
 
                         const uttakArray = getUttakArray(tableMap[year]);
                         if(uttakArray.length>0){
-                            tooltip.push(t('chart-uttak-av-pensjon') + ":");
+                            tooltip.push(t('chart-uttak') + ":");
                             tooltip.push(uttakArray.join(", "));
                             tooltip.push("");
                         }

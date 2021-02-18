@@ -7,7 +7,7 @@ export const formatAmount = (amount) => {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
 
-            }).format(Math.abs(amount));
+            }).format(amount);
     } else {
         return;
     }
