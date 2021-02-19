@@ -56,7 +56,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
     let details = [];
     let grunnlagTextArray = [];
     let grunnlagTypes = [];
-    let uttakTexts = [];
+    let uttakTexts = {};
     let currentRegulering;
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
@@ -104,10 +104,10 @@ const buildDetails = (opptjening, currentYear, t)  => {
 
                     if(endring.uttaksgrad>0 && endring.uttaksgrad<100){
                         //GRADERT UTTAK
-                        uttakTexts.push(t('opptjening-details-gradert-uttak-text'));
+                        uttakTexts["gradert"] = t('opptjening-details-gradert-uttak-text');
                     } else if (endring.uttaksgrad===100){
                         //FULLT UTTAK
-                        uttakTexts.push(t('opptjening-details-fullt-uttak-text'));
+                        uttakTexts["fullt"] = t('opptjening-details-fullt-uttak-text');
                     }
 
                     item = detailRow(
@@ -140,7 +140,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
                                 "amount": formatAmount(endring.endringBelop)
                             }
                         );
-                        uttakTexts.push(t('opptjening-details-uttak-text'));
+                        uttakTexts["uttak"]=t('opptjening-details-uttak-text');
                     }
                     break;
                 default:
@@ -149,10 +149,11 @@ const buildDetails = (opptjening, currentYear, t)  => {
             details.push(item);
         });
     }
+
     return {
         "detailRows": details,
         "grunnlagTexts" : getTextParagraphsFromTextArray(grunnlagTextArray, "grunnlagtext"),
-        "uttakTexts": getTextParagraph(uttakTexts.join(" "), "uttaktext")
+        "uttakTexts": getTextParagraph(Object.values(uttakTexts).join(" "), "uttaktext")
     };
 };
 

@@ -822,6 +822,19 @@
                         "pensjonsbeholdningBelop": 2584127.7280463856,
                         "uttaksgrad": 20,
                         "uforegrad": null
+                    },
+                    {
+                        "dato": "2016-09-01",
+                        "arsakType": "UTTAK",
+                        "arsakDetails": [
+                            "UTTAK"
+                        ],
+                        "endringBelop": -2584127.7280463856,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 0.0,
+                        "uttaksgrad": 100,
+                        "uforegrad": null
                     }
                 ]
             },
@@ -898,6 +911,19 @@
                         "grunnlagTypes": null,
                         "pensjonsbeholdningBelop": 0.0,
                         "uttaksgrad": 100,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2017-09-01",
+                        "arsakType": "UTTAK",
+                        "arsakDetails": [
+                            "UTTAK"
+                        ],
+                        "endringBelop": 1278670.281076471,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 1278670.281076471,
+                        "uttaksgrad": 60,
                         "uforegrad": null
                     }
                 ]
@@ -1053,6 +1079,19 @@
                         "pensjonsbeholdningBelop": 1559092.8477771024,
                         "uttaksgrad": 60,
                         "uforegrad": null
+                    },
+                    {
+                        "dato": "2019-09-01",
+                        "arsakType": "UTTAK",
+                        "arsakDetails": [
+                            "UTTAK"
+                        ],
+                        "endringBelop": 0.0,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 1559092.8477771024,
+                        "uttaksgrad": 60,
+                        "uforegrad": null
                     }
                 ]
             },
@@ -1120,6 +1159,19 @@
                     },
                     {
                         "dato": "2020-05-01",
+                        "arsakType": "UTTAK",
+                        "arsakDetails": [
+                            "UTTAK"
+                        ],
+                        "endringBelop": 0.0,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 1712730.8102458278,
+                        "uttaksgrad": 60,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2020-08-01",
                         "arsakType": "UTTAK",
                         "arsakDetails": [
                             "UTTAK"
