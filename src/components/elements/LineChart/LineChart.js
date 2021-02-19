@@ -119,7 +119,7 @@ const getUttakArray = (data) => {
     if(data.uttak.length>0){
         uttakArray = data.uttak.map((uttak) => {
             const dato =  new Date(uttak.dato);
-            const month = dato.toLocaleDateString(getCurrentLocale(), {month: 'short'});
+            const month = dato.toLocaleDateString(getCurrentLocale(), {month: 'long'});
             return uttak.uttaksgrad + " % (" + month + ")"
         });
     }
