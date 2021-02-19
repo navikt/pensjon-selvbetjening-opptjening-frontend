@@ -92,7 +92,7 @@ const buildData = (tableMap, userGroup, t)  => {
             "userGroup": userGroup,
             "t": t
         };
-        dataRows.push(dataRow(props))
+        dataRows.push(dataRow(props));
         dataListItems.push(listItem(props))
     });
     return {dataRows, dataListItems};
@@ -119,7 +119,7 @@ const getUttakArray = (data) => {
     if(data.uttak.length>0){
         uttakArray = data.uttak.map((uttak) => {
             const dato =  new Date(uttak.dato);
-            const month = dato.toLocaleDateString(getCurrentLocale(), {month: 'long'});
+            const month = dato.toLocaleDateString(getCurrentLocale(), {month: 'short'});
             return uttak.uttaksgrad + " % (" + month + ")"
         });
     }
