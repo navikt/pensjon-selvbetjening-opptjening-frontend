@@ -40,19 +40,12 @@ const dataRow = (props) => {
     const pensjonspoeng = data.pensjonspoeng;
     const uttakArray = getUttakArray(data);
 
-    let cellClass = "";
-    let rowClass = "";
-    if(uttakArray.length>0){
-        cellClass = "uttakCell";
-        rowClass = "uttakRow";
-    }
-
     return(
         <tr key={key} className="row">
-            <td data-testid="tableDataYear" className={cellClass}><div className={rowClass}>{label}</div></td>
-            <td data-testid="tableDataPensjonsbeholdning" className={cellClass}><div className={rowClass}>{pensjonsbeholdningTxt}</div></td>
-            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng" className={cellClass}><div className={rowClass}>{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen')}</div></td>}
-            <td data-testid="tableDataUttak" className={cellClass}><div className={rowClass}>{uttakArray.join(", ")}</div></td>
+            <td data-testid="tableDataYear">{label}</td>
+            <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
+            {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen')}</td>}
+            <td data-testid="tableDataUttak">{uttakArray.join(", ")}</td>
         </tr>
     )
 };
@@ -62,20 +55,14 @@ const listItem = (props) => {
     const pensjonsbeholdningTxt = amountListItem(data.pensjonsbeholdning, t);
     const pensjonspoeng = data.pensjonspoeng;
     const uttakArray = getUttakArray(data);
-    let uttakList = "";
-    let uttakItem = "beholdningPoengItem";
 
-    if(uttakArray.length>0){
-        uttakItem = "beholdningPoengUttakItem";
-        uttakList = "beholdningPoengUttakList";
-    }
     return(
-        <li className={uttakItem} key={key}>
-            <ul className={uttakList}>
+        <li className="beholdningPoengItem" key={key}>
+            <ul>
                 <li><b>{t("chart-aar")+": "} {label}</b></li>
                 <li>{t("chart-pensjonsbeholdning")+": "} {pensjonsbeholdningTxt}</li>
                 {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && <li>{t('chart-pensjonspoeng')+": "} {pensjonspoeng!==null ? formatNumber(pensjonspoeng) : t('chart-ingen')}</li>}
-                <li>{t("chart-uttak")}: {uttakArray.join(", ")}</li>
+                {uttakArray.length > 0 && <li>{t("chart-uttak")}: {uttakArray.join(", ")}</li>}
             </ul>
         </li>
     )
