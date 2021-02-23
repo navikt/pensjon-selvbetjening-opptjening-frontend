@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import {BORN_BEFORE_1943, BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../common/userGroups";
-import {init} from "http-proxy-middleware/dist/handlers";
 
 export const initialState = {
     opptjening: null,
