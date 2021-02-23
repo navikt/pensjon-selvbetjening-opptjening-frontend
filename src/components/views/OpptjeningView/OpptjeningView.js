@@ -5,7 +5,7 @@ import {
     getAndelPensjonBasertPaBeholdning, getFodselsAar,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData, getPensjonsbeholdningAndPensjonspoeng, getUserGroup,
-    getYearArray
+    getYearArray, getOmsorgsOpptjeningMap, hasOverforeOmsorgsOpptjeningLink
 } from "../../../redux/opptjening/opptjeningSelectors";
 import Panel from "nav-frontend-paneler";
 import {LineChart} from '../../elements/LineChart/LineChart';
@@ -25,6 +25,7 @@ import {PensjonspoengForklartPanel} from "../../elements/PensjonspoengForklartPa
 import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/BeholdningAndPensjonspoengForklartPanel/BeholdningAndPensjonspoengForklartPanel";
 import {PensjonskalkulatorLenkePanel} from "../../elements/PensjonskalkulatorLenkePanel/PensjonskalkulatorLenkePanel";
 import {OpptjeningFlereStederPanel} from "../../elements/OpptjeningFlereStederPanel/OpptjeningFlereStederPanel";
+import {OverforeOmsorgsOpptjeningPanel} from "../../elements/OverforeOmsorgsOpptjeningPanel/OverforeOmsorgsOpptjeningPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -33,8 +34,9 @@ export const OpptjeningView = () => {
     const yearArray = useSelector(getYearArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
     const pensjonsbeholdningAndPensjonspoengMap = useSelector(getPensjonsbeholdningAndPensjonspoeng);
-    const andelPensjonBasertPaBeholdning = useSelector(getAndelPensjonBasertPaBeholdning)
-
+    const andelPensjonBasertPaBeholdning = useSelector(getAndelPensjonBasertPaBeholdning);
+    const omsorgsOpptjeningMap = useSelector(getOmsorgsOpptjeningMap);
+    const hasOverforeLink  = useSelector(hasOverforeOmsorgsOpptjeningLink);
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
 
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
@@ -60,7 +62,7 @@ export const OpptjeningView = () => {
                 </section>
             )
         }
-    }
+    };
 
     return(
         <div data-testid="opptjeningview">
@@ -79,7 +81,7 @@ export const OpptjeningView = () => {
                 </section>
                 <section aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
                     <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray}
-                                            onChange={selectYear} userGroup={userGroup}/>
+                                            onChange={selectYear} userGroup={userGroup} hasOmsorgsOpptjeningTwoYearsBack={omsorgsOpptjeningMap[currentYear-2].hasOmsorgsOpptjening}/>
                 </section>
             </UserGroup>
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>
@@ -87,6 +89,11 @@ export const OpptjeningView = () => {
                     <PensjonspoengForklartPanel/>
                 </section>
             </UserGroup>
+            {hasOverforeLink &&
+                <section aria-label={"title " + t('overforeomsorgsopptjening-title')}>
+                    <OverforeOmsorgsOpptjeningPanel/>
+                </section>
+            }
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
                 <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
             </section>

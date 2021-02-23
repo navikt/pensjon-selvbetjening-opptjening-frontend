@@ -46,13 +46,14 @@
     "opptjening-details-les-mer-om-hvordan-vi-beregner-pensjonen": "Les meir om korleis vi reknar ut pensjonen.",
     "opptjening-details-og": "og",
     "opptjening-details-pensjonspoeng-title": "Pensjonspoeng",
-    "opptjening-details-pensjonspoeng-label": "Pensjonspoeng basert på inntekt i {{currentYear}}",
+    "opptjening-details-pensjonspoeng-label": "Pensjonspoeng basert på opptening i {{currentYear}}",
     "opptjening-details-pensjonsbeholdning-title": "Pensjonsbehaldning",
     "opptjening-details-ingen-pensjonsbeholdning":"Det er ikkje registrert noko behaldning dette året. Dette skyldast at du ikkje hadde inntekt i {{year}}",
     "opptjening-details-ingen-pensjonspoeng":"Det er ikkje registrert noko pensjonspoeng dette året.",
     "opptjening-details-fullt-uttak-text": "Fordi du tar ut hel alderspensjon (100 %) har ny opptening ført til en aukning i den utbetalte pensjonen din før skatt.",
     "opptjening-details-gradert-uttak-text": "Fordi du har gradert uttak har den nye oppteninga blitt lagt til pensjonsbehaldningen din.",
     "opptjening-details-uttak-text": "Ved uttak reduseres pensjonsbehaldningen din med like stor andel som uttaksgraden du har valgt.",
+    "opptjening-details-omsorgsopptjening-text": "Du hadde omsorgsopptjening i {{year}}, men siden den var mindre enn inntekten er den ikke en del av opptjeningsgrunnlaget.",
 
 
     "inntekt-tekst": "NAV mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor]({{skatteetatenLink}}).",

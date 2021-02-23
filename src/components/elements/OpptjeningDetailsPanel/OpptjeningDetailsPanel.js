@@ -52,7 +52,7 @@ const getLabelForGrunnlagCode = (grunnlagCode, grunnlag, t) => {
     }
 };
 
-const buildDetails = (opptjening, currentYear, t)  => {
+const buildDetails = (opptjening, currentYear, hasOmsorgsOpptjeningTwoYearsBack, t)  => {
     let details = [];
     let grunnlagTextArray = [];
     let grunnlagTypes = [];
@@ -100,6 +100,10 @@ const buildDetails = (opptjening, currentYear, t)  => {
                         const grunnlagTypesString = grunnlagTypes.join(', ').replace(/,([^,]*)$/,' ' + ogString + '$1');
                         label = t('opptjening-details-opptjening-basert-paa-flere-ytelser', {grunnlagTypes: grunnlagTypesString, grunnlag});
                         grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypesString}));
+                    }
+
+                    if(hasOmsorgsOpptjeningTwoYearsBack && !endring.grunnlagTypes.includes("OMSORGSOPPTJENING_GRUNNLAG")){
+                        grunnlagTextArray.push(t('opptjening-details-omsorgsopptjening-text', {year:currentYear-2}))
                     }
 
                     if(endring.uttaksgrad>0 && endring.uttaksgrad<100){
@@ -226,8 +230,9 @@ export const OpptjeningDetailsPanel = (props) => {
     const opptjening = props.data.opptjening;
     const currentYear = props.currentYear;
     const userGroup = props.userGroup;
+    const hasOmsorgsOpptjeningTwoYearsBack = props.hasOmsorgsOpptjeningTwoYearsBack;
 
-    let {detailRows, grunnlagTexts, uttakTexts} = buildDetails(opptjening, currentYear, t);
+    let {detailRows, grunnlagTexts, uttakTexts} = buildDetails(opptjening, currentYear, hasOmsorgsOpptjeningTwoYearsBack, t);
     const remarksContainer = getRemarksContainer(opptjening, currentYear, t);
     const explanationTextsContainer = getExplanationTextsContainer(grunnlagTexts, uttakTexts);
     const pensjonspoengContainer = getPensjonspoengContainer(opptjening.pensjonspoeng, currentYear, t);

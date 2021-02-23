@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import {BORN_BEFORE_1943, BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../common/userGroups";
+import {init} from "http-proxy-middleware/dist/handlers";
 
 export const initialState = {
     opptjening: null,
@@ -13,6 +14,26 @@ export const getOpptjeningError = (state = initialState) => state.opptjening ? s
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
 export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
 export const getAndelPensjonBasertPaBeholdning = (state = initialState) => state.opptjening ? state.opptjening.opptjening.andelPensjonBasertPaBeholdning : null;
+
+export const getOmsorgsOpptjeningMap = (state = initialState) => {
+    const opptjeningData = getOpptjeningData(state);
+    let omsorgsOpptjeningMap ={};
+    Object.keys(opptjeningData).forEach((year) => {
+        omsorgsOpptjeningMap[year] = {
+            hasOmsorgsOpptjening: opptjeningData[year].merknader.includes("OMSORGSOPPTJENING") || opptjeningData[year].merknader.includes("OVERFORE_OMSORGSOPPTJENING")
+        }
+    });
+
+    return omsorgsOpptjeningMap;
+};
+
+export const hasOverforeOmsorgsOpptjeningLink = (state = initialState) => {
+    const opptjeningData = getOpptjeningData(state);
+    for (let year of Object.keys(opptjeningData)) {
+        if(opptjeningData[year].merknader.includes("OVERFORE_OMSORGSOPPTJENING")) return true;
+    }
+    return false;
+};
 
 export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     //Make a copy of opptjeningData before filtering

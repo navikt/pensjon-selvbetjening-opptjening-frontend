@@ -53,6 +53,7 @@
     "opptjening-details-fullt-uttak-text": "Fordi du tar ut hel alderspensjon (100 %) har ny opptjening ført til en økning i den utbetalte pensjonen din før skatt.",
     "opptjening-details-gradert-uttak-text": "Fordi du har gradert uttak har den nye opptjeningen blitt lagt til pensjonsbeholdningen din.",
     "opptjening-details-uttak-text": "Ved uttak reduseres pensjonsbeholdningen din med like stor andel som uttaksgraden du har valgt.",
+    "opptjening-details-omsorgsopptjening-text": "Du hadde omsorgsopptjening i {{year}}, men siden den var mindre enn inntekten er den ikke en del av opptjeningsgrunnlaget.",
 
     "inntekt-tekst": "The information on income comes from the tax assessment from the tax authorities. if something is not correct with your income, please contact your [local tax authority]({{skatteetatenLink}}).",
     "inntekt-lukk-panel": "Close panel",
