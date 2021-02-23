@@ -109,15 +109,10 @@ it('should render Opptjening view, open details panel, and show correct beholdni
     const mockStore = configureStore();
     const expectedBeholdning2000 = 1000000;
     const expectedBeholdning2001 = 2000000;
-    const expectedBeholdning2002 = 3000000;
-    const expectedBeholdning2003 = 4000000;
-
 
     const mockState = mockStateFromOpptjeningData(2000, [
         constructOpptjening({pensjonsbeholdning: expectedBeholdning2000}),
-        constructOpptjening({pensjonsbeholdning: expectedBeholdning2001}),
-        constructOpptjening({pensjonsbeholdning: expectedBeholdning2002}),
-        constructOpptjening({pensjonsbeholdning: expectedBeholdning2003})
+        constructOpptjening({pensjonsbeholdning: expectedBeholdning2001})
     ]);
     let store = mockStore(mockState);
 
@@ -125,17 +120,17 @@ it('should render Opptjening view, open details panel, and show correct beholdni
     fireEvent.click(view.queryAllByRole("heading")[3]); // OpptjeningDetails
     fireEvent.change(view.getByTestId("year-selector"), {
         target: {
-            value: "2002"
+            value: "2000"
         }
     });
-    expect(view.getByTestId("amount-opptjening-details-din-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning2002));
+    expect(view.getByTestId("amount-opptjening-details-din-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning2000));
 
     fireEvent.change(view.getByTestId("year-selector"), {
         target: {
-            value: "2003"
+            value: "2001"
         }
     });
-    expect(view.getByTestId("amount-opptjening-details-din-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning2003));
+    expect(view.getByTestId("amount-opptjening-details-din-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning2001));
 });
 
 it('should Opptjening view, open details panel, select year and log two events to Amplitude', () => {
