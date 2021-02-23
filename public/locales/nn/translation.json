@@ -55,6 +55,8 @@
     "opptjening-details-uttak-text": "Ved uttak reduseres pensjonsbehaldningen din med like stor andel som uttaksgraden du har valgt.",
     "opptjening-details-omsorgsopptjening-text": "Du hadde omsorgsopptjening i {{year}}, men siden den var mindre enn inntekten er den ikke en del av opptjeningsgrunnlaget.",
 
+    "overfore-omsorgsopptjening-title": "Overføring av omsorgsopptjening for barn",
+    "overfore-omsorgsopptjening-text": "Du har et eller flere år med omsorgsopptjening, og kan overføre dette til den andre av barnets foresatte her.",
 
     "inntekt-tekst": "NAV mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor]({{skatteetatenLink}}).",
     "inntekt-lukk-panel":  "Lukk panel",

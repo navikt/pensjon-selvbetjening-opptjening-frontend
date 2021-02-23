@@ -55,6 +55,9 @@
     "opptjening-details-uttak-text": "Ved uttak reduseres pensjonsbeholdningen din med like stor andel som uttaksgraden du har valgt.",
     "opptjening-details-omsorgsopptjening-text": "Du hadde omsorgsopptjening i {{year}}, men siden den var mindre enn inntekten er den ikke en del av opptjeningsgrunnlaget.",
 
+    "overfore-omsorgsopptjening-title": "Overføring av omsorgsopptjening for barn",
+    "overfore-omsorgsopptjening-text": "Du har et eller flere år med omsorgsopptjening, og kan overføre dette til den andre av barnets foresatte her.",
+
     "inntekt-tekst": "The information on income comes from the tax assessment from the tax authorities. if something is not correct with your income, please contact your [local tax authority]({{skatteetatenLink}}).",
     "inntekt-lukk-panel": "Close panel",
     "inntekt-til-toppen":  "To the top",

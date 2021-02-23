@@ -90,7 +90,7 @@ export const OpptjeningView = () => {
                 </section>
             </UserGroup>
             {hasOverforeLink &&
-                <section aria-label={"title " + t('overforeomsorgsopptjening-title')}>
+                <section aria-label={"title " + t('overfore-omsorgsopptjening-title')}>
                     <OverforeOmsorgsOpptjeningPanel/>
                 </section>
             }
