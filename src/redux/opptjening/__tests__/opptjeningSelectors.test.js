@@ -118,6 +118,63 @@ it('should return array of inntekter for all years', () => {
     expect(inntekter[totalInntekter - 3].pensjonsgivendeInntekt).toBe(expectedPensjonsgivendeInntekt);
 });
 
+it('should return hasOverforeOmsorgsOpptjeningLink = true when OVERFORE_OMSORGSOPPTJENING exists', () => {
+    const mockStateWithOverforeOmsorgsOpptjeningsLink = mockStateFromOpptjeningData(2000, [
+        constructOpptjening({merknader: ["OVERFORE_OMSORGSOPPTJENING"]}),
+    ]);
+
+    const hasOverforeOmsorgsOpptjeningLink = selectors.hasOverforeOmsorgsOpptjeningLink(mockStateWithOverforeOmsorgsOpptjeningsLink);
+
+    expect(hasOverforeOmsorgsOpptjeningLink).toBeTruthy();
+});
+
+it('should return hasOverforeOmsorgsOpptjeningLink = false when OVERFORE_OMSORGSOPPTJENING does not exists', () => {
+    const mockStateWithOmsorgsOpptjening = mockStateFromOpptjeningData(2000, [
+        constructOpptjening({merknader: ["OMSORGSOPPTJENING"]}),
+    ]);
+
+    const hasOverforeOmsorgsOpptjeningLink = selectors.hasOverforeOmsorgsOpptjeningLink(mockStateWithOmsorgsOpptjening);
+
+    expect(hasOverforeOmsorgsOpptjeningLink).toBeFalsy();
+});
+
+it('should return hasOverforeOmsorgsOpptjeningLink = true when OVERFORE_OMSORGSOPPTJENING and OMSORGSOPPTJENING exists', () => {
+    const mockStateWithOmsorgsOpptjening = mockStateFromOpptjeningData(2000, [
+        constructOpptjening({merknader: ["OMSORGSOPPTJENING", "OVERFORE_OMSORGSOPPTJENING"]}),
+    ]);
+
+    const hasOverforeOmsorgsOpptjeningLink = selectors.hasOverforeOmsorgsOpptjeningLink(mockStateWithOmsorgsOpptjening);
+
+    expect(hasOverforeOmsorgsOpptjeningLink).toBeTruthy();
+});
+
+it('should return hasOmsorgsOpptjening = true for all years ', () => {
+    const mockStateWithOmsorgsOpptjening = mockStateFromOpptjeningData(2000, [
+        constructOpptjening({merknader: ["OVERFORE_OMSORGSOPPTJENING"]}),
+        constructOpptjening({merknader: ["OMSORGSOPPTJENING"]}),
+        constructOpptjening({merknader: ["OMSORGSOPPTJENING", "OVERFORE_OMSORGSOPPTJENING"]}),
+    ]);
+
+    const omsorgsOpptjeningMap = selectors.getOmsorgsOpptjeningMap(mockStateWithOmsorgsOpptjening);
+    expect(omsorgsOpptjeningMap[2000].hasOmsorgsOpptjening).toBeTruthy();
+    expect(omsorgsOpptjeningMap[2001].hasOmsorgsOpptjening).toBeTruthy();
+    expect(omsorgsOpptjeningMap[2002].hasOmsorgsOpptjening).toBeTruthy();
+});
+
+it('should return hasOmsorgsOpptjening = true for all years, except last year', () => {
+    const mockStateWithOmsorgsOpptjening = mockStateFromOpptjeningData(2000, [
+        constructOpptjening({merknader: ["OVERFORE_OMSORGSOPPTJENING"]}),
+        constructOpptjening({merknader: ["OMSORGSOPPTJENING"]}),
+        constructOpptjening({merknader: ["OMSORGSOPPTJENING", "OVERFORE_OMSORGSOPPTJENING"]}),
+        constructOpptjening({merknader: ["UFORE"]}),
+    ]);
+
+    const omsorgsOpptjeningMap = selectors.getOmsorgsOpptjeningMap(mockStateWithOmsorgsOpptjening);
+    expect(omsorgsOpptjeningMap[2000].hasOmsorgsOpptjening).toBeTruthy();
+    expect(omsorgsOpptjeningMap[2001].hasOmsorgsOpptjening).toBeTruthy();
+    expect(omsorgsOpptjeningMap[2002].hasOmsorgsOpptjening).toBeTruthy();
+    expect(omsorgsOpptjeningMap[2003].hasOmsorgsOpptjening).toBeFalsy();
+});
 
 
 

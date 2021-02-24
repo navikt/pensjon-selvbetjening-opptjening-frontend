@@ -257,3 +257,212 @@ it('should not render container for pensjonspoeng when usergroup BORN_AFTER_1962
     expect(panel.queryByText("opptjening-details-pensjonspoeng-title")).not.toBeInTheDocument()
     expect(panel.queryByText("opptjening-details-pensjonspoeng-label")).not.toBeInTheDocument();
 });
+
+it('should render text for GRADERT UTTAK and UTTAK when uttaksgrad = 60', () => {
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: 1000,
+            grunnlagTypes: ["INNTEKT_GRUNNLAG"],
+            uttaksgrad: 60
+        }),
+        constructEndringOpptjening({
+            arsakType: "UTTAK",
+            endringBelop: 600
+        })
+    ];
+    const opptjeningWithUttak = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    });
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithUttak}} currentYear="2018" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.getByText("opptjening-details-gradert-uttak-text opptjening-details-uttak-text")).toBeInTheDocument();
+});
+
+it('should render text for FULLT UTTAK and UTTAK when uttaksgrad = 100', () => {
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: 1000,
+            grunnlagTypes: ["INNTEKT_GRUNNLAG"],
+            uttaksgrad: 100
+        }),
+        constructEndringOpptjening({
+            arsakType: "UTTAK",
+            endringBelop: 10000
+        })
+    ];
+    const opptjeningWithUttak = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    });
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithUttak}} currentYear="2018" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.getByText("opptjening-details-fullt-uttak-text opptjening-details-uttak-text")).toBeInTheDocument();
+});
+
+it('should render text for only UTTAK when uttaksgrad = 0 for OPPTJENING', () => {
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: 1000,
+            grunnlagTypes: ["INNTEKT_GRUNNLAG"],
+            uttaksgrad: 0
+        }),
+        constructEndringOpptjening({
+            arsakType: "UTTAK",
+            endringBelop: 10000
+        })
+    ];
+    const opptjeningWithUttak = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    });
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithUttak}} currentYear="2018" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.getByText("opptjening-details-uttak-text")).toBeInTheDocument();
+});
+
+it('should not render UTTAK row when endring belop is 0', () => {
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: 1000,
+            grunnlagTypes: ["INNTEKT_GRUNNLAG"],
+            uttaksgrad: 0
+        }),
+        constructEndringOpptjening({
+            arsakType: "UTTAK",
+            endringBelop: 0
+        })
+    ];
+    const opptjeningWithUttak = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    });
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithUttak}} currentYear="2018" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.getByTestId("detail-0")).toBeVisible();
+    expect(panel.queryByTestId("detail-1")).toBeFalsy()
+});
+
+it('should not render REGULERING and UTTAK row when endring belop are equal and uttaksgrad = 100', () => {
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: 1000,
+            grunnlagTypes: ["INNTEKT_GRUNNLAG"],
+            uttaksgrad: 0
+        }),
+        constructEndringOpptjening({
+            arsakType: "REGULERING",
+            endringBelop: 1000,
+            uttaksgrad: 100
+        }),
+        constructEndringOpptjening({
+            arsakType: "UTTAK",
+            endringBelop: -1000
+        })
+    ];
+    const opptjeningWithUttak = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    });
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithUttak}} currentYear="2018" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.getByTestId("detail-0")).toBeVisible();
+    expect(panel.queryByTestId("detail-1")).toBeFalsy()
+    expect(panel.queryByTestId("detail-2")).toBeFalsy()
+});
+
+it('should render REGULERING and UTTAK row when endring belop are not equal and uttaksgrad = 100', () => {
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: 1000,
+            grunnlagTypes: ["INNTEKT_GRUNNLAG"],
+            uttaksgrad: 0
+        }),
+        constructEndringOpptjening({
+            arsakType: "REGULERING",
+            endringBelop: 1000,
+            uttaksgrad: 60
+        }),
+        constructEndringOpptjening({
+            arsakType: "UTTAK",
+            endringBelop: -600
+        })
+    ];
+    const opptjeningWithUttak = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    });
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjeningWithUttak}} currentYear="2018" yearArray={[]}/>);
+    fireEvent.click(panel.getByRole("heading"));
+
+    expect(panel.getByTestId("detail-0")).toBeVisible();
+    expect(panel.queryByTestId("detail-1")).toBeVisible();
+    expect(panel.queryByTestId("detail-2")).toBeVisible();
+});
+
+it('should render text for explaining that omsorgsopptjening was less than inntekt and therefore not part of grunnlag', () => {
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: 1000,
+            grunnlagTypes: ["INNTEKT_GRUNNLAG"],
+            uttaksgrad: 0
+        })
+    ];
+
+    const opptjening = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    });
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjening}}
+        currentYear="2010"
+        yearArray={[]}
+        hasOmsorgsOpptjeningTwoYearsBack={true}
+    />);
+
+    fireEvent.click(panel.getByRole("heading"));
+    expect(panel.getByText("opptjening-details-omsorgsopptjening-text")).toBeInTheDocument();
+});
+
+it('should not render text about omsorgsopptjening, when OMSORGSOPPTJENING_GRUNNLAG', () => {
+    const endringOpptjening = [
+        constructEndringOpptjening({
+            arsakType: "OPPTJENING",
+            endringBelop: 1000,
+            grunnlagTypes: ["OMSORGSOPPTJENING_GRUNNLAG"],
+            uttaksgrad: 0
+        })
+    ];
+
+    const opptjening = constructOpptjening({
+        endringOpptjening: endringOpptjening
+    });
+
+    const panel = render(<OpptjeningDetailsPanel
+        data={{opptjening: opptjening}}
+        currentYear="2010"
+        yearArray={[]}
+        hasOmsorgsOpptjeningTwoYearsBack={true}
+    />);
+
+    fireEvent.click(panel.getByRole("heading"));
+    expect(panel.queryByText("opptjening-details-omsorgsopptjening-text")).not.toBeInTheDocument();
+});
