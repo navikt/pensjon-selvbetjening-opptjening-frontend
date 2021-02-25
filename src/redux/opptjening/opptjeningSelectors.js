@@ -13,6 +13,7 @@ export const getOpptjeningError = (state = initialState) => state.opptjening ? s
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
 export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
 export const getAndelPensjonBasertPaBeholdning = (state = initialState) => state.opptjening ? state.opptjening.opptjening.andelPensjonBasertPaBeholdning : null;
+export const getAntallAarPensjonsPoeng = (state = initialState) => state.opptjening ? state.opptjening.opptjening.numberOfYearsWithPensjonspoeng : null;
 
 export const getOmsorgsOpptjeningMap = (state = initialState) => {
     const opptjeningData = getOpptjeningData(state);

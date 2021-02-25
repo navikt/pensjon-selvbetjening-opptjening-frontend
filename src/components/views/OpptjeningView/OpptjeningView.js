@@ -5,7 +5,7 @@ import {
     getAndelPensjonBasertPaBeholdning, getFodselsAar,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData, getPensjonsbeholdningAndPensjonspoeng, getUserGroup,
-    getYearArray, getOmsorgsOpptjeningMap, hasOverforeOmsorgsOpptjeningLink
+    getYearArray, getOmsorgsOpptjeningMap, hasOverforeOmsorgsOpptjeningLink, getAntallAarPensjonsPoeng
 } from "../../../redux/opptjening/opptjeningSelectors";
 import Panel from "nav-frontend-paneler";
 import {LineChart} from '../../elements/LineChart/LineChart';
@@ -31,6 +31,7 @@ export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const userGroup = useSelector(getUserGroup);
     const fodselsar = useSelector(getFodselsAar);
+    const antallAarPensjonsPoeng = useSelector(getAntallAarPensjonsPoeng);
     const yearArray = useSelector(getYearArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
     const pensjonsbeholdningAndPensjonspoengMap = useSelector(getPensjonsbeholdningAndPensjonspoeng);
@@ -78,6 +79,7 @@ export const OpptjeningView = () => {
                         <LineChart
                             data={pensjonsbeholdningAndPensjonspoengMap}
                             userGroup={userGroup}
+                            antallAarPensjonsPoeng={antallAarPensjonsPoeng}
                         />
                     </Panel>
                 </section>
@@ -97,7 +99,7 @@ export const OpptjeningView = () => {
                 </section>
             }
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
-                <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
+                <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup} antallAarPensjonsPoeng={antallAarPensjonsPoeng}/>
             </section>
             <section aria-label={"title " + t('opptjening-flere-steder-title')}>
                 <OpptjeningFlereStederPanel/>

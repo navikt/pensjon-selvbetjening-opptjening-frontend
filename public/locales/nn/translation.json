@@ -69,6 +69,7 @@
     "inntekt-pensjonspoeng": "Pensjonspoeng",
     "inntekt-merknad": "Merknad",
     "inntekt-merknader": "Merknader",
+    "inntekt-antall-aar-med-pensjonspoeng": "Antall år med pensjonspoeng: {{years}}",
 
 
     "faq-ofte-stilte-sporsmaal": "Ofte stilte spørsmål",
@@ -84,6 +85,7 @@
     "chart-ingen": "Ingen",
     "chart-uttak-av-pensjon": "Uttak av pensjon",
     "chart-uttak": "Uttak",
+    "chart-antall-aar-med-pensjonspoeng": "Antall år med pensjonspoeng: {{years}}",
 
     "pensjonskalkulator-lenke-title": "Beregn din pensjon i pensjonskalkulatoren",
 

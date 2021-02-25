@@ -69,6 +69,7 @@
     "inntekt-pensjonspoeng": "Pension points",
     "inntekt-merknad": "Remarks",
     "inntekt-merknader": "Remarks",
+    "inntekt-antall-aar-med-pensjonspoeng": "Number of years with pension points: {{years}}",
 
 
     "faq-ofte-stilte-sporsmaal": "Frequently asked questions",
@@ -84,6 +85,7 @@
     "chart-ingen": "None",
     "chart-uttak-av-pensjon": "Withdrawal of pension",
     "chart-uttak": "Withdrawal",
+    "chart-antall-aar-med-pensjonspoeng": "Number of years with pension points: {{years}}",
 
     "pensjonskalkulator-lenke-title": "Calculate your pension in the pension calculator",
 

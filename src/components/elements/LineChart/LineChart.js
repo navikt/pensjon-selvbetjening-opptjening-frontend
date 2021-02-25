@@ -115,7 +115,7 @@ const getUttakArray = (data) => {
 
 export const LineChart = (props) => {
     const { t } = useTranslation();
-    const {data, userGroup} = props;
+    const {data, userGroup,antallAarPensjonsPoeng} = props;
     const yearLabel = t("chart-aar");
     const pensjonsbeholdningLabel = t("chart-pensjonsbeholdning");
     const pensjonsbeholdningKrLabel = t("chart-pensjonsbeholdning-kr");
@@ -344,6 +344,11 @@ export const LineChart = (props) => {
                 <PanelTitle id="chartTitle" titleString={title}/>
                 {buttons}
             </div>
+            {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 &&
+                <p>
+                    {t('chart-antall-aar-med-pensjonspoeng', {years: antallAarPensjonsPoeng})}
+                </p>
+            }
             <div className={chartClass} data-testid="chartContainer">
                 <canvas ref={chartRef}/>
             </div>
