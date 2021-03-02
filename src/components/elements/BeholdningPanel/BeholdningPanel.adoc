@@ -1,12 +1,13 @@
-== BeholdningPanel
+==== BeholdningPanel
 Panel som viser den totale pensjonsbeholdningen til innlogget bruker.
 
-=== BeholdningPanel.js
+===== BeholdningPanel.js
 |===
-| props | type | example
+| props | type | beskrivelse | eksempel
 
 | data
 | object
+| JSON objekt med den totale pensjonsbeholdningen
 a|
 [source, json]
 ----
@@ -15,8 +16,7 @@ a|
     "beholdning": 552779
 }
 ----
-
 |===
 
-=== GUI
+===== GUI
 image::pensjonsbeholdningpanel.png[]

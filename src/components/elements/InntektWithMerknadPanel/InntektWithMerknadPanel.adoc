@@ -1,0 +1,73 @@
+==== InntektWithMerknadPanel
+Ekspanderbart panel som viser alle pensjonsgivende inntekter fra Skatteetaten.  Evt. merknader på hendelser som kan
+påvirke opptjeningen et bestemt år blir vist i en egen kolonne.
+
+Dersom bruker er født før 1954 og kun har pensjonspoeng, vises disse i en egen kolonne.
+
+Følgende merknadskoder finnes og er oversatt i `public/locales/<language code>/remarks.json`:
+
+[square]
+ - "AFP"
+ - "REFORM" - vises i "År for år panelet"
+ - "INGEN_OPPTJENING"
+ - "UFOREGRAD"
+ - "DAGPENGER"
+ - "FORSTEGANGSTJENESTE"
+ - "OMSORGSOPPTJENING"
+ - "OVERFORE_OMSORGSOPPTJENING" - vises som lenke
+ - "GRADERT_UTTAK" - ikke i bruk
+ - "HELT_UTTAK" - ikke i bruk
+ - "PRE_2010" - vises i "År for år panelet"
+
+===== InntektWithMerknadPanel.js
+|===
+| props | type | beskrivelse | eksempel
+
+| data
+| object
+| JSON objekt med opptjeningsdata år for år
+a|
+[source, json]
+----
+{
+      "2017": {
+        "pensjonsgivendeInntekt": 3000,
+        "pensjonsbeholdning": 517783,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": null,
+        "merknader": [],
+        "restpensjon": null,
+        "maksUforegrad": 0,
+        "endringOpptjening": []
+      },
+      "2018": {
+        "pensjonsgivendeInntekt": 0,
+        "pensjonsbeholdning": 535750,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": null,
+        "merknader": [],
+        "restpensjon": null,
+        "maksUforegrad": 0,
+        "endringOpptjening": []
+      }
+}
+----
+
+| userGroup
+| string
+| Hvilken brukergruppe innlogget bruker tilhører, avh. av fødselsår
+|   "BORN_IN_OR_BETWEEN_1943_AND_1953",
+    "BORN_IN_OR_BETWEEN_1954_AND_1962",
+    "BORN_AFTER_1962",
+    "BORN_BEFORE_1943"
+|===
+
+===== GUI
+.Brukere født fra 1954
+image::inntekt.png[]
+
+.Brukere med bare pensjonspoeng - født før 1954
+image::inntekt_med_poeng.png[]
+

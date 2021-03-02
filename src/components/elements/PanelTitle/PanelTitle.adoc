@@ -1,0 +1,40 @@
+==== PanelTitle
+Komponent for titler på paneler med eller uten illustrasjon. Returnerer et element med tittel og evt. illustrasjon.
+
+`<PanelTitle titleString="Pensjonsbeholdning forklart" illustrationClass="beholdningForklartIllustration" illustration={pengesekk}/>;`
+
+===== PanelTitle.js
+|===
+| props | type | beskrivelse | eksempel
+
+| id
+| string
+| ID på tittelelementet
+| -
+
+| type
+| string
+| Type av tittel, Kun "lenkepanel" som støttes - bestemmer hvilken CSS som brukes
+| lenkepanel
+
+
+| titleString
+| string
+| Tittel
+| Pensjonsbeholdning forklart
+
+| illustrationClass
+| string
+| CSS klasse for padding, luft mellom illustrsjon og tittel
+| beholdningForklartIllustration
+
+| illustration
+| string
+| Filnavn til illustrasjon
+| pengesekk
+
+
+|===
+
+===== GUI
+image::paneltitle.png[]

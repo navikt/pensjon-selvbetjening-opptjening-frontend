@@ -1,0 +1,10 @@
+==== PensjonskalkulatorLenkePanel
+Lenkepanel som lenker til pensjonskalkulatoren i Din Pensjon.
+
+===== PensjonskalkulatorLenkePanel.js
+|===
+| props | type | beskrivelse | eksempel
+|===
+
+===== GUI
+image::pensjonskalkulatorlenke.png[]

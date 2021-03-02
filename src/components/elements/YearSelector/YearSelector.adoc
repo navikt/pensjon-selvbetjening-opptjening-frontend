@@ -1,0 +1,27 @@
+==== YearSelector
+Selectkomponent for å velge år i "år-for-år"-panelet.
+
+===== YearSelector.js
+|===
+| props | type | beskrivelse | eksempel
+
+| years
+| array
+| Liste med årstall
+| ["2019", "2020"]
+
+| currentYear
+| integer
+| Valgt år
+| 2020
+
+| onChange
+| function
+| Funksjon som kalles ved valg av år
+|
+
+| size
+| string
+| Bredde av dropdown: "fullbredde", "xxl", "xl", "l", "m", "s", "xs"
+| "S"
+|===

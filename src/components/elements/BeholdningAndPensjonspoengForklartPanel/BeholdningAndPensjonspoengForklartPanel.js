@@ -29,7 +29,7 @@ const shareItems = (andelPensjonBasertPaBeholdning, andelPensjonBasertPaPensjons
 
 export const BeholdningAndPensjonspoengForklartPanel = (props) => {
     const { t } = useTranslation();
-    const {andelPensjonBasertPaBeholdning, fodselsar}= props;
+    const {andelPensjonBasertPaBeholdning, fodselsar} = props;
     const andelPensjonBasertPaPensjonspoeng = 10 - andelPensjonBasertPaBeholdning;
 
     return(

@@ -1,0 +1,38 @@
+==== OpptjeningDetailsPanel
+
+
+===== OpptjeningDetailsPanel.js
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+
+| data
+|
+|
+|
+
+| currentYear
+| integer
+| Valgt år
+| 2020
+
+| onChange
+| function
+| Funksjon til <YearSelector>
+|
+
+| yearArray
+| array
+| Liste med årstall til <YearSelector>
+| ["2019", "2020"]
+
+| userGroup
+|
+|
+|
+|===
+
+
+===== GUI
+image::aar_for_aar.png[]
