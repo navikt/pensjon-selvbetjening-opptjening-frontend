@@ -1,0 +1,12 @@
+==== LoginPanel
+Panel med knapp for å logge inn via LOGINSERVICE.
+
+===== LoginPanel.js
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+
+===== GUI
+image::loginpanel.png[]

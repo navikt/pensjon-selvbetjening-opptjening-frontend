@@ -1,0 +1,33 @@
+==== FeatureToggle
+Hjelpekomponent som returnerer innholdet i tag'en dersom en spesifisert feature er enablet/disablet i Unleash.
+En liste av features blir sendt inn til et backend API, som sjekker mot Unleash og returnerer status for disse ved oppstart
+av applikasjonen.
+
+Følgende vil returnere <H1> dersom feature "toggle1" er enablet i Unleash.
+[source, react]
+----
+<FeatureToggle featureName="toggle1" enabled={true}>
+    <h1>En tittel</h1>
+</FeatureToggle>
+----
+
+===== FeatureToggle.js
+|===
+| props | type | beskrivelse | eksempel
+
+| children
+| HTML
+| HTML som skal returneres
+| <DIV></DIV>
+
+| featureName
+| string
+| Navn på feature i Unleash
+| -
+
+
+| enabled
+| boolean
+| Om feature skal være enabled eller disabled
+| true/false
+|===

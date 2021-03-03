@@ -1,16 +1,20 @@
 ==== OpptjeningDetailsPanel
+Ekspanderbart panel som viser alle endringer på pensjonsbeholdningen til bruker.
+Alle endringer settes opp som et regnestykke som viser hva beholdningen var på starten
+av året og alle hendelser som har påvirket denne iløpet av året og hva beholdningen er på slutten av året.
 
+Basert på dataene vil regnestykket gi oversikt over hva grunnlaget for opptjeningen er basert på og gi en forklarende tekst for dette.
+
+For brukere født mellom 1954 og 1962, som har pensjonspoeng i tillegg til beholdning, vil disse også vises.
 
 ===== OpptjeningDetailsPanel.js
 |===
 | props | type | beskrivelse | eksempel
 
-| - | - | - | -
-
 | data
-|
-|
-|
+| object
+| Opptjeningsdata for et gitt år
+| Se under
 
 | currentYear
 | integer
@@ -28,11 +32,92 @@
 | ["2019", "2020"]
 
 | userGroup
-|
-|
-|
+| string
+| Hvilken brukergruppe innlogget bruker tilhører, avh. av fødselsår
+|   "BORN_IN_OR_BETWEEN_1943_AND_1953",
+    "BORN_IN_OR_BETWEEN_1954_AND_1962",
+    "BORN_AFTER_1962",
+    "BORN_BEFORE_1943"
 |===
-
+Eksempel på input data:
+[source, json]
+{
+  "pensjonsgivendeInntekt": 505288,
+  "pensjonsbeholdning": 0,
+  "omsorgspoeng": null,
+  "omsorgspoengType": null,
+  "pensjonspoeng": 4.51,
+  "merknader": [],
+  "restpensjon": 0,
+  "maksUforegrad": 0,
+  "endringOpptjening": [
+    {
+      "dato": "2015-12-31",
+      "arsakType": "INNGAENDE",
+      "arsakDetails": [],
+      "endringBelop": null,
+      "grunnlag": null,
+      "grunnlagTypes": null,
+      "pensjonsbeholdningBelop": 3053000.3800686286,
+      "uttaksgrad": 0,
+      "uforegrad": null
+    },
+    {
+      "dato": "2016-01-01",
+      "arsakType": "OPPTJENING",
+      "arsakDetails": [
+        "OPPTJENING_2012"
+      ],
+      "endringBelop": 89789.715337075,
+      "grunnlag": 480987,
+      "grunnlagTypes": [
+        "INNTEKT_GRUNNLAG"
+      ],
+      "pensjonsbeholdningBelop": 3142790.0954057034,
+      "uttaksgrad": 0,
+      "uforegrad": null
+    },
+    {
+      "dato": "2016-05-01",
+      "arsakType": "REGULERING",
+      "arsakDetails": [
+        "REGULERING"
+      ],
+      "endringBelop": 87369.56465227855,
+      "grunnlag": null,
+      "grunnlagTypes": null,
+      "pensjonsbeholdningBelop": 3230159.660057982,
+      "uttaksgrad": 0,
+      "uforegrad": null
+    },
+    {
+      "dato": "2016-07-01",
+      "arsakType": "UTTAK",
+      "arsakDetails": [
+        "UTTAK"
+      ],
+      "endringBelop": -646031.9320115964,
+      "grunnlag": null,
+      "grunnlagTypes": null,
+      "pensjonsbeholdningBelop": 2584127.7280463856,
+      "uttaksgrad": 20,
+      "uforegrad": null
+    },
+    {
+      "dato": "2016-09-01",
+      "arsakType": "UTTAK",
+      "arsakDetails": [
+        "UTTAK"
+      ],
+      "endringBelop": -2584127.7280463856,
+      "grunnlag": null,
+      "grunnlagTypes": null,
+      "pensjonsbeholdningBelop": 0,
+      "uttaksgrad": 100,
+      "uforegrad": null
+    }
+  ]
+}
 
 ===== GUI
 image::aar_for_aar.png[]

@@ -10,6 +10,8 @@
 
 include::./intro.adoc[]
 
+== Utviklingsmiljø
+
 == Struktur
 
 == Containers
@@ -31,7 +33,10 @@ include::../components/elements/TopBanner/TopBanner.adoc[]
 include::../components/elements/PanelTitle/PanelTitle.adoc[]
 include::../components/elements/UserGroup/UserGroup.adoc[]
 include::../components/elements/YearSelector/YearSelector.adoc[]
-
+include::../components/elements/LoginPanel/LoginPanel.adoc[]
+include::../components/elements/LanguageSelector/LanguageSelector.adoc[]
+include::../components/elements/Breadcrumbs/Breadcrumbs.adoc[]
+include::../components/elements/FeatureToggle/FeatureToggle.adoc[]
 
 === Pages
 include::../components/pages/HomePage/HomePage.adoc[]
