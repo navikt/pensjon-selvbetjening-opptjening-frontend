@@ -47,6 +47,9 @@ include::../components/pages/NotFoundPage/NotFoundPage.adoc[]
 include::../components/views/OpptjeningView/OpptjeningView.adoc[]
 
 == Redux
+include::../redux/opptjening/opptjeningRedux.adoc[]
+include::../redux/opptjening/unleashRedux.adoc[]
+
 
 == Språkstøtte
 Løsningen støtter språkene norsk bokmål (nb), norsk nynorsk (nn) og engelsk (en).
