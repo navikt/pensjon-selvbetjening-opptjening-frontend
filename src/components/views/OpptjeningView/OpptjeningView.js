@@ -41,7 +41,6 @@ export const OpptjeningView = () => {
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
 
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
-
     const opptjeningData = useSelector(getOpptjeningData);
 
     const hasOmsorgsOpptjeningTwoYearsBack = omsorgsOpptjeningMap && omsorgsOpptjeningMap[currentYear-2] ? omsorgsOpptjeningMap[currentYear-2].hasOmsorgsOpptjening : null;

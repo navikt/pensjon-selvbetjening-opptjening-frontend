@@ -43,6 +43,7 @@ include::../components/pages/HomePage/HomePage.adoc[]
 include::../components/pages/NotFoundPage/NotFoundPage.adoc[]
 
 === Views
+include::../components/views/OpptjeningView/OpptjeningView.adoc[]
 
 == Redux
 
