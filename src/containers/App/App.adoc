@@ -1,0 +1,10 @@
+==== App
+Wrapperkomponent for å sette de tilgjengelige URL'ene (routes) i løsningen. Tar vare på evt. URL parametre før redirect til riktig side.
+
+Routes er definert i `src/common/routesConfig.js`:
+[square]
+* /<language-code>/
+* /<language-code>/404
+
+
+

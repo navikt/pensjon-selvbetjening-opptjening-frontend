@@ -1,1 +1,6 @@
 ==== NotFoundPage
+Sidemal for feilsiden som setter hovedgrid, toppbanner, brødsmule og språkvelger.
+Rendrer feilmelding.
+
+===== GUI
+image::notfoundpage.png[]
