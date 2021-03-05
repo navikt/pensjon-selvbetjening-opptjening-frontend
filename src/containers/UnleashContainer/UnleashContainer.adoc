@@ -1,4 +1,4 @@
-==== UnleashContainer
+=== UnleashContainer
 Wrapperkomponent for å status på feature toggles i Unleash.  Sender inn en liste over hvilke toggles man ønsker status på,
 og backend returner status på disse.  Oppdaterer redux state med status på toggles.
 

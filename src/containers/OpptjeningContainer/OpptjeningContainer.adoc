@@ -1,4 +1,4 @@
-==== OpptjeningContainer
+=== OpptjeningContainer
 Wrapperkomponent for å laste data til et xref:_opptjeningview[OpptjeningView]. Komponenten dispatcher en redux action for å hente
 data fra backend.
 

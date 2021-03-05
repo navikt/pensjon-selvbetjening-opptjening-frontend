@@ -1,8 +1,8 @@
 :toc: left
-:toclevels: 2
+:toclevels: 3
 :doctype: book
 :sectnums:
-:sectnumlevels: 3
+:sectnumlevels: 4
 :nofooter:
 :imagesdir: images
 
@@ -48,7 +48,7 @@ include::../components/views/OpptjeningView/OpptjeningView.adoc[]
 
 == Redux
 include::../redux/opptjening/opptjeningRedux.adoc[]
-include::../redux/opptjening/unleashRedux.adoc[]
+include::../redux/unleash/unleashRedux.adoc[]
 
 
 == Språkstøtte
