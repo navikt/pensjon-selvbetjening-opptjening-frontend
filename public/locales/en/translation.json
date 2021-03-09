@@ -48,7 +48,7 @@
     "opptjening-details-pensjonspoeng-title": "Pension points",
     "opptjening-details-pensjonspoeng-label": "Pension points based on income in {{currentYear}}",
     "opptjening-details-pensjonsbeholdning-title": "Accumulated pension capital",
-    "opptjening-details-ingen-pensjonsbeholdning": "There are no registered accumulated pension this year. This is because you did not have any income in {{year}}",
+    "opptjening-details-ingen-pensjonsbeholdning": "There is no registered accumulated pension this year. This is because you did not have any income in {{year}}",
     "opptjening-details-ingen-pensjonspoeng": "There are no registered pension points this year.",
     "opptjening-details-fullt-uttak-text": "Fordi du tar ut hel alderspensjon (100 %) har ny opptjening ført til en økning i den utbetalte pensjonen din før skatt.",
     "opptjening-details-gradert-uttak-text": "Fordi du har gradert uttak har den nye opptjeningen blitt lagt til pensjonsbeholdningen din.",
