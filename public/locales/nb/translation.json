@@ -15,7 +15,7 @@
     "pensjonspoeng-forklart-tekst": "Pensjonspoeng beregnes av pensjonsgivende inntekt, først og fremst arbeidsinntekt og personinntekt fra næringsvirksomhet hvert år, fra og med det året man fyller 17 til og med det året man fyller 69. Pensjonspoeng brukes som utgangspunkt for beregning av alderspensjonen du får fra NAV når du pensjonerer deg.",
 
     "beholdning-and-pensjonspoeng-forklart": "Pensjonsbeholdning og pensjonspoeng forklart",
-    "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er **født i {{fodselsar}}** tjener opp, og får beregnet din alderspensjon etter en kombinasjon av gamle og nye opptjeningsregler i folketrygden. Det nye regelverket fases gradvis inn med en tidel ekstra for hvert årskull. Du som er **født i {{fodselsar}}** får derfor {{andelPensjonBasertPaPensjonspoeng}} tideler etter gammelt regelverk og {{andelPensjonBasertPaBeholdning}} tideler etter nytt regelverk.",
+    "beholdning-and-pensjonspoeng-forklart-tekst": "Du som er født i perioden 1954 til og med 1962 vil tjene opp alderspensjon, og få beregnet din alderspensjon etter en kombinasjon av gamle og nye opptjeningsregler i folketrygden. Det nye regelverket fases gradvis inn med en tidel ekstra for hvert årskull.  Siden du er **født i {{fodselsar}}** får du derfor {{andelPensjonBasertPaPensjonspoeng}} tideler etter gammelt regelverk og {{andelPensjonBasertPaBeholdning}} tideler etter nytt regelverk.",
     "beholdning-and-pensjonspoeng-forklart-illustrasjon-tekst": "Din fordeling etter nye og gamle regler kan illustreres slik:",
     "beholdning-and-pensjonspoeng-forklart-andel-pensjonsbeholdning": "Pensjonsbeholdning",
     "beholdning-and-pensjonspoeng-forklart-andel-pensjonspoeng": "Pensjonspoeng",
