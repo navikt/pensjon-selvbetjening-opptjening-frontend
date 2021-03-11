@@ -1,0 +1,16 @@
+==== Breadcrumbs
+Komponent som implenterer metoder for brødsmule i dekoratøren.
+Se https://github.com/navikt/nav-dekoratoren
+
+[square]
+- `onBreadcrumbClick`
+- `setBreadcrumbs`
+
+
+===== Breadcrumbs.js
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+

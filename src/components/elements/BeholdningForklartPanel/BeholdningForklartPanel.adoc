@@ -1,0 +1,14 @@
+==== BeholdningForklartPanel
+EkspanderbartPanel som forklarer hva pensjonsbeholdning betyr.  Vises for brukere født etter
+1962, som kun har pensjonsbeholdning.
+
+===== BeholdningForklartPanel.js
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+
+===== GUI
+image::beholdningforklart_lukket.png[]
+image::beholdningforklart_apen.png[]

@@ -11,6 +11,9 @@
 # production
 /build
 
+# documentation - generated prebuild
+/public/doc
+
 # misc
 .DS_Store
 .env.local

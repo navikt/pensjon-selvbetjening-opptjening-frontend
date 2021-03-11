@@ -1,0 +1,106 @@
+=== Opptjening
+==== OpptjeningActions
+Action types:
+[square]
+* FETCH_OPPTJENING_STARTED
+* FETCH_OPPTJENING_SUCCESS
+* FETCH_OPPTJENING_FAILURE
+
+==== OpptjeningReducer
+Oppdatering av state.
+
+==== OpptjeningSaga
+API kall mot backend.  Kall til `fetchToJson` som ligger i katalogen "api".
+
+==== OpptjeningSelectors
+Hjelpefunksjoner for å hente data fra state.
+|===
+| Selector | Beskrivelse | Returverdi
+
+| getOpptjening
+| Hele opptjeningsobjektet
+a|
+[source,json]
+----
+{
+    "opptjeningData": {},
+    "numberOfYearsWithPensjonspoeng": null,
+    "fodselsaar": 1972,
+    "andelPensjonBasertPaBeholdning": 10
+}
+----
+
+| getOpptjeningLoading
+| Lasting av data pågår
+| true/false
+
+| getOpptjeningError
+| Feil ved lasting data
+| true/false
+
+| getOpptjeningData
+| Propertien "opptjeningData"
+| object
+
+| getFodselsAar
+| Propertien "fodselsaar"
+| integer
+
+| getAndelPensjonBasertPaBeholdning
+| Propertien "andelPensjonBasertPaBeholdning"
+| integer
+
+| getOpptjeningDataWithoutNullYears
+| Ikke i bruk
+| -
+
+| getPensjonsbeholdningAndPensjonspoeng
+| Object med  år og data
+a|
+[source,json]
+----
+{
+    "<year>": {
+        "pensjonspoeng": "<float>",
+        "pensjonsbeholdning": "<integer>",
+        "uttak": "<integer>"
+    }
+}
+----
+
+| getPensjonsBeholdningArray
+| Ikke i bruk
+| -
+
+| getYearArray
+| Liste av årstall med data
+| Array
+
+| getOpptjeningByYear
+| Opptjeningsdata for et gitt år
+| object
+
+| getLatestPensjonsBeholdning
+| Pensjonsbeholdningen for det siste året i dataene
+| Beløp
+
+| getInntekter
+| Liste av objekter med år og inntekt
+a|
+[source, json]
+----
+[
+    {"year": 2016, "inntekt": 1000000},
+    {"year": 2017, "inntekt": 1000000},
+    {"year": 2018, "inntekt": 1000000},
+    {"year": 2019, "inntekt": 1000000},
+    {"year": 2020, "inntekt": 1000000},
+]
+----
+
+| getUserGroup
+| Hvilken brukergruppe man tilhører basert på fødselsår
+| string
+|===
+
+

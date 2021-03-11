@@ -1,0 +1,32 @@
+==== UserGroup
+Hjelpekomponent som returnerer innholdet i tag'en for en gitt brukergruppe.
+
+Følgende vil returnere en <DIV> dersom innlogget bruker er født etter 1954:
+[source,react]
+----
+<UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
+    <div>INNHOLD</div>
+</UserGroup>
+----
+
+
+===== UserGroup.js
+|===
+| props | type | beskrivelse | eksempel
+
+| children
+| HTML
+| HTML som skal returneres
+| <DIV></DIV>
+
+| userGroups
+| array
+| Liste av brukergrupper
+| [BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]
+
+
+| include
+| boolean
+| Om brukergruppe skal inkluderes eller ikke
+| true/false
+|===

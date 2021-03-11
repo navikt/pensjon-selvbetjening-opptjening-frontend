@@ -1,0 +1,6 @@
+==== HomePage
+Sidemal for hovedsiden som setter hovedgrid, toppbanner, brødsmule og språkvelger.
+Laster data for applikasjonen xref:#_opptjeningcontainer[OpptjeningContainer], og rendrer xref:#_opptjeningview[OpptjeningView]
+
+===== GUI
+image::homepage.png[]

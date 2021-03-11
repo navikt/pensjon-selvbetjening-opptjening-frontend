@@ -1,0 +1,15 @@
+==== LanguageSelector
+Komponent som implenterer metoder for språkvelgeren i dekoratøren.
+Se https://github.com/navikt/nav-dekoratoren
+
+[square]
+- `onLanguageSelect`
+- `setAvailableLanguages`
+
+
+===== LanguageSelector.js
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===

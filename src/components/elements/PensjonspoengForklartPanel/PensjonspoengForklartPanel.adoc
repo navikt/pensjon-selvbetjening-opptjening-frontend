@@ -1,0 +1,14 @@
+==== PensjonspoengForklartPanel
+EkspanderbartPanel som forklarer hva pensjonspoeng betyr.  Vises for brukere født før
+1954, som kun har pensjonspoeng.
+
+===== PensjonspoengForklartPanel.js
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+
+===== GUI
+image::pensjonspoengforklart.png[]
+
