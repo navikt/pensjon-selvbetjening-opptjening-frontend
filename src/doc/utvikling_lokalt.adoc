@@ -1,5 +1,7 @@
 === Starte app på localhost
-Bruk `npm run dev` for å kjøre appen i utviklingsmodus
+
+Last ned kildekode fra https://github.com/navikt/pensjon-selvbetjening-opptjening-frontend. Kjør `npm install` for å installere
+alle dependencies. Bruk `npm run dev` for å kjøre appen i utviklingsmodus
 Åpne http://localhost:3000/pensjon/opptjening for å se den i nettleser.
 App'en kjører da opp en lokal JSON-server med noe deafult data.
 

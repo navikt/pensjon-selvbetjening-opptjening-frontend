@@ -1,0 +1,10 @@
+==== OverforeOmsorgsOpptjeningPanel
+Lenkepanel som lenker til overføring av omsorgsopptjening i Din Pensjon.
+
+===== OverforeOmsorgsOpptjeningPanel.js
+|===
+| props | type | beskrivelse | eksempel
+|===
+
+===== GUI
+image::overforeomsorgsopptjening.png[]
