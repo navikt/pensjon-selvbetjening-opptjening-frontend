@@ -26,6 +26,7 @@ include::../components/elements/PensjonspoengForklartPanel/PensjonspoengForklart
 include::../components/elements/BeholdningAndPensjonspoengForklartPanel/BeholdningAndPensjonspoengForklartPanel.adoc[]
 include::../components/elements/LineChart/LineChart.adoc[]
 include::../components/elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel.adoc[]
+include::../components/elements/OverforeOmsorgsOpptjeningPanel/OverforeOmsorgsOpptjeningPanel.adoc[]
 include::../components/elements/InntektWithMerknadPanel/InntektWithMerknadPanel.adoc[]
 include::../components/elements/OpptjeningFlereStederPanel/OpptjeningFlereStederPanel.adoc[]
 include::../components/elements/PensjonskalkulatorLenkePanel/PensjonskalkulatorLenkePanel.adoc[]
