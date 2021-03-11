@@ -7,7 +7,7 @@ export const formatAmount = (amount) => {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
 
-            }).format(Math.abs(amount));
+            }).format(amount);
     } else {
         return;
     }
@@ -15,7 +15,9 @@ export const formatAmount = (amount) => {
 };
 
 export const formatNumber = (number) => {
-    return number.toLocaleString("nb-NO", {minimumFractionDigits: 2, maximumFractionDigits: 2})
+    if(number!==null){
+        return number.toLocaleString("nb-NO", {minimumFractionDigits: 2, maximumFractionDigits: 2})
+    }
 };
 
 export function isDev() {
@@ -26,3 +28,17 @@ export const getLabelByLanguage = (language, key, namespace="translation") => {
     const label = i18n.getDataByLanguage(language)[namespace][key];
     return label ? label : key;
 };
+
+export const getCurrentLocale = () => {
+    const language = i18n.language;
+    switch (language) {
+        case "nb":
+            return "nb-NO";
+        case "nn":
+            return "nn-NO";
+        case "en":
+            return "en-GB";
+        default:
+            return "nb-NO";
+    }
+}

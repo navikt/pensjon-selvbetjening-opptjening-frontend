@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import {axe} from "jest-axe";
 import {
+    constructEndringOpptjening,
     constructOpptjening,
     mockBasicSuccessState,
     mockStateFromOpptjeningData
@@ -131,6 +132,32 @@ it('should render Opptjening view, open details panel, and show correct beholdni
         }
     });
     expect(view.getByTestId("amount-opptjening-details-din-pensjonsbeholdning").textContent).toEqual(formatAmount(expectedBeholdning2001));
+});
+
+it('should render Opptjening view with OverforeOmsorgsOpptjening link panel present', () =>{
+    const mockStore = configureStore();
+
+    const mockState = mockStateFromOpptjeningData(2012, [
+        constructOpptjening({merknader: ["OVERFORE_OMSORGSOPPTJENING"]}),
+    ]);
+    const mockState2 = mockStateFromOpptjeningData(2012, [
+        constructOpptjening({merknader: ["OMSORGSOPPTJENING"]}),
+    ]);
+    const mockState3 = mockStateFromOpptjeningData(2012, [
+        constructOpptjening({merknader: ["OMSORGSOPPTJENING", "OVERFORE_OMSORGSOPPTJENING"]}),
+    ]);
+
+    let store = mockStore(mockState);
+    let store2 = mockStore(mockState2);
+    let store3 = mockStore(mockState3);
+
+    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view2 = render(<Provider store={store2}><OpptjeningView/></Provider>);
+    let view3 = render(<Provider store={store3}><OpptjeningView/></Provider>);
+
+    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
+    expect(view2.queryAllByRole("heading")[4]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
+    expect(view3.queryAllByRole("heading")[4]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
 });
 
 it('should Opptjening view, open details panel, select year and log two events to Amplitude', () => {

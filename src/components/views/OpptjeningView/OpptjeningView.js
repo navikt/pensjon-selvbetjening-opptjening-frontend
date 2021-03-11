@@ -5,7 +5,7 @@ import {
     getAndelPensjonBasertPaBeholdning, getFodselsAar,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData, getPensjonsbeholdningAndPensjonspoeng, getUserGroup,
-    getYearArray
+    getYearArray, getOmsorgsOpptjeningMap, hasOverforeOmsorgsOpptjeningLink, getAntallAarPensjonsPoeng
 } from "../../../redux/opptjening/opptjeningSelectors";
 import Panel from "nav-frontend-paneler";
 import {LineChart} from '../../elements/LineChart/LineChart';
@@ -25,21 +25,26 @@ import {PensjonspoengForklartPanel} from "../../elements/PensjonspoengForklartPa
 import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/BeholdningAndPensjonspoengForklartPanel/BeholdningAndPensjonspoengForklartPanel";
 import {PensjonskalkulatorLenkePanel} from "../../elements/PensjonskalkulatorLenkePanel/PensjonskalkulatorLenkePanel";
 import {OpptjeningFlereStederPanel} from "../../elements/OpptjeningFlereStederPanel/OpptjeningFlereStederPanel";
+import {OverforeOmsorgsOpptjeningPanel} from "../../elements/OverforeOmsorgsOpptjeningPanel/OverforeOmsorgsOpptjeningPanel";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const userGroup = useSelector(getUserGroup);
     const fodselsar = useSelector(getFodselsAar);
+    const antallAarPensjonsPoeng = useSelector(getAntallAarPensjonsPoeng);
     const yearArray = useSelector(getYearArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
     const pensjonsbeholdningAndPensjonspoengMap = useSelector(getPensjonsbeholdningAndPensjonspoeng);
-    const andelPensjonBasertPaBeholdning = useSelector(getAndelPensjonBasertPaBeholdning)
-
+    const andelPensjonBasertPaBeholdning = useSelector(getAndelPensjonBasertPaBeholdning);
+    const omsorgsOpptjeningMap = useSelector(getOmsorgsOpptjeningMap);
+    const hasOverforeLink  = useSelector(hasOverforeOmsorgsOpptjeningLink);
     const [currentYear, setYear] = useState(latestPensjonsBeholdning.year);
 
     const opptjening = useSelector(state => getOpptjeningByYear(state, currentYear));
 
     const opptjeningData = useSelector(getOpptjeningData);
+
+    const hasOmsorgsOpptjeningTwoYearsBack = omsorgsOpptjeningMap && omsorgsOpptjeningMap[currentYear-2] ? omsorgsOpptjeningMap[currentYear-2].hasOmsorgsOpptjening : null;
 
     const selectYear = (year) => {
         logToAmplitude({eventType: SELECT_EVENT, name: "År", titleKey: "opptjening-details-din-okning-ar-for-ar", type: "Select", value: year});
@@ -60,7 +65,7 @@ export const OpptjeningView = () => {
                 </section>
             )
         }
-    }
+    };
 
     return(
         <div data-testid="opptjeningview">
@@ -74,12 +79,13 @@ export const OpptjeningView = () => {
                         <LineChart
                             data={pensjonsbeholdningAndPensjonspoengMap}
                             userGroup={userGroup}
+                            antallAarPensjonsPoeng={antallAarPensjonsPoeng}
                         />
                     </Panel>
                 </section>
                 <section aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
                     <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray}
-                                            onChange={selectYear} userGroup={userGroup}/>
+                                            onChange={selectYear} userGroup={userGroup} hasOmsorgsOpptjeningTwoYearsBack={hasOmsorgsOpptjeningTwoYearsBack}/>
                 </section>
             </UserGroup>
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>
@@ -87,8 +93,13 @@ export const OpptjeningView = () => {
                     <PensjonspoengForklartPanel/>
                 </section>
             </UserGroup>
+            {hasOverforeLink &&
+                <section aria-label={"title " + t('overfore-omsorgsopptjening-title')}>
+                    <OverforeOmsorgsOpptjeningPanel/>
+                </section>
+            }
             <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
-                <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup}/>
+                <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup} antallAarPensjonsPoeng={antallAarPensjonsPoeng}/>
             </section>
             <section aria-label={"title " + t('opptjening-flere-steder-title')}>
                 <OpptjeningFlereStederPanel/>

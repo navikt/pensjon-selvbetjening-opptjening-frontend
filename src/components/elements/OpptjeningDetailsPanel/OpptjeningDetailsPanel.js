@@ -52,10 +52,12 @@ const getLabelForGrunnlagCode = (grunnlagCode, grunnlag, t) => {
     }
 };
 
-const buildDetails = (opptjening, currentYear, t)  => {
+const buildDetails = (opptjening, currentYear, hasOmsorgsOpptjeningTwoYearsBack, t)  => {
     let details = [];
     let grunnlagTextArray = [];
     let grunnlagTypes = [];
+    let uttakTexts = {};
+    let currentRegulering;
     if (opptjening && opptjening.endringOpptjening) {
         opptjening.endringOpptjening.forEach((endring, idx) => {
             let item;
@@ -82,7 +84,7 @@ const buildDetails = (opptjening, currentYear, t)  => {
                 case "OPPTJENING":
                     const grunnlag = formatAmount(endring.grunnlag);
                     let label = "";
-                    const uforegrad = endring.uforegrad ?  endring.uforegrad + "%" : "";
+                    const uforegrad = endring.uforegrad ?  endring.uforegrad + " %" : "";
                     if(endring.grunnlagTypes.length === 1){
                         const grunnlagType = t('grunnlag:' + endring.grunnlagTypes[0] + '_TYPE');
                         label = getLabelForGrunnlagCode(endring.grunnlagTypes[0], grunnlag, t);
@@ -100,6 +102,18 @@ const buildDetails = (opptjening, currentYear, t)  => {
                         grunnlagTextArray.push(t('opptjening-details-lurer-du-paa-se-ofte-stilte-spm', {'grunnlagType': grunnlagTypesString}));
                     }
 
+                    if(hasOmsorgsOpptjeningTwoYearsBack && !endring.grunnlagTypes.includes("OMSORGSOPPTJENING_GRUNNLAG")){
+                        grunnlagTextArray.push(t('opptjening-details-omsorgsopptjening-text', {year:currentYear-2}))
+                    }
+
+                    if(endring.uttaksgrad>0 && endring.uttaksgrad<100){
+                        //GRADERT UTTAK
+                        uttakTexts["gradert"] = t('opptjening-details-gradert-uttak-text');
+                    } else if (endring.uttaksgrad===100){
+                        //FULLT UTTAK
+                        uttakTexts["fullt"] = t('opptjening-details-fullt-uttak-text');
+                    }
+
                     item = detailRow(
                         {
                             "key": "detail-" + idx,
@@ -109,22 +123,29 @@ const buildDetails = (opptjening, currentYear, t)  => {
                     );
                     break;
                 case "REGULERING":
-                    item = detailRow(
-                        {
-                            "key": "detail-" + idx,
-                            "label": t('opptjening-details-aarlig-regulering'),
-                            "amount": formatAmount(endring.endringBelop)
-                        }
-                    );
+                    if(endring.uttaksgrad!==100){
+                        item = detailRow(
+                            {
+                                "key": "detail-" + idx,
+                                "label": t('opptjening-details-aarlig-regulering'),
+                                "amount": formatAmount(endring.endringBelop)
+                            }
+                        );
+                    } else {
+                        currentRegulering = endring.endringBelop;
+                    }
                     break;
                 case "UTTAK":
-                    item = detailRow(
-                        {
-                            "key": "detail-" + idx,
-                            "label": t('opptjening-details-uttak'),
-                            "amount": formatAmount(endring.endringBelop)
-                        }
-                    );
+                    if(endring.endringBelop!==0 && Math.abs(endring.endringBelop) !== currentRegulering){
+                        item = detailRow(
+                            {
+                                "key": "detail-" + idx,
+                                "label": t('opptjening-details-uttak', {uttaksgrad: endring.uttaksgrad}),
+                                "amount": formatAmount(endring.endringBelop)
+                            }
+                        );
+                        uttakTexts["uttak"]=t('opptjening-details-uttak-text');
+                    }
                     break;
                 default:
                     break;
@@ -132,9 +153,11 @@ const buildDetails = (opptjening, currentYear, t)  => {
             details.push(item);
         });
     }
+
     return {
         "detailRows": details,
-        "grunnlagTexts" : getTextParagraphsFromTextArray(grunnlagTextArray, "grunnlagtext")
+        "grunnlagTexts" : getTextParagraphsFromTextArray(grunnlagTextArray, "grunnlagtext"),
+        "uttakTexts": getTextParagraph(Object.values(uttakTexts).join(" "), "uttaktext")
     };
 };
 
@@ -164,10 +187,11 @@ const getRemarksContainer = (opptjening, currentYear, t)  => {
     }
 };
 
-const getGrunnlagTextsContainer = (grunnlagTexts)  => {
+const getExplanationTextsContainer = (grunnlagTexts, uttakTexts)  => {
     if(grunnlagTexts && grunnlagTexts.length>0){
         return (
             <div className="detailsBox">
+                {uttakTexts}
                 {grunnlagTexts}
             </div>
         )
@@ -181,8 +205,8 @@ const getPensjonspoengContainer = (pensjonspoeng, currentYear, t) =>{
         <div className="detailsBox">
             <h3>{t('opptjening-details-pensjonspoeng-title')}</h3>
             <div  className="detailRow">
-                <span className="labelColumn">{t('opptjening-details-pensjonspoeng-label', {currentYear})}</span>
-                <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : null}</span>
+                <span className="labelColumn">{pensjonspoeng!=null ? t('opptjening-details-pensjonspoeng-label', {currentYear}) : t('opptjening-details-ingen-pensjonspoeng')}</span>
+                {pensjonspoeng!=null && <span data-testid="pensjonspoengContainer-pensjonspoeng" className="numberColumn">{formatNumber(pensjonspoeng)}</span>}
                 <span role="presentation" className="emptyColumn">&nbsp;</span>
             </div>
         </div>
@@ -206,10 +230,11 @@ export const OpptjeningDetailsPanel = (props) => {
     const opptjening = props.data.opptjening;
     const currentYear = props.currentYear;
     const userGroup = props.userGroup;
+    const hasOmsorgsOpptjeningTwoYearsBack = props.hasOmsorgsOpptjeningTwoYearsBack;
 
-    let {detailRows, grunnlagTexts} = buildDetails(opptjening, currentYear, t);
+    let {detailRows, grunnlagTexts, uttakTexts} = buildDetails(opptjening, currentYear, hasOmsorgsOpptjeningTwoYearsBack, t);
     const remarksContainer = getRemarksContainer(opptjening, currentYear, t);
-    const grunnlagTextsContainer = getGrunnlagTextsContainer(grunnlagTexts);
+    const explanationTextsContainer = getExplanationTextsContainer(grunnlagTexts, uttakTexts);
     const pensjonspoengContainer = getPensjonspoengContainer(opptjening.pensjonspoeng, currentYear, t);
 
     let label = "opptjening-details-din-pensjonsbeholdning";
@@ -221,7 +246,7 @@ export const OpptjeningDetailsPanel = (props) => {
         detailRows.push(<div key="horizontalLine" className="horizontalLine"/>);
     }
 
-    if (opptjening.pensjonsbeholdning !== null && opptjening.pensjonsbeholdning !== 0) {
+    if (opptjening.pensjonsbeholdning !== null) {
         detailRows.push(
             detailRow(
                 {
@@ -255,7 +280,7 @@ export const OpptjeningDetailsPanel = (props) => {
                     {detailRows}
                 </div>
             </div>
-            {grunnlagTextsContainer}
+            {explanationTextsContainer}
             {remarksContainer}
             {userGroup === BORN_IN_OR_BETWEEN_1954_AND_1962 && pensjonspoengContainer}
         </EkspanderbartpanelBase>

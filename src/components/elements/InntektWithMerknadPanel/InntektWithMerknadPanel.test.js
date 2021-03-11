@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import {InntektWithMerknadPanel} from './InntektWithMerknadPanel';
 import {constructOpptjening, mockStateFromOpptjeningData} from "../../../__mocks__/mockDataGenerator";
@@ -7,6 +7,7 @@ import {formatAmount} from "../../../common/utils";
 import {axe} from "jest-axe";
 import * as amplitude from '../../../common/amplitude'
 import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
+import {LineChart} from "../LineChart/LineChart";
 
 const startYear = 2018
 const mockData = mockStateFromOpptjeningData(
@@ -117,4 +118,20 @@ it('should not render the InntektWithMerknadPanel with pensjonspoeng when user B
     userEvent.click(getByRole("heading"));
 
     expect(getAllByTestId("income-header")[2]).not.toHaveTextContent("inntekt-pensjonspoeng");
+});
+
+it('should show antall år med pensjonspoeng for usergroup BORN_IN_OR_BETWEEN_1943_AND_1953', () => {
+    const expectedAntallAarMedPensjonsPoeng = 44;
+    render(<InntektWithMerknadPanel data={{}} userGroup={BORN_IN_OR_BETWEEN_1943_AND_1953} antallAarPensjonsPoeng={expectedAntallAarMedPensjonsPoeng}/>);
+
+    userEvent.click(screen.getByRole("heading"));
+    expect(screen.getByText("inntekt-antall-aar-med-pensjonspoeng")).toBeInTheDocument();
+});
+
+it('should not show antall år med pensjonspoeng for usergroup BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
+    const expectedAntallAarMedPensjonsPoeng = 44;
+    render(<InntektWithMerknadPanel data={{}} userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962} antallAarPensjonsPoeng={expectedAntallAarMedPensjonsPoeng}/>);
+
+    userEvent.click(screen.getByRole("heading"));
+    expect(screen.queryByText("inntekt-antall-aar-med-pensjonspoeng")).not.toBeInTheDocument();
 });

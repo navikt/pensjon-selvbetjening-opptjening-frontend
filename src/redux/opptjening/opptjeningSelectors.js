@@ -13,6 +13,27 @@ export const getOpptjeningError = (state = initialState) => state.opptjening ? s
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
 export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
 export const getAndelPensjonBasertPaBeholdning = (state = initialState) => state.opptjening ? state.opptjening.opptjening.andelPensjonBasertPaBeholdning : null;
+export const getAntallAarPensjonsPoeng = (state = initialState) => state.opptjening ? state.opptjening.opptjening.numberOfYearsWithPensjonspoeng : null;
+
+export const getOmsorgsOpptjeningMap = (state = initialState) => {
+    const opptjeningData = getOpptjeningData(state);
+    let omsorgsOpptjeningMap ={};
+    Object.keys(opptjeningData).forEach((year) => {
+        omsorgsOpptjeningMap[year] = {
+            hasOmsorgsOpptjening: opptjeningData[year].merknader.includes("OMSORGSOPPTJENING") || opptjeningData[year].merknader.includes("OVERFORE_OMSORGSOPPTJENING")
+        }
+    });
+
+    return omsorgsOpptjeningMap;
+};
+
+export const hasOverforeOmsorgsOpptjeningLink = (state = initialState) => {
+    const opptjeningData = getOpptjeningData(state);
+    for (let year of Object.keys(opptjeningData)) {
+        if(opptjeningData[year].merknader.includes("OVERFORE_OMSORGSOPPTJENING")) return true;
+    }
+    return false;
+};
 
 export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     //Make a copy of opptjeningData before filtering
@@ -29,13 +50,36 @@ export const getOpptjeningDataWithoutNullYears =  (state = initialState) => {
     return opptjeningData
 };
 
+export const getUttakForYear = (state = initialState, year) => {
+    const opptjeningData = getOpptjeningData(state);
+    const endringOpptjening = opptjeningData[year].endringOpptjening;
+    let previousUttak;
+    return endringOpptjening ?
+        endringOpptjening.filter((endring) => {
+            return endring.arsakType === "UTTAK";
+        }).map((uttak) => {
+            if(uttak.uttaksgrad !== previousUttak){
+                previousUttak = uttak.uttaksgrad;
+                return {
+                    dato: uttak.dato,
+                    uttaksgrad: uttak.uttaksgrad
+                }
+            }
+            return null;
+        }).filter((uttak) =>{
+            return uttak;
+        })
+        : [];
+};
+
 export const getPensjonsbeholdningAndPensjonspoeng = (state = initialState) => {
     const opptjeningData = getOpptjeningData(state);
     let opptjeningMap ={};
     Object.keys(opptjeningData).forEach((year) => {
-        opptjeningMap[year] ={
+        opptjeningMap[year] = {
             pensjonspoeng: opptjeningData[year].pensjonspoeng,
-            pensjonsbeholdning: opptjeningData[year].pensjonsbeholdning
+            pensjonsbeholdning: opptjeningData[year].pensjonsbeholdning,
+            uttak: getUttakForYear(state, year)
         }
     });
 

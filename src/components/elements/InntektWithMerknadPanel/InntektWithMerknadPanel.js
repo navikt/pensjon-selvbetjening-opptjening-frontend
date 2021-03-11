@@ -7,7 +7,10 @@ import 'nav-frontend-tabell-style';
 import "./InntektWithMerknadPanel.less"
 import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
-import {BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953} from "../../../common/userGroups";
+import {
+    BORN_BEFORE_1943,
+    BORN_IN_OR_BETWEEN_1943_AND_1953,
+} from "../../../common/userGroups";
 import {SKATTEETATEN} from "../../../common/externalUrls";
 import handMedMynter from "../../../assets/handMedMynter.svg";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
@@ -110,7 +113,7 @@ const buildDetails = (opptjeningData, userGroup, t)  => {
 export const InntektWithMerknadPanel = (props) => {
     const [apen, setApen] = useState(false);
     const { t } = useTranslation();
-    const { data, userGroup } = props;
+    const { data, userGroup, antallAarPensjonsPoeng} = props;
     const {detailRows, detailListItems} = buildDetails(data, userGroup, t);
     const title = userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 || userGroup === BORN_BEFORE_1943 ? 'inntekt-pensjonsgivende-inntekter-og-pensjonspoeng' : 'inntekt-pensjonsgivende-inntekter';
 
@@ -136,6 +139,11 @@ export const InntektWithMerknadPanel = (props) => {
                             {t('inntekt-tekst', {skatteetatenLink: SKATTEETATEN})}
                         </ReactMarkdown>
                     </div>
+                    {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 &&
+                        <p>
+                            {t('inntekt-antall-aar-med-pensjonspoeng', {years: antallAarPensjonsPoeng})}
+                        </p>
+                    }
                     <div className="inntektDetailsBox">
                         <table className="tabell inntektTabell">
                             <thead>

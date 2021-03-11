@@ -1,12 +1,12 @@
 import React from 'react';
-import {render} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import {LineChart} from './LineChart';
 import userEvent from "@testing-library/user-event";
 import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
 import {formatAmount} from "../../../common/utils";
 
 it('should render the Chart with title, buttons, and hidden table', () => {
-    const {getByRole, getByTestId, getAllByRole} = render(<LineChart userGroup={BORN_AFTER_1962}/>);
+    const {getByRole, getByTestId, getAllByRole} = render(<LineChart data={{}} userGroup={BORN_AFTER_1962}/>);
 
     expect(getByRole("heading")).toHaveTextContent("chart-pensjonsbeholdningen-din");
     expect(getAllByRole("button")).toHaveLength(2);
@@ -19,12 +19,12 @@ it('should render the Chart with title, buttons, and hidden table', () => {
 });
 
 it('should render the Chart with title chart-pensjonsbeholdningen-og-pensjonspoengene-dine when BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
-    const {getByRole} = render(<LineChart userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
+    const {getByRole} = render(<LineChart data={{}} userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962}/>);
     expect(getByRole("heading")).toHaveTextContent("chart-pensjonsbeholdningen-og-pensjonspoengene-dine");
 });
 
 it('should show the table or chart depending on which button is clicked', () => {
-    const {getByTestId, getAllByRole} = render(<LineChart userGroup={BORN_AFTER_1962}/>);
+    const {getByTestId, getAllByRole} = render(<LineChart data={{}} userGroup={BORN_AFTER_1962}/>);
 
 
     userEvent.click(getAllByRole("button")[1]);
@@ -43,7 +43,8 @@ it('should not show pensjonspoeng for usergroup BORN_AFTER_1962', () => {
             {
                 2000:{
                     pensjonspoeng: null,
-                    pensjonsbeholdning: expectedBeholdning
+                    pensjonsbeholdning: expectedBeholdning,
+                    uttak: []
                 }
             }
         }
@@ -65,7 +66,8 @@ it('should show pensjonspoeng for usergroup BORN_IN_OR_BETWEEN_1954_AND_1962', (
             {
                 2000:{
                     pensjonspoeng: expectedPensjonspoeng,
-                    pensjonsbeholdning: expectedBeholdning
+                    pensjonsbeholdning: expectedBeholdning,
+                    uttak: []
                 }
             }
         }
@@ -80,5 +82,16 @@ it('should show pensjonspoeng for usergroup BORN_IN_OR_BETWEEN_1954_AND_1962', (
 
 });
 
+it('should show antall år med pensjonspoeng for usergroup BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
+    const expectedAntallAarMedPensjonsPoeng = 44;
+    render(<LineChart data={{}} userGroup={BORN_IN_OR_BETWEEN_1954_AND_1962} antallAarPensjonsPoeng={expectedAntallAarMedPensjonsPoeng}/>);
 
+    expect(screen.getByText("chart-antall-aar-med-pensjonspoeng")).toBeInTheDocument();
+});
 
+it('should show not antall år med pensjonspoeng for usergroup BORN_AFTER_1962', () => {
+    const expectedAntallAarMedPensjonsPoeng = 44;
+    render(<LineChart data={{}} userGroup={BORN_AFTER_1962} antallAarPensjonsPoeng={expectedAntallAarMedPensjonsPoeng}/>);
+
+    expect(screen.queryByText("chart-antall-aar-med-pensjonspoeng")).not.toBeInTheDocument();
+});

@@ -1,0 +1,974 @@
+{
+    "unleash": {
+        "toggles": {
+            "pensjon.selvbetjening.opptjening.demo1": true
+        }
+    },
+    "opptjening": {
+        "opptjeningData": {
+            "1971": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1972": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1973": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1974": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1975": {
+                "pensjonsgivendeInntekt": 0,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.0,
+                "merknader": [
+                    "INGEN_OPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1976": {
+                "pensjonsgivendeInntekt": 72102,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1977": {
+                "pensjonsgivendeInntekt": 80412,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1978": {
+                "pensjonsgivendeInntekt": 87424,
+                "pensjonsbeholdning": 14555,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1979": {
+                "pensjonsgivendeInntekt": 91330,
+                "pensjonsbeholdning": 31647,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1980": {
+                "pensjonsgivendeInntekt": 99940,
+                "pensjonsbeholdning": 49592,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1981": {
+                "pensjonsgivendeInntekt": 112107,
+                "pensjonsbeholdning": 72356,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1982": {
+                "pensjonsgivendeInntekt": 124178,
+                "pensjonsbeholdning": 101457,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1983": {
+                "pensjonsgivendeInntekt": 134189,
+                "pensjonsbeholdning": 134858,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1984": {
+                "pensjonsgivendeInntekt": 142204,
+                "pensjonsbeholdning": 170017,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1985": {
+                "pensjonsgivendeInntekt": 152214,
+                "pensjonsbeholdning": 205911,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1986": {
+                "pensjonsgivendeInntekt": 164832,
+                "pensjonsbeholdning": 247957,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1987": {
+                "pensjonsgivendeInntekt": 175852,
+                "pensjonsbeholdning": 298346,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1988": {
+                "pensjonsgivendeInntekt": 185363,
+                "pensjonsbeholdning": 350121,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1989": {
+                "pensjonsgivendeInntekt": 193925,
+                "pensjonsbeholdning": 402609,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1990": {
+                "pensjonsgivendeInntekt": 201736,
+                "pensjonsbeholdning": 456306,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1991": {
+                "pensjonsgivendeInntekt": 210497,
+                "pensjonsbeholdning": 511200,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.01,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1992": {
+                "pensjonsgivendeInntekt": 217311,
+                "pensjonsbeholdning": 571499,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1993": {
+                "pensjonsgivendeInntekt": 222514,
+                "pensjonsbeholdning": 629331,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1994": {
+                "pensjonsgivendeInntekt": 227243,
+                "pensjonsbeholdning": 684675,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1995": {
+                "pensjonsgivendeInntekt": 233413,
+                "pensjonsbeholdning": 740356,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1996": {
+                "pensjonsgivendeInntekt": 242805,
+                "pensjonsbeholdning": 802709,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1997": {
+                "pensjonsgivendeInntekt": 252358,
+                "pensjonsbeholdning": 878953,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1998": {
+                "pensjonsgivendeInntekt": 266857,
+                "pensjonsbeholdning": 959214,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "1999": {
+                "pensjonsgivendeInntekt": 278934,
+                "pensjonsbeholdning": 1062624,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2000": {
+                "pensjonsgivendeInntekt": 290675,
+                "pensjonsbeholdning": 1161202,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2001": {
+                "pensjonsgivendeInntekt": 304050,
+                "pensjonsbeholdning": 1262691,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2002": {
+                "pensjonsgivendeInntekt": 319852,
+                "pensjonsbeholdning": 1375825,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2003": {
+                "pensjonsgivendeInntekt": 336262,
+                "pensjonsbeholdning": 1505224,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2004": {
+                "pensjonsgivendeInntekt": 349330,
+                "pensjonsbeholdning": 1643309,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2005": {
+                "pensjonsgivendeInntekt": 360866,
+                "pensjonsbeholdning": 1770404,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2006": {
+                "pensjonsgivendeInntekt": 373496,
+                "pensjonsbeholdning": 1894187,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2007": {
+                "pensjonsgivendeInntekt": 393589,
+                "pensjonsbeholdning": 2028085,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 5.0,
+                "merknader": [],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2008": {
+                "pensjonsgivendeInntekt": 215238,
+                "pensjonsbeholdning": 2208427,
+                "omsorgspoeng": 3.0,
+                "omsorgspoengType": "OBU7",
+                "pensjonspoeng": 3.0,
+                "merknader": [
+                    "OVERFORE_OMSORGSOPPTJENING",
+                    "OMSORGSOPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 0,
+                "endringOpptjening": null
+            },
+            "2009": {
+                "pensjonsgivendeInntekt": 192650,
+                "pensjonsbeholdning": 2405056,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 1.68,
+                "merknader": [
+                    "UFOREGRAD"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": null
+            },
+            "2010": {
+                "pensjonsgivendeInntekt": 148964,
+                "pensjonsbeholdning": 2687177,
+                "omsorgspoeng": 3.5,
+                "omsorgspoengType": "OBU6",
+                "pensjonspoeng": 3.5,
+                "merknader": [
+                    "OVERFORE_OMSORGSOPPTJENING",
+                    "UFOREGRAD",
+                    "REFORM",
+                    "OMSORGSOPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2009-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [
+                            "BEHOLDNING_2010"
+                        ],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 2405055.7451162557,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2010-01-01",
+                        "arsakType": "INNGAENDE_2010",
+                        "arsakDetails": [],
+                        "endringBelop": 184071.5586252766,
+                        "grunnlag": 276432.0,
+                        "grunnlagTypes": [
+                            "OMSORGSOPPTJENING_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 2589127.3037415324,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2010-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING_2010"
+                        ],
+                        "endringBelop": 98050.12771952432,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 2687177.4314610567,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2011": {
+                "pensjonsgivendeInntekt": 168810,
+                "pensjonsbeholdning": 2900313,
+                "omsorgspoeng": 3.5,
+                "omsorgspoengType": "OBU6",
+                "pensjonspoeng": 3.5,
+                "merknader": [
+                    "OVERFORE_OMSORGSOPPTJENING",
+                    "UFOREGRAD",
+                    "OMSORGSOPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2010-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 2687177.4314610567,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2011-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2011"
+                        ],
+                        "endringBelop": 82146.126,
+                        "grunnlag": 432036.0,
+                        "grunnlagTypes": [
+                            "INNTEKT_GRUNNLAG",
+                            "UFORE_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 2769323.557461057,
+                        "uttaksgrad": 0,
+                        "uforegrad": 60
+                    },
+                    {
+                        "dato": "2011-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 130989.0042679077,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 2900312.5617289646,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2012": {
+                "pensjonsgivendeInntekt": 187610,
+                "pensjonsbeholdning": 3095940,
+                "omsorgspoeng": 3.5,
+                "omsorgspoengType": "OBU6",
+                "pensjonspoeng": 3.5,
+                "merknader": [
+                    "OVERFORE_OMSORGSOPPTJENING",
+                    "UFOREGRAD",
+                    "OMSORGSOPPTJENING"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2011-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 2900312.5617289646,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2012-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 86028.57600000002,
+                        "grunnlag": 448326.0,
+                        "grunnlagTypes": [
+                            "INNTEKT_GRUNNLAG",
+                            "UFORE_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 2986341.1377289644,
+                        "uttaksgrad": 0,
+                        "uforegrad": 60
+                    },
+                    {
+                        "dato": "2012-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 109598.71975465305,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3095939.8574836175,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2013": {
+                "pensjonsgivendeInntekt": 105942,
+                "pensjonsbeholdning": 3302513,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.26,
+                "merknader": [
+                    "UFOREGRAD"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2012-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3095939.8574836175,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2013-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 85672.00311258456,
+                        "grunnlag": 449696.4,
+                        "grunnlagTypes": [
+                            "INNTEKT_GRUNNLAG",
+                            "UFORE_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 3181611.860596202,
+                        "uttaksgrad": 0,
+                        "uforegrad": 60
+                    },
+                    {
+                        "dato": "2013-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 120901.25070265587,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3302513.1112988577,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2014": {
+                "pensjonsgivendeInntekt": 124713,
+                "pensjonsbeholdning": 3518276,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.43,
+                "merknader": [
+                    "UFOREGRAD"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2013-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3302513.1112988577,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2014-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 91212.83508531994,
+                        "grunnlag": 479760.8,
+                        "grunnlagTypes": [
+                            "INNTEKT_GRUNNLAG",
+                            "UFORE_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 3393725.9463841775,
+                        "uttaksgrad": 0,
+                        "uforegrad": 60
+                    },
+                    {
+                        "dato": "2014-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 124549.74223229894,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3518275.6886164765,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2015": {
+                "pensjonsgivendeInntekt": 137776,
+                "pensjonsbeholdning": 3665027,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.54,
+                "merknader": [
+                    "UFOREGRAD"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2014-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3518275.6886164765,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2015-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 77708.4731566645,
+                        "grunnlag": 409076.4,
+                        "grunnlagTypes": [
+                            "INNTEKT_GRUNNLAG",
+                            "UFORE_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 3595984.161773141,
+                        "uttaksgrad": 0,
+                        "uforegrad": 60
+                    },
+                    {
+                        "dato": "2015-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 69042.89590604464,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3665027.0576791856,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2016": {
+                "pensjonsgivendeInntekt": 151223,
+                "pensjonsbeholdning": 3851163,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.65,
+                "merknader": [
+                    "UFOREGRAD"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2015-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3665027.0576791856,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2016-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 81969.17444395491,
+                        "grunnlag": 439093.8,
+                        "grunnlagTypes": [
+                            "INNTEKT_GRUNNLAG",
+                            "UFORE_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 3746996.2321231407,
+                        "uttaksgrad": 0,
+                        "uforegrad": 60
+                    },
+                    {
+                        "dato": "2016-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 104166.49525302369,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3851162.7273761644,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2017": {
+                "pensjonsgivendeInntekt": 160482,
+                "pensjonsbeholdning": 3982160,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.72,
+                "merknader": [
+                    "UFOREGRAD"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2016-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3851162.7273761644,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2017-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 86112.2388595405,
+                        "grunnlag": 459983.2,
+                        "grunnlagTypes": [
+                            "INNTEKT_GRUNNLAG",
+                            "UFORE_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 3937274.9662357047,
+                        "uttaksgrad": 0,
+                        "uforegrad": 60
+                    },
+                    {
+                        "dato": "2017-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 44884.93461508723,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3982159.900850792,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2018": {
+                "pensjonsgivendeInntekt": 175617,
+                "pensjonsbeholdning": 4149245,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.83,
+                "merknader": [
+                    "UFOREGRAD"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2017-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 3982159.900850792,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2018-01-01",
+                        "arsakType": "OPPTJENING",
+                        "arsakDetails": [
+                            "OPPTJENING_2012"
+                        ],
+                        "endringBelop": 27935.261449759753,
+                        "grunnlag": 151223.0,
+                        "grunnlagTypes": [
+                            "INNTEKT_GRUNNLAG"
+                        ],
+                        "pensjonsbeholdningBelop": 4010095.162300552,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    },
+                    {
+                        "dato": "2018-05-01",
+                        "arsakType": "REGULERING",
+                        "arsakDetails": [
+                            "REGULERING"
+                        ],
+                        "endringBelop": 139150.30213182885,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 4149245.4644323806,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            },
+            "2019": {
+                "pensjonsgivendeInntekt": 194040,
+                "pensjonsbeholdning": null,
+                "omsorgspoeng": null,
+                "omsorgspoengType": null,
+                "pensjonspoeng": 0.96,
+                "merknader": [
+                    "UFOREGRAD"
+                ],
+                "restpensjon": null,
+                "maksUforegrad": 60,
+                "endringOpptjening": [
+                    {
+                        "dato": "2018-12-31",
+                        "arsakType": "INNGAENDE",
+                        "arsakDetails": [],
+                        "endringBelop": null,
+                        "grunnlag": null,
+                        "grunnlagTypes": null,
+                        "pensjonsbeholdningBelop": 0.0,
+                        "uttaksgrad": 0,
+                        "uforegrad": null
+                    }
+                ]
+            }
+        },
+        "numberOfYearsWithPensjonspoeng": 44,
+        "fodselsaar": 1954,
+        "andelPensjonBasertPaBeholdning": 1
+    }
+}
