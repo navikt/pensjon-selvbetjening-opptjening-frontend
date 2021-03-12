@@ -6,7 +6,7 @@ Frontend-applikasjon for selvbetjening relatert til pensjonsopptjening.
 
 Appen kan nås på følgende adresser: 
 - [https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io](https://pensjon-selvbetjening-opptjening-frontend.dev-sbs.nais.io)
-- [https://www-q0.nav.no/pensjon/opptjening/](https://www-q0.nav.no/pensjon/opptjening/)
+- [https://www-q0.dev.nav.no/pensjon/opptjening/](https://www-q0.dev.nav.no/pensjon/opptjening/)
 
 # Henvendelser
 
