@@ -1,5 +1,5 @@
 {
-    "faq-number-of-questions": 9,
+    "faq-number-of-questions": 10,
 
     "faq-question-1": "Hva er pensjonsbeholdning?",
     "faq-answer-1": [
@@ -33,6 +33,9 @@
     "faq-question-8": "Hvorfor har jeg ikke pensjonsbeholdning?",
     "faq-answer-8": "Det er ikke registrert pensjonsopptjening eller pensjonspoeng. NAV mottar den pensjonsgivende inntekten fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)",
 
-    "faq-question-9": "Pensjonsopptjening for deg som er født mellom 1954-1962",
-    "faq-answer-9": "Det kan tjenes opp pensjonsrettigheter fra det året man fylte 17 år og til og med det året man fyller 75 år. De som er født i perioden 1954-1962 tjener opp til alderspensjonen etter gamle og nye regler i folketrygdloven. Det betyr at man tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning."
+    "faq-question-9": "Hva betyr 'ikke noe grunnlag'?",
+    "faq-answer-9": "Vi mottar pensjonsgivende inntekt fra Skatteetaten når skatten er ferdig lignet. Fram til ligningen er ferdig så vil det vises en tekst som sier 'Ikke noe grunnlag'.",
+
+    "faq-question-10": "Pensjonsopptjening for deg som er født mellom 1954-1962",
+    "faq-answer-10": "Det kan tjenes opp pensjonsrettigheter fra det året man fylte 17 år og til og med det året man fyller 75 år. De som er født i perioden 1954-1962 tjener opp til alderspensjonen etter gamle og nye regler i folketrygdloven. Det betyr at man tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning."
 }
