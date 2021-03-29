@@ -11,7 +11,7 @@ export const routesConfig = [
         exact: true
     },
     {
-        path: `/:lng(en|nn|nb)/404`,
+        path: `/:lng(en|nn|nb)/404/`,
         component: NotFoundPage,
         titleKey: '404-title',
         exact: true
