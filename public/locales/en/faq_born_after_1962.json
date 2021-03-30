@@ -1,5 +1,5 @@
 {
-    "faq-number-of-questions": 9,
+    "faq-number-of-questions": 10,
 
     "faq-question-1": "What is accumulated pension capital?",
     "faq-answer-1": [
@@ -34,5 +34,11 @@
     "faq-answer-8": "Det er ikke registrert pensjonsopptjening. NAV mottar den pensjonsgivende inntekten fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)",
 
     "faq-question-9": "Hva betyr 'ikke noe grunnlag'?",
-    "faq-answer-9": "Vi mottar pensjonsgivende inntekt fra Skatteetaten når skatten er ferdig lignet. Fram til ligningen er ferdig så vil det vises en tekst som sier 'Ikke noe grunnlag'."
+    "faq-answer-9": "Vi mottar pensjonsgivende inntekt fra Skatteetaten når skatten er ferdig lignet. Fram til ligningen er ferdig så vil det vises en tekst som sier 'Ikke noe grunnlag'.",
+
+    "faq-question-10": "What is pension rights for unpaid care work?",
+    "faq-answer-10": [
+        "Pension rights for unpaid care work is not an extra salary that you receive from the National Insurance Scheme, but a scheme that helps you to receive a higher pension when you retire. You must be a member of the National Insurance Scheme during the care period to be entitled to pension rights for unpaid care work.",
+        "The pension rights for unpaid care work was introduced in 1992, and was later expanded to include persons with children born before 1992. Read explanation below."
+    ]
 }

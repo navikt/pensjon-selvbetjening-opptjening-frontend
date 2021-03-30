@@ -1,20 +1,8 @@
 {
-    "faq-number-of-questions": 5,
+    "faq-number-of-questions": 4,
 
-    "faq-question-1": "What does pensionable income mean?",
+    "faq-question-1": "How is earnings calculated for caring for young children?",
     "faq-answer-1": [
-        "In the National Insurance Act, pensionable income is, with some exceptions, the same as personal income according to the Tax Act. This means that all gross wage income for employees and calculated personal income from industry for the self-employed is considered pensionable. Received taxable social security benefits such as sickness benefits and work assessment benefits are also included in the pensionable income.",
-        "The pensionable income is calculated by the tax authorities."
-    ],
-
-    "faq-question-2": "What is pension rights for unpaid care work?",
-    "faq-answer-2": [
-        "Pension rights for unpaid care work is not an extra salary that you receive from the National Insurance Scheme, but a scheme that helps you to receive a higher pension when you retire. You must be a member of the National Insurance Scheme during the care period to be entitled to pension rights for unpaid care work.",
-        "The pension rights for unpaid care work was introduced in 1992. You will not normally receive pension rights for unpaid care work for years before this."
-    ],
-
-    "faq-question-3": "How is earnings calculated for caring for young children?",
-    "faq-answer-3": [
         "If you receive child benefit, you will automatically receive credited care earnings for years where you ",
         "- have cared for children under the age of six",
         "- are between 17 and 69 years old",
@@ -28,8 +16,14 @@
         "For those born in 1954 or later, the pension rights for unpaid care work for the year before 1992 can be used both to calculate contractual pensions in the private sector and retirement pensions from the National Insurance Scheme calculated in full, or in part, according to new rules that apply from 2016. Read more about retirement pensions."
     ],
 
-    "faq-question-4": "Who can receive earnings as a result of care for the sick, disabled or elderly people?",
-    "faq-answer-4": [
+    "faq-question-2": "What does pensionable income mean?",
+    "faq-answer-2": [
+        "In the National Insurance Act, pensionable income is, with some exceptions, the same as personal income according to the Tax Act. This means that all gross wage income for employees and calculated personal income from industry for the self-employed is considered pensionable. Received taxable social security benefits such as sickness benefits and work assessment benefits are also included in the pensionable income.",
+        "The pensionable income is calculated by the tax authorities."
+    ],
+
+    "faq-question-3": "Who can receive earnings as a result of care for the sick, disabled or elderly people?",
+    "faq-answer-3": [
       "You can receive pension rights for unpaid care work if you take care of sick, disabled or elderly people who are members of the National Insurance Scheme. In order to receive pension rights for unpaid care work, certain requirements must be met:",
       "- You must perform care work of at least 22 hours per week.",
       "- You must perform care work with a duration of at least six months per calendar year. Travel time of up to half an hour per visit can be counted.",
@@ -39,6 +33,6 @@
         "It is possible to receive pension rights for unpaid care work even if the care period has been shorter than half a year. This applies if the care recipient dies or is admitted to an institution. The prerequisite is that you have had pension rights for unpaid care work in the last three years."
     ],
 
-    "faq-question-5": "Is this all my pension earnings?",
-    "faq-answer-5": "Only pension earnings in the National Insurance Scheme are shown here, which provide a basis for retirement pension from NAV. If you are entitled to a public or private occupational pension / AFP, or have other individual pension schemes, it will not appear here. We collect information from public and most private pension actors in the Pension Calculator. The Pension Calculator will thus give a better picture of your total pension rights."
+    "faq-question-4": "Is this all my pension earnings?",
+    "faq-answer-4": "Only pension earnings in the National Insurance Scheme are shown here, which provide a basis for retirement pension from NAV. If you are entitled to a public or private occupational pension / AFP, or have other individual pension schemes, it will not appear here. We collect information from public and most private pension actors in the Pension Calculator. The Pension Calculator will thus give a better picture of your total pension rights."
 }

@@ -1,5 +1,5 @@
 {
-    "faq-number-of-questions": 10,
+    "faq-number-of-questions": 11,
 
     "faq-question-1": "Hva er pensjonsbeholdning?",
     "faq-answer-1": [
@@ -37,5 +37,12 @@
     "faq-answer-9": "Vi mottar pensjonsgivende inntekt fra Skatteetaten når skatten er ferdig lignet. Fram til ligningen er ferdig så vil det vises en tekst som sier 'Ikke noe grunnlag'.",
 
     "faq-question-10": "Pensjonsopptjening for deg som er født mellom 1954-1962",
-    "faq-answer-10": "Det kan tjenes opp pensjonsrettigheter fra det året man fylte 17 år og til og med det året man fyller 75 år. De som er født i perioden 1954-1962 tjener opp til alderspensjonen etter gamle og nye regler i folketrygdloven. Det betyr at man tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning."
+    "faq-answer-10": "Det kan tjenes opp pensjonsrettigheter fra det året man fylte 17 år og til og med det året man fyller 75 år. De som er født i perioden 1954-1962 tjener opp til alderspensjonen etter gamle og nye regler i folketrygdloven. Det betyr at man tjener opp pensjonsrettigheter både gjennom pensjonspoeng og en pensjonsbeholdning.",
+
+    "faq-question-11": "Hva er omsorgsopptjening?",
+    "faq-answer-11": [
+        "Omsorgsopptjening er ikke en ekstra lønn som du får utbetalt fra folketrygden, men en ordning som bidrar til at du kan få høyere pensjon når du blir pensjonist. Du må være medlem i folketrygden i omsorgsperioden for å ha rett til omsorgsopptjening.",
+        "Ordningen med omsorgsopptjening ble innført i 1992, og er senere utvidet slik at personer med barn født før 1992 kan få denne opptjeningen. Se mer forklaring under her."
+    ]
+
 }

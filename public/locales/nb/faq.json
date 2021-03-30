@@ -1,21 +1,8 @@
 {
-    "faq-number-of-questions": 5,
+    "faq-number-of-questions": 4,
 
-    "faq-question-1": "Hva betyr pensjonsgivende inntekt?",
+    "faq-question-1": "Hvordan beregnes opptjening ved omsorg for små barn?",
     "faq-answer-1": [
-        "I folketrygden er pensjonsgivende inntekt med enkelte unntak det samme som personinntekt etter skatteloven. Det betyr at all brutto lønnsinntekt for lønnstakere og beregnet personinntekt fra næring for selvstendige regnes som pensjonsgivende. Mottatte skattepliktige trygdeytelser som sykepenger og arbeidsavklaringspenger inngår også i den pensjonsgivende inntekten.",
-        "Den pensjonsgivende inntekten beregnes av Skatteetaten."
-    ],
-
-
-    "faq-question-2": "Hva er omsorgsopptjening?",
-    "faq-answer-2": [
-        "Omsorgsopptjening er ikke en ekstra lønn som du får utbetalt fra folketrygden, men en ordning som bidrar til at du kan få høyere pensjon når du blir pensjonist. Du må være medlem i folketrygden i omsorgsperioden for å ha rett til omsorgsopptjening.",
-        "Ordningen med omsorgsopptjening ble innført fra 1992. Du vil normalt ikke få omsorgsopptjening for år før dette."
-    ],
-
-    "faq-question-3": "Hvordan beregnes opptjening ved omsorg for små barn?",
-    "faq-answer-3": [
         "Hvis du mottar barnetrygd får du automatisk godskrevet omsorgsopptjening for år der du",
         "- har hatt omsorg for barn som ikke har fylt seks år",
         "- er mellom 17 og 69 år",
@@ -29,8 +16,14 @@
         "For deg som er født i 1954 eller senere kan omsorgsopptjeningen for år før 1992 benyttes både til å beregne avtalefestet pensjon (AFP) i privat sektor og alderspensjon fra folketrygden beregnet helt eller delvis etter nye regler som kommer til anvendelse fra 2016. Les mer om alderspensjon."
     ],
 
-    "faq-question-4": "Hvem kan få opptjening som følge av omsorg for syke, funksjonshemmede eller eldre personer?",
-    "faq-answer-4": [
+    "faq-question-2": "Hva betyr pensjonsgivende inntekt?",
+    "faq-answer-2": [
+        "I folketrygden er pensjonsgivende inntekt med enkelte unntak det samme som personinntekt etter skatteloven. Det betyr at all brutto lønnsinntekt for lønnstakere og beregnet personinntekt fra næring for selvstendige regnes som pensjonsgivende. Mottatte skattepliktige trygdeytelser som sykepenger og arbeidsavklaringspenger inngår også i den pensjonsgivende inntekten.",
+        "Den pensjonsgivende inntekten beregnes av Skatteetaten."
+    ],
+
+    "faq-question-3": "Hvem kan få opptjening som følge av omsorg for syke, funksjonshemmede eller eldre personer?",
+    "faq-answer-3": [
         "Du kan få omsorgsopptjening hvis du tar deg av syke, funksjonshemmede eller eldre personer som er medlem i folketrygden. For å få omsorgsopptjening, må visse krav oppfylles:",
         "- Du må utføre omsorgsarbeid på minst 22 timer per uke.",
         "- Du må utføre omsorgsarbeid med en varighet på minst seks måneder per kalenderår. Reisetid på opptil en halv time per besøk kan regnes med.",
@@ -40,6 +33,6 @@
         "Det er mulig å få omsorgsopptjening selv om omsorgsperioden har vart kortere enn et halvt år. Dette gjelder hvis omsorgsmottakeren dør eller blir innlagt i institusjon. Forutsetningen er at du har tjent opp omsorgsopptjening de tre siste årene."
     ],
 
-    "faq-question-5": "Er dette all pensjonsopptjeningen min?",
-    "faq-answer-5": "Her vises kun opptjening i folketrygden som gir grunnlag for alderspensjon fra NAV. Dersom du har rett til offentlig eller privat tjenestepensjon/AFP, eller har andre individuelle pensjonsordninger, vil ikke det fremkomme her. I pensjonskalkulatoren henter vi inn opplysninger fra offentlige og de fleste private pensjonsaktører. Pensjonskalkulatoren vil dermed gi et bedre bilde på dine totale pensjonsrettigheter."
+    "faq-question-4": "Er dette all pensjonsopptjeningen min?",
+    "faq-answer-4": "Her vises kun opptjening i folketrygden som gir grunnlag for alderspensjon fra NAV. Dersom du har rett til offentlig eller privat tjenestepensjon/AFP, eller har andre individuelle pensjonsordninger, vil ikke det fremkomme her. I pensjonskalkulatoren henter vi inn opplysninger fra offentlige og de fleste private pensjonsaktører. Pensjonskalkulatoren vil dermed gi et bedre bilde på dine totale pensjonsrettigheter."
 }
