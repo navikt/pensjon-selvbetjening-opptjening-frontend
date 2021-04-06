@@ -1,6 +1,9 @@
 {
-    "faq-number-of-questions": 0,
+    "faq-number-of-questions": 1,
 
-    "faq-question-1": "Hvordan reguleres pensjonsbeholdningen?",
-    "faq-answer-1": "Pensjonsbeholdningen reguleres årlig i samsvar med lønnsveksten."
+    "faq-question-1": "Kva er omsorgsopptening?",
+    "faq-answer-1": [
+        "Omsorgsopptening er ikkje ei ekstra lønn som du får utbetalt frå folketrygda, men ei ordning som medverkar til at du kan få høgare pensjon når du blir pensjonist. Du må være medlem i folketrygda i omsorgsperioden for å ha rett på omsorgsopptening.",
+        "Ordninga med omsorgsopptening ble innførd frå 1992. Du vil normalt ikkje få omsorgsopptening for år før dette."
+    ]
 }

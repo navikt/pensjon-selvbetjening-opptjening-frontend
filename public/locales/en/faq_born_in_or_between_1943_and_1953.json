@@ -1,6 +1,9 @@
 {
-    "faq-number-of-questions": 0,
+    "faq-number-of-questions": 1,
 
-    "faq-question-1": "Hvordan reguleres pensjonsbeholdningen?",
-    "faq-answer-1": "Pensjonsbeholdningen reguleres årlig i samsvar med lønnsveksten."
+    "faq-question-1": "What is pension rights for unpaid care work?",
+    "faq-answer-1": [
+        "Pension rights for unpaid care work is not an extra salary that you receive from the National Insurance Scheme, but a scheme that helps you to receive a higher pension when you retire. You must be a member of the National Insurance Scheme during the care period to be entitled to pension rights for unpaid care work.",
+        "The pension rights for unpaid care work was introduced in 1992. You will not normally receive pension rights for unpaid care work for years before this."
+    ]
 }
