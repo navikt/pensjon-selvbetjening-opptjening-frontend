@@ -31,9 +31,9 @@ it('should render Opptjening view and display only the headings for the differen
 
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("beholdning-din-pensjonsbeholdning-i-folketrygden"); //Beholdning-panel
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart"); //BeholdningForklart-panel
-    expect(view.queryAllByRole("heading")[2]).toHaveTextContent("chart-pensjonsbeholdningen-din"); //Chart - Chart-view
-    expect(view.queryAllByRole("heading")[3]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
-    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
+    expect(view.queryAllByRole("heading")[2]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
+    expect(view.queryAllByRole("heading")[3]).toHaveTextContent("chart-pensjonsbeholdningen-din"); //Chart - Chart-view
+    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
     expect(view.queryAllByRole("heading")[5]).toHaveTextContent("opptjening-flere-steder-title"); //OpptjeningFlereStederPanel
     expect(view.queryAllByRole("heading")[6]).toHaveTextContent("pensjonskalkulator-lenke-title"); //PensjonskalkulatorLenkePanel
     expect(view.queryAllByRole("heading")[7]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
@@ -52,9 +52,9 @@ it('should render Opptjening view and display the headings for the different pan
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart"); //BeholdningAndPensjonspoengForklart-panel
     expect(view.queryAllByRole("heading")[2]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title"); //Subtitle in BeholdningAndPensjonspoengForklart Panel
     expect(view.queryAllByRole("heading")[3]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title"); //Subtitle in BeholdningAndPensjonspoengForklart Panel
-    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("chart-pensjonsbeholdningen-og-pensjonspoengene-dine"); //Chart - Chart-view
-    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
-    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
+    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
+    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("chart-pensjonsbeholdningen-og-pensjonspoengene-dine"); //Chart - Chart-view
+    expect(view.queryAllByRole("heading")[6]).toHaveTextContent("opptjening-details-din-okning-ar-for-ar"); //OpptjeningDetails-panel
     expect(view.queryAllByRole("heading")[7]).toHaveTextContent("opptjening-flere-steder-title"); //OpptjeningFlereStederPanel
     expect(view.queryAllByRole("heading")[8]).toHaveTextContent("pensjonskalkulator-lenke-title"); //PensjonskalkulatorLenkePanel
     expect(view.queryAllByRole("heading")[9]).toHaveTextContent("faq-ofte-stilte-sporsmaal"); //FAQ-panel
@@ -92,7 +92,7 @@ it('should render Opptjening view, open OpptjeningDetails-panel and show details
     let store = mockStore(mockedState);
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
-    fireEvent.click(view.queryAllByRole("heading")[3]); // OpptjeningDetails
+    fireEvent.click(view.queryAllByRole("heading")[4]); // OpptjeningDetails
 
     expect(view.queryAllByRole("table").length).toBe(2); // Chart tables + details tables
 });
@@ -102,7 +102,7 @@ it('should render Opptjening view, open Inntekter-panel and display inntekter ta
     let store = mockStore(mockedState);
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
-    fireEvent.click(view.queryAllByRole("heading")[4]); // Inntekter
+    fireEvent.click(view.queryAllByRole("heading")[2]); // Inntekter
     expect(view.queryAllByRole("table").length).toBe(2); // Chart tables + inntekter table
 });
 
@@ -118,7 +118,7 @@ it('should render Opptjening view, open details panel, and show correct beholdni
     let store = mockStore(mockState);
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
-    fireEvent.click(view.queryAllByRole("heading")[3]); // OpptjeningDetails
+    fireEvent.click(view.queryAllByRole("heading")[4]); // OpptjeningDetails
     fireEvent.change(view.getByTestId("year-selector"), {
         target: {
             value: "2000"
@@ -155,9 +155,9 @@ it('should render Opptjening view with OverforeOmsorgsOpptjening link panel pres
     let view2 = render(<Provider store={store2}><OpptjeningView/></Provider>);
     let view3 = render(<Provider store={store3}><OpptjeningView/></Provider>);
 
-    expect(view.queryAllByRole("heading")[4]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
-    expect(view2.queryAllByRole("heading")[4]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
-    expect(view3.queryAllByRole("heading")[4]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
+    expect(view.queryAllByRole("heading")[5]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
+    expect(view2.queryAllByRole("heading")[5]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
+    expect(view3.queryAllByRole("heading")[5]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
 });
 
 it('should Opptjening view, open details panel, select year and log two events to Amplitude', () => {
@@ -167,7 +167,7 @@ it('should Opptjening view, open details panel, select year and log two events t
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
 
-    fireEvent.click(view.queryAllByRole("heading")[3]); // OpptjeningDetails
+    fireEvent.click(view.queryAllByRole("heading")[4]); // OpptjeningDetails
     fireEvent.change(view.getByTestId("year-selector"), {
         target: {
             value: "2000"
