@@ -85,6 +85,10 @@
     "chart-uttak-av-pensjon": "Uttak av pensjon",
     "chart-uttak": "Uttak",
     "chart-antall-aar-med-pensjonspoeng": "Antall år med pensjonspoeng: {{years}}",
+    "chart-text1": "Pensjonsbeholdningen øker to år etter at du hadde inntekten.",
+    "chart-text2": "Det er fordi vi bruker tallene fra skatteoppgjøret, som vi får fra Skatteetaten.",
+    "chart-vis-de-siste-ti-aarene": "Vis de siste 10 årene",
+    "chart-vis-alle-aar": "Vis alle år",
 
     "pensjonskalkulator-lenke-title": "Beregn din pensjon i pensjonskalkulatoren",
 
