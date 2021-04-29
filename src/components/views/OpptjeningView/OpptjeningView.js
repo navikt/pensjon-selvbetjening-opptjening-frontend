@@ -5,7 +5,7 @@ import {
     getAndelPensjonBasertPaBeholdning, getFodselsAar,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData, getPensjonsbeholdningAndPensjonspoeng, getUserGroup,
-    getYearArray, getOmsorgsOpptjeningMap, hasOverforeOmsorgsOpptjeningLink, getAntallAarPensjonsPoeng
+    getYearArray, getOmsorgsOpptjeningMap, hasOverforeOmsorgsOpptjeningLink, getAntallAarPensjonsPoeng, getName
 } from "../../../redux/opptjening/opptjeningSelectors";
 import Panel from "nav-frontend-paneler";
 import {LineChart} from '../../elements/LineChart/LineChart';
@@ -26,11 +26,14 @@ import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/Beholdning
 import {PensjonskalkulatorLenkePanel} from "../../elements/PensjonskalkulatorLenkePanel/PensjonskalkulatorLenkePanel";
 import {OpptjeningFlereStederPanel} from "../../elements/OpptjeningFlereStederPanel/OpptjeningFlereStederPanel";
 import {OverforeOmsorgsOpptjeningPanel} from "../../elements/OverforeOmsorgsOpptjeningPanel/OverforeOmsorgsOpptjeningPanel";
+import Veileder from "nav-frontend-veileder";
+import veilederSvg from "../../../assets/veileder.svg";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
     const userGroup = useSelector(getUserGroup);
     const fodselsar = useSelector(getFodselsAar);
+    const name = useSelector(getName);
     const antallAarPensjonsPoeng = useSelector(getAntallAarPensjonsPoeng);
     const yearArray = useSelector(getYearArray);
     const latestPensjonsBeholdning = useSelector(getLatestPensjonsBeholdning);
@@ -66,8 +69,24 @@ export const OpptjeningView = () => {
         }
     };
 
+    const Veiledertext = () => {
+        let nameString = "!";
+        if(name) nameString = ", " + name + "!";
+        return(
+            <div>
+                {t('opptjening-hei') + nameString}  <br/>
+                {t('opptjening-intro-tekst')}
+            </div>
+        )
+    };
+
     return(
         <div data-testid="opptjeningview">
+            <div className="veilederContainer">
+                <Veileder tekst={<Veiledertext/>} posisjon="høyre">
+                    <img alt="" src={veilederSvg}/>
+                </Veileder>
+            </div>
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
                 <section aria-labelledby="pensjonsBeholdningTitle">
                     <BeholdningPanel data={latestPensjonsBeholdning}/>

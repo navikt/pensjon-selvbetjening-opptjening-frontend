@@ -12,7 +12,7 @@ export const HomePage = () => {
         <div>
             <Breadcrumbs/>
             {/*<LanguageSelector/>*/}
-            <TopBanner title="opptjening-tittel" text="opptjening-intro-tekst"/>
+            <TopBanner title="opptjening-tittel"/>
             <div className="mainBody" id="maincontent" tabIndex="-1">
                 <OpptjeningContainer>
                     <main className="contentWrapper">
