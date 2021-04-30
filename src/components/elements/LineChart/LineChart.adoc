@@ -6,7 +6,7 @@ For brukere født mellom 1954 og 1962 som også har pensjonspoeng, vises poengen
 For brukere født etter 1962 vises grafen default, mens tabellvisningen vises default for brukere født mellom 1954 og 1962.
 Grafen skjules på mobil (på skjermbredder mindre enn 576px).
 
-==== LineChart.js
+===== LineChart.js
 |===
 | props | type | beskrivelse | eksempel
 
@@ -50,12 +50,16 @@ Eksempel på input data:
 }
 
 
-==== GUI
+===== GUI
 .Grafvisning
 image::linechart_chart.png[]
 
-.Tabellvisning
+.Tabellvisning - de første 10 årene
 image::linechart_table.png[]
+
+.Tabellvisning - alle
+image::linechart_table_all.png[]
+
 
 .Mobilvisning av tabell
 image::linechart_table_mobile.png[width=200]

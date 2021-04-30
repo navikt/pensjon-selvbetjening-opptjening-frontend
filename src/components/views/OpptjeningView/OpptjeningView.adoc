@@ -31,6 +31,3 @@ image::opptjening_born_between_1954_and_1962.png[width=400]
 
 .Født før 1954
 image::opptjening_born_before_1954.png[width=400]
-
-.Født mellom 1954 og 1962 med omsorgspoeng som kan overføres
-image::opptjening_med_overfor_omsorg_panel.png[width=400]

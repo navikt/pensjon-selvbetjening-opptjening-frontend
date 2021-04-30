@@ -86,6 +86,7 @@ export const getPensjonsbeholdningAndPensjonspoeng = (state = initialState) => {
         }
     });
 
+    console.log(opptjeningMap)
     return opptjeningMap;
 };
 

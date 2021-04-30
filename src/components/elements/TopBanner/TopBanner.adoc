@@ -31,8 +31,11 @@ Tittlen benytter H1 på forsiden, og H2 på undersider.
 |===
 
 ===== GUI
-.TopBanner forside
+.TopBanner forside med tekst
 image::topbanner_frontpage.png[]
+
+.TopBanner forside uten tekst
+image::topbanner_notext.png[]
 
 .TopBanner undersider
 image::topbanner_subpage.png[]
