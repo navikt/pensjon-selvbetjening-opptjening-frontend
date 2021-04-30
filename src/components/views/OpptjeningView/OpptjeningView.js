@@ -82,7 +82,7 @@ export const OpptjeningView = () => {
 
     return(
         <div data-testid="opptjeningview">
-            <div className="veilederContainer">
+            <div className="veilederContainer" data-testid="veilederContainer">
                 <Veileder tekst={<Veiledertext/>} posisjon="høyre">
                     <img alt="" src={veilederSvg}/>
                 </Veileder>

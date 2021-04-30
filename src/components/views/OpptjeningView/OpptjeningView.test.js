@@ -28,7 +28,7 @@ it('should render Opptjening view and display only the headings for the differen
     let store = mockStore(mockedState);
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
-
+    expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("beholdning-din-pensjonsbeholdning-i-folketrygden"); //Beholdning-panel
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart"); //BeholdningForklart-panel
     expect(view.queryAllByRole("heading")[2]).toHaveTextContent("inntekt-pensjonsgivende-inntekter"); //Inntekter-panel
@@ -48,6 +48,7 @@ it('should render Opptjening view and display the headings for the different pan
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
 
+    expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("beholdning-din-pensjonsbeholdning-i-folketrygden"); //Beholdning-panel
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart"); //BeholdningAndPensjonspoengForklart-panel
     expect(view.queryAllByRole("heading")[2]).toHaveTextContent("beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title"); //Subtitle in BeholdningAndPensjonspoengForklart Panel
@@ -69,6 +70,7 @@ it('should render Opptjening view and display the headings for the different pan
 
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
 
+    expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("pensjonspoeng-forklart"); //Pensjonspoeng
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("inntekt-pensjonsgivende-inntekter-og-pensjonspoeng"); //Inntekter-panel
     expect(view.queryAllByRole("heading")[2]).toHaveTextContent("opptjening-flere-steder-title"); //OpptjeningFlereStederPanel
