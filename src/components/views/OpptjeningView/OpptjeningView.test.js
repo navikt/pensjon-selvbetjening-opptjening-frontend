@@ -178,3 +178,15 @@ it('should Opptjening view, open details panel, select year and log two events t
 
     expect(spy).toBeCalledTimes(2)
 });
+
+
+it('should render Opptjening view and display the Veileder with speechbubble containg the correct name and text', () => {
+    const mockedState = mockBasicSuccessState(20, 1958);
+    const mockStore = configureStore();
+    let store = mockStore(mockedState);
+
+    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+
+    expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
+    expect(view.getByTestId("veilederContainer")).toHaveTextContent("opptjening-hei, Test Tester Testesen! opptjening-intro-tekst")
+});
