@@ -306,7 +306,8 @@ export const LineChart = (props) => {
         setVisibleComponent(component);
     };
 
-    const toggleShowAll = (shouldShowAll) => {
+    const toggleShowAll = (event, shouldShowAll) => {
+        if(shouldShowAll) event.preventDefault();
         const loggerName = shouldShowAll ? "Vis alle år" : "Vis de siste 10 årene";
         logToAmplitude({eventType: CLICK_EVENT, name: loggerName, titleKey: "chart-pensjonsbeholdningen-din", type: "Lenke", value: true});
         setShowAll(shouldShowAll);
@@ -354,8 +355,7 @@ export const LineChart = (props) => {
     }
 
     return(
-        <div>
-            <span id="beholdningAndPoengTabellTop"/>
+        <div id="beholdningAndPoengTabellTop" tabIndex="-1">
             <div className="chartTitleContainer">
                 <PanelTitle id="chartTitle" titleString={title}/>
                 {buttons}
@@ -392,13 +392,13 @@ export const LineChart = (props) => {
                     </ul>
                     <div className="expandTableLink">
                         {showAll &&
-                            <Lenke href="#beholdningAndPoengTabellTop" onClick={() => toggleShowAll(!showAll)}>
+                            <Lenke href="#beholdningAndPoengTabellTop" onClick={(e) => toggleShowAll(e, !showAll)}>
                                 <OppChevron/><br/>
                                 {t('chart-vis-de-siste-ti-aarene')}
                             </Lenke>
                         }
                         {!showAll &&
-                            <Lenke onClick={() => toggleShowAll(!showAll)}>
+                            <Lenke href="#" onClick={(e) => toggleShowAll(e, !showAll)}>
                                 {t('chart-vis-alle-aar')}<br/>
                                 <NedChevron/>
                             </Lenke>
