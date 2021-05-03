@@ -116,8 +116,5 @@
     "error-status-401": "Du er ikke autorisert",
     "error-status-403": "Du har ikke tilgang til å se informasjon om denne personens pensjonsopptjening.",
     "error-status-404": "Vi kan ikke finne siden eller tjenesten du etterspør.",
-    "error-status-418": "Vi jobber med å lage en ny side som viser opptjeningen din. Inntil videre kan du bruke de gamle sidene.",
-    "error-status-common": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen.",
-
-    "error-status-418-link-title": "Gå til de gamle sidene for pensjonsopptjening"
+    "error-status-common": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen."
 }
