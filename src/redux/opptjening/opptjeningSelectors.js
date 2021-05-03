@@ -137,9 +137,9 @@ export const getUserGroup = (state = initialState) => {
 
 export const getName = (state = initialState) => {
     let name = "";
-    name = getFornavn(state) !== null ? name + " " + getFornavn(state) : name;
+    name = getFornavn(state) !== null ? getFornavn(state) : name;
     name = getMellomnavn(state) !== null ? name + " " + getMellomnavn(state) : name;
     name = getEtternavn(state) !== null ? name + " " + getEtternavn(state) : name;
 
-    return name !== "" ? name : null;
+    return name !== "" ? name.trim() : null;
 };

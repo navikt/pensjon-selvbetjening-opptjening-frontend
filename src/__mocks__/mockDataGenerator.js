@@ -111,7 +111,7 @@ export const mockBasicSuccessState = (opptjeningCount, fodselsaar) => {
         }
     }
 }
-export const mockStateFromOpptjeningData = (startYear, opptjeningList, fodselsaar = 1972) =>{
+export const mockStateFromOpptjeningData = (startYear, opptjeningList, fodselsaar = 1972, fornavn = null, mellomnavn = null, etternavn = null) =>{
     const opptjeningData ={}
     opptjeningList.forEach(opptjening =>{
         opptjeningData[startYear] = opptjening
@@ -121,7 +121,10 @@ export const mockStateFromOpptjeningData = (startYear, opptjeningList, fodselsaa
         opptjening: {
             opptjening: {
                 opptjeningData: opptjeningData,
-                fodselsaar: fodselsaar
+                fodselsaar: fodselsaar,
+                fornavn: fornavn,
+                mellomnavn: mellomnavn,
+                etternavn: etternavn
             }
         }
 

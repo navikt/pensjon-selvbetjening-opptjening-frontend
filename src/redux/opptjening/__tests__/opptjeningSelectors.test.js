@@ -23,6 +23,10 @@ it('should return selector values for the initial state', () => {
         beholdning: null
     });
     expect(selectors.getInntekter()).toEqual([]);
+    expect(selectors.getFornavn()).toEqual(null);
+    expect(selectors.getMellomnavn()).toEqual(null);
+    expect(selectors.getEtternavn()).toEqual(null);
+
 });
 
 it('should return opptjening', () => {
@@ -176,6 +180,55 @@ it('should return hasOmsorgsOpptjening = true for all years, except last year', 
     expect(omsorgsOpptjeningMap[2003].hasOmsorgsOpptjening).toBeFalsy();
 });
 
+it('should return fornavn', () => {
+    const fornavn = selectors.getFornavn(mockedState);
+    expect(fornavn).toEqual("Test");
+});
+it('should return mellomnavn', () => {
+    const mellomnavn = selectors.getMellomnavn(mockedState);
+    expect(mellomnavn).toEqual("Tester");
+});
+it('should return etternavn', () => {
+    const etternavn = selectors.getEtternavn(mockedState);
+    expect(etternavn).toEqual("Testesen");
+});
+
+it('should return user name', () => {
+    const name = selectors.getName(mockedState);
+    expect(name).toEqual("Test Tester Testesen");
+});
+
+it('should return user fornavn and etternavn', () => {
+    const mockState = mockStateFromOpptjeningData(2000, [], 1972, "Test", null, "Testesen");
+    const name = selectors.getName(mockState);
+    expect(name).toEqual("Test Testesen");
+});
+
+it('should return user mellomnavn and etternavn', () => {
+    const mockState = mockStateFromOpptjeningData(2000, [], 1972, null, "Tester", "Testesen");
+    const name = selectors.getName(mockState);
+    expect(name).toEqual("Tester Testesen");
+});
+
+it('should return user fornavn', () => {
+    const mockState = mockStateFromOpptjeningData(2000, [], 1972, "Test", null, null);
+    const name = selectors.getName(mockState);
+    expect(name).toEqual("Test");
+});
+
+it('should return user fornavn and mellomnavn', () => {
+    const mockState = mockStateFromOpptjeningData(2000, [], 1972, "Test", "Tester", null);
+    const name = selectors.getName(mockState);
+    expect(name).toEqual("Test Tester");
+});
+
+
+
+it('should not return name', () => {
+    const mockState = mockStateFromOpptjeningData(2000, [], 1972);
+    const name = selectors.getName(mockState);
+    expect(name).toEqual(null)
+});
 
 
 
