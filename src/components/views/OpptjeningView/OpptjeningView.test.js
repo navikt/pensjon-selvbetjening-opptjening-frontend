@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import {axe} from "jest-axe";
 import {
-    constructEndringOpptjening,
     constructOpptjening,
     mockBasicSuccessState,
     mockStateFromOpptjeningData

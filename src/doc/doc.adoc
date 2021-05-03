@@ -20,6 +20,7 @@ include::../containers/UnleashContainer/UnleashContainer.adoc[]
 
 == Components
 === Elements
+include::../components/elements/VeilederMedSnakkeboble/VeilederMedSnakkeboble.adoc[]
 include::../components/elements/BeholdningPanel/BeholdningPanel.adoc[]
 include::../components/elements/BeholdningForklartPanel/BeholdningForklartPanel.adoc[]
 include::../components/elements/PensjonspoengForklartPanel/PensjonspoengForklartPanel.adoc[]

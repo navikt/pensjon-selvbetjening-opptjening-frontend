@@ -26,8 +26,7 @@ import {BeholdningAndPensjonspoengForklartPanel} from "../../elements/Beholdning
 import {PensjonskalkulatorLenkePanel} from "../../elements/PensjonskalkulatorLenkePanel/PensjonskalkulatorLenkePanel";
 import {OpptjeningFlereStederPanel} from "../../elements/OpptjeningFlereStederPanel/OpptjeningFlereStederPanel";
 import {OverforeOmsorgsOpptjeningPanel} from "../../elements/OverforeOmsorgsOpptjeningPanel/OverforeOmsorgsOpptjeningPanel";
-import Veileder from "nav-frontend-veileder";
-import veilederSvg from "../../../assets/veileder.svg";
+import {VeilederMedSnakkeboble} from "../../elements/VeilederMedSnakkeboble/VeilederMedSnakkeboble";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -82,11 +81,7 @@ export const OpptjeningView = () => {
 
     return(
         <div data-testid="opptjeningview">
-            <div className="veilederContainer" data-testid="veilederContainer">
-                <Veileder tekst={<Veiledertext/>} posisjon="høyre">
-                    <img alt="" src={veilederSvg}/>
-                </Veileder>
-            </div>
+            <VeilederMedSnakkeboble veilederText={<Veiledertext/>}/>
             <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
                 <section aria-labelledby="pensjonsBeholdningTitle">
                     <BeholdningPanel data={latestPensjonsBeholdning}/>
