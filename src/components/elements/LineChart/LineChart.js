@@ -392,13 +392,13 @@ export const LineChart = (props) => {
                     </ul>
                     <div className="expandTableLink">
                         {showAll &&
-                            <Lenke href="#beholdningAndPoengTabellTop" onClick={(e) => toggleShowAll(e, !showAll)}>
+                            <Lenke href="#beholdningAndPoengTabellTop" onClick={(event) => toggleShowAll(event, !showAll)}>
                                 <OppChevron/><br/>
                                 {t('chart-vis-de-siste-ti-aarene')}
                             </Lenke>
                         }
                         {!showAll &&
-                            <Lenke href="#" onClick={(e) => toggleShowAll(e, !showAll)}>
+                            <Lenke href="#" onClick={(event) => toggleShowAll(event, !showAll)}>
                                 {t('chart-vis-alle-aar')}<br/>
                                 <NedChevron/>
                             </Lenke>
