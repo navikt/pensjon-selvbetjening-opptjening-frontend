@@ -70,7 +70,7 @@ const listItem = (props) => {
     )
 };
 
-const buildData = (tableMap, userGroup, showAll, t )  => {
+const buildDataForTableAndListView = (tableMap, userGroup, showAll, t )  => {
     let dataRows = [];
     let dataListItems = [];
     const numberOfYears = Object.keys(tableMap).length;
@@ -298,7 +298,7 @@ export const LineChart = (props) => {
     const [visibleComponent, setVisibleComponent] = useState(initialState);
     const [showAll, setShowAll] = useState(false);
 
-    const {dataRows, dataListItems} = buildData(tableMap, userGroup, showAll, t);
+    const {dataRows, dataListItems} = buildDataForTableAndListView(tableMap, userGroup, showAll, t);
 
     const toggleVisibleComponent = (component) => {
         const loggerName = (component === "chart") ? "Graf" : "Tabell";
