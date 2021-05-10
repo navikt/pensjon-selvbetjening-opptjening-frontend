@@ -5,7 +5,7 @@ import {
     getAndelPensjonBasertPaBeholdning, getFodselsAar,
     getLatestPensjonsBeholdning,
     getOpptjeningByYear, getOpptjeningData, getPensjonsbeholdningAndPensjonspoeng, getUserGroup,
-    getYearArray, getOmsorgsOpptjeningMap, hasOverforeOmsorgsOpptjeningLink, getAntallAarPensjonsPoeng, getName
+    getYearArray, getOmsorgsOpptjeningMap, hasOverforeOmsorgsOpptjeningLink, getAntallAarPensjonsPoeng, getName, hasOpptjeningData
 } from "../../../redux/opptjening/opptjeningSelectors";
 import Panel from "nav-frontend-paneler";
 import {LineChart} from '../../elements/LineChart/LineChart';
@@ -27,6 +27,7 @@ import {PensjonskalkulatorLenkePanel} from "../../elements/PensjonskalkulatorLen
 import {OpptjeningFlereStederPanel} from "../../elements/OpptjeningFlereStederPanel/OpptjeningFlereStederPanel";
 import {OverforeOmsorgsOpptjeningPanel} from "../../elements/OverforeOmsorgsOpptjeningPanel/OverforeOmsorgsOpptjeningPanel";
 import {VeilederMedSnakkeboble} from "../../elements/VeilederMedSnakkeboble/VeilederMedSnakkeboble";
+import {AlertStripeFeil} from "nav-frontend-alertstriper";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -79,53 +80,60 @@ export const OpptjeningView = () => {
         )
     };
 
+    const hasData = useSelector(hasOpptjeningData);
+
     return(
         <div data-testid="opptjeningview">
-            <VeilederMedSnakkeboble veilederText={<Veiledertext/>}/>
-            <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
-                <section aria-labelledby="pensjonsBeholdningTitle">
-                    <BeholdningPanel data={latestPensjonsBeholdning}/>
-                </section>
-                <ForklartSection/>
-                <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
-                    <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup} antallAarPensjonsPoeng={antallAarPensjonsPoeng}/>
-                </section>
-                <section aria-labelledby="chartTitle">
-                    <Panel border className="panelWrapper">
-                        <LineChart
-                            data={pensjonsbeholdningAndPensjonspoengMap}
-                            userGroup={userGroup}
-                            antallAarPensjonsPoeng={antallAarPensjonsPoeng}
-                        />
-                    </Panel>
-                </section>
-                <section aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
-                    <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray}
-                                            onChange={selectYear} userGroup={userGroup} hasOmsorgsOpptjeningTwoYearsBack={hasOmsorgsOpptjeningTwoYearsBack}/>
-                </section>
-            </UserGroup>
-            <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>
-                <section aria-label={"title " + t('pensjonspoeng-forklart')}>
-                    <PensjonspoengForklartPanel/>
-                </section>
-                <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
-                    <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup} antallAarPensjonsPoeng={antallAarPensjonsPoeng}/>
-                </section>
-            </UserGroup>
-            {hasOverforeLink &&
-                <section aria-label={"title " + t('overfore-omsorgsopptjening-title')}>
-                    <OverforeOmsorgsOpptjeningPanel/>
-                </section>
+            {!hasData && <AlertStripeFeil>{t('error-status-nodata')}</AlertStripeFeil>}
+            {hasData &&
+                <div>
+                    <VeilederMedSnakkeboble veilederText={<Veiledertext/>}/>
+                    <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
+                        <section aria-labelledby="pensjonsBeholdningTitle">
+                            <BeholdningPanel data={latestPensjonsBeholdning}/>
+                        </section>
+                        <ForklartSection/>
+                        <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
+                            <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup} antallAarPensjonsPoeng={antallAarPensjonsPoeng}/>
+                        </section>
+                        <section aria-labelledby="chartTitle">
+                            <Panel border className="panelWrapper">
+                                <LineChart
+                                    data={pensjonsbeholdningAndPensjonspoengMap}
+                                    userGroup={userGroup}
+                                    antallAarPensjonsPoeng={antallAarPensjonsPoeng}
+                                />
+                            </Panel>
+                        </section>
+                        <section aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
+                            <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray}
+                                                    onChange={selectYear} userGroup={userGroup} hasOmsorgsOpptjeningTwoYearsBack={hasOmsorgsOpptjeningTwoYearsBack}/>
+                        </section>
+                    </UserGroup>
+                    <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_BEFORE_1943]} include={true}>
+                        <section aria-label={"title " + t('pensjonspoeng-forklart')}>
+                            <PensjonspoengForklartPanel/>
+                        </section>
+                        <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
+                            <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup} antallAarPensjonsPoeng={antallAarPensjonsPoeng}/>
+                        </section>
+                    </UserGroup>
+                    {hasOverforeLink &&
+                        <section aria-label={"title " + t('overfore-omsorgsopptjening-title')}>
+                            <OverforeOmsorgsOpptjeningPanel/>
+                        </section>
+                    }
+                    <section aria-label={"title " + t('opptjening-flere-steder-title')}>
+                        <OpptjeningFlereStederPanel/>
+                    </section>
+                    <section>
+                        <PensjonskalkulatorLenkePanel/>
+                    </section>
+                    <section aria-labelledby="faqTitle">
+                        <FAQPanel userGroup={userGroup}/>
+                    </section>
+                </div>
             }
-            <section aria-label={"title " + t('opptjening-flere-steder-title')}>
-                <OpptjeningFlereStederPanel/>
-            </section>
-            <section>
-                <PensjonskalkulatorLenkePanel/>
-            </section>
-            <section aria-labelledby="faqTitle">
-                <FAQPanel userGroup={userGroup}/>
-            </section>
         </div>
     )
 };

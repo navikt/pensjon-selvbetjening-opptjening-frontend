@@ -10,7 +10,7 @@ export const initialState = {
 export const getOpptjening = (state = initialState) => state.opptjening ? state.opptjening.opptjening : null;
 export const getOpptjeningLoading = (state = initialState) => state.opptjening ? state.opptjening.opptjeningLoading : true;
 export const getOpptjeningError = (state = initialState) => state.opptjening ? state.opptjening.opptjeningError : undefined;
-export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
+export const getOpptjeningData =  (state = initialState) => state.opptjening && state.opptjening.opptjening.opptjeningData ? state.opptjening.opptjening.opptjeningData : {};
 export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
 export const getFornavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.fornavn ? state.opptjening.opptjening.fornavn : null;
 export const getMellomnavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.mellomnavn? state.opptjening.opptjening.mellomnavn : null;
@@ -100,7 +100,7 @@ export const getYearArray = (state = initialState) => {
 };
 
 export const getOpptjeningByYear = (state = initialState, year) => {
-    return state.opptjening ? state.opptjening.opptjening.opptjeningData[year] : null;
+    return state.opptjening && state.opptjening.opptjening.opptjeningData ? state.opptjening.opptjening.opptjeningData[year] : null;
 };
 
 export const getLatestPensjonsBeholdning = (state = initialState) => {
@@ -142,4 +142,9 @@ export const getName = (state = initialState) => {
     name = getEtternavn(state) !== null ? name + " " + getEtternavn(state) : name;
 
     return name !== "" ? name.trim() : null;
+};
+
+export const hasOpptjeningData = (state = initialState) => {
+    const opptjeningData = getOpptjeningData(state);
+    return Object.entries(opptjeningData).length > 0;
 };

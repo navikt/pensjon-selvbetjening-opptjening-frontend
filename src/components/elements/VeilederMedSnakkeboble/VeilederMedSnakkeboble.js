@@ -4,11 +4,11 @@ import Veileder from "nav-frontend-veileder";
 import './VeilederMedSnakkeboble.less';
 
 export const VeilederMedSnakkeboble = (props) => {
-    const { veilederText } = props;
+    const { veilederText, type } = props;
 
     return (
         <div className="veilederContainer" data-testid="veilederContainer">
-            <Veileder tekst={veilederText} posisjon="høyre">
+            <Veileder type={type} tekst={veilederText} posisjon="høyre">
                 <img alt="" src={veilederSvg}/>
             </Veileder>
         </div>
