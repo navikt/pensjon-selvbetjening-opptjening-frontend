@@ -70,10 +70,10 @@ export const OpptjeningView = () => {
 
     const Veiledertext = () => {
         let nameString = "!";
-        if(name) nameString = ", " + name + "!";
+        if(name) nameString = ", " + name.toLowerCase() + "!";
         return(
             <div>
-                {t('opptjening-hei') + nameString}  <br/>
+                <span className="capitalizedString">{t('opptjening-hei') + nameString}</span>  <br/>
                 {t('opptjening-intro-tekst')}
             </div>
         )

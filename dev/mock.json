@@ -784,9 +784,9 @@
     },
     "numberOfYearsWithPensjonspoeng": null,
     "fodselsaar": 1972,
-    "fornavn": "Test",
-    "mellomnavn": "Tester",
-    "etternavn": "Testesen",
+    "fornavn": "TEST",
+    "mellomnavn": "TESTER",
+    "etternavn": "TESTESEN",
     "andelPensjonBasertPaBeholdning": 10
   }
 }
