@@ -187,5 +187,5 @@ it('should render Opptjening view and display the Veileder with speechbubble con
     let view = render(<Provider store={store}><OpptjeningView/></Provider>);
 
     expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
-    expect(view.getByTestId("veilederContainer")).toHaveTextContent("opptjening-hei, Test Tester Testesen! opptjening-intro-tekst")
+    expect(view.getByTestId("veilederContainer")).toHaveTextContent("opptjening-hei, test tester testesen! opptjening-intro-tekst")
 });
