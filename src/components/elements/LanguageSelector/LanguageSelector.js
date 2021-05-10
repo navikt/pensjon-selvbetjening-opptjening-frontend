@@ -24,7 +24,7 @@ export const LanguageSelector = () => {
 
     setAvailableLanguages([
         {"locale": "nb", "url": "/nb/", handleInApp: true},
-        {"locale": "en", "url": "/en/", handleInApp: true},
+        // {"locale": "en", "url": "/en/", handleInApp: true},
         {"locale": "nn", "url": "/nn/", handleInApp: true},
     ]);
 

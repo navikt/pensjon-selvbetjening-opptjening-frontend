@@ -1,38 +1,38 @@
 {
     "faq-number-of-questions": 4,
 
-    "faq-question-1": "Korleis reknast opptening ved omsorg for små barn?",
+    "faq-question-1": "Korleis bereknar vi opptening ved omsorg for små barn?",
     "faq-answer-1": [
-        "Om du mottar barnetrygd får du automatisk godskriven omsorgsopptening for år der du",
-        "- har hatt omsorg for barn som ikkje er fylde seks år",
-        "- er mellom 17 og 69 år",
-        "Omsorgsoppteninga tilsvara pensjonsoppteninga du ville fått av ei inntekt på 4,5 gonger folketrygdas grunnbeløp (G). Tener du meir enn dette vil pensjonsoppteninga basere seg på lønnsinntekta di i staden. Det er berre ein av foreldra som får omsorgsopptening, men det er mogleg å overføre omsorgsopptening til den andre dersom det er meir lønnsamt.",
-        "Hadde du omsorg for barn før 2010 har du fått omsorgsopptening til og med det året barnet fylde seks år. Dette svarar til pensjonsoppteninga du ville fått av ei inntekt på 4 G.",
-        "#### Omsorgsopptening for barn før 1992 ",
-        "Hadde du omsorg for barn under sju år i perioden 1967-1991 er det eigne reglar for opptening til alderspensjon og avtalefesta pensjon (AFP) i privat sektor.",
-        "#### Omsorgsopptening for deg som er født mellom 1948 og 1953",
-        "For deg som født mellom 1948 og 1953 kan omsorgsoppteninga for år før 1992 berre nyttast til å rekne ut avtalefesta pensjon (AFP) i privat sektor. Les meir om AFP i privat sektor.",
-        "#### Omsorgsopptening for deg som er født i 1954 eller seinare",
-        "For deg som er født i 1954 eller seinare kan omsorgsoppteninga for år før 1992 nyttast både til å berekna avtalefesta pensjon (AFP) i privat sektor og alderspensjon frå folketrygda heilt eller delvis etter nye reglar som vart nytta frå 2016. Les meir om alderspensjon."
+        "Dersom du får barnetrygd, får du automatisk godskrive omsorgsopptening for år der du",
+        "– har hatt omsorg for barn som ikkje har fylt 6 år",
+        "– er mellom 17 og 69 år",
+        "Omsorgsoppteninga svarer til pensjonsoppteninga du ville ha fått av ei inntekt på 4,5 gonger grunnbeløpet i folketrygda (G). Tener du meir enn dette, vil pensjonsoppteninga basere seg på lønnsinntekta di i staden. Det er berre éin av foreldra som får omsorgsopptening, men det er mogleg å overføre omsorgsopptening til den andre dersom det er meir lønnsamt.",
+        "Hadde du omsorg for barn før 2010, har du fått omsorgsopptening til og med det året barnet fylte 6 år. Dette svarer til pensjonsoppteninga du ville ha fått av ei inntekt på 4 G.",
+        "#### Omsorgsopptening for barn før 1992",
+        "Hadde du omsorg for barn under 7 år i perioden 1967–1991, er det eigne reglar for opptening til alderspensjon og avtalefesta pensjon (AFP) i privat sektor.",
+        "#### Omsorgsopptening for deg som er fødd mellom 1948 og 1953",
+        "For deg som er fødd mellom 1948 og 1953, kan omsorgsoppteninga for år før 1992 berre nyttast til å berekne avtalefesta pensjon (AFP) i privat sektor. Les meir om AFP i privat sektor.",
+        "#### Omsorgsopptening for deg som er fødd i 1954 eller seinare",
+        "For deg som er fødd i 1954 eller seinare, kan omsorgsoppteninga for år før 1992 nyttast både til å berekne avtalefesta pensjon (AFP) i privat sektor og alderspensjon frå folketrygda berekna heilt eller delvis etter nye reglar som kjem i bruk frå 2016. Les meir om alderspensjon."
     ],
 
     "faq-question-2": "Kva betyr pensjonsgivande inntekt?",
     "faq-answer-2": [
-        "I folketrygda er pensjonsgivande inntekt med enkelte unntak det same som personinntekt etter skattelova. Det inneber at all brutto lønnsinntekt for lønnsmottakar og utrekna personinntekt frå næring for sjølvstendige reknast som pensjonsgivande. Mottatte skattepliktige trygdeytingar som sjukepengar og arbeidsavklaringspengar inngår også i den pensjonsgivande inntekta.",
-        "Pensjonsgivande inntekta reknast ut av Skatteetaten."
+        "I folketrygda er pensjonsgivande inntekt med enkelte unntak det same som personinntekt etter skattelova. Det betyr at all brutto lønnsinntekt for lønnstakarar og berekna personinntekt frå næring for sjølvstendige blir rekna som pensjonsgivande. Får du skattepliktige trygdeytingar som sjukepengar og arbeidsavklaringspengar, går også dei inn i den pensjonsgivande inntekta.",
+        "Den pensjonsgivande inntekta blir berekna av Skatteetaten."
     ],
 
-    "faq-question-3": "Kven kan få opptening som følge av omsorg for sjuke, funksjonshemma eller eldre personar?",
+    "faq-question-3": "Kven kan få opptening som følgje av omsorg for sjuke, funksjonshemma eller andre personar?",
     "faq-answer-3": [
-        "Du kan få omsorgsopptening om du tar deg av sjuke, funksjonshemma eller eldre personar som er medlem i folketrygda. For å få omsorgsopptening, må visse krav vere oppfylt:",
-        "- Du må utføre omsorgsarbeid på minst 22 timer per veke.",
-        "- Du må utføre omsorgsarbeid med ei varigheit på minst seks månader per kalenderår. Reisetid på opp mot ein halv time for kvar vitjing kan reknast med.",
-        "- Omsorgsarbeidet må i utgangspunktet ikkje være lønna.",
-        "- Personen du har omsorg for må være medlem i folketrygda.",
-        "Nokre gonger kan kommunen gi omsorgsstønad til personer som utfører pleie og omsorgsarbeid for familie. I slike tilfelle kan du også få omsorgsopptening.",
-        "Det er mogleg å få omsorgsopptening sjølv om omsorgsperioden har vore kortare enn eit halvt år. Dette gjeld om omsorgsmottakaren døyr eller blir innlagd på institusjon. Kravet er at du har tent opp omsorgsopptening dei tre siste åra."
+        "Du kan få omsorgsopptening dersom du tek deg av sjuke, funksjonshemma eller eldre personar som er medlemmer i folketrygda. For å få omsorgsopptening, må visse krav vere oppfylte:",
+        "– Du må utføre omsorgsarbeid på minst 22 timar per veke.",
+        "– Du må utføre omsorgsarbeid som varer minst 6 månader per kalenderår. Du kan rekne med reisetid på opptil ein halv time per besøk.",
+        "– Omsorgsarbeidet må i utgangspunktet vere ulønt.",
+        "– Personen du har omsorg for, må vere medlem i folketrygda.",
+        "Somme gonger kan kommunen gi omsorgsstønad til personar som utfører pleie og omsorgsarbeid for familie. I slike tilfelle kan du også få omsorgsopptening.",
+        "Det er mogleg å få omsorgsopptening sjølv om omsorgsperioden har vart kortare enn eit halvt år. Dette gjeld dersom omsorgsmottakaren døyr eller blir innlagd i institusjon. Føresetnaden er at du har hatt omsorgsopptening dei siste tre åra."
     ],
 
     "faq-question-4": "Er dette all pensjonsoppteninga mi?",
-    "faq-answer-4": "Her vises berre opptening i folketrygda som gir grunnlag for alderspensjon frå NAV. Om du har rett på offentleg eller privat tenestepensjon/AFP, eller har andre individuelle pensjonsordningar, vil ikkje det komme fram her. I pensjonskalkulatoren hentar vi inn opplysningar frå offentlege og dei fleste private pensjonsaktørar. Pensjonskalkulatoren vil dermed gi eit betre bilde på dine totale pensjonsrettar."
+    "faq-answer-4": "Her viser vi berre opptening i folketrygda som gir grunnlag for alderspensjon frå NAV. Dersom du har rett til offentleg eller privat tenestepensjon/AFP, eller har andre individuelle pensjonsordningar, vil ikkje det kome fram her. I pensjonskalkulatoren hentar vi inn opplysningar frå offentlege og dei fleste private pensjonsaktørane. Pensjonskalkulatoren vil dermed gi eit betre bilete på dei totale pensjonsrettane dine."
 }

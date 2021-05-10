@@ -51,9 +51,6 @@ function verifyStatusSuccessOrRedirect(response) {
     if (response.status === 403) {
         throw new Error("error-status-403");
     }
-    if (response.status === 418) {
-        throw new Error("error-status-418");
-    }
     if (response.status >= 200 && response.status < 300) {
         return response.status;
     }

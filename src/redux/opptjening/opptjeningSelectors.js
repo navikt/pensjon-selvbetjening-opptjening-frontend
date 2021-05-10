@@ -12,6 +12,9 @@ export const getOpptjeningLoading = (state = initialState) => state.opptjening ?
 export const getOpptjeningError = (state = initialState) => state.opptjening ? state.opptjening.opptjeningError : undefined;
 export const getOpptjeningData =  (state = initialState) => state.opptjening ? state.opptjening.opptjening.opptjeningData : {};
 export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
+export const getFornavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.fornavn ? state.opptjening.opptjening.fornavn : null;
+export const getMellomnavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.mellomnavn? state.opptjening.opptjening.mellomnavn : null;
+export const getEtternavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.etternavn? state.opptjening.opptjening.etternavn : null;
 export const getAndelPensjonBasertPaBeholdning = (state = initialState) => state.opptjening ? state.opptjening.opptjening.andelPensjonBasertPaBeholdning : null;
 export const getAntallAarPensjonsPoeng = (state = initialState) => state.opptjening ? state.opptjening.opptjening.numberOfYearsWithPensjonspoeng : null;
 
@@ -130,4 +133,13 @@ export const getUserGroup = (state = initialState) => {
     } else {
         return BORN_BEFORE_1943;
     }
+};
+
+export const getName = (state = initialState) => {
+    let name = "";
+    name = getFornavn(state) !== null ? getFornavn(state) : name;
+    name = getMellomnavn(state) !== null ? name + " " + getMellomnavn(state) : name;
+    name = getEtternavn(state) !== null ? name + " " + getEtternavn(state) : name;
+
+    return name !== "" ? name.trim() : null;
 };

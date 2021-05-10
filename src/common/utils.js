@@ -33,12 +33,12 @@ export const getCurrentLocale = () => {
     const language = i18n.language;
     switch (language) {
         case "nb":
-            return "nb-NO";
+            return "no-NO";
         case "nn":
-            return "nn-NO";
+            return "no-NO";
         case "en":
             return "en-GB";
         default:
-            return "nb-NO";
+            return "no-NO";
     }
 }

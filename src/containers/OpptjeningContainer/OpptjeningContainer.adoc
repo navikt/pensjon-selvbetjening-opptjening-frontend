@@ -15,6 +15,5 @@ useEffect(() => {
 | 200 | Data settes i state og applikasjonen rendres
 | 401 | Ikke autorisert, bruker må logge inn.  Rendrer xref:#_loginpanel[LoginPanel]
 | 403 | Ikke tillat.  Feilmelding til brukere som ikke skal ha tilgang til å se data.
-| 418 | "I'm a teapot" - midlertidig respons som rendrer melding til brukere om at ny løsning ikke er ferdig, med lenke til gammel løsning.
 | Responskoder >= 300 | Feilmelding
 |===

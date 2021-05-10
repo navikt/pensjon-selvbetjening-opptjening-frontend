@@ -3,6 +3,7 @@
 
     "opptjening-tittel": "Your pension earnings",
     "opptjening-intro-tekst": "Here you will find a comprehensive overview of your pension earnings.",
+    "opptjening-hei": "Hi",
 
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Will be available later.",
 
@@ -86,6 +87,10 @@
     "chart-uttak-av-pensjon": "Withdrawal of pension",
     "chart-uttak": "Withdrawal",
     "chart-antall-aar-med-pensjonspoeng": "Number of years with pension points: {{years}}",
+    "chart-text1": "Pensjonsbeholdningen øker to år etter at du hadde inntekten.",
+    "chart-text2": "Det er fordi vi bruker tallene fra skatteoppgjøret, som vi får fra Skatteetaten.",
+    "chart-vis-de-siste-ti-aarene": "Vis de siste 10 årene",
+    "chart-vis-alle-aar": "Vis alle år",
 
     "pensjonskalkulator-lenke-title": "Calculate your pension in the pension calculator",
 
@@ -112,8 +117,5 @@
     "error-status-401": "You are not authorized",
     "error-status-403": "You do not have access to see this person's pension earnings.",
     "error-status-404": "We are not able to find the page or service you are looking for.",
-    "error-status-418": "We are working on making new pages that shows your pension earnings. For now you can visit our old pages.",
-    "error-status-common": "A technical problem occurred. Please try to log in again later. We are sorry for the inconvenience.",
-
-    "error-status-418-link-title": "Go to the old pages for your pension earnings"
+    "error-status-common": "A technical problem occurred. Please try to log in again later. We are sorry for the inconvenience."
 }

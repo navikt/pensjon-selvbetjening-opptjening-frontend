@@ -46,13 +46,52 @@ a|
 | Propertien "fodselsaar"
 | integer
 
+| getFornavn
+| Propertien "fornavn"
+| string
+
+| getMellomnavn
+| Propertien "mellomnavn"
+| string
+
+| getEtternavn
+| Propertien "etternavn"
+| string
+
 | getAndelPensjonBasertPaBeholdning
 | Propertien "andelPensjonBasertPaBeholdning"
 | integer
 
+| getAntallAarPensjonsPoeng
+| Propertien "numberOfYearsWithPensjonspoeng"
+| integer
+
+| getOmsorgsOpptjeningMap
+| Map for å slå opp om bruker hadde omsorgsopptjening et gitt år
+a|
+[source,json]
+----
+{
+    "<year>": {
+        "hasOmsorgsOpptjening": "<boolean>"
+    }
+}
+----
+
+| hasOverforeOmsorgsOpptjeningLink
+| Returnerer true hvis OVERFORE_OMSORGSOPPTJENING merknad finnes for bruker
+| boolean
+
+
 | getOpptjeningDataWithoutNullYears
 | Ikke i bruk
 | -
+
+| getUttakForYear
+| Brukes av `getPensjonsbeholdningAndPensjonspoeng`
+| [integer]
+
+
 
 | getPensjonsbeholdningAndPensjonspoeng
 | Object med  år og data
@@ -63,7 +102,7 @@ a|
     "<year>": {
         "pensjonspoeng": "<float>",
         "pensjonsbeholdning": "<integer>",
-        "uttak": "<integer>"
+        "uttak": "[integer]"
     }
 }
 ----
@@ -101,6 +140,11 @@ a|
 | getUserGroup
 | Hvilken brukergruppe man tilhører basert på fødselsår
 | string
+
+| getName
+| Navnet til innlogget bruker: <fornavn> <mellomnavn> <etternavn>
+| string
+
 |===
 
 

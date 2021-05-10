@@ -9,6 +9,8 @@ import {Knapp} from "nav-frontend-knapper";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
+import Lenke from "nav-frontend-lenker";
+import {NedChevron, OppChevron} from 'nav-frontend-chevron';
 
 const amountRow = (amount, t) => {
     if(amount === null) {
@@ -35,13 +37,13 @@ const amountListItem = (amount, t) => {
 };
 
 const dataRow = (props) => {
-    const {key, label, data, userGroup, t} = props;
+    const {key, label, data, userGroup, rowClass, t} = props;
     const pensjonsbeholdningTxt = amountRow(data.pensjonsbeholdning, t);
     const pensjonspoeng = data.pensjonspoeng;
     const uttakArray = getUttakArray(data);
 
     return(
-        <tr key={key} className="row">
+        <tr key={key} className={"row " + rowClass}>
             <td data-testid="tableDataYear">{label}</td>
             <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
             {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen')}</td>}
@@ -51,13 +53,13 @@ const dataRow = (props) => {
 };
 
 const listItem = (props) => {
-    const {key, label, data, userGroup, t} = props;
+    const {key, label, data, userGroup, rowClass, t} = props;
     const pensjonsbeholdningTxt = amountListItem(data.pensjonsbeholdning, t);
     const pensjonspoeng = data.pensjonspoeng;
     const uttakArray = getUttakArray(data);
 
     return(
-        <li className="beholdningPoengItem" key={key}>
+        <li className={"beholdningPoengItem " + rowClass} key={key}>
             <ul>
                 <li><b>{t("chart-aar")+": "} {label}</b></li>
                 <li>{t("chart-pensjonsbeholdning")+": "} {pensjonsbeholdningTxt}</li>
@@ -68,16 +70,19 @@ const listItem = (props) => {
     )
 };
 
-const buildData = (tableMap, userGroup, t)  => {
+const buildDataForTableAndListView = (tableMap, userGroup, showAll, t )  => {
     let dataRows = [];
     let dataListItems = [];
+    const numberOfYears = Object.keys(tableMap).length;
     Object.keys(tableMap).forEach((year, idx) => {
+        let rowClass = (numberOfYears - idx <= 10) || showAll ? "" : "hidden-row";
         const props = {
             "key": idx,
             "label": year,
             "data": tableMap[year],
             "userGroup": userGroup,
-            "t": t
+            "t": t,
+            "rowClass": rowClass
         };
         dataRows.push(dataRow(props));
         dataListItems.push(listItem(props))
@@ -291,13 +296,24 @@ export const LineChart = (props) => {
     }
 
     const [visibleComponent, setVisibleComponent] = useState(initialState);
-    const {dataRows, dataListItems} = buildData(tableMap, userGroup, t);
+    const [showAll, setShowAll] = useState(false);
+
+    const {dataRows, dataListItems} = buildDataForTableAndListView(tableMap, userGroup, showAll, t);
 
     const toggleVisibleComponent = (component) => {
         const loggerName = (component === "chart") ? "Graf" : "Tabell";
         logToAmplitude({eventType: CLICK_EVENT, name: loggerName, titleKey: "chart-pensjonsbeholdningen-din", type: "Knapp", value: true});
         setVisibleComponent(component);
     };
+
+    const toggleShowAll = (event, shouldShowAll) => {
+        if(shouldShowAll) event.preventDefault();
+        const loggerName = shouldShowAll ? "Vis alle år" : "Vis de siste 10 årene";
+        logToAmplitude({eventType: CLICK_EVENT, name: loggerName, titleKey: "chart-pensjonsbeholdningen-din", type: "Lenke", value: true});
+        setShowAll(shouldShowAll);
+    };
+
+
 
     let chartClass = "chartContainer";
     let tableClass = "tableContainer hidden";
@@ -339,7 +355,7 @@ export const LineChart = (props) => {
     }
 
     return(
-        <div>
+        <div id="beholdningAndPoengTabellTop" tabIndex="-1">
             <div className="chartTitleContainer">
                 <PanelTitle id="chartTitle" titleString={title}/>
                 {buttons}
@@ -349,6 +365,10 @@ export const LineChart = (props) => {
                     {t('chart-antall-aar-med-pensjonspoeng', {years: antallAarPensjonsPoeng})}
                 </p>
             }
+            <p>
+                {t('chart-text1')}<br/>
+                {t('chart-text2')}
+            </p>
             <div className={chartClass} data-testid="chartContainer">
                 <canvas ref={chartRef}/>
             </div>
@@ -370,6 +390,20 @@ export const LineChart = (props) => {
                     <ul className="beholdningAndPoengList">
                         {dataListItems.reverse()}
                     </ul>
+                    <div className="expandTableLink">
+                        {showAll &&
+                            <Lenke href="#beholdningAndPoengTabellTop" onClick={(event) => toggleShowAll(event, !showAll)}>
+                                <OppChevron/><br/>
+                                {t('chart-vis-de-siste-ti-aarene')}
+                            </Lenke>
+                        }
+                        {!showAll &&
+                            <Lenke href="#" onClick={(event) => toggleShowAll(event, !showAll)}>
+                                {t('chart-vis-alle-aar')}<br/>
+                                <NedChevron/>
+                            </Lenke>
+                        }
+                    </div>
                 </div>
 
             </div>

@@ -3,6 +3,7 @@
 
     "opptjening-tittel": "Din pensjonsopptjening",
     "opptjening-intro-tekst": "Her finner du en samlet oversikt over pensjonsopptjeningen din.",
+    "opptjening-hei": "Hei",
 
     "opptjening-opplysningen-vil-komme-pa-et-senere-tidspunkt": "Opplysningen vil komme på et senere tidspunkt.",
 
@@ -85,6 +86,10 @@
     "chart-uttak-av-pensjon": "Uttak av pensjon",
     "chart-uttak": "Uttak",
     "chart-antall-aar-med-pensjonspoeng": "Antall år med pensjonspoeng: {{years}}",
+    "chart-text1": "Pensjonsbeholdningen øker to år etter at du hadde inntekten.",
+    "chart-text2": "Det er fordi vi bruker tallene fra skatteoppgjøret, som vi får fra Skatteetaten.",
+    "chart-vis-de-siste-ti-aarene": "Vis de siste 10 årene",
+    "chart-vis-alle-aar": "Vis alle år",
 
     "pensjonskalkulator-lenke-title": "Beregn din pensjon i pensjonskalkulatoren",
 
@@ -111,8 +116,5 @@
     "error-status-401": "Du er ikke autorisert",
     "error-status-403": "Du har ikke tilgang til å se informasjon om denne personens pensjonsopptjening.",
     "error-status-404": "Vi kan ikke finne siden eller tjenesten du etterspør.",
-    "error-status-418": "Vi jobber med å lage en ny side som viser opptjeningen din. Inntil videre kan du bruke de gamle sidene.",
-    "error-status-common": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen.",
-
-    "error-status-418-link-title": "Gå til de gamle sidene for pensjonsopptjening"
+    "error-status-common": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen."
 }

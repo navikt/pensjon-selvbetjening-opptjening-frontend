@@ -81,8 +81,8 @@ export const mockLoadingState = () => {
 }
 
 export const mockBasicSuccessState = (opptjeningCount, fodselsaar) => {
-    const opptjeningData = {}
-    const startYear = fodselsaar + 18
+    const opptjeningData = {};
+    const startYear = fodselsaar + 18;
     for (let year = startYear; year < startYear + opptjeningCount; year++) {
         opptjeningData[year] = constructOpptjening({
             merknader: [],
@@ -102,13 +102,16 @@ export const mockBasicSuccessState = (opptjeningCount, fodselsaar) => {
             opptjening: {
                 opptjeningData: opptjeningData,
                 numberOfYearsWithPensjonspoeng: null,
-                fodselsaar: fodselsaar
+                fodselsaar: fodselsaar,
+                fornavn: "Test",
+                mellomnavn: "Tester",
+                etternavn: "Testesen"
             },
             opptjeningLoading: false
         }
     }
 }
-export const mockStateFromOpptjeningData = (startYear, opptjeningList, fodselsaar = 1972) =>{
+export const mockStateFromOpptjeningData = (startYear, opptjeningList, fodselsaar = 1972, fornavn = null, mellomnavn = null, etternavn = null) =>{
     const opptjeningData ={}
     opptjeningList.forEach(opptjening =>{
         opptjeningData[startYear] = opptjening
@@ -118,7 +121,10 @@ export const mockStateFromOpptjeningData = (startYear, opptjeningList, fodselsaa
         opptjening: {
             opptjening: {
                 opptjeningData: opptjeningData,
-                fodselsaar: fodselsaar
+                fodselsaar: fodselsaar,
+                fornavn: fornavn,
+                mellomnavn: mellomnavn,
+                etternavn: etternavn
             }
         }
 

@@ -1,13 +1,13 @@
 {
-    "AFP": "AFP (dersom du har hatt fleire periodar med AFP vises berre merknadar for siste periode)",
-    "REFORM": "Pensjonsbehaldninga di vart innførd med verknad frå 1. januar 2010 i samband med at pensjonsreforma vart gjennomførd. Då vert den oppteninga du hadde i kalenderår fram til og med 2008 (siste år med ferdig skattemelding) summert til ein behaldningsstorleik.",
-    "INGEN_OPPTJENING": "Du har inga registrert pensjonsopptening dette året",
+    "AFP": "AFP (dersom du har hatt fleire periodar med AFP, viser vi berre merknader for den siste perioden)",
+    "REFORM": "Pensjonsbehaldninga di blei etablert med verknad frå 1. januar 2010 i samband med at pensjonsreforma blei sett i verk. Då blei den oppteninga du hadde i kalenderår fram til og med 2008 (det siste året med ferdig skattemelding), summert til éin behaldningsstorleik.",
+    "INGEN_OPPTJENING": "Du har inga registrert opptening dette året.",
     "UFOREGRAD": "Uføretrygd: {{maxUforegrad}} prosent",
     "DAGPENGER": "Mottak av dagpengar",
     "FORSTEGANGSTJENESTE": "Avtent førstegongsteneste",
-    "OMSORGSOPPTJENING": "Du har fått omsorgsopptening for omsorgsarbeid utan lønn i dette året",
-    "OVERFORE_OMSORGSOPPTJENING": "Her kan du overføre omsorgsopptening til den andre av barnets foreldre",
+    "OMSORGSOPPTJENING": "Du er godskriven omsorgsopptening for ulønt omsorgsarbeid i dette året.",
+    "OVERFORE_OMSORGSOPPTJENING": "Her kan du overføre omsorgsoppteninga til den andre av foreldra til barnet.",
     "GRADERT_UTTAK": "Gradert uttak",
     "HELT_UTTAK": "Alderspensjon: 100 prosent",
-    "PRE_2010": "Pensjonsbehaldninga di vart innførd med verknad frå 1. januar 2010 i samband med at pensjonsreforma vart gjennomførd. Då vert den oppteninga du hadde i kalenderår fram til og med 2008 (siste år med ferdig skattemelding) summert til ein behaldningsstorleik."
+    "PRE_2010": "Pensjonsbehaldninga di blei etablert med verknad 1. januar 2010 i samband med at pensjonsreforma blei sett i verk. Då blei den oppteninga du hadde i kalenderår fram til og med 2008 (det siste året med ferdig skattemelding), summert til ein behaldningsstorleik."
 }
