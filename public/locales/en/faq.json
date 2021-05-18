@@ -1,38 +1,38 @@
 {
     "faq-number-of-questions": 4,
 
-    "faq-question-1": "How is earnings calculated for caring for young children?",
+    "faq-question-1": "How is earned pension calculated in connection with caring for young children?",
     "faq-answer-1": [
-        "If you receive child benefit, you will automatically receive credited care earnings for years where you ",
-        "- have cared for children under the age of six",
-        "- are between 17 and 69 years old",
-        "The pension rights for unpaid care work corresponds to the pension earnings you would receive from an income of 4.5 times the National Insurance Scheme's basic amount (G). If you earn more than this, your pension earnings will be based on your salary income instead. Only one parent receives pension rights for unpaid care work, but it is possible to transfer this to the other parent if that is more profitable.",
-        "If you cared for children before 2010, you received pension rights for unpaid care work up to, and including, the year the child turned six years old. This corresponds to the pension earnings you would receive from an income of 4 G.",
-        "#### Pension rights for unpaid care work for children before 1992 ",
-        "If you cared for children under the age of seven in the period 1967-1991, there are separate rules for earning a retirement pension and a contractual pension in the private sector.",
-        "#### Pension rights for unpaid care work for those born between 1948 and 1953",
-        "For those of you born between 1948 and 1953, the pension rights for unpaid care work for the years before 1992 can only be used to calculate a contractual pension in the private sector. Read more about contractual pension (AFP) in the private sector.",
-        "#### Pension rights for unpaid care work for you who were born in 1954 or later",
-        "For those born in 1954 or later, the pension rights for unpaid care work for the year before 1992 can be used both to calculate contractual pensions in the private sector and retirement pensions from the National Insurance Scheme calculated in full, or in part, according to new rules that apply from 2016. Read more about retirement pensions."
+        "If you are receiving child benefit, you will automatically be credited with pension earnings for care work for years where you",
+        "- have cared for children under the age of six years",
+        "- are between 17 and 69 years of age",
+        "The pension earnings for care work correspond to the pension you would have earned with an income of 4.5 times the National Insurance basic amount (“G”). If you earn more than this, your earned pension will be based on your earned income instead. Only one of the parents receives pension earnings for care work, but it is possible to transfer the pension earnings for care work to the other parent, if this is more profitable.",
+        "If you cared for children before 2010, you have received pension earnings for care work up to and including the year in which the child turned six years of age. This corresponds to the pension earnings you would have received from an income of 4 G.",
+        "#### Pension earnings for care work before 1992",
+        "There are separate rules for earning an old-age pension and contractual early retirement pension (AFP) in the private sector for people who cared for children under the age of seven years in the period 1967 to 1991.",
+        "#### Pension earnings for care work for people born between 1948 and 1953",
+        "If you were born between 1948 and 1953, pension earnings for care work for years before 1992 can only be used to calculate contractual early retirement pension (AFP) in the private sector. Read more about contractual early retirement pensions (AFP) in the private sector.",
+        "#### Pension earnings for care work for people born in or after 1954",
+        "If you were born in or after 1954, pension earnings for care work for years before 1992 can be used to calculate both contractual early retirement pension (AFP) in the private sector and old-age pension from the National Insurance Scheme calculated fully or partially according to new rules that apply from 2016. Read more about old-age pension."
     ],
 
     "faq-question-2": "What does pensionable income mean?",
     "faq-answer-2": [
-        "In the National Insurance Act, pensionable income is, with some exceptions, the same as personal income according to the Tax Act. This means that all gross wage income for employees and calculated personal income from industry for the self-employed is considered pensionable. Received taxable social security benefits such as sickness benefits and work assessment benefits are also included in the pensionable income.",
-        "The pensionable income is calculated by the tax authorities."
+        "In the Norwegian National Insurance Scheme, “pensionable income” is generally the same as personal income pursuant to the Tax Act, with a few exceptions. This means that all gross earned income for employees and calculated personal income from business activities for self-employed persons is included as pensionable income. Any taxable social security benefits you have received, such as sickness benefit and work assessment allowance (AAP), are also counted as part of your pensionable income.",
+        "Pensionable income is calculated by the Norwegian Tax Administration."
     ],
 
-    "faq-question-3": "Who can receive earnings as a result of care for the sick, disabled or elderly people?",
+    "faq-question-3": "Who can receive pension earnings as a result of caring for sick, disabled or elderly people?",
     "faq-answer-3": [
-      "You can receive pension rights for unpaid care work if you take care of sick, disabled or elderly people who are members of the National Insurance Scheme. In order to receive pension rights for unpaid care work, certain requirements must be met:",
-      "- You must perform care work of at least 22 hours per week.",
-      "- You must perform care work with a duration of at least six months per calendar year. Travel time of up to half an hour per visit can be counted.",
-      "- The care work must in principle be unpaid.",
-      "- The person you care for must be a member of the National Insurance Scheme.",
-        "Sometimes the municipality can provide care allowance to people who perform care and unpaid care work for the family. In such cases, you can also receive pension rights for unpaid care work.",
-        "It is possible to receive pension rights for unpaid care work even if the care period has been shorter than half a year. This applies if the care recipient dies or is admitted to an institution. The prerequisite is that you have had pension rights for unpaid care work in the last three years."
+        "You can receive pension earnings for care work if you are looking after sick, disabled or elderly persons who are members of the Norwegian National Insurance Scheme. In order to qualify for pension earnings for care work, certain requirements must be met:",
+        "- You must carry out care work for at least 22 hours per week.",
+        "- You must carry out care work over a period of at least six months per calendar year. Travel time of up to half an hour per visit can be included.",
+        " - As a general rule, the care work must be unpaid.",
+        "- The person you care for must be a member of the Norwegian National Insurance Scheme.",
+        "In some cases, the municipal authorities may grant care support to people who nurse and care for family members. You can also get pension earnings for care work in these kinds of cases.",
+        "It is possible to receive pension earnings for care work even if the period of care lasted less than half a year, if the person you were caring for dies or is admitted to an institution. The condition in this case is that you have earned pension earnings for care work in the past three years."
     ],
 
     "faq-question-4": "Is this all my pension earnings?",
-    "faq-answer-4": "Only pension earnings in the National Insurance Scheme are shown here, which provide a basis for retirement pension from NAV. If you are entitled to a public or private occupational pension / AFP, or have other individual pension schemes, it will not appear here. We collect information from public and most private pension actors in the Pension Calculator. The Pension Calculator will thus give a better picture of your total pension rights."
+    "faq-answer-4": "Only pension earnings in the Norwegian National Insurance Scheme that provide the basis for an old-age pension from NAV are shown here. Any public or private occupational pension or contractual early retirement pension (AFP) you are entitled to, or any other individual pension plans you have, will not be included here. In the Pension Calculator, we collect information from public and most private pension companies. The Pension Calculator will thus provide a better overview of your total pension rights."
 }

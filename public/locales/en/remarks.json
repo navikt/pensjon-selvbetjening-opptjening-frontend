@@ -1,13 +1,13 @@
 {
-    "AFP": "AFP (if you have had several periods with AFP, only notes for the last period are displayed)",
-    "REFORM": "Your accumulated pension capital was established with effect from 1 January 2010 in connection with the pension reform coming into force. Then the earnings you had in the calendar year up to and including 2008 (last completed similar year) were added to the asset size.",
-    "INGEN_OPPTJENING": "No registered pension earnings",
-    "UFOREGRAD": "Disability benefits: {{maxUforegrad}} percent",
-    "DAGPENGER": "Receipt of unemployment benefits",
-    "FORSTEGANGSTJENESTE": "Served compulsory military service",
-    "OMSORGSOPPTJENING": "You are credited with care earnings for unpaid care work this year",
-    "OVERFORE_OMSORGSOPPTJENING": "Here you can transfer unpaid care earnings to the other of the child's parents",
-    "GRADERT_UTTAK": "Partial withdrawal",
+    "AFP": "Contractual early retirement pension – AFP (Note: if you have had several periods with AFP, only comments for the last period will be displayed)",
+    "REFORM": "Your pension reserve was established with effect from 1 January 2010 in connection with the entry into force of the pension reform. On that date, the pension earnings you had had in the calendar years up to and including 2008 (the last year for which the tax assessment had been completed) were added up to form a reserve.",
+    "INGEN_OPPTJENING": "You have no registered pensions earnings for this year",
+    "UFOREGRAD": "Disability benefit: {{maxUforegrad}} per cent",
+    "DAGPENGER": "Receiving unemployment benefit",
+    "FORSTEGANGSTJENESTE": "Doing compulsory military service",
+    "OMSORGSOPPTJENING": "You have been credited with pension earnings for unpaid care work in this year",
+    "OVERFORE_OMSORGSOPPTJENING": "Here you can transfer your pension earnings for care work to the child’s other parent",
+    "GRADERT_UTTAK": "Graded withdrawal",
     "HELT_UTTAK": "Old-age pension: 100 per cent",
-    "PRE_2010": "Your accumulated pension capital was established with effect from 1 January 2010 in connection with the pension reform coming into force. At that point the earnings you had in the calendar years up to and including 2008 (last completed similar year) were added to the asset size."
+    "PRE_2010": "Your pension reserve was established with effect from 1 January 2010 in connection with the entry into force of the pension reform. On that date, the pension earnings you had had in the calendar years up to and including 2008 (the last year for which the tax assessment had been completed) were added up to form a reserve."
 }
