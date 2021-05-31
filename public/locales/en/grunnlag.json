@@ -1,14 +1,14 @@
 {
-    "INNTEKT_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on your pensionable income from {{year}}.",
-    "UFORE_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you had {{uforegrad}} disability benefits in {{year}}.",
-    "FORSTEGANGSTJENESTE_GRUNNLAG_DESCRIPTION": "* Earnings for this year are based on your compulsory military service in {{year}}.",
-    "DAGPENGER_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you received unemployment benefits in {{year}}.",
-    "OMSORGSOPPTJENING_GRUNNLAG_DESCRIPTION": "* The earnings for this year are based on the fact that you had care for children under 6 years of age or other care work in {{year}}. Since the care-related credits were greater than your income this year, the pension earnings are based on the credits.",
-    "NO_GRUNNLAG_DESCRIPTION": "* We have no basis from {{year}}. Therefore, earnings are set at NOK 0.",
+    "INNTEKT_GRUNNLAG_DESCRIPTION": "* Your pension earnings for this year are based on your pensionable income from {{year}}.",
+    "UFORE_GRUNNLAG_DESCRIPTION": "* Your pension earnings for this year are based on the fact that you were receiving {{uforegrad}} disability benefit in {{year}}.",
+    "FORSTEGANGSTJENESTE_GRUNNLAG_DESCRIPTION": "* Your pension earnings for this year are based on the fact that you were doing compulsory military service in {{year}}.",
+    "DAGPENGER_GRUNNLAG_DESCRIPTION": "* Your pension earnings for this year are based on the fact that you were receiving unemployment benefit in {{year}}.",
+    "OMSORGSOPPTJENING_GRUNNLAG_DESCRIPTION": "* Your pension earnings for this year are based on the fact that you were caring for children under the age of 6 or doing other care work in {{year}}. Since the pension earnings for care work are greater than your income during this year, it is this figure that is being used as the basis for your pension earnings.",
+    "NO_GRUNNLAG_DESCRIPTION": "* We do not have a basis (i.e. information about your income) from {{year}}. Your earned pension has therefore been set to NOK 0.",
     "INNTEKT_GRUNNLAG_TYPE": "pensionable income",
-    "UFORE_GRUNNLAG_TYPE": "disability benefits",
+    "UFORE_GRUNNLAG_TYPE": "disability benefit",
     "FORSTEGANGSTJENESTE_GRUNNLAG_TYPE": "compulsory military service",
-    "DAGPENGER_GRUNNLAG_TYPE": "unemployment benefits",
-    "OMSORGSOPPTJENING_GRUNNLAG_TYPE": "unpaid care earnings",
+    "DAGPENGER_GRUNNLAG_TYPE": "unemployment benefit",
+    "OMSORGSOPPTJENING_GRUNNLAG_TYPE": "pension earnings for care work",
     "NO_GRUNNLAG_TYPE": "no basis"
 }

@@ -1,44 +1,43 @@
 {
     "faq-number-of-questions": 10,
 
-    "faq-question-1": "What is accumulated pension capital?",
+    "faq-question-1": "What does 'pension reserves' mean?",
     "faq-answer-1": [
-        "The accumulated pension capital corresponds to the sum of the annual pension earnings that is built up during life on the basis of pensionable income, compulsory military service, receipt of unemployment benefits, disability benefits and unpaid care work.",
-        "Pension earnings for a calendar year are adjusted upwards with wage growth and are added to the accumulated pension capital at the end of the year in which the tax assessment for the relevant year is completed.",
-        "The accumulated pension capital is the basis for calculating retirement pension from the National Insurance Scheme. To see what you will receive in the annual pension, you must use our pension calculator."
+        "'Pension reserves' means the sum of all your annual pension earnings accumulated during your lifetime on the basis of your pensionable income, compulsory military service, unemployment benefit, disability benefit and care work.",
+        "Your earned pension for a calendar year is adjusted upwards in line with the annual growth in average earnings and is added to your pension reserves at the end of the year in which the tax return for the year in question is completed.",
+        "Your pension reserves are the basis on which your old-age pension from the Norwegian National Insurance Scheme is calculated. To see how much you will receive in your annual pension, you need to go to our online Pension Calculator."
     ],
 
-    "faq-question-2": "How is the accumulated pension capital regulated?",
-    "faq-answer-2": "The accumulated pension capital is adjusted annually in accordance with wage growth.",
+    "faq-question-2": "How are pension reserves adjusted?",
+    "faq-answer-2": "Pension reserves are adjusted each year in line with the annual growth in average earnings in Norway.",
 
-    "faq-question-3": "How is earnings calculated from income?",
+    "faq-question-3": "How are pension earnings from income calculated?",
     "faq-answer-3": [
-        "For each year you have pensionable income, 18.1 per cent of the income is added to your accumulated pension capital. You add to your pension from the first krone you earn. Sickness benefits, work assessment benefits and unpaid care pay are also counted as pensionable income.",
-        "You can receive pension earnings up to, and including, the year you turn 75. If you turned 13 in 2010 or later, you can earn from the year you turned 13. If you were 17 years or older in 2010, you can earn from the year you turned 17.",
-        "Annual income is included from 1 January of the year after the determination is completed. This means, for example, that the income for 2016 will only be included in the pension from 1 January 2018."
+        "For each year you have pensionable income, 18.1 per cent of the income is added to your pension reserves. Pension is earned from the first krone. Sickness benefit, work assessment allowance (AAP) and care pay also count as pensionable income.",
+        "You can earn a pension up to and including the year you turn 75. If you turned 13 in 2010 or later, you can start earning a pension from the year you turned / turn 13. If you were 17 years or older in 2010, you can start earning a pension from the year you turned 17.",
+        "Annual income is included from 1 January the year after the final tax assessment has been completed. For example, your income for 2016 is included in the pension calculation from 1 January 2018."
     ],
 
-    "faq-question-4": "How did the 2010 pension reform affect my accumulated pension capital?",
-    "faq-answer-4": "Your accumulated pension capital was established with effect from 1 January 2010 in connection with the pension reform coming into force. From then on, the earnings you had in the calendar year up to, and including, 2008 (last completed similar year) were added to one accumulated pension capital.",
+    "faq-question-4": "How did the 2010 pension reform affect my pension reserves?",
+    "faq-answer-4": "Your pension reserve was established with effect from 1 January 2010 in connection with the entry into force of the pension reform. On that date, the pension earnings you had had in the calendar years up to and including 2008 (the last year for which the tax assessment had been completed) were added up to form a reserve.",
 
-    "faq-question-5": "How is earnings calculated for unemployment benefits?",
-    "faq-answer-5": "For periods with unemployment benefits, 18.1 per cent of an income that is used as a basis for determining unemployment benefits is added to your accumulated pension capital.",
+    "faq-question-5": "How are pension earnings from unemployment benefit calculated?",
+    "faq-answer-5": "For periods where you receive unemployment benefit, 18.1 per cent of the income that was used as the basis for calculating unemployment benefit is added to your pension reserves.",
 
-    "faq-question-6": "How is earnings for disability benefits calculated?",
-    "faq-answer-6": "For periods of disability benefits, 18.1 per cent of an estimated income is added to your pension portfolio. This applies up to, and including, the year you turn 61.",
+    "faq-question-6": "How are pension earnings from disability benefit calculated?",
+    "faq-answer-6": "For periods where you receive disability benefit, 18.1 per cent of your assumed income is added to your pension reserves. This applies up to and including the year you turn 61.",
 
-    "faq-question-7": "How to calculate earnings for compulsory military service?",
-    "faq-answer-7": "You can also add to your accumulated pension capital based on compulsory military service that was started in 2010 at the earliest. The earnings will be 18.1 per cent of the National Insurance Scheme's basic amount.",
+    "faq-question-7": "How are pension earnings from compulsory military service calculated?",
+    "faq-answer-7": "You can also receive pension earnings towards your pension reserves from compulsory military service that was started at the earliest in 2010. The earnings you receive are 18.1 per cent of the National Insurance Scheme’s basic amount (G).",
 
-    "faq-question-8": "Hvorfor har jeg ikke pensjonsbeholdning?",
-    "faq-answer-8": "Det er ikke registrert pensjonsopptjening. NAV mottar den pensjonsgivende inntekten fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)",
+    "faq-question-8": "Why do I not have any pension reserves?",
+    "faq-answer-8": "No earned pension has been registered. NAV receives information about your pensionable income from the Norwegian Tax Administration. If you think there is something wrong with your registered income, contact your [local tax office](https://www.skatteetaten.no/)",
 
-    "faq-question-9": "Hva betyr 'ikke noe grunnlag'?",
-    "faq-answer-9": "Vi mottar pensjonsgivende inntekt fra Skatteetaten når skatten er ferdig lignet. Fram til ligningen er ferdig så vil det vises en tekst som sier 'Ikke noe grunnlag'.",
+    "faq-question-9": "What does ‘no basis’ mean?",
+    "faq-answer-9": "We receive information about your pensionable income from the Norwegian Tax Administration once the tax assessment for a year has been completed. Until the tax assessment for a year has been completed, a text saying ‘No basis’ will be displayed.",
 
-    "faq-question-10": "What is pension rights for unpaid care work?",
+    "faq-question-10": "What are pension earnings for care work?",
     "faq-answer-10": [
-        "Pension rights for unpaid care work is not an extra salary that you receive from the National Insurance Scheme, but a scheme that helps you to receive a higher pension when you retire. You must be a member of the National Insurance Scheme during the care period to be entitled to pension rights for unpaid care work.",
-        "The pension rights for unpaid care work was introduced in 1992, and was later expanded to include persons with children born before 1992. Read explanation below."
-    ]
-}
+        "Pension earnings for care work is not extra pay that you receive from the National Insurance Scheme, rather it is a scheme to ensure you get a higher pension when you start drawing a pension. You must be a member of the Norwegian National Insurance Scheme during the period of care in order to be entitled to pension earnings for care work.",
+        "The pension earnings for care work scheme was introduced in 1992 and has since been expanded such that people with children born before 1992 can also receive these pension earnings. See the more detailed explanation below."
+    ]}

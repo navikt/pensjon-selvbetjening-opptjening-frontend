@@ -1,0 +1,16 @@
+{
+  "unleash": {
+    "toggles": {
+      "pensjon.selvbetjening.opptjening.demo1": true
+    }
+  },
+  "opptjening": {
+    "opptjeningData": null,
+    "numberOfYearsWithPensjonspoeng": null,
+    "fodselsaar": 1972,
+    "fornavn": "TEST",
+    "mellomnavn": "TESTER",
+    "etternavn": "TESTESEN",
+    "andelPensjonBasertPaBeholdning": null
+  }
+}
