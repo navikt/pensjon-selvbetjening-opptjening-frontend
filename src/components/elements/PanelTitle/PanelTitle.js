@@ -6,7 +6,7 @@ export const PanelTitle = (props) => {
     const titleClass = type === "lenkepanel" ? "lenkepanel__heading" : "";
 
     return(
-        <div role="heading" aria-level="2" className="titleContainer">
+        <div className="titleContainer">
             {illustration && <img src={illustration} className={illustrationClass} alt=""/>}
             <h2 id={id} className={titleClass + " typo-undertittel"}>{titleString}</h2>
         </div>
