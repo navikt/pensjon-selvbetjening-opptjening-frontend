@@ -8,7 +8,7 @@ export const PanelTitle = (props) => {
     return(
         <div role="heading" aria-level="2" className="titleContainer">
             {illustration && <img src={illustration} className={illustrationClass} alt=""/>}
-            <div id={id} className={titleClass + " typo-undertittel"}>{titleString}</div>
+            <h2 id={id} className={titleClass + " typo-undertittel"}>{titleString}</h2>
         </div>
     )
 };
