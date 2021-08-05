@@ -2,18 +2,18 @@ apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
   name: pensjon-selvbetjening-opptjening-frontend
-  namespace: default
+  namespace: pensjonselvbetjening
   labels:
     team: pensjonselvbetjening
 spec:
   image: {{ image_prod_sbs }}
   port: 8080
   ingresses:
-    - "https://pensjon-selvbetjening-opptjening-frontend.nais.oera.no"
-    - "https://www.nav.no/pensjon/opptjening"
+    - https://pensjon-selvbetjening-opptjening-frontend.nais.oera.no
+    - https://www.nav.no/pensjon/opptjening
   replicas:
     min: 2
-    max: 2
+    max: 4
     cpuThresholdPercentage: 50
   resources:
     limits:
