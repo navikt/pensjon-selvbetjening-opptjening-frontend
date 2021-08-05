@@ -1,22 +1,22 @@
 import i18n from "i18next";
 
 export const formatAmount = (amount) => {
-    if(amount!==null){
-        return Intl.NumberFormat('nb-NO',
+    if (amount !== null) {
+        // Use Swedish while nb-NO is broken in Chrome:
+        return Intl.NumberFormat('sv-SE',
             {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
-
             }).format(amount);
     } else {
         return;
     }
-
 };
 
 export const formatNumber = (number) => {
-    if(number!==null){
-        return number.toLocaleString("nb-NO", {minimumFractionDigits: 2, maximumFractionDigits: 2})
+    if (number !== null) {
+        // Use Swedish while nb-NO is broken in Chrome:
+        return number.toLocaleString("sv-SE", {minimumFractionDigits: 2, maximumFractionDigits: 2})
     }
 };
 
