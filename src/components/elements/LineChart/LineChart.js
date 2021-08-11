@@ -370,7 +370,7 @@ export const LineChart = (props) => {
                 {t('chart-text2')}
             </p>
             <div className={chartClass} data-testid="chartContainer">
-                <canvas ref={chartRef}/>
+                <canvas ref={chartRef}  aria-label={t('chart-aria-label')} role="img"/>
             </div>
             <div className={tableClass} data-testid="dataContainer">
                 <div className="tableContainer">
