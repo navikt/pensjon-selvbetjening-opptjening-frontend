@@ -15,8 +15,7 @@ const mockStore = configureStore();
 
 it('should not fail any accessibility tests', async () => {
     let store = mockStore(mockedStateSuccess);
-    const {container} = render(<Provider store={store}><Router><HomePage/></Router></Provider>);
-
+    const { container } = render(<Provider store={store}><Router><HomePage/></Router></Provider>);
     expect(await axe(container)).toHaveNoViolations();
 });
 
