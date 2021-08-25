@@ -19,7 +19,7 @@ const amountRow = (amount, t) => {
         )
     } else {
         return (
-            <div>{formatAmount(amount)}</div>
+            <div aria-label={amount}>{formatAmount(amount)}</div>
         )
     }
 };

@@ -56,13 +56,13 @@ export const OpptjeningView = () => {
     const ForklartSection = () =>{
         if(userGroup===BORN_AFTER_1962){
             return (
-                <section aria-label={"title " + t('pensjonsbeholdning-forklart')}>
+                <section aria-labelledby={t('pensjonsbeholdning-forklart')}>
                     <BeholdningForklartPanel/>
                 </section>
             )
         } else if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
             return (
-                <section aria-label={"title " + t('beholdning-and-pensjonspoeng-forklart')}>
+                <section aria-labelledby={t('beholdning-and-pensjonspoeng-forklart')}>
                     <BeholdningAndPensjonspoengForklartPanel andelPensjonBasertPaBeholdning={andelPensjonBasertPaBeholdning} fodselsar={fodselsar}/>
                 </section>
             )
