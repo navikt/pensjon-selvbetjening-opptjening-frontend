@@ -5,6 +5,8 @@ metadata:
   namespace: pensjonselvbetjening
   labels:
     team: pensjonselvbetjening
+  annotations:
+    nais.io/security-does-not-matter: "true"
 spec:
   image: {{ image_dev_sbs }}
   port: 8080
