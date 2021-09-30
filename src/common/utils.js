@@ -2,7 +2,7 @@ import i18n from "i18next";
 
 export const formatAmount = (amount) => {
     if (amount !== null) {
-        return Intl.NumberFormat(getCurrentLocale(),
+        return Intl.NumberFormat("nb-NO",
             {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
@@ -14,7 +14,7 @@ export const formatAmount = (amount) => {
 
 export const formatNumber = (number) => {
     if (number !== null) {
-        return number.toLocaleString(getCurrentLocale(), {minimumFractionDigits: 2, maximumFractionDigits: 2})
+        return number.toLocaleString("nb-NO", {minimumFractionDigits: 2, maximumFractionDigits: 2})
     }
 };
 
