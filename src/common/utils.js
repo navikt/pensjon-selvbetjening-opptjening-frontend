@@ -2,8 +2,7 @@ import i18n from "i18next";
 
 export const formatAmount = (amount) => {
     if (amount !== null) {
-        // Use Swedish while nb-NO is broken in Chrome:
-        return Intl.NumberFormat('sv-SE',
+        return Intl.NumberFormat(getCurrentLocale(),
             {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
@@ -15,8 +14,7 @@ export const formatAmount = (amount) => {
 
 export const formatNumber = (number) => {
     if (number !== null) {
-        // Use Swedish while nb-NO is broken in Chrome:
-        return number.toLocaleString("sv-SE", {minimumFractionDigits: 2, maximumFractionDigits: 2})
+        return number.toLocaleString(getCurrentLocale(), {minimumFractionDigits: 2, maximumFractionDigits: 2})
     }
 };
 
@@ -33,12 +31,12 @@ export const getCurrentLocale = () => {
     const language = i18n.language;
     switch (language) {
         case "nb":
-            return "no-NO";
+            return "nb-NO";
         case "nn":
-            return "no-NO";
+            return "nb-NO";
         case "en":
             return "en-GB";
         default:
-            return "no-NO";
+            return "nb-NO";
     }
 }
