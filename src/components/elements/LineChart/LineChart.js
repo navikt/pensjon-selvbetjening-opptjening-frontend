@@ -152,7 +152,7 @@ export const LineChart = (props) => {
                 ctx.stroke();
                 ctx.restore();
             }
-        }
+        },
     });
 
     const chartConfig = {
@@ -177,7 +177,7 @@ export const LineChart = (props) => {
             responsive: true,
             maintainAspectRatio: false,
             animation: {
-                duration: 0
+                duration: 0,
             },
             onHover: (event, chartElement) => {
                 event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
@@ -297,7 +297,6 @@ export const LineChart = (props) => {
 
     const [visibleComponent, setVisibleComponent] = useState(initialState);
     const [showAll, setShowAll] = useState(false);
-
     const {dataRows, dataListItems} = buildDataForTableAndListView(tableMap, userGroup, showAll, t);
 
     const toggleVisibleComponent = (component) => {
@@ -332,8 +331,8 @@ export const LineChart = (props) => {
         tableButton = "selected";
     }
 
-    const ChartKnapp = (props) => {return (<Knapp mini className={chartButton + " " + props.className} onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>)}
-    const TableKnapp = (props) => {return (<Knapp mini className={tableButton + " " + props.className} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>)}
+    const ChartKnapp = (props) => {return (<Knapp id="grafknapp" mini className={chartButton + " " + props.className} onClick={() => toggleVisibleComponent("chart")}>{t('chart-graf')}</Knapp>)}
+    const TableKnapp = (props) => {return (<Knapp id="tabellknapp" mini className={tableButton + " " + props.className} onClick={() => toggleVisibleComponent("table")}>{t('chart-tabell')}</Knapp>)}
 
     let title, buttons;
     if(userGroup === BORN_AFTER_1962) {
@@ -370,7 +369,7 @@ export const LineChart = (props) => {
                 {t('chart-text2')}
             </p>
             <div className={chartClass} data-testid="chartContainer">
-                <canvas ref={chartRef}  aria-label={t('chart-aria-label')} role="img"/>
+                <canvas ref={chartRef} aria-label={t('chart-aria-label')} role="img"/>
             </div>
             <div className={tableClass} data-testid="dataContainer">
                 <div className="tableContainer">

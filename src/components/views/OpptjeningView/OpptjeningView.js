@@ -56,13 +56,13 @@ export const OpptjeningView = () => {
     const ForklartSection = () =>{
         if(userGroup===BORN_AFTER_1962){
             return (
-                <section aria-labelledby={t('pensjonsbeholdning-forklart')}>
+                <section aria-labelledby={t('pensjonsbeholdning-forklart')} id="forklartseksjon">
                     <BeholdningForklartPanel/>
                 </section>
             )
         } else if(userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962){
             return (
-                <section aria-labelledby={t('beholdning-and-pensjonspoeng-forklart')}>
+                <section aria-labelledby={t('beholdning-and-pensjonspoeng-forklart')} id="forklartseksjon">
                     <BeholdningAndPensjonspoengForklartPanel andelPensjonBasertPaBeholdning={andelPensjonBasertPaBeholdning} fodselsar={fodselsar}/>
                 </section>
             )
@@ -93,7 +93,7 @@ export const OpptjeningView = () => {
                             <BeholdningPanel data={latestPensjonsBeholdning}/>
                         </section>
                         <ForklartSection/>
-                        <section aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
+                        <section id="inntektmedmerknadpanel" aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
                             <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup} antallAarPensjonsPoeng={antallAarPensjonsPoeng}/>
                         </section>
                         <section aria-labelledby="chartTitle">
@@ -105,7 +105,7 @@ export const OpptjeningView = () => {
                                 />
                             </Panel>
                         </section>
-                        <section aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
+                        <section id="din-okning-aar-for-aar" aria-label={"title " + t('opptjening-details-din-okning-ar-for-ar')}>
                             <OpptjeningDetailsPanel data={{opptjening}} currentYear={currentYear} yearArray={yearArray}
                                                     onChange={selectYear} userGroup={userGroup} hasOmsorgsOpptjeningTwoYearsBack={hasOmsorgsOpptjeningTwoYearsBack}/>
                         </section>
@@ -123,7 +123,7 @@ export const OpptjeningView = () => {
                             <OverforeOmsorgsOpptjeningPanel/>
                         </section>
                     }
-                    <section aria-label={"title " + t('opptjening-flere-steder-title')}>
+                    <section id="opptjening-flere-steder" aria-label={"title " + t('opptjening-flere-steder-title')}>
                         <OpptjeningFlereStederPanel/>
                     </section>
                     <section>
