@@ -23,6 +23,3 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test -- --watchAll=false
-      - name: Run Visual tests
-        uses: cypress-io/github-action@v2
-        run: npm run testcy
