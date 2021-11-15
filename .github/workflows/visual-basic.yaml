@@ -4,19 +4,44 @@ jobs:
   cypress-run:
     runs-on: ubuntu-20.04
     steps:
+      - name: Use Node.js v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Print env variables
+        run: |
+          npm i -g @bahmutov/print-env
+          print-env GITHUB
       - uses: actions/cache@v1
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Install dependencies
-        run: npm ci
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - name: Cache Cypress binary
+        uses: actions/cache@v1
         with:
-          start: npm run dev
-          wait-on: 'http://localhost:3000/pensjon/opptjening'
-          headless: true
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            cypress-${{ runner.os }}-cypress-
+      - name: install dependencies and verify Cypress
+        env:
+          # make sure every Cypress install prints minimal information
+          CI: 1
+        # print Cypress and OS info
+        run: |
+          npm ci
+          npx cypress verify
+          npx cypress info
+          npx cypress version
+          npx cypress version --component package
+          npx cypress version --component binary
+          npx cypress version --component electron
+          npx cypress version --component node
+      - name: Cypress run
+        run: npm run testcy
+        env:
+          TERM: xterm

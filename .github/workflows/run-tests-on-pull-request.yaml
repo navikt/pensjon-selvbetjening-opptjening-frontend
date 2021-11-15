@@ -1,6 +1,10 @@
 name: Test code
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - master
+
 
 jobs:
   run-tests:
@@ -19,5 +23,3 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test -- --watchAll=false
-      - name: Run Visual tests
-        run: npm run testcy
