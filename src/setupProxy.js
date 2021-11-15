@@ -4,7 +4,7 @@ module.exports = function(app) {
         '/pensjon/opptjening/api/opptjening',
         createProxyMiddleware({
             //target: 'http://localhost:8080/api/opptjening',
-            target: 'http://localhost:4000/opptjening',
+            target: 'http://127.0.0.1:4000/opptjening',
             changeOrigin: true,
             pathRewrite: {
                 //'^/pensjon/opptjening/api/opptjening' : '/'
@@ -16,7 +16,7 @@ module.exports = function(app) {
         '/pensjon/opptjening/api/unleash',
         createProxyMiddleware({
            // target: 'http://localhost:8080/api/unleash',
-            target: 'http://localhost:4000/unleash',
+            target: 'http://127.0.0.1:4000/unleash',
             changeOrigin: true,
             pathRewrite: {
                // '^/pensjon/opptjening/api/unleash' : '/'
