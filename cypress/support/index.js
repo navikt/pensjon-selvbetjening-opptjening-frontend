@@ -18,3 +18,11 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+require('cypress-failed-log')
+// cypress/plugins/index.js
+module.exports = (on, config) => {
+    on('task', {
+        failed: require('cypress-failed-log/src/failed')(),
+    })
+}
