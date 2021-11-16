@@ -74,18 +74,19 @@
   "homepage": "/pensjon/opptjening/",
   "scripts": {
     "prebuild": "node src/doc/doc.js && copyfiles -f src/doc/images/*.* public/doc/images",
-    "start": "HOST=127.0.0.1 craco start",
+    "start": "craco start",
     "build": "craco build",
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu craco test --env=jsdom",
     "eject": "craco eject",
-    "dev": "node run.js",
+    "dev": "CI=false NODE_ENV=development node run.js",
     "cypress:interactive": "cypress open",
     "cy:run:headed": "cypress run --headed --no-exit",
     "testcy:headed": "start-server-and-test dev http://localhost:3000 cy:run:headed",
     "cy:run": "cypress run --browser chrome",
-    "testcy": "BROWSER=none start-server-and-test dev http-get://127.0.0.1:3000 cy:run",
+    "testcy": "NODE_ENV=development BROWSER=none start-server-and-test dev http-get://127.0.0.1:3000 cy:run",
     "cy:run:update": "cypress run --env updateSnapshots=true",
-    "cypress:update": "start-server-and-test dev http://localhost:3000 cy:run:update"
+    "cypress:update": "start-server-and-test dev http://localhost:3000 cy:run:update",
+    "json-server": "json-server --host 127.0.0.1 --port 3000 --watch dev/mock.json --routes dev/routes.json"
   },
   "eslintConfig": {
     "extends": "react-app"
