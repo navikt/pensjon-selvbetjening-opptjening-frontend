@@ -1,4 +1,11 @@
 describe('Opptjening forside', () => {
+    it('vg', () => {
+        cy.viewport(1000, 660); //default
+        cy.visit('https://www.google.no//');
+        cy.matchImageSnapshot({
+            capture: 'fullPage',
+        });
+    })
     it('cypress', () => {
         cy.viewport(1000, 660); //default
         cy.visit('/', {

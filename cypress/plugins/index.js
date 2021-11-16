@@ -19,14 +19,8 @@
 const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin')
 
 module.exports = (on, config) => {
-    on('before:browser:launch', (browser = {}, launchOptions) => {
-        if (browser.name === 'electron' && browser.isHeadless) {
-            launchOptions.preferences.width = 666;
-            launchOptions.preferences.height = 1000;
-            launchOptions.preferences.frame = false;
-            launchOptions.preferences.useContentSize = true;
-        }
-    });
-
-    addMatchImageSnapshotPlugin(on, config)
+    addMatchImageSnapshotPlugin(on, config);
+    on('task', {
+        failed: require('cypress-failed-log/src/failed')(),
+    })
 }
