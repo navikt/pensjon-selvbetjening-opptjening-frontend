@@ -3,8 +3,12 @@ const app = express();
 const PORT = 3000;
 const path = require('path')
 
-console.log(__dirname)
+console.log(__dirname+"/build")
+const fs = require('fs');
 
+fs.readdirSync(__dirname).forEach(file => {
+    console.log(file);
+});
 app.use(function (req, res, next) {
     console.log("The file " + req.url + " was requested.");
     next();
