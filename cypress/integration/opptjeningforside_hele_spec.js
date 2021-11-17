@@ -8,10 +8,6 @@ describe('Opptjening forside', () => {
             })
 
         cy.visit('http://127.0.0.1:3000/pensjon/opptjening', {
-            onBeforeLoad(win) {
-                cy.stub(win.console, 'log').as('consoleLog')
-                cy.stub(win.console, 'error').as('consoleError')
-            },
             log: true,
         }) // change URL to match your dev URL
 
