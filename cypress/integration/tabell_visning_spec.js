@@ -7,7 +7,7 @@ describe('Opptjening forside tabell', () => {
         cy.get("#tabellknapp").should("be.visible");//vent til knapp vises
         cy.get("#tabellknapp").click();
         cy.matchImageSnapshot({
-            capture: 'viewport',
+            capture: 'fullPage',
         });
     })
 })

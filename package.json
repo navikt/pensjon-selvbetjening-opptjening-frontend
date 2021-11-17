@@ -85,7 +85,7 @@
     "cy:run:headed": "cypress run --headed --no-exit",
     "testcy:headed": "start-server-and-test dev http://localhost:3000 cy:run:headed",
     "cy:run": "cypress run --browser chrome",
-    "testcy": "DEBUG=cypress:* BROWSER=none start-server-and-test express http-get://127.0.0.1:3000 cy:run",
+    "testcy": "BROWSER=none start-server-and-test express http-get://127.0.0.1:3000 cy:run",
     "cy:run:update": "cypress run --env updateSnapshots=true",
     "cypress:update": "start-server-and-test dev http://localhost:3000 cy:run:update",
     "json-server": "json-server --host 127.0.0.1 --port 3000 --watch dev/mock.json --routes dev/routes.json",
