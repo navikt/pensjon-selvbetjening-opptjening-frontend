@@ -20,6 +20,7 @@
     "copyfiles": "^2.4.1",
     "craco-less": "1.17.0",
     "env-cmd": "^10.1.0",
+    "express": "~4.17.1",
     "history": "^5.0.0",
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
@@ -58,6 +59,7 @@
     "nav-frontend-veileder-style": "^2.1.1",
     "nav-frontend-veilederpanel": "^0.1.29",
     "nav-frontend-veilederpanel-style": "0.0.29",
+    "path": "~0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-collapse": "^5.0.1",
@@ -83,10 +85,11 @@
     "cy:run:headed": "cypress run --headed --no-exit",
     "testcy:headed": "start-server-and-test dev http://localhost:3000 cy:run:headed",
     "cy:run": "cypress run --browser chrome",
-    "testcy": "NODE_ENV=development BROWSER=none start-server-and-test dev http-get://127.0.0.1:3000 cy:run",
+    "testcy": "BROWSER=none start-server-and-test express http-get://127.0.0.1:3000 cy:run",
     "cy:run:update": "cypress run --env updateSnapshots=true",
     "cypress:update": "start-server-and-test dev http://localhost:3000 cy:run:update",
-    "json-server": "json-server --host 127.0.0.1 --port 3000 --watch dev/mock.json --routes dev/routes.json"
+    "json-server": "json-server --host 127.0.0.1 --port 3000 --watch dev/mock.json --routes dev/routes.json",
+    "express": "node expressServer.js"
   },
   "eslintConfig": {
     "extends": "react-app"

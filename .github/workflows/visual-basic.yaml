@@ -41,7 +41,9 @@ jobs:
           npx cypress version --component binary
           npx cypress version --component electron
           npx cypress version --component node
-      - name: Cypress run
+      - name: Run build
+        run: npm run build
+      - name: Cypress run with express.js
         run: npm run testcy
         env:
           TERM: xterm

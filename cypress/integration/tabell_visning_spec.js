@@ -1,5 +1,6 @@
 describe('Opptjening forside tabell', () => {
-    it('cypress', () => {
+    it('tabell', () => {
+        cy.viewport(1000, 660); //default
         cy.visit('http://127.0.0.1:3000/pensjon/opptjening') // change URL to match your dev URL
 
         cy.get("#tabellknapp").scrollIntoView();

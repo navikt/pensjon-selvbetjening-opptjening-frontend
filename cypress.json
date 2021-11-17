@@ -1,6 +1,6 @@
 {
   "baseUrl": "http://127.0.0.1:3000/pensjon/opptjening",
-  "viewportHeight": 660,
   "viewportWidth": 1000,
+  "viewportHeight": 660,
   "chromeWebSecurity": false
 }
