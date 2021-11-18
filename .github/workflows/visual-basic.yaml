@@ -44,6 +44,6 @@ jobs:
       - name: Run build
         run: npm run build
       - name: Cypress run with express.js
-        run: npm run testcy
+        run: npm run test:cycli
         env:
           TERM: xterm
