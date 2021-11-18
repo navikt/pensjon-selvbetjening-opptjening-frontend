@@ -820,4 +820,4 @@ app.get('/*', function (req, res, next) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(PORT, 'localhost', () => console.log(`Server listening on port: ${PORT}`));
+app.listen(PORT, '172.17.0.1', () => console.log(`Server listening on port: ${PORT}`));
