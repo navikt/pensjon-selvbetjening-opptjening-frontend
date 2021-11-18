@@ -89,7 +89,7 @@
     "cypress:update": "start-server-and-test dev http://localhost:3000 cy:run:update",
     "json-server": "json-server --host 127.0.0.1 --port 3000 --watch dev/mock.json --routes dev/routes.json",
     "express": "node expressServer.js",
-    "cypress-docker": "docker run -it -e --ipc=host -v $PWD:/e2e -w /e2e -e CYPRESS_baseUrl=http://host.docker.internal:3000 cypress/included:9.0.0 --browser chrome",
+    "cypress-docker": "docker run -i -e --ipc=host -v $PWD:/e2e -w /e2e -e CYPRESS_baseUrl=http://host.docker.internal:3000 cypress/included:9.0.0 --browser chrome",
     "test:cycli": "start-server-and-test express http://localhost:3000 cypress-docker"
   },
   "eslintConfig": {
