@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:3000",
+  "baseUrl": "http://host.docker.internal:3000",
   "viewportWidth": 1000,
   "viewportHeight": 660,
   "chromeWebSecurity": false,
