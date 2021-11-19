@@ -80,7 +80,7 @@
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu craco test --env=jsdom",
     "eject": "craco eject",
     "dev": "CI=false NODE_ENV=development node run.js",
-    "cypress:interactive": "cypress open",
+    "cypress:interactive": "CYPRESS_baseUrl=http://127.0.0.1:3000 cypress open",
     "cy:run:headed": "cypress run --headed --no-exit",
     "testcy:headed": "start-server-and-test dev http://localhost:3000 cy:run:headed",
     "cy:run": "cypress run --browser chrome",
