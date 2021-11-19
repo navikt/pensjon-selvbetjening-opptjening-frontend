@@ -30,7 +30,7 @@ jobs:
       - name: Run tests
         run: npm test -- --watchAll=false
       - name: Run build
-        run: npm run build
+        run: REACT_APP_DECORATOR_URL=https://dekoratoren.ekstern.dev.nav.no npm run build
       - name: Cypress run with express.js
         run: npm run test:cycli
         env:
