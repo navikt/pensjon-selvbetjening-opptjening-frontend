@@ -44,6 +44,6 @@ jobs:
       - name: Run build
         run: npm run build
       - name: Cypress run with express.js
-        run: npm run test:cycli
+        run: HOST=172.17.0.1 npm run test:cycli #172.17.0.1 = docker.internal.host on linux
         env:
           TERM: xterm

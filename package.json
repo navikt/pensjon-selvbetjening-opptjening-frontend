@@ -90,7 +90,8 @@
     "json-server": "json-server --host 127.0.0.1 --port 3000 --watch dev/mock.json --routes dev/routes.json",
     "express": "node expressServer.js",
     "cypress-docker": "docker run --add-host=host.docker.internal:host-gateway -i -v $PWD:/e2e -w /e2e -e CYPRESS_baseUrl=http://host.docker.internal:3000 cypress/included:9.0.0 --browser chrome",
-    "test:cycli": "start-server-and-test express http://172.17.0.1:3000 cypress-docker"
+    "test:cycli": "start-server-and-test express http://$HOST:3000 cypress-docker",
+    "cypress:docker:local": "HOST=127.0.0.1 npm run test:cycli"
   },
   "eslintConfig": {
     "extends": "react-app"

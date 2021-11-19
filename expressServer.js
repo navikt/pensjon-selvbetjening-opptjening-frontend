@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
 const path = require('path')
 const fs = require('fs');
-
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || "127.0.0.1";
 console.log("hosted directory: ",__dirname);
 
 fs.readdirSync(__dirname+"/build").forEach(file => {
@@ -820,4 +820,4 @@ app.get('/*', function (req, res, next) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(PORT, '172.17.0.1', () => console.log(`Server listening on port: ${PORT}`));
+app.listen(PORT, HOST, () => console.log(`Server listening on port: ${PORT}`));
