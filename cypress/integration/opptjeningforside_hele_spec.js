@@ -9,7 +9,7 @@ describe('Opptjening forside', () => {
 
         cy.visit('/pensjon/opptjening', {
             log: true,
-        }) // change URL to match your dev URL
+        });
 
         cy.get("#forklartseksjon").click();
         cy.get("#inntektmedmerknadpanel").click();

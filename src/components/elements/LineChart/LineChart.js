@@ -397,7 +397,7 @@ export const LineChart = (props) => {
                             </Lenke>
                         }
                         {!showAll &&
-                            <Lenke href="#" onClick={(event) => toggleShowAll(event, !showAll)}>
+                            <Lenke id="tabell-vis-alle-knapp" href="#" onClick={(event) => toggleShowAll(event, !showAll)}>
                                 {t('chart-vis-alle-aar')}<br/>
                                 <NedChevron/>
                             </Lenke>
