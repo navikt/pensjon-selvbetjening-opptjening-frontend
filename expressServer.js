@@ -24,7 +24,7 @@ app.use("/pensjon/opptjening", express.static( 'build')); //handles static prefi
 
 app.get('/pensjon/opptjening/api/opptjening', (req, res) => {
     console.log('serves initial data')
-    res.json({
+    const opptjeningresponse = {
         "opptjeningData": {
             "1989": {
                 "pensjonsgivendeInntekt": 0,
@@ -808,7 +808,8 @@ app.get('/pensjon/opptjening/api/opptjening', (req, res) => {
         "mellomnavn": "TESTER",
         "etternavn": "TESTESEN",
         "andelPensjonBasertPaBeholdning": 10
-    })
+    };
+    res.json(opptjeningresponse);
 });
 
 app.get('/*', function (req, res, next) {

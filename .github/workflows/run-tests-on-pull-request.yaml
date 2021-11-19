@@ -1,9 +1,6 @@
 name: Test code
 
-on:
-  pull_request:
-    branches:
-      - master
+on: [push]
 
 
 jobs:
@@ -23,3 +20,9 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test -- --watchAll=false
+      - name: Run build
+        run: npm run build
+      - name: Cypress run with express.js
+        run: npm run test:cycli #172.17.0.1 = docker.internal.host on linux
+        env:
+          HOST: "172.17.0.1"
