@@ -35,7 +35,7 @@ jobs:
           npx cypress version --component electron
           npx cypress version --component node
       - name: Run build
-        run: npm run build
+        run: npm run build:cypress
       - name: Cypress run with express.js
         run: npm run test:cycli #172.17.0.1 = docker.internal.host on linux
         env:
