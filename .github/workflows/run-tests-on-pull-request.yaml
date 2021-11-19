@@ -8,6 +8,10 @@ jobs:
     name: Run unit tests
     runs-on: ubuntu-latest
     steps:
+      - name: Use Node.js v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
       - name: Checkout
         uses: actions/checkout@v2
       - uses: actions/cache@v1
@@ -31,3 +35,9 @@ jobs:
         run: npm run test:cycli
         env:
           HOST: "172.17.0.1" #172.17.0.1 = docker.internal.host on linux
+      - name: Upload screenshots if Cypress tests failed
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
