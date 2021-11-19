@@ -19,7 +19,7 @@ export const OpptjeningFlereStederPanel = () => {
         setApen(!apen);
     };
 
-    const panelTitle = <PanelTitle titleString={t('opptjening-flere-steder-title')} illustrationClass="opptjeningFlereStederIllustration" illustration={lommebok}/>;
+    const panelTitle = <PanelTitle id="opptjening-flere-steder" titleString={t('opptjening-flere-steder-title')} illustrationClass="opptjeningFlereStederIllustration" illustration={lommebok}/>;
 
     return(
         <Ekspanderbartpanel tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
@@ -46,7 +46,7 @@ export const OpptjeningFlereStederPanel = () => {
                     <span className="opptjeningMateText">{t('opptjening-flere-steder-individuell')}</span>
                 </div>
             </div>
-            <Tekstomrade>{t('opptjening-flere-steder-forklart')}</Tekstomrade>
+            <Tekstomrade id="opptjening-flere-steder-forklart">{t('opptjening-flere-steder-forklart')}</Tekstomrade>
         </Ekspanderbartpanel>
     )
 };

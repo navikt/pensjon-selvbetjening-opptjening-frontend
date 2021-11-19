@@ -16,6 +16,8 @@ describe('Opptjening forside', () => {
         cy.get("#din-okning-aar-for-aar").click();
         cy.get("#opptjening-flere-steder").should("be.visible");
         cy.get("#opptjening-flere-steder").click();
+
+        cy.get("#opptjening-flere-steder-forklart").should("be.visible");
         cy.matchImageSnapshot({
             capture: 'fullPage',
         });

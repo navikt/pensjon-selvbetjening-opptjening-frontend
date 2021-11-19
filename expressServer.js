@@ -23,7 +23,7 @@ app.get('/ping', (req, res) => {
 app.use("/pensjon/opptjening", express.static( 'build')); //handles static prefix from react "homepage"
 
 app.get('/pensjon/opptjening/api/opptjening', (req, res) => {
-    console.log('serves initial data')
+    console.log('serves opptjening data')
     const opptjeningresponse = {
         "opptjeningData": {
             "1989": {

@@ -123,7 +123,7 @@ export const OpptjeningView = () => {
                             <OverforeOmsorgsOpptjeningPanel/>
                         </section>
                     }
-                    <section id="opptjening-flere-steder" aria-label={"title " + t('opptjening-flere-steder-title')}>
+                    <section aria-label={"title " + t('opptjening-flere-steder-title')}>
                         <OpptjeningFlereStederPanel/>
                     </section>
                     <section>
