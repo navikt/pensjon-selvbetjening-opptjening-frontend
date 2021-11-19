@@ -19,7 +19,8 @@ describe('Opptjening forside', () => {
 
         cy.get("#opptjening-flere-steder-forklart").should("be.visible");
         cy.get("#opptjening-flere-steder-forklart").contains("Alle får pensjon i folketrygden. Hvis du er usikker på om du har individuell sparing eller tjenestepensjon kan du for eksempel se hos banken din eller spørre nåværende eller tidligere arbeidsgivere.");
-        cy.get("#opptjening-flere-steder-forklart").click();
+        cy.get("#opptjening-flere-steder-forklart").click({ scrollBehavior: false });
+
         cy.matchImageSnapshot({
             capture: 'fullPage',
         });
