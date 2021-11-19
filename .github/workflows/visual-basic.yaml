@@ -10,10 +10,6 @@ jobs:
           node-version: 12
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Print env variables
-        run: |
-          npm i -g @bahmutov/print-env
-          print-env GITHUB
       - uses: actions/cache@v1
         with:
           path: ~/.npm
@@ -28,9 +24,6 @@ jobs:
           restore-keys: |
             cypress-${{ runner.os }}-cypress-
       - name: install dependencies and verify Cypress
-        env:
-          # make sure every Cypress install prints minimal information
-          CI: 1
         # print Cypress and OS info
         run: |
           npm ci
@@ -47,3 +40,9 @@ jobs:
         run: npm run test:cycli #172.17.0.1 = docker.internal.host on linux
         env:
           HOST: "172.17.0.1"
+      - name: Upload screenshots if Cypress tests failed
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
