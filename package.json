@@ -89,8 +89,8 @@
     "cypress:update": "start-server-and-test dev http://localhost:3000 cy:run:update",
     "express": "node expressServer.js",
     "cypress-docker": "docker run --add-host=host.docker.internal:host-gateway -i -v $PWD:/e2e -w /e2e -e CYPRESS_baseUrl=http://host.docker.internal:3000 cypress/included:9.0.0 --browser chrome",
-    "test:cycli": "start-server-and-test express http://$HOST:3000 cypress-docker",
-    "cypress:docker:local": "HOST=127.0.0.1 npm run test:cycli"
+    "test:cycli": "cross-env start-server-and-test express http://$HOST:3000 cypress-docker",
+    "cypress:docker:local": "cross-env HOST=127.0.0.1 npm run test:cycli"
   },
   "eslintConfig": {
     "extends": "react-app"
