@@ -23,6 +23,33 @@ Bruk `npm run dev` for å kjøre appen i utviklingsmodus.<br/>
 Åpne [http://localhost:3000/pensjon/opptjening](http://localhost:3000/pensjon/opptjening) for å se den i nettleser.
 App'en kjører da opp en lokal JSON-server som mocker data.
 
+## Visuelle tester
+Testene skal kjøres i docker før de oppdateres. Man kan kjøre både i docker og uten lokalt.
+Testene baserer seg på produksjonsbygget med spesial URL for dekoratøren. Dermed må 
+man bygge for å få ønsket resultat med `npm run build:cypress`.
+Kjøre tester lokalt i docker container: `npm run cypress:docker:local`
+Oppdatere baseline images lokalt: `npm run update:cypress:docker:images` (Må pushe nye bilder til branch)
+Cyress test runner: `npm run cypress:interactive` krever at express serveren allerede kjører => `npm run express`
+Github actions kjøres med `Cypress-integration.yaml` Her er ip adressen satt pga at docker 
+ikke fungerer med vanlig `localhost` på linux. 
+- Hvis testene feiler på `github actions` kan man laste ned diffen fra jobben. Under "Where does the upload go?"
+Her: [https://github.com/actions/upload-artifact]
+
+Cypress testene kjøres i docker fra dette repoet [https://github.com/cypress-io/cypress-docker-images/tree/master/included].
+
+Vi intercepter kall mot innloggingsstatus for dekoratøren for at det skal fungere likt på 
+GA og lokalt uten naisdevice.
+
+#Feilsøking:
+Legg til `DEBUG=cypress:*` som en enviroment variabel med `-e` før `cypress/included` i docker kommandoen.
+Evt se her: [https://github.com/cypress-io/cypress-docker-images/tree/master/included].
+
+Bildene vi bryr oss om ligger under `cypress/snapshots/navn på testfil/bilde.png`.
+Ved `bilde.png` vil det komme opp et diff bilde hvis det avviker fra baselinen.
+Vi bruker `cypress-image-snapshot` som er en wrapper for `https://github.com/americanexpress/jest-image-snapshot`
+som lar oss ha sømløs integrering mot jest.
+I bunn ligger pixelmatch [https://github.com/mapbox/pixelmatch].
+
 ## Available Scripts
 
 In the project directory, you can run :

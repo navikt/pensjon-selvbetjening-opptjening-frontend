@@ -177,7 +177,7 @@ export const LineChart = (props) => {
             responsive: true,
             maintainAspectRatio: false,
             animation: {
-                duration: 0,
+                duration: 0
             },
             onHover: (event, chartElement) => {
                 event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';

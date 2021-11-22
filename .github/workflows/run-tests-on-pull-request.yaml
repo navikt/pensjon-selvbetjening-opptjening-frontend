@@ -2,7 +2,6 @@ name: Test code
 
 on: [push]
 
-
 jobs:
   run-tests:
     name: Run unit tests
@@ -29,15 +28,3 @@ jobs:
           npx cypress version --component package
       - name: Run tests
         run: npm test -- --watchAll=false
-      - name: Run build
-        run: npm run build:cypress
-      - name: Cypress run with express.js
-        run: npm run test:cycli
-        env:
-          HOST: "172.17.0.1" #172.17.0.1 = docker.internal.host on linux
-      - name: Upload screenshots if Cypress tests failed
-        uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: cypress-snapshots
-          path: cypress/snapshots

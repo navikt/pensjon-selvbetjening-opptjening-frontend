@@ -19,12 +19,6 @@
 const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin')
 
 module.exports = (on, config) => {
-    on('before:browser:launch', (browser, launchOptions) => {
-        if (browser.name === 'chrome' && browser.isHeadless) {
-            launchOptions.args.push('--disable-gpu');
-            return launchOptions
-        }
-    });
     addMatchImageSnapshotPlugin(on, config);
     on('task', {
         failed: require('cypress-failed-log/src/failed')(),

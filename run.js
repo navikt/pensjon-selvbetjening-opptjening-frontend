@@ -5,7 +5,7 @@ let filename = args.length > 0 ? args[0] : "mock.json";
 
 concurrently(
     [
-        { command: 'npm:start HOST=127.0.0.1', prefixColor: 'blue', name: 'pensjon-selvbetjening-opptjening' },
+        { command: 'npm:start', prefixColor: 'blue', name: 'pensjon-selvbetjening-opptjening' },
         { command: 'json-server --port 4000 --watch dev/' + filename, prefixColor: 'magenta', name: 'json-server' }
     ],
     {
