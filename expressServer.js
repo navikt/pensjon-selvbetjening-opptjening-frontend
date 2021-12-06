@@ -804,7 +804,7 @@ app.get('/pensjon/opptjening/api/opptjening', (req, res) => {
         },
         "numberOfYearsWithPensjonspoeng": null,
         "fodselsaar": 1972,
-        "fornavn": "Test",
+        "fornavn": "Oda",
         "mellomnavn": "TESTER",
         "etternavn": "TESTESEN",
         "andelPensjonBasertPaBeholdning": 10
