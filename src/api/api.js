@@ -40,11 +40,11 @@ const serverRequest = (method, urlPath) => {
         }).then((response) => {
             resolve(response)
         })
-            .catch((error) => {
-                const errorstring = `Failed to parse JSON on: " ${urlPath} " reason: " ${error.message}`;
+            .catch((reason) => {
+                const errorstring = `Failed to parse JSON on: " ${urlPath} " reason: " ${reason.message}`;
                 const errorapi = new Error(errorstring);
                 console.error(errorapi);
-                reject(errorapi)
+                reject(reason)
             });
     });
 };
