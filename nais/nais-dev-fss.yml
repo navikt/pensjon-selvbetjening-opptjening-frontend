@@ -6,7 +6,8 @@ metadata:
   labels:
     team: pensjonselvbetjening
   annotations:
-    nais.io/security-does-not-matter: "true"
+    nais.io/run-as-user: "101" # nginx
+    nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
 spec:
   image: {{ image_dev_fss }}
   port: 8080

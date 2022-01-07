@@ -5,6 +5,9 @@ metadata:
   namespace: pensjonselvbetjening
   labels:
     team: pensjonselvbetjening
+  annotations:
+    nais.io/run-as-user: "101" # nginx
+    nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
 spec:
   image: {{ image_prod_fss }}
   port: 8080
