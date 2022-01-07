@@ -1,19 +1,7 @@
-FROM node:carbon
+FROM nginxinc/nginx-unprivileged
 
-WORKDIR /app
-
-RUN apt-get update && apt-get -y install nginx && apt-get -y install gettext-base
-
-# NGINX
-COPY nginx/fss.conf /etc/nginx/conf.d/app.conf.template
 COPY /build /usr/share/nginx/html
 
-# NODE
-COPY node_modules/ ./node_modules/
-COPY nginx/startup-fss.sh ./startup.sh
+# Will extract environment variables before nginx starts (ref. https://hub.docker.com/_/nginx):
+COPY nginx/fss.conf /etc/nginx/templates/app.conf.template
 
-RUN chmod 744 ./startup.sh
-
-EXPOSE 8080
-
-CMD ./startup.sh
