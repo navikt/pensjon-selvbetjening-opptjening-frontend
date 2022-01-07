@@ -34,9 +34,18 @@ const serverRequest = (method, urlPath) => {
         fetch(urlPath, OPTIONS)
             .then((response) => {
                 verifyStatusSuccessOrRedirect(response);
-                resolve(response.json());
-            })
-            .catch((reason) => reject(reason));
+                return response;
+            }).then((response) => {
+            return response.json();
+        }).then((response) => {
+            resolve(response)
+        })
+            .catch((error) => {
+                const errorstring = `Failed to parse JSON on: " ${urlPath} " reason: " ${error.message}`;
+                const errorapi = new Error(errorstring);
+                console.error(errorapi);
+                reject(errorapi)
+            });
     });
 };
 
