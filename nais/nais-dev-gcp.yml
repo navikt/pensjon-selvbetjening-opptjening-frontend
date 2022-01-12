@@ -34,4 +34,4 @@ spec:
     - "https://www-gcp.dev.nav.no/pensjon/opptjening"
   env:
     - name: "OPPTJENING_BACKEND"
-      value: "https://pensjon-selvbetjening-opptjening-backend.dev.nav.no"
+      value: "https://pensjon-selvbetjening-opptjening-backend.dev-fss-pub.nais.io"
