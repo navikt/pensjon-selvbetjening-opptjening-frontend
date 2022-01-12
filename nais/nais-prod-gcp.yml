@@ -24,6 +24,11 @@ spec:
     path: "/api/internal/isReady"
     initialDelay: 30
     timeout: 1
+  accessPolicy:
+    outbound:
+      rules:
+        - application: pensjon-selvbetjening-opptjening-backend
+          cluster: prod-fss
   ingresses:
     - "https://pensjon-selvbetjening-opptjening-frontend.intern.nav.no"
     - "https://www.nav.no/pensjon/opptjening"
