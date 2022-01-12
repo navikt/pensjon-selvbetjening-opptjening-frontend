@@ -7,7 +7,7 @@ jobs:
     name: Deploy to dev-gcp
     runs-on: ubuntu-latest
     env:
-      IMAGE_DEV_SBS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-dev-gcp:${{ github.sha }}
+      IMAGE_DEV_GCP: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-dev-gcp:${{ github.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
