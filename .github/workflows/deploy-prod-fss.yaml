@@ -10,7 +10,7 @@ jobs:
     name: Deploy to prod-fss
     runs-on: ubuntu-latest
     env:
-      IMAGE_PROD_FSS: docker.pkg.github.com/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-prod-fss:${{ github.sha }}
+      IMAGE_PROD_FSS: ghcr.io/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-prod-fss:${{ github.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -37,13 +37,19 @@ jobs:
       - name: Build Docker image prod-fss
         run: |
           docker build -f Dockerfile-fss -t ${IMAGE_PROD_FSS} .
-      - name: Login to Github Package Registry
-        env:
-          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "$DOCKER_PASSWORD" | docker login --username "$GITHUB_REPOSITORY" --password-stdin docker.pkg.github.com
-      - name: Push Docker image prod-fss
-        run: "docker push ${IMAGE_PROD_FSS}"
+      - name: Log in to the container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile-fss
+          push: true
+          tags: ${{ env.IMAGE_PROD_FSS }}
       - name: Generate NAIS variables prod-fss
         run: |
           cat > nais/vars-prod-fss.yaml <<EOF
