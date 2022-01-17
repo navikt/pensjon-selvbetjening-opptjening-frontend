@@ -1,4 +1,4 @@
-describe('Opptjening forside', () => {
+describe('Opptjening-forside', () => {
     it('forside', () => {
         cy.intercept('https://innloggingsstatus.dev.nav.no/person/innloggingsstatus/auth', {
             statusCode: 200,
@@ -9,11 +9,6 @@ describe('Opptjening forside', () => {
             },
         });
         cy.viewport(1000, 660); //default
-        cy.request('/pensjon/opptjening')
-            .then((response) => {
-                expect(response.status).to.eq(200)
-                console.log('request RESPONSE', response);
-            })
 
         cy.visit('/pensjon/opptjening', {
             log: true,

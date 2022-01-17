@@ -39,6 +39,8 @@ Cypress testene kjøres i docker fra dette repoet [https://github.com/cypress-io
 
 Vi intercepter kall mot innloggingsstatus for dekoratøren for at det skal fungere likt på 
 GA og lokalt uten naisdevice.
+OBS: Dekoratørens visuelle endringer vil brekke dette bygget.
+    Ved reload av siden vil dekoratørens chatbot prompte spørsmål.
 
 #Feilsøking:
 Legg til `DEBUG=cypress:*` som en enviroment variabel med `-e` før `cypress/included` i docker kommandoen.
