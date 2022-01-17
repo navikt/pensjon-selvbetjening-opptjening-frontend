@@ -14,15 +14,16 @@ export const OpptjeningFlereStederPanel = () => {
     const [apen, setApen] = useState(false);
     const { t } = useTranslation();
 
+    const [animationFinished, setAnimationFinished] = useState("false");
     const toggleOpen = (props) => {
         logToAmplitude({eventType: CLICK_EVENT, name: "Åpne panel", titleKey: "opptjening-flere-steder-title", type: props.type, value: !apen});
         setApen(!apen);
     };
 
-    const panelTitle = <PanelTitle titleString={t('opptjening-flere-steder-title')} illustrationClass="opptjeningFlereStederIllustration" illustration={lommebok}/>;
-
+    const panelTitle = <PanelTitle id="opptjening-flere-steder" animationFinished={animationFinished} titleString={t('opptjening-flere-steder-title')} illustrationClass="opptjeningFlereStederIllustration" illustration={lommebok}/>;
+    const onRest= (args) => args.isFullyOpened && setAnimationFinished("true");
     return(
-        <Ekspanderbartpanel tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
+        <Ekspanderbartpanel collapseProps={{onRest}} tittel={panelTitle} border className="panelWrapper" apen={apen} onClick={()=>toggleOpen({type: "EkspanderbartPanel"})}>
             <Tekstomrade className="opptjeningMaterTitle">{t('opptjening-flere-steder-forklart-title')}</Tekstomrade>
             <div className="opptjeningMater">
                 <div className="opptjeningMate">
@@ -46,7 +47,7 @@ export const OpptjeningFlereStederPanel = () => {
                     <span className="opptjeningMateText">{t('opptjening-flere-steder-individuell')}</span>
                 </div>
             </div>
-            <Tekstomrade>{t('opptjening-flere-steder-forklart')}</Tekstomrade>
+            <Tekstomrade id="opptjening-flere-steder-forklart">{t('opptjening-flere-steder-forklart')}</Tekstomrade>
         </Ekspanderbartpanel>
     )
 };
