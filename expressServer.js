@@ -822,4 +822,18 @@ app.get('/*', function (req, res, next) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(PORT, HOST, () => console.log(`Server listening on port: ${PORT}`));
+const server = app.listen(PORT, HOST, () => console.log(`Server listening on port: ${PORT}`));
+
+// Do graceful shutdown
+function shutdown() {
+    console.log('graceful shutdown express');
+    server.close(function () {
+        console.log('closed express');
+    })
+    process.exit(0);
+}
+// Handle ^C(ctrl+c)
+process.on('SIGINT', shutdown);
+
+process.on('SIGTERM', shutdown);
+
