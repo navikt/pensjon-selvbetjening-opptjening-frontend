@@ -29,7 +29,7 @@ it('should call api and dispatch error action', async () => {
     const dispatched = [];
     await runSaga({dispatch: (action) => dispatched.push(action)}, fetchUnleash, {toggleNames: ["toggle1", "toggle2"]});
 
-    expect(fetchPost).toHaveBeenCalledTimes(2);
+    expect(fetchPost).toHaveBeenCalledTimes(1);
     expect(dispatched).toEqual([fetchUnleashFailure()]);
     fetchPost.mockClear();
 });
