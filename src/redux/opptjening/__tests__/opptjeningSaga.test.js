@@ -19,11 +19,11 @@ it('should call api and dispatch success action', async () => {
 
 it('should call api and dispatch error action', async () => {
     const fetchToJson = jest.spyOn(api, 'fetchToJson')
-        .mockImplementation(() => Promise.reject());
+        .mockImplementation(() => Promise.reject(new Error("Network failed")));
     const dispatched = [];
     await runSaga({dispatch: (action) => dispatched.push(action)}, fetchOpptjening);
 
     expect(fetchToJson).toHaveBeenCalledTimes(1);
-    expect(dispatched).toEqual([fetchOpptjeningFailure()]);
+    expect(dispatched).toEqual([fetchOpptjeningFailure(new Error('Network failed'))]);
     fetchToJson.mockClear();
 });
