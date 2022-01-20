@@ -3,5 +3,4 @@ FROM nginxinc/nginx-unprivileged
 COPY /build /usr/share/nginx/html
 
 # Will extract environment variables before nginx starts (ref. https://hub.docker.com/_/nginx):
-COPY nginx/gcp.conf /etc/nginx/templates/app.conf.template
-
+COPY nginx/gcp.conf /etc/nginx/templates/default.conf.template
