@@ -10,7 +10,7 @@ export const loggingStarted = (data) => {
     }
 }
 
-export const loggedSucces = () => {
+export const loggedSuccess = () => {
     return {
         type: LOGGING_SUCCESS
     }
