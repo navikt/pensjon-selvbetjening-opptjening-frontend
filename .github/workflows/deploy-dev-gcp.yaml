@@ -49,8 +49,8 @@ jobs:
           tags: ${{ env.IMAGE_DEV_GCP }}
       - name: Generate NAIS variables dev-gcp
         run: |
-          cat > nais/vars-dev-gcp.yaml <<EOF
-          namespace: default
+          cat > .nais/vars-dev-gcp.yaml <<EOF
+          namespace: pensjonselvbetjening
           image_dev_gcp: $IMAGE_DEV_GCP
           EOF
       - name: Deploy to dev-gcp
@@ -58,5 +58,5 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
-          RESOURCE: nais/nais-dev-gcp.yml
-          VARS: nais/vars-dev-gcp.yaml
+          RESOURCE: .nais/dev-gcp.yml
+          VARS: .nais/vars-dev-gcp.yaml

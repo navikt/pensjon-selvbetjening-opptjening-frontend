@@ -52,8 +52,8 @@ jobs:
           tags: ${{ env.IMAGE_PROD_FSS }}
       - name: Generate NAIS variables prod-fss
         run: |
-          cat > nais/vars-prod-fss.yaml <<EOF
-          namespace: default
+          cat > .nais/vars-prod-fss.yaml <<EOF
+          namespace: pensjonselvbetjening
           image_prod_fss: $IMAGE_PROD_FSS
           EOF
       - name: Deploy to prod-fss
@@ -61,5 +61,5 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-fss
-          RESOURCE: nais/nais-prod-fss.yml
-          VARS: nais/vars-prod-fss.yaml
+          RESOURCE: .nais/prod-fss.yml
+          VARS: .nais/vars-prod-fss.yaml

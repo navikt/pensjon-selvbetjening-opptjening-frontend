@@ -52,8 +52,8 @@ jobs:
           tags: ${{ env.IMAGE_PROD_GCP }}
       - name: Generate NAIS variables prod-gcp
         run: |
-          cat > nais/vars-prod-gcp.yaml <<EOF
-          namespace: default
+          cat > .nais/vars-prod-gcp.yaml <<EOF
+          namespace: pensjonselvbetjening
           image_prod_gcp: $IMAGE_PROD_GCP
           EOF
       - name: Deploy to prod-gcp
@@ -61,5 +61,5 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
-          RESOURCE: nais/nais-prod-gcp.yml
-          VARS: nais/vars-prod-gcp.yaml
+          RESOURCE: .nais/prod-gcp.yml
+          VARS: .nais/vars-prod-gcp.yaml

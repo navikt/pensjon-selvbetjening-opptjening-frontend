@@ -49,8 +49,8 @@ jobs:
           tags: ${{ env.IMAGE_DEV_FSS }}
       - name: Generate NAIS variables dev-fss
         run: |
-          cat > nais/vars-dev-fss.yaml <<EOF
-          namespace: default
+          cat > .nais/vars-dev-fss.yaml <<EOF
+          namespace: pensjonselvbetjening
           image_dev_fss: $IMAGE_DEV_FSS
           EOF
       - name: Deploy to dev-fss
@@ -58,5 +58,5 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-fss
-          RESOURCE: nais/nais-dev-fss.yml
-          VARS: nais/vars-dev-fss.yaml
+          RESOURCE: .nais/dev-fss.yml
+          VARS: .nais/vars-dev-fss.yaml
