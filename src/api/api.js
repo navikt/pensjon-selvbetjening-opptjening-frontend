@@ -1,12 +1,13 @@
 import {isDev} from "../common/utils";
 import {logger} from "../common/logging";
 
-const RequestMethod = {
+export const RequestMethod = {
     GET: "GET",
-    POST: "POST"
+    POST: "POST",
+    PUT: "PUT"
 };
 
-const serverRequestPost = (method, urlPath, body) => {
+export const serverRequestWithData = (method, urlPath, body) => {
     const OPTIONS = {
         method: method,
         credentials: getCredentialsParam(),
@@ -79,5 +80,5 @@ export function fetchPost(urlPath, body) {
     if (isDev()) {
         return serverRequest(RequestMethod.GET, urlPath);
     }
-    return serverRequestPost(RequestMethod.POST, urlPath, body);
+    return serverRequestWithData(RequestMethod.POST, urlPath, body);
 }
