@@ -18,7 +18,7 @@ export const serverRequestWithData = (method, urlPath, body) => {
     return new Promise((resolve, reject) => {
         fetch(urlPath, OPTIONS)
             .then((response) => {
-                verifyStatusSuccessOrRedirect(response);
+                verifyStatusSuccessOrRedirect(response, urlPath);
                 resolve(response.json());
             })
             .catch((reason) => reject(reason));
@@ -34,7 +34,7 @@ const serverRequest = (method, urlPath) => {
     return new Promise((resolve, reject) => {
         fetch(urlPath, OPTIONS)
             .then((response) => {
-                verifyStatusSuccessOrRedirect(response);
+                verifyStatusSuccessOrRedirect(response, urlPath);
                 return response;
             }).then((response) => {
             return response.json();
@@ -44,13 +44,15 @@ const serverRequest = (method, urlPath) => {
             .catch((reason) => {
                 const errorstring = `Failed to parse JSON on: " ${urlPath} " reason: " ${reason.message}`;
                 const errorapi = new Error(errorstring);
-                console.error(errorapi);
+                if(!urlPath.includes("/api/logg")) {
+                    console.error(errorapi);
+                }
                 reject(reason)
             });
     });
 };
 
-function verifyStatusSuccessOrRedirect(response) {
+function verifyStatusSuccessOrRedirect(response, urlPath) {
     // If we are on localhost just return, no need to check for authentication
     if (isDev()) {
         return;
@@ -64,7 +66,9 @@ function verifyStatusSuccessOrRedirect(response) {
     if (response.status >= 200 && response.status < 300) {
         return response.status;
     }
-    logger.error(response.statusText);
+    if(!urlPath.includes("/api/logg")) {
+        logger.error(response.statusText);
+    }
     throw new Error("error-status-common");
 }
 
