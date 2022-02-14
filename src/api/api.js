@@ -19,7 +19,12 @@ export const serverRequestWithData = (method, urlPath, body) => {
         fetch(urlPath, OPTIONS)
             .then((response) => {
                 verifyStatusSuccessOrRedirect(response, urlPath);
-                resolve(response.json());
+                if(response.status === 204) {
+                    return response.status;
+                } else {
+                    resolve(response.json());
+                }
+
             })
             .catch((reason) => reject(reason));
     });
@@ -36,11 +41,13 @@ const serverRequest = (method, urlPath) => {
             .then((response) => {
                 verifyStatusSuccessOrRedirect(response, urlPath);
                 return response;
-            }).then((response) => {
-            return response.json();
-        }).then((response) => {
-            resolve(response)
-        })
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                resolve(response)
+            })
             .catch((reason) => {
                 const errorstring = `Failed to parse JSON on: " ${urlPath} " reason: " ${reason.message}`;
                 const errorapi = new Error(errorstring);
