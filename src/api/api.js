@@ -19,12 +19,15 @@ export const serverRequestWithData = (method, urlPath, body) => {
         fetch(urlPath, OPTIONS)
             .then((response) => {
                 verifyStatusSuccessOrRedirect(response, urlPath);
+                const contentType = response.headers.get("content-type");
+                if(contentType && contentType.includes("text/html")) {
+                    resolve();
+                }
                 if(response.status === 204) {
-                    return response.status;
+                    resolve(response.status);
                 } else {
                     resolve(response.json());
                 }
-
             })
             .catch((reason) => reject(reason));
     });
@@ -40,6 +43,10 @@ const serverRequest = (method, urlPath) => {
         fetch(urlPath, OPTIONS)
             .then((response) => {
                 verifyStatusSuccessOrRedirect(response, urlPath);
+                const contentType = response.headers.get("content-type");
+                if(contentType && contentType.includes("text/html")) {
+                    resolve();
+                }
                 return response;
             })
             .then((response) => {
