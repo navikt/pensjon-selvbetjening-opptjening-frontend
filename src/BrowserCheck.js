@@ -3,7 +3,7 @@ import Bowser from "bowser";
 import Alertstripe from "nav-frontend-alertstriper";
 import {useTranslation} from "react-i18next";
 
-export const Browsercheck = () => {
+export const BrowserCheck = () => {
     const { t } = useTranslation(['translation']);
     const browser = Bowser.getParser(window.navigator.userAgent);
     const isValidBrowser = browser.satisfies({
