@@ -5,6 +5,7 @@ import {TopBanner} from "../../elements/TopBanner/TopBanner";
 import './HomePage.less';
 import Breadcrumbs from "../../elements/Breadcrumbs/Breadcrumbs";
 import {LanguageSelector} from "../../elements/LanguageSelector/LanguageSelector";
+import {BrowserCheck} from "../../../BrowserCheck";
 
 export const HomePage = () => {
     return (
@@ -13,6 +14,7 @@ export const HomePage = () => {
             <Breadcrumbs/>
             <LanguageSelector/>
             <TopBanner title="opptjening-tittel"/>
+            <BrowserCheck />
             <div className="mainBody" id="maincontent" tabIndex="-1">
                 <OpptjeningContainer>
                     <main className="contentWrapper">

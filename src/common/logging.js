@@ -1,9 +1,13 @@
 import store from "../redux";
 import {loggingStarted} from "../redux/logging/loggingActions";
+import Bowser from "bowser";
+
+const browser = Bowser.getParser(window.navigator.userAgent);
 
 const defaultContext = {
     url: window.location.href,
     userAgent: window.navigator.userAgent,
+    userDeviceInfo: browser.parsedResult,
     appName: "pensjon-selvbetjening-opptjening-frontend"
 }
 
