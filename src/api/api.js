@@ -83,7 +83,7 @@ function verifyStatusSuccessOrRedirect(response, urlPath) {
     if(!urlPath.includes("/api/logg")) {
         logger.error(response.statusText);
     }
-    throw new Error("error-status-common");
+    throw new Error("error-status-common", { cause: `status : ${response.status}`});
 }
 
 function getCredentialsParam() {

@@ -19,12 +19,6 @@ export const OpptjeningContainer = (props) => {
         dispatch(fetchOpptjeningStarted());
     }, [dispatch]);
 
-    if(opptjeningLoading){
-        return (
-            <div className="loadingSpinner" data-testid="opptjening-loading"><NavFrontendSpinner/></div>
-        )
-    }
-
     if(opptjeningError){
         if(opptjeningError.message === "error-status-401") {
             //401 - Unauthorized - Click to login
@@ -42,6 +36,12 @@ export const OpptjeningContainer = (props) => {
                 </main>
             )
         }
+    }
+
+    if(opptjeningLoading){
+        return (
+            <div className="loadingSpinner" data-testid="opptjening-loading"><NavFrontendSpinner/></div>
+        )
     }
 
     return <>{children}</>

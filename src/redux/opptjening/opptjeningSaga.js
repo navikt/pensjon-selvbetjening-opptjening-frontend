@@ -16,7 +16,7 @@ export function* fetchOpptjening() {
         else if(error === "error-status-403")
             logger.info("Access to the requested resource is forbidden");
         else
-            logger.error(error.message);
+            logger.error(`msg=${error.message} status=${error.cause}`);
         yield put(fetchOpptjeningFailure(error));
     }
 }
