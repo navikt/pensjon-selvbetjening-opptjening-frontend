@@ -34,7 +34,7 @@
     "faq-answer-8": "No earned pension has been registered. NAV receives information about your pensionable income from the Norwegian Tax Administration. If you think there is something wrong with your registered income, contact your [local tax office](https://www.skatteetaten.no/)",
 
     "faq-question-9": "What does ‘no basis’ mean?",
-    "faq-answer-9": "We receive information about your pensionable income from the Norwegian Tax Administration once the tax assessment for a year has been completed. Until the tax assessment for a year has been completed, a text saying ‘No basis’ will be displayed.",
+    "faq-answer-9": "We receive information about your pensionable income from the Norwegian Tax Administration once the tax settlement is ready. Until the tax settlement for a year has been completed, a text saying ‘No basis’ will be displayed.",
 
     "faq-question-10": "What are pension earnings for care work?",
     "faq-answer-10": [
