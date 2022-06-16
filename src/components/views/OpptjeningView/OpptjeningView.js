@@ -89,12 +89,13 @@ export const OpptjeningView = () => {
                 <div>
                     <VeilederMedSnakkeboble veilederText={<Veiledertext/>}/>
                     <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
-                        <section aria-labelledby="pensjonsBeholdningTitle">
-                            <BeholdningPanel data={latestPensjonsBeholdning}/>
-                        </section>
                         <ForklartSection/>
                         <section id="inntektmedmerknadpanel" aria-label={"title " + t('inntekt-pensjonsgivende-inntekter')}>
                             <InntektWithMerknadPanel data={opptjeningData} userGroup={userGroup} antallAarPensjonsPoeng={antallAarPensjonsPoeng}/>
+                        </section>
+
+                        <section aria-labelledby="pensjonsBeholdningTitle">
+                            <BeholdningPanel data={latestPensjonsBeholdning}/>
                         </section>
                         <section aria-labelledby="chartTitle">
                             <Panel border className="panelWrapper">
