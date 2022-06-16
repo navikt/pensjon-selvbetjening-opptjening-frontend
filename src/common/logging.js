@@ -40,6 +40,6 @@ window.onerror = function (message, url, line, column, error) {
             error: error
         };
     }
-
+    console.log(json);
     logger.error(json);
 }
