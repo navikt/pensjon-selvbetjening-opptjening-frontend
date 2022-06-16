@@ -31,7 +31,7 @@ window.onerror = function (message, url, line, column, error) {
 
     const joinStackTraceAndSendToServer = (stackframes) => {
         const stringifiedStack = stackframes.map(sf => sf.toString()).join('\n');
-        logger.error(`msg:${message.toString()}` + '\n sourcemapped stack: \n' + stringifiedStack);
+        logger.error(`msg:${message.toString()}\n sourcemapped stack: \n + ${stringifiedStack}`);
     };
 
     if(error) {
@@ -44,7 +44,7 @@ window.onerror = function (message, url, line, column, error) {
                 column,
                 error: error
             };
-            logger.error(JSON.stringify(json) + '\n Could not parse stack, original: \n' + err);
+            logger.error(`${JSON.stringify(json)} \n Could not parse stack, original: \n ${err}`);
         });
     }
 }
