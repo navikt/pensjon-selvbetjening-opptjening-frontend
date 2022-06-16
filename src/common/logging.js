@@ -1,7 +1,7 @@
 import store from "../redux";
 import {loggingStarted} from "../redux/logging/loggingActions";
 import Bowser from "bowser";
-
+import * as StackTrace from 'stacktrace-js'
 const browser = Bowser.getParser(window.navigator.userAgent);
 
 const defaultContext = {
@@ -20,7 +20,6 @@ export const logger = {
     }
 }
 
-
 window.onerror = function (message, url, line, column, error) {
     const json = {
         message: message.toString(),
@@ -30,16 +29,22 @@ window.onerror = function (message, url, line, column, error) {
         messageIndexed: message
     };
 
-    if (error) {
-        json.stacktrace = error.stack ? error.stack : error;
-        json.pinpoint = {
-            message,
-            url,
-            line,
-            column,
-            error: error
-        };
-    }
+    const joinStackTraceAndSendToServer = (stackframes) => {
+        const stringifiedStack = stackframes.map(sf => sf.toString()).join('\n');
+        logger.error(`msg:${message.toString()}` + '\n sourcemapped stack: \n' + stringifiedStack);
+    };
 
-    logger.error(json);
+    if(error) {
+        StackTrace.fromError(error).then(joinStackTraceAndSendToServer).catch((err) => {
+            json.stacktrace = error;
+            json.pinpoint = {
+                message,
+                url,
+                line,
+                column,
+                error: error
+            };
+            logger.error(JSON.stringify(json) + '\n Could not parse stack, original: \n' + err);
+        });
+    }
 }
