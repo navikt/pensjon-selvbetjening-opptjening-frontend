@@ -1,4 +1,4 @@
 name: pensjon-selvbetjening-opptjening-frontend
 title: Selvbetjening-Opptjening-Frontend
 version: master
-start_page: doc.adoc
+start_page: ROOT:doc.adoc
