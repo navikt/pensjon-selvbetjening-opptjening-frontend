@@ -76,7 +76,7 @@
     "prebuild": "node src/doc/doc.js && copyfiles -f src/doc/images/*.* public/doc/images",
     "start": "craco start",
     "build": "craco build",
-    "build:cypress": "REACT_APP_DECORATOR_URL=https://dekoratoren.ekstern.dev.nav.no craco build",
+    "build:cypress": "REACT_APP_DECORATOR_URL=https://notinuse.dev.nav.no craco build",
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu craco test --env=jsdom",
     "eject": "craco eject",
     "dev": "node run.js",
