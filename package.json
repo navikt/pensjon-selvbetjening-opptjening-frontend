@@ -73,7 +73,7 @@
   },
   "homepage": "/pensjon/opptjening/",
   "scripts": {
-    "prebuild": "node src/doc/ROOT/doc.js && copyfiles -f src/doc/images/*.* public/doc/images",
+    "prebuild": "node src/doc/modules/ROOT/doc.js && copyfiles -f src/doc/modules/ROOT/images/*.* public/doc/images",
     "start": "craco start",
     "build": "craco build",
     "build:cypress": "REACT_APP_DECORATOR_URL=https://notinuse.dev.nav.no craco build",
