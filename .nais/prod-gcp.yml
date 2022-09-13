@@ -8,6 +8,7 @@ metadata:
   annotations:
     nais.io/run-as-user: "101" # nginx
     nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
 spec:
   image: {{ image_prod_gcp }}
   port: 8080
