@@ -9,6 +9,10 @@ jobs:
     env:
       IMAGE_DEV_GCP: ghcr.io/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-dev-gcp:${{ github.sha }}
     steps:
+      - name: Use Node.js v12.18.3
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.18.3"
       - name: Checkout
         uses: actions/checkout@v2
       - uses: actions/cache@v1
