@@ -1,8 +1,7 @@
 import React from 'react';
 import {logger} from "./common/logging";
-import Alertstripe from "nav-frontend-alertstriper";
-import { withTranslation } from 'react-i18next';
-import {Knapp} from "nav-frontend-knapper";
+import ErrorView from "./ErrorView";
+
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -21,15 +20,11 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    const { t } = this.props;
     if(this.state.hasError && this.state.count === 3) {
-      return <div className="mainBody" id="maincontent" tabIndex="-1">
-        <Alertstripe type="feil">{t("error-status-common")}</Alertstripe>
-        <Knapp onClick={() => window.location.reload()}>{t("error-proev-igjen")}</Knapp>
-      </div>
+      return <ErrorView/>;
     }
     return this.props.children;
   }
 }
 
-export default withTranslation(ErrorBoundary);
+export default ErrorBoundary;
