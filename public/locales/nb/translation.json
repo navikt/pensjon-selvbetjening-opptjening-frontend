@@ -120,5 +120,6 @@
     "error-status-403": "Du har ikke tilgang til å se informasjon om denne personens pensjonsopptjening.",
     "error-status-404": "Vi kan ikke finne siden eller tjenesten du etterspør.",
     "error-status-common": "Det oppstod et teknisk problem. Du kan prøve å logge inn senere. Vi beklager feilen.",
-    "error-status-nodata": "Vi kan ikke finne noe opptjeningsdata for deg."
+    "error-status-nodata": "Vi kan ikke finne noe opptjeningsdata for deg.",
+    "error-proev-igjen": "Prøv igjen"
 }
