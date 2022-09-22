@@ -1,11 +1,13 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import Alertstripe from "nav-frontend-alertstriper";
 import {Knapp} from "nav-frontend-knapper";
+import './containers/App/App.less';
 
 
-const ErrorView = (props) => {
-    const {t} = props;
+const ErrorView = () => {
+    const { t } = useTranslation();
+
 
     return <div className="mainBody" id="maincontent" tabIndex="-1">
         <Alertstripe type="feil">{t("error-status-common")}</Alertstripe>
@@ -13,4 +15,4 @@ const ErrorView = (props) => {
     </div>
 }
 
-export default withTranslation()(ErrorView);
+export default ErrorView;
