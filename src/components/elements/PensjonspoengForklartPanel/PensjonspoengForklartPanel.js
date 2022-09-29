@@ -1,7 +1,7 @@
 import {useTranslation} from "react-i18next";
 import React, {useState} from "react";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import "./PensjonspoengForklartPanel.less";
+import "./PensjonspoengForklartPanel.css";
 import pengesekk from "../../../assets/pengesekk.svg";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";

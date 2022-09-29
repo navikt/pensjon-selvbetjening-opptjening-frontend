@@ -1,9 +1,7 @@
-@import (reference) '~nav-frontend-core/less/_variabler';
-
-.topBanner{
+.topBanner {
   align-self: stretch;
-  background-color: @navOransjeLighten60;
-  border-bottom: 4px solid @navOransjeLighten40;
+  background-color: #ffd399;
+  border-bottom: 4px solid #ffbd66;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -11,7 +9,6 @@
   overflow: hidden;
   width: 100%;
 }
-
 .topBannerContent {
   margin: 1.4rem auto 0;
   max-width: 900px;
@@ -22,7 +19,6 @@
   overflow: hidden;
   position: relative;
 }
-
 .topBannerText {
   display: flex;
   flex-direction: column;
@@ -30,11 +26,9 @@
   margin: 1rem 1rem 1.4rem;
   z-index: 1;
 }
-
-.topBannerText h1{
+.topBannerText h1 {
   margin: 0 0 0.5rem 0;
 }
-
 .topBannerImgContainer {
   align-self: flex-end;
   margin: 0 1rem;
@@ -44,22 +38,18 @@
   width: 45%;
   position: relative;
 }
-
-.topBannerImgContainer .illustration{
+.topBannerImgContainer .illustration {
   width: 430px;
 }
-
-@media (max-width: 576px){
+@media (max-width: 576px) {
   .topBannerContent {
     flex-direction: column;
     margin-top: 1rem;
     padding: 0 1rem 0 1rem;
   }
-
-  .topBannerText{
+  .topBannerText {
     width: 100%;
   }
-
   .topBannerImgContainer {
     align-self: flex-start;
     margin: 0 1rem 0 0;

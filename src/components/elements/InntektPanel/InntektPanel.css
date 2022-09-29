@@ -1,78 +1,65 @@
-.inntektDetailsBox{
+.inntektDetailsBox {
   background-color: #efefef;
   border-radius: 4px;
   padding: 20px;
   margin-bottom: 5px;
 }
-
-.inntektDetailTitle{
+.inntektDetailTitle {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
-
-.inntektDetailTitle .title{
+.inntektDetailTitle .title {
   padding-top: 0.3rem;
 }
-.inntektDetailTitle .illustration{
+.inntektDetailTitle .illustration {
   padding-right: 0.8rem;
   width: 1.2rem;
 }
-
 .closeButton {
-  width:100%;
+  width: 100%;
   background: transparent;
   border: 0;
   padding: 1rem 0 1rem 1rem;
   cursor: pointer;
 }
-
 .inntektLinkContainer {
   padding: 0 0 1rem 0;
 }
-
-.inntektAmountRow{
+.inntektAmountRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 }
-
-.inntektKrColumn{
+.inntektKrColumn {
   display: flex;
   flex-direction: column;
   text-align: left;
   flex-basis: 20px;
   flex-grow: 0;
 }
-
 .inntektNumberColumn {
   display: flex;
   flex-direction: column;
   flex-basis: 65px;
   text-align: right;
 }
-
 .inntektTabell p {
   margin-bottom: 0.5rem;
 }
-
-.inntektTabell .col1{
+.inntektTabell .col1 {
   width: 10%;
 }
-
-.inntektTabell .col2{
+.inntektTabell .col2 {
   width: 30%;
 }
-
-.inntektTabell .col3{
+.inntektTabell .col3 {
   width: 20%;
 }
-
-.inntektTabell .col4{
+.inntektTabell .col4 {
   width: 40%;
 }
-
-@media (max-width: 576px){
+@media (max-width: 576px) {
   .inntektTabell {
     display: none;
   }

@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
-import "./InntektWithMerknadPanel.less"
+import "./InntektWithMerknadPanel.css"
 import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {

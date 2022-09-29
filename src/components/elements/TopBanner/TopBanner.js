@@ -1,6 +1,6 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import './TopBanner.less';
+import './TopBanner.css';
 import {Sidetittel, Undertittel} from "nav-frontend-typografi";
 import topBannerIllustrasjon from "../../../assets/topBannerIllustrasjon.svg"
 

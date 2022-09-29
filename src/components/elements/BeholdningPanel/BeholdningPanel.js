@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 import {formatAmount} from "../../../common/utils";
 import Panel from "nav-frontend-paneler";
 import {Systemtittel} from "nav-frontend-typografi";
-import "./BeholdningPanel.less"
+import "./BeholdningPanel.css"
 import sparegris from "../../../assets/sparegris.svg"
 
 export const BeholdningPanel = (props) => {

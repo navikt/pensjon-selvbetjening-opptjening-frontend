@@ -5,7 +5,7 @@ import * as urlHelper from "../../../common/urlHelper";
 import {LenkepanelBase} from "nav-frontend-lenkepanel";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import baby from "../../../assets/baby.svg";
-import "./OverforeOmsorgsOpptjeningPanel.less";
+import "./OverforeOmsorgsOpptjeningPanel.css";
 
 
 export const OverforeOmsorgsOpptjeningPanel = (props) => {

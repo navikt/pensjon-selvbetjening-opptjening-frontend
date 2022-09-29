@@ -4,7 +4,7 @@ import Chart from 'chart.js';
 import { useRef, useEffect } from 'react';
 import 'nav-frontend-tabell-style';
 import {formatAmount, formatNumber, getCurrentLocale} from "../../../common/utils";
-import './LineChart.less';
+import './LineChart.css';
 import {Knapp} from "nav-frontend-knapper";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../../common/userGroups";

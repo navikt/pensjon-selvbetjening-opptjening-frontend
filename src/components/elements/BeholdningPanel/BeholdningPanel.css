@@ -1,0 +1,14 @@
+.beholdningPanel {
+  display: flex;
+  align-items: center;
+}
+.beholdningPanel .illustration {
+  padding-right: 0.8rem;
+  width: 4rem;
+}
+.beholdningPanel .content {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+}

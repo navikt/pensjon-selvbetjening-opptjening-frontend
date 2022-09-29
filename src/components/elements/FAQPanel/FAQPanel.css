@@ -1,32 +1,25 @@
-@import (reference) '../../../../node_modules/nav-frontend-core/less/_variabler';
-
 .questionWrapper {
   margin: 0 0 1rem 0;
-  border-color: @navGra20 !important;
+  border-color: #c9c9c9 !important;
 }
-
-.questionWrapper a{
+.questionWrapper a {
   color: #0067c5;
   background: none;
   text-decoration: underline;
   cursor: pointer;
 }
-
-.questionWrapper .ekspanderbartPanel__innhold{
+.questionWrapper .ekspanderbartPanel__innhold {
   padding-top: 0;
 }
-
 .faqTitleContainer {
   padding-bottom: 1rem;
   color: #3E3832;
 }
-
-.faqHorizontalLine{
+.faqHorizontalLine {
   margin: 0 0 10px 0;
   border-top: solid 0.5px #c7c4c0;
 }
-
-.faqIllustration{
+.faqIllustration {
   margin-right: 0.9rem;
   width: 1.1rem;
 }

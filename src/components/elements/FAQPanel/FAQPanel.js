@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import Panel from 'nav-frontend-paneler';
 import {Normaltekst} from "nav-frontend-typografi";
 import {useTranslation} from "react-i18next";
-import "./FAQPanel.less";
+import "./FAQPanel.css";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953} from "../../../common/userGroups";

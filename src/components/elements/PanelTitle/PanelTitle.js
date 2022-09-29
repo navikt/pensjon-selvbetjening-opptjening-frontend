@@ -1,5 +1,5 @@
 import React from "react";
-import "./PanelTitle.less";
+import "./PanelTitle.css";
 
 export const PanelTitle = (props) => {
     const {id, type, titleString, illustrationClass, illustration, animationFinished} = props;

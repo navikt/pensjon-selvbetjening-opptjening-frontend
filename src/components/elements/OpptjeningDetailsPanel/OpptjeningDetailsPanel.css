@@ -1,39 +1,33 @@
-.detailsBox{
+.detailsBox {
   background-color: #efefef;
   border-radius: 4px;
   padding: 1.2rem;
   margin-bottom: 5px;
 }
-
 .detailsBox h3 {
   font-size: 1rem;
   margin: 0;
 }
-
 .detailsBox p {
   margin-bottom: 0.5rem;
 }
-
-.detailRow{
+.detailRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 }
-
-.detailIllustration{
+.detailIllustration {
   margin-right: 0.5rem;
   width: 1.5rem;
   padding-top: 0.2rem;
 }
-
 .labelColumn {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
   flex: 3;
 }
-
 .krColumn {
   display: flex;
   flex-direction: column;
@@ -41,7 +35,6 @@
   flex-basis: 20px;
   flex-grow: 0;
 }
-
 .numberColumn {
   display: flex;
   flex-direction: column;
@@ -49,7 +42,6 @@
   flex: 0.5;
   text-align: right;
 }
-
 .emptyColumn {
   display: flex;
   flex-direction: column;
@@ -57,50 +49,41 @@
   flex: 1;
   text-align: right;
 }
-
 .linkContainer {
   padding: 1.2rem;
 }
-
 .yearSelectorContainer {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
-
 .yearSelectorContainer .label {
   margin: 0;
   margin-right: 0.5rem;
 }
-
 .yearSelectorContainer .selectorWrapper {
   flex-grow: 1;
 }
-
 .yearSelectorContainer select {
   padding: 0.7rem 0.5rem 0.7rem 0.5rem;
 }
-
 @media (max-width: 767px) {
   .emptyColumn {
     display: none;
   }
 }
-
-@media (max-width: 576px){
+@media (max-width: 576px) {
   .labelColumn {
     flex: 2;
   }
   .numberColumn {
     flex: 1;
   }
-
-  .krColumn{
+  .krColumn {
     display: none;
   }
 }
-
-@media (max-width: 375px){
+@media (max-width: 375px) {
   .labelColumn {
     flex: 1;
   }

@@ -5,7 +5,7 @@ import {getOpptjeningLoading, getOpptjeningError} from "../../redux/opptjening/o
 import NavFrontendSpinner from "nav-frontend-spinner";
 import {useTranslation} from "react-i18next";
 import Alertstripe from "nav-frontend-alertstriper";
-import "./OpptjeningContainer.less"
+import "./OpptjeningContainer.css"
 import {LoginPanel} from "../../components/elements/LoginPanel/LoginPanel";
 
 export const OpptjeningContainer = (props) => {

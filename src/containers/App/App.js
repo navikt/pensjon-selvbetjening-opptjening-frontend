@@ -1,7 +1,7 @@
 import React from 'react';
 import {routesConfig} from '../../common/routesConfig'
 import {Switch, Route, Redirect} from "react-router-dom";
-import './App.less';
+import './App.css';
 
 export const App = () => {
     return (

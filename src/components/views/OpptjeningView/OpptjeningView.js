@@ -13,7 +13,7 @@ import {FAQPanel} from "../../elements/FAQPanel/FAQPanel";
 import {OpptjeningDetailsPanel} from "../../elements/OpptjeningDetailsPanel/OpptjeningDetailsPanel";
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
-import './OpptjeningView.less';
+import './OpptjeningView.css';
 import { logToAmplitude, SELECT_EVENT} from "../../../common/amplitude";
 import {
     BORN_AFTER_1962, BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953,

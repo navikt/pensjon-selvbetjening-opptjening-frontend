@@ -2,7 +2,7 @@ import React from 'react';
 import {OpptjeningContainer} from "../../../containers/OpptjeningContainer/OpptjeningContainer";
 import {OpptjeningView} from "../../views/OpptjeningView/OpptjeningView";
 import {TopBanner} from "../../elements/TopBanner/TopBanner";
-import './HomePage.less';
+import './HomePage.css';
 import Breadcrumbs from "../../elements/Breadcrumbs/Breadcrumbs";
 import {LanguageSelector} from "../../elements/LanguageSelector/LanguageSelector";
 import {BrowserCheck} from "../../../BrowserCheck";

@@ -1,6 +1,6 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import "./PensjonskalkulatorLenkePanel.less"
+import "./PensjonskalkulatorLenkePanel.css"
 import {LenkepanelBase} from "nav-frontend-lenkepanel";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import kalkulator from "../../../assets/kalkulator.svg";
