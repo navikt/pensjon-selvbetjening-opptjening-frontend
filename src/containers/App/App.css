@@ -35,6 +35,7 @@
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-.tabell .row {
+
+.tabell .tableRow {
   vertical-align: top;
 }

@@ -43,7 +43,7 @@ const dataRow = (props) => {
     const uttakArray = getUttakArray(data);
 
     return(
-        <tr key={key} className={"row " + rowClass}>
+        <tr key={key} className={"tableRow " + rowClass}>
             <td data-testid="tableDataYear">{label}</td>
             <td data-testid="tableDataPensjonsbeholdning">{pensjonsbeholdningTxt}</td>
             {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <td data-testid="tableDataPensjonspoeng">{pensjonspoeng!=null ? formatNumber(pensjonspoeng) : t('chart-ingen')}</td>}
@@ -315,17 +315,17 @@ export const LineChart = (props) => {
 
 
     let chartClass = "chartContainer";
-    let tableClass = "tableContainer hidden";
+    let tableClass = "tableContainer concealed";
     let chartButton = "chartButton selected";
     let tableButton = "tableButton";
 
     if(visibleComponent === "chart"){
         chartClass = "chartContainer";
-        tableClass = "dataContainer hidden";
+        tableClass = "dataContainer concealed";
         chartButton = "selected";
         tableButton = ""
     } else if (visibleComponent === "table"){
-        chartClass = "chartContainer hidden";
+        chartClass = "chartContainer concealed";
         tableClass = "dataContainer";
         chartButton = "";
         tableButton = "selected";
@@ -375,7 +375,7 @@ export const LineChart = (props) => {
                 <div className="tableContainer">
                     <table className="tabell beholdningAndPoengTabell">
                         <thead>
-                        <tr className="row">
+                        <tr className="tableRow">
                             <th data-testid="tableHeaderYear" className="column1">{yearLabel}</th>
                             <th data-testid="tableHeaderPensjonsbeholdning" className="column2">{pensjonsbeholdningKrLabel}</th>
                             {userGroup===BORN_IN_OR_BETWEEN_1954_AND_1962 && <th data-testid="tableHeaderPensjonspoeng" className="column3">{pensjonspoengLabel}</th>}

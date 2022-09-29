@@ -5,7 +5,7 @@
   position: relative;
   height: 50vh;
 }
-.hidden {
+.concealed {
   display: none;
 }
 .dataContainer {
@@ -81,7 +81,7 @@
   display: none;
 }
 @media (max-width: 767px) {
-  .beholdningAndPoengTabell {
+  table.beholdningAndPoengTabell {
     display: none;
   }
   .beholdningAndPoengList {
@@ -101,7 +101,7 @@
   .chartContainer {
     display: none;
   }
-  .chartContainer .hidden {
+  .chartContainer .concealed {
     display: none;
   }
   .tableContainer {

@@ -22,7 +22,7 @@ const detailRow = (props) => {
     const {key, label, amount, explanationText} = props;
     const amountTxt = amount != null ? amountRow(amount) : explanationText;
     return(
-        <tr data-testid="income-row" key={key} className="row">
+        <tr data-testid="income-row" key={key} className="tableRow">
             <td data-testid="income-label">{label}</td>
             <td data-testid="income-amount">{amountTxt}</td>
         </tr>
@@ -72,7 +72,7 @@ export const InntektPanel = (props) => {
                 <div className="inntektDetailsBox">
                     <table className="tabell">
                         <thead>
-                        <tr className="row">
+                        <tr className="tableRow">
                             <th data-testid="income-header" className="column1">{t('inntekt-aar')}</th>
                             <th data-testid="income-header" className="column2">{t('inntekt-inntekt')}</th>
                         </tr>
