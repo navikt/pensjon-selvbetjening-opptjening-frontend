@@ -14,8 +14,8 @@ it('should render the Chart with title, buttons, and hidden table', () => {
     expect(getAllByRole("button")[1]).toHaveTextContent("chart-tabell");
 
 
-    expect(getByTestId("chartContainer")).not.toHaveClass("hidden");
-    expect(getByTestId("dataContainer")).toHaveClass("hidden");
+    expect(getByTestId("chartContainer")).not.toHaveClass("concealed");
+    expect(getByTestId("dataContainer")).toHaveClass("concealed");
 });
 
 it('should render the Chart with title chart-pensjonsbeholdningen-og-pensjonspoengene-dine when BORN_IN_OR_BETWEEN_1954_AND_1962', () => {
@@ -28,12 +28,12 @@ it('should show the table or chart depending on which button is clicked', () => 
 
 
     userEvent.click(getAllByRole("button")[1]);
-    expect(getByTestId("chartContainer")).toHaveClass("hidden");
-    expect(getByTestId("dataContainer")).not.toHaveClass("hidden");
+    expect(getByTestId("chartContainer")).toHaveClass("concealed");
+    expect(getByTestId("dataContainer")).not.toHaveClass("concealed");
 
     userEvent.click(getAllByRole("button")[0]);
-    expect(getByTestId("chartContainer")).not.toHaveClass("hidden");
-    expect(getByTestId("dataContainer")).toHaveClass("hidden");
+    expect(getByTestId("chartContainer")).not.toHaveClass("concealed");
+    expect(getByTestId("dataContainer")).toHaveClass("concealed");
 });
 
 it('should not show pensjonspoeng for usergroup BORN_AFTER_1962', () => {
