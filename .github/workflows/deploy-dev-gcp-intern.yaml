@@ -1,0 +1,66 @@
+name: Deploy internal version to dev-gcp
+
+on: workflow_dispatch
+
+jobs:
+  deploy-to-dev:
+    name: Deploy internal to dev-gcp
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_DEV_GCP_INTERN: ghcr.io/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-dev-gcp-intern:${{ github.sha }}
+    steps:
+      - name: Use Node.js v12.18.3
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.18.3"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test -- --watchAll=false
+      - name: Build application
+        env:
+          REACT_APP_LOGINSERVICE_URL: "https://pensjon-selvbetjening-opptjening-frontend.dev.intern.nav.no/pensjon/opptjening/oauth2/internal/login?redirect="
+          REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjeningonbehalf"
+          REACT_APP_DECORATOR_URL: "https://static-v4-decorator.nais.adeo.no"
+          REACT_APP_DINPENSJON_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/publisering/dinpensjon.jsf"
+          REACT_APP_DINEPENSJONSPOENG_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/publisering/dinepensjonspoeng.jsf"
+          REACT_APP_PENSJONSKALKULATOR_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/simulering.jsf"
+          REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/publisering/overforeomsorgspoeng.jsf"
+        run: npm run build
+      - name: Build Docker image dev-gcp-intern
+        run: |
+          docker build -f Dockerfile-gcp-intern -t ${IMAGE_DEV_GCP_INTERN} .
+      - name: Log in to the container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile-gcp-intern
+          push: true
+          tags: ${{ env.IMAGE_DEV_GCP_INTERN }}
+      - name: Generate NAIS variables dev-gcp-intern
+        run: |
+          cat > .nais/vars-dev-gcp-intern.yaml <<EOF
+          namespace: pensjonselvbetjening
+          image_dev_gcp_intern: $IMAGE_DEV_GCP_INTERN
+          EOF
+      - name: Deploy to dev-gcp-intern
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp-intern
+          RESOURCE: .nais/dev-gcp-intern.yml
+          VARS: .nais/vars-dev-gcp-intern.yaml
