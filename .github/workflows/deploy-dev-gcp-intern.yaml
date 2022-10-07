@@ -1,4 +1,4 @@
-name: Deploy internal version to dev-gcp
+name: Deploy dev-gcp internal version
 
 on: workflow_dispatch
 
@@ -37,7 +37,7 @@ jobs:
         run: npm run build
       - name: Build Docker image dev-gcp-intern
         run: |
-          docker build -f Dockerfile-gcp-intern -t ${IMAGE_DEV_GCP_INTERN} .
+          docker build -f .docker/Dockerfile-gcp-intern -t ${IMAGE_DEV_GCP_INTERN} .
       - name: Log in to the container registry
         uses: docker/login-action@v1
         with:
@@ -48,7 +48,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile-gcp-intern
+          file: .docker/Dockerfile-gcp-intern
           push: true
           tags: ${{ env.IMAGE_DEV_GCP_INTERN }}
       - name: Generate NAIS variables dev-gcp-intern
@@ -57,10 +57,10 @@ jobs:
           namespace: pensjonselvbetjening
           image_dev_gcp_intern: $IMAGE_DEV_GCP_INTERN
           EOF
-      - name: Deploy to dev-gcp-intern
+      - name: Deploy internal to dev-gcp
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-gcp-intern
+          CLUSTER: dev-gcp
           RESOURCE: .nais/dev-gcp-intern.yml
           VARS: .nais/vars-dev-gcp-intern.yaml
