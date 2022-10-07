@@ -1,6 +1,6 @@
 import React from "react";
 import {Select} from "nav-frontend-skjema";
-import "./YearSelector.less";
+import "./YearSelector.css";
 
 const buildYearOptions = (yearArray) => {
     let optionsArray = [];

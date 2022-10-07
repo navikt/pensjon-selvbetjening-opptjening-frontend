@@ -2,7 +2,7 @@ import {useTranslation} from "react-i18next";
 import React, {useState} from "react";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Tekstomrade from "nav-frontend-tekstomrade";
-import "./BeholdningForklartPanel.less";
+import "./BeholdningForklartPanel.css";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import pengesekk from "../../../assets/pengesekk.svg";
 import {PanelTitle} from "../PanelTitle/PanelTitle";

@@ -1,7 +1,7 @@
 import {useTranslation} from "react-i18next";
 import React from "react";
 import Tekstomrade from "nav-frontend-tekstomrade";
-import "./BeholdningAndPensjonspoengForklartPanel.less";
+import "./BeholdningAndPensjonspoengForklartPanel.css";
 import Panel from "nav-frontend-paneler";
 import Lenke from "nav-frontend-lenker";
 import {PanelTitle} from "../PanelTitle/PanelTitle";

@@ -1,105 +1,86 @@
-@import (reference) '~nav-frontend-core/less/_variabler';
-
 .beholdningAndPensjonspoengForklartExplanationText p {
   margin-bottom: 0.5rem;
   margin-top: 0;
 }
-
 .beholdningAndPensjonspoengForklartIllustrationText {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
-
-.beholdningAndPensjonspoengForklartTitle{
+.beholdningAndPensjonspoengForklartTitle {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
-
-.beholdningAndPensjonspoengForklartTitle .title{
+.beholdningAndPensjonspoengForklartTitle .title {
   padding-top: 0.3rem;
 }
-.beholdningAndPensjonspoengForklartTitle .illustration{
+.beholdningAndPensjonspoengForklartTitle .illustration {
   padding-right: 0.8rem;
 }
-
-.regelverkShareDiagram{
+.regelverkShareDiagram {
   margin-bottom: 20px;
 }
-
-.regelverkShareDiagram div:first-child{
+.regelverkShareDiagram div:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-
-.regelverkShareDiagram div:last-child{
+.regelverkShareDiagram div:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
-.pensjonsbeholdningShare{
-  display:inline-block;
+.pensjonsbeholdningShare {
+  display: inline-block;
   margin-right: 4px;
-  background-color: @navOransjeDarken20;
-  width: 40px;
-  height:16px;
-}
-
-.pensjonspoengShare{
-  display:inline-block;
-  margin-right: 4px;
-  background-color: @navDypBlaLighten20;
+  background-color: #d87f0a;
   width: 40px;
   height: 16px;
 }
-
-.pensjonspoengColorBox{
+.pensjonspoengShare {
+  display: inline-block;
+  margin-right: 4px;
+  background-color: #337c9b;
+  width: 40px;
+  height: 16px;
+}
+.pensjonspoengColorBox {
   display: block;
-  background-color: @navDypBlaLighten20;
+  background-color: #337c9b;
   width: 16px;
   height: 16px;
   margin-top: 15px;
   border-radius: 2px;
 }
-
-.pensjonsbeholdningColorBox{
+.pensjonsbeholdningColorBox {
   display: block;
-  background-color: @navOransjeDarken20;
+  background-color: #d87f0a;
   width: 16px;
   height: 16px;
   border-radius: 2px;
 }
-
-.colorBoxText{
-  margin-left:32px;
-  width:90%;
-  margin-top:-18px;
-  float:left;
+.colorBoxText {
+  margin-left: 32px;
+  width: 90%;
+  margin-top: -18px;
+  float: left;
 }
-
 .beholdningAndPoengForklartTitleContainer .typo-undertittel {
   color: #3E3832;
 }
-
 .beholdningAndPoengForklartTitleContainer {
   padding: 0 1rem 1rem 0;
 }
-
-.beholdningAndPoengForklartLink{
+.beholdningAndPoengForklartLink {
   display: block;
   margin-top: 1rem;
 }
-
-.pensjonsopptjeningForklaring{
+.pensjonsopptjeningForklaring {
   display: block;
   clear: both;
   margin-top: 1.5rem;
 }
-
-.pensjonsopptjeningForklaring h3{
+.pensjonsopptjeningForklaring h3 {
   font-size: 1rem;
   margin: 0;
 }
-
-.pensjonsopptjeningForklaring p{
+.pensjonsopptjeningForklaring p {
   margin-top: 0;
 }

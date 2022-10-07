@@ -1,24 +1,18 @@
-@import (reference) '../../../node_modules/nav-frontend-core/less/_variabler';
-
 .loadingSpinner {
   margin: 50px;
   text-align: center;
 }
-
 .panelWrapper {
   margin: 1rem 0 1rem 0;
-  border-color: @navGra20 !important;
+  border-color: #c9c9c9 !important;
 }
-
-.horizontalLine{
+.horizontalLine {
   margin: 10px 0 10px 0;
   border-top: solid 0.5px #c7c4c0;
 }
-
-.contentCentered{
+.contentCentered {
   text-align: center;
 }
-
 .mainBody {
   margin: 0 auto;
   max-width: 900px;
@@ -29,15 +23,12 @@
   align-items: stretch;
   overflow: hidden;
   position: relative;
-
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
-
   -ms-word-break: break-all;
   /* Instead use this non-standard one: */
   word-break: break-word;
-
   /* Adds a hyphen where the word breaks, if supported (No Blink) */
   -ms-hyphens: auto;
   -moz-hyphens: auto;
@@ -45,7 +36,6 @@
   hyphens: auto;
 }
 
-.tabell .row{
+.tabell .tableRow {
   vertical-align: top;
 }
-

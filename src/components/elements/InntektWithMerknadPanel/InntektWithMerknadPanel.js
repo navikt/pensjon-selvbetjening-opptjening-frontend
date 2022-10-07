@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
 import 'nav-frontend-tabell-style';
-import "./InntektWithMerknadPanel.less"
+import "./InntektWithMerknadPanel.css"
 import Lenke from "nav-frontend-lenker";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import {
@@ -54,7 +54,7 @@ const detailRow = (props) => {
     });
 
     return(
-        <tr data-testid="income-row" key={key} className="row">
+        <tr data-testid="income-row" key={key} className="tableRow">
             <td data-testid="income-label">{year}</td>
             <td data-testid="income-amount">{amountTxt}</td>
             {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <td data-testid="pensjonspoeng">{pensjonsPoeng!==null ? formatNumber(pensjonsPoeng) : null}</td>}
@@ -147,7 +147,7 @@ export const InntektWithMerknadPanel = (props) => {
                     <div className="inntektDetailsBox">
                         <table className="tabell inntektTabell">
                             <thead>
-                                <tr className="row">
+                                <tr className="tableRow">
                                     <th data-testid="income-header" className="col1">{t('inntekt-aar')}</th>
                                     <th data-testid="income-header" className="col2">{t('inntekt-inntekt-kr')}</th>
                                     {userGroup === BORN_IN_OR_BETWEEN_1943_AND_1953 && <th data-testid="income-header" className="col3">{t('inntekt-pensjonspoeng')}</th>}

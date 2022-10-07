@@ -1,7 +1,7 @@
 import React from "react";
 import veilederSvg from "../../../assets/veileder.svg";
 import Veileder from "nav-frontend-veileder";
-import './VeilederMedSnakkeboble.less';
+import './VeilederMedSnakkeboble.css';
 
 export const VeilederMedSnakkeboble = (props) => {
     const { veilederText } = props;

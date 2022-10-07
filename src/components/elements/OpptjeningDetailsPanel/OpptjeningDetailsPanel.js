@@ -2,7 +2,7 @@ import {formatAmount, formatNumber} from "../../../common/utils";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {EkspanderbartpanelBase} from "nav-frontend-ekspanderbartpanel";
-import "./OpptjeningDetailsPanel.less"
+import "./OpptjeningDetailsPanel.css"
 import {YearSelector} from "../YearSelector/YearSelector";
 import {Label} from "nav-frontend-skjema";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";

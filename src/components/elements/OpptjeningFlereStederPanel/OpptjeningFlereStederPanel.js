@@ -2,7 +2,7 @@ import {useTranslation} from "react-i18next";
 import React, {useState} from "react";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Tekstomrade from "nav-frontend-tekstomrade";
-import "./OpptjeningFlereStederPanel.less";
+import "./OpptjeningFlereStederPanel.css";
 import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import lommebok from "../../../assets/lommebok.svg";
 import navBok from "../../../assets/navBok.svg";

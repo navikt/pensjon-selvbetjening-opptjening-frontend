@@ -1,89 +1,72 @@
-.inntektDetailsBox{
+.inntektDetailsBox {
   background-color: #efefef;
   border-radius: 4px;
   padding: 20px;
   margin-bottom: 5px;
 }
-
-.inntektDetailIllustration{
+.inntektDetailIllustration {
   margin-right: 0.8rem;
   width: 1.2rem;
 }
-
 .closeButton {
-  width:100%;
+  width: 100%;
   background: transparent;
   border: 0;
   padding: 1rem 0 1rem 1rem;
   cursor: pointer;
 }
-
 .inntektLinkContainer {
   padding: 0 0 1rem 0;
 }
-
-.inntektLinkContainer p{
+.inntektLinkContainer p {
   margin: 0;
 }
-
-.inntektLinkContainer a{
+.inntektLinkContainer a {
   color: #0067c5;
   background: none;
   text-decoration: underline;
   cursor: pointer;
 }
-
 .inntektTabell p {
   margin-bottom: 0.5rem;
 }
-
-.inntektTabell .col1{
+.inntektTabell .col1 {
   width: 17%;
 }
-
-.inntektTabell .col2{
+.inntektTabell .col2 {
   width: 20%;
 }
-
-.inntektTabell .col3{
+.inntektTabell .col3 {
   width: 20%;
 }
-
-.inntektTabell .col4{
+.inntektTabell .col4 {
   width: 43%;
 }
-
-.inntektList{
+.inntektList {
   display: none;
   padding: 0;
   margin-top: 0;
 }
-
-.inntektList ul{
+.inntektList ul {
   padding: 0;
 }
-
-.inntektList .inntektItem{
+.inntektList .inntektItem {
   padding: 1rem;
   border-bottom: 1px solid #c7c4c0;
   list-style: none;
 }
-
-.inntektList .inntektItem li{
+.inntektList .inntektItem li {
   list-style: none;
 }
-
-.inntektList .inntektItem li li{
+.inntektList .inntektItem li li {
   list-style: disc;
   margin-left: 1.1rem;
 }
-
-.listItemMerknad{
+.listItemMerknad {
   padding-top: 1rem;
 }
-
-@media (max-width: 767px){
-  .inntektTabell {
+@media (max-width: 767px) {
+  table.inntektTabell {
     display: none;
   }
   .inntektList {
