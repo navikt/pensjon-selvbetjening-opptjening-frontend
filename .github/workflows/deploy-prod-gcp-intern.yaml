@@ -10,7 +10,7 @@ jobs:
     name: Deploy internal to prod-gcp
     runs-on: ubuntu-latest
     env:
-      IMAGE_PROD_GCP-INTERN: ghcr.io/${{ github.repository }}/pensjon-veiledning-opptjening-frontend-prod-gcp:${{ github.sha }}
+      IMAGE_PROD_GCP_INTERN: ghcr.io/${{ github.repository }}/pensjon-veiledning-opptjening-frontend-prod-gcp:${{ github.sha }}
     steps:
       - name: Use Node.js v12.18.3
         uses: actions/setup-node@v1
