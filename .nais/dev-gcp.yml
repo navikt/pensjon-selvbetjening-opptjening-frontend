@@ -29,10 +29,10 @@ spec:
     outbound:
       rules:
         - application: pensjon-selvbetjening-opptjening-backend
-          cluster: dev-fss
+          cluster: dev-gcp
   ingresses:
     - "https://pensjon-selvbetjening-opptjening-frontend.dev.nav.no"
     - "https://www-gcp.dev.nav.no/pensjon/opptjening"
   env:
     - name: "OPPTJENING_BACKEND"
-      value: "https://pensjon-selvbetjening-opptjening-backend.dev-fss-pub.nais.io"
+      value: "https://pensjon-selvbetjening-opptjening-backend.dev.nav.no"
