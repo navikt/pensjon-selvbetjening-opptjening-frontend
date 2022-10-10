@@ -1,7 +1,7 @@
 apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
-  name: pensjon-selvbetjening-opptjening-frontend
+  name: pensjon-veiledning-opptjening-frontend
   namespace: pensjonselvbetjening
   labels:
     team: pensjonselvbetjening
@@ -10,7 +10,9 @@ metadata:
     nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
     nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
 spec:
-  image: {{ image_dev_gcp }}
+  image: {{ image_dev_gcp_intern }}
+  ingresses:
+    - https://pensjon-veiledning-opptjening-frontend.dev.intern.nav.no
   port: 8080
   replicas:
     min: 1
@@ -25,14 +27,6 @@ spec:
     path: /internal/ready
     initialDelay: 30
     timeout: 1
-  accessPolicy:
-    outbound:
-      rules:
-        - application: pensjon-selvbetjening-opptjening-backend
-          cluster: dev-gcp
-  ingresses:
-    - "https://pensjon-selvbetjening-opptjening-frontend.dev.nav.no"
-    - "https://www-gcp.dev.nav.no/pensjon/opptjening"
   env:
     - name: "OPPTJENING_BACKEND"
       value: "https://pensjon-selvbetjening-opptjening-backend.dev.nav.no"
