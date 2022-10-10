@@ -1,0 +1,32 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: pensjon-veiledning-opptjening-frontend
+  namespace: pensjonselvbetjening
+  labels:
+    team: pensjonselvbetjening
+  annotations:
+    nais.io/run-as-user: "101" # nginx
+    nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+spec:
+  image: {{ image_prod_gcp_intern }}
+  ingresses:
+    - https://pensjon-veiledning-opptjening-frontend.intern.nav.no
+  port: 8080
+  replicas:
+    min: 2
+    max: 4
+  liveness:
+    path: /internal/alive
+    initialDelay: 30
+    timeout: 1
+    periodSeconds: 30
+    failureThreshold: 5
+  readiness:
+    path: /internal/ready
+    initialDelay: 30
+    timeout: 1
+  env:
+    - name: "OPPTJENING_BACKEND"
+      value: "https://pensjon-selvbetjening-opptjening-backend.intern.nav.no"
