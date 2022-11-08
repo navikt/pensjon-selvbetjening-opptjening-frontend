@@ -8,9 +8,12 @@ metadata:
   annotations:
     nais.io/run-as-user: "101" # nginx
     nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
-    nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "64k"
 spec:
   image: {{ image_dev_gcp }}
+  ingresses:
+    - https://pensjon-selvbetjening-opptjening-frontend.dev.nav.no
+    - https://www-gcp.dev.nav.no/pensjon/opptjening
   port: 8080
   replicas:
     min: 2
@@ -29,10 +32,6 @@ spec:
     outbound:
       rules:
         - application: pensjon-selvbetjening-opptjening-backend
-          cluster: dev-gcp
-  ingresses:
-    - "https://pensjon-selvbetjening-opptjening-frontend.dev.nav.no"
-    - "https://www-gcp.dev.nav.no/pensjon/opptjening"
   env:
     - name: "OPPTJENING_BACKEND"
       value: "https://pensjon-selvbetjening-opptjening-backend.dev.nav.no"
