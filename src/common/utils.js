@@ -39,4 +39,8 @@ export const getCurrentLocale = () => {
         default:
             return "nb-NO";
     }
-}
+};
+
+export const isIntegerNumber = (n) => {
+    return !isNaN(parseFloat(n)) && !isNaN(n - 0) && Number.isInteger(parseFloat(n)) && n.indexOf(".")===-1;
+};
