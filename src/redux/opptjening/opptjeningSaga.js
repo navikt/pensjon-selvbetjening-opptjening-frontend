@@ -28,7 +28,7 @@ export function* fetchOpptjening() {
 
 function* byttBruker(action){
     try {
-        const byttBrukerResponse = yield call(fetchPost, process.env.PUBLIC_URL + urlHelper.BYTT_BRUKER_ENDPOINT,  action.data);
+        const byttBrukerResponse = yield call(fetchPost, process.env.PUBLIC_URL + urlHelper.BYTT_BRUKER_ENDPOINT,  JSON.stringify(action.data));
         yield put(byttBrukerSuccess(byttBrukerResponse));
         yield put(fetchOpptjeningStarted());
         if(action.navigateToForside) {
