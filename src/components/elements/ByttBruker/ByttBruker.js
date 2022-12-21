@@ -3,13 +3,14 @@ import {useTranslation} from "react-i18next";
 import {Knapp} from "nav-frontend-knapper";
 import {useHistory, useRouteMatch} from "react-router-dom";
 import {ExpandableDescription} from "../ExpandableDescription/ExpandableDescription";
+import {useSelector} from "react-redux";
+import {getFullmektigPid} from "../../../redux/opptjening/opptjeningSelectors";
 
 export const ByttBruker = () => {
     const { t } = useTranslation();
     const history = useHistory();
     const match = useRouteMatch();
-    //const fullmektigPid = useSelector(getFullmektigPid);
-    const fullmektigPid = "00000000000";
+    const fullmektigPid = useSelector(getFullmektigPid);
 
     return (
         <div className="byttBrukerLinkContainer">
