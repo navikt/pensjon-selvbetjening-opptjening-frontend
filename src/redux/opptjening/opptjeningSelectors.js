@@ -16,7 +16,7 @@ export const getOpptjeningError = (state = initialState) => state.opptjening ? s
 export const getOpptjeningData =  (state = initialState) => state.opptjening && state.opptjening.opptjening.opptjeningData ? state.opptjening.opptjening.opptjeningData : {};
 export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
 export const getPid = (state = initialState) => state.opptjening ? state.opptjening.opptjening.pid : null;
-export const getFullmektigPid = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fullmektigPid : "";
+export const getFullmektigPid = (state = initialState) => state.opptjening && state.opptjening.opptjening ? state.opptjening.opptjening.fullmektigPid : "";
 export const getFornavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.fornavn ? state.opptjening.opptjening.fornavn : null;
 export const getMellomnavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.mellomnavn? state.opptjening.opptjening.mellomnavn : null;
 export const getEtternavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.etternavn? state.opptjening.opptjening.etternavn : null;

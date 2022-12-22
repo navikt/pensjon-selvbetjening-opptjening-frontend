@@ -114,11 +114,9 @@ export const ByttBrukerView = () => {
                     </div>
                     {!byttBrukerSuccess && isLoggedInOnBehalf &&
                     <>
-                        <div className="elementWrapper">
-                            <Hovedknapp bredde="L" onClick={navigateToForside}>
-                                {t("byttbruker-opptjening-paa-vegne-av", {"name": fornavn + " " + etternavn})}
-                            </Hovedknapp>
-                        </div>
+                        <Hovedknapp bredde="L" onClick={navigateToForside}>
+                            {t("byttbruker-opptjening-paa-vegne-av", {"name": fornavn + " " + etternavn})}
+                        </Hovedknapp>
                         <div className="elementWrapper">
                             <Knapp
                                 bredde="L"
