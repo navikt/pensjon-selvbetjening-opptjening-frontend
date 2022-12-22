@@ -88,8 +88,8 @@ export const OpptjeningView = () => {
             {!hasData && <AlertStripeFeil>{t('error-status-nodata')}</AlertStripeFeil>}
             {hasData &&
                 <div>
-                    <ByttBruker/>
                     <VeilederMedSnakkeboble veilederText={<Veiledertext/>}/>
+                    <ByttBruker/>
                     <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
                         <section aria-labelledby="pensjonsBeholdningTitle">
                             <BeholdningPanel data={latestPensjonsBeholdning}/>

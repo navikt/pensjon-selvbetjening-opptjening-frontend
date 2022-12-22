@@ -5,6 +5,7 @@ import {useHistory, useRouteMatch} from "react-router-dom";
 import {ExpandableDescription} from "../ExpandableDescription/ExpandableDescription";
 import {useSelector} from "react-redux";
 import {getFullmektigPid} from "../../../redux/opptjening/opptjeningSelectors";
+import './ByttBruker.css';
 
 export const ByttBruker = () => {
     const { t } = useTranslation();
@@ -20,12 +21,12 @@ export const ByttBruker = () => {
                 </Knapp>
             }
             {(!fullmektigPid || fullmektigPid === "") &&
-                <ExpandableDescription title="byttbruker:byttbruker-soke-paa-vegne-av-andre">
+                <ExpandableDescription title="byttbruker:byttbruker-opptjening-paa-vegne-av-annen">
                     <div>
-                        {t("byttbruker:byttbruker-soke-paa-vegne-av-andre-text")}
+                        {t("byttbruker:byttbruker-opptjening-paa-vegne-av-annen-text")}
                         {/* eslint-disable-next-line no-useless-concat */}
                         <Knapp className="margin1remupdown displayBlock" onClick={() => history.push(match.url + "bytt-bruker/" + history.location.search)}>
-                            {t("byttbruker:byttbruker-sok-paa-vegne-av-en-annen")}
+                            {t("byttbruker:byttbruker-opptjening-paa-vegne-av-en-annen")}
                         </Knapp>
                     </div>
                 </ExpandableDescription>

@@ -16,9 +16,10 @@ import {
     getByttBrukerSuccess, getEtternavn, getFornavn, getFullmektigPid, getPid
 } from "../../../redux/opptjening/opptjeningSelectors";
 import {byttBrukerStarted, resetByttBruker} from "../../../redux/opptjening/opptjeningActions";
+import {TopBanner} from "../../elements/TopBanner/TopBanner";
 
 export const ByttBrukerView = () => {
-    const { t } = useTranslation(['byttbruker']);
+    const {t} = useTranslation(['byttbruker']);
     const byttBrukerSuccess = useSelector(getByttBrukerSuccess);
     const byttBrukerError = useSelector(getByttBrukerError);
     const byttBrukerLoading = useSelector(getByttBrukerLoading);
@@ -41,29 +42,29 @@ export const ByttBrukerView = () => {
             ...data,
             fullmaktsgiverPid: data.fullmaktsgiverPid.replace(/\s/g, ''),
         };
-        if(isFodselsnummerValid(dataWithoutSpace.fullmaktsgiverPid)) {
-            if(!byttBrukerLoading)
+        if (isFodselsnummerValid(dataWithoutSpace.fullmaktsgiverPid)) {
+            if (!byttBrukerLoading)
                 dispatch(byttBrukerStarted(dataWithoutSpace, navigateToForside));
         }
     };
 
     const handleEnterKeyPress = (event) => {
-        if(event.key === "Enter"){
+        if (event.key === "Enter") {
             byttBruker(event, {
                 "fullmaktsgiverPid": fnr,
                 "fullmektigPid": fullmektigPid && fullmektigPid !== "" ? fullmektigPid : pid
             })
         }
     };
-    
+
     const isFodselsnummerValid = (pid) => {
-        if(pid===""){
+        if (pid === "") {
             setInputError(t("byttbruker-input-error-obligatorisk-felt"));
             return false;
-        } else if(!isIntegerNumber(pid)){
+        } else if (!isIntegerNumber(pid)) {
             setInputError(t("byttbruker-input-error-kan-bare-inneholde-tall"));
             return false
-        } else if(pid.length !== 11){
+        } else if (pid.length !== 11) {
             setInputError(t("byttbruker-input-error-feil-antall-siffer"));
             return false
         }
@@ -78,11 +79,13 @@ export const ByttBrukerView = () => {
     }
 
     return (
-        <>
-            <Systemtittel className="byttBrukerTitle">
-                {t("byttbruker-title")}
-            </Systemtittel>
-            {t("byttbruker-intro-text")}
+        <div className="byttBrukerView">
+            <TopBanner title="opptjening-tittel"/>
+            <div className="byttBrukerContentWrapper">
+                <Systemtittel className="byttBrukerTitle">
+                    {t("byttbruker-title")}
+                </Systemtittel>
+                {t("byttbruker-intro-text")}
                 <div className="byttBrukerContent">
                     <Label htmlFor="fnr">{t("byttbruker-fodselsnummer")}</Label>
                     <div className="byttBrukerContainer">
@@ -109,46 +112,47 @@ export const ByttBrukerView = () => {
                             </Hovedknapp>
                         </div>
                     </div>
-                    { !byttBrukerSuccess && isLoggedInOnBehalf &&
-                        <>
-                            <div className="elementWrapper">
-                                <Hovedknapp bredde="L" onClick={navigateToForside}>
-                                    {t("byttbruker-sok-paa-vegne-av", {"name": fornavn + " " + etternavn})}
-                                </Hovedknapp>
-                            </div>
-                            <div className="elementWrapper">
-                                <Knapp
-                                    bredde="L"
-                                    onClick={(event) => {
-                                        byttBruker(event, {
-                                            "fullmaktsgiverPid": fullmektigPid,
-                                            "fullmektigPid": fullmektigPid
-                                        }, navigateToForside);
-                                        }
-                                    }
-                                >
-                                    {t("byttbruker-sok-som-deg-selv")}
-                                </Knapp>
-                            </div>
-                        </>
-                    }
-                    { !byttBrukerSuccess && !isLoggedInOnBehalf &&
+                    {!byttBrukerSuccess && isLoggedInOnBehalf &&
+                    <>
                         <div className="elementWrapper">
                             <Hovedknapp bredde="L" onClick={navigateToForside}>
-                                {t("byttbruker-sok-som-deg-selv")}
+                                {t("byttbruker-opptjening-paa-vegne-av", {"name": fornavn + " " + etternavn})}
                             </Hovedknapp>
                         </div>
-                    }
-                    { !inputError && byttBrukerError &&
                         <div className="elementWrapper">
-                            <div id="soknad-alder-error">
-                                <Alertstripe type="feil">
-                                    {t(byttBrukerError.message)}
-                                </Alertstripe>
-                            </div>
+                            <Knapp
+                                bredde="L"
+                                onClick={(event) => {
+                                    byttBruker(event, {
+                                        "fullmaktsgiverPid": fullmektigPid,
+                                        "fullmektigPid": fullmektigPid
+                                    }, navigateToForside);
+                                }
+                                }
+                            >
+                                {t("byttbruker-opptjening-som-deg-selv")}
+                            </Knapp>
                         </div>
+                    </>
+                    }
+                    {!byttBrukerSuccess && !isLoggedInOnBehalf &&
+                    <div className="elementWrapper">
+                        <Hovedknapp bredde="L" onClick={navigateToForside}>
+                            {t("byttbruker-opptjening-som-deg-selv")}
+                        </Hovedknapp>
+                    </div>
+                    }
+                    {!inputError && byttBrukerError &&
+                    <div className="elementWrapper">
+                        <div id="opptjening-error">
+                            <Alertstripe type="feil">
+                                {t(byttBrukerError.message)}
+                            </Alertstripe>
+                        </div>
+                    </div>
                     }
                 </div>
-        </>
+            </div>
+        </div>
     )
 }
