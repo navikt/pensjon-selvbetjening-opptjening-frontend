@@ -2,8 +2,7 @@ import { all, put, call, takeLatest } from 'redux-saga/effects';
 import {
     BYTT_BRUKER_STARTED, byttBrukerFailure,
     byttBrukerSuccess,
-    FETCH_OPPTJENING_STARTED,
-    fetchOpptjeningStarted
+    FETCH_OPPTJENING_STARTED
 } from './opptjeningActions'
 import {fetchOpptjeningSuccess, fetchOpptjeningFailure} from './opptjeningActions'
 
