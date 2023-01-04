@@ -7,8 +7,7 @@ import {useTranslation} from "react-i18next";
 export const ExpandableDescription = (props) => {
     const { children, title} = props;
     const { t } = useTranslation();
-    const expandedInSession = sessionStorage.getItem(title);
-    const [isOpen, setIsOpen] = useState(!!expandedInSession);
+    const [isOpen, setIsOpen] = useState(false);
 
     return(
         <div className="expandableDescription">
