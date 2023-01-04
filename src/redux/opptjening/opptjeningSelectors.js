@@ -7,7 +7,7 @@ export const initialState = {
     opptjeningError: undefined,
     byttBrukerLoading: false,
     byttBrukerSuccess: false,
-    byttBrukerError: undefined
+    byttBrukerError: null
 };
 
 export const getOpptjening = (state = initialState) => state.opptjening ? state.opptjening.opptjening : null;
