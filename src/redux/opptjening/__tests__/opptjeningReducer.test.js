@@ -11,7 +11,7 @@ const initialState = {
 
 it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
-        byttBrukerError: undefined,
+        byttBrukerError: null,
         byttBrukerLoading: false,
         byttBrukerSuccess: false,
         opptjening: null,
