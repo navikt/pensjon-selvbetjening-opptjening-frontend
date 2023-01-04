@@ -15,9 +15,8 @@ export const ExpandableDescription = (props) => {
                 apen={isOpen}
                 border={false}
                 onClick={
-                    (event) => {
+                    () => {
                         setIsOpen(!isOpen)
-                        sessionStorage.setItem(title, isOpen ? 'false' : 'true');
                     }
                 }
                 tittel={<Normaltekst>{t(title)}</Normaltekst>}>
