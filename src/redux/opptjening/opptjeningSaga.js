@@ -28,10 +28,13 @@ export function* fetchOpptjening() {
 
 function* byttBruker(action){
     try {
+        console.log(action)
         const byttBrukerResponse = yield call(fetchPost, process.env.PUBLIC_URL + urlHelper.BYTT_BRUKER_ENDPOINT,  JSON.stringify(action.data));
         yield put(byttBrukerSuccess(byttBrukerResponse));
         yield put(fetchOpptjeningStarted());
         if(action.navigateToForside) {
+            console.log(action)
+            console.log(action.navigateToForside)
             yield call(action.navigateToForside());
         }
     } catch (error) {
