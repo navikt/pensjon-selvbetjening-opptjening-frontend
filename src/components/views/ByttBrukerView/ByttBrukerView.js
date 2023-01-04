@@ -73,9 +73,13 @@ export const ByttBrukerView = () => {
     }
 
     const navigateToForside = () => {
+        console.log("Called navigateToForside")
         dispatch(resetByttBruker());
+        console.log("Done resetBrukerbytte")
         const forside = "/" + match.params.lng + "/" + history.location.search;
+        console.log("Initialized forside")
         history.push(forside);
+        console.log("Pushed to history")
     }
 
     return (
