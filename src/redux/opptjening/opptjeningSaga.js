@@ -35,6 +35,7 @@ function* byttBruker(action){
             yield call(action.navigateToForside());
         }
     } catch (error) {
+        console.log(error)
         logger.error(`msg=${error.message} status=${error.cause}`);
         yield put(byttBrukerFailure(error));
     }
