@@ -31,7 +31,6 @@ function* byttBruker(action){
         console.log(action)
         const byttBrukerResponse = yield call(fetchPost, process.env.PUBLIC_URL + urlHelper.BYTT_BRUKER_ENDPOINT,  JSON.stringify(action.data));
         yield put(byttBrukerSuccess(byttBrukerResponse));
-        yield put(fetchOpptjeningStarted());
         if(action.navigateToForside) {
             console.log(action)
             console.log(action.navigateToForside)
