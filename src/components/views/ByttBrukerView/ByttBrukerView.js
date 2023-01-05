@@ -16,7 +16,6 @@ import {
     getByttBrukerSuccess, getEtternavn, getFornavn, getFullmektigPid, getPid
 } from "../../../redux/opptjening/opptjeningSelectors";
 import {byttBrukerStarted, resetByttBruker} from "../../../redux/opptjening/opptjeningActions";
-import {TopBanner} from "../../elements/TopBanner/TopBanner";
 
 export const ByttBrukerView = () => {
     const {t} = useTranslation(['byttbruker']);
@@ -80,9 +79,7 @@ export const ByttBrukerView = () => {
     }
 
     return (
-        <div className="byttBrukerView">
-            <TopBanner title="opptjening-tittel"/>
-            <div className="byttBrukerContentWrapper">
+            <>
                 <Systemtittel className="byttBrukerTitle">
                     {t("byttbruker-title")}
                 </Systemtittel>
@@ -142,16 +139,13 @@ export const ByttBrukerView = () => {
                     </div>
                     }
                     {!inputError && byttBrukerError &&
-                    <div className="elementWrapper">
-                        <div id="opptjening-error">
+                        <div className="opptjening-error">
                             <Alertstripe type="feil">
                                 {t(byttBrukerError.message)}
                             </Alertstripe>
-                        </div>
                     </div>
                     }
                 </div>
-            </div>
-        </div>
+            </>
     )
 }
