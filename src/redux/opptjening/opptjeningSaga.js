@@ -27,16 +27,12 @@ export function* fetchOpptjening() {
 
 function* byttBruker(action){
     try {
-        console.log(action)
         yield call(fetchPost, process.env.PUBLIC_URL + urlHelper.BYTT_BRUKER_ENDPOINT,  JSON.stringify(action.data));
         yield put(byttBrukerSuccess());
         if(action.navigateToForside) {
-            console.log(action)
-            console.log(action.navigateToForside)
             yield call(action.navigateToForside());
         }
     } catch (error) {
-        console.log(error)
         logger.error(`msg=${error.message} status=${error.cause}`);
         yield put(byttBrukerFailure(error));
     }
