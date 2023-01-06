@@ -30,7 +30,7 @@ function* byttBruker(action){
         yield call(fetchPost, process.env.PUBLIC_URL + urlHelper.BYTT_BRUKER_ENDPOINT,  JSON.stringify(action.data));
         yield put(byttBrukerSuccess());
         if(action.navigateToForside) {
-            yield call(action.navigateToForside());
+            yield call(action.navigateToForside);
         }
     } catch (error) {
         logger.error(`msg=${error.message} status=${error.cause}`);

@@ -75,7 +75,6 @@ export const ByttBrukerView = () => {
         dispatch(resetByttBruker());
         const forside = "/" + match.params.lng + "/" + history.location.search;
         history.push(forside);
-        return navigateToForside;
     }
 
     return (
