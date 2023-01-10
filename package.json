@@ -86,9 +86,13 @@
     "cypress:update": "start-server-and-test dev http://localhost:3000 cy:run:update",
     "express": "node expressServer.js",
     "cypress:docker": "docker run --add-host=host.docker.internal:host-gateway -i -v $PWD:/e2e -w /e2e -e CYPRESS_updateSnapshots=$CYPRESS_updateSnapshots -e CYPRESS_baseUrl=http://host.docker.internal:3000 cypress/included:7.0.0 --browser chrome",
+    "cypress:colima": "docker run -i -v $PWD:/e2e -w /e2e -e CYPRESS_updateSnapshots=$CYPRESS_updateSnapshots -e CYPRESS_baseUrl=http://host.lima.internal:3000 cypress/included:7.0.0 --browser chrome",
     "test:cycli": "cross-env start-server-and-test express http://$HOST:3000 cypress:docker",
+    "test:cycli:colima": "cross-env start-server-and-test express http://$HOST:3000 cypress:colima",
     "cypress:docker:local": "cross-env HOST=127.0.0.1 npm run test:cycli",
-    "update:cypress:docker:images": "cross-env HOST=127.0.0.1 CYPRESS_updateSnapshots=true npm run test:cycli"
+    "cypress:colima:local": "cross-env HOST=127.0.0.1 npm run test:cycli:colima",
+    "update:cypress:docker:images": "cross-env HOST=127.0.0.1 CYPRESS_updateSnapshots=true npm run test:cycli",
+    "update:cypress:colima:images": "cross-env HOST=127.0.0.1 CYPRESS_updateSnapshots=true npm run test:cycli:colima"
   },
   "eslintConfig": {
     "extends": "react-app"

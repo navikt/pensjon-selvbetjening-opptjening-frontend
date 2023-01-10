@@ -26,26 +26,26 @@ Applikasjonen kjører da opp en lokal JSON-server som mocker data.
 ## Visuelle tester
 Testene skal kjøres i Docker før de oppdateres. Man kan kjøre både i Docker og uten lokalt.
 Testene baserer seg på produksjonsbygget med spesial-URL for Dekoratøren. Dermed må 
-man bygge for å få ønsket resultat med `npm run build:cypress`.
+man bygge med `npm run build:cypress`.
 
-Kjøre tester lokalt i Docker-container: `npm run cypress:docker:local`
+Kjøre tester lokalt i Docker-container: `npm run cypress:docker:local`. Med Colima bruk isteden: `npm run cypress:colima:local`.
 
-Oppdatere baseline-images lokalt: `npm run update:cypress:docker:images` (må pushe nye bilder til branch)
+Oppdatere baseline-images lokalt: `npm run update:cypress:docker:images` (må pushe nye bilder til branch). Med Colima bruk isteden: `npm run update:cypress:colima:images`.
 
-Cyress test runner: `npm run cypress:interactive` krever at express serveren allerede kjører => `npm run express`
+Cypress test runner: `npm run cypress:interactive`. Dette krever at Express-serveren allerede kjører: `npm run express`.
 
 GitHub Actions kjøres med `cypress-integration.yaml` Her er IP-adressen satt pga. at Docker ikke fungerer med vanlig `localhost` på Linux.
 
-Hvis testene feiler på GitHub Actions kan man laste ned diffen fra jobben. Under "Where does the upload go?" her: [github.com/actions/upload-artifact](https://github.com/actions/upload-artifact)
+Hvis testene feiler på GitHub Actions, kan man laste ned diffen fra jobben. Under "Where does the upload go?" her: [github.com/actions/upload-artifact](https://github.com/actions/upload-artifact).
 
 Cypress-testene kjøres i Docker fra repoet [github.com/cypress-io/cypress-docker-images/tree/master/included](https://github.com/cypress-io/cypress-docker-images/tree/master/included).
 
 Vi intercepter kall mot innloggingsstatus for Dekoratøren for at det skal fungere likt på GitHub Actions og lokalt uten Naisdevice.
 OBS: Dekoratørens visuelle endringer vil brekke dette bygget. Ved reload av siden vil Dekoratørens chatbot prompte spørsmål.
 
-#Feilsøking:
+### Feilsøking
 Legg til `DEBUG=cypress:*` som en miljøvariabel med `-e` før `cypress/included` i Docker-kommandoen.
-Evt. se her: [github.com/cypress-io/cypress-docker-images/tree/master/included](https://github.com/cypress-io/cypress-docker-images/tree/master/included).
+Eventuelt se her: [github.com/cypress-io/cypress-docker-images/tree/master/included](https://github.com/cypress-io/cypress-docker-images/tree/master/included).
 
 Bildene vi bryr oss om ligger under `cypress/snapshots/navn på testfil/bilde.png`.
 Ved `bilde.png` vil det komme opp et diff-bilde hvis det avviker fra baselinen.
