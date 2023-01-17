@@ -52,7 +52,7 @@ export const ByttBrukerView = () => {
             byttBruker(event, {
                 "fullmaktsgiverPid": fnr,
                 "fullmektigPid": fullmektigPid && fullmektigPid !== "" ? fullmektigPid : pid
-            })
+            }, navigateToForside)
         }
     };
 
