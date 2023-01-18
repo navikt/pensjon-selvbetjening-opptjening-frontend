@@ -121,6 +121,7 @@
     "error-status-404": "We are not able to find the page or service you are looking for.",
     "error-status-common": "A technical problem occurred. Please try to log in again later. We are sorry for the inconvenience.",
     "error-status-nodata": "We can not find any data for you.",
-    "error-proev-igjen": "Try again"
+    "error-proev-igjen": "Try again",
 
+    "opptjening-paa-vegne-av-title": "Show pension earnings on behalf of another person"
 }

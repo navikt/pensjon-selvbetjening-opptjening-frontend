@@ -1,0 +1,25 @@
+{
+    "byttbruker-opptjening-paa-vegne-av-annen": "Sjå pensjonsopptening på vegne av ein annan",
+    "byttbruker-opptjening-paa-vegne-av-annen-text": "Dersom du har blitt gitt fullmakt, kan du sjå på oversikta over pensjonsoppteninga til ein annan.",
+    "byttbruker-velg-en-annen-fullmaktsgiver-eller-deg-selv": "Vel ein annan fullmaktsgivar eller deg sjølv",
+    "byttbruker-opptjening-paa-vegne-av-en-annen": "Sjå pensjonsoppteninga til ein annan",
+    "byttbruker-title": "Kven skal du sjå pensjonsopptening for?",
+    "byttbruker-intro-text": "Dersom du har ei fullmakt, kan du sjå pensjonsoppteninga til ein gitt person.",
+    "byttbruker-fodselsnummer": "Fødselsnummer",
+    "byttbruker-bytt-bruker": "Bytt brukar",
+    "byttbruker-du-er-logget-inn-paa-vegne-av": "Du er logga inn på vegne av {{name}}",
+    "byttbruker-opptjening-paa-vegne-av": "Sjå pensjonsoppteninga til {{name}}",
+    "byttbruker-opptjening-som-deg-selv": "Sjå di eiga pensjonsopptening",
+    "byttbruker-prov-igjen": "Prøv igjen",
+    "byttbruker-input-error-obligatorisk-felt": "Du må fylle ut eit fødselsnummer",
+    "byttbruker-input-error-kan-bare-inneholde-tall": "Fødselsnummeret kan berre innehalde tall",
+    "byttbruker-input-error-feil-antall-siffer": "Fødselsnummeret har feil antall siffer",
+
+    "error-status-401": "Du er ikkje autorisert",
+    "error-status-403": "Du er ikkje fullmektig for denne personen, og kan difor ikkje sjå pensjonsoppteninga for denne. Ver vennleg og sjekk at du har skrive fødselsnummeret korrekt.",
+    "error-status-404": "Vi finn ikkje personen. Ver vennleg og sjekk at du har skrive fødselsnummeret korrekt.",
+    "error-status-common": "Det oppstod eit teknisk problem. Du kan prøve å logge inn seinare. Vi beklagar feilen. Dersom feilen vedvarar, kan du ringje NAV Kontaktsenter.",
+    "error-status-common-initiate": "Vi klarte ikkje å laste pensjonsoppteninga di, ver vennleg og prøv igjen.",
+    "error-proev-igjen": "Prøv igjen"
+
+}

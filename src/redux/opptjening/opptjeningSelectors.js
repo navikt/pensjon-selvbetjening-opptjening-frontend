@@ -4,7 +4,10 @@ import {BORN_BEFORE_1943, BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1943_AND_1953, BOR
 export const initialState = {
     opptjening: null,
     opptjeningLoading: true,
-    opptjeningError: undefined
+    opptjeningError: undefined,
+    byttBrukerLoading: false,
+    byttBrukerSuccess: false,
+    byttBrukerError: undefined
 };
 
 export const getOpptjening = (state = initialState) => state.opptjening ? state.opptjening.opptjening : null;
@@ -12,6 +15,8 @@ export const getOpptjeningLoading = (state = initialState) => state.opptjening ?
 export const getOpptjeningError = (state = initialState) => state.opptjening ? state.opptjening.opptjeningError : undefined;
 export const getOpptjeningData =  (state = initialState) => state.opptjening && state.opptjening.opptjening.opptjeningData ? state.opptjening.opptjening.opptjeningData : {};
 export const getFodselsAar = (state = initialState) => state.opptjening ? state.opptjening.opptjening.fodselsaar : null;
+export const getPid = (state = initialState) => state.opptjening ? state.opptjening.opptjening.pid : null;
+export const getFullmektigPid = (state = initialState) => state.opptjening && state.opptjening.opptjening ? state.opptjening.opptjening.fullmektigPid : "";
 export const getFornavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.fornavn ? state.opptjening.opptjening.fornavn : null;
 export const getMellomnavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.mellomnavn? state.opptjening.opptjening.mellomnavn : null;
 export const getEtternavn = (state = initialState) => state.opptjening && state.opptjening.opptjening && state.opptjening.opptjening.etternavn? state.opptjening.opptjening.etternavn : null;
@@ -148,3 +153,7 @@ export const hasOpptjeningData = (state = initialState) => {
     const opptjeningData = getOpptjeningData(state);
     return Object.entries(opptjeningData).length > 0;
 };
+
+export const getByttBrukerSuccess = (state = initialState) => state.opptjening ? state.opptjening.byttBrukerSuccess : false;
+export const getByttBrukerError = (state = initialState) => state.opptjening ? state.opptjening.byttBrukerError : null;
+export const getByttBrukerLoading = (state = initialState) => state.opptjening ? state.opptjening.byttBrukerLoading : null;

@@ -11,6 +11,7 @@ import {
 } from "../../../__mocks__/mockDataGenerator";
 import {formatAmount} from "../../../common/utils";
 import * as amplitude from "../../../common/amplitude";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const mockedState = mockBasicSuccessState(20, 1972);
 
@@ -18,7 +19,7 @@ it('should not fail any accessibility tests', async () => {
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    const {container} = render(<Provider store={store}><OpptjeningView/></Provider>);
+    const {container} = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
     expect(await axe(container)).toHaveNoViolations();
 });
 
@@ -26,7 +27,7 @@ it('should render Opptjening view and display only the headings for the differen
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
     expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("beholdning-din-pensjonsbeholdning-i-folketrygden"); //Beholdning-panel
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart"); //BeholdningForklart-panel
@@ -45,7 +46,7 @@ it('should render Opptjening view and display the headings for the different pan
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
 
     expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("beholdning-din-pensjonsbeholdning-i-folketrygden"); //Beholdning-panel
@@ -67,7 +68,7 @@ it('should render Opptjening view and display the headings for the different pan
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
 
     expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
     expect(view.queryAllByRole("heading")[0]).toHaveTextContent("pensjonspoeng-forklart"); //Pensjonspoeng
@@ -81,7 +82,7 @@ it('should render Opptjening view, open Pensjonsbeholdning forklart-panel and sh
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[1]);
 
     expect(view.queryAllByRole("heading")[1]).toHaveTextContent("pensjonsbeholdning-forklart");
@@ -92,7 +93,7 @@ it('should render Opptjening view, open OpptjeningDetails-panel and show details
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[4]); // OpptjeningDetails
 
     expect(view.queryAllByRole("table").length).toBe(2); // Chart tables + details tables
@@ -102,7 +103,7 @@ it('should render Opptjening view, open Inntekter-panel and display inntekter ta
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[2]); // Inntekter
     expect(view.queryAllByRole("table").length).toBe(2); // Chart tables + inntekter table
 });
@@ -118,7 +119,7 @@ it('should render Opptjening view, open details panel, and show correct beholdni
     ]);
     let store = mockStore(mockState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
     fireEvent.click(view.queryAllByRole("heading")[4]); // OpptjeningDetails
     fireEvent.change(view.getByTestId("year-selector"), {
         target: {
@@ -152,9 +153,9 @@ it('should render Opptjening view with OverforeOmsorgsOpptjening link panel pres
     let store2 = mockStore(mockState2);
     let store3 = mockStore(mockState3);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
-    let view2 = render(<Provider store={store2}><OpptjeningView/></Provider>);
-    let view3 = render(<Provider store={store3}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
+    let view2 = render(<Provider store={store2}><Router><OpptjeningView/></Router></Provider>);
+    let view3 = render(<Provider store={store3}><Router><OpptjeningView/></Router></Provider>);
 
     expect(view.queryAllByRole("heading")[5]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
     expect(view2.queryAllByRole("heading")[5]).toHaveTextContent("overfore-omsorgsopptjening-title"); //OverforeOmsorgsOpptjening-panel
@@ -166,7 +167,7 @@ it('should Opptjening view, open details panel, select year and log two events t
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
 
     fireEvent.click(view.queryAllByRole("heading")[4]); // OpptjeningDetails
     fireEvent.change(view.getByTestId("year-selector"), {
@@ -184,7 +185,7 @@ it('should render Opptjening view and display the Veileder with speechbubble con
     const mockStore = configureStore();
     let store = mockStore(mockedState);
 
-    let view = render(<Provider store={store}><OpptjeningView/></Provider>);
+    let view = render(<Provider store={store}><Router><OpptjeningView/></Router></Provider>);
 
     expect(view.getByTestId("veilederContainer")).toBeVisible(); //Veileder component
     expect(view.getByTestId("veilederContainer")).toHaveTextContent("opptjening-hei, test tester testesen! opptjening-intro-tekst")

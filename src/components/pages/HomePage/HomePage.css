@@ -5,3 +5,8 @@
   margin: 1rem 1rem 1.4rem;
   z-index: 1;
 }
+
+.paaVegneAvWarning{
+  padding: 1rem;
+  margin-bottom: -2rem;
+}

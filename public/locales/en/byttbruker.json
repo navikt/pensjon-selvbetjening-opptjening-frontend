@@ -1,0 +1,24 @@
+{
+    "byttbruker-opptjening-paa-vegne-av-annen": "See pension earnings on behalf of someone else",
+    "byttbruker-opptjening-paa-vegne-av-annen-text": "If you have been given a power of attorney you can see an overview of the pension earnings for someone else.",
+    "byttbruker-velg-en-annen-fullmaktsgiver-eller-deg-selv": "Choose someone who has given you a power of attorney, or choose yourself",
+    "byttbruker-opptjening-paa-vegne-av-en-annen": "See the pension earnings for someone else",
+    "byttbruker-title": "Who are you going to see pension earnings for?",
+    "byttbruker-intro-text": "If you have a power of attorney you can see the pension earnings for a given person.",
+    "byttbruker-fodselsnummer": "National identification number",
+    "byttbruker-bytt-bruker": "Change user",
+    "byttbruker-du-er-logget-inn-paa-vegne-av": "You are logged in on behalf of {{name}}",
+    "byttbruker-opptjening-paa-vegne-av": "See pension earnings for {{name}}",
+    "byttbruker-opptjening-som-deg-selv": "See your own pension earnings",
+    "byttbruker-prov-igjen": "Try again",
+    "byttbruker-input-error-obligatorisk-felt": "You have to input a national identification number",
+    "byttbruker-input-error-kan-bare-inneholde-tall": "The national identification number can only contain numbers",
+    "byttbruker-input-error-feil-antall-siffer": "The national identification number has wrong number of digits",
+
+    "error-status-401": "You are not authorized",
+    "error-status-403": "You do not have a power of attorney for this person and can therefore not see the person's pension earnings. Please check that you have input the correct national identification number.",
+    "error-status-404": "Could not find the given person. Please check that you have input the correct national identification number.",
+    "error-status-common": "A technical error has occurred. You can try to log in again later. We apologise for this error. If the error persists, please call NAV Kontaktsenter.",
+    "error-status-common-initiate": "There was an error when loading your pension earnings. Please try again later.",
+    "error-proev-igjen": "Try again"
+}

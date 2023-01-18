@@ -1,0 +1,43 @@
+.byttBrukerButtons button {
+  margin-right: 1rem;
+}
+.byttBrukerTitle {
+  margin-bottom: 0;
+}
+.byttBrukerContent {
+  margin-top: 1rem;
+}
+.byttBrukerContainer {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.byttBrukerContainer .byttBrukerInputContainer {
+  width: 35%;
+}
+.byttBrukerInputContainer {
+  margin-right: 5px;
+}
+.byttBrukerContainer .byttBrukerInputContainer input {
+  border: 2px solid #0067c5;
+  border-radius: 5px 0 0 5px;
+}
+.byttBrukerContainer .byttBrukerButtonContainer button {
+  border-radius: 0 5px 5px 0;
+  border: 3px solid transparent;
+}
+.infoContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.infoText {
+  margin-left: 1rem;
+}
+.infoIcon {
+  font-size: 1.5rem;
+}
+svg.infoIcon > path {
+  fill: #368da8;
+}
+.opptjening-error{
+  padding-top:1rem;
+}

@@ -1,0 +1,56 @@
+.closeButton {
+  width: 50%;
+  background: transparent;
+  border: 0;
+  padding: 1rem 0 1rem 1rem;
+  cursor: pointer;
+  color: #0067c5;
+  text-decoration: underline;
+}
+.closeButton:hover {
+  text-decoration: none;
+}
+.expandableDescription .ekspanderbartPanel:hover {
+  box-shadow: none;
+}
+.expandableDescription .ekspanderbartPanel {
+  background-color: transparent;
+}
+.expandableDescription .ekspanderbartPanel {
+  border: none;
+}
+.expandableDescription .ekspanderbartPanel__tittel {
+  margin-right: 1rem;
+}
+.expandableDescription .ekspanderbartPanel__innhold {
+  padding: 1rem 0 0 0;
+}
+.expandableDescription .ekspanderbartPanel__hode {
+  padding: 0;
+  width: fit-content;
+}
+.expandableDescription .ekspanderbartPanel__hode:focus,
+.expandableDescription .ekspanderbartPanel__hode--focus {
+  box-shadow: none;
+}
+.expandableDescription .ekspanderbartPanel__hode:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+.expandableDescription .ekspanderbartPanel__hode .ekspanderbartPanel__tittel {
+  text-decoration: underline;
+  color: #0067c5;
+}
+.expandableDescription .ekspanderbartPanel__hode .ekspanderbartPanel__indikator {
+  color: #0067c5;
+}
+.expandableDescription .ekspanderbartPanel__hode:hover,
+.expandableDescription .ekspanderbartPanel__hode--hover {
+  cursor: pointer;
+}
+.expandableDescription .ekspanderbartPanel__hode:hover .ekspanderbartPanel__tittel,
+.expandableDescription .ekspanderbartPanel__hode--hover .ekspanderbartPanel__tittel {
+  text-decoration: none;
+}
+.expandableDescription .ekspanderbartPanel__flex-wrapper {
+  justify-content: flex-start;
+}
