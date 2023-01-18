@@ -16,7 +16,7 @@ export const ByttBruker = () => {
     return (
         <div className="byttBrukerLinkContainer">
             {fullmektigPid && fullmektigPid !== "" &&
-                <Knapp className="margin1remupdown displayBlock" onClick={() => history.push(match.url + "bytt-bruker/" + history.location.search)}>
+                <Knapp className="margin1remupdown displayBlock" kompakt ={true} onClick={() => history.push(match.url + "bytt-bruker/" + history.location.search)}>
                     {t("byttbruker:byttbruker-velg-en-annen-fullmaktsgiver-eller-deg-selv")}
                 </Knapp>
             }

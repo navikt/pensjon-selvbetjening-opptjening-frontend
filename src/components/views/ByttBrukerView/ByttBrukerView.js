@@ -116,6 +116,7 @@ export const ByttBrukerView = () => {
                         </Hovedknapp>
                         <div className="elementWrapper">
                             <Knapp
+                                kompakt={true}
                                 bredde="L"
                                 onClick={(event) => {
                                     byttBruker(event, {
