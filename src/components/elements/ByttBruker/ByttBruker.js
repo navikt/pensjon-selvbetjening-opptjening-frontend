@@ -25,7 +25,7 @@ export const ByttBruker = () => {
                     <div>
                         {t("byttbruker:byttbruker-opptjening-paa-vegne-av-annen-text")}
                         {/* eslint-disable-next-line no-useless-concat */}
-                        <Knapp className="margin1remupdown displayBlock" onClick={() => history.push(match.url + "bytt-bruker/" + history.location.search)}>
+                        <Knapp className="margin1remupdown displayBlock" kompakt={true} onClick={() => history.push(match.url + "bytt-bruker/" + history.location.search)}>
                             {t("byttbruker:byttbruker-opptjening-paa-vegne-av-en-annen")}
                         </Knapp>
                     </div>
