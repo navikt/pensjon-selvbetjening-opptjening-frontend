@@ -99,7 +99,7 @@ export const ByttBrukerView = () => {
                         </div>
                         <div className="byttBrukerButtonContainer">
                             <Hovedknapp
-                                bredde="L"
+                                kompakt={true}
                                 onClick={(event) => byttBruker(event, {
                                     "fullmaktsgiverPid": fnr,
                                     "fullmektigPid": fullmektigPid && fullmektigPid !== "" ? fullmektigPid : pid
@@ -111,11 +111,12 @@ export const ByttBrukerView = () => {
                     </div>
                     {!byttBrukerSuccess && isLoggedInOnBehalf &&
                     <>
-                        <Hovedknapp bredde="L" onClick={navigateToForside}>
+                        <Hovedknapp kompakt={true} onClick={navigateToForside}>
                             {t("byttbruker-opptjening-paa-vegne-av", {"name": fornavn + " " + etternavn})}
                         </Hovedknapp>
                         <div className="elementWrapper">
                             <Knapp
+                                kompakt={true}
                                 bredde="L"
                                 onClick={(event) => {
                                     byttBruker(event, {
@@ -132,7 +133,7 @@ export const ByttBrukerView = () => {
                     }
                     {!byttBrukerSuccess && !isLoggedInOnBehalf &&
                     <div className="elementWrapper">
-                        <Hovedknapp bredde="L" onClick={navigateToForside}>
+                        <Hovedknapp kompakt={true} onClick={navigateToForside}>
                             {t("byttbruker-opptjening-som-deg-selv")}
                         </Hovedknapp>
                     </div>
