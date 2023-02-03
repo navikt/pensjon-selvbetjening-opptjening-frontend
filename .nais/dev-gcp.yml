@@ -28,6 +28,9 @@ spec:
     path: /internal/ready
     initialDelay: 30
     timeout: 1
+  idporten:
+    sidecar:
+      autoLogin: true
   accessPolicy:
     outbound:
       rules:
