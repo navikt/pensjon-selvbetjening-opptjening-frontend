@@ -29,7 +29,14 @@ spec:
     initialDelay: 30
     timeout: 1
   idporten:
+    enabled: true
+    clientURI: https://pensjon-selvbetjening-opptjening-frontend.dev.nav.no/pensjon/opptjening
+    redirectPath: "/oauth2/callback"
+    frontchannelLogoutPath: "/logout"
+    postLogoutRedirectURIs:
+      - "https://www.nav.no"
     sidecar:
+      enabled: true
       autoLogin: true
   accessPolicy:
     outbound:
