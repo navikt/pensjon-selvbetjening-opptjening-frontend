@@ -12,7 +12,6 @@ metadata:
 spec:
   image: {{ image_dev_gcp }}
   ingresses:
-    - https://pensjon-selvbetjening-opptjening-frontend.dev.nav.no
     - https://www-gcp.dev.nav.no/pensjon/opptjening
   port: 8080
   replicas:
@@ -30,7 +29,7 @@ spec:
     timeout: 1
   idporten:
     enabled: true
-    clientURI: https://pensjon-selvbetjening-opptjening-frontend.dev.nav.no/pensjon/opptjening
+    clientURI: https://www-gcp.dev.nav.no/pensjon/opptjening
     redirectPath: "/oauth2/callback"
     frontchannelLogoutPath: "/logout"
     postLogoutRedirectURIs:
