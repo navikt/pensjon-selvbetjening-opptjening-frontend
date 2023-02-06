@@ -1,5 +1,5 @@
 ==== LoginPanel
-Panel med knapp for å logge inn via LOGINSERVICE.
+Panel med knapp for å logge inn.
 
 ===== LoginPanel.js
 |===
