@@ -33,9 +33,9 @@ spec:
       enabled: true
       autoLogin: true
       autoLoginIgnorePaths:
-        - /pensjon/opptjening/api/status
         - /internal/ping
         - /internal/selftest
+        - /pensjon/opptjening/api/status
   accessPolicy:
     outbound:
       rules:
