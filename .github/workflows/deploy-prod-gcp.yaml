@@ -30,7 +30,7 @@ jobs:
         run: npm test -- --watchAll=false
       - name: Build application
         env:
-          REACT_APP_LOGINSERVICE_URL: "https://loginservice.nav.no/login?redirect="
+          REACT_APP_LOGINSERVICE_URL: "not used in GCP"
           REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjening"
           REACT_APP_DECORATOR_URL: "https://www.nav.no/dekoratoren"
           REACT_APP_DINPENSJON_URL: "https://www.nav.no/pselv/publisering/dinpensjon.jsf"
