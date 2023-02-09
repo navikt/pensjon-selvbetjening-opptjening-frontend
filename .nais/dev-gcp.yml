@@ -33,7 +33,7 @@ spec:
       enabled: true
       autoLogin: true
       autoLoginIgnorePaths:
-        - /api/status
+        - /pensjon/opptjening/api/status
         - /internal/ping
         - /internal/selftest
   accessPolicy:
