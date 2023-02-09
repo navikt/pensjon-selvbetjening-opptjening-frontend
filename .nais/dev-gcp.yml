@@ -29,14 +29,13 @@ spec:
     timeout: 1
   idporten:
     enabled: true
-    clientURI: https://www-gcp.dev.nav.no/pensjon/opptjening
-    redirectPath: "/oauth2/callback"
-    frontchannelLogoutPath: "/logout"
-    postLogoutRedirectURIs:
-      - "https://www.nav.no"
     sidecar:
       enabled: true
       autoLogin: true
+      autoLoginIgnorePaths:
+        - /api/status
+        - /internal/ping
+        - /internal/selftest
   accessPolicy:
     outbound:
       rules:
