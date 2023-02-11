@@ -123,7 +123,7 @@
     "http-proxy-middleware": "^1.0.5",
     "jest-axe": "~5.0.1",
     "jest-canvas-mock": "^2.3.0",
-    "json-server": "^0.16.1",
+    "json-server": "^0.17.1",
     "path": "0.12.7",
     "redux-devtools": "^3.7.0",
     "redux-mock-store": "^1.5.4",
