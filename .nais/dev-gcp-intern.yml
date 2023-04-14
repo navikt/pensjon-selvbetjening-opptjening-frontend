@@ -33,6 +33,7 @@ spec:
         - application: pensjon-selvbetjening-opptjening-backend
       external:
         - host: pensjon-veiledning-opptjening-frontend.dev.intern.nav.no
+        - host: pensjon-selvbetjening-opptjening-backend.dev.nav.no
   env:
     - name: "OPPTJENING_BACKEND"
       value: "https://pensjon-selvbetjening-opptjening-backend.dev.nav.no"
