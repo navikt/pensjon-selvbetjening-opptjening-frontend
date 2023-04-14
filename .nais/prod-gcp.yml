@@ -40,6 +40,8 @@ spec:
     outbound:
       rules:
         - application: pensjon-selvbetjening-opptjening-backend
+      external:
+        - host: www.nav.no
   env:
     - name: "OPPTJENING_BACKEND"
       value: "https://pensjon-selvbetjening-opptjening-backend.intern.nav.no"
