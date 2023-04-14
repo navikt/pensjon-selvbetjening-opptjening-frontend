@@ -31,6 +31,7 @@ spec:
     outbound:
       rules:
         - application: pensjon-selvbetjening-opptjening-backend
+        - application: pensjon-veiledning-opptjening-frontend
   env:
     - name: "OPPTJENING_BACKEND"
       value: "https://pensjon-selvbetjening-opptjening-backend.dev.nav.no"
