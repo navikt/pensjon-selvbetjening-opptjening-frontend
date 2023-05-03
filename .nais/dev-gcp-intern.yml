@@ -12,7 +12,7 @@ metadata:
 spec:
   image: {{ image_dev_gcp_intern }}
   ingresses:
-    - https://pensjon-veiledning-opptjening-frontend.dev.intern.nav.no
+    - https://pensjon-veiledning-opptjening-frontend.intern.dev.nav.no
   port: 8080
   replicas:
     min: 2
@@ -35,4 +35,4 @@ spec:
         - host: pensjon-selvbetjening-opptjening-backend.dev.nav.no
   env:
     - name: "OPPTJENING_BACKEND"
-      value: "https://pensjon-selvbetjening-opptjening-backend.dev.nav.no"
+      value: "http://pensjon-selvbetjening-opptjening-backend"
