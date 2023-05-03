@@ -44,4 +44,4 @@ spec:
         - host: www.nav.no
   env:
     - name: "OPPTJENING_BACKEND"
-      value: "https://pensjon-selvbetjening-opptjening-backend.intern.nav.no"
+      value: "https://pensjon-selvbetjening-opptjening-backend"

@@ -44,4 +44,4 @@ spec:
         - host: www-gcp.dev.nav.no
   env:
     - name: "OPPTJENING_BACKEND"
-      value: "https://pensjon-selvbetjening-opptjening-backend.dev.nav.no"
+      value: "http://pensjon-selvbetjening-opptjening-backend"
