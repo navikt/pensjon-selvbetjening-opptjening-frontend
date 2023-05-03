@@ -12,7 +12,7 @@ metadata:
 spec:
   image: {{ image_dev_gcp }}
   ingresses:
-    - https://www-gcp.dev.nav.no/pensjon/opptjening
+    - https://www-gcp.intern.dev.nav.no/pensjon/opptjening
   port: 8080
   replicas:
     min: 2
