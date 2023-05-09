@@ -27,7 +27,7 @@ jobs:
         run: npm test -- --watchAll=false
       - name: Build application
         env:
-          REACT_APP_LOGINSERVICE_URL: "https://pensjon-veiledning-opptjening-frontend.dev.intern.nav.no/pensjon/opptjening/oauth2/internal/login?redirect="
+          REACT_APP_LOGINSERVICE_URL: "https://pensjon-veiledning-opptjening-frontend.intern.dev.nav.no/pensjon/opptjening/oauth2/internal/login?redirect="
           REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjeningonbehalf"
           REACT_APP_DECORATOR_URL: "https://static-v4-decorator.nais.adeo.no"
           REACT_APP_DINPENSJON_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/publisering/dinpensjon.jsf"
