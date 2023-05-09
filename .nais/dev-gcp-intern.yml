@@ -32,7 +32,7 @@ spec:
       rules:
         - application: pensjon-selvbetjening-opptjening-backend
       external:
-        - host: pensjon-selvbetjening-opptjening-backend.dev.nav.no
+        - host: pensjon-selvbetjening-opptjening-frontend.intern.dev.nav.no
   env:
     - name: "OPPTJENING_BACKEND"
       value: "http://pensjon-selvbetjening-opptjening-backend"
