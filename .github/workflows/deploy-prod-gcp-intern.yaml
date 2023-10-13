@@ -9,6 +9,9 @@ jobs:
   deploy-to-prod:
     name: Deploy internal to prod-gcp
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     env:
       IMAGE_PROD_GCP_INTERN: ghcr.io/${{ github.repository }}/pensjon-veiledning-opptjening-frontend-prod-gcp:${{ github.sha }}
     steps:

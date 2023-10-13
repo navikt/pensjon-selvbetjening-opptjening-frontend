@@ -6,6 +6,9 @@ jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     env:
       IMAGE_DEV_GCP: ghcr.io/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-dev-gcp:${{ github.sha }}
     steps:
