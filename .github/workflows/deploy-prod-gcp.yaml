@@ -10,6 +10,9 @@ jobs:
   deploy-to-prod:
     name: Deploy to prod-gcp
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     env:
       IMAGE_PROD_GCP: ghcr.io/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-prod-gcp:${{ github.sha }}
     steps:
