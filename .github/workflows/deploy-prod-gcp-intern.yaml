@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: read
       packages: write
+      id-token: write
     env:
       IMAGE_PROD_GCP_INTERN: ghcr.io/${{ github.repository }}/pensjon-veiledning-opptjening-frontend-prod-gcp:${{ github.sha }}
     steps:
@@ -64,9 +65,8 @@ jobs:
           image_prod_gcp_intern: $IMAGE_PROD_GCP_INTERN
           EOF
       - name: Deploy to prod-gcp-intern
-        uses: nais/deploy/actions/deploy@v1
+        uses: nais/deploy/actions/deploy@v2
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
           RESOURCE: .nais/prod-gcp-intern.yml
           VARS: .nais/vars-prod-gcp-intern.yaml
