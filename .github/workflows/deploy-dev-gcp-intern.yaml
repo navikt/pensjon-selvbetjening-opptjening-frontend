@@ -35,7 +35,6 @@ jobs:
           REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjeningonbehalf"
           REACT_APP_DECORATOR_URL: "https://static-v4-decorator.nais.adeo.no"
           REACT_APP_DINPENSJON_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/publisering/dinpensjon.jsf"
-          REACT_APP_DINEPENSJONSPOENG_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/publisering/dinepensjonspoeng.jsf"
           REACT_APP_PENSJONSKALKULATOR_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/simulering.jsf"
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://pensjon-pselv-q2.dev.adeo.no/pselv/publisering/overforeomsorgspoeng.jsf"
         run: npm run build
