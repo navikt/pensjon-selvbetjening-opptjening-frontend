@@ -39,7 +39,6 @@ jobs:
           REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjening"
           REACT_APP_DECORATOR_URL: "https://www.nav.no/dekoratoren"
           REACT_APP_DINPENSJON_URL: "https://www.nav.no/pselv/publisering/dinpensjon.jsf"
-          REACT_APP_DINEPENSJONSPOENG_URL: "https://www.nav.no/pselv/publisering/dinepensjonspoeng.jsf"
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://www.nav.no/pselv/publisering/overforeomsorgspoeng.jsf"
           REACT_APP_PENSJONSKALKULATOR_URL: "https://www.nav.no/pselv/simulering.jsf"
         run: npm run build
