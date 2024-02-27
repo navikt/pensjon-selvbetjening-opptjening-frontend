@@ -22,10 +22,10 @@ export const BeholdningForklartPanel = () => {
             <Tekstomrade data-testid="explanationText" className="explanationText">
                 {t('pensjonsbeholdning-forklart-tekst', {joinArrays: "\n\n"})}
             </Tekstomrade>
-            <Tekstomrade data-testid="explanationText" className="explanationText">
+            <Tekstomrade data-testid="explanationText-2" className="explanationText">
                 {t('pensjonsbeholdning-forklart-tekst-2', {joinArrays: "\n\n"})}
             </Tekstomrade>
-            <Tekstomrade data-testid="explanationText" className="explanationText">
+            <Tekstomrade data-testid="explanationText-3" className="explanationText">
                 {t('pensjonsbeholdning-forklart-tekst-3', {joinArrays: "\n\n"})}
             </Tekstomrade>
         </Ekspanderbartpanel>
