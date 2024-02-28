@@ -81,7 +81,7 @@ export const OpptjeningView = () => {
         )
     };
 
-    const hasData = useSelector(hasOpptjeningData);
+    const hasData = useSelector(hasOpptjeningData)
 
     return(
         <div data-testid="opptjeningview">
