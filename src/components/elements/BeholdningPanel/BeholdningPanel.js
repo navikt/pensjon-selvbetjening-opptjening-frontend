@@ -7,12 +7,12 @@ import "./BeholdningPanel.css"
 import sparegris from "../../../assets/sparegris.svg"
 import Tekstomrade from "nav-frontend-tekstomrade";
 import {useSelector} from "react-redux";
-import {harDelvisUttak} from "../../../redux/opptjening/opptjeningSelectors";
+import {harDelvisUttak, harFulltUttak} from "../../../redux/opptjening/opptjeningSelectors";
 
 export const BeholdningPanel = (props) => {
     const { t } = useTranslation();
     const latestPensjonsBeholdning = props.data;
-    const fulltUttak = latestPensjonsBeholdning === 0
+    const fulltUttak = useSelector(harFulltUttak)
     const delvisUttak = useSelector(harDelvisUttak)
 
     const Beskjed = () => {
