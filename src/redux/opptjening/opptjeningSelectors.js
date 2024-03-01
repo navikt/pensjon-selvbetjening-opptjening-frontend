@@ -1,5 +1,10 @@
 import _ from 'lodash';
-import {BORN_BEFORE_1943, BORN_AFTER_1962, BORN_IN_OR_BETWEEN_1943_AND_1953, BORN_IN_OR_BETWEEN_1954_AND_1962} from "../../common/userGroups";
+import {
+    BORN_AFTER_1962,
+    BORN_BEFORE_1943,
+    BORN_IN_OR_BETWEEN_1943_AND_1953,
+    BORN_IN_OR_BETWEEN_1954_AND_1962
+} from "../../common/userGroups";
 
 export const initialState = {
     opptjening: null,
@@ -87,8 +92,11 @@ export const getSisteUttaksgrad = (state = initialState) => {
     if (_.isEmpty(opptjeningData)) {
         return false;
     }
-    const uttaksgrad = opptjeningData[lastYear].endringOpptjening.slice(-1)[0].uttaksgrad;
-    return uttaksgrad
+    const endringOpptjening = opptjeningData[lastYear].endringOpptjening
+    if (endringOpptjening.length === 0) {
+        return false;
+    }
+    return endringOpptjening.slice(-1)[0].uttaksgrad
 }
 
 export const getPensjonsbeholdningAndPensjonspoeng = (state = initialState) => {
