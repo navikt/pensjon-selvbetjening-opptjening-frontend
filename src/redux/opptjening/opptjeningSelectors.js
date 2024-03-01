@@ -84,13 +84,23 @@ export const getUttakForYear = (state = initialState, year) => {
 export const harDelvisUttak = (state = initialState) => {
     const opptjeningData = getOpptjeningDataWithoutNullYears(state);
     const lastYear = _.max(Object.keys(opptjeningData));
-    return !_.isEmpty(opptjeningData) ? opptjeningData[lastYear].uttaksgrad > 0 && opptjeningData[lastYear].uttaksgrad < 100: false
+    if (_.isEmpty(opptjeningData)) {
+        return false;
+    }
+    const uttaksgrad = opptjeningData[lastYear].endringOpptjening.slice(-1)[0].uttaksgrad;
+    console.log(uttaksgrad);
+    return uttaksgrad > 0 && uttaksgrad < 100;
 }
 
 export const harFulltUttak = (state = initialState) => {
     const opptjeningData = getOpptjeningDataWithoutNullYears(state);
     const lastYear = _.max(Object.keys(opptjeningData));
-    return !_.isEmpty(opptjeningData) ? opptjeningData[lastYear].uttaksgrad === 100: false
+    if (_.isEmpty(opptjeningData)) {
+        return false;
+    }
+    const uttaksgrad = opptjeningData[lastYear].endringOpptjening.slice(-1)[0].uttaksgrad;
+    console.log(uttaksgrad);
+    return uttaksgrad === 100;
 }
 
 export const getPensjonsbeholdningAndPensjonspoeng = (state = initialState) => {
