@@ -7,24 +7,29 @@ import "./BeholdningPanel.css"
 import sparegris from "../../../assets/sparegris.svg"
 import Tekstomrade from "nav-frontend-tekstomrade";
 import {useSelector} from "react-redux";
-import {harDelvisUttak, harFulltUttak} from "../../../redux/opptjening/opptjeningSelectors";
+import {getSisteUttaksgrad} from "../../../redux/opptjening/opptjeningSelectors";
 
 export const BeholdningPanel = (props) => {
     const { t } = useTranslation();
     const latestPensjonsBeholdning = props.data;
-    const fulltUttak = useSelector(harFulltUttak)
-    const delvisUttak = useSelector(harDelvisUttak)
+    const uttaksgrad = useSelector(getSisteUttaksgrad)
 
     const Beskjed = () => {
-        if (fulltUttak) {
+
+        if (uttaksgrad === null) {
+            return <div/>
+        }
+
+        if (uttaksgrad === 100) {
             return <Tekstomrade data-testid="explanationText" className="pensjonspoengDersom0">
                 {t('beholdning-din-pensjonsbeholdning-i-folketrygden-dersom-0')}
             </Tekstomrade>
-        } else if (delvisUttak) {
+        } else if (uttaksgrad > 0 && uttaksgrad < 100) {
             return <Tekstomrade data-testid="explanationText" className="pensjonspoengDersom0">
                 {t('beholdning-din-pensjonsbeholdning-i-folketrygden-dersom-delvis')}
             </Tekstomrade>
         }
+
         return <div/>
     };
 
