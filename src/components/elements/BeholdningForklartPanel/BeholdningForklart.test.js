@@ -8,4 +8,6 @@ it('renders beholdningForklartPanel with correct heading and text', () => {
     userEvent.click(getByRole("heading"));
     expect(getByRole('heading')).toHaveTextContent("pensjonsbeholdning-forklart");
     expect(getByTestId("explanationText")).toHaveTextContent("pensjonsbeholdning-forklart-tekst");
+    expect(getByTestId("explanationText-2")).toHaveTextContent("pensjonsbeholdning-forklart-tekst-2");
+    expect(getByTestId("explanationText-3")).toHaveTextContent("pensjonsbeholdning-forklart-tekst-3");
 });
