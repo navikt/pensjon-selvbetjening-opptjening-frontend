@@ -41,7 +41,7 @@ jobs:
         env:
           HOST: "172.17.0.1"
       - name: Upload screenshots if Cypress tests failed
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots
