@@ -28,7 +28,6 @@ import {OpptjeningFlereStederPanel} from "../../elements/OpptjeningFlereStederPa
 import {OverforeOmsorgsOpptjeningPanel} from "../../elements/OverforeOmsorgsOpptjeningPanel/OverforeOmsorgsOpptjeningPanel";
 import {VeilederMedSnakkeboble} from "../../elements/VeilederMedSnakkeboble/VeilederMedSnakkeboble";
 import {AlertStripeFeil} from "nav-frontend-alertstriper";
-import {ByttBruker} from "../../elements/ByttBruker/ByttBruker";
 
 export const OpptjeningView = () => {
     const { t } = useTranslation(['translation', 'remarks']);
@@ -89,7 +88,6 @@ export const OpptjeningView = () => {
             {hasData &&
                 <div>
                     <VeilederMedSnakkeboble veilederText={<Veiledertext/>}/>
-                    <ByttBruker/>
                     <UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
                         <section aria-labelledby="pensjonsBeholdningTitle">
                             <BeholdningPanel data={latestPensjonsBeholdning}/>
