@@ -33,7 +33,7 @@ jobs:
         env:
           REACT_APP_LOGINSERVICE_URL: "not used in GCP"
           REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjening"
-          REACT_APP_DECORATOR_URL: "https://dekoratoren.dev.nav.no"
+          REACT_APP_DECORATOR_URL: "https://dekoratoren.ekstern.dev.nav.no"
           REACT_APP_DINPENSJON_URL: "https://pensjon-selvbetjening-dinpensjon-frontend-borger-q2.ansatt.dev.nav.no/pensjon/selvbetjening/dinpensjon"
           REACT_APP_PENSJONSKALKULATOR_URL: "https://staging.ekstern.dev.nav.no/pensjon/kalkulator"
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://opptjening-overforomsorgsopptjening-frontend-borger-q2.intern.dev.nav.no/pensjon/selvbetjening/overforomsorgsopptjening/"
