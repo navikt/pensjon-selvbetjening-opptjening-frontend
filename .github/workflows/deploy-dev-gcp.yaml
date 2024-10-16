@@ -37,6 +37,7 @@ jobs:
           REACT_APP_DINPENSJON_URL: "https://pensjon-selvbetjening-dinpensjon-frontend-borger-q2.ansatt.dev.nav.no/pensjon/selvbetjening/dinpensjon"
           REACT_APP_PENSJONSKALKULATOR_URL: "https://staging.ekstern.dev.nav.no/pensjon/kalkulator"
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://opptjening-overforomsorgsopptjening-frontend-borger-q2.intern.dev.nav.no/pensjon/selvbetjening/overforomsorgsopptjening/"
+          REACT_APP_REPRESENTASJON_BANNER: "https://representasjon-banner-frontend-borger-q2.intern.dev.nav.no/pensjon/selvbetjening/representasjon"
         run: npm run build
       - name: Build Docker image dev-gcp
         run: |
