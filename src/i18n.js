@@ -21,7 +21,7 @@ i18n
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
         fallbackLng: 'nb',
-        ns: ['byttbruker', 'faq', 'faq_born_after_1962', 'faq_born_in_or_between_1943_and_1953', 'faq_born_in_or_between_1954_and_1962', 'grunnlag', 'remarks'],
+        ns: ['faq', 'faq_born_after_1962', 'faq_born_in_or_between_1943_and_1953', 'faq_born_in_or_between_1954_and_1962', 'grunnlag', 'remarks'],
         detection: {
             order:['path', 'localStorage', 'cookie', 'navigator', 'htmlTag', 'sessionStorage', 'subdomain', 'querystring'],
             lookupFromPathIndex: 2

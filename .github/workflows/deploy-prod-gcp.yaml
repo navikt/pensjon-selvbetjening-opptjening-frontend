@@ -41,6 +41,7 @@ jobs:
           REACT_APP_DINPENSJON_URL: "https://www.nav.no/pensjon/selvbetjening/dinpensjon"
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://www.nav.no/pensjon/selvbetjening/overforomsorgsopptjening/"
           REACT_APP_PENSJONSKALKULATOR_URL: "https://www.nav.no/pensjon/kalkulator"
+          REACT_APP_REPRESENTASJON_BANNER: "https://www.nav.no/pensjon/selvbetjening/representasjon"
         run: npm run build
       - name: Build Docker image prod-gcp
         run: |
