@@ -50,5 +50,3 @@ jobs:
           IMAGE: ${{ steps.docker-push.outputs.image }}
           CLUSTER: dev-gcp
           RESOURCE: .nais/dev-gcp.yml
-          VARS: .nais/vars-dev-gcp.yaml
-
