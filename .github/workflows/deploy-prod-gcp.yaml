@@ -14,8 +14,6 @@ jobs:
       contents: read
       packages: write
       id-token: write
-    env:
-      IMAGE_PROD_GCP: ghcr.io/${{ github.repository }}/pensjon-selvbetjening-opptjening-frontend-prod-gcp:${{ github.sha }}
     steps:
       - name: Use Node.js v12.18.3
         uses: actions/setup-node@v1
@@ -43,31 +41,16 @@ jobs:
           REACT_APP_PENSJONSKALKULATOR_URL: "https://www.nav.no/pensjon/kalkulator"
           REACT_APP_REPRESENTASJON_BANNER: "https://www.nav.no/pensjon/selvbetjening/representasjon"
         run: npm run build
-      - name: Build Docker image prod-gcp
-        run: |
-          docker build -f .docker/Dockerfile-gcp -t ${IMAGE_PROD_GCP} .
-      - name: Log in to the container registry
-        uses: docker/login-action@v1
+      - uses: nais/docker-build-push@v0
+        id: docker-push
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: .docker/Dockerfile-gcp
-          push: true
-          tags: ${{ env.IMAGE_PROD_GCP }}
-      - name: Generate NAIS variables prod-gcp
-        run: |
-          cat > .nais/vars-prod-gcp.yaml <<EOF
-          namespace: pensjonselvbetjening
-          image_prod_gcp: $IMAGE_PROD_GCP
-          EOF
+          team: pensjonselvbetjening
+          dockerfile: .docker/Dockerfile-gcp
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
       - name: Deploy to prod-gcp
         uses: nais/deploy/actions/deploy@v2
         env:
+          IMAGE: ${{ steps.docker-push.outputs.image }}
           CLUSTER: prod-gcp
           RESOURCE: .nais/prod-gcp.yml
-          VARS: .nais/vars-prod-gcp.yaml
