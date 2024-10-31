@@ -1,5 +1,4 @@
 name: Cypress end-to-end tests
-on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
