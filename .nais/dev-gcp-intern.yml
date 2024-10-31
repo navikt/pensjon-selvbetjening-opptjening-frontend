@@ -10,7 +10,7 @@ metadata:
     nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
     nginx.ingress.kubernetes.io/proxy-buffer-size: "64k"
 spec:
-  image: {{ image_dev_gcp_intern }}
+  image: {{ image }}
   ingresses:
     - https://pensjon-veiledning-opptjening-frontend.intern.dev.nav.no
   port: 8080
