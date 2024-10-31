@@ -26,3 +26,15 @@ module.exports = (on, config) => {
         failed: require('cypress-failed-log/src/failed')(),
     })
 }
+
+Cypress.on('uncaught:exception', (err) => {
+  if (
+    err.stack?.includes(
+      'representasjon-banner-frontend-borger'
+    )
+  ) {
+    // prevents Representasjon banner errors to fail tests
+    return false
+  }
+  return true
+})
