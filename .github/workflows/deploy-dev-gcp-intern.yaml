@@ -10,8 +10,6 @@ jobs:
       contents: read
       packages: write
       id-token: write
-    env:
-      IMAGE_DEV_GCP_INTERN: ghcr.io/${{ github.repository }}/pensjon-veiledning-opptjening-frontend-dev-gcp:${{ github.sha }}
     steps:
       - name: Use Node.js v12.18.3
         uses: actions/setup-node@v1
