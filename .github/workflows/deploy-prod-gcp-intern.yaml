@@ -43,6 +43,7 @@ jobs:
       - uses: nais/docker-build-push@v0
         id: docker-push
         with:
+          image_suffix: intern-prod
           team: pensjonselvbetjening
           dockerfile: .docker/Dockerfile-gcp-intern
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
