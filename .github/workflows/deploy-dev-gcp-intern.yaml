@@ -50,4 +50,4 @@ jobs:
         env:
           IMAGE: ${{ steps.docker-push.outputs.image }}
           CLUSTER: dev-gcp
-          RESOURCE: .nais/dev-gcp-intern.yaml
+          RESOURCE: .nais/dev-gcp-intern.yml
