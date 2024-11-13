@@ -36,7 +36,7 @@ spec:
         - /internal/ping
         - /internal/selftest
         - /pensjon/opptjening/api/status
-        - /pensjon/opptjening/static/*
+        - /pensjon/opptjening/static/**
   accessPolicy:
     outbound:
       rules:
