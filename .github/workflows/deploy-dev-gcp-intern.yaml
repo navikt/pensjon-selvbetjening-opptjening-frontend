@@ -31,7 +31,7 @@ jobs:
         env:
           REACT_APP_LOGINSERVICE_URL: "https://pensjon-veiledning-opptjening-frontend.intern.dev.nav.no/pensjon/opptjening/oauth2/internal/login?redirect="
           REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjeningonbehalf"
-          REACT_APP_DECORATOR_URL: "https://static-v4-decorator.nais.adeo.no"
+          REACT_APP_DECORATOR_URL: "https://dekoratoren.ekstern.dev.nav.no"
           REACT_APP_DINPENSJON_URL: "https://pensjon-selvbetjening-dinpensjon-frontend-veileder-q2.ansatt.dev.nav.no/pensjon/selvbetjening/dinpensjon"
           REACT_APP_PENSJONSKALKULATOR_URL: "https://pensjonskalkulator-veiledning-frontend-staging.ansatt.dev.nav.no/pensjon/kalkulator"
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://opptjening-overforomsorgsopptjening-frontend-veileder-q2.intern.dev.nav.no/pensjon/selvbetjening/overforomsorgsopptjening"
