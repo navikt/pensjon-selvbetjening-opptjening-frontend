@@ -10,7 +10,7 @@ metadata:
     nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
     nginx.ingress.kubernetes.io/proxy-buffer-size: "64k"
 spec:
-  image: { { image } }
+  image: {{ image }}
   ingresses:
     - https://www-gcp.intern.dev.nav.no/pensjon/opptjening
     - https://www-gcp.ansatt.dev.nav.no/pensjon/opptjening
