@@ -30,6 +30,7 @@ spec:
     timeout: 1
   idporten:
     enabled: true
+    level: idporten-loa-substantial
     sidecar:
       enabled: true
       autoLogin: true
