@@ -31,6 +31,7 @@ spec:
     enabled: true
     sidecar:
       enabled: true
+      level: idporten-loa-substantial
       autoLogin: true
       autoLoginIgnorePaths:
         - /internal/ping
