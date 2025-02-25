@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:stable-alpine-slim
+FROM nginxinc/nginx-unprivileged:stable-alpine3.20-slim
 
 COPY /build /usr/share/nginx/html
 
