@@ -31,11 +31,13 @@ spec:
     enabled: true
     sidecar:
       enabled: true
+      level: idporten-loa-substantial
       autoLogin: true
       autoLoginIgnorePaths:
         - /internal/ping
         - /internal/selftest
         - /pensjon/opptjening/api/status
+        - /pensjon/opptjening/static/**
   accessPolicy:
     outbound:
       rules:
