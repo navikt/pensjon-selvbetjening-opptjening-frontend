@@ -26,7 +26,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --force
       - name: Run tests
         run: npm test -- --watchAll=false
       - name: Build application
