@@ -11,12 +11,14 @@ jobs:
       packages: write
       id-token: write
     steps:
-      - name: Use Node.js v12.18.3
-        uses: actions/setup-node@v1
-        with:
-          node-version: "12.18.3"
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: "https://npm.pkg.github.com"
+          cache: npm
       - uses: actions/cache@v4
         with:
           path: ~/.npm
@@ -42,7 +44,7 @@ jobs:
         with:
           image_suffix: intern-dev
           team: pensjonselvbetjening
-          dockerfile: .docker/Dockerfile-gcp-intern
+          dockerfile: .docker/Dockerfile
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
       - name: Deploy internal to dev-gcp
