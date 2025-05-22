@@ -10,7 +10,7 @@ metadata:
     nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
     nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
 spec:
-  image: {{ image }}
+  image: "{{ image }}"
   ingresses:
     - https://pensjon-veiledning-opptjening-frontend.intern.nav.no
   port: 8080
@@ -36,3 +36,5 @@ spec:
   env:
     - name: "OPPTJENING_BACKEND"
       value: "http://pensjon-selvbetjening-opptjening-backend"
+  envFrom:
+    - secret: opptjening-frontend-unleash-api-token

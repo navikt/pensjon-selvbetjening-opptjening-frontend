@@ -53,4 +53,4 @@ jobs:
         env:
           IMAGE: ${{ steps.docker-push.outputs.image }}
           CLUSTER: prod-gcp
-          RESOURCE: .nais/prod-gcp-intern.yml
+          RESOURCE: .nais/prod-gcp-intern.yml,.nais/unleash-prod.yml
