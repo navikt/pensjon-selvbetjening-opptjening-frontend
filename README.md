@@ -10,7 +10,7 @@ Appen kan nås på følgende adresser:
 
 # Henvendelser
 
-NAV-interne henvendelser kan sendes via Slack i kanalen [#po-pensjon-teamselvbetjening](https://nav-it.slack.com/archives/C014M7U1GBY).
+Nav-interne henvendelser kan sendes via Slack i kanalen [#po-pensjon-teamselvbetjening](https://nav-it.slack.com/archives/C014M7U1GBY).
 
 # Utviklerinformasjon
 

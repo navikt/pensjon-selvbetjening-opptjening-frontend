@@ -12,7 +12,7 @@
     "beholdning-din-pensjonsbeholdning-i-folketrygden-dersom-delvis": "Your pension reserve is reduced because you have made a partial withdrawal.",
 
     "pensjonsbeholdning-forklart": "“Pension reserves” explained",
-    "pensjonsbeholdning-forklart-tekst": "You start accruing your pension reserves from the first year you have a pensionable income. Your reserves increase each year, based on the previous years’ reserves, your pensionable income from two years earlier, and any other pension rights you have earned, as well as an annual adjustment. Pension reserves are used as the starting point for calculating the old-age pension that you will receive from NAV when you retire.",
+    "pensjonsbeholdning-forklart-tekst": "You start accruing your pension reserves from the first year you have a pensionable income. Your reserves increase each year, based on the previous years’ reserves, your pensionable income from two years earlier, and any other pension rights you have earned, as well as an annual adjustment. Pension reserves are used as the starting point for calculating the old-age pension that you will receive from Nav when you retire.",
     "pensjonsbeholdning-forklart-tekst-2": "Your pension reserve is adjusted according to how much of your accumulated old-age pension you have withdrawn. In the case of a full withdrawal, 100 percent old-age pension, the pension reserve will be 0 kr. If you withdraw 20 to 80 percent of your old-age pension, the pension reserve will show the amount left.",
     "pensjonsbeholdning-forklart-tekst-3": "The pension reserve can only be withdrawn as old-age pension. It is not possible to withdraw your pension reserve all at once as a lump sum.",
 
@@ -28,7 +28,7 @@
     "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-title": "Pension points explained:",
     "beholdning-and-pensjonspoeng-forklart-pensjonspoeng-text": "Pension points are calculated on the basis of your pensionable income, primarily earned income from work and personal income from business activities. For persons born up to and including 1942, pension points are earned starting from the year you turn 17 and up to and including the year you turn 69. For persons born from 1943 up to and including 1962, pension points are earned starting from the year you turn 17 up to and including the year you turn 75.",
     "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-title": "“Pension reserves” explained:",
-    "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text": "You start accruing your pension reserves from the first year you have a pensionable income. Your reserves increase each year, based on the previous years’ reserves, your pensionable income, and any other pension rights you have earned, as well as an annual adjustment. Pension reserves are used as the starting point for calculating the old-age pension that you will receive from NAV when you retire.",
+    "beholdning-and-pensjonspoeng-forklart-pensjonsbeholdning-text": "You start accruing your pension reserves from the first year you have a pensionable income. Your reserves increase each year, based on the previous years’ reserves, your pensionable income, and any other pension rights you have earned, as well as an annual adjustment. Pension reserves are used as the starting point for calculating the old-age pension that you will receive from Nav when you retire.",
 
     "opptjening-details-din-okning-ar-for-ar": "Your increase year by year",
     "opptjening-details-beholdning-i-starten-av-aaret": "Reserves at the start of the year",
@@ -63,7 +63,7 @@
     "overfore-omsorgsopptjening-title": "Transferring pension earnings for child care",
     "overfore-omsorgsopptjening-text": "You have one or more years of pension earnings for care work and can transfer this to the child’s other guardian here.",
 
-    "inntekt-tekst": "NAV receives information about your pensionable income from the Norwegian Tax Administration. If you think there is something wrong with your registered income, contact your [local tax office]({{skatteetatenLink}}).",
+    "inntekt-tekst": "Nav receives information about your pensionable income from the Norwegian Tax Administration. If you think there is something wrong with your registered income, contact your [local tax office]({{skatteetatenLink}}).",
     "inntekt-lukk-panel": "“Close panel”",
     "inntekt-til-toppen": "“To the top”",
     "inntekt-aar": "Year",
