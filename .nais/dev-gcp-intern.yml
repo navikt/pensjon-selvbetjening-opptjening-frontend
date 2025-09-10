@@ -32,7 +32,9 @@ spec:
       enabled: true
       claims:
         groups:
-          - id: "0af3955f-df85-4eb0-b5b2-45bf2c8aeb9e" # 0000-GA-PENSJON_SAKSBEHANDLER
+          - id: "9e122ddd-e542-4cc1-a7eb-92c99140fe0e" # 0000-GA-PENSJON_BRUKERHJELPA
+          - id: "05ae245b-7b47-428a-9074-4ff6b59eddbc" # 0000-GA-Pensjon_Okonomi
+          - id: "8bb9b8d1-f46a-4ade-8ee8-5895eccdf8cf" # 0000-GA-PENSJON_SAKSBEHANDLER
           - id: "a3f91493-1ab8-4b64-a544-0a77cbba9240" # 0000-GA-Pensjon_VEILEDER
           - id: "dbe4ad45-320b-4e9a-aaa1-73cca4ee124d" # 0000-GA-Egne_ansatte
           - id: "ea930b6b-9397-44d9-b9e6-f4cf527a632a" # 0000-GA-Fortrolig_Adresse
