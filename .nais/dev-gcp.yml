@@ -39,6 +39,7 @@ spec:
         - /internal/selftest
         - /pensjon/opptjening/api/status
         - /pensjon/opptjening/static/**
+        - /pensjon/opptjening/manifest.json
   accessPolicy:
     outbound:
       rules:
