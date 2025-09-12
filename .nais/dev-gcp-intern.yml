@@ -27,6 +27,29 @@ spec:
     path: /internal/ready
     initialDelay: 30
     timeout: 1
+  azure:
+    application:
+      enabled: true
+      claims:
+        groups:
+          - id: "9e122ddd-e542-4cc1-a7eb-92c99140fe0e" # 0000-GA-PENSJON_BRUKERHJELPA
+          - id: "05ae245b-7b47-428a-9074-4ff6b59eddbc" # 0000-GA-Pensjon_Okonomi
+          - id: "8bb9b8d1-f46a-4ade-8ee8-5895eccdf8cf" # 0000-GA-PENSJON_SAKSBEHANDLER
+          - id: "a3f91493-1ab8-4b64-a544-0a77cbba9240" # 0000-GA-Pensjon_VEILEDER
+          - id: "dbe4ad45-320b-4e9a-aaa1-73cca4ee124d" # 0000-GA-Egne_ansatte
+          - id: "ea930b6b-9397-44d9-b9e6-f4cf527a632a" # 0000-GA-Fortrolig_Adresse
+          - id: "5ef775f2-61f8-4283-bf3d-8d03f428aa14" # 0000-GA-Strengt_Fortrolig_Adresse
+        extra:
+          - NAVident
+    sidecar:
+      enabled: true
+      autoLogin: true
+      autoLoginIgnorePaths:
+        - /internal/ping
+        - /internal/selftest
+        - /pensjon/opptjening/api/status
+        - /pensjon/opptjening/static/**
+        - /pensjon/opptjening/manifest.json
   accessPolicy:
     outbound:
       rules:
