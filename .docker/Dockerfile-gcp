@@ -1,6 +1,0 @@
-FROM nginxinc/nginx-unprivileged:stable-alpine3.20-slim
-
-COPY /build /usr/share/nginx/html
-
-# Will extract environment variables before nginx starts (ref. https://hub.docker.com/_/nginx):
-COPY .nginx/gcp.conf /etc/nginx/templates/default.conf.template
