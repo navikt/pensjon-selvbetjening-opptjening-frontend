@@ -41,6 +41,15 @@ spec:
           - id: "ad7b87a6-9180-467c-affc-20a566b0fec0" # 0000-GA-Strengt_Fortrolig_Adresse
         extra:
           - NAVident
+    sidecar:
+      enabled: true
+      autoLogin: true
+      autoLoginIgnorePaths:
+        - /internal/ping
+        - /internal/selftest
+        - /pensjon/opptjening/api/status
+        - /pensjon/opptjening/static/**
+        - /pensjon/opptjening/manifest.json
   accessPolicy:
     outbound:
       rules:
