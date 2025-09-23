@@ -1,0 +1,36 @@
+= View: Opptjening
+
+Hovedsiden for Opptjening-appen, som setter sammen alle panelene som skal vises for en gitt brukergruppe. Denne siden rendres etter at data er lastet inn i xref:_opptjeningcontainer[OpptjeningContainer]. All data som behøves for å rendre siden hentes fra _state_ og sendes videre ned til komponentene som trenger data.
+
+== OpptjeningView.js
+
+Oversikt over hvilke paneler om vises for hvilke brukere.
+
+|===
+| Panel | Brukere
+
+| xref:elements.adoc#_beholdningpanel[BeholdningPanel] | Brukere født fra 1954 til 1962 og brukere født etter 1962
+| xref:elements.adoc#_beholdningforklartpanel[BeholdningForklartPanel] | Brukere født etter 1962
+| xref:elements.adoc#_beholdningandpensjonspoengforklartpanel[BeholdningAndPensjonspoengForklartPanel] | Brukere født fra 1954 til 1962
+| xref:elements.adoc#_linechart[LineChart] | Brukere født fra 1954 til 1962 og brukere født etter 1962
+| xref:elements.adoc#_opptjeningdetailspanel[OpptjeningDetailsPanel] | Brukere født fra 1954 til 1962 og brukere født etter 1962
+| xref:elements.adoc#_pensjonspoengforklartpanel[PensjonspoengForklartPanel] | Brukere født før 1954
+| xref:elements.adoc#_overforeomsorgsopptjeningpanel[OverforeOmsorgsOpptjeningPanel] | Alle som har omsorgsopptjening som kan overføres til den andre forelderen
+| xref:elements.adoc#_inntektwithmerknadpanel[InntektWithMerknadPanel] | Alle
+| xref:elements.adoc#_opptjeningflerestederpanel[OpptjeningFlereStederPanel] | Alle
+| xref:elements.adoc#_pensjonskalkulatorlenkepanel[PensjonskalkulatorLenkePanel] | Alle
+| xref:elements.adoc#_faqpanel[FAQPanel] | Alle
+|===
+
+== GUI
+
+Header, footer og toppbanner er ikke del av _OpptjeningView_.
+
+.Født etter 1962
+image::ROOT:opptjening_born_after_1962.png[width=400]
+
+.Født mellom 1954 og 1962
+image::ROOT:opptjening_born_between_1954_and_1962.png[width=400]
+
+.Født før 1954
+image::ROOT:opptjening_born_before_1954.png[width=400]

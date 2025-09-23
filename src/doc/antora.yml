@@ -1,4 +1,6 @@
 name: pensjon-selvbetjening-opptjening-frontend
-title: Selvbetjening-Opptjening-Frontend
+title: Pensjonsopptjening-frontend
 version: master
 start_page: ROOT:doc.adoc
+nav:
+  - modules/Implementasjon/nav.adoc

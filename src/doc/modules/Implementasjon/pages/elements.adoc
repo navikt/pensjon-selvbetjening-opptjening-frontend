@@ -1,0 +1,477 @@
+= Elements
+
+[#_veiledermedsnakkeboble]
+== Veileder med snakkeboble
+
+Veilederelementet vises på toppen av alle sider.
+
+=== VeilederMedSnakkeboble.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| veilederText
+| string / element
+| Tekst eller HTML som skal vises som tekst inne i snakkebobla
+a|
+[source, html]
+----
+<div>
+    Hei, Test Tester Testesen
+</div>
+----
+
+|===
+
+=== GUI
+
+.Veileder
+image::ROOT:veileder.png[]
+
+[#_beholdningpanel]
+== Panel: Beholdning
+
+Panel som viser den totale pensjonsbeholdningen til innlogget bruker.
+
+=== BeholdningPanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| data
+| object
+| JSON objekt med den totale pensjonsbeholdningen
+a|
+[source, json]
+----
+{
+    "year": 2019,
+    "beholdning": 552779
+}
+----
+|===
+
+=== GUI
+
+.Beholdning
+image::ROOT:pensjonsbeholdningpanel.png[]
+
+[#_beholdningforklartpanel]
+== Panel: Beholdning forklart
+
+Ekspanderbart panel som forklarer hva pensjonsbeholdning betyr. Vises for brukere født etter 1962, som kun har pensjonsbeholdning.
+
+=== BeholdningForklartPanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+
+=== GUI
+
+.Beholdning forklart (lukket)
+image::ROOT:beholdningforklart_lukket.png[]
+
+.Beholdning forklart (åpen)
+image::ROOT:beholdningforklart_apen.png[]
+
+[#_beholdningandpensjonspoengforklartpanel]
+== Panel: Beholdning og pensjonspoeng forklart
+
+Panel som forklarer hva pensjonsbeholdning og pensjonspoeng betyr.  Vises for brukere som har opptjening etter to regelverk, både pensjonsbeholdning og pensjonspoeng. Brukere født mellom 1954 og 1962.
+
+=== BeholdningAndPensjonspoengForklart.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| andelPensjonBasertPaBeholdning
+| integer
+| Tall fra 1 og 10
+| 7
+
+| fodselsar
+| integer
+| Fødselsår mellom 1954 og 1962
+| 1956
+|===
+
+=== GUI
+
+.Beholdning og pensjonspoeng forklart
+image::ROOT:beholdningandpensjonspoengforklart.png[]
+
+[#_linechart]
+== Panel: Beholdningsutvikling som graf og tabell
+
+Panel som viser utviklingen av brukers pensjonsbeholdning år for år som en graf og som tabell. For brukere født mellom 1954 og 1962 som også har pensjonspoeng, vises poengene  i tabellen, samt i tooltip for aktuelt år i grafen.  År med uttak vises også for de aktuelle årene.
+
+For brukere født etter 1962 vises grafen default, mens tabellvisningen vises default for brukere født mellom 1954 og 1962. Grafen skjules på mobil (på skjermbredder mindre enn 576px).
+
+=== LineChart.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| data
+| object
+|
+| Se under
+
+| userGroup
+| string
+| Hvilken brukergruppe innlogget bruker tilhører, avh. av fødselsår
+|   "BORN_IN_OR_BETWEEN_1943_AND_1953",
+"BORN_IN_OR_BETWEEN_1954_AND_1962",
+"BORN_AFTER_1962",
+"BORN_BEFORE_1943"
+
+| antallAarMedPensjonspoeng
+| integer
+| Antall år med pensjonspoeng
+| 34
+|===
+
+Eksempel på inndata:
+[source, json]
+{
+    "2016":{
+        pensjonspoeng: 4.51,
+        pensjonsbeholdning: 0,
+        uttak: [
+            {dato: "2016-07-01", uttaksgrad: 20}
+            {dato: "2016-09-01", uttaksgrad: 100}
+        ]
+    },
+    "2017":{
+        pensjonspoeng: 4.51,
+        pensjonsbeholdning: 1 416 071,
+        uttak: [
+            {dato: "2017-01-01", uttaksgrad: 100}
+            {dato: "2017-09-01", uttaksgrad: 60}
+        ]
+    }
+}
+
+=== GUI
+
+.Grafvisning
+image::ROOT:linechart_chart.png[]
+
+.Tabellvisning - de første 10 årene
+image::ROOT:linechart_table.png[]
+
+.Tabellvisning - alle
+image::ROOT:linechart_table_all.png[]
+
+.Mobilvisning av tabell
+image::ROOT:linechart_table_mobile.png[width=200]
+
+[#_opptjeningdetailspanel]
+== Panel: Opptjeningsdetaljer
+
+Ekspanderbart panel som viser alle endringer på pensjonsbeholdningen til bruker. Alle endringer settes opp som et regnestykke som viser hva beholdningen var på starten av året og alle hendelser som har påvirket denne iløpet av året og hva beholdningen er på slutten av året.
+
+Basert på dataene vil regnestykket gi oversikt over hva grunnlaget for opptjeningen er basert på og gi en forklarende tekst for dette.
+
+For brukere født mellom 1954 og 1962, som har pensjonspoeng i tillegg til beholdning, vil disse også vises.
+
+=== OpptjeningDetailsPanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| data
+| object
+| Opptjeningsdata for et gitt år
+| Se under
+
+| currentYear
+| integer
+| Valgt år
+| 2020
+
+| onChange
+| function
+| Funksjon til <YearSelector>
+|
+
+| yearArray
+| array
+| Liste med årstall til <YearSelector>
+| ["2019", "2020"]
+
+| userGroup
+| string
+| Hvilken brukergruppe innlogget bruker tilhører, avh. av fødselsår
+|   "BORN_IN_OR_BETWEEN_1943_AND_1953",
+"BORN_IN_OR_BETWEEN_1954_AND_1962",
+"BORN_AFTER_1962",
+"BORN_BEFORE_1943"
+|===
+Eksempel på input data:
+[source, json]
+{
+"pensjonsgivendeInntekt": 505288,
+"pensjonsbeholdning": 0,
+"omsorgspoeng": null,
+"omsorgspoengType": null,
+"pensjonspoeng": 4.51,
+"merknader": [],
+"restpensjon": 0,
+"maksUforegrad": 0,
+"endringOpptjening": [
+{
+"dato": "2015-12-31",
+"arsakType": "INNGAENDE",
+"arsakDetails": [],
+"endringBelop": null,
+"grunnlag": null,
+"grunnlagTypes": null,
+"pensjonsbeholdningBelop": 3053000.3800686286,
+"uttaksgrad": 0,
+"uforegrad": null
+},
+{
+"dato": "2016-01-01",
+"arsakType": "OPPTJENING",
+"arsakDetails": [
+"OPPTJENING_2012"
+],
+"endringBelop": 89789.715337075,
+"grunnlag": 480987,
+"grunnlagTypes": [
+"INNTEKT_GRUNNLAG"
+],
+"pensjonsbeholdningBelop": 3142790.0954057034,
+"uttaksgrad": 0,
+"uforegrad": null
+},
+{
+"dato": "2016-05-01",
+"arsakType": "REGULERING",
+"arsakDetails": [
+"REGULERING"
+],
+"endringBelop": 87369.56465227855,
+"grunnlag": null,
+"grunnlagTypes": null,
+"pensjonsbeholdningBelop": 3230159.660057982,
+"uttaksgrad": 0,
+"uforegrad": null
+},
+{
+"dato": "2016-07-01",
+"arsakType": "UTTAK",
+"arsakDetails": [
+"UTTAK"
+],
+"endringBelop": -646031.9320115964,
+"grunnlag": null,
+"grunnlagTypes": null,
+"pensjonsbeholdningBelop": 2584127.7280463856,
+"uttaksgrad": 20,
+"uforegrad": null
+},
+{
+"dato": "2016-09-01",
+"arsakType": "UTTAK",
+"arsakDetails": [
+"UTTAK"
+],
+"endringBelop": -2584127.7280463856,
+"grunnlag": null,
+"grunnlagTypes": null,
+"pensjonsbeholdningBelop": 0,
+"uttaksgrad": 100,
+"uforegrad": null
+}
+]
+}
+
+=== GUI
+
+.År for år
+image::ROOT:aar_for_aar.png[]
+
+[#_pensjonspoengforklartpanel]
+== Panel: Pensjonspoeng forklart
+
+EkspanderbartPanel som forklarer hva pensjonspoeng betyr.  Vises for brukere født før
+1954, som kun har pensjonspoeng.
+
+=== PensjonspoengForklartPanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+
+=== GUI
+
+.Pensjonspoeng forklart
+image::ROOT:pensjonspoengforklart.png[]
+
+[#_overforeomsorgsopptjeningpanel]
+== Panel: Overføre omsorgsopptjening
+
+Lenkepanel som lenker til overføring av omsorgsopptjening i Din pensjon.
+
+=== OverforeOmsorgsOpptjeningPanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+|===
+
+=== GUI
+
+.Overføring av omsorgsopptjening
+image::ROOT:overforeomsorgsopptjening.png[]
+
+[#_inntektwithmerknadpanel]
+== Panel: Inntekt med merknad
+
+Ekspanderbart panel som viser alle pensjonsgivende inntekter fra Skatteetaten. Ev. merknader på hendelser som kan påvirke opptjeningen et bestemt år blir vist i en egen kolonne.
+
+Dersom bruker er født før 1954 og kun har pensjonspoeng, vises disse i en egen kolonne.
+
+Følgende merknadskoder finnes og er oversatt i `public/locales/<language code>/remarks.json`:
+
+[square]
+- "AFP"
+- "REFORM" - vises i "År for år"-panelet
+- "INGEN_OPPTJENING"
+- "UFOREGRAD"
+- "DAGPENGER"
+- "FORSTEGANGSTJENESTE"
+- "OMSORGSOPPTJENING"
+- "OVERFORE_OMSORGSOPPTJENING" – vises som lenke
+- "GRADERT_UTTAK" - ikke i bruk
+- "HELT_UTTAK" - ikke i bruk
+- "PRE_2010" - vises i "År for år"-panelet
+
+=== InntektWithMerknadPanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| data
+| object
+| JSON-objekt med opptjeningsdata år for år
+a|
+[source, json]
+----
+{
+      "2017": {
+        "pensjonsgivendeInntekt": 3000,
+        "pensjonsbeholdning": 517783,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": null,
+        "merknader": [],
+        "restpensjon": null,
+        "maksUforegrad": 0,
+        "endringOpptjening": []
+      },
+      "2018": {
+        "pensjonsgivendeInntekt": 0,
+        "pensjonsbeholdning": 535750,
+        "omsorgspoeng": null,
+        "omsorgspoengType": null,
+        "pensjonspoeng": null,
+        "merknader": [],
+        "restpensjon": null,
+        "maksUforegrad": 0,
+        "endringOpptjening": []
+      }
+}
+----
+
+| userGroup
+| string
+| Hvilken brukergruppe innlogget bruker tilhører, avh. av fødselsår
+|   "BORN_IN_OR_BETWEEN_1943_AND_1953",
+"BORN_IN_OR_BETWEEN_1954_AND_1962",
+"BORN_AFTER_1962",
+"BORN_BEFORE_1943"
+|===
+
+=== GUI
+
+.Brukere født fra 1954
+image::ROOT:inntekt.png[]
+
+.Brukere med bare pensjonspoeng – født før 1954
+image::ROOT:inntekt_med_poeng.png[]
+
+[#_opptjeningflerestederpanel]
+== Panel: Opptjening flere steder
+
+Ekspanderbart panel som viser og illustrerer at man kan ha opptjening andre steder enn i folketrygden.
+
+=== OpptjeningFlereStederPanel.js
+|===
+| props | type | beskrivelse | eksempel
+|===
+
+=== GUI
+
+image::ROOT:opptjeningfleresteder.png[]
+
+[#_pensjonskalkulatorlenkepanel]
+== Panel: Lenke til pensjonskalkulator
+
+Lenkepanel som lenker til pensjonskalkulatoren i Din pensjon.
+
+=== PensjonskalkulatorLenkePanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+|===
+
+=== GUI
+
+.Lenke til pensjonskalkulator
+image::ROOT:pensjonskalkulatorlenke.png[]
+
+[#_faqpanel]
+== Panel: Ofte stilte spørsmål (FAQ)
+
+Panel som viser ofte stilte spørsmål og svar. Panelet viser spesifikke spørsmål og svar for en gitt brukergruppe, samt felles spørsmål og svar som vises for alle brukergrupper. Spesifikke spørsmål først, deretter felles.
+
+Spørsmål og svar er definert i følgende språkfiler:
+
+[square]
+- faq.json
+- faq_born_after_1962.json
+- faq_born_in_or_between_1954_and_1962.json
+- faq_born_in_or_between_1943_and_1953.json
+
+Språkfilene inneholder en nøkkel for antall spørsmål og svar, og nummererte spørsmål og svar som må korrespondere med antallet.
+
+[square]
+- "faq-number-of-questions": <antall spørsmål og svar>,
+- "faq-question-<nummer>"
+- "faq-answer-<nummer>"
+
+=== FAQPanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| userGroup
+| string
+| Hvilken brukergruppe innlogget bruker tilhører, avh. av fødselsår
+|   "BORN_IN_OR_BETWEEN_1943_AND_1953",
+"BORN_IN_OR_BETWEEN_1954_AND_1962",
+"BORN_AFTER_1962",
+"BORN_BEFORE_1943"
+|===
+
+=== GUI
+
+.Ofte stilte spørsmål
+image::ROOT:faqpanel.png[]
