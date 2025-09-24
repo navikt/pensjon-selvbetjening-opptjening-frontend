@@ -6,44 +6,65 @@
 :nofooter:
 :imagesdir: images
 
-= Pensjon Selvbetjening Opptjening Frontend
+= Pensjon-selvbetjening-opptjening-frontend
 
-include::intro.adoc[]
+Applikasjonen pensjon-selvbetjening-opptjening-frontend har som hensikt å vise en innlogget brukers samlede pensjonsopptjening. Data hentes fra applikasjonen https://github.com/navikt/pensjon-selvbetjening-opptjening-backend[pensjon-selvbetjening-opptjening-backend].
 
 == Utvikling lokalt
-include::utvikling_lokalt.adoc[]
 
-== Containers
-include::../../../../containers/App/App.adoc[]
-include::../../../../containers/OpptjeningContainer/OpptjeningContainer.adoc[]
-include::../../../../containers/UnleashContainer/UnleashContainer.adoc[]
+=== Starte frontend lokalt
 
-== Components
+Last ned kildekode fra https://github.com/navikt/pensjon-selvbetjening-opptjening-frontend[GitHub-repoet]. Kjør `npm install` for å installere alle avhengigheter. Bruk `npm run dev` for å kjøre applikasjonen i utviklingsmodus. Åpne http://localhost:3000/pensjon/opptjening[opptjening på localhost] for å se den i nettleser. Applikasjonen kjører da opp en lokal JSON-server med noe utgangsdata.
 
-=== Pages
-include::../../../../components/pages/HomePage/HomePage.adoc[]
-include::../../../../components/pages/NotFoundPage/NotFoundPage.adoc[]
+_Mock_-data ligger i mappen "dev" på rotnivå og applikasjonen vil kjøre opp default med `mock.json`. Ønsker man å starte opp med med andre testdata, kan man angi filen som parameter (antar at filen ligger under mappen "dev"):
+`npm run dev --  <filnavn>`.
 
-=== Views
-include::../../../../components/views/OpptjeningView/OpptjeningView.adoc[]
+Vi har følgende testdata tilgjengelig:
 
-== Redux
-include::../../../../redux/opptjening/opptjeningRedux.adoc[]
-include::../../../../redux/unleash/unleashRedux.adoc[]
+|===
+| Fil | Beskrivelse
 
+| mock.json | Default – bruker født etter 1962
+| mock_usergroup1 | Bruker født før 1954
+| mock_usergroup2 | Bruker født mellom 1954 og 1962
+| mock_usergroup2 | Bruker født mellom 1954 og 1962
+| mock_usergroup2 | Bruker født mellom 1954 og 1962
+| mock_usergroup2 | Bruker født mellom 1954 og 1962
+| mock_blandetuttak.json | Bruker med ulike grader av uttak
+| mock_fulluttak.json | Bruker med 100 % uttak
+| mock_gradertuttak.json | Bruker med gradert uttak
+| mock_omsorgsopptjeningmindreenninntekt.json | Bruker som har omsorgsopptjening mindre enn inntekt et år
+|===
+
+=== Tilgjengelige script
+
+|===
+| Script | Beskrivelse
+
+| npm run dev | Starter app på `localhost` med default testdata
+| npm run dev -- <filnavn> | Starter app på `localhost` med angitte testdata
+| npm run test | Kjører alle tester
+| npm run build | Bygger applikasjonen klar til produksjon til `build`-mappen. Bygger også dokumentasjonen som vil bli tilgjengelig på `/pensjon/opptjening/doc`
+|===
+
+=== Lokal backend-konfigurasjon
+
+Applikasjonen vil i utgangspunktet kjøre opp en lokal JSON-server med mockede data. JSON-serveren kjører på port 4000, og det blir satt opp en proxy som endrer kall til backend slik at de går til den lokale serveren.
+
+Ønsker man å kjøre opp den ekte backend-serveren lokalt, kan man endre i filen `setupProxy.js` til å gå til denne isteden.
 
 == Språkstøtte
-Løsningen støtter språkene norsk bokmål (nb), norsk nynorsk (nn) og engelsk (en).
-Vi bruker biblioteket https://react.i18next.com/[react-i18next]. Oversettelsesfilene er plassert i `public/locales/<language>/`.
+
+Løsningen støtter språkene norsk bokmål (nb), norsk nynorsk (nn) og engelsk (en). Vi bruker biblioteket https://react.i18next.com/[react-i18next]. Oversettelsesfilene er plassert i `public/locales/<language>/`.
 
 [square]
-- `translation.json` - de fleste labels og tekster
-- `remarks.json` - oversettelser for merknadskoder fra backend
-- `grunnlag.json` - oversettelser for grunnlagskoder fra backend
-- `faq.json` - generelle ofte stilte spørsmål
-- `faq_born_after_1962.json` - ofte stilte spørsmål for spesifikk aldersgruppe
-- `faq_born_in_or_between_1954_and_1962.json` - ofte stilte spørsmål for spesifikk aldersgruppe
-- `faq_born_in_or_between_1943_and_1953.json` - ofte stilte spørsmål for spesifikk aldersgruppe
+- `translation.json` – de fleste labels og tekster
+- `remarks.json` – oversettelser for merknadskoder fra backend
+- `grunnlag.json` – oversettelser for grunnlagskoder fra backend
+- `faq.json` – generelle ofte stilte spørsmål
+- `faq_born_after_1962.json` – ofte stilte spørsmål for spesifikk aldersgruppe
+- `faq_born_in_or_between_1954_and_1962.json` – ofte stilte spørsmål for spesifikk aldersgruppe
+- `faq_born_in_or_between_1943_and_1953.json` – ofte stilte spørsmål for spesifikk aldersgruppe
 
 Se `src/i18njs` for konfigurasjon av språk i løsningen.
 

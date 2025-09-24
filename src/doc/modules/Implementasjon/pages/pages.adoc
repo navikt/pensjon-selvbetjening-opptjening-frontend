@@ -1,0 +1,21 @@
+= Pages
+
+[#_homepage]
+== Hjemmeside
+
+Sidemal for hovedsiden som setter hoved-grid, topp-banner, brødsmuler og språkvelger. Laster data for applikasjonen xref:containers.adoc#_opptjeningcontainer[OpptjeningContainer], og rendrer xref:views.adoc#_opptjeningview[OpptjeningView].
+
+=== GUI
+
+.Hjemmeside
+image::ROOT:homepage.png[]
+
+[#_notfoundpage]
+== 'Ikke funnet'-side
+
+Sidemal for feilsiden som setter hoved-grid, topp-banner, brødsmuler og språkvelger. Rendrer feilmelding.
+
+=== GUI
+
+.'Ikke funnet'-side
+image::ROOT:notfoundpage.png[]

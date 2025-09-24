@@ -1,0 +1,48 @@
+= Containers
+
+[#_app]
+== App
+
+_Wrapper_-komponent for å sette de tilgjengelige URL-ene (_routes_) i løsningen. Tar vare på ev. URL-parametre før omdirigering til riktig side.
+
+_Routes_ er definert i `src/common/routesConfig.js`:
+
+----
+/<language-code>/
+/<language-code>/404
+----
+
+[#_opptjeningcontainer]
+== Opptjening
+
+_Wrapper_-komponent for å laste data til et xref:views.adoc#_opptjeningview[OpptjeningView]. Komponenten dispatcher en redux-_action_ for å hente data fra backend.
+
+[source, javascript]
+----
+useEffect(() => {
+    dispatch(fetchOpptjeningStarted());
+});
+----
+
+|===
+| Responskode | Beskrivelse
+
+| 200 | Data settes i state, og applikasjonen rendres.
+| 401 | Ikke autorisert, bruker må logge inn. Rendrer xref:elements.adoc#_loginpanel[LoginPanel].
+| 403 | Ikke tillatt. Feilmelding til brukere som ikke skal ha tilgang til å se data.
+| Responskoder >= 300 | Feilmelding
+|===
+
+[#_unleashcontainer]
+== Unleash
+
+_Wrapper_-komponent for å status på funksjonsbrytere (_feature toggles_) i Unleash. Sender inn en liste over hvilke funksjoner man ønsker status på, og backend returner status på disse. Oppdaterer redux-_state_ med status på funksjonsbrytere.
+
+Hvilke funksjonsbrytere som skal sjekkes blir definert i `src/common/toggleNames.json`
+
+[source, json]
+----
+{
+   "toggleList": ["toggle1", "toggle2"]
+}
+----

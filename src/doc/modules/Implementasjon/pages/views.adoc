@@ -1,8 +1,11 @@
-= View: Opptjening
+= Views
 
-Hovedsiden for Opptjening-appen, som setter sammen alle panelene som skal vises for en gitt brukergruppe. Denne siden rendres etter at data er lastet inn i xref:_opptjeningcontainer[OpptjeningContainer]. All data som behøves for å rendre siden hentes fra _state_ og sendes videre ned til komponentene som trenger data.
+[#_opptjeningview]
+== Opptjening
 
-== OpptjeningView.js
+Hovedsiden for Opptjening-appen, som setter sammen alle panelene som skal vises for en gitt brukergruppe. Denne siden rendres etter at data er lastet inn i xref:containers.adoc#_opptjeningcontainer[OpptjeningContainer]. All data som behøves for å rendre siden hentes fra _state_ og sendes videre ned til komponentene som trenger data.
+
+=== OpptjeningView.js
 
 Oversikt over hvilke paneler om vises for hvilke brukere.
 
@@ -22,9 +25,9 @@ Oversikt over hvilke paneler om vises for hvilke brukere.
 | xref:elements.adoc#_faqpanel[FAQPanel] | Alle
 |===
 
-== GUI
+=== GUI
 
-Header, footer og toppbanner er ikke del av _OpptjeningView_.
+Header, footer og topp-banner er ikke del av _OpptjeningView_.
 
 .Født etter 1962
 image::ROOT:opptjening_born_after_1962.png[width=400]

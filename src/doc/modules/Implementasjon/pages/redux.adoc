@@ -1,19 +1,28 @@
-=== Opptjening
-==== OpptjeningActions
-Action types:
+= Redux
+
+[#_opptjening]
+== Opptjening
+
+=== OpptjeningActions
+
+_Action_-typer:
 [square]
 * FETCH_OPPTJENING_STARTED
 * FETCH_OPPTJENING_SUCCESS
 * FETCH_OPPTJENING_FAILURE
 
-==== OpptjeningReducer
-Oppdatering av state.
+=== OpptjeningReducer
 
-==== OpptjeningSaga
-API kall mot backend.  Kall til `fetchToJson` som ligger i katalogen "api".
+Oppdatering av _state_.
 
-==== OpptjeningSelectors
-Hjelpefunksjoner for å hente data fra state.
+=== OpptjeningSaga
+
+API-kall mot backend. Kall til `fetchToJson` som ligger i katalogen "api".
+
+=== OpptjeningSelectors
+
+Hjelpefunksjoner for å hente data fra _state_.
+
 |===
 | Selector | Beskrivelse | Returverdi
 
@@ -39,31 +48,31 @@ a|
 | true/false
 
 | getOpptjeningData
-| Propertien "opptjeningData"
+| Property-en "opptjeningData"
 | object
 
 | getFodselsAar
-| Propertien "fodselsaar"
+| Property-en "fodselsaar"
 | integer
 
 | getFornavn
-| Propertien "fornavn"
+| Property-en "fornavn"
 | string
 
 | getMellomnavn
-| Propertien "mellomnavn"
+| Property-en "mellomnavn"
 | string
 
 | getEtternavn
-| Propertien "etternavn"
+| Property-en "etternavn"
 | string
 
 | getAndelPensjonBasertPaBeholdning
-| Propertien "andelPensjonBasertPaBeholdning"
+| Property-en "andelPensjonBasertPaBeholdning"
 | integer
 
 | getAntallAarPensjonsPoeng
-| Propertien "numberOfYearsWithPensjonspoeng"
+| Property-en "numberOfYearsWithPensjonspoeng"
 | integer
 
 | getOmsorgsOpptjeningMap
@@ -82,7 +91,6 @@ a|
 | Returnerer true hvis OVERFORE_OMSORGSOPPTJENING merknad finnes for bruker
 | boolean
 
-
 | getOpptjeningDataWithoutNullYears
 | Ikke i bruk
 | -
@@ -91,10 +99,8 @@ a|
 | Brukes av `getPensjonsbeholdningAndPensjonspoeng`
 | [integer]
 
-
-
 | getPensjonsbeholdningAndPensjonspoeng
-| Object med  år og data
+| Objekt med år og data
 a|
 [source,json]
 ----
@@ -133,7 +139,7 @@ a|
     {"year": 2017, "inntekt": 1000000},
     {"year": 2018, "inntekt": 1000000},
     {"year": 2019, "inntekt": 1000000},
-    {"year": 2020, "inntekt": 1000000},
+    {"year": 2020, "inntekt": 1000000}
 ]
 ----
 
@@ -147,4 +153,13 @@ a|
 
 |===
 
+[#_unleash]
+== Unleash
 
+=== UnleashActions
+
+=== UnleashReducer
+
+=== UnleashSaga
+
+=== UnleashSelectors
