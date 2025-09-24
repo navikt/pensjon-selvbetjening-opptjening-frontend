@@ -1,5 +1,101 @@
 = Elements
 
+[#_topbanner]
+== Topp-banner
+
+Topp-banner-elementet som vises på alle sider i løsningen. Brukes i sidemaler, og kan vises med eller uten illustrasjon.
+Tittelen benytter _H1_ på forsiden, og _H2_ på undersider.
+
+=== TopBanner.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| frontpage
+| boolean
+| Forsidebanner eller undersidebanner, default = true
+| true/false
+
+| title
+| string
+| Tittel
+| Din pensjonsopptjening
+
+| text
+| string
+| Tekst
+| Her finner du en samlet oversikt over pensjonsopptjeningen din.
+
+| showIllustration
+| boolean
+| Om illustrasjonen skal vises eller ikke, default = true
+| true/false
+
+|===
+
+=== GUI
+
+.TopBanner forside med tekst
+image::ROOT:topbanner_frontpage.png[]
+
+.TopBanner forside uten tekst
+image::ROOT:topbanner_notext.png[]
+
+.TopBanner undersider
+image::ROOT:topbanner_subpage.png[]
+
+[#_loginpanel]
+== Panel: Innlogging
+
+Panel med knapp for å logge inn.
+
+=== LoginPanel.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+
+=== GUI
+
+.Innlogging
+image::ROOT:loginpanel.png[]
+
+[#_breadcrumbs]
+== Brødsmuler
+
+Komponent som implementerer metoder for brødsmuler i dekoratøren. Se https://github.com/navikt/nav-dekoratoren[nav-dekoratoren på GitHub].
+
+[square]
+- `onBreadcrumbClick`
+- `setBreadcrumbs`
+
+=== Breadcrumbs.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+
+[#_languageselector]
+== Språkvelger
+
+Komponent som implementerer metoder for språkvelgeren i dekoratøren. Se https://github.com/navikt/nav-dekoratoren[nav-dekoratoren på GitHub].
+
+[square]
+- `onLanguageSelect`
+- `setAvailableLanguages`
+
+=== LanguageSelector.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| - | - | - | -
+|===
+
 [#_veiledermedsnakkeboble]
 == Veileder med snakkeboble
 
@@ -27,6 +123,50 @@ a|
 
 .Veileder
 image::ROOT:veileder.png[]
+
+[#_paneltitle]
+== Paneltittel
+
+Komponent for titler på paneler med eller uten illustrasjon.Returnerer et element med tittel og ev. illustrasjon.
+
+`<PanelTitle titleString="Pensjonsbeholdning forklart" illustrationClass="beholdningForklartIllustration" illustration=+{pengesekk}+/>;`
+
+=== PanelTitle.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| id
+| string
+| ID på tittelelementet
+| -
+
+| type
+| string
+| Type av tittel, Kun "lenkepanel" som støttes - bestemmer hvilken CSS som brukes
+| lenkepanel
+
+| titleString
+| string
+| Tittel
+| Pensjonsbeholdning forklart
+
+| illustrationClass
+| string
+| CSS klasse for padding, luft mellom illustrsjon og tittel
+| beholdningForklartIllustration
+
+| illustration
+| string
+| Filnavn til illustrasjon
+| pengesekk
+
+|===
+
+=== GUI
+
+.Paneltittel
+image::ROOT:paneltitle.png[]
 
 [#_beholdningpanel]
 == Panel: Beholdning
@@ -80,7 +220,7 @@ image::ROOT:beholdningforklart_apen.png[]
 [#_beholdningandpensjonspoengforklartpanel]
 == Panel: Beholdning og pensjonspoeng forklart
 
-Panel som forklarer hva pensjonsbeholdning og pensjonspoeng betyr.  Vises for brukere som har opptjening etter to regelverk, både pensjonsbeholdning og pensjonspoeng. Brukere født mellom 1954 og 1962.
+Panel som forklarer hva pensjonsbeholdning og pensjonspoeng betyr. Vises for brukere som har opptjening etter to regelverk, både pensjonsbeholdning og pensjonspoeng. Brukere født mellom 1954 og 1962.
 
 === BeholdningAndPensjonspoengForklart.js
 
@@ -299,8 +439,7 @@ image::ROOT:aar_for_aar.png[]
 [#_pensjonspoengforklartpanel]
 == Panel: Pensjonspoeng forklart
 
-EkspanderbartPanel som forklarer hva pensjonspoeng betyr.  Vises for brukere født før
-1954, som kun har pensjonspoeng.
+EkspanderbartPanel som forklarer hva pensjonspoeng betyr.  Vises for brukere født før 1954, som kun har pensjonspoeng.
 
 === PensjonspoengForklartPanel.js
 
@@ -475,3 +614,102 @@ Språkfilene inneholder en nøkkel for antall spørsmål og svar, og nummererte 
 
 .Ofte stilte spørsmål
 image::ROOT:faqpanel.png[]
+
+[#_usergroup]
+== Brukergruppe
+
+Hjelpekomponent som returnerer innholdet i tag-en for en gitt brukergruppe.
+
+Følgende vil returnere en _<DIV>_ dersom innlogget bruker er født etter 1954:
+[source,react]
+----
+<UserGroup userGroups={[BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]} include={true}>
+    <div>INNHOLD</div>
+</UserGroup>
+----
+
+=== UserGroup.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| children
+| HTML
+| HTML som skal returneres
+| <DIV></DIV>
+
+| userGroups
+| array
+| Liste av brukergrupper
+| [BORN_IN_OR_BETWEEN_1954_AND_1962, BORN_AFTER_1962]
+
+| include
+| boolean
+| Om brukergruppe skal inkluderes eller ikke
+| true/false
+|===
+
+[#_yearselector]
+== YearSelector
+
+_Select_-komponent for å velge år i "år-for-år"-panelet.
+
+=== YearSelector.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| years
+| array
+| Liste med årstall
+| ["2019", "2020"]
+
+| currentYear
+| integer
+| Valgt år
+| 2020
+
+| onChange
+| function
+| Funksjon som kalles ved valg av år
+|
+
+| size
+| string
+| Bredde av dropdown: "fullbredde", "xxl", "xl", "l", "m", "s", "xs"
+| "S"
+|===
+
+[#_featuretoggle]
+== Funksjonsbryter
+
+Hjelpekomponent som returnerer innholdet i tag-en dersom en spesifisert funksjon (_feature_) er aktivert i Unleash. En liste av funksjoner blir sendt inn til et backend-API, som sjekker mot Unleash og returnerer status for disse ved oppstart av applikasjonen.
+
+Følgende vil returnere _<H1>_ dersom feature "toggle1" er aktivert i Unleash.
+[source, react]
+----
+<FeatureToggle featureName="toggle1" enabled={true}>
+    <h1>En tittel</h1>
+</FeatureToggle>
+----
+
+=== FeatureToggle.js
+
+|===
+| props | type | beskrivelse | eksempel
+
+| children
+| HTML
+| HTML som skal returneres
+| <DIV></DIV>
+
+| featureName
+| string
+| Navn på funksjon i Unleash
+| -
+
+| enabled
+| boolean
+| Om funksjon skal være aktivert eller deaktivert
+| true/false
+|===
