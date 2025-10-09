@@ -51,6 +51,10 @@ spec:
         - /pensjon/opptjening/static/**
         - /pensjon/opptjening/manifest.json
   accessPolicy:
+    inbound:
+      rules:
+        - application: azure-token-generator # dev only
+          namespace: nais
     outbound:
       rules:
         - application: pensjon-selvbetjening-opptjening-backend
