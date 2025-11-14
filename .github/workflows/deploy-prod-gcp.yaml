@@ -47,8 +47,6 @@ jobs:
           image_suffix: external-prod
           team: pensjonselvbetjening
           dockerfile: .docker/Dockerfile-gcp
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
       - name: Deploy to prod-gcp
         uses: nais/deploy/actions/deploy@v2
         env:
