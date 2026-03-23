@@ -11,12 +11,13 @@ jobs:
       packages: write
       id-token: write
     steps:
-      - name: Use Node.js v12.18.3
-        uses: actions/setup-node@v1
-        with:
-          node-version: "12.18.3"
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
       - uses: actions/cache@v4
         with:
           path: ~/.npm
@@ -24,25 +25,27 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --force
       - name: Run tests
         run: npm test -- --watchAll=false
       - name: Build application
         env:
-          REACT_APP_LOGINSERVICE_URL: "not used in GCP"
-          REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjening"
-          REACT_APP_DECORATOR_URL: "https://dekoratoren.ekstern.dev.nav.no"
-          REACT_APP_DINPENSJON_URL: "https://pensjon-selvbetjening-dinpensjon-frontend-borger-q2.ansatt.dev.nav.no/pensjon/selvbetjening/dinpensjon"
-          REACT_APP_PENSJONSKALKULATOR_URL: "https://staging.ekstern.dev.nav.no/pensjon/kalkulator"
-          REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://opptjening-overforomsorgsopptjening-frontend-borger-q2.intern.dev.nav.no/pensjon/selvbetjening/overforomsorgsopptjening/"
-          REACT_APP_REPRESENTASJON_BANNER: "https://representasjon-banner-frontend-borger-q2.intern.dev.nav.no/pensjon/selvbetjening/representasjon"
+          REACT_APP_LOGINSERVICE_URL: 'not used in GCP'
+          REACT_APP_OPPTJENING_ENDPOINT: '/api/opptjening'
+          REACT_APP_DECORATOR_URL: 'https://dekoratoren.ekstern.dev.nav.no'
+          REACT_APP_DINPENSJON_URL: 'https://pensjon-selvbetjening-dinpensjon-frontend-borger-q2.ansatt.dev.nav.no/pensjon/selvbetjening/dinpensjon'
+          REACT_APP_PENSJONSKALKULATOR_URL: 'https://staging.ekstern.dev.nav.no/pensjon/kalkulator'
+          REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: 'https://opptjening-overforomsorgsopptjening-frontend-borger-q2.intern.dev.nav.no/pensjon/selvbetjening/overforomsorgsopptjening/'
+          REACT_APP_REPRESENTASJON_BANNER: 'https://representasjon-banner-frontend-borger-q2.intern.dev.nav.no/pensjon/selvbetjening/representasjon'
         run: npm run build
+      - name: Build server
+        run: npm run build:server
       - uses: nais/docker-build-push@v0
         id: docker-push
         with:
           image_suffix: external-dev
           team: pensjonselvbetjening
-          dockerfile: .docker/Dockerfile-gcp
+          dockerfile: .docker/Dockerfile
       - name: Deploy
         uses: nais/deploy/actions/deploy@v2
         env:

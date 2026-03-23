@@ -1,16 +1,14 @@
-apiVersion: "nais.io/v1alpha1"
-kind: "Application"
+apiVersion: 'nais.io/v1alpha1'
+kind: 'Application'
 metadata:
   name: pensjon-veiledning-opptjening-frontend
   namespace: pensjonselvbetjening
   labels:
     team: pensjonselvbetjening
   annotations:
-    nais.io/run-as-user: "101" # nginx
-    nais.io/read-only-file-system: "false" # need write /etc/nginx/conf.d
-    nginx.ingress.kubernetes.io/proxy-buffer-size: "64k"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: '64k'
 spec:
-  image: "{{ image }}"
+  image: '{{ image }}'
   ingresses:
     - https://pensjon-veiledning-opptjening-frontend.intern.dev.nav.no
   port: 8080
@@ -32,13 +30,13 @@ spec:
       enabled: true
       claims:
         groups:
-          - id: "9e122ddd-e542-4cc1-a7eb-92c99140fe0e" # 0000-GA-PENSJON_BRUKERHJELPA
-          - id: "05ae245b-7b47-428a-9074-4ff6b59eddbc" # 0000-GA-Pensjon_Okonomi
-          - id: "8bb9b8d1-f46a-4ade-8ee8-5895eccdf8cf" # 0000-GA-PENSJON_SAKSBEHANDLER
-          - id: "a3f91493-1ab8-4b64-a544-0a77cbba9240" # 0000-GA-Pensjon_VEILEDER
-          - id: "dbe4ad45-320b-4e9a-aaa1-73cca4ee124d" # 0000-GA-Egne_ansatte
-          - id: "2e1dc582-f762-4510-a660-88bf68fb7128" # 0000-GA-Fortrolig_Adresse
-          - id: "a1b518e2-3947-478d-8929-e5d685c47cac" # 0000-GA-Strengt_Fortrolig_Adresse
+          - id: '9e122ddd-e542-4cc1-a7eb-92c99140fe0e' # 0000-GA-PENSJON_BRUKERHJELPA
+          - id: '05ae245b-7b47-428a-9074-4ff6b59eddbc' # 0000-GA-Pensjon_Okonomi
+          - id: '8bb9b8d1-f46a-4ade-8ee8-5895eccdf8cf' # 0000-GA-PENSJON_SAKSBEHANDLER
+          - id: 'a3f91493-1ab8-4b64-a544-0a77cbba9240' # 0000-GA-Pensjon_VEILEDER
+          - id: 'dbe4ad45-320b-4e9a-aaa1-73cca4ee124d' # 0000-GA-Egne_ansatte
+          - id: '2e1dc582-f762-4510-a660-88bf68fb7128' # 0000-GA-Fortrolig_Adresse
+          - id: 'a1b518e2-3947-478d-8929-e5d685c47cac' # 0000-GA-Strengt_Fortrolig_Adresse
         extra:
           - NAVident
     sidecar:
@@ -61,7 +59,9 @@ spec:
       external:
         - host: pensjon-selvbetjening-opptjening-frontend.intern.dev.nav.no
   env:
-    - name: "OPPTJENING_BACKEND"
-      value: "http://pensjon-selvbetjening-opptjening-backend"
+    - name: 'OPPTJENING_BACKEND'
+      value: 'http://pensjon-selvbetjening-opptjening-backend'
+    - name: 'ENTRA_ID_OBO_SCOPE'
+      value: 'api://dev-gcp.pensjonselvbetjening.pensjon-selvbetjening-opptjening-backend/.default'
   envFrom:
     - secret: opptjening-frontend-unleash-api-token
