@@ -3,20 +3,19 @@ import React from "react";
 import {PanelTitle} from "../PanelTitle/PanelTitle";
 import * as urlHelper from "../../../common/urlHelper";
 import {LenkepanelBase} from "nav-frontend-lenkepanel";
-import {CLICK_EVENT, logToAmplitude} from "../../../common/amplitude";
 import baby from "../../../assets/baby.svg";
 import "./OverforeOmsorgsOpptjeningPanel.css";
 
 
 export const OverforeOmsorgsOpptjeningPanel = (props) => {
     const { t } = useTranslation();
-    const logOverforeOmsorgsOpptjeningClickToAmplitude = (props) => {
-        logToAmplitude({eventType: CLICK_EVENT, name: "Klikk på lenke", titleKey: "", type: props.type, value: true});
-    };
     const overforeUrl = urlHelper.OVERFORE_OMSORGSOPPTJENING_URL ? urlHelper.OVERFORE_OMSORGSOPPTJENING_URL : "";
+    const handleClick = () => {
+        // TODO: Ta i bruk Umami.
+    };
 
     return(
-        <LenkepanelBase href={overforeUrl} border  className="panelWrapper" onClick={() => logOverforeOmsorgsOpptjeningClickToAmplitude({type: "Lenkepanel"})}>
+        <LenkepanelBase href={overforeUrl} border  className="panelWrapper" onClick={handleClick}>
             <div>
                 <PanelTitle type="lenkepanel" titleString={t('overfore-omsorgsopptjening-title')} illustrationClass="overforeOmsorgsOpptjeningLenkeIllustration" illustration={baby}/>
                 <p className="overforeOmsorgsOpptjeningText">

@@ -9,7 +9,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.2",
     "@testing-library/user-event": "^12.1.4",
-    "amplitude-js": "^7.3.0",
     "asciidoctor": "^2.2.1",
     "bowser": "~2.11.0",
     "chart.js": "^2.9.3",
@@ -21,6 +20,7 @@
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.0.21",
+    "lodash": "4.18.1",
     "lodash.throttle": "^4.1.1",
     "nav-frontend-alertstriper": "^3.0.23",
     "nav-frontend-alertstriper-style": "^2.0.17",
@@ -69,37 +69,39 @@
     "stacktrace-js": "^2.0.2"
   },
   "homepage": "/pensjon/opptjening/",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "prebuild": "node src/doc/modules/ROOT/doc.js && copyfiles -f src/doc/modules/ROOT/images/*.* public/doc/images",
     "start": "react-scripts start",
+    "serve:build": "node expressServer.js",
     "build": "react-scripts build",
     "build:cypress": "REACT_APP_DECORATOR_URL=https://notinuse.dev.nav.no react-scripts build",
-    "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts",
-    "dev": "node run.js",
-    "cypress:interactive": "CYPRESS_baseUrl=http://127.0.0.1:3000 cypress open",
-    "cy:run:headed": "CYPRESS_baseUrl=http://127.0.0.1:3000 cypress run --headed --no-exit",
-    "testcy:headed": "BROWSER=none start-server-and-test dev http://localhost:3000 cy:run:headed",
+    "serve:mock": "json-server --port 4000 --watch dev/mock.json",
+    "dev": "node scripts/dev.js",
+    "cypress:interactive": "cypress open",
+    "cy:run:headed": "cypress run --headed --no-exit",
+    "testcy:headed": "BROWSER=none start-server-and-test 'pnpm run dev' http://localhost:3000 'pnpm run cy:run:headed'",
     "cy:run": "cypress run --browser chrome",
-    "testcy": "BROWSER=none start-server-and-test express http-get://127.0.0.1:3000 cy:run",
+    "testcy": "BROWSER=none start-server-and-test 'pnpm run serve:build' http-get://127.0.0.1:3000 'pnpm run cy:run'",
     "cy:run:update": "cypress run --env updateSnapshots=true",
-    "cypress:update": "start-server-and-test dev http://localhost:3000 cy:run:update",
-    "express": "node expressServer.js",
+    "cypress:update": "start-server-and-test 'pnpm run dev' http://localhost:3000 'pnpm run cy:run:update'",
     "cypress:docker": "docker run --add-host=host.docker.internal:host-gateway -i -v $PWD:/e2e -w /e2e -e CYPRESS_updateSnapshots=$CYPRESS_updateSnapshots -e CYPRESS_baseUrl=http://host.docker.internal:3000 cypress/included:7.0.0 --browser chrome",
     "cypress:colima": "docker run -i -v $PWD:/e2e -w /e2e -e CYPRESS_updateSnapshots=$CYPRESS_updateSnapshots -e CYPRESS_baseUrl=http://host.lima.internal:3000 cypress/included:7.0.0 --browser chrome",
-    "test:cycli": "cross-env start-server-and-test express http://$HOST:3000 cypress:docker",
-    "test:cycli:colima": "cross-env start-server-and-test express http://$HOST:3000 cypress:colima",
-    "cypress:docker:local": "cross-env HOST=127.0.0.1 npm run test:cycli",
-    "cypress:colima:local": "cross-env HOST=127.0.0.1 npm run test:cycli:colima",
-    "update:cypress:docker:images": "cross-env HOST=127.0.0.1 CYPRESS_updateSnapshots=true npm run test:cycli",
-    "update:cypress:colima:images": "cross-env HOST=127.0.0.1 CYPRESS_updateSnapshots=true npm run test:cycli:colima"
+    "test:cycli": "start-server-and-test 'pnpm run serve:build' http://$HOST:3000 'pnpm run cypress:docker'",
+    "test:cycli:colima": "start-server-and-test 'pnpm run serve:build' http://$HOST:3000 'pnpm run cypress:colima'",
+    "cypress:docker:local": "HOST=127.0.0.1 pnpm run test:cycli",
+    "cypress:colima:local": "HOST=127.0.0.1 pnpm run test:cycli:colima",
+    "update:cypress:docker:images": "HOST=127.0.0.1 CYPRESS_updateSnapshots=true pnpm run test:cycli",
+    "update:cypress:colima:images": "HOST=127.0.0.1 CYPRESS_updateSnapshots=true pnpm run test:cycli:colima"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "engines": {
-    "node": "12.18.3",
-    "npm": "6.14.6"
+    "node": "22.x",
+    "pnpm": "10.x"
   },
   "browserslist": {
     "production": [
@@ -114,12 +116,10 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "~7.0.2",
     "cypress": "~13.3.1",
     "cypress-failed-log": "~2.9.2",
     "cypress-image-snapshot": "4.0.1",
     "express": "^4.21.1",
-    "full-icu": "^1.3.1",
     "http-proxy-middleware": "^1.0.5",
     "jest-axe": "~5.0.1",
     "jest-canvas-mock": "^2.3.0",
