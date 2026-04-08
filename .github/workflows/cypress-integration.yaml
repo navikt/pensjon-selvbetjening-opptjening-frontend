@@ -6,17 +6,17 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: pnpm
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10.33.0
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
       - name: Cache Cypress binary
         uses: actions/cache@v4
         with:
