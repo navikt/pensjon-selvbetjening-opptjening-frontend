@@ -75,7 +75,7 @@
     "start": "react-scripts start",
     "serve:build": "node expressServer.js",
     "build": "react-scripts build",
-    "build:cypress": "REACT_APP_DECORATOR_URL=https://notinuse.dev.nav.no react-scripts build",
+    "build:cypress": "REACT_APP_DECORATOR_URL= REACT_APP_REPRESENTASJON_BANNER= react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts",
     "serve:mock": "json-server --port 4000 --watch dev/mock.json",
@@ -85,16 +85,17 @@
     "testcy:headed": "BROWSER=none start-server-and-test 'pnpm run dev' http://localhost:3000 'pnpm run cy:run:headed'",
     "cy:run": "cypress run --browser chrome",
     "testcy": "BROWSER=none start-server-and-test 'pnpm run serve:build' http-get://127.0.0.1:3000 'pnpm run cy:run'",
+    "test:cy:ci": "start-server-and-test 'pnpm run serve:build' http-get://127.0.0.1:3000 'pnpm exec cypress run --browser chrome'",
     "cy:run:update": "cypress run --env updateSnapshots=true",
     "cypress:update": "start-server-and-test 'pnpm run dev' http://localhost:3000 'pnpm run cy:run:update'",
     "cypress:docker": "docker run --add-host=host.docker.internal:host-gateway -i -v $PWD:/e2e -w /e2e -e CYPRESS_updateSnapshots=$CYPRESS_updateSnapshots -e CYPRESS_baseUrl=http://host.docker.internal:3000 cypress/included:13.3.3 --config-file cypress.config.js --browser chrome",
     "cypress:colima": "docker run -i -v $PWD:/e2e -w /e2e -e CYPRESS_updateSnapshots=$CYPRESS_updateSnapshots -e CYPRESS_baseUrl=http://host.lima.internal:3000 cypress/included:13.3.3 --config-file cypress.config.js --browser chrome",
-    "test:cycli": "start-server-and-test 'pnpm run serve:build' http://$HOST:3000 'pnpm run cypress:docker'",
-    "test:cycli:colima": "start-server-and-test 'pnpm run serve:build' http://$HOST:3000 'pnpm run cypress:colima'",
-    "cypress:docker:local": "HOST=127.0.0.1 pnpm run test:cycli",
-    "cypress:colima:local": "HOST=127.0.0.1 pnpm run test:cycli:colima",
-    "update:cypress:docker:images": "HOST=127.0.0.1 CYPRESS_updateSnapshots=true pnpm run test:cycli",
-    "update:cypress:colima:images": "HOST=127.0.0.1 CYPRESS_updateSnapshots=true pnpm run test:cycli:colima"
+    "test:cy:docker": "start-server-and-test 'pnpm run serve:build' http://$HOST:3000 'pnpm run cypress:docker'",
+    "test:cy:colima": "start-server-and-test 'pnpm run serve:build' http://$HOST:3000 'pnpm run cypress:colima'",
+    "cypress:docker:local": "HOST=127.0.0.1 pnpm run test:cy:docker",
+    "cypress:colima:local": "HOST=127.0.0.1 pnpm run test:cy:colima",
+    "update:cypress:docker:images": "HOST=127.0.0.1 CYPRESS_updateSnapshots=true pnpm run test:cy:docker",
+    "update:cypress:colima:images": "HOST=127.0.0.1 CYPRESS_updateSnapshots=true pnpm run test:cy:colima"
   },
   "eslintConfig": {
     "extends": "react-app"
