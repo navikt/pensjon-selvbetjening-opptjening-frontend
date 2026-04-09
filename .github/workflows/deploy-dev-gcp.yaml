@@ -29,7 +29,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run tests
-        run: pnpm test -- --watchAll=false
+        env:
+          CI: "true"
+        run: pnpm test
 
       - name: Build application
         env:
