@@ -32,6 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install --frozen-lockfile
+          pnpm exec cypress install
           pnpm exec cypress verify
           pnpm exec cypress info
           pnpm exec cypress version
