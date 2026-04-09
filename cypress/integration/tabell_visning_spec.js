@@ -14,12 +14,15 @@ describe("Opptjening forside tabell", () => {
     cy.visit("/pensjon/opptjening");
     cy.wait("@opptjening");
 
-    cy.get("#tabellknapp").should("be.visible").click();
+    cy.get("#tabellknapp").scrollIntoView().should("be.visible").click();
 
-    // wait for the table view to be ready (DOM-based, not network-based)
-    cy.get("#tabell-vis-alle-knapp")
-      .should("exist")
-      .and("be.visible")
+    // Ensure we actually switched to table view (CI can be slower/flakier here)
+    cy.get('[data-testid="dataContainer"]', { timeout: 20000 }).should(
+      "be.visible",
+    );
+
+    cy.get("#tabell-vis-alle-knapp", { timeout: 20000 })
+      .should("be.visible")
       .and("be.enabled");
 
     cy.matchImageSnapshot({ capture: "fullPage" });
