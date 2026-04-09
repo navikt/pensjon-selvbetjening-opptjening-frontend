@@ -7,27 +7,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10.33.0
+
       - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: pnpm
+
       - name: Cache Cypress binary
         uses: actions/cache@v4
         with:
-          path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
+          path: /home/runner/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             cypress-${{ runner.os }}-cypress-
-      - name: install dependencies and verify Cypress
+
+      - name: Install dependencies and verify Cypress
         # print Cypress and OS info
         run: |
           pnpm install --frozen-lockfile
+          pnpm exec cypress install
           pnpm exec cypress verify
           pnpm exec cypress info
           pnpm exec cypress version

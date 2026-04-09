@@ -37,5 +37,8 @@ jobs:
           pnpm exec cypress info
           pnpm exec cypress version
           pnpm exec cypress version --component package
+
       - name: Run tests
-        run: pnpm test -- --watchAll=false
+        env:
+          CI: "true"
+        run: pnpm test
