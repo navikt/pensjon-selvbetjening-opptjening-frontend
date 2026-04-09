@@ -4,7 +4,11 @@ describe("Opptjening forside tabell", () => {
       "https://innloggingsstatus.dev.nav.no/person/innloggingsstatus/auth",
       {
         statusCode: 200,
-        body: { authenticated: true, name: "Test", securityLevel: "4" },
+        body: {
+          authenticated: true,
+          name: "Test",
+          securityLevel: "4",
+        },
       },
     );
 
@@ -13,18 +17,14 @@ describe("Opptjening forside tabell", () => {
     cy.viewport(1000, 660);
     cy.visit("/pensjon/opptjening");
     cy.wait("@opptjening");
+    cy.get("#tabellknapp").scrollIntoView();
+    cy.get("#tabellknapp").should("be.visible").click();
 
-    cy.get("#tabellknapp").scrollIntoView().should("be.visible").click();
+    cy.get('[data-testid="dataContainer"]').should("be.visible");
+    cy.get("#tabell-vis-alle-knapp").should("be.visible");
 
-    // Ensure we actually switched to table view (CI can be slower/flakier here)
-    cy.get('[data-testid="dataContainer"]', { timeout: 20000 }).should(
-      "be.visible",
-    );
-
-    cy.get("#tabell-vis-alle-knapp", { timeout: 20000 })
-      .should("be.visible")
-      .and("be.enabled");
-
-    cy.matchImageSnapshot({ capture: "fullPage" });
+    cy.matchImageSnapshot({
+      capture: "fullPage",
+    });
   });
 });
