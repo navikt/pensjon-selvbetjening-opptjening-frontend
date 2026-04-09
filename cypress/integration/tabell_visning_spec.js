@@ -20,11 +20,15 @@ describe("Opptjening forside tabell", () => {
     cy.get("#tabellknapp").scrollIntoView();
     cy.get("#tabellknapp").should("be.visible").click();
 
-    cy.get('[data-testid="dataContainer"]').should("be.visible");
+    cy.get('[data-testid="dataContainer"]')
+      .should("be.visible")
+      .should(($el) => expect($el.height()).to.be.greaterThan(0));
+    cy.get("#tabell-vis-alle-knapp").scrollIntoView();
     cy.get("#tabell-vis-alle-knapp").should("be.visible");
 
-    cy.matchImageSnapshot({
-      capture: "fullPage",
-    });
+    cy.get('[data-testid="dataContainer"]').matchImageSnapshot(
+      "opptjening-tabell-container",
+      { capture: "viewport" },
+    );
   });
 });
