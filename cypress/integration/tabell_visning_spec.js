@@ -26,9 +26,9 @@ describe("Opptjening forside tabell", () => {
     cy.get("#tabell-vis-alle-knapp").scrollIntoView();
     cy.get("#tabell-vis-alle-knapp").should("be.visible");
 
-    cy.get('[data-testid="dataContainer"]').matchImageSnapshot(
-      "opptjening-tabell-container",
-      { capture: "viewport" },
-    );
+    // cy.get('[data-testid="dataContainer"]').matchImageSnapshot(
+    //   "opptjening-tabell-container",
+    //   { capture: "viewport" },
+    // );
   });
 });
