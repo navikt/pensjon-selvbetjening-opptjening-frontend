@@ -1,5 +1,5 @@
 {
-    "faq-number-of-questions": 10,
+    "faq-number-of-questions": 8,
 
     "faq-question-1": "Hva er pensjonsbeholdning?",
     "faq-answer-1": [
@@ -18,26 +18,20 @@
         "Årlig inntekt blir medregnet fra 1. januar året etter at fastsettingen er ferdig. Det betyr for eksempel at inntekten for 2016 først blir medregnet i pensjonen fra 1. januar 2018."
     ],
 
-    "faq-question-4": "Hvordan påvirket pensjonsreformen 2010 beholdningen min?",
-    "faq-answer-4": "Pensjonsbeholdningen din ble etablert med virkning 1. januar 2010 i forbindelse med at pensjonsreformen trådte i kraft. Da ble den opptjeningen du hadde i kalenderår frem til og med 2008 (siste ferdiglignede år) summert til en beholdningsstørrelse.",
+    "faq-question-4": "Hvordan beregnes opptjening for dagpenger?",
+    "faq-answer-4": "For perioder med dagpenger blir 18,1 prosent av en inntekt som er lagt til grunn for fastsettelse av dagpenger lagt til pensjonsbeholdningen din.",
 
-    "faq-question-5": "Hvordan beregnes opptjening for dagpenger?",
-    "faq-answer-5": "For perioder med dagpenger blir 18,1 prosent av en inntekt som er lagt til grunn for fastsettelse av dagpenger lagt til pensjonsbeholdningen din.",
+    "faq-question-5": "Hvordan beregnes opptjening for uføretrygd?",
+    "faq-answer-5": "For perioder med uføretrygd blir 18,1 prosent av en antatt inntekt lagt til pensjonsbeholdningen din. Dette gjelder til og med det året du fyller 61 år.",
 
-    "faq-question-6": "Hvordan beregnes opptjening for uføretrygd?",
-    "faq-answer-6": "For perioder med uføretrygd blir 18,1 prosent av en antatt inntekt lagt til pensjonsbeholdningen din. Dette gjelder til og med det året du fyller 61 år.",
+    "faq-question-6": "Hvordan beregnes opptjening for førstegangstjeneste?",
+    "faq-answer-6": "Førstegangstjeneste på minst 6 måneder i 2010 eller senere kan gi rett til opptjening. 12 måneders tjenestetid gir opptjening på 18,1 prosent av 2,5 G. Kortere tjenestetid gir opptjening for hver påbegynte måned.",
 
-    "faq-question-7": "Hvordan beregnes opptjening for førstegangstjeneste?",
-    "faq-answer-7": "Førstegangstjeneste på minst 6 måneder i 2010 eller senere kan gi rett til opptjening. 12 måneders tjenestetid gir opptjening på 18,1 prosent av 2,5 G. Kortere tjenestetid gir opptjening for hver påbegynte måned.",
+    "faq-question-7": "Hvorfor har jeg ikke pensjonsbeholdning?",
+    "faq-answer-7": "Det er ikke registrert pensjonsopptjening. Nav mottar den pensjonsgivende inntekten fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte [Skatteetaten](https://www.skatteetaten.no/)",
 
-    "faq-question-8": "Hvorfor har jeg ikke pensjonsbeholdning?",
-    "faq-answer-8": "Det er ikke registrert pensjonsopptjening. Nav mottar den pensjonsgivende inntekten fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor](https://www.skatteetaten.no/)",
-
-    "faq-question-9": "Hva betyr 'ikke noe grunnlag'?",
-    "faq-answer-9": "Vi mottar pensjonsgivende inntekt fra Skatteetaten når skatteoppgjøret er klart. Fram til skatteoppgjøret er klart vil det vises en tekst som sier 'Ikke noe grunnlag'.",
-
-    "faq-question-10": "Hva er omsorgsopptjening?",
-    "faq-answer-10": [
+    "faq-question-8": "Hva er omsorgsopptjening?",
+    "faq-answer-8": [
         "Omsorgsopptjening er ikke en ekstra lønn som du får utbetalt fra folketrygden, men en ordning som bidrar til at du kan få høyere pensjon når du blir pensjonist. Du må være medlem i folketrygden i omsorgsperioden for å ha rett til omsorgsopptjening.",
         "Ordningen med omsorgsopptjening ble innført i 1992, og er senere utvidet slik at personer med barn født før 1992 kan få denne opptjeningen. Se mer forklaring under her."
     ]
