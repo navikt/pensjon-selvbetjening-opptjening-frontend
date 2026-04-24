@@ -63,7 +63,7 @@
     "overfore-omsorgsopptjening-title": "Transferring pension earnings for child care",
     "overfore-omsorgsopptjening-text": "You have one or more years of pension earnings for care work and can transfer this to the child’s other guardian here.",
 
-    "inntekt-tekst": "Nav receives information about your pensionable income from the Norwegian Tax Administration. If you think there is something wrong with your registered income, contact your [local tax office]({{skatteetatenLink}}).",
+    "inntekt-tekst": "Nav receives information about your pensionable income from the Norwegian Tax Administration. If you think there is something wrong with your registered income, contact [the Norwegian Tax Administration]({{skatteetatenLink}}).",
     "inntekt-lukk-panel": "“Close panel”",
     "inntekt-til-toppen": "“To the top”",
     "inntekt-aar": "Year",

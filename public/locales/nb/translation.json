@@ -62,7 +62,7 @@
     "overfore-omsorgsopptjening-title": "Overføring av omsorgsopptjening for barn",
     "overfore-omsorgsopptjening-text": "Du har ett eller flere år med omsorgsopptjening, og kan overføre dette til den andre av barnets foresatte her.",
 
-    "inntekt-tekst": "Nav mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte ditt [lokale skattekontor]({{skatteetatenLink}}).",
+    "inntekt-tekst": "Nav mottar den pensjonsgivende inntekten din fra Skatteetaten. Hvis du mener noe er feil med inntekten må du kontakte [Skatteetaten]({{skatteetatenLink}}).",
     "inntekt-lukk-panel":  "Lukk panel",
     "inntekt-til-toppen":  "Til toppen",
     "inntekt-aar": "År",
