@@ -46,12 +46,14 @@ jobs:
           REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://opptjening-overforomsorgsopptjening-frontend-veileder.intern.nav.no/pensjon/selvbetjening/overforomsorgsopptjening"
           REACT_APP_REPRESENTASJON_BANNER: "https://www.nav.no/pensjon/selvbetjening/representasjon"
         run: pnpm build
+      - name: Remove dev dependencies
+        run: pnpm install --prod
       - uses: nais/docker-build-push@v0
         id: docker-push
         with:
           image_suffix: intern-prod
           team: pensjonselvbetjening
-          dockerfile: .docker/Dockerfile-gcp-intern
+          dockerfile: .docker/Dockerfile
 
       - name: Deploy to prod-gcp-intern
         uses: nais/deploy/actions/deploy@v2
