@@ -1,14 +1,14 @@
-apiVersion: "nais.io/v1alpha1"
-kind: "Application"
+apiVersion: 'nais.io/v1alpha1'
+kind: 'Application'
 metadata:
   name: pensjon-selvbetjening-opptjening-frontend
   namespace: pensjonselvbetjening
   labels:
     team: pensjonselvbetjening
   annotations:
-    nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: '128k'
 spec:
-  image: "{{ image }}"
+  image: '{{ image }}'
   ingresses:
     - https://www.nav.no/pensjon/opptjening
   port: 8080
@@ -44,7 +44,7 @@ spec:
       external:
         - host: www.nav.no
   env:
-    - name: "OPPTJENING_BACKEND"
-      value: "http://pensjon-selvbetjening-opptjening-backend"
+    - name: 'OPPTJENING_BACKEND'
+      value: 'http://pensjon-selvbetjening-opptjening-backend'
   envFrom:
     - secret: opptjening-frontend-unleash-api-token

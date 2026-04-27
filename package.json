@@ -125,7 +125,6 @@
     "cypress": "~13.3.1",
     "cypress-failed-log": "~2.9.2",
     "cypress-image-snapshot": "4.0.1",
-
     "jest-axe": "~5.0.1",
     "jest-canvas-mock": "^2.3.0",
     "json-server": "^0.17.4",

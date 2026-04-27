@@ -26,7 +26,7 @@ jobs:
       - name: Use Node.js 22
         uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: '22'
           cache: pnpm
 
       - name: Install dependencies
@@ -34,18 +34,18 @@ jobs:
 
       - name: Run tests
         env:
-          CI: "true"
+          CI: 'true'
         run: pnpm test
 
       - name: Build application
         env:
-          REACT_APP_LOGINSERVICE_URL: "not used in GCP"
-          REACT_APP_OPPTJENING_ENDPOINT: "/api/opptjening"
-          REACT_APP_DECORATOR_URL: "https://www.nav.no/dekoratoren"
-          REACT_APP_DINPENSJON_URL: "https://www.nav.no/pensjon/selvbetjening/dinpensjon"
-          REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: "https://www.nav.no/pensjon/selvbetjening/overforomsorgsopptjening/"
-          REACT_APP_PENSJONSKALKULATOR_URL: "https://www.nav.no/pensjon/kalkulator"
-          REACT_APP_REPRESENTASJON_BANNER: "https://www.nav.no/pensjon/selvbetjening/representasjon"
+          REACT_APP_LOGINSERVICE_URL: 'not used in GCP'
+          REACT_APP_OPPTJENING_ENDPOINT: '/api/opptjening'
+          REACT_APP_DECORATOR_URL: 'https://www.nav.no/dekoratoren'
+          REACT_APP_DINPENSJON_URL: 'https://www.nav.no/pensjon/selvbetjening/dinpensjon'
+          REACT_APP_OVERFORE_OMSORGSOPPTJENING_URL: 'https://www.nav.no/pensjon/selvbetjening/overforomsorgsopptjening/'
+          REACT_APP_PENSJONSKALKULATOR_URL: 'https://www.nav.no/pensjon/kalkulator'
+          REACT_APP_REPRESENTASJON_BANNER: 'https://www.nav.no/pensjon/selvbetjening/representasjon'
         run: pnpm build
       - name: Remove dev dependencies
         run: pnpm install --prod
