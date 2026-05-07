@@ -14,10 +14,12 @@ Applikasjonen pensjon-selvbetjening-opptjening-frontend har som hensikt å vise 
 
 === Starte frontend lokalt
 
-Last ned kildekode fra https://github.com/navikt/pensjon-selvbetjening-opptjening-frontend[GitHub-repoet]. Kjør `npm install` for å installere alle avhengigheter. Bruk `npm run dev` for å kjøre applikasjonen i utviklingsmodus. Åpne http://localhost:3000/pensjon/opptjening[opptjening på localhost] for å se den i nettleser. Applikasjonen kjører da opp en lokal JSON-server med noe utgangsdata.
+Last ned kildekode fra https://github.com/navikt/pensjon-selvbetjening-opptjening-frontend[GitHub-repoet]. Kjør `pnpm install` for å installere alle avhengigheter. Bruk `pnpm dev` for å kjøre applikasjonen i utviklingsmodus. Åpne http://localhost:3000/pensjon/opptjening[opptjening på localhost] for å se den i nettleser. Applikasjonen kjører da opp en lokal JSON-server med noe utgangsdata.
+
+I development lastes ikke NAV-dekoratøren og representasjonsbanneret inn. De lastes bare utenfor development for å unngå eksterne auth- og session-kall mot localhost.
 
 _Mock_-data ligger i mappen "dev" på rotnivå og applikasjonen vil kjøre opp default med `mock.json`. Ønsker man å starte opp med med andre testdata, kan man angi filen som parameter (antar at filen ligger under mappen "dev"):
-`npm run dev --  <filnavn>`.
+`pnpm dev -- <filnavn>`.
 
 Vi har følgende testdata tilgjengelig:
 
@@ -41,10 +43,12 @@ Vi har følgende testdata tilgjengelig:
 |===
 | Script | Beskrivelse
 
-| npm run dev | Starter app på `localhost` med default testdata
-| npm run dev -- <filnavn> | Starter app på `localhost` med angitte testdata
-| npm run test | Kjører alle tester
-| npm run build | Bygger applikasjonen klar til produksjon til `build`-mappen. Bygger også dokumentasjonen som vil bli tilgjengelig på `/pensjon/opptjening/doc`
+| pnpm dev | Starter app på `localhost` med default testdata
+| pnpm dev -- <filnavn> | Starter app på `localhost` med angitte testdata
+| pnpm serve:mock | Starter kun lokal mock-backend på port 4000
+| pnpm serve:build | Serverer produksjonsbygget lokalt
+| pnpm test | Kjører alle tester
+| pnpm build | Bygger applikasjonen klar til produksjon til `build`-mappen. Bygger også dokumentasjonen som vil bli tilgjengelig på `/pensjon/opptjening/doc`
 |===
 
 === Lokal backend-konfigurasjon

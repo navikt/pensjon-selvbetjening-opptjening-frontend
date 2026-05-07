@@ -1,47 +1,56 @@
 name: Cypress end-to-end tests
+
+on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Use Node.js v12.18.3
-        uses: actions/setup-node@v3
-        with:
-          node-version: "12.18.3"
       - name: Checkout
-        uses: actions/checkout@v2
-      - uses: actions/cache@v4
+        uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          version: 10.33.0
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: pnpm
+
       - name: Cache Cypress binary
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
-          path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
+          path: /home/runner/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             cypress-${{ runner.os }}-cypress-
-      - name: install dependencies and verify Cypress
+
+      - name: Install dependencies and verify Cypress
         # print Cypress and OS info
         run: |
-          npm ci
-          npx cypress verify
-          npx cypress info
-          npx cypress version
-          npx cypress version --component package
-          npx cypress version --component binary
-          npx cypress version --component electron
-          npx cypress version --component node
+          pnpm install --frozen-lockfile
+          pnpm exec cypress install
+          pnpm exec cypress verify
+          pnpm exec cypress info
+          pnpm exec cypress version
+          pnpm exec cypress version --component package
+          pnpm exec cypress version --component binary
+          pnpm exec cypress version --component electron
+          pnpm exec cypress version --component node
       - name: Run build
-        run: npm run build:cypress
+        run: pnpm build:cypress
       - name: Cypress run with express.js
-        run: npm run test:cycli #172.17.0.1 = docker.internal.host on linux
-        env:
-          HOST: "172.17.0.1"
+        run: pnpm test:cy:ci
       - name: Upload screenshots if Cypress tests failed
         uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots
-          path: cypress/snapshots
+          if-no-files-found: ignore
+          path: |
+            cypress/screenshots
+            cypress/logs
+            cypress/snapshots
