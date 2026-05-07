@@ -129,5 +129,10 @@
     "redux-mock-store": "^1.5.4",
     "start-server-and-test": "1.14.0",
     "typescript": "^3.9.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "axios": "0.31.1"
+    }
   }
 }
