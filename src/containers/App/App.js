@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <div>
       <representasjon-banner
-        representasjonstyper="PENSJON_FULLSTENDIG,PENSJON_BEGRENSET,PENSJON_SKRIV,PENSJON_KOMMUNISER, PENSJON_LES,PENSJON_PENGEMOTTAKER,PENSJON_VERGE,PENSJON_VERGE_PENGEMOTTAKER"
+        representasjonstyper="PENSJON_FULLSTENDIG,PENSJON_BEGRENSET,PENSJON_SKRIV,PENSJON_KOMMUNISER,PENSJON_LES,PENSJON_PENGEMOTTAKER,PENSJON_VERGE,PENSJON_VERGE_PENGEMOTTAKER"
         redirectTo={`${window.location.origin}/pensjon/opptjening/`}>
       </representasjon-banner>
       <Switch>
@@ -38,4 +38,3 @@ export const App = () => {
   );
 }
   ;
-
