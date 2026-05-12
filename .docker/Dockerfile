@@ -10,4 +10,4 @@ COPY ./node_modules/ node_modules/
 COPY ./build/ build/
 COPY ./server.js .
 
-ENTRYPOINT ["/nodejs/bin/node", "server.js"]
+ENTRYPOINT ["/nodejs/bin/node", "--max-http-header-size=32768", "server.js"]

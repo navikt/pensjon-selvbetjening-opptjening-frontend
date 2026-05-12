@@ -5,6 +5,8 @@ const compression = require('compression')
 const winston = require('winston')
 
 const app = express()
+app.disable('x-powered-by')
+app.set('trust proxy', true)
 
 const PORT = process.env.PORT || 8080
 const BASE_URL = '/pensjon/opptjening'
@@ -18,23 +20,25 @@ if (!OPPTJENING_BACKEND) {
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 const logger = winston.createLogger({
-  format: isDevelopment ? winston.format.simple() : undefined,
+  format: isDevelopment ? winston.format.simple() : winston.format.json(),
   transports: [new winston.transports.Console()]
 })
+
+const sanitizeUrl = (url) => url.replace(/(fnr|pid)=[^&]*/gi, '$1=***********')
 
 const loggerMiddleware = (logger) => (req, res, next) => {
   const start = Date.now()
   res.on('finish', () => {
     const duration = Date.now() - start
     const logMetadata = {
-      url: req.originalUrl,
+      url: sanitizeUrl(req.originalUrl),
       method: req.method,
       duration,
       statusCode: res.statusCode,
       'x_correlation-id': req.headers['x_correlation-id']
     }
 
-    const logMessage = `${req.method} ${req.path} ${res.statusCode}`
+    const logMessage = `${req.method} ${sanitizeUrl(req.path)} ${res.statusCode}`
     if (res.statusCode >= 400) {
       logger.error(logMessage, logMetadata)
     } else {
@@ -74,7 +78,17 @@ app.use(
       [`^${BASE_URL}/api/`]: '/api/'
     },
     changeOrigin: true,
-    logProvider: () => logger
+    logProvider: () => logger,
+    onError(err, req, res) {
+      logger.error('Proxy request failed', {
+        method: req.method,
+        url: sanitizeUrl(req.originalUrl),
+        error: err.message
+      })
+      if (!res.headersSent) {
+        res.status(502).json({ message: 'Bad gateway' })
+      }
+    }
   })
 )
 
@@ -86,7 +100,19 @@ app.use(
       [`^${BASE_URL}/oauth2/`]: '/oauth2/'
     },
     changeOrigin: true,
-    logProvider: () => logger
+    logProvider: () => logger,
+    proxyTimeout: 30000,
+    timeout: 30000,
+    onError(err, req, res) {
+      logger.error('Proxy request failed', {
+        method: req.method,
+        url: sanitizeUrl(req.originalUrl),
+        error: err.message
+      })
+      if (!res.headersSent) {
+        res.status(502).json({ message: 'Bad gateway' })
+      }
+    }
   })
 )
 
@@ -104,7 +130,7 @@ app.get(`${BASE_URL}/*`, (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+  res.redirect(302, `${BASE_URL}/`)
 })
 
 app.listen(PORT, () => {
