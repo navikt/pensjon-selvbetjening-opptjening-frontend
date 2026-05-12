@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const fs = require('fs')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 const compression = require('compression')
 const winston = require('winston')
@@ -10,6 +11,9 @@ app.set('trust proxy', true)
 
 const PORT = process.env.PORT || 8080
 const BASE_URL = '/pensjon/opptjening'
+
+const BUILD_DIR = path.join(__dirname, 'build')
+const INDEX_HTML = fs.readFileSync(path.join(BUILD_DIR, 'index.html'), 'utf8')
 
 const OPPTJENING_BACKEND = process.env.OPPTJENING_BACKEND
 
@@ -35,7 +39,7 @@ const loggerMiddleware = (logger) => (req, res, next) => {
       method: req.method,
       duration,
       statusCode: res.statusCode,
-      'x_correlation-id': req.headers['x_correlation-id']
+      'x-correlation-id': req.headers['x-correlation-id']
     }
 
     const logMessage = `${req.method} ${sanitizeUrl(req.path)} ${res.statusCode}`
@@ -117,16 +121,16 @@ app.use(
 )
 
 app.use(
-  express.static(path.join(__dirname, 'build'), {
+  express.static(BUILD_DIR, {
     index: false,
     etag: true
   })
 )
 
-app.use(`${BASE_URL}/`, express.static(path.join(__dirname, 'build')))
+app.use(`${BASE_URL}/`, express.static(BUILD_DIR))
 
 app.get(`${BASE_URL}/*`, (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+  res.type('html').send(INDEX_HTML)
 })
 
 app.get('/', (req, res) => {
