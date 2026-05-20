@@ -121,13 +121,12 @@ app.use(
 )
 
 app.use(
+  BASE_URL,
   express.static(BUILD_DIR, {
     index: false,
     etag: true
   })
 )
-
-app.use(`${BASE_URL}/`, express.static(BUILD_DIR))
 
 app.get(`${BASE_URL}/*`, (req, res) => {
   res.type('html').send(INDEX_HTML)
