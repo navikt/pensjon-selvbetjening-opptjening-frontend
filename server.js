@@ -133,7 +133,7 @@ app.get(`${BASE_URL}/*`, (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.redirect(302, `${BASE_URL}/`)
+  res.redirect(302, `${BASE_URL}${req.url}`)
 })
 
 app.listen(PORT, () => {
