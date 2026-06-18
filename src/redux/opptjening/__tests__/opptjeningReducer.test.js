@@ -1,6 +1,5 @@
 import reducer from '../opptjeningReducer';
 import * as actions from '../opptjeningActions';
-import expect from 'expect';
 import {mockBasicSuccessState} from "../../../__mocks__/mockDataGenerator";
 
 const initialState = {

@@ -2,14 +2,13 @@ import { onLanguageSelect, setAvailableLanguages } from "@navikt/nav-dekoratoren
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
-import { logToAmplitude, SELECT_EVENT} from "../../../common/amplitude";
 
 export const LanguageSelector = () => {
     const {i18n} = useTranslation();
     const history = useHistory();
 
     onLanguageSelect((language) => {
-        logToAmplitude({eventType: SELECT_EVENT, name: "Velg språk", titleKey: "LanguageSelector", type: "Select", value: language.locale});
+        // TODO: Ta i bruk Umami.
         i18n.changeLanguage(language.locale);
 
         const pathArr = history.location.pathname.split('/');

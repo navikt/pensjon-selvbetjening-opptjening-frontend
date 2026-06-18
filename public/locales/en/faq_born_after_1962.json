@@ -1,5 +1,5 @@
 {
-    "faq-number-of-questions": 10,
+    "faq-number-of-questions": 8,
 
     "faq-question-1": "What does 'pension reserves' mean?",
     "faq-answer-1": [
@@ -18,26 +18,20 @@
         "Annual income is included from 1 January the year after the final tax assessment has been completed. For example, your income for 2016 is included in the pension calculation from 1 January 2018."
     ],
 
-    "faq-question-4": "How did the 2010 pension reform affect my pension reserves?",
-    "faq-answer-4": "Your pension reserve was established with effect from 1 January 2010 in connection with the entry into force of the pension reform. On that date, the pension earnings you had had in the calendar years up to and including 2008 (the last year for which the tax assessment had been completed) were added up to form a reserve.",
+    "faq-question-4": "How are pension earnings from unemployment benefit calculated?",
+    "faq-answer-4": "For periods where you receive unemployment benefit, 18.1 per cent of the income that was used as the basis for calculating unemployment benefit is added to your pension reserves.",
 
-    "faq-question-5": "How are pension earnings from unemployment benefit calculated?",
-    "faq-answer-5": "For periods where you receive unemployment benefit, 18.1 per cent of the income that was used as the basis for calculating unemployment benefit is added to your pension reserves.",
+    "faq-question-5": "How are pension earnings from disability benefit calculated?",
+    "faq-answer-5": "For periods where you receive disability benefit, 18.1 per cent of your assumed income is added to your pension reserves. This applies up to and including the year you turn 61.",
 
-    "faq-question-6": "How are pension earnings from disability benefit calculated?",
-    "faq-answer-6": "For periods where you receive disability benefit, 18.1 per cent of your assumed income is added to your pension reserves. This applies up to and including the year you turn 61.",
+    "faq-question-6": "How are pension earnings from compulsory military service calculated?",
+    "faq-answer-6": "You can also receive pension earnings towards your pension reserves from compulsory military service that was started at the earliest in 2010. The earnings you receive are 18.1 per cent of the National Insurance Scheme’s basic amount (G).",
 
-    "faq-question-7": "How are pension earnings from compulsory military service calculated?",
-    "faq-answer-7": "You can also receive pension earnings towards your pension reserves from compulsory military service that was started at the earliest in 2010. The earnings you receive are 18.1 per cent of the National Insurance Scheme’s basic amount (G).",
+    "faq-question-7": "Why do I not have any pension reserves?",
+    "faq-answer-7": "No earned pension has been registered. Nav receives information about your pensionable income from the Norwegian Tax Administration. If you think there is something wrong with your registered income, contact the [Norwegian Tax Administration](https://www.skatteetaten.no/)",
 
-    "faq-question-8": "Why do I not have any pension reserves?",
-    "faq-answer-8": "No earned pension has been registered. Nav receives information about your pensionable income from the Norwegian Tax Administration. If you think there is something wrong with your registered income, contact your [local tax office](https://www.skatteetaten.no/)",
-
-    "faq-question-9": "What does ‘no basis’ mean?",
-    "faq-answer-9": "We receive information about your pensionable income from the Norwegian Tax Administration once the tax settlement is ready. Until the tax settlement for a year has been completed, a text saying ‘No basis’ will be displayed.",
-
-    "faq-question-10": "What are pension earnings for care work?",
-    "faq-answer-10": [
+    "faq-question-8": "What are pension earnings for care work?",
+    "faq-answer-8": [
         "Pension earnings for care work is not extra pay that you receive from the National Insurance Scheme, rather it is a scheme to ensure you get a higher pension when you start drawing a pension. You must be a member of the Norwegian National Insurance Scheme during the period of care in order to be entitled to pension earnings for care work.",
         "The pension earnings for care work scheme was introduced in 1992 and has since been expanded such that people with children born before 1992 can also receive these pension earnings. See the more detailed explanation below."
     ]}

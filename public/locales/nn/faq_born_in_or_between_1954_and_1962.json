@@ -1,5 +1,5 @@
 {
-    "faq-number-of-questions": 11,
+    "faq-number-of-questions": 9,
 
     "faq-question-1": "Kva er pensjonsbehaldning?",
     "faq-answer-1": [
@@ -18,29 +18,23 @@
         "Årleg inntekt blir rekna med frå 1. januar året etter at fastsetjinga er ferdig. Det betyr for eksempel at inntekta for 2016 først blir rekna med i pensjonen frå 1. januar 2018."
     ],
 
-    "faq-question-4": "Korleis påverka pensjonsreforma 2010 behaldninga mi?",
-    "faq-answer-4": "Pensjonsbehaldninga di blei etablert med verknad 1. januar 2010 i samband med at pensjonsreforma blei sett i verk. Då blei den oppteninga du hadde i kalenderår fram til og med 2008 (siste ferdiglikna år) summert til éin behaldningsstorleik.",
+    "faq-question-4": "Korleis blir oppteninga for dagpengar berekna?",
+    "faq-answer-4": "For periodar med dagpengar blir 18,1 prosent av ei inntekt som er lagd til grunn for fastsetjinga av dagpengane, lagd til pensjonsbehaldninga di.",
 
-    "faq-question-5": "Korleis blir oppteninga for dagpengar berekna?",
-    "faq-answer-5": "For periodar med dagpengar blir 18,1 prosent av ei inntekt som er lagd til grunn for fastsetjinga av dagpengane, lagd til pensjonsbehaldninga di.",
+    "faq-question-5": "Korleis blir oppteninga for uføretrygd berekna?",
+    "faq-answer-5": "Vi bereknar alderspensjonen din dels på grunnlag av pensjonsbehaldninga di og dels på grunnlag av pensjonspoeng.",
 
-    "faq-question-6": "Korleis blir oppteninga for uføretrygd berekna?",
-    "faq-answer-6": "For periodar med uføretrygd blir 18,1 prosent av ei anteken inntekt lagd til pensjonsbehaldninga di. Dette gjeld til og med det året du fyller 61 år.",
+    "faq-question-6": "Korleis blir oppteninga for førstegongsteneste berekna?",
+    "faq-answer-6": "Du kan også få opptening til pensjonsbehaldninga basert på førstegongsteneste som du begynte på tidlegast i 2010. Oppteninga utgjer 18,1 prosent av grunnbeløpet i folketrygda (G).",
 
-    "faq-question-7": "Korleis blir oppteninga for førstegongsteneste berekna?",
-    "faq-answer-7": "Du kan også få opptening til pensjonsbehaldninga basert på førstegongsteneste som du begynte på tidlegast i 2010. Oppteninga utgjer 18,1 prosent av grunnbeløpet i folketrygda (G).",
+    "faq-question-7": "Kvifor har eg ikkje pensjonsbehaldning?",
+    "faq-answer-7": "Det er ikkje registrert pensjonsopptening eller pensjonspoeng. Nav får den pensjonsgivande inntekta frå Skatteetaten. Dersom du meiner noko er feil med inntekta, må du kontakte [Skatteetaten](https://www.skatteetaten.no/).",
 
-    "faq-question-8": "Kvifor har eg ikkje pensjonsbehaldning?",
-    "faq-answer-8": "Det er ikkje registrert pensjonsopptening eller pensjonspoeng. Nav får den pensjonsgivande inntekta frå Skatteetaten. Dersom du meiner noko er feil med inntekta, må du kontakte [det lokale skattekontoret] ditt (https://www.skatteetaten.no/).",
+    "faq-question-8": "Pensjonsopptening for deg som er fødd mellom 1954 og 1962",
+    "faq-answer-8": "Du kan tene opp pensjonsrettar frå det året du fylte 17 år, til og med det året du fyller 75 år. Dei som er fødde i perioden 1954–1962, tener opp alderspensjon etter gamle og nye reglar i folketrygdlova. Det betyr at du tener opp pensjonsrettar både gjennom pensjonspoeng og ei pensjonsbehaldning.",
 
-    "faq-question-9": "Kva betyr 'ikkje noko grunnlag'?",
-    "faq-answer-9": "Vi får pensjonsgivande inntekt frå Skatteetaten når skatteoppgjeret er klart. Fram til skatteoppgjeret er klart vil det visast ein tekst som seier 'ikkje noko grunnlag'.",
-
-    "faq-question-10": "Pensjonsopptening for deg som er fødd mellom 1954 og 1962",
-    "faq-answer-10": "Du kan tene opp pensjonsrettar frå det året du fylte 17 år, til og med det året du fyller 75 år. Dei som er fødde i perioden 1954–1962, tener opp alderspensjon etter gamle og nye reglar i folketrygdlova. Det betyr at du tener opp pensjonsrettar både gjennom pensjonspoeng og ei pensjonsbehaldning.",
-
-    "faq-question-11": "Kva er omsorgsopptening?",
-    "faq-answer-11": [
+    "faq-question-9": "Kva er omsorgsopptening?",
+    "faq-answer-9": [
         "Omsorgsopptening er ikkje ei ekstra lønn som du får betalt ut frå folketrygda, men ei ordning som bidreg til at du kan få høgare pensjon når du blir pensjonist. Du må vere medlem i folketrygda i omsorgsperioden for å ha rett til omsorgsopptening.",
         "Ordninga med omsorgsopptening blei innført i 1992 og er seinare utvida slik at personar med barn fødde før 1992, kan få denne oppteninga. Sjå meir forklaring under her."
     ]

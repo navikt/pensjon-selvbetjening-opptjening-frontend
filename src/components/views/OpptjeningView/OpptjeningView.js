@@ -14,7 +14,6 @@ import {OpptjeningDetailsPanel} from "../../elements/OpptjeningDetailsPanel/Oppt
 import {BeholdningPanel} from "../../elements/BeholdningPanel/BeholdningPanel";
 import {BeholdningForklartPanel} from "../../elements/BeholdningForklartPanel/BeholdningForklartPanel";
 import './OpptjeningView.css';
-import { logToAmplitude, SELECT_EVENT} from "../../../common/amplitude";
 import {
     BORN_AFTER_1962, BORN_BEFORE_1943, BORN_IN_OR_BETWEEN_1943_AND_1953,
     BORN_IN_OR_BETWEEN_1954_AND_1962
@@ -49,7 +48,7 @@ export const OpptjeningView = () => {
     const hasOmsorgsOpptjeningTwoYearsBack = omsorgsOpptjeningMap && omsorgsOpptjeningMap[currentYear-2] ? omsorgsOpptjeningMap[currentYear-2].hasOmsorgsOpptjening : null;
 
     const selectYear = (year) => {
-        logToAmplitude({eventType: SELECT_EVENT, name: "År", titleKey: "opptjening-details-din-okning-ar-for-ar", type: "Select", value: year});
+        // TODO: Ta i bruk Umami.
         setYear(year);
     };
 
