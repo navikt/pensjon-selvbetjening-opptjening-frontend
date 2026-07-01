@@ -13,11 +13,13 @@ export const App = () => {
 
   return (
     <div>
-      <representasjon-banner
-        representasjonstyper="PENSJON_SKRIV,VERGE_PENSJON_SKRIV,PENSJON_LES,VERGE_PENSJON_LES"
-        redirectTo={`${window.location.origin}/pensjon/opptjening/`}
-        breadcrumbs={breadcrumbs}
-      ></representasjon-banner>
+      <div className="representasjonBannerWrapper">
+        <representasjon-banner
+          representasjonstyper="PENSJON_SKRIV,VERGE_PENSJON_SKRIV,PENSJON_LES,VERGE_PENSJON_LES"
+          redirectTo={`${window.location.origin}/pensjon/opptjening/`}
+          breadcrumbs={breadcrumbs}
+        ></representasjon-banner>
+      </div>
       <Switch>
         {routesConfig.map((route) => (
           <Route key={route.path} path={route.path} {...route} />
