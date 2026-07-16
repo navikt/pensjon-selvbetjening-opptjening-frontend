@@ -12,7 +12,10 @@ describe("Opptjening-forside", () => {
 
     cy.viewport(1000, 660);
 
-    cy.visit("/pensjon/opptjening", { log: true });
+    cy.visit("/pensjon/opptjening", {
+      log: true,
+      onBeforeLoad: (win) => win.localStorage.setItem("i18nextLng", "nb"),
+    });
     cy.wait("@opptjening");
 
     cy.get("#forklartseksjon").should("be.visible").click();

@@ -36,6 +36,11 @@
   hyphens: auto;
 }
 
+.representasjonBannerWrapper {
+  margin: 1rem auto;
+  max-width: 900px;
+}
+
 .tabell .tableRow {
   vertical-align: top;
 }
