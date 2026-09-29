@@ -37,6 +37,8 @@ spec:
         - /pensjon/opptjening/api/status
         - /pensjon/opptjening/static/**
         - /pensjon/opptjening/manifest.json
+  tokenx:
+    enabled: true
   accessPolicy:
     outbound:
       rules:
