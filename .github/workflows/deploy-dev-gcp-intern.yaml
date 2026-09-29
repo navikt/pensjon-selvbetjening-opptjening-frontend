@@ -45,6 +45,8 @@ jobs:
         run: pnpm build
       - name: Remove dev dependencies
         run: pnpm install --prod
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - uses: nais/docker-build-push@v0
         id: docker-push
         with:
