@@ -136,9 +136,8 @@ app.use(loggerMiddleware(logger))
 app.use(
   `${BASE_URL}/api/`,
   async (req: Request, res: Response, next: NextFunction) => {
-    let oboToken: string
     try {
-      oboToken = await getOboToken(req)
+      const oboToken = await getOboToken(req)
       req.headers['authorization'] = `Bearer ${oboToken}`
       next()
     } catch (err) {
@@ -152,10 +151,7 @@ app.use(
     },
     changeOrigin: true,
     logProvider: () => logger,
-    onError: onProxyError,
-    onProxyReq: (proxyReq, req, res) => {
-      console.log('proxyReq headers:', proxyReq.getHeaders())
-    }
+    onError: onProxyError
   })
 )
 
