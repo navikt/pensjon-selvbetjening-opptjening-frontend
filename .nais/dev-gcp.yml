@@ -48,6 +48,6 @@ spec:
     - name: 'OPPTJENING_BACKEND'
       value: 'http://pensjon-selvbetjening-opptjening-backend'
     - name: 'ENTRA_ID_OBO_SCOPE'
-      value: 'api://dev-gcp.pensjonskalkulator.pensjonskalkulator-backend/.default'
+      value: 'dev-gcp:pensjonselvbetjening:pensjon-selvbetjening-opptjening-backend'
   envFrom:
     - secret: opptjening-frontend-unleash-api-token

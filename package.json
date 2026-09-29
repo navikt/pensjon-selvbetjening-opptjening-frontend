@@ -85,6 +85,7 @@
     "eject": "react-scripts",
     "serve:mock": "json-server --port 4000 --watch dev/mock.json",
     "dev": "node scripts/dev.js",
+    "dev:q2": "pnpm build && NODE_ENV=development node --env-file=.env.development-q2 server.ts",
     "cypress:interactive": "cypress open",
     "cy:run:headed": "cypress run --headed --no-exit",
     "testcy:headed": "BROWSER=none start-server-and-test 'pnpm run dev' http://localhost:3000 'pnpm run cy:run:headed'",

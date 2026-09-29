@@ -152,7 +152,10 @@ app.use(
     },
     changeOrigin: true,
     logProvider: () => logger,
-    onError: onProxyError
+    onError: onProxyError,
+    onProxyReq: (proxyReq, req, res) => {
+      console.log('proxyReq headers:', proxyReq.getHeaders())
+    }
   })
 )
 
