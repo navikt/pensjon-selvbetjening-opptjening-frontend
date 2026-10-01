@@ -28,10 +28,11 @@ jobs:
         with:
           node-version: '22'
           cache: pnpm
-
+          registry-url: 'https://npm.pkg.github.com'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: Run tests
         env:
           CI: 'true'
@@ -49,6 +50,8 @@ jobs:
         run: pnpm build
       - name: Remove dev dependencies
         run: pnpm install --prod
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - uses: nais/docker-build-push@v0
         id: docker-push
         with:

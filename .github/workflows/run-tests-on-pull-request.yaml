@@ -18,9 +18,9 @@ jobs:
       - name: Use Node.js 22
         uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: '22'
           cache: pnpm
-
+          registry-url: 'https://npm.pkg.github.com'
       - name: Cache Cypress binary
         uses: actions/cache@v5
         with:
@@ -37,8 +37,9 @@ jobs:
           pnpm exec cypress info
           pnpm exec cypress version
           pnpm exec cypress version --component package
-
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: Run tests
         env:
-          CI: "true"
+          CI: 'true'
         run: pnpm test

@@ -8,6 +8,6 @@ USER nonroot
 COPY ./package.json .
 COPY ./node_modules/ node_modules/
 COPY ./build/ build/
-COPY ./server.js .
+COPY ./server.ts .
 
-ENTRYPOINT ["/nodejs/bin/node", "--max-http-header-size=32768", "server.js"]
+ENTRYPOINT ["/nodejs/bin/node", "--max-http-header-size=32768", "server.ts"]

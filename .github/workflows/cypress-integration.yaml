@@ -17,9 +17,9 @@ jobs:
       - name: Use Node.js 22
         uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: '22'
           cache: pnpm
-
+          registry-url: 'https://npm.pkg.github.com'
       - name: Cache Cypress binary
         uses: actions/cache@v5
         with:
@@ -40,6 +40,8 @@ jobs:
           pnpm exec cypress version --component binary
           pnpm exec cypress version --component electron
           pnpm exec cypress version --component node
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: Run build
         run: pnpm build:cypress
       - name: Cypress run with express.js
